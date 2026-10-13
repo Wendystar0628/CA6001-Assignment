@@ -13,7 +13,8 @@ from .common import OUTPUT_ROOT, SOURCE_RUN, STATE_KEYS, BUDGETS, diagnostic_con
 
 NEW_MODELS = ['xgb24', 'tabpfn_residual_a000', 'tabpfn_residual_a025',
               'tabpfn_residual_a050', 'tabpfn_residual_a100',
-              'tabpfn_source_context', 'tabpfn_honest_context']
+              'tabpfn_source_context', 'tabpfn_honest_context',
+              'tabpfn_guarded_a025', 'tabpfn_guarded_a050']
 METRICS = ['log_mae', 'h_point_mae_m', 'recall', 'false_positive_rate',
            'risk_recall', 'risk_fpr', 'risk_brier', 'coverage_90', 'width_90_log']
 
@@ -49,6 +50,7 @@ def main():
     parts = [reference]
     paths = [OUTPUT_ROOT / 'xgb24/validation/predictions.parquet',
              *sorted((OUTPUT_ROOT / 'residual_adapter/validation').glob('*/predictions.parquet')),
+             *sorted((OUTPUT_ROOT / 'point_guarded').glob('*/predictions.parquet')),
              OUTPUT_ROOT / 'context_adaptation/source_bank/validation/predictions.parquet',
              OUTPUT_ROOT / 'context_adaptation/honest/validation/predictions.parquet']
     for path in paths:

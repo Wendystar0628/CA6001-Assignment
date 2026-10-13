@@ -26,6 +26,7 @@ from cpt_budget.v2.tabpfn import feature_array_v2
 
 
 REGISTERED_ALPHAS = (0.0, 0.25, 0.5, 1.0)
+GUARDED_ALPHAS = (0.25, 0.5)
 
 
 def _validate_alpha(alpha: float) -> float:
@@ -234,3 +235,85 @@ class BaselineResidualTabPFNPredictor:
             frame = pd.concat(frames).sort_values("_row_order").drop(columns="_row_order").reset_index(drop=True)
             results[alpha] = PredictionBundle(frame, self.model_id)
         return results
+
+
+def guarded_residual_frame(
+    query: pd.DataFrame,
+    baseline: np.ndarray,
+    residual_median: np.ndarray,
+    alpha: float,
+) -> pd.DataFrame:
+    """Protect IDW's existing 1 MPa point labels while correcting magnitudes.
+
+    This is an explicitly exploratory point-only adaptation. It cannot improve
+    the baseline's point low-value labels: each output remains on the same side
+    of ln(1 MPa)=0 as the baseline. No query truth is read, and native residual
+    CDF/quantile columns are not retained after the nonlinear clipping.
+    """
+    alpha = float(alpha)
+    if alpha not in GUARDED_ALPHAS:
+        raise ValueError(f"Point-guarded residual alpha must be pre-registered in {GUARDED_ALPHAS}")
+    geometry = geometry_only(query).reset_index(drop=True)
+    base = np.asarray(baseline, dtype=float).reshape(-1)
+    residual = np.asarray(residual_median, dtype=float).reshape(-1)
+    if (len(base) != len(geometry) or len(residual) != len(geometry)
+            or not np.isfinite(base).all() or not np.isfinite(residual).all()):
+        raise ValueError("One finite baseline and residual median are required per query row")
+    corrected = base + alpha * residual
+    if not np.isfinite(corrected).all():
+        raise ValueError("Residual correction must be finite")
+    prediction = np.where(base < 0.0, np.minimum(corrected, -1e-9), np.maximum(corrected, 0.0))
+    frame = point_prediction_frame(geometry, prediction)
+    frame["baseline_log_qc"] = base
+    frame["residual_pred_log_qc"] = residual
+    frame["residual_alpha"] = alpha
+    frame["unguarded_pred_log_qc"] = corrected
+    frame["point_guard_applied"] = prediction != corrected
+    return frame
+
+
+class PointGuardedResidualPredictor:
+    """Deployable wrapper preserving IDW point labels, with no native risk CDF.
+
+    Risk probabilities, if required by the experiment, must be supplied by its
+    common external calibration procedure. Protecting the existing point label
+    does not imply that an externally calibrated risk label is also unchanged.
+    """
+    def __init__(self, config=None, *, baseline="idw", artifact=None,
+                 model_id="tabpfn_idw_residual_point_guarded", alpha=0.25):
+        alpha = float(alpha)
+        if alpha not in GUARDED_ALPHAS:
+            raise ValueError(f"Point-guarded residual alpha must be pre-registered in {GUARDED_ALPHAS}")
+        self.model_id = model_id
+        self.alpha = alpha
+        self._residual = BaselineResidualTabPFNPredictor(
+            config, baseline=baseline, artifact=artifact, alpha=1.0)
+        self.metadata_ = {
+            **self._residual.metadata_,
+            "adaptation_scope": "exploratory candidate added after inspecting unguarded residual diagnostics",
+            "output": "point prediction only; no native CDF or intervals after clipping",
+            "point_rule": "IDW + alpha * residual median, clipped to the IDW side of ln(1 MPa)=0",
+            "negative_side_maximum": -1e-9,
+            "registered_alphas": list(GUARDED_ALPHAS),
+            "low_value_improvement_claim": False,
+            "protected_quantity": "existing IDW point label only, not an externally calibrated risk decision",
+        }
+
+    def condition(self, observed: pd.DataFrame) -> None:
+        self._residual.condition(observed)
+
+    def predict(self, query_grid: pd.DataFrame) -> PredictionBundle:
+        return self.predict_variants(query_grid, alphas=(self.alpha,))[self.alpha]
+
+    def predict_variants(self, query_grid: pd.DataFrame,
+                         alphas=GUARDED_ALPHAS) -> dict[float, PredictionBundle]:
+        alphas = tuple(dict.fromkeys(float(a) for a in alphas))
+        if not alphas or any(a not in GUARDED_ALPHAS for a in alphas):
+            raise ValueError(f"Point-guarded residual alphas must be pre-registered in {GUARDED_ALPHAS}")
+        native = self._residual.predict(query_grid).frame
+        return {
+            alpha: PredictionBundle(guarded_residual_frame(
+                native, native.baseline_log_qc.to_numpy(float),
+                native.residual_pred_log_qc.to_numpy(float), alpha), self.model_id)
+            for alpha in alphas
+        }

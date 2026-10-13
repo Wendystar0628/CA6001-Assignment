@@ -140,3 +140,70 @@ def test_unregistered_baselines_and_alphas_rejected():
         adapter.BaselineResidualTabPFNPredictor(baseline="gp")
     with pytest.raises(ValueError, match="pre-registered"):
         adapter.BaselineResidualTabPFNPredictor(alpha=.75)
+
+
+@pytest.mark.parametrize("alpha", [.25, .5])
+def test_point_guard_preserves_idw_labels_without_claiming_native_uncertainty(alpha):
+    baseline = np.array([-.2, -.2, .3, .3, 0., -1e-12])
+    residual = np.array([2., -.4, -3., .4, -1., 0.])
+    output = adapter.guarded_residual_frame(query(), baseline, residual, alpha)
+    expected = np.where(baseline < 0, np.minimum(baseline + alpha * residual, -1e-9),
+                        np.maximum(baseline + alpha * residual, 0.))
+    np.testing.assert_array_equal(output.pred_log_qc.to_numpy(), expected)
+    np.testing.assert_array_equal(output.pred_log_qc.to_numpy() < 0, baseline < 0)
+    np.testing.assert_array_equal(output.pred_qc_mpa.to_numpy() < 1, baseline < 0)
+    np.testing.assert_array_equal(output.point_guard_applied, [True, False, True, False, True, True])
+    assert not set(QUANTILE_COLUMNS).intersection(output.columns)
+    assert not set(PROBABILITY_COLUMNS).intersection(output.columns)
+    assert "log_qc" not in output and "qc_mpa" not in output
+    # Point-label-based thickness, recall and false positives remain identical.
+    assert (output.pred_qc_mpa < 1).sum() * .25 == (baseline < 0).sum() * .25
+    changed_query = query()
+    changed_query["log_qc"] = -999
+    changed_query["qc_mpa"] = 0
+    pd.testing.assert_frame_equal(output, adapter.guarded_residual_frame(changed_query, baseline, residual, alpha))
+
+
+def test_point_guard_wrapper_can_run_independently_and_discards_native_intervals(monkeypatch):
+    from cpt_budget.types import PredictionBundle
+
+    class FakeResidual:
+        def __init__(self, *args, **kwargs):
+            self.metadata_ = {"target": "test residual"}
+            self.calls = 0
+            self.observed = None
+
+        def condition(self, observed):
+            self.observed = observed
+
+        def predict(self, query_frame):
+            assert self.observed is not None
+            self.calls += 1
+            frame = adapter.guarded_residual_frame(query_frame, np.full(len(query_frame), -.1),
+                                                   np.full(len(query_frame), 2.), .25)
+            # The real inner predictor returns quantiles and CDF as well.
+            for column in (*QUANTILE_COLUMNS, *PROBABILITY_COLUMNS):
+                frame[column] = .5
+            return PredictionBundle(frame, "inner")
+
+    monkeypatch.setattr(adapter, "BaselineResidualTabPFNPredictor", FakeResidual)
+    wrapper = adapter.PointGuardedResidualPredictor(alpha=.5)
+    wrapper.condition(context())
+    variants = wrapper.predict_variants(query())
+    assert wrapper._residual.calls == 1
+    for alpha in (.25, .5):
+        assert variants[alpha].model_id == wrapper.model_id
+        np.testing.assert_array_equal(variants[alpha].frame.pred_log_qc, np.full(len(query()), -1e-9))
+        assert not set(QUANTILE_COLUMNS).intersection(variants[alpha].frame.columns)
+        assert not set(PROBABILITY_COLUMNS).intersection(variants[alpha].frame.columns)
+    single = wrapper.predict(query())
+    pd.testing.assert_frame_equal(single.frame, variants[.5].frame)
+    assert wrapper.metadata_["low_value_improvement_claim"] is False
+
+
+def test_point_guard_rejects_unregistered_alphas_and_nonfinite_inputs():
+    for alpha in (0, 1, .75, np.nan):
+        with pytest.raises(ValueError, match="pre-registered"):
+            adapter.PointGuardedResidualPredictor(alpha=alpha)
+    with pytest.raises(ValueError, match="finite baseline"):
+        adapter.guarded_residual_frame(query(), np.zeros(6), np.full(6, np.nan), .25)

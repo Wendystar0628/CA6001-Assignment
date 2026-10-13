@@ -6,6 +6,7 @@ from pathlib import Path
 import time
 import pandas as pd
 from cpt_budget.config import write_json
+from cpt_budget.types import PredictionBundle
 from .common import (OUTPUT_ROOT, diagnostic_config, iter_validation_states,
                      evaluated_frame, metrics_for, run_predictor)
 
@@ -55,13 +56,41 @@ def context(config, mode):
     return run_predictor(factory, OUTPUT_ROOT / 'context_adaptation' / mode / 'validation', config=config)
 
 
+def point_guarded(config):
+    """Reconstruct registered point-only variants from cached native medians."""
+    from .residual_adapter import guarded_residual_frame
+    native_root = OUTPUT_ROOT / 'residual_adapter/validation/tabpfn_residual_a100/states'
+    for alpha in (.25, .5):
+        name = f'tabpfn_guarded_a{int(alpha * 100):03d}'
+        target = OUTPUT_ROOT / 'point_guarded' / name
+        (target / 'states').mkdir(parents=True, exist_ok=True)
+        frames, metrics = [], []
+        for state in iter_validation_states(config):
+            native = pd.read_parquet(native_root / f'{state.key}.parquet')
+            frame = guarded_residual_frame(native, native.baseline_log_qc.to_numpy(),
+                                           native.residual_pred_log_qc.to_numpy(), alpha)
+            final = evaluated_frame(PredictionBundle(frame, name), state)
+            final.to_parquet(target / 'states' / f'{state.key}.parquet', index=False)
+            frames.append(final)
+            metrics.append(metrics_for(final, config))
+        pd.concat(frames, ignore_index=True).to_parquet(target / 'predictions.parquet', index=False)
+        pd.DataFrame(metrics).to_csv(target / 'metrics.csv', index=False)
+        write_json(target / 'model_definition.json', {'alpha': alpha,
+            'scope': 'exploratory_addition_after_unguarded_residual_results',
+            'point_rule': 'Preserve the IDW side of log(1 MPa); only point outputs.',
+            'query_truth_used_for_prediction': False,
+            'low_value_identification_improvement_claim': False})
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('candidate', choices=['residual', 'source_bank', 'honest'])
+    parser.add_argument('candidate', choices=['residual', 'source_bank', 'honest', 'point_guarded'])
     args = parser.parse_args()
     config = diagnostic_config()
     if args.candidate == 'residual':
         residual(config)
+    elif args.candidate == 'point_guarded':
+        point_guarded(config)
     else:
         context(config, args.candidate)
 
