@@ -262,6 +262,99 @@ def matched_xgb_gain_tables(curves, candidates):
     return pd.concat(paired_parts, ignore_index=True), pd.DataFrame(fold_rows), pd.DataFrame(global_rows)
 
 
+def calibration_effects(predictions, expected, required_models):
+    """Separate native distribution quality from OOF Platt at fixed p >= .2.
+
+    No probability is substituted for point-only outputs. A model with a
+    partial native distribution or undefined class metrics is reported as
+    unavailable, rather than averaging a convenient subset of states/sites.
+    """
+    validate_prediction_matrix(predictions, expected, required_models)
+    expected_states = expected[STATE_KEYS].drop_duplicates()
+    if len(expected_states) != 60 or expected.site_id.nunique() != 4:
+        raise ValueError('Calibration effects require all 60 states and 4 distinct sites')
+    if set(expected_states.fold_id) != {0, 1, 2}:
+        raise ValueError('Calibration effects require all three folds')
+    for _, curve in expected_states.groupby(['fold_id', 'site_id', 'seed']):
+        if sorted(curve.budget_n.tolist()) != list(BUDGETS):
+            raise ValueError('Calibration effects require the complete budget grid')
+    threshold = .2
+    columns = [f'{source}_{metric}' for source in ['native', 'oof']
+               for metric in ['brier', 'recall', 'fpr']]
+    rows, availability, site_records = [], [], []
+    for model, block in predictions.groupby('model_id', sort=True):
+        native = pd.to_numeric(block.get('p_low_1', pd.Series(np.nan, index=block.index)), errors='coerce')
+        item = {'model_id': model, 'states': len(block[STATE_KEYS].drop_duplicates()),
+                'unique_sites': block.site_id.nunique(), 'status': 'not_available'}
+        if native.isna().all():
+            item['reason'] = 'point_output_has_no_native_probability'
+            availability.append(item)
+            continue
+        if not np.isfinite(native.to_numpy(float)).all() or not native.between(0, 1).all():
+            item['reason'] = 'native_probability_missing_or_invalid_in_some_cells'
+            availability.append(item)
+            continue
+        if 'risk_probability' not in block:
+            raise ValueError(f'OOF probabilities missing for {model}')
+        oof = block.risk_probability.to_numpy(float)
+        if not np.isfinite(oof).all() or ((oof < 0) | (oof > 1)).any():
+            raise ValueError(f'Invalid OOF probabilities for {model}')
+        state_rows = []
+        for key, state in block.groupby(STATE_KEYS, sort=True):
+            record = dict(zip(STATE_KEYS, key))
+            labels = state.truth_qc_mpa.to_numpy(float) < 1.
+            for source, probability_column in [('native', 'p_low_1'), ('oof', 'risk_probability')]:
+                probabilities = state[probability_column].to_numpy(float)
+                decisions = probabilities >= threshold
+                # Match the main evaluator: Brier gives each complete profile
+                # equal weight, while confusion rates count evaluation cells.
+                errors = state[['location_id']].assign(error=(probabilities - labels) ** 2)
+                record[f'{source}_brier'] = float(errors.groupby('location_id').error.mean().mean())
+                record[f'{source}_recall'] = float(decisions[labels].mean()) if labels.any() else np.nan
+                record[f'{source}_fpr'] = float(decisions[~labels].mean()) if (~labels).any() else np.nan
+            state_rows.append(record)
+        metrics = pd.DataFrame(state_rows)
+        if not np.isfinite(metrics[columns].to_numpy(float)).all():
+            item['reason'] = 'recall_or_fpr_undefined_for_at_least_one_frozen_state'
+            item['undefined_state_metrics'] = int(metrics[columns].isna().sum().sum())
+            availability.append(item)
+            continue
+        integrated = []
+        for key, curve in metrics.groupby(['fold_id', 'site_id', 'seed'], sort=True):
+            curve = curve.sort_values('budget_n')
+            if curve.budget_n.tolist() != list(BUDGETS):
+                raise ValueError(f'Incomplete calibration curve for {model}: {key}')
+            x = curve.budget_n.to_numpy(float)
+            record = dict(zip(['fold_id', 'site_id', 'seed'], key))
+            record.update({column: float(np.trapezoid(curve[column].to_numpy(float), x) / (x[-1] - x[0]))
+                           for column in columns})
+            integrated.append(record)
+        curves = pd.DataFrame(integrated)
+        # Explicit reductions prevent repeated validation sites from getting
+        # extra weight, and no missing class metrics are silently skipped.
+        by_fold_site = curves.groupby(['fold_id', 'site_id'])[columns].mean()
+        by_site = by_fold_site.groupby('site_id').mean()
+        if len(by_site) != 4:
+            raise ValueError(f'Missing sites in calibration comparison for {model}')
+        summary = {'model_id': model, 'probability_threshold': threshold,
+                   'registered_states': 60, 'unique_sites': 4, **by_site.mean().to_dict()}
+        for metric in ['brier', 'recall', 'fpr']:
+            summary[f'{metric}_delta_oof_minus_native'] = summary[f'oof_{metric}'] - summary[f'native_{metric}']
+        rows.append(summary)
+        site_records.extend(by_site.reset_index().assign(model_id=model).to_dict('records'))
+        availability.append({**item, 'status': 'available', 'reason': None})
+    table_columns = ['model_id', 'probability_threshold', 'registered_states', 'unique_sites', *columns,
+                     'brier_delta_oof_minus_native', 'recall_delta_oof_minus_native', 'fpr_delta_oof_minus_native']
+    table = pd.DataFrame(rows, columns=table_columns)
+    description = {'scope': 'postprocessing_diagnostic_only_no_gate_changes',
+                   'event': 'qc_mpa < 1.0', 'probability_threshold': threshold,
+                   'weighting': 'normalized_budget_integral_then_seed_mean_then_repeated_fold_mean_per_site_then_equal_4_sites',
+                   'delta_definition': 'OOF minus native; lower Brier/FPR and higher recall are favorable',
+                   'point_models': 'not_available; never assigned invented native probabilities',
+                   'availability': availability, 'effects': rows, 'site_effects': site_records}
+    return table, description
+
+
 def select_trained_candidates(curves, candidates, settings):
     """Use unchanged v2 gates, while preserving all failed trained candidates."""
     folds_present = set(curves.fold_id)
@@ -351,6 +444,11 @@ def analyze_trained_residuals(config, run_dir, *, variants=VARIANTS):
                   number_of_trained_candidates=len(candidates),
                   number_of_reference_models=len(REFERENCE_MODELS),
                   matched_xgb_role='Same v4 trajectory data and IDW residual target; added stronger control, not a changed promotion baseline.')
+    effect_table, effect_details = calibration_effects(
+        pd.read_parquet(output / 'predictions_oof.parquet'), expected, [*REFERENCE_MODELS, *candidates])
+    effect_table.to_csv(output / 'calibration_effects.csv', index=False)
+    write_json(output / 'calibration_effects.json', _plain(effect_details))
+    result['calibration_effects_path'] = str(output / 'calibration_effects.json')
     write_json(output / 'selection.json', _plain(result))
     return _plain(result)
 

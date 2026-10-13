@@ -5,6 +5,7 @@ import pytest
 from cpt_budget.v4.evaluation import (
     METRICS, candidate_ids, select_trained_candidates, training_gain_tables,
     validate_prediction_matrix, matched_xgb_gain_tables, _reference_predictions,
+    calibration_effects,
 )
 
 
@@ -114,3 +115,46 @@ def test_missing_matched_xgb_states_or_artifact_cannot_be_ignored(tmp_path):
         matched_xgb_gain_tables(curves, ['residual_ft_crps_a025'])
     with pytest.raises(FileNotFoundError, match='same-trajectory XGBoost'):
         _reference_predictions({}, tmp_path)
+
+
+def _calibration_predictions():
+    rows = []
+    for fold, sites in [(0, ['a', 'b']), (1, ['a', 'b']), (2, ['c', 'd'])]:
+        for site in sites:
+            for seed in [17, 29]:
+                for budget in [5, 7, 9, 11, 13]:
+                    for model in ['idw', 'gp']:
+                        for depth, truth in [(0, .5), (1, 2.)]:
+                            native = .6 if depth == 0 else .1
+                            oof = .8 if depth == 0 else (.3 if site == 'a' and budget > 5 else .1)
+                            rows.append(dict(fold_id=fold, site_id=site, seed=seed, budget_n=budget,
+                                location_id=f'query_{site}', depth_index=depth, model_id=model,
+                                observed_set_id=f'{fold}_{site}_{seed}_{budget}', investigation_group=f'group_{site}',
+                                role='evaluation', split_role='validation', policy_id='maximin',
+                                pred_log_qc=.1, truth_log_qc=np.log(truth), truth_qc_mpa=truth,
+                                p_low_1=native if model == 'gp' else np.nan, risk_probability=oof))
+    frame = pd.DataFrame(rows)
+    return frame, frame[frame.model_id == 'idw'].copy()
+
+
+def test_calibration_effects_use_same_threshold_budget_integral_and_equal_sites():
+    predictions, expected = _calibration_predictions()
+    table, detail = calibration_effects(predictions, expected, ['idw', 'gp'])
+    assert table.model_id.tolist() == ['gp']
+    row = table.iloc[0]
+    assert row.native_brier == pytest.approx(.085)
+    assert row.oof_brier == pytest.approx(.03375)
+    assert row.native_recall == row.oof_recall == 1.
+    assert row.native_fpr == 0.
+    # Site a occurs twice but receives 1/4 weight. Its FPR curve is [0,1,1,1,1].
+    assert row.oof_fpr == pytest.approx(.875 / 4)
+    assert row.fpr_delta_oof_minus_native == pytest.approx(.21875)
+    assert next(r for r in detail['availability'] if r['model_id'] == 'idw')['status'] == 'not_available'
+
+
+def test_partial_native_probability_never_becomes_a_partial_site_average():
+    predictions, expected = _calibration_predictions()
+    predictions.loc[predictions.model_id.eq('gp').idxmax(), 'p_low_1'] = np.nan
+    table, detail = calibration_effects(predictions, expected, ['idw', 'gp'])
+    assert table.empty
+    assert next(r for r in detail['availability'] if r['model_id'] == 'gp')['reason'] == 'native_probability_missing_or_invalid_in_some_cells'
