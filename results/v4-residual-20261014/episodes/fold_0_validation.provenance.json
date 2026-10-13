@@ -1,0 +1,310 @@
+{
+  "plan_version": "maximin_trajectory_v4",
+  "fold_id": 0,
+  "role": "validation",
+  "scenario_seeds": [
+    907,
+    1009
+  ],
+  "budgets": [
+    5,
+    7,
+    9,
+    11,
+    13
+  ],
+  "geometry_sha256": "12c9840a5874be2391bb84be0e387aa4262e2db36bcc71c361d76f03ea09f274",
+  "geometry_columns_used": [
+    "site_id",
+    "location_id",
+    "near_group_id",
+    "x_m",
+    "y_m",
+    "investigation_group"
+  ],
+  "labels_read": false,
+  "n_episodes": 24,
+  "n_trajectories": 6,
+  "n_included_sites": 3,
+  "n_requested_sites": 3,
+  "evaluation_fraction_target": 0.2,
+  "small_site_rule": "Largest registered budget leaving one whole query near group; never filter by labels.",
+  "separation": "Whole near groups held out from support for each trajectory; masks may differ across trajectories.",
+  "dependence": "Budgets within a trajectory and trajectories within a site are correlated, not independent samples.",
+  "site_coverage": [
+    {
+      "site_id": "kaiapoi_near_river",
+      "n_locations": 9,
+      "n_episodes": 4,
+      "n_trajectories": 2,
+      "budgets": [
+        5,
+        7
+      ],
+      "n_unique_support_locations": 9,
+      "n_unique_query_locations": 4,
+      "n_distinct_query_masks": 2,
+      "n_distinct_support_masks": 4
+    },
+    {
+      "site_id": "lower_hutt_town_hall",
+      "n_locations": 29,
+      "n_episodes": 10,
+      "n_trajectories": 2,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "n_unique_support_locations": 18,
+      "n_unique_query_locations": 10,
+      "n_distinct_query_masks": 2,
+      "n_distinct_support_masks": 10
+    },
+    {
+      "site_id": "tauranga_farmers_building",
+      "n_locations": 28,
+      "n_episodes": 10,
+      "n_trajectories": 2,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "n_unique_support_locations": 19,
+      "n_unique_query_locations": 11,
+      "n_distinct_query_masks": 2,
+      "n_distinct_support_masks": 10
+    }
+  ],
+  "trajectories": [
+    {
+      "site_id": "kaiapoi_near_river",
+      "scenario_seed": 907,
+      "trajectory_id": "trajectory_v4_fb8bf2b17eeae9d9",
+      "n_locations": 9,
+      "n_query_locations": 2,
+      "n_pool_locations": 7,
+      "budgets": [
+        5,
+        7
+      ],
+      "missing_budgets": [
+        9,
+        11,
+        13
+      ],
+      "min_spacing_m": 19.671230261398357,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_9da2f18bd0c6d42e",
+          "location_e814e8c350bb4ae8"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.2222222222222222
+    },
+    {
+      "site_id": "kaiapoi_near_river",
+      "scenario_seed": 1009,
+      "trajectory_id": "trajectory_v4_1f06189bc37b5ea2",
+      "n_locations": 9,
+      "n_query_locations": 2,
+      "n_pool_locations": 7,
+      "budgets": [
+        5,
+        7
+      ],
+      "missing_budgets": [
+        9,
+        11,
+        13
+      ],
+      "min_spacing_m": 19.671230261398357,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_e814e8c350bb4ae8",
+          "location_e9c4850505ae45e7"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.2222222222222222
+    },
+    {
+      "site_id": "lower_hutt_town_hall",
+      "scenario_seed": 907,
+      "trajectory_id": "trajectory_v4_0a7582dd1f7a403f",
+      "n_locations": 29,
+      "n_query_locations": 6,
+      "n_pool_locations": 23,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "missing_budgets": [],
+      "min_spacing_m": 9.885570292093416,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_9dfff1c4f5297ce4",
+          "location_7db6b331ce1eb850"
+        ],
+        [
+          "location_a370a3a917a072e4",
+          "location_5e40bc942b458f7c"
+        ],
+        [
+          "location_58fba283674348aa",
+          "location_8cfd25d11c65f2ae"
+        ],
+        [
+          "location_afcdc9f1cad09396",
+          "location_bc3c07bdf8233485"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.20689655172413793
+    },
+    {
+      "site_id": "lower_hutt_town_hall",
+      "scenario_seed": 1009,
+      "trajectory_id": "trajectory_v4_142c4280339e937d",
+      "n_locations": 29,
+      "n_query_locations": 6,
+      "n_pool_locations": 23,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "missing_budgets": [],
+      "min_spacing_m": 9.272173424341785,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_3e4be02ee4ef4a53",
+          "location_7db6b331ce1eb850"
+        ],
+        [
+          "location_4db59bd0890e2d33",
+          "location_9dfff1c4f5297ce4"
+        ],
+        [
+          "location_e4e8d2f67aaf62e1",
+          "location_bddbbcff6ed73346"
+        ],
+        [
+          "location_53fddaab6479ef75",
+          "location_afcdc9f1cad09396"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.20689655172413793
+    },
+    {
+      "site_id": "tauranga_farmers_building",
+      "scenario_seed": 907,
+      "trajectory_id": "trajectory_v4_fb779a08743ab3f1",
+      "n_locations": 28,
+      "n_query_locations": 6,
+      "n_pool_locations": 22,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "missing_budgets": [],
+      "min_spacing_m": 13.022656171487213,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_b07bf282028bf75f",
+          "location_f002049cde7f3ed8"
+        ],
+        [
+          "location_4bc7a71d44e8f381",
+          "location_147d4ea4032e6c20"
+        ],
+        [
+          "location_c58e7b85035324e7",
+          "location_c4d7b768f24ac42c"
+        ],
+        [
+          "location_ea1bcd3e6538841e",
+          "location_8bfee89ce1be3bb1"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.21428571428571427
+    },
+    {
+      "site_id": "tauranga_farmers_building",
+      "scenario_seed": 1009,
+      "trajectory_id": "trajectory_v4_d0e92b944c709fc0",
+      "n_locations": 28,
+      "n_query_locations": 6,
+      "n_pool_locations": 22,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "missing_budgets": [],
+      "min_spacing_m": 13.7252941682587,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_44beaa4e91d7c37b",
+          "location_fa134ff7a2f0b3c1"
+        ],
+        [
+          "location_f002049cde7f3ed8",
+          "location_ea1bcd3e6538841e"
+        ],
+        [
+          "location_c58e7b85035324e7",
+          "location_06a64a56c069a5ea"
+        ],
+        [
+          "location_8b0d80b31006dba2",
+          "location_4bc7a71d44e8f381"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.21428571428571427
+    }
+  ],
+  "skipped": [
+    {
+      "site_id": "kaiapoi_near_river",
+      "scenario_seed": 907,
+      "n_locations": 9,
+      "missing_budgets": [
+        9,
+        11,
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    },
+    {
+      "site_id": "kaiapoi_near_river",
+      "scenario_seed": 1009,
+      "n_locations": 9,
+      "missing_budgets": [
+        9,
+        11,
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    }
+  ]
+}

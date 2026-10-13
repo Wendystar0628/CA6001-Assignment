@@ -1,0 +1,890 @@
+{
+  "scope": "postprocessing_diagnostic_only_no_gate_changes",
+  "event": "qc_mpa < 1.0",
+  "probability_threshold": 0.2,
+  "weighting": "normalized_budget_integral_then_seed_mean_then_repeated_fold_mean_per_site_then_equal_4_sites",
+  "delta_definition": "OOF minus native; lower Brier/FPR and higher recall are favorable",
+  "point_models": "not_available; never assigned invented native probabilities",
+  "availability": [
+    {
+      "model_id": "gp",
+      "states": 60,
+      "unique_sites": 4,
+      "status": "available",
+      "reason": null
+    },
+    {
+      "model_id": "idw",
+      "states": 60,
+      "unique_sites": 4,
+      "status": "not_available",
+      "reason": "point_output_has_no_native_probability"
+    },
+    {
+      "model_id": "idw_residual",
+      "states": 60,
+      "unique_sites": 4,
+      "status": "not_available",
+      "reason": "point_output_has_no_native_probability"
+    },
+    {
+      "model_id": "residual_ft_crps_a025",
+      "states": 60,
+      "unique_sites": 4,
+      "status": "available",
+      "reason": null
+    },
+    {
+      "model_id": "residual_ft_crps_a050",
+      "states": 60,
+      "unique_sites": 4,
+      "status": "available",
+      "reason": null
+    },
+    {
+      "model_id": "residual_ft_crps_a100",
+      "states": 60,
+      "unique_sites": 4,
+      "status": "available",
+      "reason": null
+    },
+    {
+      "model_id": "residual_ft_crps_guarded_a025",
+      "states": 60,
+      "unique_sites": 4,
+      "status": "not_available",
+      "reason": "point_output_has_no_native_probability"
+    },
+    {
+      "model_id": "residual_ft_crps_guarded_a050",
+      "states": 60,
+      "unique_sites": 4,
+      "status": "not_available",
+      "reason": "point_output_has_no_native_probability"
+    },
+    {
+      "model_id": "residual_ft_task_a025",
+      "states": 60,
+      "unique_sites": 4,
+      "status": "available",
+      "reason": null
+    },
+    {
+      "model_id": "residual_ft_task_a050",
+      "states": 60,
+      "unique_sites": 4,
+      "status": "available",
+      "reason": null
+    },
+    {
+      "model_id": "residual_ft_task_a100",
+      "states": 60,
+      "unique_sites": 4,
+      "status": "available",
+      "reason": null
+    },
+    {
+      "model_id": "residual_ft_task_guarded_a025",
+      "states": 60,
+      "unique_sites": 4,
+      "status": "not_available",
+      "reason": "point_output_has_no_native_probability"
+    },
+    {
+      "model_id": "residual_ft_task_guarded_a050",
+      "states": 60,
+      "unique_sites": 4,
+      "status": "not_available",
+      "reason": "point_output_has_no_native_probability"
+    },
+    {
+      "model_id": "tabpfn_crps",
+      "states": 60,
+      "unique_sites": 4,
+      "status": "available",
+      "reason": null
+    },
+    {
+      "model_id": "tabpfn_guarded_a025",
+      "states": 60,
+      "unique_sites": 4,
+      "status": "not_available",
+      "reason": "point_output_has_no_native_probability"
+    },
+    {
+      "model_id": "tabpfn_guarded_a050",
+      "states": 60,
+      "unique_sites": 4,
+      "status": "not_available",
+      "reason": "point_output_has_no_native_probability"
+    },
+    {
+      "model_id": "tabpfn_residual_a025",
+      "states": 60,
+      "unique_sites": 4,
+      "status": "available",
+      "reason": null
+    },
+    {
+      "model_id": "tabpfn_residual_a050",
+      "states": 60,
+      "unique_sites": 4,
+      "status": "available",
+      "reason": null
+    },
+    {
+      "model_id": "tabpfn_residual_a100",
+      "states": 60,
+      "unique_sites": 4,
+      "status": "available",
+      "reason": null
+    },
+    {
+      "model_id": "tabpfn_spatial",
+      "states": 60,
+      "unique_sites": 4,
+      "status": "available",
+      "reason": null
+    },
+    {
+      "model_id": "tabpfn_task",
+      "states": 60,
+      "unique_sites": 4,
+      "status": "available",
+      "reason": null
+    },
+    {
+      "model_id": "xgb24",
+      "states": 60,
+      "unique_sites": 4,
+      "status": "not_available",
+      "reason": "point_output_has_no_native_probability"
+    },
+    {
+      "model_id": "xgb_residual_matched",
+      "states": 60,
+      "unique_sites": 4,
+      "status": "not_available",
+      "reason": "point_output_has_no_native_probability"
+    }
+  ],
+  "effects": [
+    {
+      "model_id": "gp",
+      "probability_threshold": 0.2,
+      "registered_states": 60,
+      "unique_sites": 4,
+      "native_brier": 0.11954513768765856,
+      "native_recall": 0.6079066211821267,
+      "native_fpr": 0.22568402526148967,
+      "oof_brier": 0.12515704896399948,
+      "oof_recall": 0.6220454197303922,
+      "oof_fpr": 0.24871038006463633,
+      "brier_delta_oof_minus_native": 0.00561191127634092,
+      "recall_delta_oof_minus_native": 0.014138798548265497,
+      "fpr_delta_oof_minus_native": 0.02302635480314666
+    },
+    {
+      "model_id": "residual_ft_crps_a025",
+      "probability_threshold": 0.2,
+      "registered_states": 60,
+      "unique_sites": 4,
+      "native_brier": 0.14250321674538557,
+      "native_recall": 0.4336483962575415,
+      "native_fpr": 0.096070458400705,
+      "oof_brier": 0.13742740782580332,
+      "oof_recall": 0.6159904376414027,
+      "oof_fpr": 0.3627889162962764,
+      "brier_delta_oof_minus_native": -0.005075808919582259,
+      "recall_delta_oof_minus_native": 0.18234204138386123,
+      "fpr_delta_oof_minus_native": 0.2667184578955714
+    },
+    {
+      "model_id": "residual_ft_crps_a050",
+      "probability_threshold": 0.2,
+      "registered_states": 60,
+      "unique_sites": 4,
+      "native_brier": 0.12525338851735712,
+      "native_recall": 0.5532497584370287,
+      "native_fpr": 0.144793750343423,
+      "oof_brier": 0.13195345557823335,
+      "oof_recall": 0.655652426234917,
+      "oof_fpr": 0.38812373842662257,
+      "brier_delta_oof_minus_native": 0.006700067060876225,
+      "recall_delta_oof_minus_native": 0.10240266779788831,
+      "fpr_delta_oof_minus_native": 0.24332998808319956
+    },
+    {
+      "model_id": "residual_ft_crps_a100",
+      "probability_threshold": 0.2,
+      "registered_states": 60,
+      "unique_sites": 4,
+      "native_brier": 0.11396012077726568,
+      "native_recall": 0.740343667515083,
+      "native_fpr": 0.3027111088811483,
+      "oof_brier": 0.1314472669148402,
+      "oof_recall": 0.6528130302601809,
+      "oof_fpr": 0.4134842691552739,
+      "brier_delta_oof_minus_native": 0.01748714613757453,
+      "recall_delta_oof_minus_native": -0.08753063725490207,
+      "fpr_delta_oof_minus_native": 0.11077316027412559
+    },
+    {
+      "model_id": "residual_ft_task_a025",
+      "probability_threshold": 0.2,
+      "registered_states": 60,
+      "unique_sites": 4,
+      "native_brier": 0.1426215101462289,
+      "native_recall": 0.4356972626791101,
+      "native_fpr": 0.09695224819947823,
+      "oof_brier": 0.13722569498719636,
+      "oof_recall": 0.613731529270362,
+      "oof_fpr": 0.36467816028481476,
+      "brier_delta_oof_minus_native": -0.005395815159032535,
+      "recall_delta_oof_minus_native": 0.17803426659125193,
+      "fpr_delta_oof_minus_native": 0.2677259120853365
+    },
+    {
+      "model_id": "residual_ft_task_a050",
+      "probability_threshold": 0.2,
+      "registered_states": 60,
+      "unique_sites": 4,
+      "native_brier": 0.12521467932709368,
+      "native_recall": 0.5647272400546757,
+      "native_fpr": 0.1492183456836098,
+      "oof_brier": 0.1313533028136451,
+      "oof_recall": 0.6544725973322021,
+      "oof_fpr": 0.38185647831597785,
+      "brier_delta_oof_minus_native": 0.00613862348655142,
+      "recall_delta_oof_minus_native": 0.08974535727752642,
+      "fpr_delta_oof_minus_native": 0.23263813263236804
+    },
+    {
+      "model_id": "residual_ft_task_a100",
+      "probability_threshold": 0.2,
+      "registered_states": 60,
+      "unique_sites": 4,
+      "native_brier": 0.11376246733555719,
+      "native_recall": 0.7424323034502263,
+      "native_fpr": 0.30328572796686026,
+      "oof_brier": 0.1295251160000298,
+      "oof_recall": 0.6417609351432881,
+      "oof_fpr": 0.3966168720404473,
+      "brier_delta_oof_minus_native": 0.01576264866447262,
+      "recall_delta_oof_minus_native": -0.10067136830693812,
+      "fpr_delta_oof_minus_native": 0.09333114407358706
+    },
+    {
+      "model_id": "tabpfn_crps",
+      "probability_threshold": 0.2,
+      "registered_states": 60,
+      "unique_sites": 4,
+      "native_brier": 0.12053826309883958,
+      "native_recall": 0.4849766980109352,
+      "native_fpr": 0.21660862600919706,
+      "oof_brier": 0.14117227117859255,
+      "oof_recall": 0.6229945854543741,
+      "oof_fpr": 0.44120927836118995,
+      "brier_delta_oof_minus_native": 0.020634008079752963,
+      "recall_delta_oof_minus_native": 0.13801788744343896,
+      "fpr_delta_oof_minus_native": 0.2246006523519929
+    },
+    {
+      "model_id": "tabpfn_residual_a025",
+      "probability_threshold": 0.2,
+      "registered_states": 60,
+      "unique_sites": 4,
+      "native_brier": 0.1437241898240323,
+      "native_recall": 0.4149771988122172,
+      "native_fpr": 0.08506807396048856,
+      "oof_brier": 0.1423796155680387,
+      "oof_recall": 0.5972535468514328,
+      "oof_fpr": 0.3535790934107072,
+      "brier_delta_oof_minus_native": -0.0013445742559936025,
+      "recall_delta_oof_minus_native": 0.18227634803921566,
+      "fpr_delta_oof_minus_native": 0.26851101945021866
+    },
+    {
+      "model_id": "tabpfn_residual_a050",
+      "probability_threshold": 0.2,
+      "registered_states": 60,
+      "unique_sites": 4,
+      "native_brier": 0.13051905317114626,
+      "native_recall": 0.45490240266779786,
+      "native_fpr": 0.12380723343123802,
+      "oof_brier": 0.14111481110170854,
+      "oof_recall": 0.6025545284219457,
+      "oof_fpr": 0.3694373356924207,
+      "brier_delta_oof_minus_native": 0.010595757930562277,
+      "recall_delta_oof_minus_native": 0.14765212575414782,
+      "fpr_delta_oof_minus_native": 0.2456301022611827
+    },
+    {
+      "model_id": "tabpfn_residual_a100",
+      "probability_threshold": 0.2,
+      "registered_states": 60,
+      "unique_sites": 4,
+      "native_brier": 0.13028793286841098,
+      "native_recall": 0.5940469457013575,
+      "native_fpr": 0.24720324097950433,
+      "oof_brier": 0.14979419083920084,
+      "oof_recall": 0.5655457555618402,
+      "oof_fpr": 0.3837119613805939,
+      "brier_delta_oof_minus_native": 0.019506257970789864,
+      "recall_delta_oof_minus_native": -0.02850119013951735,
+      "fpr_delta_oof_minus_native": 0.13650872040108955
+    },
+    {
+      "model_id": "tabpfn_spatial",
+      "probability_threshold": 0.2,
+      "registered_states": 60,
+      "unique_sites": 4,
+      "native_brier": 0.13082734606240132,
+      "native_recall": 0.5359762384521116,
+      "native_fpr": 0.23652534454356347,
+      "oof_brier": 0.14592517336836058,
+      "oof_recall": 0.545968107796003,
+      "oof_fpr": 0.37022220134245887,
+      "brier_delta_oof_minus_native": 0.015097827305959266,
+      "recall_delta_oof_minus_native": 0.009991869343891402,
+      "fpr_delta_oof_minus_native": 0.1336968567988954
+    },
+    {
+      "model_id": "tabpfn_task",
+      "probability_threshold": 0.2,
+      "registered_states": 60,
+      "unique_sites": 4,
+      "native_brier": 0.12069955914098904,
+      "native_recall": 0.47664719433446456,
+      "native_fpr": 0.21722846403873186,
+      "oof_brier": 0.14143680385727042,
+      "oof_recall": 0.620366851668552,
+      "oof_fpr": 0.4421959517029085,
+      "brier_delta_oof_minus_native": 0.020737244716281383,
+      "recall_delta_oof_minus_native": 0.14371965733408743,
+      "fpr_delta_oof_minus_native": 0.22496748766417662
+    }
+  ],
+  "site_effects": [
+    {
+      "site_id": "christchurch_metro_sports_facility",
+      "native_brier": 0.09402146118937242,
+      "native_recall": 0.7886117788461539,
+      "native_fpr": 0.19767507530120482,
+      "oof_brier": 0.10328899770384291,
+      "oof_recall": 0.759765625,
+      "oof_fpr": 0.166222703313253,
+      "model_id": "gp"
+    },
+    {
+      "site_id": "lower_hutt_town_hall",
+      "native_brier": 0.04544621536677901,
+      "native_recall": 0.815625,
+      "native_fpr": 0.09817754060579455,
+      "oof_brier": 0.06247990196882511,
+      "oof_recall": 1.0,
+      "oof_fpr": 0.37363504170324846,
+      "model_id": "gp"
+    },
+    {
+      "site_id": "marshland",
+      "native_brier": 0.09457071251911595,
+      "native_recall": 0.21838235294117647,
+      "native_fpr": 0.06413444150785923,
+      "oof_brier": 0.09453397296865085,
+      "oof_recall": 0.23676470588235293,
+      "oof_fpr": 0.06561239393517874,
+      "model_id": "gp"
+    },
+    {
+      "site_id": "tauranga_farmers_building",
+      "native_brier": 0.24414216167536684,
+      "native_recall": 0.6090073529411765,
+      "native_fpr": 0.5427490436311001,
+      "oof_brier": 0.24032532321467906,
+      "oof_recall": 0.49165134803921573,
+      "oof_fpr": 0.3893713813068652,
+      "model_id": "gp"
+    },
+    {
+      "site_id": "christchurch_metro_sports_facility",
+      "native_brier": 0.10556199264098956,
+      "native_recall": 0.6185396634615384,
+      "native_fpr": 0.08889307228915663,
+      "oof_brier": 0.09089185034623017,
+      "oof_recall": 0.7035757211538461,
+      "oof_fpr": 0.15188723644578314,
+      "model_id": "residual_ft_crps_a025"
+    },
+    {
+      "site_id": "lower_hutt_town_hall",
+      "native_brier": 0.05109462933077252,
+      "native_recall": 0.56796875,
+      "native_fpr": 0.04937513718173837,
+      "oof_brier": 0.100093331366675,
+      "oof_recall": 1.0,
+      "oof_fpr": 1.0,
+      "model_id": "residual_ft_crps_a025"
+    },
+    {
+      "site_id": "marshland",
+      "native_brier": 0.11597052651046459,
+      "native_recall": 0.3110294117647059,
+      "native_fpr": 0.04562526081513423,
+      "oof_brier": 0.09620800650570527,
+      "oof_recall": 0.4698529411764706,
+      "oof_fpr": 0.058092224231464734,
+      "model_id": "residual_ft_crps_a025"
+    },
+    {
+      "site_id": "tauranga_farmers_building",
+      "native_brier": 0.29738571849931555,
+      "native_recall": 0.23705575980392157,
+      "native_fpr": 0.20038836331679072,
+      "oof_brier": 0.26251644308460287,
+      "oof_recall": 0.2905330882352941,
+      "oof_fpr": 0.2411762045078577,
+      "model_id": "residual_ft_crps_a025"
+    },
+    {
+      "site_id": "christchurch_metro_sports_facility",
+      "native_brier": 0.09585645745036357,
+      "native_recall": 0.6948617788461539,
+      "native_fpr": 0.14372646837349395,
+      "oof_brier": 0.09042122434442997,
+      "oof_recall": 0.8078425480769231,
+      "oof_fpr": 0.20677240210843373,
+      "model_id": "residual_ft_crps_a050"
+    },
+    {
+      "site_id": "lower_hutt_town_hall",
+      "native_brier": 0.0427028253068677,
+      "native_recall": 0.73984375,
+      "native_fpr": 0.058665770412642676,
+      "oof_brier": 0.09141813516224155,
+      "oof_recall": 1.0,
+      "oof_fpr": 0.963019232879719,
+      "model_id": "residual_ft_crps_a050"
+    },
+    {
+      "site_id": "marshland",
+      "native_brier": 0.10447027738953293,
+      "native_recall": 0.3970588235294118,
+      "native_fpr": 0.05111976630963973,
+      "oof_brier": 0.09512267950699232,
+      "oof_recall": 0.44485294117647056,
+      "oof_fpr": 0.06437786896647657,
+      "model_id": "residual_ft_crps_a050"
+    },
+    {
+      "site_id": "tauranga_farmers_building",
+      "native_brier": 0.25798399392266425,
+      "native_recall": 0.381234681372549,
+      "native_fpr": 0.3256629962779156,
+      "oof_brier": 0.2508517832992696,
+      "oof_recall": 0.3699142156862745,
+      "oof_fpr": 0.31832544975186106,
+      "model_id": "residual_ft_crps_a050"
+    },
+    {
+      "site_id": "christchurch_metro_sports_facility",
+      "native_brier": 0.09415548656303895,
+      "native_recall": 0.8425480769230769,
+      "native_fpr": 0.2543910015060241,
+      "oof_brier": 0.09172565208984287,
+      "oof_recall": 0.8425480769230769,
+      "oof_fpr": 0.2543910015060241,
+      "model_id": "residual_ft_crps_a100"
+    },
+    {
+      "site_id": "lower_hutt_town_hall",
+      "native_brier": 0.041299725207077594,
+      "native_recall": 0.9015624999999999,
+      "native_fpr": 0.08996721356453029,
+      "oof_brier": 0.09566222096648484,
+      "oof_recall": 1.0,
+      "oof_fpr": 0.9809660338015802,
+      "model_id": "residual_ft_crps_a100"
+    },
+    {
+      "site_id": "marshland",
+      "native_brier": 0.09463439283833272,
+      "native_recall": 0.42205882352941176,
+      "native_fpr": 0.08856412574767006,
+      "oof_brier": 0.09639645698659555,
+      "oof_recall": 0.36176470588235293,
+      "oof_fpr": 0.04826818750869384,
+      "model_id": "residual_ft_crps_a100"
+    },
+    {
+      "site_id": "tauranga_farmers_building",
+      "native_brier": 0.22575087850061346,
+      "native_recall": 0.7952052696078431,
+      "native_fpr": 0.7779220947063689,
+      "oof_brier": 0.24200473761643762,
+      "oof_recall": 0.40693933823529416,
+      "oof_fpr": 0.37031185380479736,
+      "model_id": "residual_ft_crps_a100"
+    },
+    {
+      "site_id": "christchurch_metro_sports_facility",
+      "native_brier": 0.10558462586714584,
+      "native_recall": 0.6146334134615384,
+      "native_fpr": 0.08773531626506023,
+      "oof_brier": 0.09088510664003285,
+      "oof_recall": 0.6987680288461539,
+      "oof_fpr": 0.15110598644578313,
+      "model_id": "residual_ft_task_a025"
+    },
+    {
+      "site_id": "lower_hutt_town_hall",
+      "native_brier": 0.051329590705134,
+      "native_recall": 0.5703125,
+      "native_fpr": 0.04937513718173837,
+      "oof_brier": 0.09984594163233947,
+      "oof_recall": 1.0,
+      "oof_fpr": 1.0,
+      "model_id": "residual_ft_task_a025"
+    },
+    {
+      "site_id": "marshland",
+      "native_brier": 0.11634213379403371,
+      "native_recall": 0.3110294117647059,
+      "native_fpr": 0.04562526081513423,
+      "oof_brier": 0.09632701194094674,
+      "oof_recall": 0.45882352941176474,
+      "oof_fpr": 0.0601526637919043,
+      "model_id": "residual_ft_task_a025"
+    },
+    {
+      "site_id": "tauranga_farmers_building",
+      "native_brier": 0.297229690218602,
+      "native_recall": 0.24681372549019606,
+      "native_fpr": 0.20507327853598012,
+      "oof_brier": 0.2618447197354664,
+      "oof_recall": 0.29733455882352944,
+      "oof_fpr": 0.24745399090157155,
+      "model_id": "residual_ft_task_a025"
+    },
+    {
+      "site_id": "christchurch_metro_sports_facility",
+      "native_brier": 0.09585933504943267,
+      "native_recall": 0.6987680288461539,
+      "native_fpr": 0.14143919427710844,
+      "oof_brier": 0.09030332878817995,
+      "oof_recall": 0.8102463942307693,
+      "oof_fpr": 0.20719126506024094,
+      "model_id": "residual_ft_task_a050"
+    },
+    {
+      "site_id": "lower_hutt_town_hall",
+      "native_brier": 0.0427971952494635,
+      "native_recall": 0.75859375,
+      "native_fpr": 0.05913218832309043,
+      "oof_brier": 0.0897741011350379,
+      "oof_recall": 1.0,
+      "oof_fpr": 0.9396434646619842,
+      "model_id": "residual_ft_task_a050"
+    },
+    {
+      "site_id": "marshland",
+      "native_brier": 0.10472903731139077,
+      "native_recall": 0.3970588235294118,
+      "native_fpr": 0.05170225344275977,
+      "oof_brier": 0.09512850682532879,
+      "oof_recall": 0.43014705882352944,
+      "oof_fpr": 0.062317429406036996,
+      "model_id": "residual_ft_task_a050"
+    },
+    {
+      "site_id": "tauranga_farmers_building",
+      "native_brier": 0.25747314969808777,
+      "native_recall": 0.40448835784313725,
+      "native_fpr": 0.3445997466914806,
+      "oof_brier": 0.2502072745060337,
+      "oof_recall": 0.3774969362745098,
+      "oof_fpr": 0.3182737541356493,
+      "model_id": "residual_ft_task_a050"
+    },
+    {
+      "site_id": "christchurch_metro_sports_facility",
+      "native_brier": 0.09403028689578788,
+      "native_recall": 0.8305288461538461,
+      "native_fpr": 0.2505835843373494,
+      "oof_brier": 0.09204321843638422,
+      "oof_recall": 0.8401442307692307,
+      "oof_fpr": 0.2610175075301205,
+      "model_id": "residual_ft_task_a100"
+    },
+    {
+      "site_id": "lower_hutt_town_hall",
+      "native_brier": 0.04121307539410834,
+      "native_recall": 0.928125,
+      "native_fpr": 0.09276229148375767,
+      "oof_brier": 0.08817600897450517,
+      "oof_recall": 1.0,
+      "oof_fpr": 0.9088976075504829,
+      "model_id": "residual_ft_task_a100"
+    },
+    {
+      "site_id": "marshland",
+      "native_brier": 0.09452496761505474,
+      "native_recall": 0.4073529411764706,
+      "native_fpr": 0.08365210738628459,
+      "oof_brier": 0.09642670337878914,
+      "oof_recall": 0.32941176470588235,
+      "oof_fpr": 0.04758137432188065,
+      "model_id": "residual_ft_task_a100"
+    },
+    {
+      "site_id": "tauranga_farmers_building",
+      "native_brier": 0.22528153943727777,
+      "native_recall": 0.8037224264705882,
+      "native_fpr": 0.7861449286600495,
+      "oof_brier": 0.24145453321044064,
+      "oof_recall": 0.3974877450980392,
+      "oof_fpr": 0.3689709987593052,
+      "model_id": "residual_ft_task_a100"
+    },
+    {
+      "site_id": "christchurch_metro_sports_facility",
+      "native_brier": 0.08752185179171103,
+      "native_recall": 0.9045973557692308,
+      "native_fpr": 0.2565229668674699,
+      "oof_brier": 0.08856948495509426,
+      "oof_recall": 0.8973858173076923,
+      "oof_fpr": 0.2414439006024096,
+      "model_id": "tabpfn_crps"
+    },
+    {
+      "site_id": "lower_hutt_town_hall",
+      "native_brier": 0.050738494652749044,
+      "native_recall": 0.359375,
+      "native_fpr": 0.043603215539947324,
+      "oof_brier": 0.1228419176551872,
+      "oof_recall": 1.0,
+      "oof_fpr": 1.0,
+      "model_id": "tabpfn_crps"
+    },
+    {
+      "site_id": "marshland",
+      "native_brier": 0.09569743689011803,
+      "native_recall": 0.23455882352941176,
+      "native_fpr": 0.10097023229934622,
+      "oof_brier": 0.0991559805087259,
+      "oof_recall": 0.13970588235294118,
+      "oof_fpr": 0.031115245513979692,
+      "model_id": "tabpfn_crps"
+    },
+    {
+      "site_id": "tauranga_farmers_building",
+      "native_brier": 0.24819526906078024,
+      "native_recall": 0.44137561274509807,
+      "native_fpr": 0.4653380893300248,
+      "oof_brier": 0.25412170159536285,
+      "oof_recall": 0.4548866421568628,
+      "oof_fpr": 0.49227796732837054,
+      "model_id": "tabpfn_crps"
+    },
+    {
+      "site_id": "christchurch_metro_sports_facility",
+      "native_brier": 0.10246360035963852,
+      "native_recall": 0.6102764423076923,
+      "native_fpr": 0.08879423945783133,
+      "oof_brier": 0.09209164036511847,
+      "oof_recall": 0.7040264423076923,
+      "oof_fpr": 0.15183076054216868,
+      "model_id": "tabpfn_residual_a025"
+    },
+    {
+      "site_id": "lower_hutt_town_hall",
+      "native_brier": 0.05122838949742639,
+      "native_recall": 0.5578125,
+      "native_fpr": 0.04594902326602282,
+      "oof_brier": 0.10777999794487954,
+      "oof_recall": 1.0,
+      "oof_fpr": 1.0,
+      "model_id": "tabpfn_residual_a025"
+    },
+    {
+      "site_id": "marshland",
+      "native_brier": 0.1121816730694713,
+      "native_recall": 0.31838235294117645,
+      "native_fpr": 0.044251634441507856,
+      "oof_brier": 0.09597509031930719,
+      "oof_recall": 0.48455882352941176,
+      "oof_fpr": 0.07320211434135485,
+      "model_id": "tabpfn_residual_a025"
+    },
+    {
+      "site_id": "tauranga_farmers_building",
+      "native_brier": 0.309023096369593,
+      "native_recall": 0.1734375,
+      "native_fpr": 0.16127739867659224,
+      "oof_brier": 0.2736717336428495,
+      "oof_recall": 0.20042892156862743,
+      "oof_fpr": 0.1892834987593052,
+      "model_id": "tabpfn_residual_a025"
+    },
+    {
+      "site_id": "christchurch_metro_sports_facility",
+      "native_brier": 0.09436174845352727,
+      "native_recall": 0.6780348557692308,
+      "native_fpr": 0.14647025602409638,
+      "oof_brier": 0.09189155204636285,
+      "oof_recall": 0.7507512019230769,
+      "oof_fpr": 0.18373023343373493,
+      "model_id": "tabpfn_residual_a050"
+    },
+    {
+      "site_id": "lower_hutt_town_hall",
+      "native_brier": 0.045702874050310364,
+      "native_recall": 0.6124999999999999,
+      "native_fpr": 0.05424851843722563,
+      "oof_brier": 0.10918918127486993,
+      "oof_recall": 1.0,
+      "oof_fpr": 1.0,
+      "model_id": "tabpfn_residual_a050"
+    },
+    {
+      "site_id": "marshland",
+      "native_brier": 0.10078774613809059,
+      "native_recall": 0.26838235294117646,
+      "native_fpr": 0.05771838920573098,
+      "oof_brier": 0.09479714277222599,
+      "oof_recall": 0.41250000000000003,
+      "oof_fpr": 0.07815760189177912,
+      "model_id": "tabpfn_residual_a050"
+    },
+    {
+      "site_id": "tauranga_farmers_building",
+      "native_brier": 0.28122384404265677,
+      "native_recall": 0.2606924019607843,
+      "native_fpr": 0.2367917700578991,
+      "oof_brier": 0.2685813683133754,
+      "oof_recall": 0.24696691176470587,
+      "oof_fpr": 0.21586150744416877,
+      "model_id": "tabpfn_residual_a050"
+    },
+    {
+      "site_id": "christchurch_metro_sports_facility",
+      "native_brier": 0.09813609523350916,
+      "native_recall": 0.8112980769230769,
+      "native_fpr": 0.24454066265060243,
+      "oof_brier": 0.09907525142974968,
+      "oof_recall": 0.7130408653846154,
+      "oof_fpr": 0.16986069277108434,
+      "model_id": "tabpfn_residual_a100"
+    },
+    {
+      "site_id": "lower_hutt_town_hall",
+      "native_brier": 0.050358752808064206,
+      "native_recall": 0.7421875,
+      "native_fpr": 0.12606315847234417,
+      "oof_brier": 0.12284191902475111,
+      "oof_recall": 1.0,
+      "oof_fpr": 1.0,
+      "model_id": "tabpfn_residual_a100"
+    },
+    {
+      "site_id": "marshland",
+      "native_brier": 0.09986357629624594,
+      "native_recall": 0.36250000000000004,
+      "native_fpr": 0.15007302823758517,
+      "oof_brier": 0.09844093102765301,
+      "oof_recall": 0.28602941176470587,
+      "oof_fpr": 0.10323932396717207,
+      "model_id": "tabpfn_residual_a100"
+    },
+    {
+      "site_id": "tauranga_farmers_building",
+      "native_brier": 0.2727933071358246,
+      "native_recall": 0.46020220588235294,
+      "native_fpr": 0.4681361145574855,
+      "oof_brier": 0.27881866187464954,
+      "oof_recall": 0.2631127450980392,
+      "oof_fpr": 0.2617478287841191,
+      "model_id": "tabpfn_residual_a100"
+    },
+    {
+      "site_id": "christchurch_metro_sports_facility",
+      "native_brier": 0.09280111482462247,
+      "native_recall": 0.8811598557692308,
+      "native_fpr": 0.21507906626506024,
+      "oof_brier": 0.09352293862034468,
+      "oof_recall": 0.7146935096153846,
+      "oof_fpr": 0.15051298945783131,
+      "model_id": "tabpfn_spatial"
+    },
+    {
+      "site_id": "lower_hutt_town_hall",
+      "native_brier": 0.05408608295374062,
+      "native_recall": 0.5046875,
+      "native_fpr": 0.10686457418788411,
+      "oof_brier": 0.1228419175344304,
+      "oof_recall": 1.0,
+      "oof_fpr": 1.0,
+      "model_id": "tabpfn_spatial"
+    },
+    {
+      "site_id": "marshland",
+      "native_brier": 0.0976325233232522,
+      "native_recall": 0.3536764705882353,
+      "native_fpr": 0.2206669912366115,
+      "oof_brier": 0.09596710238783375,
+      "oof_recall": 0.2161764705882353,
+      "oof_fpr": 0.08772951731812492,
+      "model_id": "tabpfn_spatial"
+    },
+    {
+      "site_id": "tauranga_farmers_building",
+      "native_brier": 0.27878966314799003,
+      "native_recall": 0.40438112745098037,
+      "native_fpr": 0.40349074648469807,
+      "oof_brier": 0.27136873493083347,
+      "oof_recall": 0.25300245098039215,
+      "oof_fpr": 0.24264629859387923,
+      "model_id": "tabpfn_spatial"
+    },
+    {
+      "site_id": "christchurch_metro_sports_facility",
+      "native_brier": 0.08763371336315269,
+      "native_recall": 0.9045973557692308,
+      "native_fpr": 0.25687123493975905,
+      "oof_brier": 0.08881388088013337,
+      "oof_recall": 0.9021935096153846,
+      "oof_fpr": 0.24375941265060241,
+      "model_id": "tabpfn_task"
+    },
+    {
+      "site_id": "lower_hutt_town_hall",
+      "native_brier": 0.05078376457853583,
+      "native_recall": 0.353125,
+      "native_fpr": 0.044529192273924496,
+      "oof_brier": 0.12284191966932045,
+      "oof_recall": 1.0,
+      "oof_fpr": 1.0,
+      "model_id": "tabpfn_task"
+    },
+    {
+      "site_id": "marshland",
+      "native_brier": 0.09601278444962699,
+      "native_recall": 0.2051470588235294,
+      "native_fpr": 0.09711886215050772,
+      "oof_brier": 0.0995903739099198,
+      "oof_recall": 0.125,
+      "oof_fpr": 0.02974161914035332,
+      "model_id": "tabpfn_task"
+    },
+    {
+      "site_id": "tauranga_farmers_building",
+      "native_brier": 0.24836797417264067,
+      "native_recall": 0.44371936274509804,
+      "native_fpr": 0.47039456679073616,
+      "oof_brier": 0.25450104096970805,
+      "oof_recall": 0.45427389705882354,
+      "oof_fpr": 0.4952827750206782,
+      "model_id": "tabpfn_task"
+    }
+  ]
+}

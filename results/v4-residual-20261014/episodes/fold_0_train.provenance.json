@@ -1,0 +1,4866 @@
+{
+  "plan_version": "maximin_trajectory_v4",
+  "fold_id": 0,
+  "role": "train",
+  "scenario_seeds": [
+    107,
+    211,
+    307,
+    401,
+    503,
+    601,
+    701,
+    809
+  ],
+  "budgets": [
+    5,
+    7,
+    9,
+    11,
+    13
+  ],
+  "geometry_sha256": "ebd070a1f213e9fac3097a625400bb3738ddb5d36ae3dcc0129b9d6659050883",
+  "geometry_columns_used": [
+    "site_id",
+    "location_id",
+    "near_group_id",
+    "x_m",
+    "y_m",
+    "investigation_group"
+  ],
+  "labels_read": false,
+  "n_episodes": 408,
+  "n_trajectories": 112,
+  "n_included_sites": 14,
+  "n_requested_sites": 17,
+  "evaluation_fraction_target": 0.2,
+  "small_site_rule": "Largest registered budget leaving one whole query near group; never filter by labels.",
+  "separation": "Whole near groups held out from support for each trajectory; masks may differ across trajectories.",
+  "dependence": "Budgets within a trajectory and trajectories within a site are correlated, not independent samples.",
+  "site_coverage": [
+    {
+      "site_id": "avondale",
+      "n_locations": 9,
+      "n_episodes": 16,
+      "n_trajectories": 8,
+      "budgets": [
+        5,
+        7
+      ],
+      "n_unique_support_locations": 9,
+      "n_unique_query_locations": 7,
+      "n_distinct_query_masks": 7,
+      "n_distinct_support_masks": 15
+    },
+    {
+      "site_id": "avonside",
+      "n_locations": 10,
+      "n_episodes": 24,
+      "n_trajectories": 8,
+      "budgets": [
+        5,
+        7,
+        9
+      ],
+      "n_unique_support_locations": 10,
+      "n_unique_query_locations": 6,
+      "n_distinct_query_masks": 6,
+      "n_distinct_support_masks": 20
+    },
+    {
+      "site_id": "baytown",
+      "n_locations": 3,
+      "n_episodes": 0,
+      "n_trajectories": 0,
+      "budgets": [],
+      "n_unique_support_locations": 0,
+      "n_unique_query_locations": 0,
+      "n_distinct_query_masks": 0,
+      "n_distinct_support_masks": 0
+    },
+    {
+      "site_id": "bexley",
+      "n_locations": 14,
+      "n_episodes": 40,
+      "n_trajectories": 8,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "n_unique_support_locations": 14,
+      "n_unique_query_locations": 5,
+      "n_distinct_query_masks": 5,
+      "n_distinct_support_masks": 26
+    },
+    {
+      "site_id": "christchurch_central_city",
+      "n_locations": 18,
+      "n_episodes": 40,
+      "n_trajectories": 8,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "n_unique_support_locations": 18,
+      "n_unique_query_locations": 16,
+      "n_distinct_query_masks": 8,
+      "n_distinct_support_masks": 39
+    },
+    {
+      "site_id": "christchurch_cnr_armagh_durham_st",
+      "n_locations": 5,
+      "n_episodes": 0,
+      "n_trajectories": 0,
+      "budgets": [],
+      "n_unique_support_locations": 0,
+      "n_unique_query_locations": 0,
+      "n_distinct_query_masks": 0,
+      "n_distinct_support_masks": 0
+    },
+    {
+      "site_id": "hastings_hospital",
+      "n_locations": 1,
+      "n_episodes": 0,
+      "n_trajectories": 0,
+      "budgets": [],
+      "n_unique_support_locations": 0,
+      "n_unique_query_locations": 0,
+      "n_distinct_query_masks": 0,
+      "n_distinct_support_masks": 0
+    },
+    {
+      "site_id": "hollywood",
+      "n_locations": 25,
+      "n_episodes": 40,
+      "n_trajectories": 8,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "n_unique_support_locations": 22,
+      "n_unique_query_locations": 23,
+      "n_distinct_query_masks": 5,
+      "n_distinct_support_masks": 35
+    },
+    {
+      "site_id": "linwood_rudds_road",
+      "n_locations": 7,
+      "n_episodes": 8,
+      "n_trajectories": 8,
+      "budgets": [
+        5
+      ],
+      "n_unique_support_locations": 7,
+      "n_unique_query_locations": 7,
+      "n_distinct_query_masks": 6,
+      "n_distinct_support_masks": 6
+    },
+    {
+      "site_id": "marshland",
+      "n_locations": 20,
+      "n_episodes": 40,
+      "n_trajectories": 8,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "n_unique_support_locations": 20,
+      "n_unique_query_locations": 16,
+      "n_distinct_query_masks": 8,
+      "n_distinct_support_masks": 40
+    },
+    {
+      "site_id": "newlock",
+      "n_locations": 80,
+      "n_episodes": 40,
+      "n_trajectories": 8,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "n_unique_support_locations": 44,
+      "n_unique_query_locations": 66,
+      "n_distinct_query_masks": 8,
+      "n_distinct_support_masks": 40
+    },
+    {
+      "site_id": "parkland_bower_ave_two",
+      "n_locations": 11,
+      "n_episodes": 24,
+      "n_trajectories": 8,
+      "budgets": [
+        5,
+        7,
+        9
+      ],
+      "n_unique_support_locations": 11,
+      "n_unique_query_locations": 10,
+      "n_distinct_query_masks": 7,
+      "n_distinct_support_masks": 20
+    },
+    {
+      "site_id": "redcliffs_main_road",
+      "n_locations": 11,
+      "n_episodes": 24,
+      "n_trajectories": 8,
+      "budgets": [
+        5,
+        7,
+        9
+      ],
+      "n_unique_support_locations": 11,
+      "n_unique_query_locations": 10,
+      "n_distinct_query_masks": 8,
+      "n_distinct_support_masks": 23
+    },
+    {
+      "site_id": "wainoni",
+      "n_locations": 11,
+      "n_episodes": 24,
+      "n_trajectories": 8,
+      "budgets": [
+        5,
+        7,
+        9
+      ],
+      "n_unique_support_locations": 11,
+      "n_unique_query_locations": 8,
+      "n_distinct_query_masks": 6,
+      "n_distinct_support_masks": 18
+    },
+    {
+      "site_id": "wainoni_pak_n_save",
+      "n_locations": 16,
+      "n_episodes": 40,
+      "n_trajectories": 8,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "n_unique_support_locations": 16,
+      "n_unique_query_locations": 12,
+      "n_distinct_query_masks": 8,
+      "n_distinct_support_masks": 40
+    },
+    {
+      "site_id": "wellington_college",
+      "n_locations": 12,
+      "n_episodes": 32,
+      "n_trajectories": 8,
+      "budgets": [
+        5,
+        7,
+        9,
+        11
+      ],
+      "n_unique_support_locations": 12,
+      "n_unique_query_locations": 6,
+      "n_distinct_query_masks": 6,
+      "n_distinct_support_masks": 24
+    },
+    {
+      "site_id": "whangarei_high_school",
+      "n_locations": 9,
+      "n_episodes": 16,
+      "n_trajectories": 8,
+      "budgets": [
+        5,
+        7
+      ],
+      "n_unique_support_locations": 9,
+      "n_unique_query_locations": 8,
+      "n_distinct_query_masks": 6,
+      "n_distinct_support_masks": 12
+    }
+  ],
+  "trajectories": [
+    {
+      "site_id": "avondale",
+      "scenario_seed": 107,
+      "trajectory_id": "trajectory_v4_3b3214721efe08ad",
+      "n_locations": 9,
+      "n_query_locations": 2,
+      "n_pool_locations": 7,
+      "budgets": [
+        5,
+        7
+      ],
+      "missing_budgets": [
+        9,
+        11,
+        13
+      ],
+      "min_spacing_m": 8.951826629183934,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_42de7aa7a5c76548",
+          "location_4828b4e8f9ba428f"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.2222222222222222
+    },
+    {
+      "site_id": "avondale",
+      "scenario_seed": 211,
+      "trajectory_id": "trajectory_v4_6777f013bbfb009d",
+      "n_locations": 9,
+      "n_query_locations": 2,
+      "n_pool_locations": 7,
+      "budgets": [
+        5,
+        7
+      ],
+      "missing_budgets": [
+        9,
+        11,
+        13
+      ],
+      "min_spacing_m": 5.231873469490989,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_42de7aa7a5c76548",
+          "location_4828b4e8f9ba428f"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.2222222222222222
+    },
+    {
+      "site_id": "avondale",
+      "scenario_seed": 307,
+      "trajectory_id": "trajectory_v4_03533b41dad56579",
+      "n_locations": 9,
+      "n_query_locations": 2,
+      "n_pool_locations": 7,
+      "budgets": [
+        5,
+        7
+      ],
+      "missing_budgets": [
+        9,
+        11,
+        13
+      ],
+      "min_spacing_m": 5.231873469490989,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_eebf8215c7d11a16",
+          "location_0168c3a57204810d"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.2222222222222222
+    },
+    {
+      "site_id": "avondale",
+      "scenario_seed": 401,
+      "trajectory_id": "trajectory_v4_ff5dcb2778c97927",
+      "n_locations": 9,
+      "n_query_locations": 2,
+      "n_pool_locations": 7,
+      "budgets": [
+        5,
+        7
+      ],
+      "missing_budgets": [
+        9,
+        11,
+        13
+      ],
+      "min_spacing_m": 5.231873469490989,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_42de7aa7a5c76548",
+          "location_4828b4e8f9ba428f"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.2222222222222222
+    },
+    {
+      "site_id": "avondale",
+      "scenario_seed": 503,
+      "trajectory_id": "trajectory_v4_5a8d4aa67a3586cf",
+      "n_locations": 9,
+      "n_query_locations": 2,
+      "n_pool_locations": 7,
+      "budgets": [
+        5,
+        7
+      ],
+      "missing_budgets": [
+        9,
+        11,
+        13
+      ],
+      "min_spacing_m": 5.231873469490989,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_42de7aa7a5c76548",
+          "location_4828b4e8f9ba428f"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.2222222222222222
+    },
+    {
+      "site_id": "avondale",
+      "scenario_seed": 601,
+      "trajectory_id": "trajectory_v4_42b19bda13fc6349",
+      "n_locations": 9,
+      "n_query_locations": 2,
+      "n_pool_locations": 7,
+      "budgets": [
+        5,
+        7
+      ],
+      "missing_budgets": [
+        9,
+        11,
+        13
+      ],
+      "min_spacing_m": 5.231873469490989,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_eebf8215c7d11a16",
+          "location_0168c3a57204810d"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.2222222222222222
+    },
+    {
+      "site_id": "avondale",
+      "scenario_seed": 701,
+      "trajectory_id": "trajectory_v4_ed7430234cf4db6d",
+      "n_locations": 9,
+      "n_query_locations": 2,
+      "n_pool_locations": 7,
+      "budgets": [
+        5,
+        7
+      ],
+      "missing_budgets": [
+        9,
+        11,
+        13
+      ],
+      "min_spacing_m": 8.951826629183934,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_5584bcb4a41632ac",
+          "location_4828b4e8f9ba428f"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.2222222222222222
+    },
+    {
+      "site_id": "avondale",
+      "scenario_seed": 809,
+      "trajectory_id": "trajectory_v4_9fbee7553da757e8",
+      "n_locations": 9,
+      "n_query_locations": 2,
+      "n_pool_locations": 7,
+      "budgets": [
+        5,
+        7
+      ],
+      "missing_budgets": [
+        9,
+        11,
+        13
+      ],
+      "min_spacing_m": 13.244111899480762,
+      "spacing_fallback_count": 1,
+      "selected_batches": [
+        [
+          "location_0168c3a57204810d",
+          "location_4828b4e8f9ba428f"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.2222222222222222
+    },
+    {
+      "site_id": "avonside",
+      "scenario_seed": 107,
+      "trajectory_id": "trajectory_v4_ddfecf0770a646ca",
+      "n_locations": 10,
+      "n_query_locations": 1,
+      "n_pool_locations": 9,
+      "budgets": [
+        5,
+        7,
+        9
+      ],
+      "missing_budgets": [
+        11,
+        13
+      ],
+      "min_spacing_m": 20.57636751217016,
+      "spacing_fallback_count": 1,
+      "selected_batches": [
+        [
+          "location_5938881b56a23dd3",
+          "location_0ce2bef22a613680"
+        ],
+        [
+          "location_5322456aaaf7c784",
+          "location_58f0c85251d72acb"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.1
+    },
+    {
+      "site_id": "avonside",
+      "scenario_seed": 211,
+      "trajectory_id": "trajectory_v4_d90fed752119f554",
+      "n_locations": 10,
+      "n_query_locations": 1,
+      "n_pool_locations": 9,
+      "budgets": [
+        5,
+        7,
+        9
+      ],
+      "missing_budgets": [
+        11,
+        13
+      ],
+      "min_spacing_m": 16.997376268055042,
+      "spacing_fallback_count": 1,
+      "selected_batches": [
+        [
+          "location_5938881b56a23dd3",
+          "location_e60680caf9e9756a"
+        ],
+        [
+          "location_58f0c85251d72acb",
+          "location_db0746fe19d47741"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.1
+    },
+    {
+      "site_id": "avonside",
+      "scenario_seed": 307,
+      "trajectory_id": "trajectory_v4_74ce0854d648a3bc",
+      "n_locations": 10,
+      "n_query_locations": 1,
+      "n_pool_locations": 9,
+      "budgets": [
+        5,
+        7,
+        9
+      ],
+      "missing_budgets": [
+        11,
+        13
+      ],
+      "min_spacing_m": 20.57636751217016,
+      "spacing_fallback_count": 1,
+      "selected_batches": [
+        [
+          "location_0212fc41824e0991",
+          "location_58f0c85251d72acb"
+        ],
+        [
+          "location_5322456aaaf7c784",
+          "location_db0746fe19d47741"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.1
+    },
+    {
+      "site_id": "avonside",
+      "scenario_seed": 401,
+      "trajectory_id": "trajectory_v4_b15db0f7043f8def",
+      "n_locations": 10,
+      "n_query_locations": 1,
+      "n_pool_locations": 9,
+      "budgets": [
+        5,
+        7,
+        9
+      ],
+      "missing_budgets": [
+        11,
+        13
+      ],
+      "min_spacing_m": 16.997376268055042,
+      "spacing_fallback_count": 1,
+      "selected_batches": [
+        [
+          "location_0212fc41824e0991",
+          "location_58f0c85251d72acb"
+        ],
+        [
+          "location_5322456aaaf7c784",
+          "location_db0746fe19d47741"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.1
+    },
+    {
+      "site_id": "avonside",
+      "scenario_seed": 503,
+      "trajectory_id": "trajectory_v4_c3b11952486e0c55",
+      "n_locations": 10,
+      "n_query_locations": 1,
+      "n_pool_locations": 9,
+      "budgets": [
+        5,
+        7,
+        9
+      ],
+      "missing_budgets": [
+        11,
+        13
+      ],
+      "min_spacing_m": 16.997376268055042,
+      "spacing_fallback_count": 1,
+      "selected_batches": [
+        [
+          "location_44f734d436dd107e",
+          "location_0212fc41824e0991"
+        ],
+        [
+          "location_db0746fe19d47741",
+          "location_58f0c85251d72acb"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.1
+    },
+    {
+      "site_id": "avonside",
+      "scenario_seed": 601,
+      "trajectory_id": "trajectory_v4_26f8226d4c2399a2",
+      "n_locations": 10,
+      "n_query_locations": 1,
+      "n_pool_locations": 9,
+      "budgets": [
+        5,
+        7,
+        9
+      ],
+      "missing_budgets": [
+        11,
+        13
+      ],
+      "min_spacing_m": 16.997376268055042,
+      "spacing_fallback_count": 1,
+      "selected_batches": [
+        [
+          "location_0212fc41824e0991",
+          "location_0ce2bef22a613680"
+        ],
+        [
+          "location_5322456aaaf7c784",
+          "location_db0746fe19d47741"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.1
+    },
+    {
+      "site_id": "avonside",
+      "scenario_seed": 701,
+      "trajectory_id": "trajectory_v4_737be7e1996fda2e",
+      "n_locations": 10,
+      "n_query_locations": 1,
+      "n_pool_locations": 9,
+      "budgets": [
+        5,
+        7,
+        9
+      ],
+      "missing_budgets": [
+        11,
+        13
+      ],
+      "min_spacing_m": 16.997376268055042,
+      "spacing_fallback_count": 1,
+      "selected_batches": [
+        [
+          "location_0212fc41824e0991",
+          "location_58f0c85251d72acb"
+        ],
+        [
+          "location_5322456aaaf7c784",
+          "location_db0746fe19d47741"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.1
+    },
+    {
+      "site_id": "avonside",
+      "scenario_seed": 809,
+      "trajectory_id": "trajectory_v4_c6edecc22dc6888c",
+      "n_locations": 10,
+      "n_query_locations": 1,
+      "n_pool_locations": 9,
+      "budgets": [
+        5,
+        7,
+        9
+      ],
+      "missing_budgets": [
+        11,
+        13
+      ],
+      "min_spacing_m": 16.997376268055042,
+      "spacing_fallback_count": 1,
+      "selected_batches": [
+        [
+          "location_44f734d436dd107e",
+          "location_0212fc41824e0991"
+        ],
+        [
+          "location_db0746fe19d47741",
+          "location_58f0c85251d72acb"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.1
+    },
+    {
+      "site_id": "bexley",
+      "scenario_seed": 107,
+      "trajectory_id": "trajectory_v4_3cbba0ce843b350c",
+      "n_locations": 14,
+      "n_query_locations": 1,
+      "n_pool_locations": 13,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "missing_budgets": [],
+      "min_spacing_m": 1.7658992044286987,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_2ebbc52709fabedb",
+          "location_7807a8bc8ae1fcc7"
+        ],
+        [
+          "location_cc7f0c410f4292d3",
+          "location_c23e0f5df9221bf6"
+        ],
+        [
+          "location_e14c4e31160db6ba",
+          "location_d577f80b1c8cb4c5"
+        ],
+        [
+          "location_b36b15278f1c728d",
+          "location_3b2f34620fb9d555"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.07142857142857142
+    },
+    {
+      "site_id": "bexley",
+      "scenario_seed": 211,
+      "trajectory_id": "trajectory_v4_d49db3261ad91f26",
+      "n_locations": 14,
+      "n_query_locations": 1,
+      "n_pool_locations": 13,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "missing_budgets": [],
+      "min_spacing_m": 1.7658992044286987,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_c2e9ee1e4c3152f9",
+          "location_2ebbc52709fabedb"
+        ],
+        [
+          "location_cc7f0c410f4292d3",
+          "location_7807a8bc8ae1fcc7"
+        ],
+        [
+          "location_e14c4e31160db6ba",
+          "location_052d9d7d4e3fea2a"
+        ],
+        [
+          "location_b36b15278f1c728d",
+          "location_3b2f34620fb9d555"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.07142857142857142
+    },
+    {
+      "site_id": "bexley",
+      "scenario_seed": 307,
+      "trajectory_id": "trajectory_v4_500adc5c7cf8daf5",
+      "n_locations": 14,
+      "n_query_locations": 1,
+      "n_pool_locations": 13,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "missing_budgets": [],
+      "min_spacing_m": 1.7658992044286987,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_c2e9ee1e4c3152f9",
+          "location_cc7f0c410f4292d3"
+        ],
+        [
+          "location_15eeee06fe635f65",
+          "location_7807a8bc8ae1fcc7"
+        ],
+        [
+          "location_e14c4e31160db6ba",
+          "location_d577f80b1c8cb4c5"
+        ],
+        [
+          "location_b36b15278f1c728d",
+          "location_3b2f34620fb9d555"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.07142857142857142
+    },
+    {
+      "site_id": "bexley",
+      "scenario_seed": 401,
+      "trajectory_id": "trajectory_v4_b2e70c753e7c2f44",
+      "n_locations": 14,
+      "n_query_locations": 1,
+      "n_pool_locations": 13,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "missing_budgets": [],
+      "min_spacing_m": 1.7658992044286987,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_b24d98d30c20aaf0",
+          "location_8748c100e5ed74c2"
+        ],
+        [
+          "location_cc7f0c410f4292d3",
+          "location_c23e0f5df9221bf6"
+        ],
+        [
+          "location_052d9d7d4e3fea2a",
+          "location_d577f80b1c8cb4c5"
+        ],
+        [
+          "location_b36b15278f1c728d",
+          "location_3b2f34620fb9d555"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.07142857142857142
+    },
+    {
+      "site_id": "bexley",
+      "scenario_seed": 503,
+      "trajectory_id": "trajectory_v4_4cce41b2d42d5f42",
+      "n_locations": 14,
+      "n_query_locations": 1,
+      "n_pool_locations": 13,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "missing_budgets": [],
+      "min_spacing_m": 1.7658992044286987,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_c2e9ee1e4c3152f9",
+          "location_2ebbc52709fabedb"
+        ],
+        [
+          "location_15eeee06fe635f65",
+          "location_7807a8bc8ae1fcc7"
+        ],
+        [
+          "location_e14c4e31160db6ba",
+          "location_052d9d7d4e3fea2a"
+        ],
+        [
+          "location_b36b15278f1c728d",
+          "location_3b2f34620fb9d555"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.07142857142857142
+    },
+    {
+      "site_id": "bexley",
+      "scenario_seed": 601,
+      "trajectory_id": "trajectory_v4_0bcd6952ee8cdf38",
+      "n_locations": 14,
+      "n_query_locations": 1,
+      "n_pool_locations": 13,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "missing_budgets": [],
+      "min_spacing_m": 1.7658992044286987,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_c2e9ee1e4c3152f9",
+          "location_cc7f0c410f4292d3"
+        ],
+        [
+          "location_15eeee06fe635f65",
+          "location_7807a8bc8ae1fcc7"
+        ],
+        [
+          "location_e14c4e31160db6ba",
+          "location_d577f80b1c8cb4c5"
+        ],
+        [
+          "location_b36b15278f1c728d",
+          "location_3b2f34620fb9d555"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.07142857142857142
+    },
+    {
+      "site_id": "bexley",
+      "scenario_seed": 701,
+      "trajectory_id": "trajectory_v4_aba83e5b90c95670",
+      "n_locations": 14,
+      "n_query_locations": 1,
+      "n_pool_locations": 13,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "missing_budgets": [],
+      "min_spacing_m": 1.7658992044286987,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_cc7f0c410f4292d3",
+          "location_15eeee06fe635f65"
+        ],
+        [
+          "location_2ebbc52709fabedb",
+          "location_7807a8bc8ae1fcc7"
+        ],
+        [
+          "location_052d9d7d4e3fea2a",
+          "location_d577f80b1c8cb4c5"
+        ],
+        [
+          "location_b36b15278f1c728d",
+          "location_3b2f34620fb9d555"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.07142857142857142
+    },
+    {
+      "site_id": "bexley",
+      "scenario_seed": 809,
+      "trajectory_id": "trajectory_v4_6ce5bfa94898d751",
+      "n_locations": 14,
+      "n_query_locations": 1,
+      "n_pool_locations": 13,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "missing_budgets": [],
+      "min_spacing_m": 1.7658992044286987,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_c2e9ee1e4c3152f9",
+          "location_cc7f0c410f4292d3"
+        ],
+        [
+          "location_15eeee06fe635f65",
+          "location_7807a8bc8ae1fcc7"
+        ],
+        [
+          "location_e14c4e31160db6ba",
+          "location_d577f80b1c8cb4c5"
+        ],
+        [
+          "location_b36b15278f1c728d",
+          "location_3b2f34620fb9d555"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.07142857142857142
+    },
+    {
+      "site_id": "christchurch_central_city",
+      "scenario_seed": 107,
+      "trajectory_id": "trajectory_v4_e9ba49b5a8bb7c28",
+      "n_locations": 18,
+      "n_query_locations": 4,
+      "n_pool_locations": 14,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "missing_budgets": [],
+      "min_spacing_m": 38.30208871564659,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_5ce59324fd4ff596",
+          "location_74c76a2421da7f19"
+        ],
+        [
+          "location_b1fa5539be453ddb",
+          "location_76a2c93d27a4f9d6"
+        ],
+        [
+          "location_abb1a9f1910ffab7",
+          "location_f540da5a7ec3dc98"
+        ],
+        [
+          "location_d33176bfe6bbdafc",
+          "location_5e760f6d1d2c94b6"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.2222222222222222
+    },
+    {
+      "site_id": "christchurch_central_city",
+      "scenario_seed": 211,
+      "trajectory_id": "trajectory_v4_23113bd7e30948f4",
+      "n_locations": 18,
+      "n_query_locations": 4,
+      "n_pool_locations": 14,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "missing_budgets": [],
+      "min_spacing_m": 35.16096130668731,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_74c76a2421da7f19",
+          "location_0d446ab88c7501f5"
+        ],
+        [
+          "location_abb1a9f1910ffab7",
+          "location_2da8e64f528ea628"
+        ],
+        [
+          "location_cbef63fbadbe36d4",
+          "location_d691ea2c3bce94ef"
+        ],
+        [
+          "location_5e760f6d1d2c94b6",
+          "location_093b431c1aa12746"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.2222222222222222
+    },
+    {
+      "site_id": "christchurch_central_city",
+      "scenario_seed": 307,
+      "trajectory_id": "trajectory_v4_65138b3506ef35b2",
+      "n_locations": 18,
+      "n_query_locations": 4,
+      "n_pool_locations": 14,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "missing_budgets": [],
+      "min_spacing_m": 35.771346493006305,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_c4deb0251bc8e524",
+          "location_76a2c93d27a4f9d6"
+        ],
+        [
+          "location_90d69d5ee8f8f8a7",
+          "location_2135f9f53f524cfc"
+        ],
+        [
+          "location_cbef63fbadbe36d4",
+          "location_d691ea2c3bce94ef"
+        ],
+        [
+          "location_d33176bfe6bbdafc",
+          "location_093b431c1aa12746"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.2222222222222222
+    },
+    {
+      "site_id": "christchurch_central_city",
+      "scenario_seed": 401,
+      "trajectory_id": "trajectory_v4_bb3f79b41bb4c2c4",
+      "n_locations": 18,
+      "n_query_locations": 4,
+      "n_pool_locations": 14,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "missing_budgets": [],
+      "min_spacing_m": 35.771346493006305,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_74c76a2421da7f19",
+          "location_90d69d5ee8f8f8a7"
+        ],
+        [
+          "location_abb1a9f1910ffab7",
+          "location_f540da5a7ec3dc98"
+        ],
+        [
+          "location_cbef63fbadbe36d4",
+          "location_d691ea2c3bce94ef"
+        ],
+        [
+          "location_d33176bfe6bbdafc",
+          "location_5e760f6d1d2c94b6"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.2222222222222222
+    },
+    {
+      "site_id": "christchurch_central_city",
+      "scenario_seed": 503,
+      "trajectory_id": "trajectory_v4_7b8bb0f06fc4cd03",
+      "n_locations": 18,
+      "n_query_locations": 4,
+      "n_pool_locations": 14,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "missing_budgets": [],
+      "min_spacing_m": 35.771346493006305,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_5ce59324fd4ff596",
+          "location_2135f9f53f524cfc"
+        ],
+        [
+          "location_abb1a9f1910ffab7",
+          "location_f540da5a7ec3dc98"
+        ],
+        [
+          "location_74c76a2421da7f19",
+          "location_d691ea2c3bce94ef"
+        ],
+        [
+          "location_d33176bfe6bbdafc",
+          "location_b1fa5539be453ddb"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.2222222222222222
+    },
+    {
+      "site_id": "christchurch_central_city",
+      "scenario_seed": 601,
+      "trajectory_id": "trajectory_v4_af0ea159eaa7cf30",
+      "n_locations": 18,
+      "n_query_locations": 4,
+      "n_pool_locations": 14,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "missing_budgets": [],
+      "min_spacing_m": 35.16096130668731,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_5ce59324fd4ff596",
+          "location_0d446ab88c7501f5"
+        ],
+        [
+          "location_abb1a9f1910ffab7",
+          "location_f540da5a7ec3dc98"
+        ],
+        [
+          "location_74c76a2421da7f19",
+          "location_d691ea2c3bce94ef"
+        ],
+        [
+          "location_5e760f6d1d2c94b6",
+          "location_093b431c1aa12746"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.2222222222222222
+    },
+    {
+      "site_id": "christchurch_central_city",
+      "scenario_seed": 701,
+      "trajectory_id": "trajectory_v4_cfaa9a8e01c269df",
+      "n_locations": 18,
+      "n_query_locations": 4,
+      "n_pool_locations": 14,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "missing_budgets": [],
+      "min_spacing_m": 35.771346493006305,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_74c76a2421da7f19",
+          "location_b1fa5539be453ddb"
+        ],
+        [
+          "location_abb1a9f1910ffab7",
+          "location_76a2c93d27a4f9d6"
+        ],
+        [
+          "location_cbef63fbadbe36d4",
+          "location_d691ea2c3bce94ef"
+        ],
+        [
+          "location_d33176bfe6bbdafc",
+          "location_093b431c1aa12746"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.2222222222222222
+    },
+    {
+      "site_id": "christchurch_central_city",
+      "scenario_seed": 809,
+      "trajectory_id": "trajectory_v4_6427ab2416d4cc12",
+      "n_locations": 18,
+      "n_query_locations": 4,
+      "n_pool_locations": 14,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "missing_budgets": [],
+      "min_spacing_m": 36.8986937466088,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_a31d9fa38013b3c2",
+          "location_2135f9f53f524cfc"
+        ],
+        [
+          "location_abb1a9f1910ffab7",
+          "location_f540da5a7ec3dc98"
+        ],
+        [
+          "location_2da8e64f528ea628",
+          "location_cbef63fbadbe36d4"
+        ],
+        [
+          "location_d691ea2c3bce94ef",
+          "location_5e760f6d1d2c94b6"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.2222222222222222
+    },
+    {
+      "site_id": "hollywood",
+      "scenario_seed": 107,
+      "trajectory_id": "trajectory_v4_1e3b369516845ea8",
+      "n_locations": 25,
+      "n_query_locations": 5,
+      "n_pool_locations": 20,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "missing_budgets": [],
+      "min_spacing_m": 1.7249870893566777,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_3ef90e231dd9e42a",
+          "location_7a065c18c5e2e78e"
+        ],
+        [
+          "location_4ccf39dd762a321c",
+          "location_5a1f248e429057bf"
+        ],
+        [
+          "location_9efc0512355966df",
+          "location_df1bf9b180eb53b3"
+        ],
+        [
+          "location_ecbcdc1d612e1d3a",
+          "location_eff8aa888ad96e45"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.2
+    },
+    {
+      "site_id": "hollywood",
+      "scenario_seed": 211,
+      "trajectory_id": "trajectory_v4_4770ad1c060f96bf",
+      "n_locations": 25,
+      "n_query_locations": 5,
+      "n_pool_locations": 20,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "missing_budgets": [],
+      "min_spacing_m": 1.7249870893566777,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_df1bf9b180eb53b3",
+          "location_0ef080c87fa795e0"
+        ],
+        [
+          "location_9efc0512355966df",
+          "location_a29fed9fc9a49bf9"
+        ],
+        [
+          "location_ecbcdc1d612e1d3a",
+          "location_46438aa839df5591"
+        ],
+        [
+          "location_fdbbf62793c15f5b",
+          "location_d5457eaf046de609"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.2
+    },
+    {
+      "site_id": "hollywood",
+      "scenario_seed": 307,
+      "trajectory_id": "trajectory_v4_930bbdd63adda0d9",
+      "n_locations": 25,
+      "n_query_locations": 5,
+      "n_pool_locations": 20,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "missing_budgets": [],
+      "min_spacing_m": 1.7249870893566777,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_a29fed9fc9a49bf9",
+          "location_3ef90e231dd9e42a"
+        ],
+        [
+          "location_5a1f248e429057bf",
+          "location_7a065c18c5e2e78e"
+        ],
+        [
+          "location_df1bf9b180eb53b3",
+          "location_b3ba9ce49b8a4c61"
+        ],
+        [
+          "location_d5457eaf046de609",
+          "location_eff8aa888ad96e45"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.2
+    },
+    {
+      "site_id": "hollywood",
+      "scenario_seed": 401,
+      "trajectory_id": "trajectory_v4_1f1f7c24f7e0bf6a",
+      "n_locations": 25,
+      "n_query_locations": 5,
+      "n_pool_locations": 20,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "missing_budgets": [],
+      "min_spacing_m": 1.2932984960943852,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_a29fed9fc9a49bf9",
+          "location_4ccf39dd762a321c"
+        ],
+        [
+          "location_ecbcdc1d612e1d3a",
+          "location_eff8aa888ad96e45"
+        ],
+        [
+          "location_88ef837c02557610",
+          "location_b3ba9ce49b8a4c61"
+        ],
+        [
+          "location_531fc2cf8c9a0447",
+          "location_a9638ec30a076a55"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.2
+    },
+    {
+      "site_id": "hollywood",
+      "scenario_seed": 503,
+      "trajectory_id": "trajectory_v4_0e6a3a2491790094",
+      "n_locations": 25,
+      "n_query_locations": 5,
+      "n_pool_locations": 20,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "missing_budgets": [],
+      "min_spacing_m": 1.7249870893566774,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_9efc0512355966df",
+          "location_3ef90e231dd9e42a"
+        ],
+        [
+          "location_5a1f248e429057bf",
+          "location_7a065c18c5e2e78e"
+        ],
+        [
+          "location_df1bf9b180eb53b3",
+          "location_a9638ec30a076a55"
+        ],
+        [
+          "location_d5457eaf046de609",
+          "location_eff8aa888ad96e45"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.2
+    },
+    {
+      "site_id": "hollywood",
+      "scenario_seed": 601,
+      "trajectory_id": "trajectory_v4_2cadccddb7b9171d",
+      "n_locations": 25,
+      "n_query_locations": 5,
+      "n_pool_locations": 20,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "missing_budgets": [],
+      "min_spacing_m": 1.7249870893566777,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_df1bf9b180eb53b3",
+          "location_0ef080c87fa795e0"
+        ],
+        [
+          "location_9efc0512355966df",
+          "location_a29fed9fc9a49bf9"
+        ],
+        [
+          "location_ecbcdc1d612e1d3a",
+          "location_46438aa839df5591"
+        ],
+        [
+          "location_fdbbf62793c15f5b",
+          "location_d5457eaf046de609"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.2
+    },
+    {
+      "site_id": "hollywood",
+      "scenario_seed": 701,
+      "trajectory_id": "trajectory_v4_fc350ae3e92df321",
+      "n_locations": 25,
+      "n_query_locations": 5,
+      "n_pool_locations": 20,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "missing_budgets": [],
+      "min_spacing_m": 1.2932984960943852,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_5a1f248e429057bf",
+          "location_fdbbf62793c15f5b"
+        ],
+        [
+          "location_d5457eaf046de609",
+          "location_eff8aa888ad96e45"
+        ],
+        [
+          "location_a92ec34712167f1a",
+          "location_a9638ec30a076a55"
+        ],
+        [
+          "location_531fc2cf8c9a0447",
+          "location_46438aa839df5591"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.2
+    },
+    {
+      "site_id": "hollywood",
+      "scenario_seed": 809,
+      "trajectory_id": "trajectory_v4_471a487ecf30e2e8",
+      "n_locations": 25,
+      "n_query_locations": 5,
+      "n_pool_locations": 20,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "missing_budgets": [],
+      "min_spacing_m": 1.7249870893566774,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_3ef90e231dd9e42a",
+          "location_0ef080c87fa795e0"
+        ],
+        [
+          "location_5a1f248e429057bf",
+          "location_a29fed9fc9a49bf9"
+        ],
+        [
+          "location_df1bf9b180eb53b3",
+          "location_fdbbf62793c15f5b"
+        ],
+        [
+          "location_d5457eaf046de609",
+          "location_eff8aa888ad96e45"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.2
+    },
+    {
+      "site_id": "linwood_rudds_road",
+      "scenario_seed": 107,
+      "trajectory_id": "trajectory_v4_4c36abac88f902d2",
+      "n_locations": 7,
+      "n_query_locations": 2,
+      "n_pool_locations": 5,
+      "budgets": [
+        5
+      ],
+      "missing_budgets": [
+        7,
+        9,
+        11,
+        13
+      ],
+      "min_spacing_m": 17.263904540931442,
+      "spacing_fallback_count": 0,
+      "selected_batches": [],
+      "evaluation_fraction_actual": 0.2857142857142857
+    },
+    {
+      "site_id": "linwood_rudds_road",
+      "scenario_seed": 211,
+      "trajectory_id": "trajectory_v4_faf45f1777b40477",
+      "n_locations": 7,
+      "n_query_locations": 2,
+      "n_pool_locations": 5,
+      "budgets": [
+        5
+      ],
+      "missing_budgets": [
+        7,
+        9,
+        11,
+        13
+      ],
+      "min_spacing_m": 12.45494680879996,
+      "spacing_fallback_count": 0,
+      "selected_batches": [],
+      "evaluation_fraction_actual": 0.2857142857142857
+    },
+    {
+      "site_id": "linwood_rudds_road",
+      "scenario_seed": 307,
+      "trajectory_id": "trajectory_v4_4f7712148bed7469",
+      "n_locations": 7,
+      "n_query_locations": 2,
+      "n_pool_locations": 5,
+      "budgets": [
+        5
+      ],
+      "missing_budgets": [
+        7,
+        9,
+        11,
+        13
+      ],
+      "min_spacing_m": 17.263904540931442,
+      "spacing_fallback_count": 0,
+      "selected_batches": [],
+      "evaluation_fraction_actual": 0.2857142857142857
+    },
+    {
+      "site_id": "linwood_rudds_road",
+      "scenario_seed": 401,
+      "trajectory_id": "trajectory_v4_21d452253949a9ca",
+      "n_locations": 7,
+      "n_query_locations": 2,
+      "n_pool_locations": 5,
+      "budgets": [
+        5
+      ],
+      "missing_budgets": [
+        7,
+        9,
+        11,
+        13
+      ],
+      "min_spacing_m": 17.263904540931442,
+      "spacing_fallback_count": 0,
+      "selected_batches": [],
+      "evaluation_fraction_actual": 0.2857142857142857
+    },
+    {
+      "site_id": "linwood_rudds_road",
+      "scenario_seed": 503,
+      "trajectory_id": "trajectory_v4_3362ac72303931d3",
+      "n_locations": 7,
+      "n_query_locations": 2,
+      "n_pool_locations": 5,
+      "budgets": [
+        5
+      ],
+      "missing_budgets": [
+        7,
+        9,
+        11,
+        13
+      ],
+      "min_spacing_m": 26.584239692036686,
+      "spacing_fallback_count": 0,
+      "selected_batches": [],
+      "evaluation_fraction_actual": 0.2857142857142857
+    },
+    {
+      "site_id": "linwood_rudds_road",
+      "scenario_seed": 601,
+      "trajectory_id": "trajectory_v4_71e9de5803e86989",
+      "n_locations": 7,
+      "n_query_locations": 2,
+      "n_pool_locations": 5,
+      "budgets": [
+        5
+      ],
+      "missing_budgets": [
+        7,
+        9,
+        11,
+        13
+      ],
+      "min_spacing_m": 17.263904540931442,
+      "spacing_fallback_count": 0,
+      "selected_batches": [],
+      "evaluation_fraction_actual": 0.2857142857142857
+    },
+    {
+      "site_id": "linwood_rudds_road",
+      "scenario_seed": 701,
+      "trajectory_id": "trajectory_v4_b99677d75d31c870",
+      "n_locations": 7,
+      "n_query_locations": 2,
+      "n_pool_locations": 5,
+      "budgets": [
+        5
+      ],
+      "missing_budgets": [
+        7,
+        9,
+        11,
+        13
+      ],
+      "min_spacing_m": 17.263904540931442,
+      "spacing_fallback_count": 0,
+      "selected_batches": [],
+      "evaluation_fraction_actual": 0.2857142857142857
+    },
+    {
+      "site_id": "linwood_rudds_road",
+      "scenario_seed": 809,
+      "trajectory_id": "trajectory_v4_c4c8978adbb1d693",
+      "n_locations": 7,
+      "n_query_locations": 2,
+      "n_pool_locations": 5,
+      "budgets": [
+        5
+      ],
+      "missing_budgets": [
+        7,
+        9,
+        11,
+        13
+      ],
+      "min_spacing_m": 26.37067500070337,
+      "spacing_fallback_count": 0,
+      "selected_batches": [],
+      "evaluation_fraction_actual": 0.2857142857142857
+    },
+    {
+      "site_id": "marshland",
+      "scenario_seed": 107,
+      "trajectory_id": "trajectory_v4_2380b4b5cfd72201",
+      "n_locations": 20,
+      "n_query_locations": 4,
+      "n_pool_locations": 16,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "missing_budgets": [],
+      "min_spacing_m": 14.008893172633625,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_7f40123dd14dfd10",
+          "location_96b88013e3884fcb"
+        ],
+        [
+          "location_023b4cf8dd085689",
+          "location_6416778c2eac2e5c"
+        ],
+        [
+          "location_3e6c95558e5f5c05",
+          "location_52b5947bd236673d"
+        ],
+        [
+          "location_e70cee9e4646d147",
+          "location_467814ea7f71f197"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.2
+    },
+    {
+      "site_id": "marshland",
+      "scenario_seed": 211,
+      "trajectory_id": "trajectory_v4_a0eaa3d3bd135885",
+      "n_locations": 20,
+      "n_query_locations": 4,
+      "n_pool_locations": 16,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "missing_budgets": [],
+      "min_spacing_m": 13.44949813112281,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_3dd80d0d68ace4cf",
+          "location_765df992240a7d77"
+        ],
+        [
+          "location_3e6c95558e5f5c05",
+          "location_72ae58633f63e224"
+        ],
+        [
+          "location_4e6da72bf6e514d5",
+          "location_e83ddbd9558116ac"
+        ],
+        [
+          "location_467814ea7f71f197",
+          "location_34c1a4d0e33941cb"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.2
+    },
+    {
+      "site_id": "marshland",
+      "scenario_seed": 307,
+      "trajectory_id": "trajectory_v4_b87b7405fb5bcdf1",
+      "n_locations": 20,
+      "n_query_locations": 4,
+      "n_pool_locations": 16,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "missing_budgets": [],
+      "min_spacing_m": 11.78986999199902,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_2dd5199da960ca4f",
+          "location_e34f08e844c76447"
+        ],
+        [
+          "location_72ae58633f63e224",
+          "location_3dd80d0d68ace4cf"
+        ],
+        [
+          "location_5162b2ad3ff98719",
+          "location_e83ddbd9558116ac"
+        ],
+        [
+          "location_7f40123dd14dfd10",
+          "location_34c1a4d0e33941cb"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.2
+    },
+    {
+      "site_id": "marshland",
+      "scenario_seed": 401,
+      "trajectory_id": "trajectory_v4_28263991c9eb102e",
+      "n_locations": 20,
+      "n_query_locations": 4,
+      "n_pool_locations": 16,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "missing_budgets": [],
+      "min_spacing_m": 13.44949813112281,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_96b88013e3884fcb",
+          "location_3e6c95558e5f5c05"
+        ],
+        [
+          "location_72ae58633f63e224",
+          "location_d6e2853f5f6b0695"
+        ],
+        [
+          "location_4e6da72bf6e514d5",
+          "location_5162b2ad3ff98719"
+        ],
+        [
+          "location_34c1a4d0e33941cb",
+          "location_52b5947bd236673d"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.2
+    },
+    {
+      "site_id": "marshland",
+      "scenario_seed": 503,
+      "trajectory_id": "trajectory_v4_1a20e51e5576d4cb",
+      "n_locations": 20,
+      "n_query_locations": 4,
+      "n_pool_locations": 16,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "missing_budgets": [],
+      "min_spacing_m": 10.531788101085601,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_4e6da72bf6e514d5",
+          "location_e83ddbd9558116ac"
+        ],
+        [
+          "location_2dd5199da960ca4f",
+          "location_52b5947bd236673d"
+        ],
+        [
+          "location_e34f08e844c76447",
+          "location_6416778c2eac2e5c"
+        ],
+        [
+          "location_3e6c95558e5f5c05",
+          "location_3dd80d0d68ace4cf"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.2
+    },
+    {
+      "site_id": "marshland",
+      "scenario_seed": 601,
+      "trajectory_id": "trajectory_v4_be8f39579191d172",
+      "n_locations": 20,
+      "n_query_locations": 4,
+      "n_pool_locations": 16,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "missing_budgets": [],
+      "min_spacing_m": 17.084451995971275,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_4e6da72bf6e514d5",
+          "location_765df992240a7d77"
+        ],
+        [
+          "location_e34f08e844c76447",
+          "location_52b5947bd236673d"
+        ],
+        [
+          "location_e70cee9e4646d147",
+          "location_e83ddbd9558116ac"
+        ],
+        [
+          "location_6416778c2eac2e5c",
+          "location_7f40123dd14dfd10"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.2
+    },
+    {
+      "site_id": "marshland",
+      "scenario_seed": 701,
+      "trajectory_id": "trajectory_v4_593709349c71713a",
+      "n_locations": 20,
+      "n_query_locations": 4,
+      "n_pool_locations": 16,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "missing_budgets": [],
+      "min_spacing_m": 15.266975063547044,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_72ae58633f63e224",
+          "location_e34f08e844c76447"
+        ],
+        [
+          "location_4e6da72bf6e514d5",
+          "location_5162b2ad3ff98719"
+        ],
+        [
+          "location_3e6c95558e5f5c05",
+          "location_52b5947bd236673d"
+        ],
+        [
+          "location_7f40123dd14dfd10",
+          "location_34c1a4d0e33941cb"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.2
+    },
+    {
+      "site_id": "marshland",
+      "scenario_seed": 809,
+      "trajectory_id": "trajectory_v4_ab92c00d3e7e64de",
+      "n_locations": 20,
+      "n_query_locations": 4,
+      "n_pool_locations": 16,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "missing_budgets": [],
+      "min_spacing_m": 13.44949813112281,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_96b88013e3884fcb",
+          "location_2dd5199da960ca4f"
+        ],
+        [
+          "location_3e6c95558e5f5c05",
+          "location_72ae58633f63e224"
+        ],
+        [
+          "location_e70cee9e4646d147",
+          "location_5162b2ad3ff98719"
+        ],
+        [
+          "location_023b4cf8dd085689",
+          "location_34c1a4d0e33941cb"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.2
+    },
+    {
+      "site_id": "newlock",
+      "scenario_seed": 107,
+      "trajectory_id": "trajectory_v4_96c35d5b637b4dfe",
+      "n_locations": 80,
+      "n_query_locations": 16,
+      "n_pool_locations": 64,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "missing_budgets": [],
+      "min_spacing_m": 79.30745532685333,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_bd68c7ed470d8818",
+          "location_9ff5e43019c627bb"
+        ],
+        [
+          "location_9d4edd8f2f817f7f",
+          "location_1a7ddb53e717ad76"
+        ],
+        [
+          "location_662be975e3493853",
+          "location_e59435e22bf67c8b"
+        ],
+        [
+          "location_ae4f0b920fa47f8f",
+          "location_9809647d30be01b6"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.2
+    },
+    {
+      "site_id": "newlock",
+      "scenario_seed": 211,
+      "trajectory_id": "trajectory_v4_9f94f131415d14f0",
+      "n_locations": 80,
+      "n_query_locations": 16,
+      "n_pool_locations": 64,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "missing_budgets": [],
+      "min_spacing_m": 65.11633447563318,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_28f8bc2ce2a7f439",
+          "location_2a9ca73ab8637b78"
+        ],
+        [
+          "location_37b0dd9c851b23d7",
+          "location_406ab5962c0ccbd2"
+        ],
+        [
+          "location_905279cee56c2f22",
+          "location_811af0b25076fd82"
+        ],
+        [
+          "location_b0e4efcf0f2d648d",
+          "location_7bbcd3cfeeaf743b"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.2
+    },
+    {
+      "site_id": "newlock",
+      "scenario_seed": 307,
+      "trajectory_id": "trajectory_v4_c34bbe7feaee86b2",
+      "n_locations": 80,
+      "n_query_locations": 16,
+      "n_pool_locations": 64,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "missing_budgets": [],
+      "min_spacing_m": 55.80546568212186,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_28f8bc2ce2a7f439",
+          "location_37b0dd9c851b23d7"
+        ],
+        [
+          "location_9d4edd8f2f817f7f",
+          "location_b0e4efcf0f2d648d"
+        ],
+        [
+          "location_8a8df3f986466623",
+          "location_e8fe78aca1b349b5"
+        ],
+        [
+          "location_7bbcd3cfeeaf743b",
+          "location_b3dbb889d1386172"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.2
+    },
+    {
+      "site_id": "newlock",
+      "scenario_seed": 401,
+      "trajectory_id": "trajectory_v4_5fa75a7613adbc5a",
+      "n_locations": 80,
+      "n_query_locations": 16,
+      "n_pool_locations": 64,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "missing_budgets": [],
+      "min_spacing_m": 55.80546568212186,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_b2d9af0209710ce6",
+          "location_712bb6a72cdaddcc"
+        ],
+        [
+          "location_7bbcd3cfeeaf743b",
+          "location_28f8bc2ce2a7f439"
+        ],
+        [
+          "location_c9641afc29ee3609",
+          "location_a20bad0d7a3a0eba"
+        ],
+        [
+          "location_9809647d30be01b6",
+          "location_e8fe78aca1b349b5"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.2
+    },
+    {
+      "site_id": "newlock",
+      "scenario_seed": 503,
+      "trajectory_id": "trajectory_v4_3875292432f1bd12",
+      "n_locations": 80,
+      "n_query_locations": 16,
+      "n_pool_locations": 64,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "missing_budgets": [],
+      "min_spacing_m": 58.25981093419746,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_99e22dbe787048e1",
+          "location_662be975e3493853"
+        ],
+        [
+          "location_37b0dd9c851b23d7",
+          "location_7bbcd3cfeeaf743b"
+        ],
+        [
+          "location_a067dd51414df1b9",
+          "location_bd68c7ed470d8818"
+        ],
+        [
+          "location_e8fe78aca1b349b5",
+          "location_a20bad0d7a3a0eba"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.2
+    },
+    {
+      "site_id": "newlock",
+      "scenario_seed": 601,
+      "trajectory_id": "trajectory_v4_a810c5640b234707",
+      "n_locations": 80,
+      "n_query_locations": 16,
+      "n_pool_locations": 64,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "missing_budgets": [],
+      "min_spacing_m": 65.85726468202726,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_4557cf2f1f4895ca",
+          "location_662be975e3493853"
+        ],
+        [
+          "location_37b0dd9c851b23d7",
+          "location_18c9a5acfcfaa064"
+        ],
+        [
+          "location_ae4f0b920fa47f8f",
+          "location_e8fe78aca1b349b5"
+        ],
+        [
+          "location_905279cee56c2f22",
+          "location_a20bad0d7a3a0eba"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.2
+    },
+    {
+      "site_id": "newlock",
+      "scenario_seed": 701,
+      "trajectory_id": "trajectory_v4_af54f7c39d242e24",
+      "n_locations": 80,
+      "n_query_locations": 16,
+      "n_pool_locations": 64,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "missing_budgets": [],
+      "min_spacing_m": 53.37806068420064,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_811af0b25076fd82",
+          "location_662be975e3493853"
+        ],
+        [
+          "location_406ab5962c0ccbd2",
+          "location_a067dd51414df1b9"
+        ],
+        [
+          "location_3c14902b11190a3f",
+          "location_a02f9d11842158b8"
+        ],
+        [
+          "location_a20bad0d7a3a0eba",
+          "location_e8fe78aca1b349b5"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.2
+    },
+    {
+      "site_id": "newlock",
+      "scenario_seed": 809,
+      "trajectory_id": "trajectory_v4_c4038c48d20064e5",
+      "n_locations": 80,
+      "n_query_locations": 16,
+      "n_pool_locations": 64,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "missing_budgets": [],
+      "min_spacing_m": 61.47149546481301,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_183911ea8ccfb1c0",
+          "location_6b2f76c940c169a8"
+        ],
+        [
+          "location_761bbb1f4977aacd",
+          "location_9ff5e43019c627bb"
+        ],
+        [
+          "location_3c14902b11190a3f",
+          "location_a02f9d11842158b8"
+        ],
+        [
+          "location_b0e4efcf0f2d648d",
+          "location_c9641afc29ee3609"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.2
+    },
+    {
+      "site_id": "parkland_bower_ave_two",
+      "scenario_seed": 107,
+      "trajectory_id": "trajectory_v4_dc7058f539ab6ffd",
+      "n_locations": 11,
+      "n_query_locations": 2,
+      "n_pool_locations": 9,
+      "budgets": [
+        5,
+        7,
+        9
+      ],
+      "missing_budgets": [
+        11,
+        13
+      ],
+      "min_spacing_m": 8.102376194447594,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_2841d016fe954ca4",
+          "location_9acf9c940d3a091c"
+        ],
+        [
+          "location_9add2f95d2ea178d",
+          "location_a6470440b3b8df4c"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.18181818181818182
+    },
+    {
+      "site_id": "parkland_bower_ave_two",
+      "scenario_seed": 211,
+      "trajectory_id": "trajectory_v4_f8ffda613c24af47",
+      "n_locations": 11,
+      "n_query_locations": 2,
+      "n_pool_locations": 9,
+      "budgets": [
+        5,
+        7,
+        9
+      ],
+      "missing_budgets": [
+        11,
+        13
+      ],
+      "min_spacing_m": 8.102376194447594,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_2841d016fe954ca4",
+          "location_9acf9c940d3a091c"
+        ],
+        [
+          "location_9add2f95d2ea178d",
+          "location_a6470440b3b8df4c"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.18181818181818182
+    },
+    {
+      "site_id": "parkland_bower_ave_two",
+      "scenario_seed": 307,
+      "trajectory_id": "trajectory_v4_3a64f39f026ec7eb",
+      "n_locations": 11,
+      "n_query_locations": 2,
+      "n_pool_locations": 9,
+      "budgets": [
+        5,
+        7,
+        9
+      ],
+      "missing_budgets": [
+        11,
+        13
+      ],
+      "min_spacing_m": 9.55843083304751,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_9add2f95d2ea178d",
+          "location_94587f3742482e85"
+        ],
+        [
+          "location_60b1e4a22146d184",
+          "location_a6470440b3b8df4c"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.18181818181818182
+    },
+    {
+      "site_id": "parkland_bower_ave_two",
+      "scenario_seed": 401,
+      "trajectory_id": "trajectory_v4_a6c22b1f65b6661a",
+      "n_locations": 11,
+      "n_query_locations": 2,
+      "n_pool_locations": 9,
+      "budgets": [
+        5,
+        7,
+        9
+      ],
+      "missing_budgets": [
+        11,
+        13
+      ],
+      "min_spacing_m": 8.102376194447594,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_94587f3742482e85",
+          "location_9acf9c940d3a091c"
+        ],
+        [
+          "location_60b1e4a22146d184",
+          "location_a6470440b3b8df4c"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.18181818181818182
+    },
+    {
+      "site_id": "parkland_bower_ave_two",
+      "scenario_seed": 503,
+      "trajectory_id": "trajectory_v4_038d8a33ed628ad0",
+      "n_locations": 11,
+      "n_query_locations": 2,
+      "n_pool_locations": 9,
+      "budgets": [
+        5,
+        7,
+        9
+      ],
+      "missing_budgets": [
+        11,
+        13
+      ],
+      "min_spacing_m": 9.55843083304751,
+      "spacing_fallback_count": 1,
+      "selected_batches": [
+        [
+          "location_f01b4604b3e1ef81",
+          "location_94587f3742482e85"
+        ],
+        [
+          "location_9acf9c940d3a091c",
+          "location_a6470440b3b8df4c"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.18181818181818182
+    },
+    {
+      "site_id": "parkland_bower_ave_two",
+      "scenario_seed": 601,
+      "trajectory_id": "trajectory_v4_218fd87e8f779d6c",
+      "n_locations": 11,
+      "n_query_locations": 2,
+      "n_pool_locations": 9,
+      "budgets": [
+        5,
+        7,
+        9
+      ],
+      "missing_budgets": [
+        11,
+        13
+      ],
+      "min_spacing_m": 9.55843083304751,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_3bbe7a14d18c0639",
+          "location_a6f17fdad87c4be0"
+        ],
+        [
+          "location_a6470440b3b8df4c",
+          "location_9add2f95d2ea178d"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.18181818181818182
+    },
+    {
+      "site_id": "parkland_bower_ave_two",
+      "scenario_seed": 701,
+      "trajectory_id": "trajectory_v4_928ad4fc48a6e096",
+      "n_locations": 11,
+      "n_query_locations": 2,
+      "n_pool_locations": 9,
+      "budgets": [
+        5,
+        7,
+        9
+      ],
+      "missing_budgets": [
+        11,
+        13
+      ],
+      "min_spacing_m": 9.814530044471782,
+      "spacing_fallback_count": 1,
+      "selected_batches": [
+        [
+          "location_f01b4604b3e1ef81",
+          "location_60b1e4a22146d184"
+        ],
+        [
+          "location_9acf9c940d3a091c",
+          "location_a6470440b3b8df4c"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.18181818181818182
+    },
+    {
+      "site_id": "parkland_bower_ave_two",
+      "scenario_seed": 809,
+      "trajectory_id": "trajectory_v4_1ad72d8e584c08db",
+      "n_locations": 11,
+      "n_query_locations": 2,
+      "n_pool_locations": 9,
+      "budgets": [
+        5,
+        7,
+        9
+      ],
+      "missing_budgets": [
+        11,
+        13
+      ],
+      "min_spacing_m": 9.55843083304751,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_9add2f95d2ea178d",
+          "location_94587f3742482e85"
+        ],
+        [
+          "location_60b1e4a22146d184",
+          "location_a6470440b3b8df4c"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.18181818181818182
+    },
+    {
+      "site_id": "redcliffs_main_road",
+      "scenario_seed": 107,
+      "trajectory_id": "trajectory_v4_e33fc97bef8841ee",
+      "n_locations": 11,
+      "n_query_locations": 2,
+      "n_pool_locations": 9,
+      "budgets": [
+        5,
+        7,
+        9
+      ],
+      "missing_budgets": [
+        11,
+        13
+      ],
+      "min_spacing_m": 11.29738465333907,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_71ca44256830148d",
+          "location_2b6cd384feaa3c79"
+        ],
+        [
+          "location_0e88e3649dc75751",
+          "location_0fadc78c84be03cc"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.18181818181818182
+    },
+    {
+      "site_id": "redcliffs_main_road",
+      "scenario_seed": 211,
+      "trajectory_id": "trajectory_v4_e5a633510e1301f0",
+      "n_locations": 11,
+      "n_query_locations": 2,
+      "n_pool_locations": 9,
+      "budgets": [
+        5,
+        7,
+        9
+      ],
+      "missing_budgets": [
+        11,
+        13
+      ],
+      "min_spacing_m": 10.751744044513588,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_35a7ad08ab875d4d",
+          "location_d3a4d1469acb2465"
+        ],
+        [
+          "location_62cc407c4958c73c",
+          "location_18ec11be835e0c46"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.18181818181818182
+    },
+    {
+      "site_id": "redcliffs_main_road",
+      "scenario_seed": 307,
+      "trajectory_id": "trajectory_v4_3a4da25fc797f106",
+      "n_locations": 11,
+      "n_query_locations": 2,
+      "n_pool_locations": 9,
+      "budgets": [
+        5,
+        7,
+        9
+      ],
+      "missing_budgets": [
+        11,
+        13
+      ],
+      "min_spacing_m": 15.68465810938184,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_2b6cd384feaa3c79",
+          "location_18ec11be835e0c46"
+        ],
+        [
+          "location_d3a4d1469acb2465",
+          "location_35a7ad08ab875d4d"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.18181818181818182
+    },
+    {
+      "site_id": "redcliffs_main_road",
+      "scenario_seed": 401,
+      "trajectory_id": "trajectory_v4_3ac5e02fa0bc231c",
+      "n_locations": 11,
+      "n_query_locations": 2,
+      "n_pool_locations": 9,
+      "budgets": [
+        5,
+        7,
+        9
+      ],
+      "missing_budgets": [
+        11,
+        13
+      ],
+      "min_spacing_m": 13.009492688164574,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_18ec11be835e0c46",
+          "location_2b6cd384feaa3c79"
+        ],
+        [
+          "location_85ff4cd8d6683d37",
+          "location_62cc407c4958c73c"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.18181818181818182
+    },
+    {
+      "site_id": "redcliffs_main_road",
+      "scenario_seed": 503,
+      "trajectory_id": "trajectory_v4_224c59ec4644f7de",
+      "n_locations": 11,
+      "n_query_locations": 2,
+      "n_pool_locations": 9,
+      "budgets": [
+        5,
+        7,
+        9
+      ],
+      "missing_budgets": [
+        11,
+        13
+      ],
+      "min_spacing_m": 12.237552860057107,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_71ca44256830148d",
+          "location_62cc407c4958c73c"
+        ],
+        [
+          "location_d3a4d1469acb2465",
+          "location_18ec11be835e0c46"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.18181818181818182
+    },
+    {
+      "site_id": "redcliffs_main_road",
+      "scenario_seed": 601,
+      "trajectory_id": "trajectory_v4_09cf44d761803148",
+      "n_locations": 11,
+      "n_query_locations": 2,
+      "n_pool_locations": 9,
+      "budgets": [
+        5,
+        7,
+        9
+      ],
+      "missing_budgets": [
+        11,
+        13
+      ],
+      "min_spacing_m": 11.29738465333907,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_71ca44256830148d",
+          "location_2b6cd384feaa3c79"
+        ],
+        [
+          "location_0e88e3649dc75751",
+          "location_0fadc78c84be03cc"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.18181818181818182
+    },
+    {
+      "site_id": "redcliffs_main_road",
+      "scenario_seed": 701,
+      "trajectory_id": "trajectory_v4_7f46db34262a26a9",
+      "n_locations": 11,
+      "n_query_locations": 2,
+      "n_pool_locations": 9,
+      "budgets": [
+        5,
+        7,
+        9
+      ],
+      "missing_budgets": [
+        11,
+        13
+      ],
+      "min_spacing_m": 12.237552860057107,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_0fadc78c84be03cc",
+          "location_2b6cd384feaa3c79"
+        ],
+        [
+          "location_85ff4cd8d6683d37",
+          "location_62cc407c4958c73c"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.18181818181818182
+    },
+    {
+      "site_id": "redcliffs_main_road",
+      "scenario_seed": 809,
+      "trajectory_id": "trajectory_v4_3a01e70fe95bfb69",
+      "n_locations": 11,
+      "n_query_locations": 2,
+      "n_pool_locations": 9,
+      "budgets": [
+        5,
+        7,
+        9
+      ],
+      "missing_budgets": [
+        11,
+        13
+      ],
+      "min_spacing_m": 12.237552860057107,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_18ec11be835e0c46",
+          "location_71ca44256830148d"
+        ],
+        [
+          "location_2b6cd384feaa3c79",
+          "location_0fadc78c84be03cc"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.18181818181818182
+    },
+    {
+      "site_id": "wainoni",
+      "scenario_seed": 107,
+      "trajectory_id": "trajectory_v4_dfd499ca9896ec54",
+      "n_locations": 11,
+      "n_query_locations": 2,
+      "n_pool_locations": 9,
+      "budgets": [
+        5,
+        7,
+        9
+      ],
+      "missing_budgets": [
+        11,
+        13
+      ],
+      "min_spacing_m": 17.44203256485937,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_5430c372bef87cc6",
+          "location_8650cf96038cba71"
+        ],
+        [
+          "location_dc04c4c9865e6ac9",
+          "location_fa85e674120f2de8"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.18181818181818182
+    },
+    {
+      "site_id": "wainoni",
+      "scenario_seed": 211,
+      "trajectory_id": "trajectory_v4_c695391a5e47dd36",
+      "n_locations": 11,
+      "n_query_locations": 2,
+      "n_pool_locations": 9,
+      "budgets": [
+        5,
+        7,
+        9
+      ],
+      "missing_budgets": [
+        11,
+        13
+      ],
+      "min_spacing_m": 13.927171284573738,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_b2a50b9f7bf27b82",
+          "location_12755a999a0a124a"
+        ],
+        [
+          "location_8650cf96038cba71",
+          "location_fa85e674120f2de8"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.18181818181818182
+    },
+    {
+      "site_id": "wainoni",
+      "scenario_seed": 307,
+      "trajectory_id": "trajectory_v4_a1e31452c042597b",
+      "n_locations": 11,
+      "n_query_locations": 2,
+      "n_pool_locations": 9,
+      "budgets": [
+        5,
+        7,
+        9
+      ],
+      "missing_budgets": [
+        11,
+        13
+      ],
+      "min_spacing_m": 14.397419907641481,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_c5ec9bbce8b93bb3",
+          "location_8650cf96038cba71"
+        ],
+        [
+          "location_dc04c4c9865e6ac9",
+          "location_0397fe038260d29e"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.18181818181818182
+    },
+    {
+      "site_id": "wainoni",
+      "scenario_seed": 401,
+      "trajectory_id": "trajectory_v4_f7b045906f9f73c0",
+      "n_locations": 11,
+      "n_query_locations": 2,
+      "n_pool_locations": 9,
+      "budgets": [
+        5,
+        7,
+        9
+      ],
+      "missing_budgets": [
+        11,
+        13
+      ],
+      "min_spacing_m": 14.397419907641481,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_c5ec9bbce8b93bb3",
+          "location_8650cf96038cba71"
+        ],
+        [
+          "location_dc04c4c9865e6ac9",
+          "location_0397fe038260d29e"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.18181818181818182
+    },
+    {
+      "site_id": "wainoni",
+      "scenario_seed": 503,
+      "trajectory_id": "trajectory_v4_758628afd9ff3ff4",
+      "n_locations": 11,
+      "n_query_locations": 2,
+      "n_pool_locations": 9,
+      "budgets": [
+        5,
+        7,
+        9
+      ],
+      "missing_budgets": [
+        11,
+        13
+      ],
+      "min_spacing_m": 13.927171284573738,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_b2a50b9f7bf27b82",
+          "location_12755a999a0a124a"
+        ],
+        [
+          "location_0397fe038260d29e",
+          "location_fa85e674120f2de8"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.18181818181818182
+    },
+    {
+      "site_id": "wainoni",
+      "scenario_seed": 601,
+      "trajectory_id": "trajectory_v4_5965ca6d936eb35e",
+      "n_locations": 11,
+      "n_query_locations": 2,
+      "n_pool_locations": 9,
+      "budgets": [
+        5,
+        7,
+        9
+      ],
+      "missing_budgets": [
+        11,
+        13
+      ],
+      "min_spacing_m": 14.397419907641481,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_c5ec9bbce8b93bb3",
+          "location_0397fe038260d29e"
+        ],
+        [
+          "location_dc04c4c9865e6ac9",
+          "location_fa85e674120f2de8"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.18181818181818182
+    },
+    {
+      "site_id": "wainoni",
+      "scenario_seed": 701,
+      "trajectory_id": "trajectory_v4_7cbc6cf4c5a124f0",
+      "n_locations": 11,
+      "n_query_locations": 2,
+      "n_pool_locations": 9,
+      "budgets": [
+        5,
+        7,
+        9
+      ],
+      "missing_budgets": [
+        11,
+        13
+      ],
+      "min_spacing_m": 13.927171284573738,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_00b5590e493df25f",
+          "location_12755a999a0a124a"
+        ],
+        [
+          "location_0397fe038260d29e",
+          "location_fa85e674120f2de8"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.18181818181818182
+    },
+    {
+      "site_id": "wainoni",
+      "scenario_seed": 809,
+      "trajectory_id": "trajectory_v4_8eff6653bcb3cd76",
+      "n_locations": 11,
+      "n_query_locations": 2,
+      "n_pool_locations": 9,
+      "budgets": [
+        5,
+        7,
+        9
+      ],
+      "missing_budgets": [
+        11,
+        13
+      ],
+      "min_spacing_m": 13.927171284573738,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_c5ec9bbce8b93bb3",
+          "location_dc04c4c9865e6ac9"
+        ],
+        [
+          "location_8650cf96038cba71",
+          "location_fa85e674120f2de8"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.18181818181818182
+    },
+    {
+      "site_id": "wainoni_pak_n_save",
+      "scenario_seed": 107,
+      "trajectory_id": "trajectory_v4_51a8cf218020e70a",
+      "n_locations": 16,
+      "n_query_locations": 3,
+      "n_pool_locations": 13,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "missing_budgets": [],
+      "min_spacing_m": 30.058531234624116,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_755f248cb2f30b38",
+          "location_e64af2862bbca9c0"
+        ],
+        [
+          "location_9ca512cfde994287",
+          "location_8b905a91f02baa01"
+        ],
+        [
+          "location_7da446551b794230",
+          "location_3f84614a572c1cb7"
+        ],
+        [
+          "location_296899e7dd308105",
+          "location_866abbd442fd1c64"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.1875
+    },
+    {
+      "site_id": "wainoni_pak_n_save",
+      "scenario_seed": 211,
+      "trajectory_id": "trajectory_v4_1656a6065791a5f5",
+      "n_locations": 16,
+      "n_query_locations": 3,
+      "n_pool_locations": 13,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "missing_budgets": [],
+      "min_spacing_m": 26.44941776302576,
+      "spacing_fallback_count": 1,
+      "selected_batches": [
+        [
+          "location_b3edee146fb3531a",
+          "location_755f248cb2f30b38"
+        ],
+        [
+          "location_9ca512cfde994287",
+          "location_8b905a91f02baa01"
+        ],
+        [
+          "location_e64af2862bbca9c0",
+          "location_dfeb57d0b5b92d82"
+        ],
+        [
+          "location_3f84614a572c1cb7",
+          "location_866abbd442fd1c64"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.1875
+    },
+    {
+      "site_id": "wainoni_pak_n_save",
+      "scenario_seed": 307,
+      "trajectory_id": "trajectory_v4_7ad5c872c1ec1ce7",
+      "n_locations": 16,
+      "n_query_locations": 3,
+      "n_pool_locations": 13,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "missing_budgets": [],
+      "min_spacing_m": 25.109633609229515,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_0bdd01c4994139d4",
+          "location_7913c9f2e46259fd"
+        ],
+        [
+          "location_9ca512cfde994287",
+          "location_8b905a91f02baa01"
+        ],
+        [
+          "location_b3edee146fb3531a",
+          "location_3aa82bdfcc99b5ac"
+        ],
+        [
+          "location_e64af2862bbca9c0",
+          "location_296899e7dd308105"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.1875
+    },
+    {
+      "site_id": "wainoni_pak_n_save",
+      "scenario_seed": 401,
+      "trajectory_id": "trajectory_v4_aa57f6b1ad9a3a41",
+      "n_locations": 16,
+      "n_query_locations": 3,
+      "n_pool_locations": 13,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "missing_budgets": [],
+      "min_spacing_m": 25.109633609229515,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_8b905a91f02baa01",
+          "location_755f248cb2f30b38"
+        ],
+        [
+          "location_9ca512cfde994287",
+          "location_7913c9f2e46259fd"
+        ],
+        [
+          "location_dfeb57d0b5b92d82",
+          "location_3aa82bdfcc99b5ac"
+        ],
+        [
+          "location_0bdd01c4994139d4",
+          "location_3f84614a572c1cb7"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.1875
+    },
+    {
+      "site_id": "wainoni_pak_n_save",
+      "scenario_seed": 503,
+      "trajectory_id": "trajectory_v4_aca06ed093348414",
+      "n_locations": 16,
+      "n_query_locations": 3,
+      "n_pool_locations": 13,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "missing_budgets": [],
+      "min_spacing_m": 19.997502344402292,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_0bdd01c4994139d4",
+          "location_7913c9f2e46259fd"
+        ],
+        [
+          "location_8b905a91f02baa01",
+          "location_866abbd442fd1c64"
+        ],
+        [
+          "location_e64af2862bbca9c0",
+          "location_3aa82bdfcc99b5ac"
+        ],
+        [
+          "location_296899e7dd308105",
+          "location_3f84614a572c1cb7"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.1875
+    },
+    {
+      "site_id": "wainoni_pak_n_save",
+      "scenario_seed": 601,
+      "trajectory_id": "trajectory_v4_5d58525a2ba70cd6",
+      "n_locations": 16,
+      "n_query_locations": 3,
+      "n_pool_locations": 13,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "missing_budgets": [],
+      "min_spacing_m": 19.997502344402292,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_e64af2862bbca9c0",
+          "location_9ca512cfde994287"
+        ],
+        [
+          "location_8b905a91f02baa01",
+          "location_dfeb57d0b5b92d82"
+        ],
+        [
+          "location_3f84614a572c1cb7",
+          "location_296899e7dd308105"
+        ],
+        [
+          "location_866abbd442fd1c64",
+          "location_7913c9f2e46259fd"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.1875
+    },
+    {
+      "site_id": "wainoni_pak_n_save",
+      "scenario_seed": 701,
+      "trajectory_id": "trajectory_v4_fed2ba831bb25f03",
+      "n_locations": 16,
+      "n_query_locations": 3,
+      "n_pool_locations": 13,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "missing_budgets": [],
+      "min_spacing_m": 24.612567928054673,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_1434bdb7c5c827be",
+          "location_755f248cb2f30b38"
+        ],
+        [
+          "location_9ca512cfde994287",
+          "location_3aa82bdfcc99b5ac"
+        ],
+        [
+          "location_aa590246ecdcb8aa",
+          "location_dfeb57d0b5b92d82"
+        ],
+        [
+          "location_7913c9f2e46259fd",
+          "location_0bdd01c4994139d4"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.1875
+    },
+    {
+      "site_id": "wainoni_pak_n_save",
+      "scenario_seed": 809,
+      "trajectory_id": "trajectory_v4_bd324e7e6e1ad5e3",
+      "n_locations": 16,
+      "n_query_locations": 3,
+      "n_pool_locations": 13,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "missing_budgets": [],
+      "min_spacing_m": 26.462762516353827,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_b3edee146fb3531a",
+          "location_755f248cb2f30b38"
+        ],
+        [
+          "location_3f84614a572c1cb7",
+          "location_9ca512cfde994287"
+        ],
+        [
+          "location_e64af2862bbca9c0",
+          "location_3aa82bdfcc99b5ac"
+        ],
+        [
+          "location_296899e7dd308105",
+          "location_866abbd442fd1c64"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.1875
+    },
+    {
+      "site_id": "wellington_college",
+      "scenario_seed": 107,
+      "trajectory_id": "trajectory_v4_bbed39e38d0e4ead",
+      "n_locations": 12,
+      "n_query_locations": 1,
+      "n_pool_locations": 11,
+      "budgets": [
+        5,
+        7,
+        9,
+        11
+      ],
+      "missing_budgets": [
+        13
+      ],
+      "min_spacing_m": 30.479501308256342,
+      "spacing_fallback_count": 1,
+      "selected_batches": [
+        [
+          "location_7612088292dcca8b",
+          "location_6d52ba025bacdc7c"
+        ],
+        [
+          "location_22cada5a8603a724",
+          "location_5c54eb91341b4d15"
+        ],
+        [
+          "location_9524418cbd9143a7",
+          "location_b1a5ad83b488e3a6"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.08333333333333333
+    },
+    {
+      "site_id": "wellington_college",
+      "scenario_seed": 211,
+      "trajectory_id": "trajectory_v4_59e3e1795fdf73a2",
+      "n_locations": 12,
+      "n_query_locations": 1,
+      "n_pool_locations": 11,
+      "budgets": [
+        5,
+        7,
+        9,
+        11
+      ],
+      "missing_budgets": [
+        13
+      ],
+      "min_spacing_m": 30.479501308256342,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_7612088292dcca8b",
+          "location_6d52ba025bacdc7c"
+        ],
+        [
+          "location_6e68e127bb2c4026",
+          "location_b1a5ad83b488e3a6"
+        ],
+        [
+          "location_5c54eb91341b4d15",
+          "location_3b61002a7b5179f4"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.08333333333333333
+    },
+    {
+      "site_id": "wellington_college",
+      "scenario_seed": 307,
+      "trajectory_id": "trajectory_v4_8dc16993c832601f",
+      "n_locations": 12,
+      "n_query_locations": 1,
+      "n_pool_locations": 11,
+      "budgets": [
+        5,
+        7,
+        9,
+        11
+      ],
+      "missing_budgets": [
+        13
+      ],
+      "min_spacing_m": 32.0624390837628,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_7612088292dcca8b",
+          "location_6d52ba025bacdc7c"
+        ],
+        [
+          "location_22cada5a8603a724",
+          "location_6e68e127bb2c4026"
+        ],
+        [
+          "location_5c54eb91341b4d15",
+          "location_3b61002a7b5179f4"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.08333333333333333
+    },
+    {
+      "site_id": "wellington_college",
+      "scenario_seed": 401,
+      "trajectory_id": "trajectory_v4_6db785ace39a9c5f",
+      "n_locations": 12,
+      "n_query_locations": 1,
+      "n_pool_locations": 11,
+      "budgets": [
+        5,
+        7,
+        9,
+        11
+      ],
+      "missing_budgets": [
+        13
+      ],
+      "min_spacing_m": 30.479501308256342,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_9524418cbd9143a7",
+          "location_6d52ba025bacdc7c"
+        ],
+        [
+          "location_22cada5a8603a724",
+          "location_b1a5ad83b488e3a6"
+        ],
+        [
+          "location_5c54eb91341b4d15",
+          "location_3b61002a7b5179f4"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.08333333333333333
+    },
+    {
+      "site_id": "wellington_college",
+      "scenario_seed": 503,
+      "trajectory_id": "trajectory_v4_f43d9af984368c9f",
+      "n_locations": 12,
+      "n_query_locations": 1,
+      "n_pool_locations": 11,
+      "budgets": [
+        5,
+        7,
+        9,
+        11
+      ],
+      "missing_budgets": [
+        13
+      ],
+      "min_spacing_m": 30.479501308256342,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_cfa7a06ea00becac",
+          "location_6d52ba025bacdc7c"
+        ],
+        [
+          "location_22cada5a8603a724",
+          "location_9524418cbd9143a7"
+        ],
+        [
+          "location_5c54eb91341b4d15",
+          "location_3b61002a7b5179f4"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.08333333333333333
+    },
+    {
+      "site_id": "wellington_college",
+      "scenario_seed": 601,
+      "trajectory_id": "trajectory_v4_a8c6daddae18349c",
+      "n_locations": 12,
+      "n_query_locations": 1,
+      "n_pool_locations": 11,
+      "budgets": [
+        5,
+        7,
+        9,
+        11
+      ],
+      "missing_budgets": [
+        13
+      ],
+      "min_spacing_m": 35.11409973215888,
+      "spacing_fallback_count": 1,
+      "selected_batches": [
+        [
+          "location_3b61002a7b5179f4",
+          "location_6d52ba025bacdc7c"
+        ],
+        [
+          "location_22cada5a8603a724",
+          "location_6e68e127bb2c4026"
+        ],
+        [
+          "location_9524418cbd9143a7",
+          "location_b1a5ad83b488e3a6"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.08333333333333333
+    },
+    {
+      "site_id": "wellington_college",
+      "scenario_seed": 701,
+      "trajectory_id": "trajectory_v4_20483743b9194c34",
+      "n_locations": 12,
+      "n_query_locations": 1,
+      "n_pool_locations": 11,
+      "budgets": [
+        5,
+        7,
+        9,
+        11
+      ],
+      "missing_budgets": [
+        13
+      ],
+      "min_spacing_m": 32.0624390837628,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_7612088292dcca8b",
+          "location_22cada5a8603a724"
+        ],
+        [
+          "location_6e68e127bb2c4026",
+          "location_b1a5ad83b488e3a6"
+        ],
+        [
+          "location_6d52ba025bacdc7c",
+          "location_3b61002a7b5179f4"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.08333333333333333
+    },
+    {
+      "site_id": "wellington_college",
+      "scenario_seed": 809,
+      "trajectory_id": "trajectory_v4_fe08717bc11c7d5c",
+      "n_locations": 12,
+      "n_query_locations": 1,
+      "n_pool_locations": 11,
+      "budgets": [
+        5,
+        7,
+        9,
+        11
+      ],
+      "missing_budgets": [
+        13
+      ],
+      "min_spacing_m": 30.479501308256342,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_cfa7a06ea00becac",
+          "location_6d52ba025bacdc7c"
+        ],
+        [
+          "location_6e68e127bb2c4026",
+          "location_9524418cbd9143a7"
+        ],
+        [
+          "location_5c54eb91341b4d15",
+          "location_3b61002a7b5179f4"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.08333333333333333
+    },
+    {
+      "site_id": "whangarei_high_school",
+      "scenario_seed": 107,
+      "trajectory_id": "trajectory_v4_0dbc89f60ea45382",
+      "n_locations": 9,
+      "n_query_locations": 2,
+      "n_pool_locations": 7,
+      "budgets": [
+        5,
+        7
+      ],
+      "missing_budgets": [
+        9,
+        11,
+        13
+      ],
+      "min_spacing_m": 22.383308513824073,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_0a1e8d618e5053af",
+          "location_69926b81dec61338"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.2222222222222222
+    },
+    {
+      "site_id": "whangarei_high_school",
+      "scenario_seed": 211,
+      "trajectory_id": "trajectory_v4_0b15104c24013689",
+      "n_locations": 9,
+      "n_query_locations": 2,
+      "n_pool_locations": 7,
+      "budgets": [
+        5,
+        7
+      ],
+      "missing_budgets": [
+        9,
+        11,
+        13
+      ],
+      "min_spacing_m": 22.383308513824073,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_b04e911ca4e7ba2d",
+          "location_69658906b6aeae56"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.2222222222222222
+    },
+    {
+      "site_id": "whangarei_high_school",
+      "scenario_seed": 307,
+      "trajectory_id": "trajectory_v4_0a9538bdeab0612f",
+      "n_locations": 9,
+      "n_query_locations": 2,
+      "n_pool_locations": 7,
+      "budgets": [
+        5,
+        7
+      ],
+      "missing_budgets": [
+        9,
+        11,
+        13
+      ],
+      "min_spacing_m": 22.383308513824073,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_b04e911ca4e7ba2d",
+          "location_69658906b6aeae56"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.2222222222222222
+    },
+    {
+      "site_id": "whangarei_high_school",
+      "scenario_seed": 401,
+      "trajectory_id": "trajectory_v4_b387265967ee829a",
+      "n_locations": 9,
+      "n_query_locations": 2,
+      "n_pool_locations": 7,
+      "budgets": [
+        5,
+        7
+      ],
+      "missing_budgets": [
+        9,
+        11,
+        13
+      ],
+      "min_spacing_m": 22.383308513824073,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_b04e911ca4e7ba2d",
+          "location_69658906b6aeae56"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.2222222222222222
+    },
+    {
+      "site_id": "whangarei_high_school",
+      "scenario_seed": 503,
+      "trajectory_id": "trajectory_v4_2b6b8bc62b84518d",
+      "n_locations": 9,
+      "n_query_locations": 2,
+      "n_pool_locations": 7,
+      "budgets": [
+        5,
+        7
+      ],
+      "missing_budgets": [
+        9,
+        11,
+        13
+      ],
+      "min_spacing_m": 19.68189523398683,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_fc8bd001bee51450",
+          "location_69926b81dec61338"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.2222222222222222
+    },
+    {
+      "site_id": "whangarei_high_school",
+      "scenario_seed": 601,
+      "trajectory_id": "trajectory_v4_02343fc7778cd802",
+      "n_locations": 9,
+      "n_query_locations": 2,
+      "n_pool_locations": 7,
+      "budgets": [
+        5,
+        7
+      ],
+      "missing_budgets": [
+        9,
+        11,
+        13
+      ],
+      "min_spacing_m": 22.383308513824073,
+      "spacing_fallback_count": 1,
+      "selected_batches": [
+        [
+          "location_69658906b6aeae56",
+          "location_69926b81dec61338"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.2222222222222222
+    },
+    {
+      "site_id": "whangarei_high_school",
+      "scenario_seed": 701,
+      "trajectory_id": "trajectory_v4_fa429d66a8e9ea4d",
+      "n_locations": 9,
+      "n_query_locations": 2,
+      "n_pool_locations": 7,
+      "budgets": [
+        5,
+        7
+      ],
+      "missing_budgets": [
+        9,
+        11,
+        13
+      ],
+      "min_spacing_m": 22.383308513824073,
+      "spacing_fallback_count": 1,
+      "selected_batches": [
+        [
+          "location_69658906b6aeae56",
+          "location_69926b81dec61338"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.2222222222222222
+    },
+    {
+      "site_id": "whangarei_high_school",
+      "scenario_seed": 809,
+      "trajectory_id": "trajectory_v4_f87a27f8b83a5793",
+      "n_locations": 9,
+      "n_query_locations": 2,
+      "n_pool_locations": 7,
+      "budgets": [
+        5,
+        7
+      ],
+      "missing_budgets": [
+        9,
+        11,
+        13
+      ],
+      "min_spacing_m": 22.383308513824073,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_b04e911ca4e7ba2d",
+          "location_69926b81dec61338"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.2222222222222222
+    }
+  ],
+  "skipped": [
+    {
+      "site_id": "avondale",
+      "scenario_seed": 107,
+      "n_locations": 9,
+      "missing_budgets": [
+        9,
+        11,
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    },
+    {
+      "site_id": "avondale",
+      "scenario_seed": 211,
+      "n_locations": 9,
+      "missing_budgets": [
+        9,
+        11,
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    },
+    {
+      "site_id": "avondale",
+      "scenario_seed": 307,
+      "n_locations": 9,
+      "missing_budgets": [
+        9,
+        11,
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    },
+    {
+      "site_id": "avondale",
+      "scenario_seed": 401,
+      "n_locations": 9,
+      "missing_budgets": [
+        9,
+        11,
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    },
+    {
+      "site_id": "avondale",
+      "scenario_seed": 503,
+      "n_locations": 9,
+      "missing_budgets": [
+        9,
+        11,
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    },
+    {
+      "site_id": "avondale",
+      "scenario_seed": 601,
+      "n_locations": 9,
+      "missing_budgets": [
+        9,
+        11,
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    },
+    {
+      "site_id": "avondale",
+      "scenario_seed": 701,
+      "n_locations": 9,
+      "missing_budgets": [
+        9,
+        11,
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    },
+    {
+      "site_id": "avondale",
+      "scenario_seed": 809,
+      "n_locations": 9,
+      "missing_budgets": [
+        9,
+        11,
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    },
+    {
+      "site_id": "avonside",
+      "scenario_seed": 107,
+      "n_locations": 10,
+      "missing_budgets": [
+        11,
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    },
+    {
+      "site_id": "avonside",
+      "scenario_seed": 211,
+      "n_locations": 10,
+      "missing_budgets": [
+        11,
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    },
+    {
+      "site_id": "avonside",
+      "scenario_seed": 307,
+      "n_locations": 10,
+      "missing_budgets": [
+        11,
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    },
+    {
+      "site_id": "avonside",
+      "scenario_seed": 401,
+      "n_locations": 10,
+      "missing_budgets": [
+        11,
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    },
+    {
+      "site_id": "avonside",
+      "scenario_seed": 503,
+      "n_locations": 10,
+      "missing_budgets": [
+        11,
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    },
+    {
+      "site_id": "avonside",
+      "scenario_seed": 601,
+      "n_locations": 10,
+      "missing_budgets": [
+        11,
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    },
+    {
+      "site_id": "avonside",
+      "scenario_seed": 701,
+      "n_locations": 10,
+      "missing_budgets": [
+        11,
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    },
+    {
+      "site_id": "avonside",
+      "scenario_seed": 809,
+      "n_locations": 10,
+      "missing_budgets": [
+        11,
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    },
+    {
+      "site_id": "baytown",
+      "scenario_seed": 107,
+      "n_locations": 3,
+      "missing_budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "reason": "cannot_leave_whole_query_group_and_five_support_locations"
+    },
+    {
+      "site_id": "baytown",
+      "scenario_seed": 211,
+      "n_locations": 3,
+      "missing_budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "reason": "cannot_leave_whole_query_group_and_five_support_locations"
+    },
+    {
+      "site_id": "baytown",
+      "scenario_seed": 307,
+      "n_locations": 3,
+      "missing_budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "reason": "cannot_leave_whole_query_group_and_five_support_locations"
+    },
+    {
+      "site_id": "baytown",
+      "scenario_seed": 401,
+      "n_locations": 3,
+      "missing_budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "reason": "cannot_leave_whole_query_group_and_five_support_locations"
+    },
+    {
+      "site_id": "baytown",
+      "scenario_seed": 503,
+      "n_locations": 3,
+      "missing_budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "reason": "cannot_leave_whole_query_group_and_five_support_locations"
+    },
+    {
+      "site_id": "baytown",
+      "scenario_seed": 601,
+      "n_locations": 3,
+      "missing_budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "reason": "cannot_leave_whole_query_group_and_five_support_locations"
+    },
+    {
+      "site_id": "baytown",
+      "scenario_seed": 701,
+      "n_locations": 3,
+      "missing_budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "reason": "cannot_leave_whole_query_group_and_five_support_locations"
+    },
+    {
+      "site_id": "baytown",
+      "scenario_seed": 809,
+      "n_locations": 3,
+      "missing_budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "reason": "cannot_leave_whole_query_group_and_five_support_locations"
+    },
+    {
+      "site_id": "christchurch_cnr_armagh_durham_st",
+      "scenario_seed": 107,
+      "n_locations": 5,
+      "missing_budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "reason": "cannot_leave_whole_query_group_and_five_support_locations"
+    },
+    {
+      "site_id": "christchurch_cnr_armagh_durham_st",
+      "scenario_seed": 211,
+      "n_locations": 5,
+      "missing_budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "reason": "cannot_leave_whole_query_group_and_five_support_locations"
+    },
+    {
+      "site_id": "christchurch_cnr_armagh_durham_st",
+      "scenario_seed": 307,
+      "n_locations": 5,
+      "missing_budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "reason": "cannot_leave_whole_query_group_and_five_support_locations"
+    },
+    {
+      "site_id": "christchurch_cnr_armagh_durham_st",
+      "scenario_seed": 401,
+      "n_locations": 5,
+      "missing_budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "reason": "cannot_leave_whole_query_group_and_five_support_locations"
+    },
+    {
+      "site_id": "christchurch_cnr_armagh_durham_st",
+      "scenario_seed": 503,
+      "n_locations": 5,
+      "missing_budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "reason": "cannot_leave_whole_query_group_and_five_support_locations"
+    },
+    {
+      "site_id": "christchurch_cnr_armagh_durham_st",
+      "scenario_seed": 601,
+      "n_locations": 5,
+      "missing_budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "reason": "cannot_leave_whole_query_group_and_five_support_locations"
+    },
+    {
+      "site_id": "christchurch_cnr_armagh_durham_st",
+      "scenario_seed": 701,
+      "n_locations": 5,
+      "missing_budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "reason": "cannot_leave_whole_query_group_and_five_support_locations"
+    },
+    {
+      "site_id": "christchurch_cnr_armagh_durham_st",
+      "scenario_seed": 809,
+      "n_locations": 5,
+      "missing_budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "reason": "cannot_leave_whole_query_group_and_five_support_locations"
+    },
+    {
+      "site_id": "hastings_hospital",
+      "scenario_seed": 107,
+      "n_locations": 1,
+      "missing_budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "reason": "cannot_leave_whole_query_group_and_five_support_locations"
+    },
+    {
+      "site_id": "hastings_hospital",
+      "scenario_seed": 211,
+      "n_locations": 1,
+      "missing_budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "reason": "cannot_leave_whole_query_group_and_five_support_locations"
+    },
+    {
+      "site_id": "hastings_hospital",
+      "scenario_seed": 307,
+      "n_locations": 1,
+      "missing_budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "reason": "cannot_leave_whole_query_group_and_five_support_locations"
+    },
+    {
+      "site_id": "hastings_hospital",
+      "scenario_seed": 401,
+      "n_locations": 1,
+      "missing_budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "reason": "cannot_leave_whole_query_group_and_five_support_locations"
+    },
+    {
+      "site_id": "hastings_hospital",
+      "scenario_seed": 503,
+      "n_locations": 1,
+      "missing_budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "reason": "cannot_leave_whole_query_group_and_five_support_locations"
+    },
+    {
+      "site_id": "hastings_hospital",
+      "scenario_seed": 601,
+      "n_locations": 1,
+      "missing_budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "reason": "cannot_leave_whole_query_group_and_five_support_locations"
+    },
+    {
+      "site_id": "hastings_hospital",
+      "scenario_seed": 701,
+      "n_locations": 1,
+      "missing_budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "reason": "cannot_leave_whole_query_group_and_five_support_locations"
+    },
+    {
+      "site_id": "hastings_hospital",
+      "scenario_seed": 809,
+      "n_locations": 1,
+      "missing_budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "reason": "cannot_leave_whole_query_group_and_five_support_locations"
+    },
+    {
+      "site_id": "linwood_rudds_road",
+      "scenario_seed": 107,
+      "n_locations": 7,
+      "missing_budgets": [
+        7,
+        9,
+        11,
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    },
+    {
+      "site_id": "linwood_rudds_road",
+      "scenario_seed": 211,
+      "n_locations": 7,
+      "missing_budgets": [
+        7,
+        9,
+        11,
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    },
+    {
+      "site_id": "linwood_rudds_road",
+      "scenario_seed": 307,
+      "n_locations": 7,
+      "missing_budgets": [
+        7,
+        9,
+        11,
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    },
+    {
+      "site_id": "linwood_rudds_road",
+      "scenario_seed": 401,
+      "n_locations": 7,
+      "missing_budgets": [
+        7,
+        9,
+        11,
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    },
+    {
+      "site_id": "linwood_rudds_road",
+      "scenario_seed": 503,
+      "n_locations": 7,
+      "missing_budgets": [
+        7,
+        9,
+        11,
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    },
+    {
+      "site_id": "linwood_rudds_road",
+      "scenario_seed": 601,
+      "n_locations": 7,
+      "missing_budgets": [
+        7,
+        9,
+        11,
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    },
+    {
+      "site_id": "linwood_rudds_road",
+      "scenario_seed": 701,
+      "n_locations": 7,
+      "missing_budgets": [
+        7,
+        9,
+        11,
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    },
+    {
+      "site_id": "linwood_rudds_road",
+      "scenario_seed": 809,
+      "n_locations": 7,
+      "missing_budgets": [
+        7,
+        9,
+        11,
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    },
+    {
+      "site_id": "parkland_bower_ave_two",
+      "scenario_seed": 107,
+      "n_locations": 11,
+      "missing_budgets": [
+        11,
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    },
+    {
+      "site_id": "parkland_bower_ave_two",
+      "scenario_seed": 211,
+      "n_locations": 11,
+      "missing_budgets": [
+        11,
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    },
+    {
+      "site_id": "parkland_bower_ave_two",
+      "scenario_seed": 307,
+      "n_locations": 11,
+      "missing_budgets": [
+        11,
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    },
+    {
+      "site_id": "parkland_bower_ave_two",
+      "scenario_seed": 401,
+      "n_locations": 11,
+      "missing_budgets": [
+        11,
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    },
+    {
+      "site_id": "parkland_bower_ave_two",
+      "scenario_seed": 503,
+      "n_locations": 11,
+      "missing_budgets": [
+        11,
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    },
+    {
+      "site_id": "parkland_bower_ave_two",
+      "scenario_seed": 601,
+      "n_locations": 11,
+      "missing_budgets": [
+        11,
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    },
+    {
+      "site_id": "parkland_bower_ave_two",
+      "scenario_seed": 701,
+      "n_locations": 11,
+      "missing_budgets": [
+        11,
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    },
+    {
+      "site_id": "parkland_bower_ave_two",
+      "scenario_seed": 809,
+      "n_locations": 11,
+      "missing_budgets": [
+        11,
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    },
+    {
+      "site_id": "redcliffs_main_road",
+      "scenario_seed": 107,
+      "n_locations": 11,
+      "missing_budgets": [
+        11,
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    },
+    {
+      "site_id": "redcliffs_main_road",
+      "scenario_seed": 211,
+      "n_locations": 11,
+      "missing_budgets": [
+        11,
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    },
+    {
+      "site_id": "redcliffs_main_road",
+      "scenario_seed": 307,
+      "n_locations": 11,
+      "missing_budgets": [
+        11,
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    },
+    {
+      "site_id": "redcliffs_main_road",
+      "scenario_seed": 401,
+      "n_locations": 11,
+      "missing_budgets": [
+        11,
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    },
+    {
+      "site_id": "redcliffs_main_road",
+      "scenario_seed": 503,
+      "n_locations": 11,
+      "missing_budgets": [
+        11,
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    },
+    {
+      "site_id": "redcliffs_main_road",
+      "scenario_seed": 601,
+      "n_locations": 11,
+      "missing_budgets": [
+        11,
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    },
+    {
+      "site_id": "redcliffs_main_road",
+      "scenario_seed": 701,
+      "n_locations": 11,
+      "missing_budgets": [
+        11,
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    },
+    {
+      "site_id": "redcliffs_main_road",
+      "scenario_seed": 809,
+      "n_locations": 11,
+      "missing_budgets": [
+        11,
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    },
+    {
+      "site_id": "wainoni",
+      "scenario_seed": 107,
+      "n_locations": 11,
+      "missing_budgets": [
+        11,
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    },
+    {
+      "site_id": "wainoni",
+      "scenario_seed": 211,
+      "n_locations": 11,
+      "missing_budgets": [
+        11,
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    },
+    {
+      "site_id": "wainoni",
+      "scenario_seed": 307,
+      "n_locations": 11,
+      "missing_budgets": [
+        11,
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    },
+    {
+      "site_id": "wainoni",
+      "scenario_seed": 401,
+      "n_locations": 11,
+      "missing_budgets": [
+        11,
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    },
+    {
+      "site_id": "wainoni",
+      "scenario_seed": 503,
+      "n_locations": 11,
+      "missing_budgets": [
+        11,
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    },
+    {
+      "site_id": "wainoni",
+      "scenario_seed": 601,
+      "n_locations": 11,
+      "missing_budgets": [
+        11,
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    },
+    {
+      "site_id": "wainoni",
+      "scenario_seed": 701,
+      "n_locations": 11,
+      "missing_budgets": [
+        11,
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    },
+    {
+      "site_id": "wainoni",
+      "scenario_seed": 809,
+      "n_locations": 11,
+      "missing_budgets": [
+        11,
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    },
+    {
+      "site_id": "wellington_college",
+      "scenario_seed": 107,
+      "n_locations": 12,
+      "missing_budgets": [
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    },
+    {
+      "site_id": "wellington_college",
+      "scenario_seed": 211,
+      "n_locations": 12,
+      "missing_budgets": [
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    },
+    {
+      "site_id": "wellington_college",
+      "scenario_seed": 307,
+      "n_locations": 12,
+      "missing_budgets": [
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    },
+    {
+      "site_id": "wellington_college",
+      "scenario_seed": 401,
+      "n_locations": 12,
+      "missing_budgets": [
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    },
+    {
+      "site_id": "wellington_college",
+      "scenario_seed": 503,
+      "n_locations": 12,
+      "missing_budgets": [
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    },
+    {
+      "site_id": "wellington_college",
+      "scenario_seed": 601,
+      "n_locations": 12,
+      "missing_budgets": [
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    },
+    {
+      "site_id": "wellington_college",
+      "scenario_seed": 701,
+      "n_locations": 12,
+      "missing_budgets": [
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    },
+    {
+      "site_id": "wellington_college",
+      "scenario_seed": 809,
+      "n_locations": 12,
+      "missing_budgets": [
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    },
+    {
+      "site_id": "whangarei_high_school",
+      "scenario_seed": 107,
+      "n_locations": 9,
+      "missing_budgets": [
+        9,
+        11,
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    },
+    {
+      "site_id": "whangarei_high_school",
+      "scenario_seed": 211,
+      "n_locations": 9,
+      "missing_budgets": [
+        9,
+        11,
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    },
+    {
+      "site_id": "whangarei_high_school",
+      "scenario_seed": 307,
+      "n_locations": 9,
+      "missing_budgets": [
+        9,
+        11,
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    },
+    {
+      "site_id": "whangarei_high_school",
+      "scenario_seed": 401,
+      "n_locations": 9,
+      "missing_budgets": [
+        9,
+        11,
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    },
+    {
+      "site_id": "whangarei_high_school",
+      "scenario_seed": 503,
+      "n_locations": 9,
+      "missing_budgets": [
+        9,
+        11,
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    },
+    {
+      "site_id": "whangarei_high_school",
+      "scenario_seed": 601,
+      "n_locations": 9,
+      "missing_budgets": [
+        9,
+        11,
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    },
+    {
+      "site_id": "whangarei_high_school",
+      "scenario_seed": 701,
+      "n_locations": 9,
+      "missing_budgets": [
+        9,
+        11,
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    },
+    {
+      "site_id": "whangarei_high_school",
+      "scenario_seed": 809,
+      "n_locations": 9,
+      "missing_budgets": [
+        9,
+        11,
+        13
+      ],
+      "reason": "insufficient_pool_after_whole_query_group_holdout"
+    }
+  ]
+}

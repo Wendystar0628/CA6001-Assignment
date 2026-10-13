@@ -1,0 +1,296 @@
+{
+  "plan_version": "maximin_trajectory_v4",
+  "fold_id": 2,
+  "role": "validation",
+  "scenario_seeds": [
+    907,
+    1009
+  ],
+  "budgets": [
+    5,
+    7,
+    9,
+    11,
+    13
+  ],
+  "geometry_sha256": "827d1d52693141382c7b60220a68f268a13e2a0979e8150c43ad5e60c177bdd7",
+  "geometry_columns_used": [
+    "site_id",
+    "location_id",
+    "near_group_id",
+    "x_m",
+    "y_m",
+    "investigation_group"
+  ],
+  "labels_read": false,
+  "n_episodes": 20,
+  "n_trajectories": 4,
+  "n_included_sites": 2,
+  "n_requested_sites": 4,
+  "evaluation_fraction_target": 0.2,
+  "small_site_rule": "Largest registered budget leaving one whole query near group; never filter by labels.",
+  "separation": "Whole near groups held out from support for each trajectory; masks may differ across trajectories.",
+  "dependence": "Budgets within a trajectory and trajectories within a site are correlated, not independent samples.",
+  "site_coverage": [
+    {
+      "site_id": "aranui",
+      "n_locations": 5,
+      "n_episodes": 0,
+      "n_trajectories": 0,
+      "budgets": [],
+      "n_unique_support_locations": 0,
+      "n_unique_query_locations": 0,
+      "n_distinct_query_masks": 0,
+      "n_distinct_support_masks": 0
+    },
+    {
+      "site_id": "christchurch_metro_sports_facility",
+      "n_locations": 39,
+      "n_episodes": 10,
+      "n_trajectories": 2,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "n_unique_support_locations": 22,
+      "n_unique_query_locations": 16,
+      "n_distinct_query_masks": 2,
+      "n_distinct_support_masks": 10
+    },
+    {
+      "site_id": "marshland",
+      "n_locations": 20,
+      "n_episodes": 10,
+      "n_trajectories": 2,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "n_unique_support_locations": 18,
+      "n_unique_query_locations": 8,
+      "n_distinct_query_masks": 2,
+      "n_distinct_support_masks": 10
+    },
+    {
+      "site_id": "marshland_road",
+      "n_locations": 2,
+      "n_episodes": 0,
+      "n_trajectories": 0,
+      "budgets": [],
+      "n_unique_support_locations": 0,
+      "n_unique_query_locations": 0,
+      "n_distinct_query_masks": 0,
+      "n_distinct_support_masks": 0
+    }
+  ],
+  "trajectories": [
+    {
+      "site_id": "christchurch_metro_sports_facility",
+      "scenario_seed": 907,
+      "trajectory_id": "trajectory_v4_c2e825bdb3477eff",
+      "n_locations": 39,
+      "n_query_locations": 8,
+      "n_pool_locations": 31,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "missing_budgets": [],
+      "min_spacing_m": 4.599065123151898,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_fc4dbb3312dc5225",
+          "location_9a9ae9afbcd4b2e7"
+        ],
+        [
+          "location_8f0796dede138593",
+          "location_4226b002443d8ab7"
+        ],
+        [
+          "location_0d9dff4d85d5db82",
+          "location_9637333496a4293f"
+        ],
+        [
+          "location_8f25796c2b97e58f",
+          "location_b7e53b56e9e1e7cb"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.20512820512820512
+    },
+    {
+      "site_id": "christchurch_metro_sports_facility",
+      "scenario_seed": 1009,
+      "trajectory_id": "trajectory_v4_6d890660dcf3020f",
+      "n_locations": 39,
+      "n_query_locations": 8,
+      "n_pool_locations": 31,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "missing_budgets": [],
+      "min_spacing_m": 4.589172038640349,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_021e40993a0ab7d4",
+          "location_ed1f6962e1b996c5"
+        ],
+        [
+          "location_e1bdacc9072d2f3c",
+          "location_ef6514e11a73c1bc"
+        ],
+        [
+          "location_86b9c7065ac08efa",
+          "location_9637333496a4293f"
+        ],
+        [
+          "location_02083dddacb8e313",
+          "location_9c7d49be21040701"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.20512820512820512
+    },
+    {
+      "site_id": "marshland",
+      "scenario_seed": 907,
+      "trajectory_id": "trajectory_v4_76b40dee5c1b153a",
+      "n_locations": 20,
+      "n_query_locations": 4,
+      "n_pool_locations": 16,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "missing_budgets": [],
+      "min_spacing_m": 12.191416240209392,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_72ae58633f63e224",
+          "location_e83ddbd9558116ac"
+        ],
+        [
+          "location_4e6da72bf6e514d5",
+          "location_52b5947bd236673d"
+        ],
+        [
+          "location_3e6c95558e5f5c05",
+          "location_d6e2853f5f6b0695"
+        ],
+        [
+          "location_e34f08e844c76447",
+          "location_3dd80d0d68ace4cf"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.2
+    },
+    {
+      "site_id": "marshland",
+      "scenario_seed": 1009,
+      "trajectory_id": "trajectory_v4_558207051f333719",
+      "n_locations": 20,
+      "n_query_locations": 4,
+      "n_pool_locations": 16,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "missing_budgets": [],
+      "min_spacing_m": 14.789936602538795,
+      "spacing_fallback_count": 0,
+      "selected_batches": [
+        [
+          "location_2dd5199da960ca4f",
+          "location_e83ddbd9558116ac"
+        ],
+        [
+          "location_52b5947bd236673d",
+          "location_6416778c2eac2e5c"
+        ],
+        [
+          "location_9ebae0098d8143c1",
+          "location_7f40123dd14dfd10"
+        ],
+        [
+          "location_d6e2853f5f6b0695",
+          "location_e34f08e844c76447"
+        ]
+      ],
+      "evaluation_fraction_actual": 0.2
+    }
+  ],
+  "skipped": [
+    {
+      "site_id": "aranui",
+      "scenario_seed": 907,
+      "n_locations": 5,
+      "missing_budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "reason": "cannot_leave_whole_query_group_and_five_support_locations"
+    },
+    {
+      "site_id": "aranui",
+      "scenario_seed": 1009,
+      "n_locations": 5,
+      "missing_budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "reason": "cannot_leave_whole_query_group_and_five_support_locations"
+    },
+    {
+      "site_id": "marshland_road",
+      "scenario_seed": 907,
+      "n_locations": 2,
+      "missing_budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "reason": "cannot_leave_whole_query_group_and_five_support_locations"
+    },
+    {
+      "site_id": "marshland_road",
+      "scenario_seed": 1009,
+      "n_locations": 2,
+      "missing_budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "reason": "cannot_leave_whole_query_group_and_five_support_locations"
+    }
+  ]
+}

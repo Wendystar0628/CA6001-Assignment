@@ -158,3 +158,16 @@ def test_partial_native_probability_never_becomes_a_partial_site_average():
     table, detail = calibration_effects(predictions, expected, ['idw', 'gp'])
     assert table.empty
     assert next(r for r in detail['availability'] if r['model_id'] == 'gp')['reason'] == 'native_probability_missing_or_invalid_in_some_cells'
+
+
+def test_mixed_point_and_distribution_system_has_no_partial_interval_claim():
+    curves = _curves()
+    curves.loc[curves.model_id.eq('idw'), ['coverage_90', 'width_90_log']] = np.nan
+    settings = dict(h_tolerance_m=.05, recall_tolerance=.02, fpr_tolerance=.02, min_relative_improvement=0.)
+    result, _, _, _ = select_trained_candidates(curves, ['residual_ft_crps_a025'], settings)
+    assert np.isnan(result['method']['coverage_90'])
+    assert np.isnan(result['baseline']['coverage_90'])
+    assert result['interval_availability']['method']['coverage_90']['defined_curves'] == 8
+    assert result['interval_availability']['method']['coverage_90']['total_curves'] == 12
+    assert result['method']['log_mae'] == pytest.approx(.95)
+    assert not result['passed']

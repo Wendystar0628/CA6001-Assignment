@@ -388,6 +388,19 @@ def select_trained_candidates(curves, candidates, settings):
     sites = paired.groupby(['site_id', 'fold_id'])[columns].mean().groupby('site_id').mean()
     method = {name: float(sites[f'{name}_method'].mean()) for name in METRICS}
     baseline = {name: float(sites[f'{name}_baseline'].mean()) for name in METRICS}
+    interval_availability = {}
+    for side, values in [('method', method), ('baseline', baseline)]:
+        interval_availability[side] = {}
+        for name in ['coverage_90', 'width_90_log']:
+            column = f'{name}_{side}'
+            finite = np.isfinite(paired[column])
+            complete_sites = paired.assign(_finite=finite).groupby('site_id')._finite.all()
+            interval_availability[side][name] = {
+                'defined_curves': int(finite.sum()), 'total_curves': len(paired),
+                'complete_sites': int(complete_sites.sum()), 'total_sites': len(sites),
+                'status': 'complete' if finite.all() else 'not_available_for_whole_system'}
+            if not finite.all():
+                values[name] = np.nan
     checks = _gate(gate_values(method), gate_values(baseline), settings)
     improved = int((sites.log_mae_method < sites.log_mae_baseline).sum())
     checks.update(majority_unique_sites_improve=improved > len(sites)/2, all_folds_complete=True)
@@ -395,6 +408,7 @@ def select_trained_candidates(curves, candidates, settings):
     result = {'scope': 'exploratory_validation_only', 'folds': selections,
               'global_checks': checks, 'passed': passed, 'improved_sites': improved,
               'unique_sites': len(sites), 'method': method, 'baseline': baseline,
+              'interval_availability': interval_availability,
               'relative_log_mae_reduction': 1 - method['log_mae']/baseline['log_mae'],
               'candidates': list(candidates), 'no_test_used': True, 'outer_test_launched': False,
               'outer_test_recommendation': 'consider_frozen_extension' if passed else 'do_not_expand',

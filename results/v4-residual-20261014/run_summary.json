@@ -1,0 +1,76 @@
+{
+  "run_id": "v4-residual-20261014",
+  "date": "2026-10-14",
+  "status": "completed_validation_gate_failed",
+  "branch": "main",
+  "prior_work_merge_commit": "b0e1ce7",
+  "training_source_commit": "6274637",
+  "scope": "exploratory_validation_only",
+  "trained_models": 6,
+  "candidate_ids": [
+    "residual_ft_crps_a025",
+    "residual_ft_crps_a050",
+    "residual_ft_crps_a100",
+    "residual_ft_crps_guarded_a025",
+    "residual_ft_crps_guarded_a050",
+    "residual_ft_task_a025",
+    "residual_ft_task_a050",
+    "residual_ft_task_a100",
+    "residual_ft_task_guarded_a025",
+    "residual_ft_task_guarded_a050"
+  ],
+  "reference_models": 13,
+  "model_ids_total": 23,
+  "budget_states_per_model": 60,
+  "total_metric_rows": 1380,
+  "distinct_validation_sites": 4,
+  "successful_optimizer_updates": 3400,
+  "targeted_tests_passed": 24,
+  "targeted_tests_failed": 0,
+  "outer_test_executed": false,
+  "global_gate": {
+    "passed": false,
+    "global_checks": {
+      "profile_improves": true,
+      "thickness_guard": true,
+      "recall_guard": true,
+      "fpr_guard": true,
+      "majority_unique_sites_improve": false,
+      "all_folds_complete": true
+    },
+    "improved_sites": 2,
+    "unique_sites": 4,
+    "relative_log_mae_reduction": 0.01253806511445632,
+    "folds": {
+      "0": {
+        "baseline_model": "idw",
+        "selected_model": "idw",
+        "fallback": true,
+        "eligible_candidates": []
+      },
+      "1": {
+        "baseline_model": "idw",
+        "selected_model": "residual_ft_crps_guarded_a050",
+        "fallback": false,
+        "eligible_candidates": [
+          "residual_ft_crps_guarded_a025",
+          "residual_ft_crps_guarded_a050",
+          "residual_ft_task_guarded_a025",
+          "residual_ft_task_guarded_a050"
+        ]
+      },
+      "2": {
+        "baseline_model": "gp",
+        "selected_model": "gp",
+        "fallback": true,
+        "eligible_candidates": []
+      }
+    }
+  },
+  "specific_effects": {
+    "task_alpha1_vs_same_alpha_untrained_error_reduction": 0.12181518242106182,
+    "best_guarded_vs_idw_error_reduction": 0.028277921303329956,
+    "best_guarded_vs_matched_xgb_error_reduction": 0.0216789584888204
+  },
+  "interval_reporting": "Whole selected system interval metrics unavailable because some selected models have point outputs only. Available curve/site counts recorded in selection.json."
+}
