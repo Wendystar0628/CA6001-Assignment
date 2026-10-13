@@ -1,0 +1,13 @@
+﻿fold_id,site_id,target_version,pass_rate,n_instances,q
+0,lower_hutt_town_hall,Legacy marginal rule,0.5,2,0.6
+0,tauranga_farmers_building,Legacy marginal rule,0.0,2,0.6
+0,lower_hutt_town_hall,V2 joint rule,0.5,2,0.6
+0,tauranga_farmers_building,V2 joint rule,0.5,2,0.6
+1,lower_hutt_town_hall,Legacy marginal rule,0.5,2,0.8
+1,tauranga_farmers_building,Legacy marginal rule,0.0,2,0.8
+1,lower_hutt_town_hall,V2 joint rule,1.0,2,0.8
+1,tauranga_farmers_building,V2 joint rule,1.0,2,0.8
+2,christchurch_metro_sports_facility,Legacy marginal rule,0.5,2,0.8
+2,marshland,Legacy marginal rule,0.0,2,0.8
+2,christchurch_metro_sports_facility,V2 joint rule,1.0,2,0.8
+2,marshland,V2 joint rule,1.0,2,0.8

@@ -1,0 +1,577 @@
+{
+  "manifest": "Data\\cpt_screened_spatial_profiles.json",
+  "arrays": "Data\\cpt_screened_depth_qc.npz",
+  "n_candidate_profiles": 503,
+  "n_distinct_planned_locations": 495,
+  "n_usable_representative_locations": 492,
+  "n_grid_rows": 11808,
+  "depth_cells": 24,
+  "depth_centers_m": [
+    2.125,
+    2.375,
+    2.625,
+    2.875,
+    3.125,
+    3.375,
+    3.625,
+    3.875,
+    4.125,
+    4.375,
+    4.625,
+    4.875,
+    5.125,
+    5.375,
+    5.625,
+    5.875,
+    6.125,
+    6.375,
+    6.625,
+    6.875,
+    7.125,
+    7.375,
+    7.625,
+    7.875
+  ],
+  "n_sites": 31,
+  "n_replay_sites_by_size": 8,
+  "n_investigation_groups": 31,
+  "excluded_profile_reasons": {
+    "same_coordinate_nonrepresentative": 8,
+    "incomplete_midpoint_grid_or_interpolation_gap": 3
+  },
+  "coordinate_provenance": {
+    "@Aranui": {
+      "coordinate_file": "CPT_3_1196/@Aranui/CPT locations.xlsx",
+      "header": [
+        "id",
+        "x(m)",
+        "y(m)",
+        "x(degree)",
+        "y(degree)"
+      ],
+      "workbook_properties": {
+        "title": "",
+        "subject": "",
+        "description": "",
+        "keywords": ""
+      },
+      "status": "geographic_columns"
+    },
+    "@Avondale": {
+      "coordinate_file": "CPT_3_1196/@Avondale/CPT locations.xlsx",
+      "header": [
+        "id",
+        "x(m)",
+        "y(m)",
+        "x(degree)",
+        "y(degree)"
+      ],
+      "workbook_properties": {
+        "title": "",
+        "subject": "",
+        "description": "",
+        "keywords": ""
+      },
+      "status": "geographic_columns"
+    },
+    "@Avonside": {
+      "coordinate_file": "CPT_3_1196/@Avonside/CPT locations.xlsx",
+      "header": [
+        "id",
+        "x(m)",
+        "y(m)",
+        "",
+        ""
+      ],
+      "workbook_properties": {
+        "title": "",
+        "subject": "",
+        "description": "",
+        "keywords": ""
+      },
+      "status": "global_coordinates_unavailable"
+    },
+    "@Baytown": {
+      "coordinate_file": "CPT_3_1196/@Baytown/CPT locations.xlsx",
+      "header": [
+        "id",
+        "x(m)",
+        "y(m)"
+      ],
+      "workbook_properties": {
+        "title": "",
+        "subject": "",
+        "description": "",
+        "keywords": ""
+      },
+      "status": "global_coordinates_unavailable"
+    },
+    "@Bexley": {
+      "coordinate_file": "CPT_3_1196/@Bexley/CPT locations.xlsx",
+      "header": [
+        "id",
+        "x(m)",
+        "y(m)",
+        "x(degree)",
+        "y(degree)"
+      ],
+      "workbook_properties": {
+        "title": "",
+        "subject": "",
+        "description": "",
+        "keywords": ""
+      },
+      "status": "geographic_columns"
+    },
+    "@Cashmere (high school)": {
+      "coordinate_file": "CPT_3_1196/@Cashmere (high school)/CPT locations.xlsx",
+      "header": [
+        "id",
+        "x(m)",
+        "y(m)",
+        "x(degree)",
+        "y(degree)"
+      ],
+      "workbook_properties": {
+        "title": "",
+        "subject": "",
+        "description": "",
+        "keywords": ""
+      },
+      "status": "geographic_columns"
+    },
+    "@Christchurch (Central City)": {
+      "coordinate_file": "CPT_3_1196/@Christchurch (Central City)/CPT locations.xlsx",
+      "header": [
+        "id",
+        "x(m)",
+        "y(m)",
+        "x(degree)",
+        "y(degree)"
+      ],
+      "workbook_properties": {
+        "title": "",
+        "subject": "",
+        "description": "",
+        "keywords": ""
+      },
+      "status": "geographic_columns"
+    },
+    "@Christchurch (Cnr Armagh & Durham St)": {
+      "coordinate_file": "CPT_3_1196/@Christchurch (Cnr Armagh & Durham St)/CPT locations.xlsx",
+      "header": [
+        "id",
+        "x(m)",
+        "y(m)",
+        "x(degree)",
+        "y(degree)"
+      ],
+      "workbook_properties": {
+        "title": "",
+        "subject": "",
+        "description": "",
+        "keywords": ""
+      },
+      "status": "geographic_columns"
+    },
+    "@Christchurch (Metro Sports Facility)": {
+      "coordinate_file": "CPT_3_1196/@Christchurch (Metro Sports Facility)/CPT locations.xlsx",
+      "header": [
+        "id",
+        "x(m)",
+        "y(m)",
+        "x(degree)",
+        "y(degree)"
+      ],
+      "workbook_properties": {
+        "title": "",
+        "subject": "",
+        "description": "",
+        "keywords": ""
+      },
+      "status": "geographic_columns"
+    },
+    "@Christchurch (stadium)": {
+      "coordinate_file": "CPT_3_1196/@Christchurch (stadium)/CPT locations.xlsx",
+      "header": [
+        "id",
+        "x(m)",
+        "y(m)",
+        "x(degree)",
+        "y(degree)"
+      ],
+      "workbook_properties": {
+        "title": "",
+        "subject": "",
+        "description": "",
+        "keywords": ""
+      },
+      "status": "geographic_columns"
+    },
+    "@Hastings (hospital)": {
+      "coordinate_file": "CPT_3_1196/@Hastings (hospital)/CPT locations.xlsx",
+      "header": [
+        "id",
+        "x(m)",
+        "y(m)",
+        "x(degree)",
+        "y(degree)"
+      ],
+      "workbook_properties": {
+        "title": "",
+        "subject": "",
+        "description": "",
+        "keywords": ""
+      },
+      "status": "geographic_columns"
+    },
+    "@Hollywood": {
+      "coordinate_file": "CPT_3_1196/@Hollywood/CPT Locations.xlsx",
+      "header": [
+        "id",
+        "x(m)",
+        "y(m)"
+      ],
+      "workbook_properties": {
+        "title": "",
+        "subject": "",
+        "description": "",
+        "keywords": ""
+      },
+      "status": "global_coordinates_unavailable"
+    },
+    "@Kaiapoi (near river)": {
+      "coordinate_file": "CPT_3_1196/@Kaiapoi (near river)/CPT locations.xlsx",
+      "header": [
+        "id",
+        "x(m)",
+        "y(m)",
+        "x(degree)",
+        "y(degree)"
+      ],
+      "workbook_properties": {
+        "title": "",
+        "subject": "",
+        "description": "",
+        "keywords": ""
+      },
+      "status": "geographic_columns"
+    },
+    "@Linwood (Rudds Road)": {
+      "coordinate_file": "CPT_3_1196/@Linwood (Rudds Road)/CPT locations.xlsx",
+      "header": [
+        "id",
+        "x(m)",
+        "y(m)",
+        "x(degree)",
+        "y(degree)"
+      ],
+      "workbook_properties": {
+        "title": "",
+        "subject": "",
+        "description": "",
+        "keywords": ""
+      },
+      "status": "geographic_columns"
+    },
+    "@Lower Hutt (town hall)": {
+      "coordinate_file": "CPT_3_1196/@Lower Hutt (town hall)/CPT locations.xlsx",
+      "header": [
+        "id",
+        "x(m)",
+        "y(m)",
+        "x(degree)",
+        "y(degree)"
+      ],
+      "workbook_properties": {
+        "title": "",
+        "subject": "",
+        "description": "",
+        "keywords": ""
+      },
+      "status": "geographic_columns"
+    },
+    "@Marshland (road)": {
+      "coordinate_file": "CPT_3_1196/@Marshland (road)/CPT locations.xlsx",
+      "header": [
+        "id",
+        "x(m)",
+        "y(m)",
+        "x(degree)",
+        "y(degree)"
+      ],
+      "workbook_properties": {
+        "title": "",
+        "subject": "",
+        "description": "",
+        "keywords": ""
+      },
+      "status": "geographic_columns"
+    },
+    "@Marshland": {
+      "coordinate_file": "CPT_3_1196/@Marshland/CPT locations.xlsx",
+      "header": [
+        "id",
+        "x(m)",
+        "y(m)",
+        "x(degree)",
+        "y(degree)"
+      ],
+      "workbook_properties": {
+        "title": "",
+        "subject": "",
+        "description": "",
+        "keywords": ""
+      },
+      "status": "geographic_columns"
+    },
+    "@New Brighton (Willryan Ave)": {
+      "coordinate_file": "CPT_3_1196/@New Brighton (Willryan Ave)/CPT locations.xlsx",
+      "header": [
+        "id",
+        "x(m)",
+        "y(m)",
+        "x(degree)",
+        "y(degree)"
+      ],
+      "workbook_properties": {
+        "title": "",
+        "subject": "",
+        "description": "",
+        "keywords": ""
+      },
+      "status": "geographic_columns"
+    },
+    "@Newlock": {
+      "coordinate_file": "CPT_3_1196/@Newlock/locations.xlsx",
+      "header": [
+        "no",
+        "x(m)",
+        "y(m)"
+      ],
+      "workbook_properties": {
+        "title": "",
+        "subject": "",
+        "description": "",
+        "keywords": ""
+      },
+      "status": "global_coordinates_unavailable"
+    },
+    "@Parkland (Bower Ave)ONE": {
+      "coordinate_file": "CPT_3_1196/@Parkland (Bower Ave)ONE/CPT locations.xlsx",
+      "header": [
+        "id",
+        "x(m)",
+        "y(m)",
+        "x(degree)",
+        "y(degree)"
+      ],
+      "workbook_properties": {
+        "title": "",
+        "subject": "",
+        "description": "",
+        "keywords": ""
+      },
+      "status": "geographic_columns"
+    },
+    "@Parkland (Bower Ave)TWO": {
+      "coordinate_file": "CPT_3_1196/@Parkland (Bower Ave)TWO/CPT locations.xlsx",
+      "header": [
+        "id",
+        "x(m)",
+        "y(m)",
+        "x(degree)",
+        "y(degree)"
+      ],
+      "workbook_properties": {
+        "title": "",
+        "subject": "",
+        "description": "",
+        "keywords": ""
+      },
+      "status": "geographic_columns"
+    },
+    "@Port Nelson": {
+      "coordinate_file": "CPT_3_1196/@Port Nelson/CPT locations.xlsx",
+      "header": [
+        "id",
+        "x(m)",
+        "y(m)",
+        "x(degree)",
+        "y(degree)"
+      ],
+      "workbook_properties": {
+        "title": "",
+        "subject": "",
+        "description": "",
+        "keywords": ""
+      },
+      "status": "geographic_columns"
+    },
+    "@Redcliffs (Main road)": {
+      "coordinate_file": "CPT_3_1196/@Redcliffs (Main road)/CPT locations.xlsx",
+      "header": [
+        "id",
+        "x(m)",
+        "y(m)",
+        "x(degree)",
+        "y(degree)"
+      ],
+      "workbook_properties": {
+        "title": "",
+        "subject": "",
+        "description": "",
+        "keywords": ""
+      },
+      "status": "geographic_columns"
+    },
+    "@Richmond": {
+      "coordinate_file": "CPT_3_1196/@Richmond/CPT locations.xlsx",
+      "header": [
+        "id",
+        "x(m)",
+        "y(m)",
+        "x(degree)",
+        "y(degree)"
+      ],
+      "workbook_properties": {
+        "title": "",
+        "subject": "",
+        "description": "",
+        "keywords": ""
+      },
+      "status": "geographic_columns"
+    },
+    "@South New Brighton": {
+      "coordinate_file": "CPT_3_1196/@South New Brighton/CPT locations.xlsx",
+      "header": [
+        "id",
+        "x(m)",
+        "y(m)",
+        "x(degree)",
+        "y(degree)"
+      ],
+      "workbook_properties": {
+        "title": "",
+        "subject": "",
+        "description": "",
+        "keywords": ""
+      },
+      "status": "geographic_columns"
+    },
+    "@Tauranga (farmers building)": {
+      "coordinate_file": "CPT_3_1196/@Tauranga (farmers building)/CPT locations.xlsx",
+      "header": [
+        "id",
+        "x(m)",
+        "y(m)",
+        "x(degree)",
+        "y(degree)"
+      ],
+      "workbook_properties": {
+        "title": "",
+        "subject": "",
+        "description": "",
+        "keywords": ""
+      },
+      "status": "geographic_columns"
+    },
+    "@Wainoni (Pak n save)": {
+      "coordinate_file": "CPT_3_1196/@Wainoni (Pak n save)/CPT locations.xlsx",
+      "header": [
+        "id",
+        "x(m)",
+        "y(m)",
+        "x(degree)",
+        "y(degree)"
+      ],
+      "workbook_properties": {
+        "title": "",
+        "subject": "",
+        "description": "",
+        "keywords": ""
+      },
+      "status": "geographic_columns"
+    },
+    "@Wainoni": {
+      "coordinate_file": "CPT_3_1196/@Wainoni/CPT locations.xlsx",
+      "header": [
+        "id",
+        "x(m)",
+        "y(m)",
+        "x(degree)",
+        "y(degree)"
+      ],
+      "workbook_properties": {
+        "title": "",
+        "subject": "",
+        "description": "",
+        "keywords": ""
+      },
+      "status": "geographic_columns"
+    },
+    "@Wellington (airport)": {
+      "coordinate_file": "CPT_3_1196/@Wellington (airport)/CPT locations.xlsx",
+      "header": [
+        "id",
+        "x(m)",
+        "y(m)",
+        "x(degree)",
+        "y(degree)"
+      ],
+      "workbook_properties": {
+        "title": "",
+        "subject": "",
+        "description": "",
+        "keywords": ""
+      },
+      "status": "geographic_columns"
+    },
+    "@Wellington (college)": {
+      "coordinate_file": "CPT_3_1196/@Wellington (college)/CPT locations.xlsx",
+      "header": [
+        "id",
+        "x(m)",
+        "y(m)",
+        "x(degree)",
+        "y(degree)"
+      ],
+      "workbook_properties": {
+        "title": "",
+        "subject": "",
+        "description": "",
+        "keywords": ""
+      },
+      "status": "geographic_columns"
+    },
+    "@Whangarei (high school)": {
+      "coordinate_file": "CPT_3_1196/@Whangarei (high school)/CPT locations.xlsx",
+      "header": [
+        "id",
+        "x(m)",
+        "y(m)",
+        "x(degree)",
+        "y(degree)"
+      ],
+      "workbook_properties": {
+        "title": "",
+        "subject": "",
+        "description": "",
+        "keywords": ""
+      },
+      "status": "geographic_columns"
+    }
+  },
+  "investigation_group_edges": [],
+  "unverified_grouping_sites": [
+    "avonside",
+    "baytown",
+    "hollywood",
+    "newlock"
+  ],
+  "limitations": [
+    "Missing global positions are not reconstructed from local coordinates; provisional groups do not prove cross-site independence.",
+    "Global coordinate columns are used as geographic degrees; their original datum is not declared in the workbook.",
+    "Recorded depth is retained; elevation and inclination corrections are not mixed into the main task."
+  ]
+}

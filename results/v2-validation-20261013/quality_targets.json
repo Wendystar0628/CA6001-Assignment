@@ -1,0 +1,364 @@
+{
+  "target_version": "joint_v2",
+  "source_role": "validation",
+  "reference": {
+    "model_id": "gp",
+    "policy_id": "maximin",
+    "budget_n": 13
+  },
+  "quantile_method": "weighted_empirical_inverse_cdf",
+  "weighting": "equal_sites_then_equal_seeds_within_site",
+  "joint_reference_pass_rate_required": 0.5,
+  "quantile_candidates": [
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9,
+    1.0
+  ],
+  "folds": {
+    "0": {
+      "fold_id": 0,
+      "target_version": "joint_v2",
+      "reference": {
+        "model_id": "gp",
+        "policy_id": "maximin",
+        "budget_n": 13
+      },
+      "complete": true,
+      "status": "complete",
+      "E_star": 0.6071872179736602,
+      "H_star": 1.25,
+      "R_star": 0.39215686274509803,
+      "F_star": 0.35294117647058826,
+      "selected_q": 0.6,
+      "n_reference_instances_total": 4,
+      "n_reference_sites_total": 2,
+      "n_reference_instances": 4,
+      "n_reference_sites": 2,
+      "excluded_sites": {},
+      "validation_sites": [
+        "lower_hutt_town_hall",
+        "tauranga_farmers_building"
+      ],
+      "expected_seeds": [
+        17,
+        29
+      ],
+      "candidate_history": [
+        {
+          "q": 0.5,
+          "E_star": 0.5947492398225583,
+          "H_star": 0.3333333333333333,
+          "R_star": 0.39215686274509803,
+          "F_star": 0.3333333333333333,
+          "reference_joint_pass_rate": 0.0,
+          "n_reference_passed": 0
+        },
+        {
+          "q": 0.6,
+          "E_star": 0.6071872179736602,
+          "H_star": 1.25,
+          "R_star": 0.39215686274509803,
+          "F_star": 0.35294117647058826,
+          "reference_joint_pass_rate": 0.5,
+          "n_reference_passed": 2
+        }
+      ],
+      "reference_pass_rate_by_site": {
+        "lower_hutt_town_hall": 0.5,
+        "tauranga_farmers_building": 0.5
+      },
+      "missing_reasons": [],
+      "n_reference_positive_instances": 4,
+      "n_reference_negative_instances": 4,
+      "reference_joint_pass_rate": 0.5,
+      "n_reference_passed": 2,
+      "reference_joint_pass_rate_unweighted": 0.5,
+      "reference_counts_by_site": {
+        "lower_hutt_town_hall": {
+          "passed": 1,
+          "total": 2
+        },
+        "tauranga_farmers_building": {
+          "passed": 1,
+          "total": 2
+        }
+      }
+    },
+    "1": {
+      "fold_id": 1,
+      "target_version": "joint_v2",
+      "reference": {
+        "model_id": "gp",
+        "policy_id": "maximin",
+        "budget_n": 13
+      },
+      "complete": true,
+      "status": "complete",
+      "E_star": 0.7514741184063042,
+      "H_star": 1.3333333333333333,
+      "R_star": 0.325,
+      "F_star": 0.3978494623655914,
+      "selected_q": 0.8,
+      "n_reference_instances_total": 4,
+      "n_reference_sites_total": 2,
+      "n_reference_instances": 4,
+      "n_reference_sites": 2,
+      "excluded_sites": {},
+      "validation_sites": [
+        "lower_hutt_town_hall",
+        "tauranga_farmers_building"
+      ],
+      "expected_seeds": [
+        17,
+        29
+      ],
+      "candidate_history": [
+        {
+          "q": 0.5,
+          "E_star": 0.5944950684492262,
+          "H_star": 0.375,
+          "R_star": 0.4117647058823529,
+          "F_star": 0.3602941176470588,
+          "reference_joint_pass_rate": 0.25,
+          "n_reference_passed": 1
+        },
+        {
+          "q": 0.6,
+          "E_star": 0.6100628194752621,
+          "H_star": 1.0833333333333333,
+          "R_star": 0.4117647058823529,
+          "F_star": 0.3805970149253731,
+          "reference_joint_pass_rate": 0.25,
+          "n_reference_passed": 1
+        },
+        {
+          "q": 0.7,
+          "E_star": 0.6100628194752621,
+          "H_star": 1.0833333333333333,
+          "R_star": 0.4117647058823529,
+          "F_star": 0.3805970149253731,
+          "reference_joint_pass_rate": 0.25,
+          "n_reference_passed": 1
+        },
+        {
+          "q": 0.8,
+          "E_star": 0.7514741184063042,
+          "H_star": 1.3333333333333333,
+          "R_star": 0.325,
+          "F_star": 0.3978494623655914,
+          "reference_joint_pass_rate": 1.0,
+          "n_reference_passed": 4
+        }
+      ],
+      "reference_pass_rate_by_site": {
+        "lower_hutt_town_hall": 1.0,
+        "tauranga_farmers_building": 1.0
+      },
+      "missing_reasons": [],
+      "n_reference_positive_instances": 4,
+      "n_reference_negative_instances": 4,
+      "reference_joint_pass_rate": 1.0,
+      "n_reference_passed": 4,
+      "reference_joint_pass_rate_unweighted": 1.0,
+      "reference_counts_by_site": {
+        "lower_hutt_town_hall": {
+          "passed": 2,
+          "total": 2
+        },
+        "tauranga_farmers_building": {
+          "passed": 2,
+          "total": 2
+        }
+      }
+    },
+    "2": {
+      "fold_id": 2,
+      "target_version": "joint_v2",
+      "reference": {
+        "model_id": "gp",
+        "policy_id": "maximin",
+        "budget_n": 13
+      },
+      "complete": true,
+      "status": "complete",
+      "E_star": 0.9067854400143573,
+      "H_star": 1.0625,
+      "R_star": 0.0,
+      "F_star": 0.1927710843373494,
+      "selected_q": 0.8,
+      "n_reference_instances_total": 4,
+      "n_reference_sites_total": 2,
+      "n_reference_instances": 4,
+      "n_reference_sites": 2,
+      "excluded_sites": {},
+      "validation_sites": [
+        "christchurch_metro_sports_facility",
+        "marshland"
+      ],
+      "expected_seeds": [
+        17,
+        29
+      ],
+      "candidate_history": [
+        {
+          "q": 0.5,
+          "E_star": 0.5676914421702145,
+          "H_star": 0.53125,
+          "R_star": 0.4117647058823529,
+          "F_star": 0.08791208791208792,
+          "reference_joint_pass_rate": 0.0,
+          "n_reference_passed": 0
+        },
+        {
+          "q": 0.6,
+          "E_star": 0.8164787332063863,
+          "H_star": 0.8125,
+          "R_star": 0.4117647058823529,
+          "F_star": 0.175,
+          "reference_joint_pass_rate": 0.25,
+          "n_reference_passed": 1
+        },
+        {
+          "q": 0.7,
+          "E_star": 0.8164787332063863,
+          "H_star": 0.8125,
+          "R_star": 0.4117647058823529,
+          "F_star": 0.175,
+          "reference_joint_pass_rate": 0.25,
+          "n_reference_passed": 1
+        },
+        {
+          "q": 0.8,
+          "E_star": 0.9067854400143573,
+          "H_star": 1.0625,
+          "R_star": 0.0,
+          "F_star": 0.1927710843373494,
+          "reference_joint_pass_rate": 1.0,
+          "n_reference_passed": 4
+        }
+      ],
+      "reference_pass_rate_by_site": {
+        "christchurch_metro_sports_facility": 1.0,
+        "marshland": 1.0
+      },
+      "missing_reasons": [],
+      "n_reference_positive_instances": 4,
+      "n_reference_negative_instances": 4,
+      "reference_joint_pass_rate": 1.0,
+      "n_reference_passed": 4,
+      "reference_joint_pass_rate_unweighted": 1.0,
+      "reference_counts_by_site": {
+        "christchurch_metro_sports_facility": {
+          "passed": 2,
+          "total": 2
+        },
+        "marshland": {
+          "passed": 2,
+          "total": 2
+        }
+      }
+    }
+  },
+  "v1_marginal_targets": {
+    "folds": {
+      "0": {
+        "fold_id": 0,
+        "E_star": 0.6231210388148039,
+        "H_star": 0.7708333333333333,
+        "R_star": 0.2329656862745098,
+        "status": "complete",
+        "complete": true,
+        "missing_reasons": [],
+        "validation_sites": [
+          "lower_hutt_town_hall",
+          "tauranga_farmers_building"
+        ],
+        "validation_sites_with_recall": [
+          "lower_hutt_town_hall",
+          "tauranga_farmers_building"
+        ],
+        "n_validation_sites": 2,
+        "excluded_sites": {},
+        "seed_counts": {
+          "lower_hutt_town_hall": 2,
+          "tauranga_farmers_building": 2
+        },
+        "reference": {
+          "model_id": "gp",
+          "policy_id": "maximin",
+          "budget_n": 13,
+          "recall_tolerance": 0.05
+        }
+      },
+      "1": {
+        "fold_id": 1,
+        "E_star": 0.6200810969490325,
+        "H_star": 0.7395833333333333,
+        "R_star": 0.24276960784313728,
+        "status": "complete",
+        "complete": true,
+        "missing_reasons": [],
+        "validation_sites": [
+          "lower_hutt_town_hall",
+          "tauranga_farmers_building"
+        ],
+        "validation_sites_with_recall": [
+          "lower_hutt_town_hall",
+          "tauranga_farmers_building"
+        ],
+        "n_validation_sites": 2,
+        "excluded_sites": {},
+        "seed_counts": {
+          "lower_hutt_town_hall": 2,
+          "tauranga_farmers_building": 2
+        },
+        "reference": {
+          "model_id": "gp",
+          "policy_id": "maximin",
+          "budget_n": 13,
+          "recall_tolerance": 0.05
+        }
+      },
+      "2": {
+        "fold_id": 2,
+        "E_star": 0.6829264852829042,
+        "H_star": 0.6796875,
+        "R_star": 0.29915865384615387,
+        "status": "complete",
+        "complete": true,
+        "missing_reasons": [],
+        "validation_sites": [
+          "christchurch_metro_sports_facility",
+          "marshland"
+        ],
+        "validation_sites_with_recall": [
+          "christchurch_metro_sports_facility",
+          "marshland"
+        ],
+        "n_validation_sites": 2,
+        "excluded_sites": {},
+        "seed_counts": {
+          "christchurch_metro_sports_facility": 2,
+          "marshland": 2
+        },
+        "reference": {
+          "model_id": "gp",
+          "policy_id": "maximin",
+          "budget_n": 13,
+          "recall_tolerance": 0.05
+        }
+      }
+    },
+    "reference": {
+      "model_id": "gp",
+      "policy_id": "maximin",
+      "budget_n": 13,
+      "recall_tolerance": 0.05
+    },
+    "source_role": "validation",
+    "target_version": "v1_marginal_medians"
+  }
+}

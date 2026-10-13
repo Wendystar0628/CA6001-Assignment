@@ -195,10 +195,10 @@ def _model_dots(ax, site, models, column, *, second=None, preset="report"):
             jitter = np.linspace(-.04, .04, len(vals)) if len(vals) > 1 else np.zeros(1)
             color = MODEL_COLORS.get(model, TEAL)
             ax.scatter(vals, i + offset + jitter, color=color, s=13 if slide else 5,
-                       alpha=.30, zorder=3)
+                       alpha=.30, zorder=3, clip_on=False)
             ax.scatter([vals.mean()], [i + offset], marker=marker, s=72 if slide else 30,
                        facecolors=color if fill else "white", edgecolors=color,
-                       linewidths=1.4 if slide else 1, zorder=5)
+                       linewidths=1.4 if slide else 1, zorder=5, clip_on=False)
         if second and column in block and second in block:
             left, right = block[column].mean(), block[second].mean()
             if np.isfinite(left) and np.isfinite(right):
@@ -289,11 +289,15 @@ def _promotion(metrics, selection, config, out, preset, fold_id=None):
         return [], None
     fallback = selected_model == baseline
     result = f"Fallback retained: {MODEL_NAMES.get(baseline, baseline)}" if fallback else f"Selected prediction model: {MODEL_NAMES.get(selected_model, selected_model)}"
+    selected_metrics = saved_gate if fallback else next((g for g in candidate_gates if g["model_id"] == selected_model), {})
+    base_fpr, selected_fpr = saved_gate.get("risk_fpr"), selected_metrics.get("risk_fpr")
+    fpr_note = (f"Absolute risk FPR: baseline {base_fpr:.1%}; selected {selected_fpr:.1%} (budget-averaged)."
+                if base_fpr is not None and selected_fpr is not None else "Absolute risk FPR: unavailable.")
     with figure_style(preset):
         fold_label = f"Fold {fold_id} | " if fold_id is not None else ""
         fig = _layout(preset, "Model promotion requires error gain and risk protection",
                       f"SOURCE VALIDATION · OOF risk  |  {fold_label}Budget-averaged metrics versus {MODEL_NAMES.get(baseline, baseline)}",
-                      footer=f"{result}\nSaved gate values; all four metrics use normalized budget AUC. Shading: acceptable condition.", height=135)
+                      footer=f"{result}\n{fpr_note}\nSaved gate values; all four metrics use normalized budget AUC. Shading: acceptable condition.", height=135)
         axes = fig.subplots(1, 4, sharey=True)
         fig.subplots_adjust(left=.23, right=.98, top=.76, bottom=.24, wspace=.43)
         gate = config.get("v2", {}).get("gate", {})
