@@ -1,7 +1,7 @@
 {
   "run_id": "v4-residual-20261014",
   "status": "training_in_progress",
-  "completed_models": 2,
+  "completed_models": 4,
   "expected_models": 6,
   "models": [
     {
@@ -1185,6 +1185,1228 @@
       "validation_sites": [
         "kaiapoi_near_river",
         "lower_hutt_town_hall",
+        "tauranga_farmers_building"
+      ]
+    },
+    {
+      "fold_id": 1,
+      "model_id": "tabpfn_residual_crps",
+      "variant": "crps",
+      "source_commit": "62746376fae53f864cb51e3fcb8c93a4a5701fe3",
+      "actual_steps": 600,
+      "best_step": 300,
+      "best_validation_score": 0.790519961823671,
+      "selection_metric": "mean_site(mean_episode(log_mae + 0.5 * native_event_brier))",
+      "baseline_validation": {
+        "macro_score": 0.9060033234828788,
+        "macro_log_mae": 0.8232945990970046,
+        "macro_native_event_brier": 0.1654174487717484,
+        "macro_h_point_mae_m": 0.8048611111111111,
+        "macro_recall": 0.3355569122235789,
+        "macro_false_positive_rate": 0.18710265256669434,
+        "site_metrics": {
+          "lower_hutt_town_hall": {
+            "score": 0.9520401832956594,
+            "log_mae": 0.9123643224531552,
+            "native_event_brier": 0.07935172168500858,
+            "h_point_mae_m": 0.47916666666666663,
+            "recall": 0.08296703296703298,
+            "false_positive_rate": 0.008432178508514387
+          },
+          "port_nelson": {
+            "score": 0.9854212602123331,
+            "log_mae": 0.878640659548132,
+            "native_event_brier": 0.21356120132840248,
+            "h_point_mae_m": 0.78125,
+            "recall": 0.8240740740740742,
+            "false_positive_rate": 0.4523809523809524
+          },
+          "tauranga_farmers_building": {
+            "score": 0.7805485269406438,
+            "log_mae": 0.6788788152897268,
+            "native_event_brier": 0.2033394233018342,
+            "h_point_mae_m": 1.1541666666666668,
+            "recall": 0.09962962962962964,
+            "false_positive_rate": 0.10049482681061628
+          }
+        },
+        "episode_metrics": [
+          {
+            "site_id": "lower_hutt_town_hall",
+            "episode_id": "episode_v4_66c807792dd8e641",
+            "log_mae": 1.033615960274963,
+            "native_event_brier": 0.09165066643695678,
+            "score": 1.0794412934934414,
+            "h_point_mae_m": 0.375,
+            "recall": 0.14285714285714285,
+            "false_positive_rate": 0.023076923076923078
+          },
+          {
+            "site_id": "lower_hutt_town_hall",
+            "episode_id": "episode_v4_e6c266701c16c05a",
+            "log_mae": 0.9403506985843668,
+            "native_event_brier": 0.09095798259787584,
+            "score": 0.9858296898833048,
+            "h_point_mae_m": 0.5416666666666666,
+            "recall": 0.07142857142857142,
+            "false_positive_rate": 0.0
+          },
+          {
+            "site_id": "lower_hutt_town_hall",
+            "episode_id": "episode_v4_a12077ef1a0c40b2",
+            "log_mae": 0.9298927931338089,
+            "native_event_brier": 0.0869459138639394,
+            "score": 0.9733657500657786,
+            "h_point_mae_m": 0.5833333333333334,
+            "recall": 0.0,
+            "false_positive_rate": 0.0
+          },
+          {
+            "site_id": "lower_hutt_town_hall",
+            "episode_id": "episode_v4_9b94d37a75d69b87",
+            "log_mae": 0.7129099364299404,
+            "native_event_brier": 0.07934837156289805,
+            "score": 0.7525841222113894,
+            "h_point_mae_m": 0.5416666666666666,
+            "recall": 0.0,
+            "false_positive_rate": 0.007692307692307693
+          },
+          {
+            "site_id": "lower_hutt_town_hall",
+            "episode_id": "episode_v4_ca3b6f375551da31",
+            "log_mae": 0.8861647940028802,
+            "native_event_brier": 0.08843577750480536,
+            "score": 0.9303826827552828,
+            "h_point_mae_m": 0.5,
+            "recall": 0.0,
+            "false_positive_rate": 0.015384615384615385
+          },
+          {
+            "site_id": "lower_hutt_town_hall",
+            "episode_id": "episode_v4_4ec37ac8a6d31a86",
+            "log_mae": 0.9968433463849542,
+            "native_event_brier": 0.06917345917976367,
+            "score": 1.031430075974836,
+            "h_point_mae_m": 0.5416666666666666,
+            "recall": 0.0,
+            "false_positive_rate": 0.0
+          },
+          {
+            "site_id": "lower_hutt_town_hall",
+            "episode_id": "episode_v4_85698698104c618d",
+            "log_mae": 1.2718336385049935,
+            "native_event_brier": 0.09738525717817526,
+            "score": 1.3205262670940812,
+            "h_point_mae_m": 0.5416666666666666,
+            "recall": 0.0,
+            "false_positive_rate": 0.0
+          },
+          {
+            "site_id": "lower_hutt_town_hall",
+            "episode_id": "episode_v4_312c303183066aeb",
+            "log_mae": 1.0126446816831296,
+            "native_event_brier": 0.07043122178071567,
+            "score": 1.0478602925734875,
+            "h_point_mae_m": 0.5416666666666666,
+            "recall": 0.0,
+            "false_positive_rate": 0.0
+          },
+          {
+            "site_id": "lower_hutt_town_hall",
+            "episode_id": "episode_v4_0a3b98f30ce07b99",
+            "log_mae": 0.790816405106972,
+            "native_event_brier": 0.06628589777480666,
+            "score": 0.8239593539943754,
+            "h_point_mae_m": 0.5416666666666666,
+            "recall": 0.0,
+            "false_positive_rate": 0.0
+          },
+          {
+            "site_id": "lower_hutt_town_hall",
+            "episode_id": "episode_v4_32f5d7a2763494c4",
+            "log_mae": 0.5485709704255433,
+            "native_event_brier": 0.05290266897014922,
+            "score": 0.5750223049106179,
+            "h_point_mae_m": 0.08333333333333333,
+            "recall": 0.6153846153846154,
+            "false_positive_rate": 0.03816793893129771
+          },
+          {
+            "site_id": "port_nelson",
+            "episode_id": "episode_v4_9272444c83d7da22",
+            "log_mae": 0.8581074758037013,
+            "native_event_brier": 0.23401485235184216,
+            "score": 0.9751149019796224,
+            "h_point_mae_m": 1.125,
+            "recall": 0.8888888888888888,
+            "false_positive_rate": 0.5714285714285714
+          },
+          {
+            "site_id": "port_nelson",
+            "episode_id": "episode_v4_c669a0ff9cc7b339",
+            "log_mae": 0.9341172927103725,
+            "native_event_brier": 0.23999972147770937,
+            "score": 1.054117153449227,
+            "h_point_mae_m": 0.875,
+            "recall": 0.8518518518518519,
+            "false_positive_rate": 0.5238095238095238
+          },
+          {
+            "site_id": "port_nelson",
+            "episode_id": "episode_v4_cdc150af2a40d52a",
+            "log_mae": 0.8607770090859537,
+            "native_event_brier": 0.219841791355187,
+            "score": 0.9706979047635471,
+            "h_point_mae_m": 0.5,
+            "recall": 0.7037037037037037,
+            "false_positive_rate": 0.38095238095238093
+          },
+          {
+            "site_id": "port_nelson",
+            "episode_id": "episode_v4_c5fb16303cd9983d",
+            "log_mae": 0.8615608605925,
+            "native_event_brier": 0.16038844012887143,
+            "score": 0.9417550806569357,
+            "h_point_mae_m": 0.625,
+            "recall": 0.8518518518518519,
+            "false_positive_rate": 0.3333333333333333
+          },
+          {
+            "site_id": "tauranga_farmers_building",
+            "episode_id": "episode_v4_e0da0485e65d49fc",
+            "log_mae": 0.7228711953059088,
+            "native_event_brier": 0.18055068792542572,
+            "score": 0.8131465392686217,
+            "h_point_mae_m": 1.0416666666666667,
+            "recall": 0.037037037037037035,
+            "false_positive_rate": 0.008547008547008548
+          },
+          {
+            "site_id": "tauranga_farmers_building",
+            "episode_id": "episode_v4_fdf4c3b8730b7c14",
+            "log_mae": 0.628566309652914,
+            "native_event_brier": 0.16985911887350325,
+            "score": 0.7134958690896657,
+            "h_point_mae_m": 1.0,
+            "recall": 0.1111111111111111,
+            "false_positive_rate": 0.017094017094017096
+          },
+          {
+            "site_id": "tauranga_farmers_building",
+            "episode_id": "episode_v4_ee95e35cc7badf51",
+            "log_mae": 0.6500275806618695,
+            "native_event_brier": 0.18562775408238816,
+            "score": 0.7428414577030635,
+            "h_point_mae_m": 0.875,
+            "recall": 0.037037037037037035,
+            "false_positive_rate": 0.07692307692307693
+          },
+          {
+            "site_id": "tauranga_farmers_building",
+            "episode_id": "episode_v4_893fe1dc0dfa21a9",
+            "log_mae": 0.7588682160097046,
+            "native_event_brier": 0.24596377697958735,
+            "score": 0.8818501044994982,
+            "h_point_mae_m": 1.9166666666666667,
+            "recall": 0.2222222222222222,
+            "false_positive_rate": 0.23076923076923078
+          },
+          {
+            "site_id": "tauranga_farmers_building",
+            "episode_id": "episode_v4_5da926dcaf91646b",
+            "log_mae": 0.6772869755186504,
+            "native_event_brier": 0.19675515764529605,
+            "score": 0.7756645543412983,
+            "h_point_mae_m": 1.1666666666666667,
+            "recall": 0.2222222222222222,
+            "false_positive_rate": 0.1452991452991453
+          },
+          {
+            "site_id": "tauranga_farmers_building",
+            "episode_id": "episode_v4_ca8b3a563e7541c0",
+            "log_mae": 0.6336240188449482,
+            "native_event_brier": 0.22905333533738137,
+            "score": 0.7481506865136389,
+            "h_point_mae_m": 1.0833333333333333,
+            "recall": 0.2,
+            "false_positive_rate": 0.2631578947368421
+          },
+          {
+            "site_id": "tauranga_farmers_building",
+            "episode_id": "episode_v4_b2820fcba2fb09eb",
+            "log_mae": 0.7134627031923072,
+            "native_event_brier": 0.23010866995877868,
+            "score": 0.8285170381716965,
+            "h_point_mae_m": 1.0833333333333333,
+            "recall": 0.13333333333333333,
+            "false_positive_rate": 0.19298245614035087
+          },
+          {
+            "site_id": "tauranga_farmers_building",
+            "episode_id": "episode_v4_28da87bd48bbdc18",
+            "log_mae": 0.6630068852191082,
+            "native_event_brier": 0.18558592494843382,
+            "score": 0.7557998476933251,
+            "h_point_mae_m": 1.25,
+            "recall": 0.0,
+            "false_positive_rate": 0.0
+          },
+          {
+            "site_id": "tauranga_farmers_building",
+            "episode_id": "episode_v4_b24b695bc6ed0a9a",
+            "log_mae": 0.6321173357772283,
+            "native_event_brier": 0.21238753425405435,
+            "score": 0.7383111029042555,
+            "h_point_mae_m": 1.0416666666666667,
+            "recall": 0.03333333333333333,
+            "false_positive_rate": 0.03508771929824561
+          },
+          {
+            "site_id": "tauranga_farmers_building",
+            "episode_id": "episode_v4_6eeabb2de7ea7b4f",
+            "log_mae": 0.7089569327146287,
+            "native_event_brier": 0.19750227301349302,
+            "score": 0.8077080692213752,
+            "h_point_mae_m": 1.0833333333333333,
+            "recall": 0.0,
+            "false_positive_rate": 0.03508771929824561
+          }
+        ],
+        "selection_metric": "mean_site(mean_episode(log_mae + 0.5 * native_event_brier))",
+        "event_threshold_mpa": 1.0,
+        "risk_calibration_used": false,
+        "prediction_space": "reconstructed_log_qc_and_native_physical_cdf",
+        "residual_alpha_for_checkpoint_selection": 1.0
+      },
+      "validation_preferred_model": "tabpfn_residual_crps",
+      "exposure": {
+        "seen_blocks": 472,
+        "total_blocks": 472,
+        "query_block_fraction": 1.0,
+        "site_macro_query_block_fraction": 1.0,
+        "seen_episodes": 472,
+        "total_episodes": 472,
+        "episode_fraction": 1.0,
+        "all_query_blocks_seen": true,
+        "per_site": {
+          "avonside": {
+            "seen_blocks": 24,
+            "total_blocks": 24,
+            "block_fraction": 1.0,
+            "seen_episodes": 24,
+            "total_episodes": 24,
+            "episode_fraction": 1.0,
+            "updates": 40
+          },
+          "bexley": {
+            "seen_blocks": 40,
+            "total_blocks": 40,
+            "block_fraction": 1.0,
+            "seen_episodes": 40,
+            "total_episodes": 40,
+            "episode_fraction": 1.0,
+            "updates": 40
+          },
+          "cashmere_high_school": {
+            "seen_blocks": 40,
+            "total_blocks": 40,
+            "block_fraction": 1.0,
+            "seen_episodes": 40,
+            "total_episodes": 40,
+            "episode_fraction": 1.0,
+            "updates": 40
+          },
+          "christchurch_central_city": {
+            "seen_blocks": 40,
+            "total_blocks": 40,
+            "block_fraction": 1.0,
+            "seen_episodes": 40,
+            "total_episodes": 40,
+            "episode_fraction": 1.0,
+            "updates": 40
+          },
+          "christchurch_metro_sports_facility": {
+            "seen_blocks": 40,
+            "total_blocks": 40,
+            "block_fraction": 1.0,
+            "seen_episodes": 40,
+            "total_episodes": 40,
+            "episode_fraction": 1.0,
+            "updates": 40
+          },
+          "christchurch_stadium": {
+            "seen_blocks": 40,
+            "total_blocks": 40,
+            "block_fraction": 1.0,
+            "seen_episodes": 40,
+            "total_episodes": 40,
+            "episode_fraction": 1.0,
+            "updates": 40
+          },
+          "hollywood": {
+            "seen_blocks": 40,
+            "total_blocks": 40,
+            "block_fraction": 1.0,
+            "seen_episodes": 40,
+            "total_episodes": 40,
+            "episode_fraction": 1.0,
+            "updates": 40
+          },
+          "new_brighton_willryan_ave": {
+            "seen_blocks": 24,
+            "total_blocks": 24,
+            "block_fraction": 1.0,
+            "seen_episodes": 24,
+            "total_episodes": 24,
+            "episode_fraction": 1.0,
+            "updates": 40
+          },
+          "parkland_bower_ave_one": {
+            "seen_blocks": 16,
+            "total_blocks": 16,
+            "block_fraction": 1.0,
+            "seen_episodes": 16,
+            "total_episodes": 16,
+            "episode_fraction": 1.0,
+            "updates": 40
+          },
+          "redcliffs_main_road": {
+            "seen_blocks": 24,
+            "total_blocks": 24,
+            "block_fraction": 1.0,
+            "seen_episodes": 24,
+            "total_episodes": 24,
+            "episode_fraction": 1.0,
+            "updates": 40
+          },
+          "richmond": {
+            "seen_blocks": 32,
+            "total_blocks": 32,
+            "block_fraction": 1.0,
+            "seen_episodes": 32,
+            "total_episodes": 32,
+            "episode_fraction": 1.0,
+            "updates": 40
+          },
+          "south_new_brighton": {
+            "seen_blocks": 24,
+            "total_blocks": 24,
+            "block_fraction": 1.0,
+            "seen_episodes": 24,
+            "total_episodes": 24,
+            "episode_fraction": 1.0,
+            "updates": 40
+          },
+          "wellington_airport": {
+            "seen_blocks": 40,
+            "total_blocks": 40,
+            "block_fraction": 1.0,
+            "seen_episodes": 40,
+            "total_episodes": 40,
+            "episode_fraction": 1.0,
+            "updates": 40
+          },
+          "wellington_college": {
+            "seen_blocks": 32,
+            "total_blocks": 32,
+            "block_fraction": 1.0,
+            "seen_episodes": 32,
+            "total_episodes": 32,
+            "episode_fraction": 1.0,
+            "updates": 40
+          },
+          "whangarei_high_school": {
+            "seen_blocks": 16,
+            "total_blocks": 16,
+            "block_fraction": 1.0,
+            "seen_episodes": 16,
+            "total_episodes": 16,
+            "episode_fraction": 1.0,
+            "updates": 40
+          }
+        }
+      },
+      "best_checkpoint_exposure": {
+        "seen_blocks": 292,
+        "total_blocks": 472,
+        "query_block_fraction": 0.6186440677966102,
+        "site_macro_query_block_fraction": 0.6722222222222222,
+        "seen_episodes": 292,
+        "total_episodes": 472,
+        "episode_fraction": 0.6186440677966102,
+        "all_query_blocks_seen": false,
+        "per_site": {
+          "avonside": {
+            "seen_blocks": 20,
+            "total_blocks": 24,
+            "block_fraction": 0.8333333333333334,
+            "seen_episodes": 20,
+            "total_episodes": 24,
+            "episode_fraction": 0.8333333333333334,
+            "updates": 20
+          },
+          "bexley": {
+            "seen_blocks": 20,
+            "total_blocks": 40,
+            "block_fraction": 0.5,
+            "seen_episodes": 20,
+            "total_episodes": 40,
+            "episode_fraction": 0.5,
+            "updates": 20
+          },
+          "cashmere_high_school": {
+            "seen_blocks": 20,
+            "total_blocks": 40,
+            "block_fraction": 0.5,
+            "seen_episodes": 20,
+            "total_episodes": 40,
+            "episode_fraction": 0.5,
+            "updates": 20
+          },
+          "christchurch_central_city": {
+            "seen_blocks": 20,
+            "total_blocks": 40,
+            "block_fraction": 0.5,
+            "seen_episodes": 20,
+            "total_episodes": 40,
+            "episode_fraction": 0.5,
+            "updates": 20
+          },
+          "christchurch_metro_sports_facility": {
+            "seen_blocks": 20,
+            "total_blocks": 40,
+            "block_fraction": 0.5,
+            "seen_episodes": 20,
+            "total_episodes": 40,
+            "episode_fraction": 0.5,
+            "updates": 20
+          },
+          "christchurch_stadium": {
+            "seen_blocks": 20,
+            "total_blocks": 40,
+            "block_fraction": 0.5,
+            "seen_episodes": 20,
+            "total_episodes": 40,
+            "episode_fraction": 0.5,
+            "updates": 20
+          },
+          "hollywood": {
+            "seen_blocks": 20,
+            "total_blocks": 40,
+            "block_fraction": 0.5,
+            "seen_episodes": 20,
+            "total_episodes": 40,
+            "episode_fraction": 0.5,
+            "updates": 20
+          },
+          "new_brighton_willryan_ave": {
+            "seen_blocks": 20,
+            "total_blocks": 24,
+            "block_fraction": 0.8333333333333334,
+            "seen_episodes": 20,
+            "total_episodes": 24,
+            "episode_fraction": 0.8333333333333334,
+            "updates": 20
+          },
+          "parkland_bower_ave_one": {
+            "seen_blocks": 16,
+            "total_blocks": 16,
+            "block_fraction": 1.0,
+            "seen_episodes": 16,
+            "total_episodes": 16,
+            "episode_fraction": 1.0,
+            "updates": 20
+          },
+          "redcliffs_main_road": {
+            "seen_blocks": 20,
+            "total_blocks": 24,
+            "block_fraction": 0.8333333333333334,
+            "seen_episodes": 20,
+            "total_episodes": 24,
+            "episode_fraction": 0.8333333333333334,
+            "updates": 20
+          },
+          "richmond": {
+            "seen_blocks": 20,
+            "total_blocks": 32,
+            "block_fraction": 0.625,
+            "seen_episodes": 20,
+            "total_episodes": 32,
+            "episode_fraction": 0.625,
+            "updates": 20
+          },
+          "south_new_brighton": {
+            "seen_blocks": 20,
+            "total_blocks": 24,
+            "block_fraction": 0.8333333333333334,
+            "seen_episodes": 20,
+            "total_episodes": 24,
+            "episode_fraction": 0.8333333333333334,
+            "updates": 20
+          },
+          "wellington_airport": {
+            "seen_blocks": 20,
+            "total_blocks": 40,
+            "block_fraction": 0.5,
+            "seen_episodes": 20,
+            "total_episodes": 40,
+            "episode_fraction": 0.5,
+            "updates": 20
+          },
+          "wellington_college": {
+            "seen_blocks": 20,
+            "total_blocks": 32,
+            "block_fraction": 0.625,
+            "seen_episodes": 20,
+            "total_episodes": 32,
+            "episode_fraction": 0.625,
+            "updates": 20
+          },
+          "whangarei_high_school": {
+            "seen_blocks": 16,
+            "total_blocks": 16,
+            "block_fraction": 1.0,
+            "seen_episodes": 16,
+            "total_episodes": 16,
+            "episode_fraction": 1.0,
+            "updates": 20
+          }
+        }
+      },
+      "stop_reason": "early_stopping_after_minimum_successful_updates",
+      "elapsed_seconds": 617.857122100002,
+      "peak_cuda_allocated_bytes": 517446656,
+      "train_sites": [
+        "avonside",
+        "bexley",
+        "cashmere_high_school",
+        "christchurch_central_city",
+        "christchurch_metro_sports_facility",
+        "christchurch_stadium",
+        "hollywood",
+        "new_brighton_willryan_ave",
+        "parkland_bower_ave_one",
+        "redcliffs_main_road",
+        "richmond",
+        "south_new_brighton",
+        "wellington_airport",
+        "wellington_college",
+        "whangarei_high_school"
+      ],
+      "validation_sites": [
+        "lower_hutt_town_hall",
+        "port_nelson",
+        "tauranga_farmers_building"
+      ]
+    },
+    {
+      "fold_id": 1,
+      "model_id": "tabpfn_residual_task",
+      "variant": "task",
+      "source_commit": "62746376fae53f864cb51e3fcb8c93a4a5701fe3",
+      "actual_steps": 600,
+      "best_step": 300,
+      "best_validation_score": 0.7902823182122586,
+      "selection_metric": "mean_site(mean_episode(log_mae + 0.5 * native_event_brier))",
+      "baseline_validation": {
+        "macro_score": 0.9060033234828788,
+        "macro_log_mae": 0.8232945990970046,
+        "macro_native_event_brier": 0.1654174487717484,
+        "macro_h_point_mae_m": 0.8048611111111111,
+        "macro_recall": 0.3355569122235789,
+        "macro_false_positive_rate": 0.18710265256669434,
+        "site_metrics": {
+          "lower_hutt_town_hall": {
+            "score": 0.9520401832956594,
+            "log_mae": 0.9123643224531552,
+            "native_event_brier": 0.07935172168500858,
+            "h_point_mae_m": 0.47916666666666663,
+            "recall": 0.08296703296703298,
+            "false_positive_rate": 0.008432178508514387
+          },
+          "port_nelson": {
+            "score": 0.9854212602123331,
+            "log_mae": 0.878640659548132,
+            "native_event_brier": 0.21356120132840248,
+            "h_point_mae_m": 0.78125,
+            "recall": 0.8240740740740742,
+            "false_positive_rate": 0.4523809523809524
+          },
+          "tauranga_farmers_building": {
+            "score": 0.7805485269406438,
+            "log_mae": 0.6788788152897268,
+            "native_event_brier": 0.2033394233018342,
+            "h_point_mae_m": 1.1541666666666668,
+            "recall": 0.09962962962962964,
+            "false_positive_rate": 0.10049482681061628
+          }
+        },
+        "episode_metrics": [
+          {
+            "site_id": "lower_hutt_town_hall",
+            "episode_id": "episode_v4_66c807792dd8e641",
+            "log_mae": 1.033615960274963,
+            "native_event_brier": 0.09165066643695678,
+            "score": 1.0794412934934414,
+            "h_point_mae_m": 0.375,
+            "recall": 0.14285714285714285,
+            "false_positive_rate": 0.023076923076923078
+          },
+          {
+            "site_id": "lower_hutt_town_hall",
+            "episode_id": "episode_v4_e6c266701c16c05a",
+            "log_mae": 0.9403506985843668,
+            "native_event_brier": 0.09095798259787584,
+            "score": 0.9858296898833048,
+            "h_point_mae_m": 0.5416666666666666,
+            "recall": 0.07142857142857142,
+            "false_positive_rate": 0.0
+          },
+          {
+            "site_id": "lower_hutt_town_hall",
+            "episode_id": "episode_v4_a12077ef1a0c40b2",
+            "log_mae": 0.9298927931338089,
+            "native_event_brier": 0.0869459138639394,
+            "score": 0.9733657500657786,
+            "h_point_mae_m": 0.5833333333333334,
+            "recall": 0.0,
+            "false_positive_rate": 0.0
+          },
+          {
+            "site_id": "lower_hutt_town_hall",
+            "episode_id": "episode_v4_9b94d37a75d69b87",
+            "log_mae": 0.7129099364299404,
+            "native_event_brier": 0.07934837156289805,
+            "score": 0.7525841222113894,
+            "h_point_mae_m": 0.5416666666666666,
+            "recall": 0.0,
+            "false_positive_rate": 0.007692307692307693
+          },
+          {
+            "site_id": "lower_hutt_town_hall",
+            "episode_id": "episode_v4_ca3b6f375551da31",
+            "log_mae": 0.8861647940028802,
+            "native_event_brier": 0.08843577750480536,
+            "score": 0.9303826827552828,
+            "h_point_mae_m": 0.5,
+            "recall": 0.0,
+            "false_positive_rate": 0.015384615384615385
+          },
+          {
+            "site_id": "lower_hutt_town_hall",
+            "episode_id": "episode_v4_4ec37ac8a6d31a86",
+            "log_mae": 0.9968433463849542,
+            "native_event_brier": 0.06917345917976367,
+            "score": 1.031430075974836,
+            "h_point_mae_m": 0.5416666666666666,
+            "recall": 0.0,
+            "false_positive_rate": 0.0
+          },
+          {
+            "site_id": "lower_hutt_town_hall",
+            "episode_id": "episode_v4_85698698104c618d",
+            "log_mae": 1.2718336385049935,
+            "native_event_brier": 0.09738525717817526,
+            "score": 1.3205262670940812,
+            "h_point_mae_m": 0.5416666666666666,
+            "recall": 0.0,
+            "false_positive_rate": 0.0
+          },
+          {
+            "site_id": "lower_hutt_town_hall",
+            "episode_id": "episode_v4_312c303183066aeb",
+            "log_mae": 1.0126446816831296,
+            "native_event_brier": 0.07043122178071567,
+            "score": 1.0478602925734875,
+            "h_point_mae_m": 0.5416666666666666,
+            "recall": 0.0,
+            "false_positive_rate": 0.0
+          },
+          {
+            "site_id": "lower_hutt_town_hall",
+            "episode_id": "episode_v4_0a3b98f30ce07b99",
+            "log_mae": 0.790816405106972,
+            "native_event_brier": 0.06628589777480666,
+            "score": 0.8239593539943754,
+            "h_point_mae_m": 0.5416666666666666,
+            "recall": 0.0,
+            "false_positive_rate": 0.0
+          },
+          {
+            "site_id": "lower_hutt_town_hall",
+            "episode_id": "episode_v4_32f5d7a2763494c4",
+            "log_mae": 0.5485709704255433,
+            "native_event_brier": 0.05290266897014922,
+            "score": 0.5750223049106179,
+            "h_point_mae_m": 0.08333333333333333,
+            "recall": 0.6153846153846154,
+            "false_positive_rate": 0.03816793893129771
+          },
+          {
+            "site_id": "port_nelson",
+            "episode_id": "episode_v4_9272444c83d7da22",
+            "log_mae": 0.8581074758037013,
+            "native_event_brier": 0.23401485235184216,
+            "score": 0.9751149019796224,
+            "h_point_mae_m": 1.125,
+            "recall": 0.8888888888888888,
+            "false_positive_rate": 0.5714285714285714
+          },
+          {
+            "site_id": "port_nelson",
+            "episode_id": "episode_v4_c669a0ff9cc7b339",
+            "log_mae": 0.9341172927103725,
+            "native_event_brier": 0.23999972147770937,
+            "score": 1.054117153449227,
+            "h_point_mae_m": 0.875,
+            "recall": 0.8518518518518519,
+            "false_positive_rate": 0.5238095238095238
+          },
+          {
+            "site_id": "port_nelson",
+            "episode_id": "episode_v4_cdc150af2a40d52a",
+            "log_mae": 0.8607770090859537,
+            "native_event_brier": 0.219841791355187,
+            "score": 0.9706979047635471,
+            "h_point_mae_m": 0.5,
+            "recall": 0.7037037037037037,
+            "false_positive_rate": 0.38095238095238093
+          },
+          {
+            "site_id": "port_nelson",
+            "episode_id": "episode_v4_c5fb16303cd9983d",
+            "log_mae": 0.8615608605925,
+            "native_event_brier": 0.16038844012887143,
+            "score": 0.9417550806569357,
+            "h_point_mae_m": 0.625,
+            "recall": 0.8518518518518519,
+            "false_positive_rate": 0.3333333333333333
+          },
+          {
+            "site_id": "tauranga_farmers_building",
+            "episode_id": "episode_v4_e0da0485e65d49fc",
+            "log_mae": 0.7228711953059088,
+            "native_event_brier": 0.18055068792542572,
+            "score": 0.8131465392686217,
+            "h_point_mae_m": 1.0416666666666667,
+            "recall": 0.037037037037037035,
+            "false_positive_rate": 0.008547008547008548
+          },
+          {
+            "site_id": "tauranga_farmers_building",
+            "episode_id": "episode_v4_fdf4c3b8730b7c14",
+            "log_mae": 0.628566309652914,
+            "native_event_brier": 0.16985911887350325,
+            "score": 0.7134958690896657,
+            "h_point_mae_m": 1.0,
+            "recall": 0.1111111111111111,
+            "false_positive_rate": 0.017094017094017096
+          },
+          {
+            "site_id": "tauranga_farmers_building",
+            "episode_id": "episode_v4_ee95e35cc7badf51",
+            "log_mae": 0.6500275806618695,
+            "native_event_brier": 0.18562775408238816,
+            "score": 0.7428414577030635,
+            "h_point_mae_m": 0.875,
+            "recall": 0.037037037037037035,
+            "false_positive_rate": 0.07692307692307693
+          },
+          {
+            "site_id": "tauranga_farmers_building",
+            "episode_id": "episode_v4_893fe1dc0dfa21a9",
+            "log_mae": 0.7588682160097046,
+            "native_event_brier": 0.24596377697958735,
+            "score": 0.8818501044994982,
+            "h_point_mae_m": 1.9166666666666667,
+            "recall": 0.2222222222222222,
+            "false_positive_rate": 0.23076923076923078
+          },
+          {
+            "site_id": "tauranga_farmers_building",
+            "episode_id": "episode_v4_5da926dcaf91646b",
+            "log_mae": 0.6772869755186504,
+            "native_event_brier": 0.19675515764529605,
+            "score": 0.7756645543412983,
+            "h_point_mae_m": 1.1666666666666667,
+            "recall": 0.2222222222222222,
+            "false_positive_rate": 0.1452991452991453
+          },
+          {
+            "site_id": "tauranga_farmers_building",
+            "episode_id": "episode_v4_ca8b3a563e7541c0",
+            "log_mae": 0.6336240188449482,
+            "native_event_brier": 0.22905333533738137,
+            "score": 0.7481506865136389,
+            "h_point_mae_m": 1.0833333333333333,
+            "recall": 0.2,
+            "false_positive_rate": 0.2631578947368421
+          },
+          {
+            "site_id": "tauranga_farmers_building",
+            "episode_id": "episode_v4_b2820fcba2fb09eb",
+            "log_mae": 0.7134627031923072,
+            "native_event_brier": 0.23010866995877868,
+            "score": 0.8285170381716965,
+            "h_point_mae_m": 1.0833333333333333,
+            "recall": 0.13333333333333333,
+            "false_positive_rate": 0.19298245614035087
+          },
+          {
+            "site_id": "tauranga_farmers_building",
+            "episode_id": "episode_v4_28da87bd48bbdc18",
+            "log_mae": 0.6630068852191082,
+            "native_event_brier": 0.18558592494843382,
+            "score": 0.7557998476933251,
+            "h_point_mae_m": 1.25,
+            "recall": 0.0,
+            "false_positive_rate": 0.0
+          },
+          {
+            "site_id": "tauranga_farmers_building",
+            "episode_id": "episode_v4_b24b695bc6ed0a9a",
+            "log_mae": 0.6321173357772283,
+            "native_event_brier": 0.21238753425405435,
+            "score": 0.7383111029042555,
+            "h_point_mae_m": 1.0416666666666667,
+            "recall": 0.03333333333333333,
+            "false_positive_rate": 0.03508771929824561
+          },
+          {
+            "site_id": "tauranga_farmers_building",
+            "episode_id": "episode_v4_6eeabb2de7ea7b4f",
+            "log_mae": 0.7089569327146287,
+            "native_event_brier": 0.19750227301349302,
+            "score": 0.8077080692213752,
+            "h_point_mae_m": 1.0833333333333333,
+            "recall": 0.0,
+            "false_positive_rate": 0.03508771929824561
+          }
+        ],
+        "selection_metric": "mean_site(mean_episode(log_mae + 0.5 * native_event_brier))",
+        "event_threshold_mpa": 1.0,
+        "risk_calibration_used": false,
+        "prediction_space": "reconstructed_log_qc_and_native_physical_cdf",
+        "residual_alpha_for_checkpoint_selection": 1.0
+      },
+      "validation_preferred_model": "tabpfn_residual_task",
+      "exposure": {
+        "seen_blocks": 472,
+        "total_blocks": 472,
+        "query_block_fraction": 1.0,
+        "site_macro_query_block_fraction": 1.0,
+        "seen_episodes": 472,
+        "total_episodes": 472,
+        "episode_fraction": 1.0,
+        "all_query_blocks_seen": true,
+        "per_site": {
+          "avonside": {
+            "seen_blocks": 24,
+            "total_blocks": 24,
+            "block_fraction": 1.0,
+            "seen_episodes": 24,
+            "total_episodes": 24,
+            "episode_fraction": 1.0,
+            "updates": 40
+          },
+          "bexley": {
+            "seen_blocks": 40,
+            "total_blocks": 40,
+            "block_fraction": 1.0,
+            "seen_episodes": 40,
+            "total_episodes": 40,
+            "episode_fraction": 1.0,
+            "updates": 40
+          },
+          "cashmere_high_school": {
+            "seen_blocks": 40,
+            "total_blocks": 40,
+            "block_fraction": 1.0,
+            "seen_episodes": 40,
+            "total_episodes": 40,
+            "episode_fraction": 1.0,
+            "updates": 40
+          },
+          "christchurch_central_city": {
+            "seen_blocks": 40,
+            "total_blocks": 40,
+            "block_fraction": 1.0,
+            "seen_episodes": 40,
+            "total_episodes": 40,
+            "episode_fraction": 1.0,
+            "updates": 40
+          },
+          "christchurch_metro_sports_facility": {
+            "seen_blocks": 40,
+            "total_blocks": 40,
+            "block_fraction": 1.0,
+            "seen_episodes": 40,
+            "total_episodes": 40,
+            "episode_fraction": 1.0,
+            "updates": 40
+          },
+          "christchurch_stadium": {
+            "seen_blocks": 40,
+            "total_blocks": 40,
+            "block_fraction": 1.0,
+            "seen_episodes": 40,
+            "total_episodes": 40,
+            "episode_fraction": 1.0,
+            "updates": 40
+          },
+          "hollywood": {
+            "seen_blocks": 40,
+            "total_blocks": 40,
+            "block_fraction": 1.0,
+            "seen_episodes": 40,
+            "total_episodes": 40,
+            "episode_fraction": 1.0,
+            "updates": 40
+          },
+          "new_brighton_willryan_ave": {
+            "seen_blocks": 24,
+            "total_blocks": 24,
+            "block_fraction": 1.0,
+            "seen_episodes": 24,
+            "total_episodes": 24,
+            "episode_fraction": 1.0,
+            "updates": 40
+          },
+          "parkland_bower_ave_one": {
+            "seen_blocks": 16,
+            "total_blocks": 16,
+            "block_fraction": 1.0,
+            "seen_episodes": 16,
+            "total_episodes": 16,
+            "episode_fraction": 1.0,
+            "updates": 40
+          },
+          "redcliffs_main_road": {
+            "seen_blocks": 24,
+            "total_blocks": 24,
+            "block_fraction": 1.0,
+            "seen_episodes": 24,
+            "total_episodes": 24,
+            "episode_fraction": 1.0,
+            "updates": 40
+          },
+          "richmond": {
+            "seen_blocks": 32,
+            "total_blocks": 32,
+            "block_fraction": 1.0,
+            "seen_episodes": 32,
+            "total_episodes": 32,
+            "episode_fraction": 1.0,
+            "updates": 40
+          },
+          "south_new_brighton": {
+            "seen_blocks": 24,
+            "total_blocks": 24,
+            "block_fraction": 1.0,
+            "seen_episodes": 24,
+            "total_episodes": 24,
+            "episode_fraction": 1.0,
+            "updates": 40
+          },
+          "wellington_airport": {
+            "seen_blocks": 40,
+            "total_blocks": 40,
+            "block_fraction": 1.0,
+            "seen_episodes": 40,
+            "total_episodes": 40,
+            "episode_fraction": 1.0,
+            "updates": 40
+          },
+          "wellington_college": {
+            "seen_blocks": 32,
+            "total_blocks": 32,
+            "block_fraction": 1.0,
+            "seen_episodes": 32,
+            "total_episodes": 32,
+            "episode_fraction": 1.0,
+            "updates": 40
+          },
+          "whangarei_high_school": {
+            "seen_blocks": 16,
+            "total_blocks": 16,
+            "block_fraction": 1.0,
+            "seen_episodes": 16,
+            "total_episodes": 16,
+            "episode_fraction": 1.0,
+            "updates": 40
+          }
+        }
+      },
+      "best_checkpoint_exposure": {
+        "seen_blocks": 292,
+        "total_blocks": 472,
+        "query_block_fraction": 0.6186440677966102,
+        "site_macro_query_block_fraction": 0.6722222222222222,
+        "seen_episodes": 292,
+        "total_episodes": 472,
+        "episode_fraction": 0.6186440677966102,
+        "all_query_blocks_seen": false,
+        "per_site": {
+          "avonside": {
+            "seen_blocks": 20,
+            "total_blocks": 24,
+            "block_fraction": 0.8333333333333334,
+            "seen_episodes": 20,
+            "total_episodes": 24,
+            "episode_fraction": 0.8333333333333334,
+            "updates": 20
+          },
+          "bexley": {
+            "seen_blocks": 20,
+            "total_blocks": 40,
+            "block_fraction": 0.5,
+            "seen_episodes": 20,
+            "total_episodes": 40,
+            "episode_fraction": 0.5,
+            "updates": 20
+          },
+          "cashmere_high_school": {
+            "seen_blocks": 20,
+            "total_blocks": 40,
+            "block_fraction": 0.5,
+            "seen_episodes": 20,
+            "total_episodes": 40,
+            "episode_fraction": 0.5,
+            "updates": 20
+          },
+          "christchurch_central_city": {
+            "seen_blocks": 20,
+            "total_blocks": 40,
+            "block_fraction": 0.5,
+            "seen_episodes": 20,
+            "total_episodes": 40,
+            "episode_fraction": 0.5,
+            "updates": 20
+          },
+          "christchurch_metro_sports_facility": {
+            "seen_blocks": 20,
+            "total_blocks": 40,
+            "block_fraction": 0.5,
+            "seen_episodes": 20,
+            "total_episodes": 40,
+            "episode_fraction": 0.5,
+            "updates": 20
+          },
+          "christchurch_stadium": {
+            "seen_blocks": 20,
+            "total_blocks": 40,
+            "block_fraction": 0.5,
+            "seen_episodes": 20,
+            "total_episodes": 40,
+            "episode_fraction": 0.5,
+            "updates": 20
+          },
+          "hollywood": {
+            "seen_blocks": 20,
+            "total_blocks": 40,
+            "block_fraction": 0.5,
+            "seen_episodes": 20,
+            "total_episodes": 40,
+            "episode_fraction": 0.5,
+            "updates": 20
+          },
+          "new_brighton_willryan_ave": {
+            "seen_blocks": 20,
+            "total_blocks": 24,
+            "block_fraction": 0.8333333333333334,
+            "seen_episodes": 20,
+            "total_episodes": 24,
+            "episode_fraction": 0.8333333333333334,
+            "updates": 20
+          },
+          "parkland_bower_ave_one": {
+            "seen_blocks": 16,
+            "total_blocks": 16,
+            "block_fraction": 1.0,
+            "seen_episodes": 16,
+            "total_episodes": 16,
+            "episode_fraction": 1.0,
+            "updates": 20
+          },
+          "redcliffs_main_road": {
+            "seen_blocks": 20,
+            "total_blocks": 24,
+            "block_fraction": 0.8333333333333334,
+            "seen_episodes": 20,
+            "total_episodes": 24,
+            "episode_fraction": 0.8333333333333334,
+            "updates": 20
+          },
+          "richmond": {
+            "seen_blocks": 20,
+            "total_blocks": 32,
+            "block_fraction": 0.625,
+            "seen_episodes": 20,
+            "total_episodes": 32,
+            "episode_fraction": 0.625,
+            "updates": 20
+          },
+          "south_new_brighton": {
+            "seen_blocks": 20,
+            "total_blocks": 24,
+            "block_fraction": 0.8333333333333334,
+            "seen_episodes": 20,
+            "total_episodes": 24,
+            "episode_fraction": 0.8333333333333334,
+            "updates": 20
+          },
+          "wellington_airport": {
+            "seen_blocks": 20,
+            "total_blocks": 40,
+            "block_fraction": 0.5,
+            "seen_episodes": 20,
+            "total_episodes": 40,
+            "episode_fraction": 0.5,
+            "updates": 20
+          },
+          "wellington_college": {
+            "seen_blocks": 20,
+            "total_blocks": 32,
+            "block_fraction": 0.625,
+            "seen_episodes": 20,
+            "total_episodes": 32,
+            "episode_fraction": 0.625,
+            "updates": 20
+          },
+          "whangarei_high_school": {
+            "seen_blocks": 16,
+            "total_blocks": 16,
+            "block_fraction": 1.0,
+            "seen_episodes": 16,
+            "total_episodes": 16,
+            "episode_fraction": 1.0,
+            "updates": 20
+          }
+        }
+      },
+      "stop_reason": "early_stopping_after_minimum_successful_updates",
+      "elapsed_seconds": 495.34452299999975,
+      "peak_cuda_allocated_bytes": 505972224,
+      "train_sites": [
+        "avonside",
+        "bexley",
+        "cashmere_high_school",
+        "christchurch_central_city",
+        "christchurch_metro_sports_facility",
+        "christchurch_stadium",
+        "hollywood",
+        "new_brighton_willryan_ave",
+        "parkland_bower_ave_one",
+        "redcliffs_main_road",
+        "richmond",
+        "south_new_brighton",
+        "wellington_airport",
+        "wellington_college",
+        "whangarei_high_school"
+      ],
+      "validation_sites": [
+        "lower_hutt_town_hall",
+        "port_nelson",
         "tauranga_farmers_building"
       ]
     }
