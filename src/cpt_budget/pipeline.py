@@ -307,11 +307,20 @@ def freeze_quality(config, directory, fold_id=None):
     return targets
 
 def summarize(config, directory):
-    from .economics import summarize_results
+    from .economics import summarize_results, selection_diagnostics
     metrics = pd.read_parquet(directory / "metrics.parquet")
     target_path = directory / "summary" / "quality_targets.json"
     targets = json.loads(target_path.read_text(encoding="utf-8")) if target_path.exists() else {"folds": {}}
     tables = summarize_results(metrics, targets, config)
+    score_path = directory / "acquisition_scores.parquet"
+    prediction_path = directory / "predictions.parquet"
+    if score_path.exists() and prediction_path.exists():
+        scores = pd.read_parquet(score_path)
+        predictions = pd.read_parquet(prediction_path)
+        scope = "test" if metrics.role.eq("test").any() else "pilot"
+        scores = scores.loc[scores.role.eq(scope)]
+        predictions = predictions.loc[predictions.split_role.eq(scope)]
+        tables["selection_diagnostics"] = selection_diagnostics(scores, predictions)
     summary = directory / "summary"
     summary.mkdir(exist_ok=True)
     for name, frame in tables.items():

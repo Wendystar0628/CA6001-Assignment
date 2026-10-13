@@ -77,5 +77,10 @@
       "model_generation": "v2",
       "checkpoint_sha256": "1fdb6638f33a140918a49ce20ab7fc3a7eecd55f0f9395bad91bdc5bfa31ae50"
     }
-  ]
+  ],
+  "base_checkpoint": {
+    "repository": "Prior-Labs/TabPFN-v2-reg",
+    "filename": "tabpfn-v2-regressor.ckpt",
+    "sha256": "2ab5a07d5c41dfe6db9aa7ae106fc6de898326c2765be66505a07e2868c10736"
+  }
 }

@@ -3,7 +3,7 @@ import pandas as pd
 import pytest
 
 from cpt_budget.acquisition import select_batch
-from cpt_budget.economics import freeze_quality_targets, summarize_results
+from cpt_budget.economics import freeze_quality_targets, selection_diagnostics, summarize_results
 from cpt_budget.evaluate import evaluate
 from cpt_budget.replay import run_replay
 from cpt_budget.types import PredictionBundle, PreparedDataset
@@ -165,3 +165,31 @@ def test_incomplete_budget_curves_never_claim_stable_attainment_or_costs(observe
     assert pd.isna(cost.saved_cpt) and pd.isna(cost.net_savings)
     assert pd.isna(cost.savings_lower_bound_exclusive) and pd.isna(cost.savings_upper_bound_exclusive)
     assert cost.n_both_reached == 0
+
+
+def test_selection_diagnostics_only_compare_same_first_round_information():
+    common = {"fold_id": 0, "site_id": "s", "seed": 17, "model_id": "gp",
+              "budget_n": 5, "observed_set_id": "same", "round_id": 0, "role": "pilot"}
+    scores = pd.DataFrame([{**common, "policy_id": policy, "location_id": loc, "score": score,
+                            "selected": loc in selected}
+        for policy, values, selected in [("maximin", [1., 2., 3.], {"a", "b"}),
+                                         ("uncertainty", [3., 2., 1.], {"b", "c"}),
+                                         ("threshold_uncertainty", [2., 2., 2.], {"b", "c"})]
+        for loc, score in zip(["a", "b", "c"], values)])
+    predictions = pd.DataFrame([{**common, "policy_id": policy, "location_id": loc,
+        "depth_index": depth, "role": "candidate", "split_role": "pilot",
+        "q05_log": -1. if depth == 0 else .5, "q95_log": 1.}
+        for policy in scores.policy_id.unique() for loc in ["a", "b", "c"] for depth in [0, 1]])
+    result = selection_diagnostics(scores, predictions)
+    pair = result.query("policy_a == 'maximin' and policy_b == 'uncertainty'").iloc[0]
+    assert pair.jaccard == pytest.approx(1 / 3)
+    assert pair.score_spearman == pytest.approx(-1.)
+    assert pair.crossing_fraction == .5
+    constant = result.query("policy_a == 'threshold_uncertainty' or policy_b == 'threshold_uncertainty'")
+    assert constant.score_spearman.isna().all()
+    assert (constant.score_spearman_reason == "constant_candidate_scores").all()
+    scores.loc[scores.policy_id == "threshold_uncertainty", "observed_set_id"] = "different"
+    later = scores.assign(round_id=1, budget_n=7)
+    filtered = selection_diagnostics(pd.concat([scores, later]), predictions)
+    assert len(filtered) == 1 and filtered.iloc[0].budget_n == 5
+    assert filtered.iloc[0].comparison_scope == "same_information_state"

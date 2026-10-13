@@ -293,3 +293,114 @@ def summarize_results(metrics, quality_targets, config):
     for frame in result.values():
         frame["summary_role"] = summary_role
     return result
+
+
+def selection_diagnostics(acquisition_scores, predictions=None):
+    """Compare first-round policies only within the same saved information state.
+
+    This is a read-only summary of saved scores and predictions. It neither
+    reruns acquisition nor uses candidate truth. Correlations use average ranks
+    for ties, and are undefined when either score vector is constant.
+    """
+    from itertools import combinations
+
+    keys = ["fold_id", "site_id", "seed", "model_id", "budget_n", "observed_set_id"]
+    columns = keys + ["comparison_scope", "policy_a", "policy_b", "n_candidates",
+        "n_selected_a", "n_selected_b", "jaccard", "jaccard_reason", "score_spearman",
+        "score_spearman_reason", "crossing_fraction", "crossing_fraction_a",
+        "crossing_fraction_b", "crossing_fraction_reason", "threshold_mpa"]
+    if acquisition_scores is None or acquisition_scores.empty:
+        return pd.DataFrame(columns=columns)
+    required = set(keys + ["policy_id", "location_id", "score", "selected"])
+    if not required.issubset(acquisition_scores.columns):
+        raise ValueError(f"Selection diagnostics missing columns: {sorted(required - set(acquisition_scores.columns))}")
+    scores = acquisition_scores.copy()
+    extras = [c for c in ["run_id", "role"] if c in scores]
+    experiment_keys = extras + [c for c in keys if c not in ("budget_n", "observed_set_id")]
+    if "round_id" in scores:
+        scores = scores.loc[scores.round_id == 0]
+    else:
+        # Older saved tables may lack round_id; the first saved budget is all
+        # that can be identified from those tables, and no later state is used.
+        first_budget = scores.groupby(experiment_keys, dropna=False).budget_n.transform("min")
+        scores = scores.loc[scores.budget_n == first_budget]
+    scores = scores.loc[scores.policy_id.isin(["maximin", "uncertainty", "threshold_uncertainty"])]
+    group_keys = extras + keys
+    if scores[group_keys].isna().any().any():
+        raise ValueError("Same-information comparisons require complete saved state identifiers")
+
+    def candidate_intervals(common, policy, locations):
+        if predictions is None or predictions.empty:
+            return None, "candidate_predictions_unavailable"
+        if not {"role", "location_id", "depth_index", "q05_log", "q95_log"}.issubset(predictions.columns):
+            return None, "candidate_intervals_unavailable"
+        frame = predictions.loc[predictions.role == "candidate"]
+        # Prediction role names the row purpose; split_role names the replay role.
+        for name, value in common.items():
+            if name == "role":
+                if "split_role" in frame:
+                    frame = frame.loc[frame.split_role == value]
+            elif name in frame:
+                frame = frame.loc[frame[name] == value]
+            elif name != "observed_set_id":
+                return None, f"prediction_state_key_unavailable:{name}"
+        if "policy_id" not in frame:
+            return None, "prediction_policy_unavailable"
+        frame = frame.loc[frame.policy_id == policy]
+        if frame.empty or set(frame.location_id) != locations:
+            return None, "candidate_prediction_locations_mismatch"
+        if frame.duplicated(["location_id", "depth_index"]).any():
+            return None, "duplicate_candidate_predictions"
+        frame = frame.set_index(["location_id", "depth_index"])[["q05_log", "q95_log"]].sort_index()
+        values = frame.to_numpy(float)
+        if not np.isfinite(values).all() or (values[:, 0] > values[:, 1]).any():
+            return None, "candidate_intervals_invalid"
+        return frame, None
+
+    rows = []
+    for group_key, state in scores.groupby(group_keys, sort=True, dropna=False):
+        common = dict(zip(group_keys, group_key))
+        for policy_a, policy_b in combinations(sorted(state.policy_id.unique()), 2):
+            a = state.loc[state.policy_id == policy_a].set_index("location_id")
+            b = state.loc[state.policy_id == policy_b].set_index("location_id")
+            if a.index.has_duplicates or b.index.has_duplicates:
+                raise ValueError("A same-state policy has duplicate candidate scores")
+            if set(a.index) != set(b.index):
+                # Different candidate opportunities are not the same decision state.
+                continue
+            locations = sorted(a.index)
+            a, b = a.loc[locations], b.loc[locations]
+            selected_a = set(a.index[a.selected.fillna(False).astype(bool)])
+            selected_b = set(b.index[b.selected.fillna(False).astype(bool)])
+            union = selected_a | selected_b
+            row = {**common, "comparison_scope": "same_information_state", "policy_a": policy_a,
+                "policy_b": policy_b, "n_candidates": len(locations),
+                "n_selected_a": len(selected_a), "n_selected_b": len(selected_b),
+                "jaccard": len(selected_a & selected_b) / len(union) if union else None,
+                "jaccard_reason": None if union else "no_selected_candidates",
+                "score_spearman": None, "score_spearman_reason": None,
+                "crossing_fraction": None, "crossing_fraction_a": None,
+                "crossing_fraction_b": None, "crossing_fraction_reason": None, "threshold_mpa": 1.0}
+            sa, sb = pd.to_numeric(a.score, errors="coerce"), pd.to_numeric(b.score, errors="coerce")
+            if not np.isfinite(sa.to_numpy(float)).all() or not np.isfinite(sb.to_numpy(float)).all():
+                row["score_spearman_reason"] = "nonfinite_candidate_scores"
+            elif len(locations) < 2:
+                row["score_spearman_reason"] = "fewer_than_two_candidates"
+            elif sa.nunique() < 2 or sb.nunique() < 2:
+                row["score_spearman_reason"] = "constant_candidate_scores"
+            else:
+                row["score_spearman"] = float(sa.rank(method="average").corr(sb.rank(method="average")))
+            ia, reason_a = candidate_intervals(common, policy_a, set(locations))
+            ib, reason_b = candidate_intervals(common, policy_b, set(locations))
+            for intervals, label in [(ia, "a"), (ib, "b")]:
+                if intervals is not None:
+                    # log(1 MPa) = 0; strict crossing matches the acquisition rule.
+                    row[f"crossing_fraction_{label}"] = float(((intervals.q05_log < 0) & (intervals.q95_log > 0)).mean())
+            if reason_a or reason_b:
+                row["crossing_fraction_reason"] = ";".join(sorted({r for r in [reason_a, reason_b] if r}))
+            elif not ia.index.equals(ib.index) or not np.array_equal(ia.to_numpy(), ib.to_numpy()):
+                row["crossing_fraction_reason"] = "same_state_candidate_predictions_differ"
+            else:
+                row["crossing_fraction"] = row["crossing_fraction_a"]
+            rows.append(row)
+    return pd.DataFrame(rows, columns=extras + columns)
