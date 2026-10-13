@@ -228,7 +228,9 @@ def _map(ax, locations, state=None, selected=None, *, limits=None, scores=None, 
         if rows.empty:
             continue
         row = rows.iloc[0]
-        ax.scatter(row.x_m, row.y_m, s=size * 7, marker="D", color=TEAL, edgecolor="white", zorder=6)
+        measured = identifier in observed
+        ax.scatter(row.x_m, row.y_m, s=size * 7, marker="D", facecolor="none" if measured else TEAL,
+                   edgecolor=TEAL if measured else "white", linewidth=1.4, zorder=6)
         ax.annotate(str(rank), (row.x_m, row.y_m), xytext=(7, 7), textcoords="offset points",
                     color=TEAL, fontweight="bold", zorder=7,
                     bbox={"facecolor": "white", "edgecolor": "none", "pad": .7, "alpha": .9})
@@ -764,27 +766,32 @@ def _demo_frames(run_dir, dataset, predictions, metrics, scores, states, case, c
             frame_index += 1
             fig = canvas("slides")
             gs = fig.add_gridspec(2, 3, left=.07, right=.96, bottom=.16, top=.78, wspace=.52, hspace=.60, width_ratios=[1.3, .75, .90])
-            map_ax = fig.add_subplot(gs[:, 0]); decision_ax = fig.add_subplot(gs[:, 1]); profile_ax = fig.add_subplot(gs[0, 2]); curve_ax = fig.add_subplot(gs[1, 2])
+            map_ax = fig.add_subplot(gs[:, 0]); profile_ax = fig.add_subplot(gs[0, 2]); curve_ax = fig.add_subplot(gs[1, 2])
             visible = selected if phase in ["Batch selected", "New measurements revealed"] else []
             map_state = state.copy()
             if phase == "New measurements revealed":
                 map_state["observed_ids"] = _ids(state.observed_ids) + selected
             _map(map_ax, geometry, map_state, visible, limits=extent, scores=score if phase == "Candidate scoring" else None, score_range=score_range)
             map_ax.set_title("Investigation state", loc="left")
-            first_prediction = _select(_candidate(all_predictions), budget_n=budget, location_id=selected[0] if selected else "__none__")
-            if not first_prediction.empty and phase in ["Batch selected", "New measurements revealed"]:
-                if phase == "New measurements revealed":
-                    truth = dataset.truth([selected[0]])[["location_id", "depth_index", "qc_mpa"]].rename(columns={"qc_mpa": "truth_qc_mpa"})
-                    first_prediction = first_prediction.drop(columns=["truth_qc_mpa"], errors="ignore").merge(truth, on=["location_id", "depth_index"], validate="one_to_one")
-                _profile(decision_ax, first_prediction, case["model_id"], limits,
-                         truth=phase == "New measurements revealed", title="Recommendation 1")
-            elif phase == "Candidate scoring" and not score.empty:
+            show_batch = bool(selected) and phase in ["Batch selected", "New measurements revealed"]
+            if show_batch:
+                for rank, identifier in enumerate(selected):
+                    decision_ax = fig.add_subplot(gs[rank, 1])
+                    candidate_prediction = _select(_candidate(all_predictions), budget_n=budget, location_id=identifier)
+                    if phase == "New measurements revealed":
+                        truth = dataset.truth([identifier])[["location_id", "depth_index", "qc_mpa"]].rename(columns={"qc_mpa": "truth_qc_mpa"})
+                        candidate_prediction = candidate_prediction.drop(columns=["truth_qc_mpa"], errors="ignore").merge(truth, on=["location_id", "depth_index"], validate="one_to_one")
+                    _profile(decision_ax, candidate_prediction, case["model_id"], limits,
+                             truth=phase == "New measurements revealed", title=f"Recommendation {rank + 1}")
+            else:
+                decision_ax = fig.add_subplot(gs[:, 1])
+            if phase == "Candidate scoring" and not score.empty:
                 top = score.sort_values("score", ascending=False).head(6).iloc[::-1]
                 decision_ax.barh(np.arange(len(top)), top.score, color=TEAL)
                 location_labels = _location_labels(geometry)
                 decision_ax.set_yticks(np.arange(len(top)), [location_labels[x] for x in top.location_id])
                 decision_ax.set_xlabel("Saved score"); decision_ax.set_title("Candidate ranking", loc="left")
-            else:
+            elif not show_batch:
                 decision_ax.axis("off")
                 decision_ax.text(.1, .70, f"{budget}\nmeasured CPTs", va="top", fontsize=25, fontweight="bold")
                 decision_ax.text(.1, .42, "Fixed evaluation set\nCandidate truth hidden\nBatch size: 2", va="top", fontsize=18, linespacing=1.6, color=MUTED)
@@ -796,7 +803,8 @@ def _demo_frames(run_dir, dataset, predictions, metrics, scores, states, case, c
                 curve_ax.set_xticks(curve.budget_n.unique()); curve_ax.set_xlabel("Prediction budget")
                 curve_ax.set_ylabel("Log-MAE"); finish_axis(curve_ax)
             count = budget + len(selected) if phase == "New measurements revealed" else budget
-            subtitle = f"New Lock · seed {case['seed']} · measured {count} · prediction conditioned on {budget}"
+            subtitle = (f"New Lock · {method_name(case['model_id'], case['policy_id'])} · seed {case['seed']}\n"
+                        f"Measured {count} CPTs · prediction conditioned on {budget}")
             heading(fig, phase, subtitle, "slides", footer="Replay from saved states; evaluation truth is shown only for retrospective assessment.\n" + label)
             path = folder / f"frame_{frame_index:03d}.png"; fig.savefig(path, dpi=120); plt.close(fig)
             frames.append(path)
