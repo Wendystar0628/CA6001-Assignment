@@ -1,0 +1,1450 @@
+{
+  "schema_version": "diagnostic-context-1",
+  "fold_id": 0,
+  "seed": 20261014,
+  "budgets": [
+    5,
+    7,
+    9,
+    11,
+    13
+  ],
+  "feature_columns": [
+    "depth_m",
+    "neighbor_1_log_qc",
+    "neighbor_2_log_qc",
+    "neighbor_3_log_qc",
+    "neighbor_1_log_distance",
+    "neighbor_2_log_distance",
+    "neighbor_3_log_distance",
+    "neighbor_1_valid",
+    "neighbor_2_valid",
+    "neighbor_3_valid",
+    "neighbor_mean_log_qc",
+    "neighbor_std_log_qc",
+    "neighbor_median_log_qc",
+    "idw_log_qc",
+    "support_count",
+    "log_geometry_scale",
+    "kernel_10m_log_qc",
+    "kernel_50m_log_qc",
+    "kernel_10m_low_fraction",
+    "kernel_50m_low_fraction",
+    "idw_above_log_qc",
+    "idw_below_log_qc",
+    "idw_vertical_gradient",
+    "idw_vertical_curvature"
+  ],
+  "allowed_train_sites": [
+    "avondale",
+    "avonside",
+    "baytown",
+    "bexley",
+    "christchurch_central_city",
+    "christchurch_cnr_armagh_durham_st",
+    "hastings_hospital",
+    "hollywood",
+    "linwood_rudds_road",
+    "marshland",
+    "newlock",
+    "parkland_bower_ave_two",
+    "redcliffs_main_road",
+    "wainoni",
+    "wainoni_pak_n_save",
+    "wellington_college",
+    "whangarei_high_school"
+  ],
+  "eligible_train_sites": [
+    "avondale",
+    "avonside",
+    "bexley",
+    "christchurch_central_city",
+    "hollywood",
+    "linwood_rudds_road",
+    "marshland",
+    "newlock",
+    "parkland_bower_ave_two",
+    "redcliffs_main_road",
+    "wainoni",
+    "wainoni_pak_n_save",
+    "wellington_college",
+    "whangarei_high_school"
+  ],
+  "ineligible_train_sites_no_episode": [
+    "baytown",
+    "christchurch_cnr_armagh_durham_st",
+    "hastings_hospital"
+  ],
+  "source_investigation_groups": [
+    "investigation_avondale",
+    "investigation_avonside",
+    "investigation_baytown",
+    "investigation_bexley",
+    "investigation_christchurch_central_city",
+    "investigation_christchurch_cnr_armagh_durham_st",
+    "investigation_hastings_hospital",
+    "investigation_hollywood",
+    "investigation_linwood_rudds_road",
+    "investigation_marshland",
+    "investigation_newlock",
+    "investigation_parkland_bower_ave_two",
+    "investigation_redcliffs_main_road",
+    "investigation_wainoni",
+    "investigation_wainoni_pak_n_save",
+    "investigation_wellington_college",
+    "investigation_whangarei_high_school"
+  ],
+  "selection_rule": "nearest_support_count_then_seeded_episode_hash_one_seeded_whole_query_per_site",
+  "target_labels_used": false,
+  "source_rows_per_site_per_budget": 24,
+  "native_probability_calibration": "none",
+  "records": [
+    {
+      "target_budget": 5,
+      "site_id": "avondale",
+      "episode_id": "episode_511110c0f410a60f",
+      "support_location_ids": [
+        "location_0168c3a57204810d",
+        "location_36518ba412c1af80",
+        "location_42de7aa7a5c76548",
+        "location_4c6b5a12c8df3d36",
+        "location_6eaafc829bb4be89"
+      ],
+      "query_location_id": "location_eebf8215c7d11a16",
+      "n_support": 5,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 5,
+      "site_id": "avonside",
+      "episode_id": "episode_960d18f73ac54f41",
+      "support_location_ids": [
+        "location_0ce2bef22a613680",
+        "location_5322456aaaf7c784",
+        "location_58f0c85251d72acb",
+        "location_99e54baba002b753",
+        "location_db0746fe19d47741"
+      ],
+      "query_location_id": "location_44f734d436dd107e",
+      "n_support": 5,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 5,
+      "site_id": "bexley",
+      "episode_id": "episode_09d27f4753e13ca6",
+      "support_location_ids": [
+        "location_052d9d7d4e3fea2a",
+        "location_15eeee06fe635f65",
+        "location_cc7f0c410f4292d3",
+        "location_d577f80b1c8cb4c5",
+        "location_e14c4e31160db6ba"
+      ],
+      "query_location_id": "location_b24d98d30c20aaf0",
+      "n_support": 5,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 5,
+      "site_id": "christchurch_central_city",
+      "episode_id": "episode_05ded8a59b9e4dd3",
+      "support_location_ids": [
+        "location_5e760f6d1d2c94b6",
+        "location_b1fa5539be453ddb",
+        "location_c4deb0251bc8e524",
+        "location_d691ea2c3bce94ef",
+        "location_f540da5a7ec3dc98"
+      ],
+      "query_location_id": "location_2135f9f53f524cfc",
+      "n_support": 5,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 5,
+      "site_id": "hollywood",
+      "episode_id": "episode_7da8820bc2c2a0a1",
+      "support_location_ids": [
+        "location_17ea8c416d6c605b",
+        "location_531fc2cf8c9a0447",
+        "location_d832a7f78b753a8b",
+        "location_da4074bdf4b862df",
+        "location_de1de6d23498237a"
+      ],
+      "query_location_id": "location_68731fbac3236131",
+      "n_support": 5,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 5,
+      "site_id": "linwood_rudds_road",
+      "episode_id": "episode_d213aef479155985",
+      "support_location_ids": [
+        "location_129acd4fa4e5110b",
+        "location_2ec8cb851f577d4e",
+        "location_446a4023aa334f67",
+        "location_7e3811af49f9b218",
+        "location_811954215b5c165c"
+      ],
+      "query_location_id": "location_64671626b78a63f5",
+      "n_support": 5,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 5,
+      "site_id": "marshland",
+      "episode_id": "episode_cc4b287141a26c08",
+      "support_location_ids": [
+        "location_023b4cf8dd085689",
+        "location_2dd5199da960ca4f",
+        "location_4e6da72bf6e514d5",
+        "location_52b5947bd236673d",
+        "location_e83ddbd9558116ac"
+      ],
+      "query_location_id": "location_3e6c95558e5f5c05",
+      "n_support": 5,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 5,
+      "site_id": "newlock",
+      "episode_id": "episode_3486d1f6d944fc35",
+      "support_location_ids": [
+        "location_0244a5d9fb5e7fd3",
+        "location_2d179fb0d8d37923",
+        "location_406ab5962c0ccbd2",
+        "location_8a8df3f986466623",
+        "location_9211f1cde72b82cb"
+      ],
+      "query_location_id": "location_8ade1ff7c9176774",
+      "n_support": 5,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 5,
+      "site_id": "parkland_bower_ave_two",
+      "episode_id": "episode_47dd63da1fed21b4",
+      "support_location_ids": [
+        "location_60b1e4a22146d184",
+        "location_94587f3742482e85",
+        "location_9acf9c940d3a091c",
+        "location_a6470440b3b8df4c",
+        "location_c4071de13afeea9c"
+      ],
+      "query_location_id": "location_a6f17fdad87c4be0",
+      "n_support": 5,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 5,
+      "site_id": "redcliffs_main_road",
+      "episode_id": "episode_80b7a706c3193fe5",
+      "support_location_ids": [
+        "location_0fadc78c84be03cc",
+        "location_18ec11be835e0c46",
+        "location_35a7ad08ab875d4d",
+        "location_71ca44256830148d",
+        "location_ff78ba3b1c97d93c"
+      ],
+      "query_location_id": "location_2b6cd384feaa3c79",
+      "n_support": 5,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 5,
+      "site_id": "wainoni",
+      "episode_id": "episode_85b378bd8af6f242",
+      "support_location_ids": [
+        "location_00b5590e493df25f",
+        "location_12755a999a0a124a",
+        "location_4d9c62b4f987a8f5",
+        "location_818db6dcd23c4ac1",
+        "location_fa85e674120f2de8"
+      ],
+      "query_location_id": "location_0397fe038260d29e",
+      "n_support": 5,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 5,
+      "site_id": "wainoni_pak_n_save",
+      "episode_id": "episode_a8f89093ddeb6796",
+      "support_location_ids": [
+        "location_755f248cb2f30b38",
+        "location_7913c9f2e46259fd",
+        "location_8b905a91f02baa01",
+        "location_aa590246ecdcb8aa",
+        "location_b3edee146fb3531a"
+      ],
+      "query_location_id": "location_3aa82bdfcc99b5ac",
+      "n_support": 5,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 5,
+      "site_id": "wellington_college",
+      "episode_id": "episode_31178aefad627454",
+      "support_location_ids": [
+        "location_5c54eb91341b4d15",
+        "location_6d52ba025bacdc7c",
+        "location_7612088292dcca8b",
+        "location_9524418cbd9143a7",
+        "location_da982fb0f525cf07"
+      ],
+      "query_location_id": "location_6e68e127bb2c4026",
+      "n_support": 5,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 5,
+      "site_id": "whangarei_high_school",
+      "episode_id": "episode_6efd56b9462bedf7",
+      "support_location_ids": [
+        "location_07d13b996705dcb8",
+        "location_4c02436bd64f66ae",
+        "location_8085a32b4cf5c41b",
+        "location_fa2aad647308f475",
+        "location_fc8bd001bee51450"
+      ],
+      "query_location_id": "location_69658906b6aeae56",
+      "n_support": 5,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 7,
+      "site_id": "avondale",
+      "episode_id": "episode_02280ccf8d4984e6",
+      "support_location_ids": [
+        "location_0168c3a57204810d",
+        "location_36518ba412c1af80",
+        "location_42de7aa7a5c76548",
+        "location_4828b4e8f9ba428f",
+        "location_4c6b5a12c8df3d36",
+        "location_5584bcb4a41632ac",
+        "location_6eaafc829bb4be89",
+        "location_da01c3799cde3619"
+      ],
+      "query_location_id": "location_eebf8215c7d11a16",
+      "n_support": 8,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 7,
+      "site_id": "avonside",
+      "episode_id": "episode_b555307ecd14ac31",
+      "support_location_ids": [
+        "location_0212fc41824e0991",
+        "location_0ce2bef22a613680",
+        "location_5322456aaaf7c784",
+        "location_58f0c85251d72acb",
+        "location_5938881b56a23dd3",
+        "location_97d661398aad0f61",
+        "location_99e54baba002b753",
+        "location_db0746fe19d47741",
+        "location_e60680caf9e9756a"
+      ],
+      "query_location_id": "location_44f734d436dd107e",
+      "n_support": 9,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 7,
+      "site_id": "bexley",
+      "episode_id": "episode_09d27f4753e13ca6",
+      "support_location_ids": [
+        "location_052d9d7d4e3fea2a",
+        "location_15eeee06fe635f65",
+        "location_cc7f0c410f4292d3",
+        "location_d577f80b1c8cb4c5",
+        "location_e14c4e31160db6ba"
+      ],
+      "query_location_id": "location_b24d98d30c20aaf0",
+      "n_support": 5,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 7,
+      "site_id": "christchurch_central_city",
+      "episode_id": "episode_fd906f291b766faf",
+      "support_location_ids": [
+        "location_0d446ab88c7501f5",
+        "location_2135f9f53f524cfc",
+        "location_239c44a4d991da23",
+        "location_2da8e64f528ea628",
+        "location_5e760f6d1d2c94b6",
+        "location_76a2c93d27a4f9d6",
+        "location_90d69d5ee8f8f8a7",
+        "location_abb1a9f1910ffab7",
+        "location_f540da5a7ec3dc98"
+      ],
+      "query_location_id": "location_d33176bfe6bbdafc",
+      "n_support": 9,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 7,
+      "site_id": "hollywood",
+      "episode_id": "episode_b49edce60d07ba3b",
+      "support_location_ids": [
+        "location_3ef90e231dd9e42a",
+        "location_68731fbac3236131",
+        "location_7797fcb1c84b3a10",
+        "location_a92ec34712167f1a",
+        "location_a9638ec30a076a55",
+        "location_d5457eaf046de609",
+        "location_df1bf9b180eb53b3",
+        "location_ecbcdc1d612e1d3a",
+        "location_fdbbf62793c15f5b"
+      ],
+      "query_location_id": "location_a29fed9fc9a49bf9",
+      "n_support": 9,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 7,
+      "site_id": "linwood_rudds_road",
+      "episode_id": "episode_ee0046a5f48357b7",
+      "support_location_ids": [
+        "location_129acd4fa4e5110b",
+        "location_446a4023aa334f67",
+        "location_64671626b78a63f5",
+        "location_7e3811af49f9b218",
+        "location_811954215b5c165c",
+        "location_e81771ac7b177ddc"
+      ],
+      "query_location_id": "location_2ec8cb851f577d4e",
+      "n_support": 6,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 7,
+      "site_id": "marshland",
+      "episode_id": "episode_cc4b287141a26c08",
+      "support_location_ids": [
+        "location_023b4cf8dd085689",
+        "location_2dd5199da960ca4f",
+        "location_4e6da72bf6e514d5",
+        "location_52b5947bd236673d",
+        "location_e83ddbd9558116ac"
+      ],
+      "query_location_id": "location_3e6c95558e5f5c05",
+      "n_support": 5,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 7,
+      "site_id": "newlock",
+      "episode_id": "episode_3486d1f6d944fc35",
+      "support_location_ids": [
+        "location_0244a5d9fb5e7fd3",
+        "location_2d179fb0d8d37923",
+        "location_406ab5962c0ccbd2",
+        "location_8a8df3f986466623",
+        "location_9211f1cde72b82cb"
+      ],
+      "query_location_id": "location_8ade1ff7c9176774",
+      "n_support": 5,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 7,
+      "site_id": "parkland_bower_ave_two",
+      "episode_id": "episode_47dd63da1fed21b4",
+      "support_location_ids": [
+        "location_60b1e4a22146d184",
+        "location_94587f3742482e85",
+        "location_9acf9c940d3a091c",
+        "location_a6470440b3b8df4c",
+        "location_c4071de13afeea9c"
+      ],
+      "query_location_id": "location_a6f17fdad87c4be0",
+      "n_support": 5,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 7,
+      "site_id": "redcliffs_main_road",
+      "episode_id": "episode_7aa56b667952bfff",
+      "support_location_ids": [
+        "location_0e88e3649dc75751",
+        "location_0fadc78c84be03cc",
+        "location_2b6cd384feaa3c79",
+        "location_35a7ad08ab875d4d",
+        "location_62cc407c4958c73c",
+        "location_71ca44256830148d",
+        "location_85ff4cd8d6683d37",
+        "location_d3a4d1469acb2465",
+        "location_ff78ba3b1c97d93c"
+      ],
+      "query_location_id": "location_18ec11be835e0c46",
+      "n_support": 9,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 7,
+      "site_id": "wainoni",
+      "episode_id": "episode_85b378bd8af6f242",
+      "support_location_ids": [
+        "location_00b5590e493df25f",
+        "location_12755a999a0a124a",
+        "location_4d9c62b4f987a8f5",
+        "location_818db6dcd23c4ac1",
+        "location_fa85e674120f2de8"
+      ],
+      "query_location_id": "location_0397fe038260d29e",
+      "n_support": 5,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 7,
+      "site_id": "wainoni_pak_n_save",
+      "episode_id": "episode_df51272d2fcb4cd1",
+      "support_location_ids": [
+        "location_0bdd01c4994139d4",
+        "location_1434bdb7c5c827be",
+        "location_296899e7dd308105",
+        "location_3aa82bdfcc99b5ac",
+        "location_3f84614a572c1cb7",
+        "location_755f248cb2f30b38",
+        "location_866abbd442fd1c64",
+        "location_9ca512cfde994287",
+        "location_dfeb57d0b5b92d82"
+      ],
+      "query_location_id": "location_b3edee146fb3531a",
+      "n_support": 9,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 7,
+      "site_id": "wellington_college",
+      "episode_id": "episode_d92b41e4057ff331",
+      "support_location_ids": [
+        "location_3b61002a7b5179f4",
+        "location_5c54eb91341b4d15",
+        "location_6d52ba025bacdc7c",
+        "location_6e68e127bb2c4026",
+        "location_7612088292dcca8b",
+        "location_8ce9ac62ba5ad9e5",
+        "location_b1a5ad83b488e3a6",
+        "location_cfa7a06ea00becac",
+        "location_da982fb0f525cf07"
+      ],
+      "query_location_id": "location_22cada5a8603a724",
+      "n_support": 9,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 7,
+      "site_id": "whangarei_high_school",
+      "episode_id": "episode_1368e27ef7be0e89",
+      "support_location_ids": [
+        "location_07d13b996705dcb8",
+        "location_0a1e8d618e5053af",
+        "location_4c02436bd64f66ae",
+        "location_69658906b6aeae56",
+        "location_69926b81dec61338",
+        "location_8085a32b4cf5c41b",
+        "location_b04e911ca4e7ba2d",
+        "location_fa2aad647308f475"
+      ],
+      "query_location_id": "location_fc8bd001bee51450",
+      "n_support": 8,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 9,
+      "site_id": "avondale",
+      "episode_id": "episode_02280ccf8d4984e6",
+      "support_location_ids": [
+        "location_0168c3a57204810d",
+        "location_36518ba412c1af80",
+        "location_42de7aa7a5c76548",
+        "location_4828b4e8f9ba428f",
+        "location_4c6b5a12c8df3d36",
+        "location_5584bcb4a41632ac",
+        "location_6eaafc829bb4be89",
+        "location_da01c3799cde3619"
+      ],
+      "query_location_id": "location_eebf8215c7d11a16",
+      "n_support": 8,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 9,
+      "site_id": "avonside",
+      "episode_id": "episode_b555307ecd14ac31",
+      "support_location_ids": [
+        "location_0212fc41824e0991",
+        "location_0ce2bef22a613680",
+        "location_5322456aaaf7c784",
+        "location_58f0c85251d72acb",
+        "location_5938881b56a23dd3",
+        "location_97d661398aad0f61",
+        "location_99e54baba002b753",
+        "location_db0746fe19d47741",
+        "location_e60680caf9e9756a"
+      ],
+      "query_location_id": "location_44f734d436dd107e",
+      "n_support": 9,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 9,
+      "site_id": "bexley",
+      "episode_id": "episode_ae7155b733680aff",
+      "support_location_ids": [
+        "location_2ebbc52709fabedb",
+        "location_4c8891656b3a11f7",
+        "location_7807a8bc8ae1fcc7",
+        "location_8748c100e5ed74c2",
+        "location_b24d98d30c20aaf0",
+        "location_b36b15278f1c728d",
+        "location_c23e0f5df9221bf6",
+        "location_c2e9ee1e4c3152f9",
+        "location_cc7f0c410f4292d3"
+      ],
+      "query_location_id": "location_052d9d7d4e3fea2a",
+      "n_support": 9,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 9,
+      "site_id": "christchurch_central_city",
+      "episode_id": "episode_fd906f291b766faf",
+      "support_location_ids": [
+        "location_0d446ab88c7501f5",
+        "location_2135f9f53f524cfc",
+        "location_239c44a4d991da23",
+        "location_2da8e64f528ea628",
+        "location_5e760f6d1d2c94b6",
+        "location_76a2c93d27a4f9d6",
+        "location_90d69d5ee8f8f8a7",
+        "location_abb1a9f1910ffab7",
+        "location_f540da5a7ec3dc98"
+      ],
+      "query_location_id": "location_d33176bfe6bbdafc",
+      "n_support": 9,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 9,
+      "site_id": "hollywood",
+      "episode_id": "episode_b49edce60d07ba3b",
+      "support_location_ids": [
+        "location_3ef90e231dd9e42a",
+        "location_68731fbac3236131",
+        "location_7797fcb1c84b3a10",
+        "location_a92ec34712167f1a",
+        "location_a9638ec30a076a55",
+        "location_d5457eaf046de609",
+        "location_df1bf9b180eb53b3",
+        "location_ecbcdc1d612e1d3a",
+        "location_fdbbf62793c15f5b"
+      ],
+      "query_location_id": "location_a29fed9fc9a49bf9",
+      "n_support": 9,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 9,
+      "site_id": "linwood_rudds_road",
+      "episode_id": "episode_ee0046a5f48357b7",
+      "support_location_ids": [
+        "location_129acd4fa4e5110b",
+        "location_446a4023aa334f67",
+        "location_64671626b78a63f5",
+        "location_7e3811af49f9b218",
+        "location_811954215b5c165c",
+        "location_e81771ac7b177ddc"
+      ],
+      "query_location_id": "location_2ec8cb851f577d4e",
+      "n_support": 6,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 9,
+      "site_id": "marshland",
+      "episode_id": "episode_1a3598390cd146c6",
+      "support_location_ids": [
+        "location_023b4cf8dd085689",
+        "location_34c1a4d0e33941cb",
+        "location_52b5947bd236673d",
+        "location_6416778c2eac2e5c",
+        "location_72ae58633f63e224",
+        "location_765df992240a7d77",
+        "location_7f40123dd14dfd10",
+        "location_9ebae0098d8143c1",
+        "location_e34f08e844c76447"
+      ],
+      "query_location_id": "location_3dd80d0d68ace4cf",
+      "n_support": 9,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 9,
+      "site_id": "newlock",
+      "episode_id": "episode_1fe75169bc708873",
+      "support_location_ids": [
+        "location_0d6bd94f9cd20850",
+        "location_52e89086dd5ef397",
+        "location_5e9ea8cec446d984",
+        "location_63976b0c61487f74",
+        "location_76058e5b847641b2",
+        "location_761bbb1f4977aacd",
+        "location_df00dd6758b75aa0",
+        "location_e14b0510ae5a1467",
+        "location_e8fe78aca1b349b5"
+      ],
+      "query_location_id": "location_8a8df3f986466623",
+      "n_support": 9,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 9,
+      "site_id": "parkland_bower_ave_two",
+      "episode_id": "episode_bd2b4ee7cd423007",
+      "support_location_ids": [
+        "location_2841d016fe954ca4",
+        "location_60b1e4a22146d184",
+        "location_94587f3742482e85",
+        "location_9acf9c940d3a091c",
+        "location_9add2f95d2ea178d",
+        "location_a6470440b3b8df4c",
+        "location_a8b37b99afef524d",
+        "location_c4071de13afeea9c",
+        "location_f01b4604b3e1ef81"
+      ],
+      "query_location_id": "location_3bbe7a14d18c0639",
+      "n_support": 9,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 9,
+      "site_id": "redcliffs_main_road",
+      "episode_id": "episode_7aa56b667952bfff",
+      "support_location_ids": [
+        "location_0e88e3649dc75751",
+        "location_0fadc78c84be03cc",
+        "location_2b6cd384feaa3c79",
+        "location_35a7ad08ab875d4d",
+        "location_62cc407c4958c73c",
+        "location_71ca44256830148d",
+        "location_85ff4cd8d6683d37",
+        "location_d3a4d1469acb2465",
+        "location_ff78ba3b1c97d93c"
+      ],
+      "query_location_id": "location_18ec11be835e0c46",
+      "n_support": 9,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 9,
+      "site_id": "wainoni",
+      "episode_id": "episode_f095385c11f1f17c",
+      "support_location_ids": [
+        "location_00b5590e493df25f",
+        "location_0397fe038260d29e",
+        "location_12755a999a0a124a",
+        "location_4d9c62b4f987a8f5",
+        "location_5430c372bef87cc6",
+        "location_8650cf96038cba71",
+        "location_b2a50b9f7bf27b82",
+        "location_dc04c4c9865e6ac9",
+        "location_fa85e674120f2de8"
+      ],
+      "query_location_id": "location_818db6dcd23c4ac1",
+      "n_support": 9,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 9,
+      "site_id": "wainoni_pak_n_save",
+      "episode_id": "episode_df51272d2fcb4cd1",
+      "support_location_ids": [
+        "location_0bdd01c4994139d4",
+        "location_1434bdb7c5c827be",
+        "location_296899e7dd308105",
+        "location_3aa82bdfcc99b5ac",
+        "location_3f84614a572c1cb7",
+        "location_755f248cb2f30b38",
+        "location_866abbd442fd1c64",
+        "location_9ca512cfde994287",
+        "location_dfeb57d0b5b92d82"
+      ],
+      "query_location_id": "location_b3edee146fb3531a",
+      "n_support": 9,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 9,
+      "site_id": "wellington_college",
+      "episode_id": "episode_d92b41e4057ff331",
+      "support_location_ids": [
+        "location_3b61002a7b5179f4",
+        "location_5c54eb91341b4d15",
+        "location_6d52ba025bacdc7c",
+        "location_6e68e127bb2c4026",
+        "location_7612088292dcca8b",
+        "location_8ce9ac62ba5ad9e5",
+        "location_b1a5ad83b488e3a6",
+        "location_cfa7a06ea00becac",
+        "location_da982fb0f525cf07"
+      ],
+      "query_location_id": "location_22cada5a8603a724",
+      "n_support": 9,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 9,
+      "site_id": "whangarei_high_school",
+      "episode_id": "episode_1368e27ef7be0e89",
+      "support_location_ids": [
+        "location_07d13b996705dcb8",
+        "location_0a1e8d618e5053af",
+        "location_4c02436bd64f66ae",
+        "location_69658906b6aeae56",
+        "location_69926b81dec61338",
+        "location_8085a32b4cf5c41b",
+        "location_b04e911ca4e7ba2d",
+        "location_fa2aad647308f475"
+      ],
+      "query_location_id": "location_fc8bd001bee51450",
+      "n_support": 8,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 11,
+      "site_id": "avondale",
+      "episode_id": "episode_02280ccf8d4984e6",
+      "support_location_ids": [
+        "location_0168c3a57204810d",
+        "location_36518ba412c1af80",
+        "location_42de7aa7a5c76548",
+        "location_4828b4e8f9ba428f",
+        "location_4c6b5a12c8df3d36",
+        "location_5584bcb4a41632ac",
+        "location_6eaafc829bb4be89",
+        "location_da01c3799cde3619"
+      ],
+      "query_location_id": "location_eebf8215c7d11a16",
+      "n_support": 8,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 11,
+      "site_id": "avonside",
+      "episode_id": "episode_b555307ecd14ac31",
+      "support_location_ids": [
+        "location_0212fc41824e0991",
+        "location_0ce2bef22a613680",
+        "location_5322456aaaf7c784",
+        "location_58f0c85251d72acb",
+        "location_5938881b56a23dd3",
+        "location_97d661398aad0f61",
+        "location_99e54baba002b753",
+        "location_db0746fe19d47741",
+        "location_e60680caf9e9756a"
+      ],
+      "query_location_id": "location_44f734d436dd107e",
+      "n_support": 9,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 11,
+      "site_id": "bexley",
+      "episode_id": "episode_86bbf246b19cdcd6",
+      "support_location_ids": [
+        "location_052d9d7d4e3fea2a",
+        "location_2ebbc52709fabedb",
+        "location_3b2f34620fb9d555",
+        "location_4c8891656b3a11f7",
+        "location_7807a8bc8ae1fcc7",
+        "location_8748c100e5ed74c2",
+        "location_b24d98d30c20aaf0",
+        "location_b36b15278f1c728d",
+        "location_c23e0f5df9221bf6",
+        "location_c2e9ee1e4c3152f9",
+        "location_cc7f0c410f4292d3",
+        "location_d577f80b1c8cb4c5",
+        "location_e14c4e31160db6ba"
+      ],
+      "query_location_id": "location_15eeee06fe635f65",
+      "n_support": 13,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 11,
+      "site_id": "christchurch_central_city",
+      "episode_id": "episode_fd906f291b766faf",
+      "support_location_ids": [
+        "location_0d446ab88c7501f5",
+        "location_2135f9f53f524cfc",
+        "location_239c44a4d991da23",
+        "location_2da8e64f528ea628",
+        "location_5e760f6d1d2c94b6",
+        "location_76a2c93d27a4f9d6",
+        "location_90d69d5ee8f8f8a7",
+        "location_abb1a9f1910ffab7",
+        "location_f540da5a7ec3dc98"
+      ],
+      "query_location_id": "location_d33176bfe6bbdafc",
+      "n_support": 9,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 11,
+      "site_id": "hollywood",
+      "episode_id": "episode_fb2ac2e15889fd14",
+      "support_location_ids": [
+        "location_021aeb7ca99ec807",
+        "location_46438aa839df5591",
+        "location_4ccf39dd762a321c",
+        "location_68731fbac3236131",
+        "location_7797fcb1c84b3a10",
+        "location_88ef837c02557610",
+        "location_9efc0512355966df",
+        "location_a92ec34712167f1a",
+        "location_a9638ec30a076a55",
+        "location_b3ba9ce49b8a4c61",
+        "location_ecbcdc1d612e1d3a",
+        "location_eff8aa888ad96e45",
+        "location_fdbbf62793c15f5b"
+      ],
+      "query_location_id": "location_d5457eaf046de609",
+      "n_support": 13,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 11,
+      "site_id": "linwood_rudds_road",
+      "episode_id": "episode_ee0046a5f48357b7",
+      "support_location_ids": [
+        "location_129acd4fa4e5110b",
+        "location_446a4023aa334f67",
+        "location_64671626b78a63f5",
+        "location_7e3811af49f9b218",
+        "location_811954215b5c165c",
+        "location_e81771ac7b177ddc"
+      ],
+      "query_location_id": "location_2ec8cb851f577d4e",
+      "n_support": 6,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 11,
+      "site_id": "marshland",
+      "episode_id": "episode_1a3598390cd146c6",
+      "support_location_ids": [
+        "location_023b4cf8dd085689",
+        "location_34c1a4d0e33941cb",
+        "location_52b5947bd236673d",
+        "location_6416778c2eac2e5c",
+        "location_72ae58633f63e224",
+        "location_765df992240a7d77",
+        "location_7f40123dd14dfd10",
+        "location_9ebae0098d8143c1",
+        "location_e34f08e844c76447"
+      ],
+      "query_location_id": "location_3dd80d0d68ace4cf",
+      "n_support": 9,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 11,
+      "site_id": "newlock",
+      "episode_id": "episode_1fe75169bc708873",
+      "support_location_ids": [
+        "location_0d6bd94f9cd20850",
+        "location_52e89086dd5ef397",
+        "location_5e9ea8cec446d984",
+        "location_63976b0c61487f74",
+        "location_76058e5b847641b2",
+        "location_761bbb1f4977aacd",
+        "location_df00dd6758b75aa0",
+        "location_e14b0510ae5a1467",
+        "location_e8fe78aca1b349b5"
+      ],
+      "query_location_id": "location_8a8df3f986466623",
+      "n_support": 9,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 11,
+      "site_id": "parkland_bower_ave_two",
+      "episode_id": "episode_b9f442ae3119d8b8",
+      "support_location_ids": [
+        "location_2841d016fe954ca4",
+        "location_3bbe7a14d18c0639",
+        "location_60b1e4a22146d184",
+        "location_94587f3742482e85",
+        "location_9acf9c940d3a091c",
+        "location_9add2f95d2ea178d",
+        "location_a6470440b3b8df4c",
+        "location_a6f17fdad87c4be0",
+        "location_c4071de13afeea9c",
+        "location_f01b4604b3e1ef81"
+      ],
+      "query_location_id": "location_a8b37b99afef524d",
+      "n_support": 10,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 11,
+      "site_id": "redcliffs_main_road",
+      "episode_id": "episode_0dc30a69a9530ce3",
+      "support_location_ids": [
+        "location_0e88e3649dc75751",
+        "location_18ec11be835e0c46",
+        "location_29e1175fe97db330",
+        "location_2b6cd384feaa3c79",
+        "location_35a7ad08ab875d4d",
+        "location_62cc407c4958c73c",
+        "location_71ca44256830148d",
+        "location_85ff4cd8d6683d37",
+        "location_d3a4d1469acb2465",
+        "location_ff78ba3b1c97d93c"
+      ],
+      "query_location_id": "location_0fadc78c84be03cc",
+      "n_support": 10,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 11,
+      "site_id": "wainoni",
+      "episode_id": "episode_16687d46bf9c32d0",
+      "support_location_ids": [
+        "location_00b5590e493df25f",
+        "location_0397fe038260d29e",
+        "location_12755a999a0a124a",
+        "location_4d9c62b4f987a8f5",
+        "location_5430c372bef87cc6",
+        "location_818db6dcd23c4ac1",
+        "location_b2a50b9f7bf27b82",
+        "location_c5ec9bbce8b93bb3",
+        "location_dc04c4c9865e6ac9",
+        "location_fa85e674120f2de8"
+      ],
+      "query_location_id": "location_8650cf96038cba71",
+      "n_support": 10,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 11,
+      "site_id": "wainoni_pak_n_save",
+      "episode_id": "episode_df51272d2fcb4cd1",
+      "support_location_ids": [
+        "location_0bdd01c4994139d4",
+        "location_1434bdb7c5c827be",
+        "location_296899e7dd308105",
+        "location_3aa82bdfcc99b5ac",
+        "location_3f84614a572c1cb7",
+        "location_755f248cb2f30b38",
+        "location_866abbd442fd1c64",
+        "location_9ca512cfde994287",
+        "location_dfeb57d0b5b92d82"
+      ],
+      "query_location_id": "location_b3edee146fb3531a",
+      "n_support": 9,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 11,
+      "site_id": "wellington_college",
+      "episode_id": "episode_fbe8a80505b1e273",
+      "support_location_ids": [
+        "location_22cada5a8603a724",
+        "location_3b61002a7b5179f4",
+        "location_53cb60664c24c82d",
+        "location_6d52ba025bacdc7c",
+        "location_6e68e127bb2c4026",
+        "location_7612088292dcca8b",
+        "location_8ce9ac62ba5ad9e5",
+        "location_9524418cbd9143a7",
+        "location_b1a5ad83b488e3a6",
+        "location_cfa7a06ea00becac",
+        "location_da982fb0f525cf07"
+      ],
+      "query_location_id": "location_5c54eb91341b4d15",
+      "n_support": 11,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 11,
+      "site_id": "whangarei_high_school",
+      "episode_id": "episode_1368e27ef7be0e89",
+      "support_location_ids": [
+        "location_07d13b996705dcb8",
+        "location_0a1e8d618e5053af",
+        "location_4c02436bd64f66ae",
+        "location_69658906b6aeae56",
+        "location_69926b81dec61338",
+        "location_8085a32b4cf5c41b",
+        "location_b04e911ca4e7ba2d",
+        "location_fa2aad647308f475"
+      ],
+      "query_location_id": "location_fc8bd001bee51450",
+      "n_support": 8,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 13,
+      "site_id": "avondale",
+      "episode_id": "episode_02280ccf8d4984e6",
+      "support_location_ids": [
+        "location_0168c3a57204810d",
+        "location_36518ba412c1af80",
+        "location_42de7aa7a5c76548",
+        "location_4828b4e8f9ba428f",
+        "location_4c6b5a12c8df3d36",
+        "location_5584bcb4a41632ac",
+        "location_6eaafc829bb4be89",
+        "location_da01c3799cde3619"
+      ],
+      "query_location_id": "location_eebf8215c7d11a16",
+      "n_support": 8,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 13,
+      "site_id": "avonside",
+      "episode_id": "episode_b555307ecd14ac31",
+      "support_location_ids": [
+        "location_0212fc41824e0991",
+        "location_0ce2bef22a613680",
+        "location_5322456aaaf7c784",
+        "location_58f0c85251d72acb",
+        "location_5938881b56a23dd3",
+        "location_97d661398aad0f61",
+        "location_99e54baba002b753",
+        "location_db0746fe19d47741",
+        "location_e60680caf9e9756a"
+      ],
+      "query_location_id": "location_44f734d436dd107e",
+      "n_support": 9,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 13,
+      "site_id": "bexley",
+      "episode_id": "episode_86bbf246b19cdcd6",
+      "support_location_ids": [
+        "location_052d9d7d4e3fea2a",
+        "location_2ebbc52709fabedb",
+        "location_3b2f34620fb9d555",
+        "location_4c8891656b3a11f7",
+        "location_7807a8bc8ae1fcc7",
+        "location_8748c100e5ed74c2",
+        "location_b24d98d30c20aaf0",
+        "location_b36b15278f1c728d",
+        "location_c23e0f5df9221bf6",
+        "location_c2e9ee1e4c3152f9",
+        "location_cc7f0c410f4292d3",
+        "location_d577f80b1c8cb4c5",
+        "location_e14c4e31160db6ba"
+      ],
+      "query_location_id": "location_15eeee06fe635f65",
+      "n_support": 13,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 13,
+      "site_id": "christchurch_central_city",
+      "episode_id": "episode_e1da367ef08e708b",
+      "support_location_ids": [
+        "location_0d446ab88c7501f5",
+        "location_2135f9f53f524cfc",
+        "location_2da8e64f528ea628",
+        "location_5ce59324fd4ff596",
+        "location_5e760f6d1d2c94b6",
+        "location_74c76a2421da7f19",
+        "location_76a2c93d27a4f9d6",
+        "location_90d69d5ee8f8f8a7",
+        "location_abb1a9f1910ffab7",
+        "location_b1fa5539be453ddb",
+        "location_c4deb0251bc8e524",
+        "location_cbef63fbadbe36d4",
+        "location_f540da5a7ec3dc98"
+      ],
+      "query_location_id": "location_a31d9fa38013b3c2",
+      "n_support": 13,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 13,
+      "site_id": "hollywood",
+      "episode_id": "episode_fb2ac2e15889fd14",
+      "support_location_ids": [
+        "location_021aeb7ca99ec807",
+        "location_46438aa839df5591",
+        "location_4ccf39dd762a321c",
+        "location_68731fbac3236131",
+        "location_7797fcb1c84b3a10",
+        "location_88ef837c02557610",
+        "location_9efc0512355966df",
+        "location_a92ec34712167f1a",
+        "location_a9638ec30a076a55",
+        "location_b3ba9ce49b8a4c61",
+        "location_ecbcdc1d612e1d3a",
+        "location_eff8aa888ad96e45",
+        "location_fdbbf62793c15f5b"
+      ],
+      "query_location_id": "location_d5457eaf046de609",
+      "n_support": 13,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 13,
+      "site_id": "linwood_rudds_road",
+      "episode_id": "episode_ee0046a5f48357b7",
+      "support_location_ids": [
+        "location_129acd4fa4e5110b",
+        "location_446a4023aa334f67",
+        "location_64671626b78a63f5",
+        "location_7e3811af49f9b218",
+        "location_811954215b5c165c",
+        "location_e81771ac7b177ddc"
+      ],
+      "query_location_id": "location_2ec8cb851f577d4e",
+      "n_support": 6,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 13,
+      "site_id": "marshland",
+      "episode_id": "episode_e3da2df46e765aff",
+      "support_location_ids": [
+        "location_023b4cf8dd085689",
+        "location_2dd5199da960ca4f",
+        "location_34c1a4d0e33941cb",
+        "location_3dd80d0d68ace4cf",
+        "location_4ccc6105a1086cb6",
+        "location_4e6da72bf6e514d5",
+        "location_5162b2ad3ff98719",
+        "location_52b5947bd236673d",
+        "location_72ae58633f63e224",
+        "location_7f40123dd14dfd10",
+        "location_9ebae0098d8143c1",
+        "location_d6e2853f5f6b0695",
+        "location_e34f08e844c76447"
+      ],
+      "query_location_id": "location_e83ddbd9558116ac",
+      "n_support": 13,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 13,
+      "site_id": "newlock",
+      "episode_id": "episode_7dbd235a7e94fc92",
+      "support_location_ids": [
+        "location_00826c5ac56125db",
+        "location_6206790b6440d2be",
+        "location_662be975e3493853",
+        "location_712bb6a72cdaddcc",
+        "location_8ade1ff7c9176774",
+        "location_9ff5e43019c627bb",
+        "location_a067dd51414df1b9",
+        "location_a20bad0d7a3a0eba",
+        "location_ae4f0b920fa47f8f",
+        "location_d195a88582f49119",
+        "location_e59435e22bf67c8b",
+        "location_e8fe78aca1b349b5",
+        "location_f129be3a0d89931f"
+      ],
+      "query_location_id": "location_b0e4efcf0f2d648d",
+      "n_support": 13,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 13,
+      "site_id": "parkland_bower_ave_two",
+      "episode_id": "episode_b9f442ae3119d8b8",
+      "support_location_ids": [
+        "location_2841d016fe954ca4",
+        "location_3bbe7a14d18c0639",
+        "location_60b1e4a22146d184",
+        "location_94587f3742482e85",
+        "location_9acf9c940d3a091c",
+        "location_9add2f95d2ea178d",
+        "location_a6470440b3b8df4c",
+        "location_a6f17fdad87c4be0",
+        "location_c4071de13afeea9c",
+        "location_f01b4604b3e1ef81"
+      ],
+      "query_location_id": "location_a8b37b99afef524d",
+      "n_support": 10,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 13,
+      "site_id": "redcliffs_main_road",
+      "episode_id": "episode_0dc30a69a9530ce3",
+      "support_location_ids": [
+        "location_0e88e3649dc75751",
+        "location_18ec11be835e0c46",
+        "location_29e1175fe97db330",
+        "location_2b6cd384feaa3c79",
+        "location_35a7ad08ab875d4d",
+        "location_62cc407c4958c73c",
+        "location_71ca44256830148d",
+        "location_85ff4cd8d6683d37",
+        "location_d3a4d1469acb2465",
+        "location_ff78ba3b1c97d93c"
+      ],
+      "query_location_id": "location_0fadc78c84be03cc",
+      "n_support": 10,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 13,
+      "site_id": "wainoni",
+      "episode_id": "episode_16687d46bf9c32d0",
+      "support_location_ids": [
+        "location_00b5590e493df25f",
+        "location_0397fe038260d29e",
+        "location_12755a999a0a124a",
+        "location_4d9c62b4f987a8f5",
+        "location_5430c372bef87cc6",
+        "location_818db6dcd23c4ac1",
+        "location_b2a50b9f7bf27b82",
+        "location_c5ec9bbce8b93bb3",
+        "location_dc04c4c9865e6ac9",
+        "location_fa85e674120f2de8"
+      ],
+      "query_location_id": "location_8650cf96038cba71",
+      "n_support": 10,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 13,
+      "site_id": "wainoni_pak_n_save",
+      "episode_id": "episode_052290bef40253bc",
+      "support_location_ids": [
+        "location_0bdd01c4994139d4",
+        "location_117fc260453f6b22",
+        "location_1434bdb7c5c827be",
+        "location_296899e7dd308105",
+        "location_3aa82bdfcc99b5ac",
+        "location_3f84614a572c1cb7",
+        "location_755f248cb2f30b38",
+        "location_7913c9f2e46259fd",
+        "location_866abbd442fd1c64",
+        "location_8b905a91f02baa01",
+        "location_aa590246ecdcb8aa",
+        "location_dfeb57d0b5b92d82",
+        "location_e64af2862bbca9c0"
+      ],
+      "query_location_id": "location_9ca512cfde994287",
+      "n_support": 13,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 13,
+      "site_id": "wellington_college",
+      "episode_id": "episode_fbe8a80505b1e273",
+      "support_location_ids": [
+        "location_22cada5a8603a724",
+        "location_3b61002a7b5179f4",
+        "location_53cb60664c24c82d",
+        "location_6d52ba025bacdc7c",
+        "location_6e68e127bb2c4026",
+        "location_7612088292dcca8b",
+        "location_8ce9ac62ba5ad9e5",
+        "location_9524418cbd9143a7",
+        "location_b1a5ad83b488e3a6",
+        "location_cfa7a06ea00becac",
+        "location_da982fb0f525cf07"
+      ],
+      "query_location_id": "location_5c54eb91341b4d15",
+      "n_support": 11,
+      "rows": 24,
+      "role": "train"
+    },
+    {
+      "target_budget": 13,
+      "site_id": "whangarei_high_school",
+      "episode_id": "episode_1368e27ef7be0e89",
+      "support_location_ids": [
+        "location_07d13b996705dcb8",
+        "location_0a1e8d618e5053af",
+        "location_4c02436bd64f66ae",
+        "location_69658906b6aeae56",
+        "location_69926b81dec61338",
+        "location_8085a32b4cf5c41b",
+        "location_b04e911ca4e7ba2d",
+        "location_fa2aad647308f475"
+      ],
+      "query_location_id": "location_fc8bd001bee51450",
+      "n_support": 8,
+      "rows": 24,
+      "role": "train"
+    }
+  ],
+  "official_api": "https://github.com/PriorLabs/TabPFN/blob/v9.2.0/src/tabpfn/regressor.py"
+}
