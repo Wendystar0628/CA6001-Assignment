@@ -652,31 +652,47 @@ def _g6(attainment, preset, label):
     last = int(valid[last_col].max()) if last_col else 13
     censor = last + 3
     sites = sorted(valid.site_id.unique())
-    fig = canvas(preset, max(118, 9 * len(sites) + 60))
+    fig = canvas(preset, max(135, 10 * len(sites) + 65))
     ax = fig.add_axes([.25, .25, .69, .49])
     categories = {x: 0 for x in ["Both: earlier", "Both: same", "Both: later", "Method only", "Baseline only", "Neither"]}
-    for y, site in enumerate(sites):
+    site_centers = []
+    row_y = 0.
+    baseline_size = 110 if preset == "slides" else 70
+    method_size = 25 if preset == "slides" else 14
+    for site in sites:
         instances = valid[valid.site_id == site].sort_values("seed")
-        jitter = np.linspace(-.23, .23, len(instances)) if len(instances) > 1 else [0]
-        for offset, (_, row) in zip(jitter, instances.iterrows()):
-            a, b = row.n_stable_reference, row.n_stable_method
+        # Identical discrete pairs are displayed once with their exact seed count.
+        # Distinct pairs occupy separate y rows; x always remains the real budget.
+        groups = instances.groupby(["n_stable_reference", "n_stable_method"], dropna=False, sort=True)
+        first_y = row_y
+        for (a, b), group in groups:
+            multiplicity = len(group)
             a_ok, b_ok = pd.notna(a), pd.notna(b)
             key = ("Both: earlier" if b < a else "Both: later" if b > a else "Both: same") if a_ok and b_ok else "Method only" if b_ok else "Baseline only" if a_ok else "Neither"
-            categories[key] += 1
+            categories[key] += multiplicity
             a_x, b_x = float(a) if a_ok else censor, float(b) if b_ok else censor
-            ax.plot([a_x, b_x], [y + offset, y + offset], color="#C7CED2", lw=1)
-            ax.scatter(a_x, y + offset, facecolor="#0072B2" if a_ok else "white", edgecolor="#0072B2", s=35, marker="o", zorder=3)
-            ax.scatter(b_x, y + offset, facecolor=MODEL_COLORS[model] if b_ok else "white", edgecolor=MODEL_COLORS[model], s=38, marker="D", zorder=4)
+            ax.plot([a_x, b_x], [row_y, row_y], color="#C7CED2", lw=1)
+            ax.scatter(a_x, row_y, facecolor="#0072B2" if a_ok else "white", edgecolor="#0072B2",
+                       linewidth=1.2, s=baseline_size, marker="o", zorder=3)
+            ax.scatter(b_x, row_y, facecolor=MODEL_COLORS[model] if b_ok else "white", edgecolor=MODEL_COLORS[model],
+                       linewidth=1.2, s=method_size, marker="D", zorder=4)
+            if multiplicity > 1:
+                ax.annotate(f"×{multiplicity}", (max(a_x, b_x), row_y), xytext=(9, 0),
+                            textcoords="offset points", va="center", ha="left",
+                            fontsize=16 if preset == "slides" else 8, color=INK)
+            row_y += 1.
+        site_centers.append((first_y + row_y - 1.) / 2)
+        row_y += .9
     ax.axvspan(last + 1, censor + 1, facecolor="#F1F3F5")
-    ax.set_yticks(range(len(sites)), [_site_name(s) for s in sites]); ax.invert_yaxis()
+    ax.set_yticks(site_centers, [_site_name(s) for s in sites]); ax.set_ylim(row_y - .7, -.8)
     budgets = list(range(5, last + 1, 2))
     ax.set_xticks(budgets + [censor], [str(x) for x in budgets] + [f">{last}\ncensored"])
-    ax.set_xlim(4, censor + 1); ax.set_xlabel("Stable quality-attainment budget (CPTs)")
+    ax.set_xlim(4, censor + 1.3); ax.set_xlabel("Stable quality-attainment budget (CPTs)")
     ax.plot([], [], "o", color="#0072B2", label="GP / Maximin")
     ax.plot([], [], "D", color=MODEL_COLORS[model], label=method_name(model, policy))
     ax.legend(loc="upper left", bbox_to_anchor=(0, -.23), ncol=2)
-    heading(fig, "Stable attainment is discrete; failure remains visible", f"Paired seeds · {label}", preset,
-            footer=f"Open markers: target not attained within observed budget. Missing targets: {int(missing.sum())} instances.\nCost interpretation requires both methods to attain the same target.")
+    heading(fig, "Stable attainment is discrete; failure remains visible", f"Paired seeds; identical pairs shown ×n · {label}", preset,
+            footer=f"Open markers: target not attained. ×n: repeated seed pairs. Incomplete targets/runs: {int(missing.sum())}.\nCircle: baseline; smaller diamond: method. No horizontal jitter or invented budget values.")
     figures = [("G6_stable_attainment", fig)]
     fig = canvas(preset, 112); ax = fig.add_axes([.29, .22, .62, .53])
     colors = ["#72ABA9", "#BCC4CA", "#D7B5A7", "#237C82", "#99BACA", "#77828B"]
