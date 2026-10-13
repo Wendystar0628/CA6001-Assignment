@@ -1,0 +1,256 @@
+# Fixed source-project groups. Geographic 250 m connected components are recorded below.
+# Missing global coordinates remain explicit; local coordinate origins are never compared across sites.
+grouping_radius_m: 250
+sites:
+  aranui:
+    source_site: '@Aranui'
+    display_name: Aranui
+    investigation_group: investigation_aranui
+    coordinate_reference: source_local_xy_m; global datum undeclared
+    grouping_verified: true
+    grouping_evidence: Global_CPT1196.zip location workbook X(degree)/Y(degree); nearest-pair
+      geographic grouping at 250 m
+  avondale:
+    source_site: '@Avondale'
+    display_name: Avondale
+    investigation_group: investigation_avondale
+    coordinate_reference: source_local_xy_m; global datum undeclared
+    grouping_verified: true
+    grouping_evidence: Global_CPT1196.zip location workbook X(degree)/Y(degree); nearest-pair
+      geographic grouping at 250 m
+  avonside:
+    source_site: '@Avonside'
+    display_name: Avonside
+    investigation_group: investigation_avonside
+    coordinate_reference: source_local_xy_m; global datum undeclared
+    grouping_verified: false
+    grouping_evidence: Global_CPT1196.zip original named site folder; no geographic
+      coordinates or declared CRS; separate provisional group, cross-site independence
+      unverified
+  baytown:
+    source_site: '@Baytown'
+    display_name: Baytown
+    investigation_group: investigation_baytown
+    coordinate_reference: source_local_xy_m; global datum undeclared
+    grouping_verified: false
+    grouping_evidence: Global_CPT1196.zip original named site folder; no geographic
+      coordinates or declared CRS; separate provisional group, cross-site independence
+      unverified
+  bexley:
+    source_site: '@Bexley'
+    display_name: Bexley
+    investigation_group: investigation_bexley
+    coordinate_reference: source_local_xy_m; global datum undeclared
+    grouping_verified: true
+    grouping_evidence: Global_CPT1196.zip location workbook X(degree)/Y(degree); nearest-pair
+      geographic grouping at 250 m
+  cashmere_high_school:
+    source_site: '@Cashmere (high school)'
+    display_name: Cashmere (high school)
+    investigation_group: investigation_cashmere_high_school
+    coordinate_reference: source_local_xy_m; global datum undeclared
+    grouping_verified: true
+    grouping_evidence: Global_CPT1196.zip location workbook X(degree)/Y(degree); nearest-pair
+      geographic grouping at 250 m
+  christchurch_central_city:
+    source_site: '@Christchurch (Central City)'
+    display_name: Christchurch (Central City)
+    investigation_group: investigation_christchurch_central_city
+    coordinate_reference: source_local_xy_m; global datum undeclared
+    grouping_verified: true
+    grouping_evidence: Global_CPT1196.zip location workbook X(degree)/Y(degree); nearest-pair
+      geographic grouping at 250 m
+  christchurch_cnr_armagh_durham_st:
+    source_site: '@Christchurch (Cnr Armagh & Durham St)'
+    display_name: Christchurch (Cnr Armagh & Durham St)
+    investigation_group: investigation_christchurch_cnr_armagh_durham_st
+    coordinate_reference: source_local_xy_m; global datum undeclared
+    grouping_verified: true
+    grouping_evidence: Global_CPT1196.zip location workbook X(degree)/Y(degree); nearest-pair
+      geographic grouping at 250 m
+  christchurch_metro_sports_facility:
+    source_site: '@Christchurch (Metro Sports Facility)'
+    display_name: Christchurch Metro Sports Facility
+    investigation_group: investigation_christchurch_metro_sports_facility
+    coordinate_reference: source_local_xy_m; global datum undeclared
+    grouping_verified: true
+    grouping_evidence: Global_CPT1196.zip location workbook X(degree)/Y(degree); nearest-pair
+      geographic grouping at 250 m
+  christchurch_stadium:
+    source_site: '@Christchurch (stadium)'
+    display_name: Christchurch Stadium
+    investigation_group: investigation_christchurch_stadium
+    coordinate_reference: source_local_xy_m; global datum undeclared
+    grouping_verified: true
+    grouping_evidence: Global_CPT1196.zip location workbook X(degree)/Y(degree); nearest-pair
+      geographic grouping at 250 m
+  hastings_hospital:
+    source_site: '@Hastings (hospital)'
+    display_name: Hastings (hospital)
+    investigation_group: investigation_hastings_hospital
+    coordinate_reference: source_local_xy_m; global datum undeclared
+    grouping_verified: true
+    grouping_evidence: Global_CPT1196.zip location workbook X(degree)/Y(degree); nearest-pair
+      geographic grouping at 250 m
+  hollywood:
+    source_site: '@Hollywood'
+    display_name: Hollywood
+    investigation_group: investigation_hollywood
+    coordinate_reference: source_local_xy_m; global datum undeclared
+    grouping_verified: false
+    grouping_evidence: Global_CPT1196.zip original named site folder; no geographic
+      coordinates or declared CRS; separate provisional group, cross-site independence
+      unverified
+  kaiapoi_near_river:
+    source_site: '@Kaiapoi (near river)'
+    display_name: Kaiapoi (near river)
+    investigation_group: investigation_kaiapoi_near_river
+    coordinate_reference: source_local_xy_m; global datum undeclared
+    grouping_verified: true
+    grouping_evidence: Global_CPT1196.zip location workbook X(degree)/Y(degree); nearest-pair
+      geographic grouping at 250 m
+  linwood_rudds_road:
+    source_site: '@Linwood (Rudds Road)'
+    display_name: Linwood (Rudds Road)
+    investigation_group: investigation_linwood_rudds_road
+    coordinate_reference: source_local_xy_m; global datum undeclared
+    grouping_verified: true
+    grouping_evidence: Global_CPT1196.zip location workbook X(degree)/Y(degree); nearest-pair
+      geographic grouping at 250 m
+  lower_hutt_town_hall:
+    source_site: '@Lower Hutt (town hall)'
+    display_name: Lower Hutt Town Hall
+    investigation_group: investigation_lower_hutt_town_hall
+    coordinate_reference: source_local_xy_m; global datum undeclared
+    grouping_verified: true
+    grouping_evidence: Global_CPT1196.zip location workbook X(degree)/Y(degree); nearest-pair
+      geographic grouping at 250 m
+  marshland:
+    source_site: '@Marshland'
+    display_name: Marshland
+    investigation_group: investigation_marshland
+    coordinate_reference: source_local_xy_m; global datum undeclared
+    grouping_verified: true
+    grouping_evidence: Global_CPT1196.zip location workbook X(degree)/Y(degree); nearest-pair
+      geographic grouping at 250 m
+  marshland_road:
+    source_site: '@Marshland (road)'
+    display_name: Marshland (road)
+    investigation_group: investigation_marshland_road
+    coordinate_reference: source_local_xy_m; global datum undeclared
+    grouping_verified: true
+    grouping_evidence: Global_CPT1196.zip location workbook X(degree)/Y(degree); nearest-pair
+      geographic grouping at 250 m
+  new_brighton_willryan_ave:
+    source_site: '@New Brighton (Willryan Ave)'
+    display_name: New Brighton (Willryan Ave)
+    investigation_group: investigation_new_brighton_willryan_ave
+    coordinate_reference: source_local_xy_m; global datum undeclared
+    grouping_verified: true
+    grouping_evidence: Global_CPT1196.zip location workbook X(degree)/Y(degree); nearest-pair
+      geographic grouping at 250 m
+  newlock:
+    source_site: '@Newlock'
+    display_name: New Lock
+    investigation_group: investigation_newlock
+    coordinate_reference: source_local_xy_m; global datum undeclared
+    grouping_verified: false
+    grouping_evidence: Global_CPT1196.zip @Newlock; Data/downloads/geotech_download_manifest.json
+      identifies Terneuzen_CPT98_excel.zip from tc304.org/attachments/database/cpt/terneuzen_nl/New%20Lock%20excel.zip.
+      This identifies the project; exact CRS and global position remain unavailable.
+  parkland_bower_ave_one:
+    source_site: '@Parkland (Bower Ave)ONE'
+    display_name: Parkland (Bower Ave)ONE
+    investigation_group: investigation_parkland_bower_ave_one
+    coordinate_reference: source_local_xy_m; global datum undeclared
+    grouping_verified: true
+    grouping_evidence: Global_CPT1196.zip location workbook X(degree)/Y(degree); nearest-pair
+      geographic grouping at 250 m
+  parkland_bower_ave_two:
+    source_site: '@Parkland (Bower Ave)TWO'
+    display_name: Parkland (Bower Ave)TWO
+    investigation_group: investigation_parkland_bower_ave_two
+    coordinate_reference: source_local_xy_m; global datum undeclared
+    grouping_verified: true
+    grouping_evidence: Global_CPT1196.zip location workbook X(degree)/Y(degree); nearest-pair
+      geographic grouping at 250 m
+  port_nelson:
+    source_site: '@Port Nelson'
+    display_name: Port Nelson
+    investigation_group: investigation_port_nelson
+    coordinate_reference: source_local_xy_m; global datum undeclared
+    grouping_verified: true
+    grouping_evidence: Global_CPT1196.zip location workbook X(degree)/Y(degree); nearest-pair
+      geographic grouping at 250 m
+  redcliffs_main_road:
+    source_site: '@Redcliffs (Main road)'
+    display_name: Redcliffs (Main road)
+    investigation_group: investigation_redcliffs_main_road
+    coordinate_reference: source_local_xy_m; global datum undeclared
+    grouping_verified: true
+    grouping_evidence: Global_CPT1196.zip location workbook X(degree)/Y(degree); nearest-pair
+      geographic grouping at 250 m
+  richmond:
+    source_site: '@Richmond'
+    display_name: Richmond
+    investigation_group: investigation_richmond
+    coordinate_reference: source_local_xy_m; global datum undeclared
+    grouping_verified: true
+    grouping_evidence: Global_CPT1196.zip location workbook X(degree)/Y(degree); nearest-pair
+      geographic grouping at 250 m
+  south_new_brighton:
+    source_site: '@South New Brighton'
+    display_name: South New Brighton
+    investigation_group: investigation_south_new_brighton
+    coordinate_reference: source_local_xy_m; global datum undeclared
+    grouping_verified: true
+    grouping_evidence: Global_CPT1196.zip location workbook X(degree)/Y(degree); nearest-pair
+      geographic grouping at 250 m
+  tauranga_farmers_building:
+    source_site: '@Tauranga (farmers building)'
+    display_name: Tauranga Farmers Building
+    investigation_group: investigation_tauranga_farmers_building
+    coordinate_reference: source_local_xy_m; global datum undeclared
+    grouping_verified: true
+    grouping_evidence: Global_CPT1196.zip location workbook X(degree)/Y(degree); nearest-pair
+      geographic grouping at 250 m
+  wainoni:
+    source_site: '@Wainoni'
+    display_name: Wainoni
+    investigation_group: investigation_wainoni
+    coordinate_reference: source_local_xy_m; global datum undeclared
+    grouping_verified: true
+    grouping_evidence: Global_CPT1196.zip location workbook X(degree)/Y(degree); nearest-pair
+      geographic grouping at 250 m
+  wainoni_pak_n_save:
+    source_site: '@Wainoni (Pak n save)'
+    display_name: Wainoni (Pak n save)
+    investigation_group: investigation_wainoni_pak_n_save
+    coordinate_reference: source_local_xy_m; global datum undeclared
+    grouping_verified: true
+    grouping_evidence: Global_CPT1196.zip location workbook X(degree)/Y(degree); nearest-pair
+      geographic grouping at 250 m
+  wellington_airport:
+    source_site: '@Wellington (airport)'
+    display_name: Wellington Airport
+    investigation_group: investigation_wellington_airport
+    coordinate_reference: source_local_xy_m; global datum undeclared
+    grouping_verified: true
+    grouping_evidence: Global_CPT1196.zip location workbook X(degree)/Y(degree); nearest-pair
+      geographic grouping at 250 m
+  wellington_college:
+    source_site: '@Wellington (college)'
+    display_name: Wellington (college)
+    investigation_group: investigation_wellington_college
+    coordinate_reference: source_local_xy_m; global datum undeclared
+    grouping_verified: true
+    grouping_evidence: Global_CPT1196.zip location workbook X(degree)/Y(degree); nearest-pair
+      geographic grouping at 250 m
+  whangarei_high_school:
+    source_site: '@Whangarei (high school)'
+    display_name: Whangarei (high school)
+    investigation_group: investigation_whangarei_high_school
+    coordinate_reference: source_local_xy_m; global datum undeclared
+    grouping_verified: true
+    grouping_evidence: Global_CPT1196.zip location workbook X(degree)/Y(degree); nearest-pair
+      geographic grouping at 250 m
