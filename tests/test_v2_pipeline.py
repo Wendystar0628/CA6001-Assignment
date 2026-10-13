@@ -36,6 +36,6 @@ def test_successful_partial_fold_cannot_authorize_selective_test(monkeypatch,tmp
           for s in ['a','b'] for p in ['maximin','gp_sur'] for n in [5,7,9,11,13]]
     pd.DataFrame(rows).to_parquet(tmp_path/'policy_metrics.parquet')
     result=pipeline.select_policies(config,tmp_path)
-    assert result['folds']['0']['expand_test']
+    assert result['folds']['0']['local_gate_passed']
     assert not result['expand_test']
     assert result['global_gate']['checks']['all_outer_folds_validated'] is False

@@ -453,7 +453,7 @@ def select_policies(config, run):
         passed = [row for row in rows if row['passed']]
         chosen = min(passed, key=lambda row: row['aubc_log_mae'])['policy_id'] if passed else 'maximin'
         selection['folds'][str(fid)] = {'selected_model': model, 'baseline_model': base_model,
-                                       'selected_policy': chosen, 'expand_test': bool(passed),
+                                       'selected_policy': chosen, 'local_gate_passed': bool(passed),
                                        'candidate_gates': rows, 'baseline_metrics': baseline}
     # A validation-successful fold cannot silently remove the unsuccessful
     # folds from the final test. The adaptive system includes their maximin
