@@ -125,6 +125,8 @@ def run_predictor(factory, output_dir, *, config=None, fold_ids=None, resume=Tru
                 last_fold = fid
             started = time.perf_counter()
             predictor.condition(state.observed.copy())
+            if getattr(predictor, 'context_manifest', None) is not None:
+                write_json(output / 'contexts' / f'{state.key}.json', predictor.context_manifest)
             bundle = predictor.predict(state.query.copy())
             frame = evaluated_frame(bundle, state)
             frame['prediction_seconds'] = time.perf_counter() - started
