@@ -1,0 +1,25 @@
+# Python/matplotlib; all visual products consume one frozen run.
+backend: python
+presets: [report, slides]
+report_width_mm: 175
+report_formats: [svg, pdf, png]
+report_dpi: 300
+slide_pixels: [1920, 1080]
+representative_seed: 17
+representative_profile: eval_nearest_site_geometry_center
+preferred_site: new_lock
+preferred_model: tabpfn_finetuned
+preferred_policy: threshold_uncertainty
+profile_axis_seed_range_mpa: [0.05, 100.0]
+profile_axis_expand_if_needed: true
+pairwise_tie_tolerance: null
+relative_error_view: false
+export_demo_frames: true
+demo_frame_seconds: 3
+demo_encode_mp4: true
+colors:
+  idw: '#7C848B'
+  gp: '#0072B2'
+  xgb: '#009E73'
+  tabpfn: '#E69F00'
+  tabpfn_finetuned: '#CC79A7'
