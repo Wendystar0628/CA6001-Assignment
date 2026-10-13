@@ -4,6 +4,10 @@
 
 设计依据：[项目实现蓝图](CA6001_CPT_项目实现蓝图.md) · [研究设计](CA6001_CPT_高分项目设计.md) · [模块接口共识](docs/IMPLEMENTATION_CONTRACT.md)。
 
+## v0.4 主线实现
+
+已将既有v0.2/v0.3合入`main`，后续直接在主线上提交。新增与真实补勘轨迹对齐的源训练情景、IDW剩余误差的TabPFN梯度微调、逐查询物理事件损失，以及与同alpha未微调残差的公平比较。运行入口为`python -m cpt_budget.v4`，详见[运行说明](docs/V4_RUN_GUIDE.md)和[训练协议](docs/V4_RESIDUAL_TRAINING_PROTOCOL.md)。完整训练与回放的最终效果以归档结果为准。
+
 ## v0.3 诊断结果
 
 已并行完成训练链路、IDW教师、残差与上下文适配、独立24特征XGBoost诊断。TabPFN可近乎精确拟合固定训练目标；最好的点保护残差适配较IDW降低约1.81%平均误差，但校准风险误报率上升，新增候选均未通过综合门槛。[完整结果与复现](results/diagnostics-20261014/README.md) · [预登记协议及追加记录](docs/V3_DIAGNOSTIC_PROTOCOL.md)。分支`feat/v0.3-diagnostics`，标签`v0.3-diagnostics`。
