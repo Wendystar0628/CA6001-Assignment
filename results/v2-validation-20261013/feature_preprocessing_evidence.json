@@ -1,0 +1,73 @@
+{
+  "site": "newlock",
+  "n_support": 5,
+  "n_query": 8,
+  "feature_columns": [
+    "depth_m",
+    "neighbor_1_log_qc",
+    "neighbor_2_log_qc",
+    "neighbor_3_log_qc",
+    "neighbor_1_log_distance",
+    "neighbor_2_log_distance",
+    "neighbor_3_log_distance",
+    "neighbor_1_valid",
+    "neighbor_2_valid",
+    "neighbor_3_valid",
+    "neighbor_mean_log_qc",
+    "neighbor_std_log_qc",
+    "neighbor_median_log_qc",
+    "idw_log_qc",
+    "support_count",
+    "log_geometry_scale",
+    "kernel_10m_log_qc",
+    "kernel_50m_log_qc",
+    "kernel_10m_low_fraction",
+    "kernel_50m_low_fraction",
+    "idw_above_log_qc",
+    "idw_below_log_qc",
+    "idw_vertical_gradient",
+    "idw_vertical_curvature"
+  ],
+  "scale_factor": 100,
+  "device": "cpu",
+  "method": "Official EpisodeAdapter.preprocess -> get_preprocessed_dataset_chunks -> ensemble preprocessing, including all configured transforms; no neural forward or GPU",
+  "raw_kernel_change": 1.5091011467633602,
+  "official_full_preprocessing": [
+    {
+      "kind": "X_context",
+      "shape": [
+        1,
+        120,
+        52
+      ],
+      "max_absolute_change": 7.780508041381836,
+      "mean_absolute_change": 0.1254575401544571,
+      "fraction_changed_gt_1e_5": 0.3691935483870968,
+      "missing_pattern_equal": true
+    },
+    {
+      "kind": "X_query",
+      "shape": [
+        1,
+        192,
+        52
+      ],
+      "max_absolute_change": 10.095052719116211,
+      "mean_absolute_change": 0.16824188828468323,
+      "fraction_changed_gt_1e_5": 0.37752016129032256,
+      "missing_pattern_equal": true
+    }
+  ],
+  "kernel_only_control": [
+    {
+      "kind": "X_context",
+      "max_absolute_change": 7.780508041381836,
+      "mean_absolute_change": 0.12513881921768188
+    },
+    {
+      "kind": "X_query",
+      "max_absolute_change": 10.095052719116211,
+      "mean_absolute_change": 0.16812431812286377
+    }
+  ]
+}
