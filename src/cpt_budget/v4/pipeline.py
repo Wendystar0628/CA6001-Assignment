@@ -135,6 +135,11 @@ def fit(config, run, fold_id=None, variants=None):
 
 def evaluate(config, run, fold_id=None, variants=None):
     from .evaluation import evaluate_trained_residuals
+    if not (run/'matched_xgb/validation/predictions.parquet').exists():
+        from .matched_baseline import run_matched_baseline
+        run_matched_baseline(config, run)
+    record(run, 'matched_xgb', {'summary_path': str(run/'matched_xgb/summary.json'),
+                               'model_id': 'xgb_residual_matched'})
     meta = _read(run/'run.json')
     meta['status'] = 'evaluating'
     write_json(run/'run.json', meta)

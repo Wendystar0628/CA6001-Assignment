@@ -23,6 +23,8 @@
 
 结果位于`runs/<run>/`：`episodes/`为固定轨迹及跳过说明，`checkpoints/fold_*/residual_*/summary.json`为训练步数/最佳权重/曝光率，`validation/`为候选预测缓存，`comparison/`为最终同预算比较、同alpha微调收益和门槛。`run.json`记录阶段状态及错误。
 
+评价还要求在同一批v0.4轨迹上训练的XGBoost残差对照，保存在`matched_xgb/`。缺失时`evaluate`自动生成；也可提前用`python -m cpt_budget.v4.matched_baseline --run <run>`在CPU运行。其可用源数据相同，实际训练曝光方式不同（树模型使用全部行，TabPFN受更新与块预算限制），报告中明确保留这个区别。
+
 `crps`使用CRPS＋MSE；`task`增加物理qc<1MPa事件的Brier目标。残差事件阈值逐查询点计算。评价同时列出原点指标和留勘察组校准风险指标；点保护不保证校准后的风险标签也保持不变。
 
 本轮不会自动运行外层测试。未通过门槛时保留完整负结果；最佳checkpoint只由源验证选择，其对应数据曝光率与训练结束时曝光率分开报告。

@@ -4,6 +4,8 @@ One native residual prediction is shared by all alpha and point-guard variants.
 Training gain is reported against the corresponding *untrained residual* at the
 same alpha, separately from the established IDW/GP promotion gate. Nothing in
 this module launches an outer test or modifies the frozen v0.2/v0.3 results.
+The same-trajectory XGBoost residual control separates data/task improvements
+from benefits attributable to the trained Transformer.
 """
 from __future__ import annotations
 
@@ -38,7 +40,8 @@ REFERENCE_MODELS = ('idw', 'gp', 'idw_residual', 'tabpfn_spatial',
                     'tabpfn_crps', 'tabpfn_task', 'xgb24',
                     'tabpfn_residual_a025', 'tabpfn_residual_a050',
                     'tabpfn_residual_a100', 'tabpfn_guarded_a025',
-                    'tabpfn_guarded_a050')
+                    'tabpfn_guarded_a050', 'xgb_residual_matched')
+MATCHED_XGB = 'xgb_residual_matched'
 
 
 def candidate_ids(variants=VARIANTS):
@@ -149,9 +152,12 @@ def validate_prediction_matrix(frame, expected, required_models):
             raise ValueError(f'Nonfinite point prediction for {model}')
 
 
-def _reference_predictions(config):
+def _reference_predictions(config, run_dir):
+    matched_path = Path(run_dir) / 'matched_xgb/validation/predictions.parquet'
+    if not matched_path.is_file():
+        raise FileNotFoundError(f'Complete same-trajectory XGBoost residual control is required: {matched_path}')
     reference, expected = _expected_frame(config)
-    paths = [OUTPUT_ROOT / 'xgb24/validation/predictions.parquet']
+    paths = [OUTPUT_ROOT / 'xgb24/validation/predictions.parquet', matched_path]
     paths.extend(OUTPUT_ROOT / 'residual_adapter/validation' / f'tabpfn_residual_a{int(a*100):03d}' / 'predictions.parquet'
                  for a in ALPHAS)
     paths.extend(OUTPUT_ROOT / 'point_guarded' / f'tabpfn_guarded_a{int(a*100):03d}' / 'predictions.parquet'
@@ -221,6 +227,41 @@ def training_gain_tables(curves, candidates):
     return pd.concat(paired_parts, ignore_index=True), pd.DataFrame(fold_rows), pd.DataFrame(global_rows)
 
 
+def matched_xgb_gain_tables(curves, candidates):
+    """Compare each trained candidate with XGB fitted to the same trajectories.
+
+    This is a separate, stronger control; it does not replace the registered
+    IDW/GP promotion criterion or the same-alpha untrained residual contrast.
+    Deltas are TabPFN minus XGB, so negative error/FPR and positive recall help.
+    """
+    paired_parts, fold_rows, global_rows = [], [], []
+    control_rows = curves[curves.model_id.eq(MATCHED_XGB)]
+    for model in candidates:
+        pair = curves[curves.model_id.eq(model)].merge(
+            control_rows, on=['fold_id', 'site_id', 'seed'],
+            suffixes=('_tabpfn', '_matched_xgb'), validate='one_to_one', how='outer', indicator=True)
+        if pair.empty or not pair['_merge'].eq('both').all():
+            raise ValueError(f'Missing same-trajectory XGBoost comparison states for {model}')
+        pair = pair.drop(columns='_merge')
+        for name in METRICS:
+            pair[f'{name}_delta'] = pair[f'{name}_tabpfn'] - pair[f'{name}_matched_xgb']
+        paired_parts.append(pair)
+        columns = [f'{name}_{suffix}' for name in METRICS for suffix in ['tabpfn', 'matched_xgb', 'delta']]
+        sites_by_fold = pair.groupby(['fold_id', 'site_id'])[columns].mean()
+        for fid, group in sites_by_fold.groupby(level='fold_id'):
+            values = group.mean().to_dict()
+            fold_rows.append({'fold_id': fid, 'model_id': model, 'matched_control_model_id': MATCHED_XGB,
+                              **values, 'beats_matched_xgb_log_mae': values['log_mae_delta'] < 0})
+        sites = sites_by_fold.groupby(level='site_id').mean()
+        values = sites.mean().to_dict()
+        global_rows.append({'model_id': model, 'matched_control_model_id': MATCHED_XGB, **values,
+                            'relative_log_mae_reduction': 1 - values['log_mae_tabpfn']/values['log_mae_matched_xgb'],
+                            'improved_unique_sites': int((sites.log_mae_delta < 0).sum()),
+                            'unique_sites': len(sites),
+                            'beats_matched_xgb_log_mae': values['log_mae_delta'] < 0})
+    return pd.concat(paired_parts, ignore_index=True), pd.DataFrame(fold_rows), pd.DataFrame(global_rows)
+
+
 def select_trained_candidates(curves, candidates, settings):
     """Use unchanged v2 gates, while preserving all failed trained candidates."""
     folds_present = set(curves.fold_id)
@@ -274,7 +315,7 @@ def analyze_trained_residuals(config, run_dir, *, variants=VARIANTS):
     if len(tuple(variants)) != len(VARIANTS) or set(variants) != set(VARIANTS):
         raise ValueError('Both registered training variants are required for a selection decision')
     candidates = candidate_ids(variants)
-    reference, expected = _reference_predictions(config)
+    reference, expected = _reference_predictions(config, run)
     parts = [reference]
     for model in candidates:
         path = run / 'validation' / model / 'predictions.parquet'
@@ -296,13 +337,20 @@ def analyze_trained_residuals(config, run_dir, *, variants=VARIANTS):
     paired_gain.to_csv(output / 'training_gain_paired.csv', index=False)
     fold_gain.to_csv(output / 'training_gain_by_fold.csv', index=False)
     gain.to_csv(output / 'training_gain_unique_sites.csv', index=False)
+    matched_paired, matched_folds, matched_gain = matched_xgb_gain_tables(curves, candidates)
+    matched_paired.to_csv(output / 'matched_xgb_gain_paired.csv', index=False)
+    matched_folds.to_csv(output / 'matched_xgb_gain_by_fold.csv', index=False)
+    matched_gain.to_csv(output / 'matched_xgb_gain_unique_sites.csv', index=False)
     result, gates, paired, selected_sites = select_trained_candidates(curves, candidates, config['v2']['gate'])
     gates.to_csv(output / 'candidate_gates.csv', index=False)
     paired.to_csv(output / 'selected_system_paired.csv', index=False)
     selected_sites.to_csv(output / 'selected_system_sites.csv')
     result.update(status='complete', training_gain=gain.to_dict('records'),
+                  matched_xgb_gain=matched_gain.to_dict('records'),
                   comparison_path=str(output), registered_states=60,
-                  number_of_trained_candidates=len(candidates))
+                  number_of_trained_candidates=len(candidates),
+                  number_of_reference_models=len(REFERENCE_MODELS),
+                  matched_xgb_role='Same v4 trajectory data and IDW residual target; added stronger control, not a changed promotion baseline.')
     write_json(output / 'selection.json', _plain(result))
     return _plain(result)
 

@@ -4,7 +4,7 @@ import pytest
 
 from cpt_budget.v4.evaluation import (
     METRICS, candidate_ids, select_trained_candidates, training_gain_tables,
-    validate_prediction_matrix,
+    validate_prediction_matrix, matched_xgb_gain_tables, _reference_predictions,
 )
 
 
@@ -40,12 +40,14 @@ def _curves():
     for fold, sites in [(0, ['a', 'b']), (1, ['a', 'b']), (2, ['c', 'd'])]:
         for site in sites:
             for seed in [17, 29]:
-                for model in ['idw', 'gp', 'residual_ft_crps_a025', 'tabpfn_residual_a025']:
+                for model in ['idw', 'gp', 'residual_ft_crps_a025', 'tabpfn_residual_a025', 'xgb_residual_matched']:
                     error = .8 if site == 'a' and model == 'residual_ft_crps_a025' else 1.
                     if model == 'gp':
                         error = 1.1
                     if model == 'tabpfn_residual_a025':
                         error = .9
+                    if model == 'xgb_residual_matched':
+                        error = .85
                     values = dict.fromkeys(METRICS, .1)
                     values.update(log_mae=error, risk_recall=.8, recall=.8)
                     rows.append(dict(fold_id=fold, site_id=site, seed=seed, model_id=model, **values))
@@ -91,3 +93,24 @@ def test_missing_matched_training_control_is_an_error():
     curves = curves[~((curves.model_id == 'tabpfn_residual_a025') & (curves.site_id == 'd'))]
     with pytest.raises(ValueError, match='Missing matched'):
         training_gain_tables(curves, ['residual_ft_crps_a025'])
+
+
+def test_matched_xgb_control_separates_training_data_from_model_effect():
+    paired, folds, gain = matched_xgb_gain_tables(_curves(), ['residual_ft_crps_a025'])
+    row = gain.iloc[0]
+    assert row.matched_control_model_id == 'xgb_residual_matched'
+    assert row.log_mae_tabpfn == pytest.approx(.95)
+    assert row.log_mae_matched_xgb == pytest.approx(.85)
+    assert row.log_mae_delta == pytest.approx(.10)
+    assert not row.beats_matched_xgb_log_mae
+    assert row.improved_unique_sites == 1
+    assert row.unique_sites == 4
+
+
+def test_missing_matched_xgb_states_or_artifact_cannot_be_ignored(tmp_path):
+    curves = _curves()
+    curves = curves[~((curves.model_id == 'xgb_residual_matched') & (curves.site_id == 'd'))]
+    with pytest.raises(ValueError, match='Missing same-trajectory'):
+        matched_xgb_gain_tables(curves, ['residual_ft_crps_a025'])
+    with pytest.raises(FileNotFoundError, match='same-trajectory XGBoost'):
+        _reference_predictions({}, tmp_path)
