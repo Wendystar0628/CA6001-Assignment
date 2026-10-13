@@ -1,0 +1,14 @@
+extends: main.yaml
+run:
+  mode: pilot
+  models: [idw, gp, xgb, tabpfn]
+  site_id: null
+  fold_id: 0
+  seeds: [17]
+  budgets: [5, 7]
+gp:
+  n_restarts_optimizer: 0
+tabpfn:
+  max_epochs: 1
+  max_steps: 1
+  pilot_max_episodes: 1
