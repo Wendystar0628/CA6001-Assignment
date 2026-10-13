@@ -1,0 +1,86 @@
+{
+  "signature": "1637c8643a1fbb0a1a3832a00737eaaaa5dad72c0ed2eaa19516b5fed32c484f",
+  "files": {
+    "Data\\cpt_screened_spatial_profiles.json": {
+      "size": 320105,
+      "mtime_ns": 1791876856000000000
+    },
+    "Data\\cpt_screened_depth_qc.npz": {
+      "size": 4517501,
+      "mtime_ns": 1791876856000000000
+    },
+    "Data\\downloads\\Global_CPT1196.zip": {
+      "size": 49638862,
+      "mtime_ns": 1791865295000000000
+    },
+    "configs\\sites.yaml": {
+      "size": 12555,
+      "mtime_ns": 1791896482641449200
+    }
+  },
+  "settings": {
+    "data": {
+      "manifest": "cpt_screened_spatial_profiles.json",
+      "arrays": "cpt_screened_depth_qc.npz",
+      "depth_start_m": 2.0,
+      "depth_end_m": 8.0,
+      "depth_step_m": 0.25,
+      "sampling": "cell_midpoint",
+      "max_interpolation_gap_m": 0.5,
+      "representative": "source_file_lexicographic",
+      "target": "natural_log_qc_mpa",
+      "tau_mpa": 1.0,
+      "sensitivity_tau_mpa": [
+        0.5,
+        2.0
+      ]
+    },
+    "split": {
+      "outer_folds": 3,
+      "grouping_radius_m": 250,
+      "within_site_near_radius_m": 2.0,
+      "evaluation_unit": "near_group",
+      "validation_fraction": 0.2,
+      "seed": 20261013
+    },
+    "episodes": {
+      "support_sizes": [
+        5,
+        9,
+        13
+      ],
+      "masks_per_site": 3,
+      "query_profiles_per_batch": 8,
+      "max_rows": 512
+    },
+    "replay": {
+      "min_site_locations": 20,
+      "seeds": [
+        17,
+        29,
+        43,
+        71,
+        101
+      ],
+      "evaluation_fraction": 0.2,
+      "initial_locations": 5,
+      "batch_size": 2,
+      "budgets": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "policies": [
+        "maximin",
+        "uncertainty",
+        "threshold_uncertainty"
+      ],
+      "model_policy_grid": "full_3_by_3",
+      "save_first_round_all_scores": true,
+      "threshold_weight": 1.0,
+      "batch_spacing": "median_pool_nearest_neighbor"
+    }
+  }
+}

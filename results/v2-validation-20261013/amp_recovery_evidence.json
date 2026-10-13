@@ -1,0 +1,89 @@
+{
+  "crps": {
+    "loss": 2.466083526611328,
+    "crps_plus_mse": 2.466083526611328,
+    "native_event_brier": 0.11161573976278305,
+    "event_threshold_estimator_space": [
+      -0.6597158908843994
+    ],
+    "gradient_norm_before_clip": 22.87613296508789,
+    "updated_parameter_delta_l2": 0.00027702347142621875,
+    "amp_retry_count": 1,
+    "amp_overflow_count": 1,
+    "amp_fp32_fallback": false,
+    "amp_scale_before": 1024.0,
+    "amp_scale_after": 512.0,
+    "amp_failures": [
+      {
+        "attempt": 1,
+        "precision": "amp",
+        "reason": "nonfinite_gradient_norm",
+        "scale": 1024.0
+      }
+    ],
+    "optimizer_updates": 1,
+    "seconds": 1.0576547999989998,
+    "support_rows": 312,
+    "query_rows": 192,
+    "step": 1,
+    "forward_autocast_modes": [
+      true,
+      true
+    ],
+    "reload_max_absolute_difference": 0.0
+  },
+  "task": {
+    "loss": 2.52311635017395,
+    "crps_plus_mse": 2.4672091007232666,
+    "native_event_brier": 0.11181449890136719,
+    "event_threshold_estimator_space": [
+      -0.6597158908843994
+    ],
+    "gradient_norm_before_clip": 24.58129119873047,
+    "updated_parameter_delta_l2": 0.0002770683204289526,
+    "amp_retry_count": 3,
+    "amp_overflow_count": 4,
+    "amp_fp32_fallback": true,
+    "amp_scale_before": 1024.0,
+    "amp_scale_after": 64.0,
+    "amp_failures": [
+      {
+        "attempt": 1,
+        "precision": "amp",
+        "reason": "nonfinite_gradient_norm",
+        "scale": 1024.0
+      },
+      {
+        "attempt": 2,
+        "precision": "amp",
+        "reason": "nonfinite_gradient_norm",
+        "scale": 512.0
+      },
+      {
+        "attempt": 3,
+        "precision": "amp",
+        "reason": "nonfinite_gradient_norm",
+        "scale": 256.0
+      },
+      {
+        "attempt": 4,
+        "precision": "amp",
+        "reason": "nonfinite_gradient_norm",
+        "scale": 128.0
+      }
+    ],
+    "optimizer_updates": 1,
+    "seconds": 0.9179232999995293,
+    "support_rows": 312,
+    "query_rows": 192,
+    "step": 1,
+    "forward_autocast_modes": [
+      true,
+      true,
+      true,
+      true,
+      false
+    ],
+    "reload_max_absolute_difference": 0.0
+  }
+}

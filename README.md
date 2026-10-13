@@ -4,6 +4,14 @@
 
 设计依据：[项目实现蓝图](CA6001_CPT_项目实现蓝图.md) · [研究设计](CA6001_CPT_高分项目设计.md) · [模块接口共识](docs/IMPLEMENTATION_CONTRACT.md)。
 
+## v0.2 入口
+
+v0.2已在 `feat/v0.2-risk-aware` 分支实现，使用独立的 `python -m cpt_budget.v2` 命令、`configs/v2.yaml` 和 `runs/v2/`。新增有效物理尺度与垂向特征、任务微调、有护栏的IDW残差、按组留一的风险校准，以及整根CPT的ALC/SUR选址。候选须通过完整源验证门槛才扩大第二轮测试。
+
+查看 [v0.2运行说明](docs/V2_RUN_GUIDE.md) 和 [v0.2实现共识](docs/V2_IMPLEMENTATION_CONTRACT.md)。下文保留v0.1复现入口及已冻结结果；新增能力是否改善性能以各run的验证与晋级记录为准。
+
+**v0.2三折验证已完成：平均误差指标改善1.37%，但仅2/4不同验证场地改善，未通过全局扩大测试门槛。** 新TabPFN候选均未晋级，部分场地风险误报率仍高；没有证据宣称稳定节省CPT根数。查看[完整实现与验证结果](results/v2-validation-20261013/README.md)，结果标签为`v0.2-validation`。
+
 ## 当前可运行内容
 
 - 数据恢复、规范化、整位置与勘察组划分、三折及 episode 生成。

@@ -1,0 +1,56 @@
+extends: main.yaml
+project:
+  prepared_dir: data_processed_v2
+  output_dir: runs/v2
+run:
+  mode: exploratory_v2
+features:
+  version: spatial24_v2
+quality:
+  validation_seeds: [17, 29]
+  target_version: joint_v2
+v2:
+  study_version: '0.2'
+  validation_seeds: [17, 29]
+  prediction_models: [idw, gp, idw_residual, tabpfn_spatial, tabpfn_crps, tabpfn_task]
+  policies: [maximin, gp_threshold, gp_alc, gp_sur]
+  training:
+    max_steps: 450
+    validation_every: 50
+    early_stopping_patience: 3
+    require_full_query_coverage: true
+    learning_rate: 0.00001
+    weight_decay: 0.01
+    gradient_clip: 1.0
+    event_brier_weight: 0.5
+    selection_brier_weight: 0.5
+    time_limit_seconds: 7200
+  residual:
+    alpha_grid: [0.0, 0.25, 0.5, 1.0]
+    h_tolerance_m: 0.05
+    recall_tolerance: 0.02
+    fpr_tolerance: 0.02
+    max_depth: 4
+    learning_rate: 0.05
+    n_estimators: 500
+  risk:
+    decision_threshold: 0.2
+    false_negative_cost: 4.0
+    false_positive_cost: 1.0
+  quality:
+    target_version: joint_v2
+    q_grid: [0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
+    min_joint_pass_rate: 0.5
+  acquisition:
+    shortlist_size: 8
+    n_fantasies: 16
+    profile_weight: 1.0
+    risk_weight: 1.0
+    false_negative_cost: 4.0
+    false_positive_cost: 1.0
+    seed: 20261013
+  gate:
+    h_tolerance_m: 0.05
+    recall_tolerance: 0.02
+    fpr_tolerance: 0.02
+    min_relative_improvement: 0.0

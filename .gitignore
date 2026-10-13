@@ -13,6 +13,9 @@ Data/*
 !Data/cpt_project_scope_audit.json
 !Data/cpt_target_variation.json
 data_processed/
+data_processed_v2/
+.research/**/predictions*.parquet
+.research/**/*model*.json
 runs/
 *.ckpt
 *.pt

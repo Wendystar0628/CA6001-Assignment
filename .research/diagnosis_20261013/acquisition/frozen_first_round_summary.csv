@@ -1,0 +1,10 @@
+model_id,policy_a,policy_b,n_scenarios,jaccard_mean,identical_batch_fraction,score_spearman_mean,crossing_fraction_mean
+gp,maximin,threshold_uncertainty,40,0.175,0.05,0.45419727530912696,0.3654355612443458
+gp,maximin,uncertainty,40,0.20833333333333331,0.025,0.6163424892104039,0.3654355612443458
+gp,threshold_uncertainty,uncertainty,40,0.65,0.575,0.7848176213191693,0.3654355612443458
+tabpfn,maximin,threshold_uncertainty,40,0.0,0.0,-0.6986318130461882,0.6114216562022363
+tabpfn,maximin,uncertainty,40,0.0,0.0,-0.7185927525612363,0.6114216562022363
+tabpfn,threshold_uncertainty,uncertainty,40,0.95,0.925,0.9790694539721951,0.6114216562022363
+tabpfn_finetuned,maximin,threshold_uncertainty,40,0.016666666666666666,0.0,-0.5643553759736346,0.6558549669884416
+tabpfn_finetuned,maximin,uncertainty,40,0.016666666666666666,0.0,-0.6008349729360416,0.6558549669884416
+tabpfn_finetuned,threshold_uncertainty,uncertainty,40,0.85,0.8,0.9373287609685572,0.6558549669884416
