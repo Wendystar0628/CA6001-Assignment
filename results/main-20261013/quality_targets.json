@@ -1,0 +1,98 @@
+{
+  "folds": {
+    "0": {
+      "fold_id": 0,
+      "E_star": 0.6152702332518871,
+      "H_star": 0.6833333333333333,
+      "R_star": 0.16462352147336667,
+      "status": "complete",
+      "complete": true,
+      "missing_reasons": [],
+      "validation_sites": [
+        "lower_hutt_town_hall",
+        "tauranga_farmers_building"
+      ],
+      "validation_sites_with_recall": [
+        "lower_hutt_town_hall",
+        "tauranga_farmers_building"
+      ],
+      "n_validation_sites": 2,
+      "excluded_sites": {},
+      "seed_counts": {
+        "lower_hutt_town_hall": 5,
+        "tauranga_farmers_building": 5
+      },
+      "reference": {
+        "model_id": "gp",
+        "policy_id": "maximin",
+        "budget_n": 13,
+        "recall_tolerance": 0.05
+      }
+    },
+    "1": {
+      "fold_id": 1,
+      "E_star": 0.6141521845205633,
+      "H_star": 0.6791666666666666,
+      "R_star": 0.1721165186722462,
+      "status": "complete",
+      "complete": true,
+      "missing_reasons": [],
+      "validation_sites": [
+        "lower_hutt_town_hall",
+        "tauranga_farmers_building"
+      ],
+      "validation_sites_with_recall": [
+        "lower_hutt_town_hall",
+        "tauranga_farmers_building"
+      ],
+      "n_validation_sites": 2,
+      "excluded_sites": {},
+      "seed_counts": {
+        "lower_hutt_town_hall": 5,
+        "tauranga_farmers_building": 5
+      },
+      "reference": {
+        "model_id": "gp",
+        "policy_id": "maximin",
+        "budget_n": 13,
+        "recall_tolerance": 0.05
+      }
+    },
+    "2": {
+      "fold_id": 2,
+      "E_star": 0.6146867502874642,
+      "H_star": 0.68125,
+      "R_star": 0.3216662626589098,
+      "status": "complete",
+      "complete": true,
+      "missing_reasons": [],
+      "validation_sites": [
+        "christchurch_metro_sports_facility",
+        "marshland"
+      ],
+      "validation_sites_with_recall": [
+        "christchurch_metro_sports_facility",
+        "marshland"
+      ],
+      "n_validation_sites": 2,
+      "excluded_sites": {},
+      "seed_counts": {
+        "christchurch_metro_sports_facility": 5,
+        "marshland": 5
+      },
+      "reference": {
+        "model_id": "gp",
+        "policy_id": "maximin",
+        "budget_n": 13,
+        "recall_tolerance": 0.05
+      }
+    }
+  },
+  "reference": {
+    "model_id": "gp",
+    "policy_id": "maximin",
+    "budget_n": 13,
+    "recall_tolerance": 0.05
+  },
+  "source_role": "validation"
+}

@@ -1,0 +1,50 @@
+{
+  "run_id": "main-20261013",
+  "source_code_commit": "0e59612ce1bb43d01953d3baad80d617f6673002",
+  "n_sites": 8,
+  "seeds": [
+    17,
+    29,
+    43,
+    71,
+    101
+  ],
+  "budgets": [
+    5,
+    7,
+    9,
+    11,
+    13
+  ],
+  "n_test_curves": 440,
+  "n_test_metric_rows": 2200,
+  "n_validation_curves": 30,
+  "execution_failures": [],
+  "test_curve_budget_counts": {
+    "5": 440
+  },
+  "unverified_grouping_sites": [
+    "avonside",
+    "baytown",
+    "hollywood",
+    "newlock"
+  ],
+  "tests_passed": 30,
+  "figure_scope": "test",
+  "figure_case": {
+    "site_id": "newlock",
+    "seed": 17,
+    "model_id": "tabpfn_finetuned",
+    "policy_id": "threshold_uncertainty",
+    "fold_id": "1",
+    "location_id": "location_8ade1ff7c9176774"
+  },
+  "exported_files": 108,
+  "local_complete_run": "runs/main-20261013",
+  "not_completed": [
+    "course report",
+    "12 content slides",
+    "team presentation recording"
+  ],
+  "postprocessing_code_commit": "17c7a76fb5b11e9474fbc7de93aa8476d145f773"
+}
