@@ -1,0 +1,12 @@
+{
+  "comparison": "FT minus IDW, maximin, 13 CPT; lower favors FT",
+  "exploratory": true,
+  "resampling_unit": "site; five seeds first averaged within each site",
+  "n_sites": 8,
+  "n_sites_favoring_ft": 4,
+  "mean_difference": 0.025348512969614725,
+  "site_bootstrap_percentile_95": [
+    -0.01679419121141285,
+    0.08007641483405928
+  ]
+}
