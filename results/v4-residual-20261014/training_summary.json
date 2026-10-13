@@ -1,7 +1,7 @@
 {
   "run_id": "v4-residual-20261014",
-  "status": "training_in_progress",
-  "completed_models": 4,
+  "status": "training_complete",
+  "completed_models": 6,
   "expected_models": 6,
   "models": [
     {
@@ -594,7 +594,17 @@
         "kaiapoi_near_river",
         "lower_hutt_town_hall",
         "tauranga_farmers_building"
-      ]
+      ],
+      "best_validation_metrics": {
+        "macro_score": 0.8148355272072236,
+        "macro_log_mae": 0.7549228549737718,
+        "macro_native_event_brier": 0.11982534446690407,
+        "macro_h_point_mae_m": 0.7222222222222222,
+        "macro_recall": 0.1839194139194139,
+        "macro_false_positive_rate": 0.01754314439024725
+      },
+      "amp_overflows": 0,
+      "fp32_fallbacks": 0
     },
     {
       "fold_id": 0,
@@ -1186,7 +1196,17 @@
         "kaiapoi_near_river",
         "lower_hutt_town_hall",
         "tauranga_farmers_building"
-      ]
+      ],
+      "best_validation_metrics": {
+        "macro_score": 0.813904720318901,
+        "macro_log_mae": 0.7542497103498332,
+        "macro_native_event_brier": 0.11931001993813568,
+        "macro_h_point_mae_m": 0.7180555555555556,
+        "macro_recall": 0.18515398182064846,
+        "macro_false_positive_rate": 0.018150889694657887
+      },
+      "amp_overflows": 0,
+      "fp32_fallbacks": 0
     },
     {
       "fold_id": 1,
@@ -1797,7 +1817,17 @@
         "lower_hutt_town_hall",
         "port_nelson",
         "tauranga_farmers_building"
-      ]
+      ],
+      "best_validation_metrics": {
+        "macro_score": 0.790519961823671,
+        "macro_log_mae": 0.7126671779564457,
+        "macro_native_event_brier": 0.1557055677344504,
+        "macro_h_point_mae_m": 0.8486111111111111,
+        "macro_recall": 0.29815357482024146,
+        "macro_false_positive_rate": 0.20304268696795816
+      },
+      "amp_overflows": 0,
+      "fp32_fallbacks": 0
     },
     {
       "fold_id": 1,
@@ -2408,7 +2438,1162 @@
         "lower_hutt_town_hall",
         "port_nelson",
         "tauranga_farmers_building"
-      ]
+      ],
+      "best_validation_metrics": {
+        "macro_score": 0.7902823182122586,
+        "macro_log_mae": 0.7122231199441789,
+        "macro_native_event_brier": 0.15611839653615944,
+        "macro_h_point_mae_m": 0.8361111111111109,
+        "macro_recall": 0.3064957264957265,
+        "macro_false_positive_rate": 0.21101159959335933
+      },
+      "amp_overflows": 0,
+      "fp32_fallbacks": 0
+    },
+    {
+      "fold_id": 2,
+      "model_id": "tabpfn_residual_crps",
+      "variant": "crps",
+      "source_commit": "62746376fae53f864cb51e3fcb8c93a4a5701fe3",
+      "actual_steps": 500,
+      "best_step": 200,
+      "best_validation_score": 0.6906015035904709,
+      "selection_metric": "mean_site(mean_episode(log_mae + 0.5 * native_event_brier))",
+      "baseline_validation": {
+        "macro_score": 0.7762137665103155,
+        "macro_log_mae": 0.7228165852434352,
+        "macro_native_event_brier": 0.10679436253376076,
+        "macro_h_point_mae_m": 0.69375,
+        "macro_recall": 0.2741554054054054,
+        "macro_false_positive_rate": 0.031764112903225804,
+        "site_metrics": {
+          "christchurch_metro_sports_facility": {
+            "score": 0.5422250894784675,
+            "log_mae": 0.49455527243274205,
+            "native_event_brier": 0.095339634091451,
+            "h_point_mae_m": 0.575,
+            "recall": 0.5483108108108108,
+            "false_positive_rate": 0.06352822580645161
+          },
+          "marshland": {
+            "score": 1.0102024435421635,
+            "log_mae": 0.9510778980541282,
+            "native_event_brier": 0.1182490909760705,
+            "h_point_mae_m": 0.8125,
+            "recall": 0.0,
+            "false_positive_rate": 0.0
+          }
+        },
+        "episode_metrics": [
+          {
+            "site_id": "christchurch_metro_sports_facility",
+            "episode_id": "episode_v4_5cd470c81ab2a06c",
+            "log_mae": 0.7306813546735131,
+            "native_event_brier": 0.11030240896647736,
+            "score": 0.7858325591567519,
+            "h_point_mae_m": 0.46875,
+            "recall": 0.71875,
+            "false_positive_rate": 0.125
+          },
+          {
+            "site_id": "christchurch_metro_sports_facility",
+            "episode_id": "episode_v4_0519ce274baa3b8b",
+            "log_mae": 0.46390565600294226,
+            "native_event_brier": 0.09648789124974756,
+            "score": 0.5121496016278161,
+            "h_point_mae_m": 0.46875,
+            "recall": 0.75,
+            "false_positive_rate": 0.10625
+          },
+          {
+            "site_id": "christchurch_metro_sports_facility",
+            "episode_id": "episode_v4_96c81dae39c8b20f",
+            "log_mae": 0.4858181674525712,
+            "native_event_brier": 0.09074920491293154,
+            "score": 0.531192769909037,
+            "h_point_mae_m": 0.59375,
+            "recall": 0.28125,
+            "false_positive_rate": 0.0625
+          },
+          {
+            "site_id": "christchurch_metro_sports_facility",
+            "episode_id": "episode_v4_a6646670f175d9c5",
+            "log_mae": 0.4003331284319567,
+            "native_event_brier": 0.09376462025118323,
+            "score": 0.4472154385575483,
+            "h_point_mae_m": 0.5625,
+            "recall": 0.8125,
+            "false_positive_rate": 0.125
+          },
+          {
+            "site_id": "christchurch_metro_sports_facility",
+            "episode_id": "episode_v4_989c407862dcdf36",
+            "log_mae": 0.39359649446603845,
+            "native_event_brier": 0.08292245484483204,
+            "score": 0.4350577218884545,
+            "h_point_mae_m": 0.4375,
+            "recall": 0.8125,
+            "false_positive_rate": 0.0875
+          },
+          {
+            "site_id": "christchurch_metro_sports_facility",
+            "episode_id": "episode_v4_4c1a1bbd92c62da1",
+            "log_mae": 0.5255328384166624,
+            "native_event_brier": 0.08700566002252418,
+            "score": 0.5690356684279245,
+            "h_point_mae_m": 0.5,
+            "recall": 0.5405405405405406,
+            "false_positive_rate": 0.03225806451612903
+          },
+          {
+            "site_id": "christchurch_metro_sports_facility",
+            "episode_id": "episode_v4_ca940c2803b8d91b",
+            "log_mae": 0.4434930660067,
+            "native_event_brier": 0.08670499838508863,
+            "score": 0.4868455651992443,
+            "h_point_mae_m": 0.40625,
+            "recall": 0.6486486486486487,
+            "false_positive_rate": 0.06451612903225806
+          },
+          {
+            "site_id": "christchurch_metro_sports_facility",
+            "episode_id": "episode_v4_41de2385bf78c655",
+            "log_mae": 0.49282242922282865,
+            "native_event_brier": 0.09857412439207908,
+            "score": 0.5421094914188682,
+            "h_point_mae_m": 0.65625,
+            "recall": 0.40540540540540543,
+            "false_positive_rate": 0.01935483870967742
+          },
+          {
+            "site_id": "christchurch_metro_sports_facility",
+            "episode_id": "episode_v4_866b243fa4ee23f5",
+            "log_mae": 0.5366853721697896,
+            "native_event_brier": 0.11678877282444307,
+            "score": 0.5950797585820111,
+            "h_point_mae_m": 1.0,
+            "recall": 0.13513513513513514,
+            "false_positive_rate": 0.0
+          },
+          {
+            "site_id": "christchurch_metro_sports_facility",
+            "episode_id": "episode_v4_2604d721daa37745",
+            "log_mae": 0.47268421748441797,
+            "native_event_brier": 0.09009620506520341,
+            "score": 0.5177323200170196,
+            "h_point_mae_m": 0.65625,
+            "recall": 0.3783783783783784,
+            "false_positive_rate": 0.012903225806451613
+          },
+          {
+            "site_id": "marshland",
+            "episode_id": "episode_v4_5577daf6f366dcdf",
+            "log_mae": 0.8002850066633603,
+            "native_event_brier": 0.07432083871830458,
+            "score": 0.8374454260225126,
+            "h_point_mae_m": 0.5,
+            "recall": 0.0,
+            "false_positive_rate": 0.0
+          },
+          {
+            "site_id": "marshland",
+            "episode_id": "episode_v4_3f0b2d4b8e56b6a9",
+            "log_mae": 0.6482092919643114,
+            "native_event_brier": 0.06651542097365443,
+            "score": 0.6814670024511387,
+            "h_point_mae_m": 0.5,
+            "recall": 0.0,
+            "false_positive_rate": 0.0
+          },
+          {
+            "site_id": "marshland",
+            "episode_id": "episode_v4_a9f4753765f7a5d5",
+            "log_mae": 0.8846525225940782,
+            "native_event_brier": 0.07261147507192438,
+            "score": 0.9209582601300405,
+            "h_point_mae_m": 0.5,
+            "recall": 0.0,
+            "false_positive_rate": 0.0
+          },
+          {
+            "site_id": "marshland",
+            "episode_id": "episode_v4_1af5674c397bf2fd",
+            "log_mae": 0.7223200076240979,
+            "native_event_brier": 0.06679496407818585,
+            "score": 0.7557174896631907,
+            "h_point_mae_m": 0.5,
+            "recall": 0.0,
+            "false_positive_rate": 0.0
+          },
+          {
+            "site_id": "marshland",
+            "episode_id": "episode_v4_f8e869d0a082acae",
+            "log_mae": 0.7087796244200443,
+            "native_event_brier": 0.07588024670158663,
+            "score": 0.7467197477708376,
+            "h_point_mae_m": 0.5,
+            "recall": 0.0,
+            "false_positive_rate": 0.0
+          },
+          {
+            "site_id": "marshland",
+            "episode_id": "episode_v4_ae904a56fa736303",
+            "log_mae": 1.5354586806711787,
+            "native_event_brier": 0.18036105427583726,
+            "score": 1.6256392078090973,
+            "h_point_mae_m": 1.125,
+            "recall": 0.0,
+            "false_positive_rate": 0.0
+          },
+          {
+            "site_id": "marshland",
+            "episode_id": "episode_v4_a2d69dded290ff25",
+            "log_mae": 1.1964632853070898,
+            "native_event_brier": 0.17225135330137298,
+            "score": 1.2825889619577762,
+            "h_point_mae_m": 1.125,
+            "recall": 0.0,
+            "false_positive_rate": 0.0
+          },
+          {
+            "site_id": "marshland",
+            "episode_id": "episode_v4_8ba78ed07198cf31",
+            "log_mae": 1.0211270312889524,
+            "native_event_brier": 0.16889564582814787,
+            "score": 1.1055748542030264,
+            "h_point_mae_m": 1.125,
+            "recall": 0.0,
+            "false_positive_rate": 0.0
+          },
+          {
+            "site_id": "marshland",
+            "episode_id": "episode_v4_bd73e30d2cf6847e",
+            "log_mae": 1.0577187097950558,
+            "native_event_brier": 0.16034152821677125,
+            "score": 1.1378894739034413,
+            "h_point_mae_m": 1.125,
+            "recall": 0.0,
+            "false_positive_rate": 0.0
+          },
+          {
+            "site_id": "marshland",
+            "episode_id": "episode_v4_6771b1017852b228",
+            "log_mae": 0.9357648202131124,
+            "native_event_brier": 0.14451838259491986,
+            "score": 1.0080240115105723,
+            "h_point_mae_m": 1.125,
+            "recall": 0.0,
+            "false_positive_rate": 0.0
+          }
+        ],
+        "selection_metric": "mean_site(mean_episode(log_mae + 0.5 * native_event_brier))",
+        "event_threshold_mpa": 1.0,
+        "risk_calibration_used": false,
+        "prediction_space": "reconstructed_log_qc_and_native_physical_cdf",
+        "residual_alpha_for_checkpoint_selection": 1.0
+      },
+      "validation_preferred_model": "tabpfn_residual_crps",
+      "exposure": {
+        "seen_blocks": 367,
+        "total_blocks": 440,
+        "query_block_fraction": 0.8340909090909091,
+        "site_macro_query_block_fraction": 0.9175,
+        "seen_episodes": 367,
+        "total_episodes": 400,
+        "episode_fraction": 0.9175,
+        "all_query_blocks_seen": false,
+        "per_site": {
+          "avondale": {
+            "seen_blocks": 16,
+            "total_blocks": 16,
+            "block_fraction": 1.0,
+            "seen_episodes": 16,
+            "total_episodes": 16,
+            "episode_fraction": 1.0,
+            "updates": 33
+          },
+          "cashmere_high_school": {
+            "seen_blocks": 33,
+            "total_blocks": 40,
+            "block_fraction": 0.825,
+            "seen_episodes": 33,
+            "total_episodes": 40,
+            "episode_fraction": 0.825,
+            "updates": 33
+          },
+          "christchurch_stadium": {
+            "seen_blocks": 34,
+            "total_blocks": 40,
+            "block_fraction": 0.85,
+            "seen_episodes": 34,
+            "total_episodes": 40,
+            "episode_fraction": 0.85,
+            "updates": 34
+          },
+          "kaiapoi_near_river": {
+            "seen_blocks": 16,
+            "total_blocks": 16,
+            "block_fraction": 1.0,
+            "seen_episodes": 16,
+            "total_episodes": 16,
+            "episode_fraction": 1.0,
+            "updates": 33
+          },
+          "linwood_rudds_road": {
+            "seen_blocks": 8,
+            "total_blocks": 8,
+            "block_fraction": 1.0,
+            "seen_episodes": 8,
+            "total_episodes": 8,
+            "episode_fraction": 1.0,
+            "updates": 33
+          },
+          "new_brighton_willryan_ave": {
+            "seen_blocks": 24,
+            "total_blocks": 24,
+            "block_fraction": 1.0,
+            "seen_episodes": 24,
+            "total_episodes": 24,
+            "episode_fraction": 1.0,
+            "updates": 33
+          },
+          "newlock": {
+            "seen_blocks": 33,
+            "total_blocks": 80,
+            "block_fraction": 0.4125,
+            "seen_episodes": 33,
+            "total_episodes": 40,
+            "episode_fraction": 0.825,
+            "updates": 33
+          },
+          "parkland_bower_ave_one": {
+            "seen_blocks": 16,
+            "total_blocks": 16,
+            "block_fraction": 1.0,
+            "seen_episodes": 16,
+            "total_episodes": 16,
+            "episode_fraction": 1.0,
+            "updates": 33
+          },
+          "parkland_bower_ave_two": {
+            "seen_blocks": 24,
+            "total_blocks": 24,
+            "block_fraction": 1.0,
+            "seen_episodes": 24,
+            "total_episodes": 24,
+            "episode_fraction": 1.0,
+            "updates": 34
+          },
+          "port_nelson": {
+            "seen_blocks": 16,
+            "total_blocks": 16,
+            "block_fraction": 1.0,
+            "seen_episodes": 16,
+            "total_episodes": 16,
+            "episode_fraction": 1.0,
+            "updates": 33
+          },
+          "richmond": {
+            "seen_blocks": 32,
+            "total_blocks": 32,
+            "block_fraction": 1.0,
+            "seen_episodes": 32,
+            "total_episodes": 32,
+            "episode_fraction": 1.0,
+            "updates": 33
+          },
+          "south_new_brighton": {
+            "seen_blocks": 24,
+            "total_blocks": 24,
+            "block_fraction": 1.0,
+            "seen_episodes": 24,
+            "total_episodes": 24,
+            "episode_fraction": 1.0,
+            "updates": 34
+          },
+          "wainoni": {
+            "seen_blocks": 24,
+            "total_blocks": 24,
+            "block_fraction": 1.0,
+            "seen_episodes": 24,
+            "total_episodes": 24,
+            "episode_fraction": 1.0,
+            "updates": 34
+          },
+          "wainoni_pak_n_save": {
+            "seen_blocks": 34,
+            "total_blocks": 40,
+            "block_fraction": 0.85,
+            "seen_episodes": 34,
+            "total_episodes": 40,
+            "episode_fraction": 0.85,
+            "updates": 34
+          },
+          "wellington_airport": {
+            "seen_blocks": 33,
+            "total_blocks": 40,
+            "block_fraction": 0.825,
+            "seen_episodes": 33,
+            "total_episodes": 40,
+            "episode_fraction": 0.825,
+            "updates": 33
+          }
+        }
+      },
+      "best_checkpoint_exposure": {
+        "seen_blocks": 195,
+        "total_blocks": 440,
+        "query_block_fraction": 0.4431818181818182,
+        "site_macro_query_block_fraction": 0.5613888888888888,
+        "seen_episodes": 195,
+        "total_episodes": 400,
+        "episode_fraction": 0.4875,
+        "all_query_blocks_seen": false,
+        "per_site": {
+          "avondale": {
+            "seen_blocks": 13,
+            "total_blocks": 16,
+            "block_fraction": 0.8125,
+            "seen_episodes": 13,
+            "total_episodes": 16,
+            "episode_fraction": 0.8125,
+            "updates": 13
+          },
+          "cashmere_high_school": {
+            "seen_blocks": 14,
+            "total_blocks": 40,
+            "block_fraction": 0.35,
+            "seen_episodes": 14,
+            "total_episodes": 40,
+            "episode_fraction": 0.35,
+            "updates": 14
+          },
+          "christchurch_stadium": {
+            "seen_blocks": 13,
+            "total_blocks": 40,
+            "block_fraction": 0.325,
+            "seen_episodes": 13,
+            "total_episodes": 40,
+            "episode_fraction": 0.325,
+            "updates": 13
+          },
+          "kaiapoi_near_river": {
+            "seen_blocks": 13,
+            "total_blocks": 16,
+            "block_fraction": 0.8125,
+            "seen_episodes": 13,
+            "total_episodes": 16,
+            "episode_fraction": 0.8125,
+            "updates": 13
+          },
+          "linwood_rudds_road": {
+            "seen_blocks": 8,
+            "total_blocks": 8,
+            "block_fraction": 1.0,
+            "seen_episodes": 8,
+            "total_episodes": 8,
+            "episode_fraction": 1.0,
+            "updates": 13
+          },
+          "new_brighton_willryan_ave": {
+            "seen_blocks": 13,
+            "total_blocks": 24,
+            "block_fraction": 0.5416666666666666,
+            "seen_episodes": 13,
+            "total_episodes": 24,
+            "episode_fraction": 0.5416666666666666,
+            "updates": 13
+          },
+          "newlock": {
+            "seen_blocks": 14,
+            "total_blocks": 80,
+            "block_fraction": 0.175,
+            "seen_episodes": 14,
+            "total_episodes": 40,
+            "episode_fraction": 0.35,
+            "updates": 14
+          },
+          "parkland_bower_ave_one": {
+            "seen_blocks": 13,
+            "total_blocks": 16,
+            "block_fraction": 0.8125,
+            "seen_episodes": 13,
+            "total_episodes": 16,
+            "episode_fraction": 0.8125,
+            "updates": 13
+          },
+          "parkland_bower_ave_two": {
+            "seen_blocks": 13,
+            "total_blocks": 24,
+            "block_fraction": 0.5416666666666666,
+            "seen_episodes": 13,
+            "total_episodes": 24,
+            "episode_fraction": 0.5416666666666666,
+            "updates": 13
+          },
+          "port_nelson": {
+            "seen_blocks": 13,
+            "total_blocks": 16,
+            "block_fraction": 0.8125,
+            "seen_episodes": 13,
+            "total_episodes": 16,
+            "episode_fraction": 0.8125,
+            "updates": 13
+          },
+          "richmond": {
+            "seen_blocks": 14,
+            "total_blocks": 32,
+            "block_fraction": 0.4375,
+            "seen_episodes": 14,
+            "total_episodes": 32,
+            "episode_fraction": 0.4375,
+            "updates": 14
+          },
+          "south_new_brighton": {
+            "seen_blocks": 14,
+            "total_blocks": 24,
+            "block_fraction": 0.5833333333333334,
+            "seen_episodes": 14,
+            "total_episodes": 24,
+            "episode_fraction": 0.5833333333333334,
+            "updates": 14
+          },
+          "wainoni": {
+            "seen_blocks": 13,
+            "total_blocks": 24,
+            "block_fraction": 0.5416666666666666,
+            "seen_episodes": 13,
+            "total_episodes": 24,
+            "episode_fraction": 0.5416666666666666,
+            "updates": 13
+          },
+          "wainoni_pak_n_save": {
+            "seen_blocks": 13,
+            "total_blocks": 40,
+            "block_fraction": 0.325,
+            "seen_episodes": 13,
+            "total_episodes": 40,
+            "episode_fraction": 0.325,
+            "updates": 13
+          },
+          "wellington_airport": {
+            "seen_blocks": 14,
+            "total_blocks": 40,
+            "block_fraction": 0.35,
+            "seen_episodes": 14,
+            "total_episodes": 40,
+            "episode_fraction": 0.35,
+            "updates": 14
+          }
+        }
+      },
+      "stop_reason": "early_stopping_after_minimum_successful_updates",
+      "elapsed_seconds": 494.29628740000044,
+      "peak_cuda_allocated_bytes": 518587392,
+      "train_sites": [
+        "avondale",
+        "cashmere_high_school",
+        "christchurch_stadium",
+        "kaiapoi_near_river",
+        "linwood_rudds_road",
+        "new_brighton_willryan_ave",
+        "newlock",
+        "parkland_bower_ave_one",
+        "parkland_bower_ave_two",
+        "port_nelson",
+        "richmond",
+        "south_new_brighton",
+        "wainoni",
+        "wainoni_pak_n_save",
+        "wellington_airport"
+      ],
+      "validation_sites": [
+        "christchurch_metro_sports_facility",
+        "marshland"
+      ],
+      "best_validation_metrics": {
+        "macro_score": 0.6906015035904709,
+        "macro_log_mae": 0.6386626483702069,
+        "macro_native_event_brier": 0.10387771044052806,
+        "macro_h_point_mae_m": 0.684375,
+        "macro_recall": 0.33626595345345345,
+        "macro_false_positive_rate": 0.04507056451612903
+      },
+      "amp_overflows": 0,
+      "fp32_fallbacks": 0
+    },
+    {
+      "fold_id": 2,
+      "model_id": "tabpfn_residual_task",
+      "variant": "task",
+      "source_commit": "62746376fae53f864cb51e3fcb8c93a4a5701fe3",
+      "actual_steps": 500,
+      "best_step": 200,
+      "best_validation_score": 0.6930544390944308,
+      "selection_metric": "mean_site(mean_episode(log_mae + 0.5 * native_event_brier))",
+      "baseline_validation": {
+        "macro_score": 0.7762137665103155,
+        "macro_log_mae": 0.7228165852434352,
+        "macro_native_event_brier": 0.10679436253376076,
+        "macro_h_point_mae_m": 0.69375,
+        "macro_recall": 0.2741554054054054,
+        "macro_false_positive_rate": 0.031764112903225804,
+        "site_metrics": {
+          "christchurch_metro_sports_facility": {
+            "score": 0.5422250894784675,
+            "log_mae": 0.49455527243274205,
+            "native_event_brier": 0.095339634091451,
+            "h_point_mae_m": 0.575,
+            "recall": 0.5483108108108108,
+            "false_positive_rate": 0.06352822580645161
+          },
+          "marshland": {
+            "score": 1.0102024435421635,
+            "log_mae": 0.9510778980541282,
+            "native_event_brier": 0.1182490909760705,
+            "h_point_mae_m": 0.8125,
+            "recall": 0.0,
+            "false_positive_rate": 0.0
+          }
+        },
+        "episode_metrics": [
+          {
+            "site_id": "christchurch_metro_sports_facility",
+            "episode_id": "episode_v4_5cd470c81ab2a06c",
+            "log_mae": 0.7306813546735131,
+            "native_event_brier": 0.11030240896647736,
+            "score": 0.7858325591567519,
+            "h_point_mae_m": 0.46875,
+            "recall": 0.71875,
+            "false_positive_rate": 0.125
+          },
+          {
+            "site_id": "christchurch_metro_sports_facility",
+            "episode_id": "episode_v4_0519ce274baa3b8b",
+            "log_mae": 0.46390565600294226,
+            "native_event_brier": 0.09648789124974756,
+            "score": 0.5121496016278161,
+            "h_point_mae_m": 0.46875,
+            "recall": 0.75,
+            "false_positive_rate": 0.10625
+          },
+          {
+            "site_id": "christchurch_metro_sports_facility",
+            "episode_id": "episode_v4_96c81dae39c8b20f",
+            "log_mae": 0.4858181674525712,
+            "native_event_brier": 0.09074920491293154,
+            "score": 0.531192769909037,
+            "h_point_mae_m": 0.59375,
+            "recall": 0.28125,
+            "false_positive_rate": 0.0625
+          },
+          {
+            "site_id": "christchurch_metro_sports_facility",
+            "episode_id": "episode_v4_a6646670f175d9c5",
+            "log_mae": 0.4003331284319567,
+            "native_event_brier": 0.09376462025118323,
+            "score": 0.4472154385575483,
+            "h_point_mae_m": 0.5625,
+            "recall": 0.8125,
+            "false_positive_rate": 0.125
+          },
+          {
+            "site_id": "christchurch_metro_sports_facility",
+            "episode_id": "episode_v4_989c407862dcdf36",
+            "log_mae": 0.39359649446603845,
+            "native_event_brier": 0.08292245484483204,
+            "score": 0.4350577218884545,
+            "h_point_mae_m": 0.4375,
+            "recall": 0.8125,
+            "false_positive_rate": 0.0875
+          },
+          {
+            "site_id": "christchurch_metro_sports_facility",
+            "episode_id": "episode_v4_4c1a1bbd92c62da1",
+            "log_mae": 0.5255328384166624,
+            "native_event_brier": 0.08700566002252418,
+            "score": 0.5690356684279245,
+            "h_point_mae_m": 0.5,
+            "recall": 0.5405405405405406,
+            "false_positive_rate": 0.03225806451612903
+          },
+          {
+            "site_id": "christchurch_metro_sports_facility",
+            "episode_id": "episode_v4_ca940c2803b8d91b",
+            "log_mae": 0.4434930660067,
+            "native_event_brier": 0.08670499838508863,
+            "score": 0.4868455651992443,
+            "h_point_mae_m": 0.40625,
+            "recall": 0.6486486486486487,
+            "false_positive_rate": 0.06451612903225806
+          },
+          {
+            "site_id": "christchurch_metro_sports_facility",
+            "episode_id": "episode_v4_41de2385bf78c655",
+            "log_mae": 0.49282242922282865,
+            "native_event_brier": 0.09857412439207908,
+            "score": 0.5421094914188682,
+            "h_point_mae_m": 0.65625,
+            "recall": 0.40540540540540543,
+            "false_positive_rate": 0.01935483870967742
+          },
+          {
+            "site_id": "christchurch_metro_sports_facility",
+            "episode_id": "episode_v4_866b243fa4ee23f5",
+            "log_mae": 0.5366853721697896,
+            "native_event_brier": 0.11678877282444307,
+            "score": 0.5950797585820111,
+            "h_point_mae_m": 1.0,
+            "recall": 0.13513513513513514,
+            "false_positive_rate": 0.0
+          },
+          {
+            "site_id": "christchurch_metro_sports_facility",
+            "episode_id": "episode_v4_2604d721daa37745",
+            "log_mae": 0.47268421748441797,
+            "native_event_brier": 0.09009620506520341,
+            "score": 0.5177323200170196,
+            "h_point_mae_m": 0.65625,
+            "recall": 0.3783783783783784,
+            "false_positive_rate": 0.012903225806451613
+          },
+          {
+            "site_id": "marshland",
+            "episode_id": "episode_v4_5577daf6f366dcdf",
+            "log_mae": 0.8002850066633603,
+            "native_event_brier": 0.07432083871830458,
+            "score": 0.8374454260225126,
+            "h_point_mae_m": 0.5,
+            "recall": 0.0,
+            "false_positive_rate": 0.0
+          },
+          {
+            "site_id": "marshland",
+            "episode_id": "episode_v4_3f0b2d4b8e56b6a9",
+            "log_mae": 0.6482092919643114,
+            "native_event_brier": 0.06651542097365443,
+            "score": 0.6814670024511387,
+            "h_point_mae_m": 0.5,
+            "recall": 0.0,
+            "false_positive_rate": 0.0
+          },
+          {
+            "site_id": "marshland",
+            "episode_id": "episode_v4_a9f4753765f7a5d5",
+            "log_mae": 0.8846525225940782,
+            "native_event_brier": 0.07261147507192438,
+            "score": 0.9209582601300405,
+            "h_point_mae_m": 0.5,
+            "recall": 0.0,
+            "false_positive_rate": 0.0
+          },
+          {
+            "site_id": "marshland",
+            "episode_id": "episode_v4_1af5674c397bf2fd",
+            "log_mae": 0.7223200076240979,
+            "native_event_brier": 0.06679496407818585,
+            "score": 0.7557174896631907,
+            "h_point_mae_m": 0.5,
+            "recall": 0.0,
+            "false_positive_rate": 0.0
+          },
+          {
+            "site_id": "marshland",
+            "episode_id": "episode_v4_f8e869d0a082acae",
+            "log_mae": 0.7087796244200443,
+            "native_event_brier": 0.07588024670158663,
+            "score": 0.7467197477708376,
+            "h_point_mae_m": 0.5,
+            "recall": 0.0,
+            "false_positive_rate": 0.0
+          },
+          {
+            "site_id": "marshland",
+            "episode_id": "episode_v4_ae904a56fa736303",
+            "log_mae": 1.5354586806711787,
+            "native_event_brier": 0.18036105427583726,
+            "score": 1.6256392078090973,
+            "h_point_mae_m": 1.125,
+            "recall": 0.0,
+            "false_positive_rate": 0.0
+          },
+          {
+            "site_id": "marshland",
+            "episode_id": "episode_v4_a2d69dded290ff25",
+            "log_mae": 1.1964632853070898,
+            "native_event_brier": 0.17225135330137298,
+            "score": 1.2825889619577762,
+            "h_point_mae_m": 1.125,
+            "recall": 0.0,
+            "false_positive_rate": 0.0
+          },
+          {
+            "site_id": "marshland",
+            "episode_id": "episode_v4_8ba78ed07198cf31",
+            "log_mae": 1.0211270312889524,
+            "native_event_brier": 0.16889564582814787,
+            "score": 1.1055748542030264,
+            "h_point_mae_m": 1.125,
+            "recall": 0.0,
+            "false_positive_rate": 0.0
+          },
+          {
+            "site_id": "marshland",
+            "episode_id": "episode_v4_bd73e30d2cf6847e",
+            "log_mae": 1.0577187097950558,
+            "native_event_brier": 0.16034152821677125,
+            "score": 1.1378894739034413,
+            "h_point_mae_m": 1.125,
+            "recall": 0.0,
+            "false_positive_rate": 0.0
+          },
+          {
+            "site_id": "marshland",
+            "episode_id": "episode_v4_6771b1017852b228",
+            "log_mae": 0.9357648202131124,
+            "native_event_brier": 0.14451838259491986,
+            "score": 1.0080240115105723,
+            "h_point_mae_m": 1.125,
+            "recall": 0.0,
+            "false_positive_rate": 0.0
+          }
+        ],
+        "selection_metric": "mean_site(mean_episode(log_mae + 0.5 * native_event_brier))",
+        "event_threshold_mpa": 1.0,
+        "risk_calibration_used": false,
+        "prediction_space": "reconstructed_log_qc_and_native_physical_cdf",
+        "residual_alpha_for_checkpoint_selection": 1.0
+      },
+      "validation_preferred_model": "tabpfn_residual_task",
+      "exposure": {
+        "seen_blocks": 367,
+        "total_blocks": 440,
+        "query_block_fraction": 0.8340909090909091,
+        "site_macro_query_block_fraction": 0.9175,
+        "seen_episodes": 367,
+        "total_episodes": 400,
+        "episode_fraction": 0.9175,
+        "all_query_blocks_seen": false,
+        "per_site": {
+          "avondale": {
+            "seen_blocks": 16,
+            "total_blocks": 16,
+            "block_fraction": 1.0,
+            "seen_episodes": 16,
+            "total_episodes": 16,
+            "episode_fraction": 1.0,
+            "updates": 33
+          },
+          "cashmere_high_school": {
+            "seen_blocks": 33,
+            "total_blocks": 40,
+            "block_fraction": 0.825,
+            "seen_episodes": 33,
+            "total_episodes": 40,
+            "episode_fraction": 0.825,
+            "updates": 33
+          },
+          "christchurch_stadium": {
+            "seen_blocks": 34,
+            "total_blocks": 40,
+            "block_fraction": 0.85,
+            "seen_episodes": 34,
+            "total_episodes": 40,
+            "episode_fraction": 0.85,
+            "updates": 34
+          },
+          "kaiapoi_near_river": {
+            "seen_blocks": 16,
+            "total_blocks": 16,
+            "block_fraction": 1.0,
+            "seen_episodes": 16,
+            "total_episodes": 16,
+            "episode_fraction": 1.0,
+            "updates": 33
+          },
+          "linwood_rudds_road": {
+            "seen_blocks": 8,
+            "total_blocks": 8,
+            "block_fraction": 1.0,
+            "seen_episodes": 8,
+            "total_episodes": 8,
+            "episode_fraction": 1.0,
+            "updates": 33
+          },
+          "new_brighton_willryan_ave": {
+            "seen_blocks": 24,
+            "total_blocks": 24,
+            "block_fraction": 1.0,
+            "seen_episodes": 24,
+            "total_episodes": 24,
+            "episode_fraction": 1.0,
+            "updates": 33
+          },
+          "newlock": {
+            "seen_blocks": 33,
+            "total_blocks": 80,
+            "block_fraction": 0.4125,
+            "seen_episodes": 33,
+            "total_episodes": 40,
+            "episode_fraction": 0.825,
+            "updates": 33
+          },
+          "parkland_bower_ave_one": {
+            "seen_blocks": 16,
+            "total_blocks": 16,
+            "block_fraction": 1.0,
+            "seen_episodes": 16,
+            "total_episodes": 16,
+            "episode_fraction": 1.0,
+            "updates": 33
+          },
+          "parkland_bower_ave_two": {
+            "seen_blocks": 24,
+            "total_blocks": 24,
+            "block_fraction": 1.0,
+            "seen_episodes": 24,
+            "total_episodes": 24,
+            "episode_fraction": 1.0,
+            "updates": 34
+          },
+          "port_nelson": {
+            "seen_blocks": 16,
+            "total_blocks": 16,
+            "block_fraction": 1.0,
+            "seen_episodes": 16,
+            "total_episodes": 16,
+            "episode_fraction": 1.0,
+            "updates": 33
+          },
+          "richmond": {
+            "seen_blocks": 32,
+            "total_blocks": 32,
+            "block_fraction": 1.0,
+            "seen_episodes": 32,
+            "total_episodes": 32,
+            "episode_fraction": 1.0,
+            "updates": 33
+          },
+          "south_new_brighton": {
+            "seen_blocks": 24,
+            "total_blocks": 24,
+            "block_fraction": 1.0,
+            "seen_episodes": 24,
+            "total_episodes": 24,
+            "episode_fraction": 1.0,
+            "updates": 34
+          },
+          "wainoni": {
+            "seen_blocks": 24,
+            "total_blocks": 24,
+            "block_fraction": 1.0,
+            "seen_episodes": 24,
+            "total_episodes": 24,
+            "episode_fraction": 1.0,
+            "updates": 34
+          },
+          "wainoni_pak_n_save": {
+            "seen_blocks": 34,
+            "total_blocks": 40,
+            "block_fraction": 0.85,
+            "seen_episodes": 34,
+            "total_episodes": 40,
+            "episode_fraction": 0.85,
+            "updates": 34
+          },
+          "wellington_airport": {
+            "seen_blocks": 33,
+            "total_blocks": 40,
+            "block_fraction": 0.825,
+            "seen_episodes": 33,
+            "total_episodes": 40,
+            "episode_fraction": 0.825,
+            "updates": 33
+          }
+        }
+      },
+      "best_checkpoint_exposure": {
+        "seen_blocks": 195,
+        "total_blocks": 440,
+        "query_block_fraction": 0.4431818181818182,
+        "site_macro_query_block_fraction": 0.5613888888888888,
+        "seen_episodes": 195,
+        "total_episodes": 400,
+        "episode_fraction": 0.4875,
+        "all_query_blocks_seen": false,
+        "per_site": {
+          "avondale": {
+            "seen_blocks": 13,
+            "total_blocks": 16,
+            "block_fraction": 0.8125,
+            "seen_episodes": 13,
+            "total_episodes": 16,
+            "episode_fraction": 0.8125,
+            "updates": 13
+          },
+          "cashmere_high_school": {
+            "seen_blocks": 14,
+            "total_blocks": 40,
+            "block_fraction": 0.35,
+            "seen_episodes": 14,
+            "total_episodes": 40,
+            "episode_fraction": 0.35,
+            "updates": 14
+          },
+          "christchurch_stadium": {
+            "seen_blocks": 13,
+            "total_blocks": 40,
+            "block_fraction": 0.325,
+            "seen_episodes": 13,
+            "total_episodes": 40,
+            "episode_fraction": 0.325,
+            "updates": 13
+          },
+          "kaiapoi_near_river": {
+            "seen_blocks": 13,
+            "total_blocks": 16,
+            "block_fraction": 0.8125,
+            "seen_episodes": 13,
+            "total_episodes": 16,
+            "episode_fraction": 0.8125,
+            "updates": 13
+          },
+          "linwood_rudds_road": {
+            "seen_blocks": 8,
+            "total_blocks": 8,
+            "block_fraction": 1.0,
+            "seen_episodes": 8,
+            "total_episodes": 8,
+            "episode_fraction": 1.0,
+            "updates": 13
+          },
+          "new_brighton_willryan_ave": {
+            "seen_blocks": 13,
+            "total_blocks": 24,
+            "block_fraction": 0.5416666666666666,
+            "seen_episodes": 13,
+            "total_episodes": 24,
+            "episode_fraction": 0.5416666666666666,
+            "updates": 13
+          },
+          "newlock": {
+            "seen_blocks": 14,
+            "total_blocks": 80,
+            "block_fraction": 0.175,
+            "seen_episodes": 14,
+            "total_episodes": 40,
+            "episode_fraction": 0.35,
+            "updates": 14
+          },
+          "parkland_bower_ave_one": {
+            "seen_blocks": 13,
+            "total_blocks": 16,
+            "block_fraction": 0.8125,
+            "seen_episodes": 13,
+            "total_episodes": 16,
+            "episode_fraction": 0.8125,
+            "updates": 13
+          },
+          "parkland_bower_ave_two": {
+            "seen_blocks": 13,
+            "total_blocks": 24,
+            "block_fraction": 0.5416666666666666,
+            "seen_episodes": 13,
+            "total_episodes": 24,
+            "episode_fraction": 0.5416666666666666,
+            "updates": 13
+          },
+          "port_nelson": {
+            "seen_blocks": 13,
+            "total_blocks": 16,
+            "block_fraction": 0.8125,
+            "seen_episodes": 13,
+            "total_episodes": 16,
+            "episode_fraction": 0.8125,
+            "updates": 13
+          },
+          "richmond": {
+            "seen_blocks": 14,
+            "total_blocks": 32,
+            "block_fraction": 0.4375,
+            "seen_episodes": 14,
+            "total_episodes": 32,
+            "episode_fraction": 0.4375,
+            "updates": 14
+          },
+          "south_new_brighton": {
+            "seen_blocks": 14,
+            "total_blocks": 24,
+            "block_fraction": 0.5833333333333334,
+            "seen_episodes": 14,
+            "total_episodes": 24,
+            "episode_fraction": 0.5833333333333334,
+            "updates": 14
+          },
+          "wainoni": {
+            "seen_blocks": 13,
+            "total_blocks": 24,
+            "block_fraction": 0.5416666666666666,
+            "seen_episodes": 13,
+            "total_episodes": 24,
+            "episode_fraction": 0.5416666666666666,
+            "updates": 13
+          },
+          "wainoni_pak_n_save": {
+            "seen_blocks": 13,
+            "total_blocks": 40,
+            "block_fraction": 0.325,
+            "seen_episodes": 13,
+            "total_episodes": 40,
+            "episode_fraction": 0.325,
+            "updates": 13
+          },
+          "wellington_airport": {
+            "seen_blocks": 14,
+            "total_blocks": 40,
+            "block_fraction": 0.35,
+            "seen_episodes": 14,
+            "total_episodes": 40,
+            "episode_fraction": 0.35,
+            "updates": 14
+          }
+        }
+      },
+      "stop_reason": "early_stopping_after_minimum_successful_updates",
+      "elapsed_seconds": 483.42182070000126,
+      "peak_cuda_allocated_bytes": 506086912,
+      "train_sites": [
+        "avondale",
+        "cashmere_high_school",
+        "christchurch_stadium",
+        "kaiapoi_near_river",
+        "linwood_rudds_road",
+        "new_brighton_willryan_ave",
+        "newlock",
+        "parkland_bower_ave_one",
+        "parkland_bower_ave_two",
+        "port_nelson",
+        "richmond",
+        "south_new_brighton",
+        "wainoni",
+        "wainoni_pak_n_save",
+        "wellington_airport"
+      ],
+      "validation_sites": [
+        "christchurch_metro_sports_facility",
+        "marshland"
+      ],
+      "best_validation_metrics": {
+        "macro_score": 0.6930544390944308,
+        "macro_log_mae": 0.6410363961415924,
+        "macro_native_event_brier": 0.10403608590567712,
+        "macro_h_point_mae_m": 0.68125,
+        "macro_recall": 0.3333521021021021,
+        "macro_false_positive_rate": 0.04252016129032258
+      },
+      "amp_overflows": 2,
+      "fp32_fallbacks": 0
     }
-  ]
+  ],
+  "successful_optimizer_updates": 3400
 }
