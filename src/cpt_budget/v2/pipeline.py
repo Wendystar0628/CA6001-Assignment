@@ -70,6 +70,7 @@ def _relocated(path, directory):
 
 def fit(config, run, fold_id=None, models=None):
     from cpt_budget.models.gp import fit_gp_trend
+    config = {**config, '_source_commit': v1._git(config['_root'], 'rev-parse', 'HEAD')}
     dataset = v1._ensure_prepared(config)
     v1._bind_run_inputs(run, config)
     models = list(models or config['v2']['prediction_models'])
@@ -103,15 +104,23 @@ def fit(config, run, fold_id=None, models=None):
                 continue
             print(f'Fit fold {fid}: {model_id}', flush=True)
             started = time.perf_counter()
-            if model_id == 'idw_residual':
-                from .residual import fit_residual
-                artifact = fit_residual(dataset, train, validation, config, target)
-            elif model_id in ('tabpfn_crps', 'tabpfn_task'):
-                from .tabpfn import fit_spatial_tabpfn
-                artifact = fit_spatial_tabpfn(dataset, train, validation, config, target,
-                                             variant='task' if model_id.endswith('task') else 'crps')
-            else:
-                raise ValueError(model_id)
+            try:
+                if model_id == 'idw_residual':
+                    from .residual import fit_residual
+                    artifact = fit_residual(dataset, train, validation, config, target)
+                elif model_id in ('tabpfn_crps', 'tabpfn_task'):
+                    from .tabpfn import fit_spatial_tabpfn
+                    artifact = fit_spatial_tabpfn(dataset, train, validation, config, target,
+                                                 variant='task' if model_id.endswith('task') else 'crps')
+                else:
+                    raise ValueError(model_id)
+            except Exception as exc:
+                meta = _read(run/'run.json')
+                meta.setdefault('failures', []).append({'stage': 'fit', 'fold_id': fid, 'model_id': model_id,
+                    'error': f'{type(exc).__name__}: {exc}', 'source_commit': config['_source_commit']})
+                meta['status'] = 'failed_training_preserved'
+                _save(run/'run.json', meta)
+                raise
             manifest['artifacts'][model_id] = artifact
             _save(folder/'models.json', manifest)
             v1._stage(run, f'fit_{fid}_{model_id}', {'seconds': time.perf_counter()-started,

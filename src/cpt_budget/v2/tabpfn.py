@@ -133,6 +133,84 @@ def native_event_brier(logits_BQL, bardist, thresholds_B, raw_query, *, log_thre
     return (probabilities - labels[None, :]).square().mean()
 
 
+def optimizer_step_with_recovery(compute_losses, *, model, optimizer, scaler=None,
+                                 use_amp=False, gradient_clip=1.0, max_amp_retries=3):
+    """Recompute the same episode on overflow; only a finite update counts.
+
+    ``compute_losses(amp_enabled)`` must rebuild its graph from the same intact
+    preprocessed inputs. Failed attempts never call optimizer.step. RNG is
+    restored before recomputation, so retries do not redraw dropout masks.
+    After bounded AMP attempts, one unscaled FP32 attempt is allowed.
+    """
+    import torch
+    from tabpfn.finetuning._torch_compat import sdpa_kernel_context
+    parameters = list(model.parameters())
+    amp_enabled = bool(use_amp and scaler is not None)
+    device = parameters[0].device
+    cpu_rng = torch.get_rng_state()
+    cuda_rng = torch.cuda.get_rng_state(device) if device.type == "cuda" else None
+    scale_before = float(scaler.get_scale()) if amp_enabled else None
+    modes = [True] * (max_amp_retries + 1) + [False] if amp_enabled else [False]
+    failures = []
+    for attempt, current_amp in enumerate(modes):
+        torch.set_rng_state(cpu_rng)
+        if cuda_rng is not None:
+            torch.cuda.set_rng_state(cuda_rng, device)
+        optimizer.zero_grad(set_to_none=True)
+        losses = compute_losses(current_amp)
+        loss = losses["loss"]
+        failure = None
+        norm = None
+        if not torch.isfinite(loss):
+            failure = "nonfinite_loss"
+            if current_amp:
+                # Initialize a fresh scaler before explicit scale backoff.
+                scaler.scale(loss)
+        else:
+            with sdpa_kernel_context():
+                (scaler.scale(loss) if current_amp else loss).backward()
+            if current_amp:
+                scaler.unscale_(optimizer)
+            norm = torch.nn.utils.clip_grad_norm_(parameters, float(gradient_clip))
+            if not torch.isfinite(norm):
+                failure = "nonfinite_gradient_norm"
+            elif norm.item() <= 0:
+                failure = "zero_gradient_norm"
+        if failure is not None:
+            failed_scale = float(scaler.get_scale()) if current_amp else None
+            failures.append({"attempt": attempt + 1, "precision": "amp" if current_amp else "fp32",
+                             "reason": failure, "scale": failed_scale})
+            optimizer.zero_grad(set_to_none=True)
+            # Explicit public update resets per-optimizer unscale bookkeeping;
+            # it also handles a finite per-element gradient whose norm overflowed.
+            if current_amp:
+                scaler.update(new_scale=failed_scale * float(scaler.get_backoff_factor()))
+            del losses, loss
+            if current_amp:
+                continue
+            raise FloatingPointError(f"Episode failed AMP recovery and FP32 fallback: {failures}")
+
+        parameter = next(p for p in parameters if p.grad is not None and torch.any(p.grad != 0))
+        before = parameter.detach().clone()
+        if current_amp:
+            scaler.step(optimizer)
+            scaler.update()
+        else:
+            optimizer.step()
+        delta = torch.linalg.vector_norm(parameter.detach() - before).item()
+        if not np.isfinite(delta) or delta <= 0:
+            raise RuntimeError("No finite parameter update occurred; do not count this episode")
+        return losses, {"gradient_norm_before_clip": float(norm.detach().cpu()),
+                        "updated_parameter_delta_l2": delta,
+                        "amp_retry_count": min(attempt, max_amp_retries) if amp_enabled else 0,
+                        "amp_overflow_count": sum(f["precision"] == "amp" for f in failures),
+                        "amp_fp32_fallback": amp_enabled and not current_amp,
+                        "amp_scale_before": scale_before,
+                        "amp_scale_after": float(scaler.get_scale()) if amp_enabled else None,
+                        "amp_failures": failures, "optimizer_updates": 1}
+    raise RuntimeError("No finite episode update was produced")
+
+
 class SpatialEpisodeAdapter(EpisodeAdapter):
     """Official CRPS + mean MSE, with an optional physical low-qc objective."""
     def __init__(self, config=None, *, variant="crps"):
@@ -156,56 +234,48 @@ class SpatialEpisodeAdapter(EpisodeAdapter):
         batch = self.preprocess(X_support, y_support, X_query, y_query, seed=seed)
         self.estimator.raw_space_bardist_ = batch.raw_space_bardist
         self.estimator.znorm_space_bardist_ = batch.znorm_space_bardist
-        self.estimator.fit_from_preprocessed(
-            batch.X_context, batch.y_context, batch.cat_indices, batch.configs,
-            performance_options=PerformanceOptions(force_recompute_layer=True, use_chunkwise_inference=False),
-            no_refit=True,
-        )
         self.model.train()
-        self.optimizer.zero_grad(set_to_none=True)
-        with autocast(enabled=self.use_amp), sdpa_kernel_context():
-            _, per_estimator_logits, _ = self.estimator.forward(batch.X_query, use_inference_mode=False)
-            logits_QBEL = torch.stack(per_estimator_logits, dim=2)
-            Q, B, E, L = logits_QBEL.shape
-            if B != 1 or E != 1 or Q != len(y_query):
-                raise RuntimeError("Official forward violated single-episode dimensions")
-            # Use float32 for CDF/mean losses even when the model forward uses AMP.
-            logits = logits_QBEL.permute(1, 2, 0, 3).reshape(B * E, Q, L).float()
-            targets = torch.stack([
-                _targets_in_estimator_space(batch.y_query[0], c[0]) for c in batch.configs
-            ]).to(self.device)
-            bardist = batch.znorm_space_bardist.to(device=logits.device, dtype=logits.dtype)
-            regression = _compute_regression_loss(
-                logits_BQL=logits, targets_BQ=targets, bardist_loss_fn=bardist,
-                ce_loss_weight=0., crps_loss_weight=1., crls_loss_weight=0.,
-                mse_loss_weight=1., mae_loss_weight=0.,
+        original_autocast = self.estimator.use_autocast_
+        def compute_losses(amp_enabled):
+            # The official batched engine opens its own autocast context; an
+            # outer autocast(False) alone would not make the fallback FP32.
+            self.estimator.use_autocast_ = amp_enabled
+            self.estimator.fit_from_preprocessed(
+                batch.X_context, batch.y_context, batch.cat_indices, batch.configs,
+                performance_options=PerformanceOptions(force_recompute_layer=True, use_chunkwise_inference=False),
+                no_refit=True,
             )
-            thresholds = event_thresholds_in_estimator_space(y_support, batch.configs)
-            brier = native_event_brier(logits, bardist, thresholds, y_query)
-            loss = regression + (0.5 * brier if self.variant == "task" else 0.)
-        if not torch.isfinite(loss):
-            raise RuntimeError("Non-finite spatial episode loss")
-        with sdpa_kernel_context():
-            (self.scaler.scale(loss) if self.scaler is not None else loss).backward()
-        if self.scaler is not None:
-            self.scaler.unscale_(self.optimizer)
-        norm = torch.nn.utils.clip_grad_norm_(self.model.parameters(), float(self.settings.get("gradient_clip", 1.0)))
-        if not torch.isfinite(norm) or norm.item() <= 0:
-            raise RuntimeError(f"Episode has invalid gradient norm: {norm.item()}")
-        parameter = next(p for p in self.model.parameters() if p.grad is not None and torch.any(p.grad != 0))
-        before = parameter.detach().clone()
-        if self.scaler is not None:
-            self.scaler.step(self.optimizer)
-            self.scaler.update()
-        else:
-            self.optimizer.step()
-        delta = torch.linalg.vector_norm(parameter.detach() - before).item()
-        if delta <= 0:
-            raise RuntimeError("No parameter update occurred; do not call this fine-tuning")
+            with autocast(enabled=amp_enabled), sdpa_kernel_context():
+                _, per_estimator_logits, _ = self.estimator.forward(batch.X_query, use_inference_mode=False)
+                logits_QBEL = torch.stack(per_estimator_logits, dim=2)
+                Q, B, E, L = logits_QBEL.shape
+                if B != 1 or E != 1 or Q != len(y_query):
+                    raise RuntimeError("Official forward violated single-episode dimensions")
+                logits = logits_QBEL.permute(1, 2, 0, 3).reshape(B * E, Q, L).float()
+                targets = torch.stack([
+                    _targets_in_estimator_space(batch.y_query[0], c[0]) for c in batch.configs
+                ]).to(self.device)
+                bardist = batch.znorm_space_bardist.to(device=logits.device, dtype=logits.dtype)
+                regression = _compute_regression_loss(
+                    logits_BQL=logits, targets_BQ=targets, bardist_loss_fn=bardist,
+                    ce_loss_weight=0., crps_loss_weight=1., crls_loss_weight=0.,
+                    mse_loss_weight=1., mae_loss_weight=0.,
+                )
+                thresholds = event_thresholds_in_estimator_space(y_support, batch.configs)
+                brier = native_event_brier(logits, bardist, thresholds, y_query)
+                loss = regression + (0.5 * brier if self.variant == "task" else 0.)
+            return {"loss": loss, "regression": regression, "brier": brier, "thresholds": thresholds}
+
+        try:
+            losses, update = optimizer_step_with_recovery(
+                compute_losses, model=self.model, optimizer=self.optimizer, scaler=self.scaler,
+                use_amp=self.use_amp, gradient_clip=float(self.settings.get("gradient_clip", 1.0)))
+        finally:
+            self.estimator.use_autocast_ = original_autocast
         self.steps += 1
-        return {"loss": float(loss.detach().cpu()), "crps_plus_mse": float(regression.detach().cpu()),
-                "native_event_brier": float(brier.detach().cpu()), "event_threshold_estimator_space": thresholds.tolist(),
-                "gradient_norm_before_clip": float(norm.detach().cpu()), "updated_parameter_delta_l2": delta,
+        return {"loss": float(losses["loss"].detach().cpu()), "crps_plus_mse": float(losses["regression"].detach().cpu()),
+                "native_event_brier": float(losses["brier"].detach().cpu()),
+                "event_threshold_estimator_space": losses["thresholds"].tolist(), **update,
                 "seconds": perf_counter() - started, "support_rows": len(y_support),
                 "query_rows": len(y_query), "step": self.steps}
 

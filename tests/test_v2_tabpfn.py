@@ -10,6 +10,7 @@ from cpt_budget.types import PreparedDataset
 from cpt_budget.v2.tabpfn import (
     build_spatial_episode, event_thresholds_in_estimator_space, make_training_plan,
     native_event_brier, query_blocks, validate_spatial,
+    optimizer_step_with_recovery,
 )
 
 
@@ -111,3 +112,53 @@ def test_validation_score_uses_scenario_and_site_macro_with_native_probability()
     assert result["macro_score"] == pytest.approx(2.52)
     assert result["macro_recall"] is None
     assert result["risk_calibration_used"] is False
+
+
+@pytest.mark.parametrize("overflow_attempts, expected_fallback", [(2, False), (4, True)])
+def test_amp_overflow_retries_same_episode_without_partial_update(overflow_attempts, expected_fallback):
+    torch = pytest.importorskip("torch")
+    pytest.importorskip("tabpfn")
+    model = torch.nn.Linear(2, 1, bias=False)
+    optimizer = torch.optim.AdamW(model.parameters(), lr=.01)
+    scaler = torch.amp.GradScaler("cpu", init_scale=1024.)
+    original = model.weight.detach().clone()
+    calls, draws = [], []
+    def compute(amp_enabled):
+        # None of the failed attempts may have advanced weights or Adam state.
+        torch.testing.assert_close(model.weight, original)
+        assert not optimizer.state
+        calls.append(amp_enabled)
+        draws.append(torch.rand(3))
+        prediction = model(torch.tensor([[1., 2.]]))
+        if len(calls) <= overflow_attempts:
+            prediction.register_hook(lambda grad: torch.full_like(grad, float("inf")))
+        return {"loss": (prediction - 3.).square().mean()}
+    _, result = optimizer_step_with_recovery(
+        compute, model=model, optimizer=optimizer, scaler=scaler, use_amp=True)
+    assert result["amp_overflow_count"] == overflow_attempts
+    assert result["amp_fp32_fallback"] == expected_fallback
+    assert result["optimizer_updates"] == 1
+    assert result["updated_parameter_delta_l2"] > 0
+    assert result["amp_scale_after"] == 1024. * .5 ** overflow_attempts
+    assert len(calls) == overflow_attempts + 1
+    for draw in draws:
+        torch.testing.assert_close(draw, draws[0])
+    assert all(int(state["step"].item()) == 1 for state in optimizer.state.values())
+
+
+def test_nonfinite_fp32_fallback_fails_without_any_update():
+    torch = pytest.importorskip("torch")
+    pytest.importorskip("tabpfn")
+    model = torch.nn.Linear(1, 1)
+    optimizer = torch.optim.AdamW(model.parameters(), lr=.01)
+    scaler = torch.amp.GradScaler("cpu", init_scale=1024.)
+    original = [p.detach().clone() for p in model.parameters()]
+    def compute(amp_enabled):
+        prediction = model(torch.ones(1, 1))
+        prediction.register_hook(lambda grad: torch.full_like(grad, float("inf")))
+        return {"loss": prediction.square().mean()}
+    with pytest.raises(FloatingPointError, match="FP32 fallback"):
+        optimizer_step_with_recovery(compute, model=model, optimizer=optimizer, scaler=scaler, use_amp=True)
+    assert not optimizer.state
+    for before, after in zip(original, model.parameters()):
+        torch.testing.assert_close(before, after)
