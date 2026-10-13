@@ -1,0 +1,81 @@
+{
+  "run_id": "main-20261013",
+  "code_commit": "0e59612ce1bb43d01953d3baad80d617f6673002",
+  "scope": "source validation only; not test performance",
+  "folds": [
+    {
+      "fold_id": 0,
+      "gradient_steps": 140,
+      "epochs_evaluated": 10,
+      "best_epoch": 7,
+      "best_validation_macro_log_rmse": 0.9541869231991825,
+      "baseline_validation": {
+        "macro_log_rmse": 1.0536864340533756,
+        "site_log_rmse": {
+          "kaiapoi_near_river": 1.0810821830628692,
+          "lower_hutt_town_hall": 1.2983188795785574,
+          "tauranga_farmers_building": 0.7816582395187003
+        },
+        "validation_aggregation": "mean_site(mean_episode(mean_cpt(rmse_depth)))"
+      },
+      "validation_preferred_model": "tabpfn_finetuned",
+      "stop_reason": "early_stopping",
+      "development_run": false,
+      "elapsed_seconds": 130.53021699999954,
+      "peak_cuda_allocated_bytes": 377173504,
+      "torch_version": "2.11.0+cu128",
+      "package_version": "9.2.0",
+      "model_generation": "v2",
+      "checkpoint_sha256": "95faa2f9d29da555b448ee54624c0881df757edc7c0f09dc0d714d728319d84d"
+    },
+    {
+      "fold_id": 1,
+      "gradient_steps": 150,
+      "epochs_evaluated": 10,
+      "best_epoch": 8,
+      "best_validation_macro_log_rmse": 0.8868345873511042,
+      "baseline_validation": {
+        "macro_log_rmse": 1.0133632175493867,
+        "site_log_rmse": {
+          "lower_hutt_town_hall": 1.2983188795785574,
+          "port_nelson": 0.9601125335509029,
+          "tauranga_farmers_building": 0.7816582395187003
+        },
+        "validation_aggregation": "mean_site(mean_episode(mean_cpt(rmse_depth)))"
+      },
+      "validation_preferred_model": "tabpfn_finetuned",
+      "stop_reason": "max_epochs",
+      "development_run": false,
+      "elapsed_seconds": 129.27820950000023,
+      "peak_cuda_allocated_bytes": 378064384,
+      "torch_version": "2.11.0+cu128",
+      "package_version": "9.2.0",
+      "model_generation": "v2",
+      "checkpoint_sha256": "4f69246d7df153d62a4820a7e3b962b3483daf2fac7e74d7b9939e848b61cdca"
+    },
+    {
+      "fold_id": 2,
+      "gradient_steps": 150,
+      "epochs_evaluated": 10,
+      "best_epoch": 9,
+      "best_validation_macro_log_rmse": 0.814186707637093,
+      "baseline_validation": {
+        "macro_log_rmse": 0.8750182712817128,
+        "site_log_rmse": {
+          "christchurch_metro_sports_facility": 0.7571737406783589,
+          "marshland": 0.9928628018850668
+        },
+        "validation_aggregation": "mean_site(mean_episode(mean_cpt(rmse_depth)))"
+      },
+      "validation_preferred_model": "tabpfn_finetuned",
+      "stop_reason": "max_epochs",
+      "development_run": false,
+      "elapsed_seconds": 122.93686759999764,
+      "peak_cuda_allocated_bytes": 377259520,
+      "torch_version": "2.11.0+cu128",
+      "package_version": "9.2.0",
+      "model_generation": "v2",
+      "checkpoint_sha256": "1fdb6638f33a140918a49ce20ab7fc3a7eecd55f0f9395bad91bdc5bfa31ae50"
+    }
+  ]
+}

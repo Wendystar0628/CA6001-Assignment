@@ -1,0 +1,19 @@
+{
+  "n_candidate_profiles": 503,
+  "n_distinct_planned_locations": 495,
+  "n_usable_representative_locations": 492,
+  "n_grid_rows": 11808,
+  "depth_cells": 24,
+  "n_sites": 31,
+  "n_replay_sites_by_size": 8,
+  "excluded_profile_reasons": {
+    "same_coordinate_nonrepresentative": 8,
+    "incomplete_midpoint_grid_or_interpolation_gap": 3
+  },
+  "unverified_grouping_sites": [
+    "avonside",
+    "baytown",
+    "hollywood",
+    "newlock"
+  ]
+}

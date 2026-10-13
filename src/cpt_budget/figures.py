@@ -131,7 +131,37 @@ def _case(predictions, dataset, config):
             "fold_id": fold, "location_id": location}
 
 
-def _run_label(run_dir, metrics):
+def _select_result_scope(metrics, predictions, states, scores):
+    """Choose one scientific role before case selection, calibration or averaging.
+
+    Prediction ``role`` describes evaluation/candidate information, so its
+    independent ``split_role`` must be used for scientific-scope filtering.
+    Mixing source validation and held-out test rows would duplicate sites and
+    give the GP reference an incompatible population; never silently do that.
+    """
+    tables = {"metrics": metrics, "predictions": predictions, "states": states, "scores": scores}
+    columns = {"metrics": "role", "predictions": "split_role", "states": "role", "scores": "role"}
+    available = set()
+    for name, frame in tables.items():
+        column = columns[name]
+        if column in frame:
+            available.update(frame[column].dropna().astype(str))
+    scope = next((role for role in ("test", "pilot", "validation") if role in available), None)
+    if scope is None:
+        return "unlabelled", metrics, predictions, states, scores
+    filtered = {}
+    for name, frame in tables.items():
+        column = columns[name]
+        if frame.empty:
+            filtered[name] = frame.copy()
+        elif column not in frame:
+            raise ValueError(f"Cannot safely export {scope} figures: {name} has no {column} scope column")
+        else:
+            filtered[name] = frame.loc[frame[column].astype(str).eq(scope)].copy()
+    return scope, filtered["metrics"], filtered["predictions"], filtered["states"], filtered["scores"]
+
+
+def _run_label(run_dir, metrics, scope="unlabelled"):
     meta = {}
     if (run_dir / "run.json").exists():
         meta = json.loads((run_dir / "run.json").read_text(encoding="utf-8"))
@@ -139,7 +169,13 @@ def _run_label(run_dir, metrics):
     pilot = "pilot" in str(meta.get("stage", "")).lower() or "pilot" in run_dir.name.lower()
     pilot = pilot or any(metrics[c].astype(str).eq("pilot").any() for c in role_columns)
     incomplete = metrics.empty or metrics.site_id.nunique() < 2 or metrics.budget_n.max() < 13
-    return "PILOT · observed results only" if pilot or incomplete else "Saved run · descriptive comparisons"
+    if scope == "validation":
+        return "VALIDATION ONLY · quality-target reference; not test evidence"
+    if scope == "pilot" or (scope == "unlabelled" and pilot):
+        return "PILOT · observed results only"
+    if scope == "test":
+        return "TEST · partial run, observed results only" if incomplete else "TEST · held-out results only"
+    return "SCOPE UNRECORDED · descriptive results only"
 
 
 def _state(states, case, budget):
@@ -745,7 +781,8 @@ def _demo_frames(run_dir, dataset, predictions, metrics, scores, states, case, c
             elif phase == "Candidate scoring" and not score.empty:
                 top = score.sort_values("score", ascending=False).head(6).iloc[::-1]
                 decision_ax.barh(np.arange(len(top)), top.score, color=TEAL)
-                decision_ax.set_yticks(np.arange(len(top)), [str(x)[-8:] for x in top.location_id])
+                location_labels = _location_labels(geometry)
+                decision_ax.set_yticks(np.arange(len(top)), [location_labels[x] for x in top.location_id])
                 decision_ax.set_xlabel("Saved score"); decision_ax.set_title("Candidate ranking", loc="left")
             else:
                 decision_ax.axis("off")
@@ -786,7 +823,8 @@ def _demo_frames(run_dir, dataset, predictions, metrics, scores, states, case, c
 def export_figures(run_dir, dataset, config, *, preset="both", figure=None):
     """Export supported G1–G6 panels and optional New Lock frames from one run.
 
-    ``figure`` accepts G1...G6 or ``demo``. The export manifest records the case,
+    ``figure`` accepts G1...G6, ``demo``, or profile/calibration/selection aliases.
+    Aliases regenerate their complete family. The export manifest records the case,
     source files, labels and skipped families, so a pilot cannot masquerade as
     the completed experiment. Returns all generated image/vector/video paths.
     """
@@ -798,9 +836,11 @@ def export_figures(run_dir, dataset, config, *, preset="both", figure=None):
         config = {**config, "presentation": {**(yaml.safe_load(style_path.read_text(encoding="utf-8")) or {}), **presentation}}
     if preset not in ["report", "slides", "both"]:
         raise ValueError("preset must be report, slides or both")
-    selection = str(figure).upper() if figure else None
+    requested_selection = str(figure).upper() if figure else None
+    aliases = {"PROFILE": "G3", "CALIBRATION": "G3", "SELECTION": "G4"}
+    selection = aliases.get(requested_selection, requested_selection)
     if selection not in [None, "G1", "G2", "G3", "G4", "G5", "G6", "DEMO"]:
-        raise ValueError("figure must be G1, G2, G3, G4, G5, G6 or demo")
+        raise ValueError("figure must be G1–G6, demo, profile, calibration or selection")
     predictions = _read(run_dir / "predictions.parquet")
     if predictions.empty:
         parts = []
@@ -812,11 +852,12 @@ def export_figures(run_dir, dataset, config, *, preset="both", figure=None):
     metrics = _read(run_dir / "metrics.parquet")
     scores = _read(run_dir / "acquisition_scores.parquet")
     states = _read(run_dir / "states.parquet")
+    scope, metrics, predictions, states, scores = _select_result_scope(metrics, predictions, states, scores)
     attainment = _read(run_dir / "summary" / "attainment.csv")
     if attainment.empty:
         attainment = _read(run_dir / "summary" / "attainment.parquet")
     costs = _read(run_dir / "summary" / "costs.csv")
-    case = _case(predictions, dataset, config); label = _run_label(run_dir, metrics)
+    case = _case(predictions, dataset, config); label = _run_label(run_dir, metrics, scope)
     exports, skipped = [], {}
     presets = ["report", "slides"] if preset == "both" else [preset]
     functions = {
@@ -843,7 +884,9 @@ def export_figures(run_dir, dataset, config, *, preset="both", figure=None):
         exports.extend(frames)
         if reason:
             skipped["demo"] = reason
-    manifest = {"label": label, "case_selection": {k: str(v) if isinstance(v, np.generic) else v for k, v in case.items()},
+    manifest = {"label": label, "result_scope": scope,
+                "requested_figure": requested_selection, "resolved_figure": selection,
+                "case_selection": {k: str(v) if isinstance(v, np.generic) else v for k, v in case.items()},
                 "case_rule": "Seed 17 when present; evaluation location nearest full-site geometry centroid. Fallback seed is explicit.",
                 "sources": [str(x.relative_to(run_dir)) for x in [run_dir / n for n in ["predictions.parquet", "metrics.parquet", "states.parquet", "acquisition_scores.parquet"]] if x.exists()],
                 "site_names": {str(s): {"abbreviation": _site_name(s), "full_name": _full_site_name(s)} for s in dataset.locations().site_id.unique()},
@@ -852,12 +895,17 @@ def export_figures(run_dir, dataset, config, *, preset="both", figure=None):
                           "Quantiles are marginal depthwise intervals, not simultaneous profile intervals.",
                           "Only measured reveal-frame candidates may acquire truth during demo export."]}
     output = run_dir / "figures" / "export_manifest.json"; output.parent.mkdir(parents=True, exist_ok=True)
+    manifest["file_scopes"] = {name: scope for name in manifest["files"]}
     if selection and output.exists():
         previous = json.loads(output.read_text(encoding="utf-8"))
         retained = [name for name in previous.get("files", []) if (run_dir / name).exists()]
         manifest["last_export_files"] = manifest["files"].copy()
         manifest["last_export_selection"] = selection
         manifest["files"] = list(dict.fromkeys(retained + manifest["files"]))
+        manifest["file_scopes"] = {
+            **{name: previous.get("file_scopes", {}).get(name, previous.get("result_scope", "unrecorded")) for name in retained},
+            **manifest["file_scopes"],
+        }
         manifest["skipped"] = {**{k: v for k, v in previous.get("skipped", {}).items()
                                    if k.upper() != selection}, **skipped}
     output.write_text(json.dumps(manifest, indent=2, ensure_ascii=False), encoding="utf-8")
