@@ -1,0 +1,1236 @@
+{
+  "source_states": ".research/diagnosis_20261013/prediction_probe/validation_states.parquet",
+  "state_count": 6,
+  "records": [
+    {
+      "fold_id": 0,
+      "site_id": "lower_hutt_town_hall",
+      "seed": 17,
+      "budget_n": 5,
+      "revealed_cpts": 5,
+      "standard_support_rows": 120,
+      "query_rows": 144,
+      "standard_support_counts": [
+        4.0
+      ],
+      "standard_query_counts": [
+        5.0
+      ],
+      "honest_anchor_ids": [
+        "location_956c983ed9f60d81",
+        "location_7db6b331ce1eb850",
+        "location_3259651e9bb0c96d"
+      ],
+      "honest_labelled_ids": [
+        "location_ab985ae54dcd592b",
+        "location_f1dd1f2f699fd729"
+      ],
+      "honest_context_counts": [
+        3.0
+      ],
+      "honest_query_counts": [
+        3.0
+      ],
+      "interpretation_limit": "Raw feature shift only; constant columns may be removed by preprocessing; no causal performance conclusion.",
+      "statistics": [
+        {
+          "feature": "depth_m",
+          "support_mean": 5.0,
+          "query_mean": 5.0,
+          "support_unique": 24,
+          "query_outside_support_range_fraction": 0.0
+        },
+        {
+          "feature": "neighbor_1_log_qc",
+          "support_mean": 1.7963637348148287,
+          "query_mean": 2.019205455246466,
+          "support_unique": 72,
+          "query_outside_support_range_fraction": 0.0
+        },
+        {
+          "feature": "neighbor_2_log_qc",
+          "support_mean": 2.2129341182946387,
+          "query_mean": 1.844095362453349,
+          "support_unique": 96,
+          "query_outside_support_range_fraction": 0.0
+        },
+        {
+          "feature": "neighbor_3_log_qc",
+          "support_mean": 2.381432691417545,
+          "query_mean": 2.1280045170112536,
+          "support_unique": 96,
+          "query_outside_support_range_fraction": 0.0
+        },
+        {
+          "feature": "neighbor_1_log_distance",
+          "support_mean": 1.6015316636427444,
+          "query_mean": 0.9738375102390874,
+          "support_unique": 4,
+          "query_outside_support_range_fraction": 1.0
+        },
+        {
+          "feature": "neighbor_2_log_distance",
+          "support_mean": 1.6797715209770787,
+          "query_mean": 1.507537096547623,
+          "support_unique": 3,
+          "query_outside_support_range_fraction": 0.5
+        },
+        {
+          "feature": "neighbor_3_log_distance",
+          "support_mean": 1.909402786736817,
+          "query_mean": 1.7744364326176365,
+          "support_unique": 5,
+          "query_outside_support_range_fraction": 0.3333333333333333
+        },
+        {
+          "feature": "neighbor_1_valid",
+          "support_mean": 1.0,
+          "query_mean": 1.0,
+          "support_unique": 1,
+          "query_outside_support_range_fraction": 0.0
+        },
+        {
+          "feature": "neighbor_2_valid",
+          "support_mean": 1.0,
+          "query_mean": 1.0,
+          "support_unique": 1,
+          "query_outside_support_range_fraction": 0.0
+        },
+        {
+          "feature": "neighbor_3_valid",
+          "support_mean": 1.0,
+          "query_mean": 1.0,
+          "support_unique": 1,
+          "query_outside_support_range_fraction": 0.0
+        },
+        {
+          "feature": "neighbor_mean_log_qc",
+          "support_mean": 2.233745991089623,
+          "query_mean": 2.233745991089623,
+          "support_unique": 120,
+          "query_outside_support_range_fraction": 0.0
+        },
+        {
+          "feature": "neighbor_std_log_qc",
+          "support_mean": 0.9218662541425917,
+          "query_mean": 0.9700489832583948,
+          "support_unique": 120,
+          "query_outside_support_range_fraction": 0.0
+        },
+        {
+          "feature": "neighbor_median_log_qc",
+          "support_mean": 2.2576255369304032,
+          "query_mean": 2.1868676539021425,
+          "support_unique": 72,
+          "query_outside_support_range_fraction": 0.0
+        },
+        {
+          "feature": "idw_log_qc",
+          "support_mean": 2.033734084821446,
+          "query_mean": 1.9895344572963332,
+          "support_unique": 120,
+          "query_outside_support_range_fraction": 0.06944444444444445
+        },
+        {
+          "feature": "support_count",
+          "support_mean": 4.0,
+          "query_mean": 5.0,
+          "support_unique": 1,
+          "query_outside_support_range_fraction": 1.0
+        },
+        {
+          "feature": "log_geometry_scale",
+          "support_mean": 2.3523316871461377,
+          "query_mean": 2.3523316871461373,
+          "support_unique": 1,
+          "query_outside_support_range_fraction": 0.0
+        },
+        {
+          "feature": "kernel_10m_log_qc",
+          "support_mean": 1.973688824388319,
+          "query_mean": 1.991837634660758,
+          "support_unique": 120,
+          "query_outside_support_range_fraction": 0.041666666666666664
+        },
+        {
+          "feature": "kernel_50m_log_qc",
+          "support_mean": 2.150684504540819,
+          "query_mean": 2.1237702792721795,
+          "support_unique": 120,
+          "query_outside_support_range_fraction": 0.006944444444444444
+        },
+        {
+          "feature": "kernel_10m_low_fraction",
+          "support_mean": 0.18037028969791066,
+          "query_mean": 0.19754171620692784,
+          "support_unique": 20,
+          "query_outside_support_range_fraction": 0.0625
+        },
+        {
+          "feature": "kernel_50m_low_fraction",
+          "support_mean": 0.14800811284578444,
+          "query_mean": 0.15952499262777714,
+          "support_unique": 20,
+          "query_outside_support_range_fraction": 0.0625
+        },
+        {
+          "feature": "idw_above_log_qc",
+          "support_mean": 2.018934035539866,
+          "query_mean": 1.9696051116389754,
+          "support_unique": 115,
+          "query_outside_support_range_fraction": 0.07246376811594203
+        },
+        {
+          "feature": "idw_below_log_qc",
+          "support_mean": 2.100505635491556,
+          "query_mean": 2.0667972566673405,
+          "support_unique": 115,
+          "query_outside_support_range_fraction": 0.07246376811594203
+        },
+        {
+          "feature": "idw_vertical_gradient",
+          "support_mean": 0.3348301775149386,
+          "query_mean": 0.39422839221897465,
+          "support_unique": 120,
+          "query_outside_support_range_fraction": 0.09027777777777778
+        },
+        {
+          "feature": "idw_vertical_curvature",
+          "support_mean": -0.43906916356062764,
+          "query_mean": -0.32208038606289685,
+          "support_unique": 110,
+          "query_outside_support_range_fraction": 0.05303030303030303
+        }
+      ]
+    },
+    {
+      "fold_id": 0,
+      "site_id": "lower_hutt_town_hall",
+      "seed": 17,
+      "budget_n": 9,
+      "revealed_cpts": 9,
+      "standard_support_rows": 216,
+      "query_rows": 144,
+      "standard_support_counts": [
+        8.0
+      ],
+      "standard_query_counts": [
+        9.0
+      ],
+      "honest_anchor_ids": [
+        "location_7db6b331ce1eb850",
+        "location_3259651e9bb0c96d",
+        "location_ab985ae54dcd592b",
+        "location_f1dd1f2f699fd729",
+        "location_5e40bc942b458f7c",
+        "location_bddbbcff6ed73346"
+      ],
+      "honest_labelled_ids": [
+        "location_956c983ed9f60d81",
+        "location_4db59bd0890e2d33",
+        "location_a370a3a917a072e4"
+      ],
+      "honest_context_counts": [
+        6.0
+      ],
+      "honest_query_counts": [
+        6.0
+      ],
+      "interpretation_limit": "Raw feature shift only; constant columns may be removed by preprocessing; no causal performance conclusion.",
+      "statistics": [
+        {
+          "feature": "depth_m",
+          "support_mean": 5.0,
+          "query_mean": 5.0,
+          "support_unique": 24,
+          "query_outside_support_range_fraction": 0.0
+        },
+        {
+          "feature": "neighbor_1_log_qc",
+          "support_mean": 2.5569035332459955,
+          "query_mean": 2.0477226373839965,
+          "support_unique": 192,
+          "query_outside_support_range_fraction": 0.0
+        },
+        {
+          "feature": "neighbor_2_log_qc",
+          "support_mean": 2.6644824532604026,
+          "query_mean": 2.1126288471980765,
+          "support_unique": 144,
+          "query_outside_support_range_fraction": 0.006944444444444444
+        },
+        {
+          "feature": "neighbor_3_log_qc",
+          "support_mean": 2.5593197867226443,
+          "query_mean": 2.4122872144695506,
+          "support_unique": 192,
+          "query_outside_support_range_fraction": 0.0
+        },
+        {
+          "feature": "neighbor_1_log_distance",
+          "support_mean": 1.2674719075217682,
+          "query_mean": 0.7750417664275014,
+          "support_unique": 5,
+          "query_outside_support_range_fraction": 0.8333333333333334
+        },
+        {
+          "feature": "neighbor_2_log_distance",
+          "support_mean": 1.3862147557952664,
+          "query_mean": 1.2343650933849386,
+          "support_unique": 7,
+          "query_outside_support_range_fraction": 0.5
+        },
+        {
+          "feature": "neighbor_3_log_distance",
+          "support_mean": 1.5475517293471288,
+          "query_mean": 1.4861294644495189,
+          "support_unique": 7,
+          "query_outside_support_range_fraction": 0.16666666666666666
+        },
+        {
+          "feature": "neighbor_1_valid",
+          "support_mean": 1.0,
+          "query_mean": 1.0,
+          "support_unique": 1,
+          "query_outside_support_range_fraction": 0.0
+        },
+        {
+          "feature": "neighbor_2_valid",
+          "support_mean": 1.0,
+          "query_mean": 1.0,
+          "support_unique": 1,
+          "query_outside_support_range_fraction": 0.0
+        },
+        {
+          "feature": "neighbor_3_valid",
+          "support_mean": 1.0,
+          "query_mean": 1.0,
+          "support_unique": 1,
+          "query_outside_support_range_fraction": 0.0
+        },
+        {
+          "feature": "neighbor_mean_log_qc",
+          "support_mean": 2.505184163589415,
+          "query_mean": 2.5051841635894148,
+          "support_unique": 216,
+          "query_outside_support_range_fraction": 0.0
+        },
+        {
+          "feature": "neighbor_std_log_qc",
+          "support_mean": 1.0041430699869034,
+          "query_mean": 1.016221648452193,
+          "support_unique": 216,
+          "query_outside_support_range_fraction": 0.0
+        },
+        {
+          "feature": "neighbor_median_log_qc",
+          "support_mean": 2.7655999613163122,
+          "query_mean": 2.795082195877538,
+          "support_unique": 72,
+          "query_outside_support_range_fraction": 0.0
+        },
+        {
+          "feature": "idw_log_qc",
+          "support_mean": 2.5872184624234302,
+          "query_mean": 2.088473079615527,
+          "support_unique": 216,
+          "query_outside_support_range_fraction": 0.08333333333333333
+        },
+        {
+          "feature": "support_count",
+          "support_mean": 8.0,
+          "query_mean": 9.0,
+          "support_unique": 1,
+          "query_outside_support_range_fraction": 1.0
+        },
+        {
+          "feature": "log_geometry_scale",
+          "support_mean": 2.3523316871461373,
+          "query_mean": 2.3523316871461373,
+          "support_unique": 1,
+          "query_outside_support_range_fraction": 0.0
+        },
+        {
+          "feature": "kernel_10m_log_qc",
+          "support_mean": 2.5743710112083087,
+          "query_mean": 2.1340958753250066,
+          "support_unique": 216,
+          "query_outside_support_range_fraction": 0.034722222222222224
+        },
+        {
+          "feature": "kernel_50m_log_qc",
+          "support_mean": 2.5362027488551946,
+          "query_mean": 2.401456648010866,
+          "support_unique": 216,
+          "query_outside_support_range_fraction": 0.1111111111111111
+        },
+        {
+          "feature": "kernel_10m_low_fraction",
+          "support_mean": 0.07667149682373971,
+          "query_mean": 0.15109005393211328,
+          "support_unique": 49,
+          "query_outside_support_range_fraction": 0.05555555555555555
+        },
+        {
+          "feature": "kernel_50m_low_fraction",
+          "support_mean": 0.07967983012482065,
+          "query_mean": 0.1037550756148314,
+          "support_unique": 49,
+          "query_outside_support_range_fraction": 0.06944444444444445
+        },
+        {
+          "feature": "idw_above_log_qc",
+          "support_mean": 2.5924272467839953,
+          "query_mean": 2.0738176692039065,
+          "support_unique": 207,
+          "query_outside_support_range_fraction": 0.08695652173913043
+        },
+        {
+          "feature": "idw_below_log_qc",
+          "support_mean": 2.5960009681342395,
+          "query_mean": 2.1333870073377987,
+          "support_unique": 207,
+          "query_outside_support_range_fraction": 0.07246376811594203
+        },
+        {
+          "feature": "idw_vertical_gradient",
+          "support_mean": 0.013124242857140221,
+          "query_mean": 0.24679062987892758,
+          "support_unique": 216,
+          "query_outside_support_range_fraction": 0.020833333333333332
+        },
+        {
+          "feature": "idw_vertical_curvature",
+          "support_mean": -0.0005712804262512465,
+          "query_mean": -0.33852969374352676,
+          "support_unique": 198,
+          "query_outside_support_range_fraction": 0.030303030303030304
+        }
+      ]
+    },
+    {
+      "fold_id": 0,
+      "site_id": "lower_hutt_town_hall",
+      "seed": 17,
+      "budget_n": 13,
+      "revealed_cpts": 13,
+      "standard_support_rows": 312,
+      "query_rows": 144,
+      "standard_support_counts": [
+        12.0
+      ],
+      "standard_query_counts": [
+        13.0
+      ],
+      "honest_anchor_ids": [
+        "location_956c983ed9f60d81",
+        "location_7db6b331ce1eb850",
+        "location_ab985ae54dcd592b",
+        "location_f1dd1f2f699fd729",
+        "location_bddbbcff6ed73346",
+        "location_a370a3a917a072e4",
+        "location_bc3c07bdf8233485",
+        "location_e4e8d2f67aaf62e1"
+      ],
+      "honest_labelled_ids": [
+        "location_3259651e9bb0c96d",
+        "location_5e40bc942b458f7c",
+        "location_4db59bd0890e2d33",
+        "location_53fddaab6479ef75",
+        "location_66ef9c6ce8e346d2"
+      ],
+      "honest_context_counts": [
+        8.0
+      ],
+      "honest_query_counts": [
+        8.0
+      ],
+      "interpretation_limit": "Raw feature shift only; constant columns may be removed by preprocessing; no causal performance conclusion.",
+      "statistics": [
+        {
+          "feature": "depth_m",
+          "support_mean": 5.0,
+          "query_mean": 5.0,
+          "support_unique": 24,
+          "query_outside_support_range_fraction": 0.0
+        },
+        {
+          "feature": "neighbor_1_log_qc",
+          "support_mean": 2.487605201026653,
+          "query_mean": 2.0477226373839965,
+          "support_unique": 216,
+          "query_outside_support_range_fraction": 0.0
+        },
+        {
+          "feature": "neighbor_2_log_qc",
+          "support_mean": 2.4380589340161927,
+          "query_mean": 2.13279015145681,
+          "support_unique": 240,
+          "query_outside_support_range_fraction": 0.0
+        },
+        {
+          "feature": "neighbor_3_log_qc",
+          "support_mean": 2.5217943411004122,
+          "query_mean": 2.1969669221227033,
+          "support_unique": 168,
+          "query_outside_support_range_fraction": 0.006944444444444444
+        },
+        {
+          "feature": "neighbor_1_log_distance",
+          "support_mean": 1.0341059595054254,
+          "query_mean": 0.7750417664275014,
+          "support_unique": 10,
+          "query_outside_support_range_fraction": 0.6666666666666666
+        },
+        {
+          "feature": "neighbor_2_log_distance",
+          "support_mean": 1.181016586143881,
+          "query_mean": 1.13051529463481,
+          "support_unique": 11,
+          "query_outside_support_range_fraction": 0.16666666666666666
+        },
+        {
+          "feature": "neighbor_3_log_distance",
+          "support_mean": 1.3239314872167078,
+          "query_mean": 1.3941616912415356,
+          "support_unique": 12,
+          "query_outside_support_range_fraction": 0.16666666666666666
+        },
+        {
+          "feature": "neighbor_1_valid",
+          "support_mean": 1.0,
+          "query_mean": 1.0,
+          "support_unique": 1,
+          "query_outside_support_range_fraction": 0.0
+        },
+        {
+          "feature": "neighbor_2_valid",
+          "support_mean": 1.0,
+          "query_mean": 1.0,
+          "support_unique": 1,
+          "query_outside_support_range_fraction": 0.0
+        },
+        {
+          "feature": "neighbor_3_valid",
+          "support_mean": 1.0,
+          "query_mean": 1.0,
+          "support_unique": 1,
+          "query_outside_support_range_fraction": 0.0
+        },
+        {
+          "feature": "neighbor_mean_log_qc",
+          "support_mean": 2.4373354883264295,
+          "query_mean": 2.4373354883264295,
+          "support_unique": 312,
+          "query_outside_support_range_fraction": 0.0
+        },
+        {
+          "feature": "neighbor_std_log_qc",
+          "support_mean": 1.0147710885162684,
+          "query_mean": 1.0194538968473368,
+          "support_unique": 312,
+          "query_outside_support_range_fraction": 0.0
+        },
+        {
+          "feature": "neighbor_median_log_qc",
+          "support_mean": 2.6773394402920454,
+          "query_mean": 2.724346792032358,
+          "support_unique": 72,
+          "query_outside_support_range_fraction": 0.0
+        },
+        {
+          "feature": "idw_log_qc",
+          "support_mean": 2.461456114501077,
+          "query_mean": 2.089156043118458,
+          "support_unique": 312,
+          "query_outside_support_range_fraction": 0.020833333333333332
+        },
+        {
+          "feature": "support_count",
+          "support_mean": 12.0,
+          "query_mean": 13.0,
+          "support_unique": 1,
+          "query_outside_support_range_fraction": 1.0
+        },
+        {
+          "feature": "log_geometry_scale",
+          "support_mean": 2.3523316871461373,
+          "query_mean": 2.3523316871461373,
+          "support_unique": 1,
+          "query_outside_support_range_fraction": 0.0
+        },
+        {
+          "feature": "kernel_10m_log_qc",
+          "support_mean": 2.4550738297330597,
+          "query_mean": 2.143229422241451,
+          "support_unique": 312,
+          "query_outside_support_range_fraction": 0.034722222222222224
+        },
+        {
+          "feature": "kernel_50m_log_qc",
+          "support_mean": 2.4491498604580566,
+          "query_mean": 2.3536752348252987,
+          "support_unique": 312,
+          "query_outside_support_range_fraction": 0.08333333333333333
+        },
+        {
+          "feature": "kernel_10m_low_fraction",
+          "support_mean": 0.08092932783922531,
+          "query_mean": 0.1469343659806911,
+          "support_unique": 100,
+          "query_outside_support_range_fraction": 0.027777777777777776
+        },
+        {
+          "feature": "kernel_50m_low_fraction",
+          "support_mean": 0.08079931217875451,
+          "query_mean": 0.10082185235461544,
+          "support_unique": 100,
+          "query_outside_support_range_fraction": 0.027777777777777776
+        },
+        {
+          "feature": "idw_above_log_qc",
+          "support_mean": 2.4628920236808822,
+          "query_mean": 2.0730499967555986,
+          "support_unique": 299,
+          "query_outside_support_range_fraction": 0.021739130434782608
+        },
+        {
+          "feature": "idw_below_log_qc",
+          "support_mean": 2.488327845319175,
+          "query_mean": 2.1354193337684646,
+          "support_unique": 299,
+          "query_outside_support_range_fraction": 0.021739130434782608
+        },
+        {
+          "feature": "idw_vertical_gradient",
+          "support_mean": 0.09747556458865929,
+          "query_mean": 0.2625661060377563,
+          "support_unique": 312,
+          "query_outside_support_range_fraction": 0.027777777777777776
+        },
+        {
+          "feature": "idw_vertical_curvature",
+          "support_mean": -0.15916304315899427,
+          "query_mean": -0.3554981555195142,
+          "support_unique": 286,
+          "query_outside_support_range_fraction": 0.007575757575757576
+        }
+      ]
+    },
+    {
+      "fold_id": 0,
+      "site_id": "tauranga_farmers_building",
+      "seed": 17,
+      "budget_n": 5,
+      "revealed_cpts": 5,
+      "standard_support_rows": 120,
+      "query_rows": 144,
+      "standard_support_counts": [
+        4.0
+      ],
+      "standard_query_counts": [
+        5.0
+      ],
+      "honest_anchor_ids": [
+        "location_fa134ff7a2f0b3c1",
+        "location_b07bf282028bf75f",
+        "location_81260ca7690c7238"
+      ],
+      "honest_labelled_ids": [
+        "location_c011edd02b13052a",
+        "location_f0867c6d202b8441"
+      ],
+      "honest_context_counts": [
+        3.0
+      ],
+      "honest_query_counts": [
+        3.0
+      ],
+      "interpretation_limit": "Raw feature shift only; constant columns may be removed by preprocessing; no causal performance conclusion.",
+      "statistics": [
+        {
+          "feature": "depth_m",
+          "support_mean": 5.0,
+          "query_mean": 5.0,
+          "support_unique": 24,
+          "query_outside_support_range_fraction": 0.0
+        },
+        {
+          "feature": "neighbor_1_log_qc",
+          "support_mean": 0.6170976536841646,
+          "query_mean": 0.3008615009114999,
+          "support_unique": 71,
+          "query_outside_support_range_fraction": 0.0625
+        },
+        {
+          "feature": "neighbor_2_log_qc",
+          "support_mean": 0.3314881921390251,
+          "query_mean": 0.5210102442399613,
+          "support_unique": 72,
+          "query_outside_support_range_fraction": 0.0
+        },
+        {
+          "feature": "neighbor_3_log_qc",
+          "support_mean": 0.6163119743656144,
+          "query_mean": 0.4747696939453079,
+          "support_unique": 95,
+          "query_outside_support_range_fraction": 0.020833333333333332
+        },
+        {
+          "feature": "neighbor_1_log_distance",
+          "support_mean": 1.654582090822276,
+          "query_mean": 1.1935491521025858,
+          "support_unique": 4,
+          "query_outside_support_range_fraction": 1.0
+        },
+        {
+          "feature": "neighbor_2_log_distance",
+          "support_mean": 1.8872951460981073,
+          "query_mean": 1.5187311564522645,
+          "support_unique": 4,
+          "query_outside_support_range_fraction": 0.5
+        },
+        {
+          "feature": "neighbor_3_log_distance",
+          "support_mean": 1.9768194884421633,
+          "query_mean": 1.7222855747471906,
+          "support_unique": 4,
+          "query_outside_support_range_fraction": 0.8333333333333334
+        },
+        {
+          "feature": "neighbor_1_valid",
+          "support_mean": 1.0,
+          "query_mean": 1.0,
+          "support_unique": 1,
+          "query_outside_support_range_fraction": 0.0
+        },
+        {
+          "feature": "neighbor_2_valid",
+          "support_mean": 1.0,
+          "query_mean": 1.0,
+          "support_unique": 1,
+          "query_outside_support_range_fraction": 0.0
+        },
+        {
+          "feature": "neighbor_3_valid",
+          "support_mean": 1.0,
+          "query_mean": 1.0,
+          "support_unique": 1,
+          "query_outside_support_range_fraction": 0.0
+        },
+        {
+          "feature": "neighbor_mean_log_qc",
+          "support_mean": 0.48024341554792954,
+          "query_mean": 0.48024341554792954,
+          "support_unique": 120,
+          "query_outside_support_range_fraction": 0.0
+        },
+        {
+          "feature": "neighbor_std_log_qc",
+          "support_mean": 0.6194321277967016,
+          "query_mean": 0.6545563263220303,
+          "support_unique": 120,
+          "query_outside_support_range_fraction": 0.0
+        },
+        {
+          "feature": "neighbor_median_log_qc",
+          "support_mean": 0.4200203198767419,
+          "query_mean": 0.41216998286101103,
+          "support_unique": 72,
+          "query_outside_support_range_fraction": 0.0
+        },
+        {
+          "feature": "idw_log_qc",
+          "support_mean": 0.5523075242897567,
+          "query_mean": 0.3542725873219283,
+          "support_unique": 120,
+          "query_outside_support_range_fraction": 0.10416666666666667
+        },
+        {
+          "feature": "support_count",
+          "support_mean": 4.0,
+          "query_mean": 5.0,
+          "support_unique": 1,
+          "query_outside_support_range_fraction": 1.0
+        },
+        {
+          "feature": "log_geometry_scale",
+          "support_mean": 2.621850687797882,
+          "query_mean": 2.621850687797883,
+          "support_unique": 1,
+          "query_outside_support_range_fraction": 0.0
+        },
+        {
+          "feature": "kernel_10m_log_qc",
+          "support_mean": 0.5919018716898755,
+          "query_mean": 0.30495951467975935,
+          "support_unique": 120,
+          "query_outside_support_range_fraction": 0.06944444444444445
+        },
+        {
+          "feature": "kernel_50m_log_qc",
+          "support_mean": 0.5169860712233414,
+          "query_mean": 0.43531665229173866,
+          "support_unique": 120,
+          "query_outside_support_range_fraction": 0.027777777777777776
+        },
+        {
+          "feature": "kernel_10m_low_fraction",
+          "support_mean": 0.24834228990751947,
+          "query_mean": 0.36359051503774165,
+          "support_unique": 31,
+          "query_outside_support_range_fraction": 0.041666666666666664
+        },
+        {
+          "feature": "kernel_50m_low_fraction",
+          "support_mean": 0.2522661257213796,
+          "query_mean": 0.28891711162895306,
+          "support_unique": 31,
+          "query_outside_support_range_fraction": 0.034722222222222224
+        },
+        {
+          "feature": "idw_above_log_qc",
+          "support_mean": 0.5457118534190941,
+          "query_mean": 0.34054347365025256,
+          "support_unique": 115,
+          "query_outside_support_range_fraction": 0.10869565217391304
+        },
+        {
+          "feature": "idw_below_log_qc",
+          "support_mean": 0.568310935798287,
+          "query_mean": 0.3464275683306393,
+          "support_unique": 115,
+          "query_outside_support_range_fraction": 0.12318840579710146
+        },
+        {
+          "feature": "idw_vertical_gradient",
+          "support_mean": 0.09161240213422157,
+          "query_mean": 0.026829379292863893,
+          "support_unique": 120,
+          "query_outside_support_range_fraction": 0.05555555555555555
+        },
+        {
+          "feature": "idw_vertical_curvature",
+          "support_mean": -0.20813750818306148,
+          "query_mean": -0.12426567299862176,
+          "support_unique": 110,
+          "query_outside_support_range_fraction": 0.030303030303030304
+        }
+      ]
+    },
+    {
+      "fold_id": 0,
+      "site_id": "tauranga_farmers_building",
+      "seed": 17,
+      "budget_n": 9,
+      "revealed_cpts": 9,
+      "standard_support_rows": 216,
+      "query_rows": 144,
+      "standard_support_counts": [
+        8.0
+      ],
+      "standard_query_counts": [
+        9.0
+      ],
+      "honest_anchor_ids": [
+        "location_fa134ff7a2f0b3c1",
+        "location_c011edd02b13052a",
+        "location_f0867c6d202b8441",
+        "location_b07bf282028bf75f",
+        "location_f002049cde7f3ed8",
+        "location_4bc7a71d44e8f381"
+      ],
+      "honest_labelled_ids": [
+        "location_81260ca7690c7238",
+        "location_c58e7b85035324e7",
+        "location_b2f78bf09b6f119c"
+      ],
+      "honest_context_counts": [
+        6.0
+      ],
+      "honest_query_counts": [
+        6.0
+      ],
+      "interpretation_limit": "Raw feature shift only; constant columns may be removed by preprocessing; no causal performance conclusion.",
+      "statistics": [
+        {
+          "feature": "depth_m",
+          "support_mean": 5.0,
+          "query_mean": 5.0,
+          "support_unique": 24,
+          "query_outside_support_range_fraction": 0.0
+        },
+        {
+          "feature": "neighbor_1_log_qc",
+          "support_mean": 0.6396940222559988,
+          "query_mean": 0.514232993944407,
+          "support_unique": 119,
+          "query_outside_support_range_fraction": 0.034722222222222224
+        },
+        {
+          "feature": "neighbor_2_log_qc",
+          "support_mean": 0.5773255352068682,
+          "query_mean": 0.3757403726301225,
+          "support_unique": 119,
+          "query_outside_support_range_fraction": 0.020833333333333332
+        },
+        {
+          "feature": "neighbor_3_log_qc",
+          "support_mean": 0.6337191721985649,
+          "query_mean": 0.49658223302231963,
+          "support_unique": 143,
+          "query_outside_support_range_fraction": 0.006944444444444444
+        },
+        {
+          "feature": "neighbor_1_log_distance",
+          "support_mean": 1.199148643733046,
+          "query_mean": 1.011596800687049,
+          "support_unique": 7,
+          "query_outside_support_range_fraction": 0.5
+        },
+        {
+          "feature": "neighbor_2_log_distance",
+          "support_mean": 1.3682864071016168,
+          "query_mean": 1.2062494614816768,
+          "support_unique": 8,
+          "query_outside_support_range_fraction": 0.3333333333333333
+        },
+        {
+          "feature": "neighbor_3_log_distance",
+          "support_mean": 1.514475935656824,
+          "query_mean": 1.2939275762739375,
+          "support_unique": 8,
+          "query_outside_support_range_fraction": 0.3333333333333333
+        },
+        {
+          "feature": "neighbor_1_valid",
+          "support_mean": 1.0,
+          "query_mean": 1.0,
+          "support_unique": 1,
+          "query_outside_support_range_fraction": 0.0
+        },
+        {
+          "feature": "neighbor_2_valid",
+          "support_mean": 1.0,
+          "query_mean": 1.0,
+          "support_unique": 1,
+          "query_outside_support_range_fraction": 0.0
+        },
+        {
+          "feature": "neighbor_3_valid",
+          "support_mean": 1.0,
+          "query_mean": 1.0,
+          "support_unique": 1,
+          "query_outside_support_range_fraction": 0.0
+        },
+        {
+          "feature": "neighbor_mean_log_qc",
+          "support_mean": 0.5440245725276858,
+          "query_mean": 0.5440245725276858,
+          "support_unique": 216,
+          "query_outside_support_range_fraction": 0.0
+        },
+        {
+          "feature": "neighbor_std_log_qc",
+          "support_mean": 0.6238553259926888,
+          "query_mean": 0.6313458447698228,
+          "support_unique": 216,
+          "query_outside_support_range_fraction": 0.0
+        },
+        {
+          "feature": "neighbor_median_log_qc",
+          "support_mean": 0.5269516459826906,
+          "query_mean": 0.5137043494180248,
+          "support_unique": 72,
+          "query_outside_support_range_fraction": 0.0
+        },
+        {
+          "feature": "idw_log_qc",
+          "support_mean": 0.623385073279684,
+          "query_mean": 0.47112632368638824,
+          "support_unique": 216,
+          "query_outside_support_range_fraction": 0.020833333333333332
+        },
+        {
+          "feature": "support_count",
+          "support_mean": 8.0,
+          "query_mean": 9.0,
+          "support_unique": 1,
+          "query_outside_support_range_fraction": 1.0
+        },
+        {
+          "feature": "log_geometry_scale",
+          "support_mean": 2.621850687797882,
+          "query_mean": 2.621850687797883,
+          "support_unique": 1,
+          "query_outside_support_range_fraction": 0.0
+        },
+        {
+          "feature": "kernel_10m_log_qc",
+          "support_mean": 0.6175585049844868,
+          "query_mean": 0.48726885749230253,
+          "support_unique": 216,
+          "query_outside_support_range_fraction": 0.020833333333333332
+        },
+        {
+          "feature": "kernel_50m_log_qc",
+          "support_mean": 0.570371398846123,
+          "query_mean": 0.5298146536718181,
+          "support_unique": 216,
+          "query_outside_support_range_fraction": 0.006944444444444444
+        },
+        {
+          "feature": "kernel_10m_low_fraction",
+          "support_mean": 0.15872529154780426,
+          "query_mean": 0.22424705472735862,
+          "support_unique": 146,
+          "query_outside_support_range_fraction": 0.006944444444444444
+        },
+        {
+          "feature": "kernel_50m_low_fraction",
+          "support_mean": 0.18609392139053293,
+          "query_mean": 0.20597400251471307,
+          "support_unique": 146,
+          "query_outside_support_range_fraction": 0.0
+        },
+        {
+          "feature": "idw_above_log_qc",
+          "support_mean": 0.628660982061586,
+          "query_mean": 0.47043942526617616,
+          "support_unique": 207,
+          "query_outside_support_range_fraction": 0.021739130434782608
+        },
+        {
+          "feature": "idw_below_log_qc",
+          "support_mean": 0.641106618713821,
+          "query_mean": 0.4703662876221963,
+          "support_unique": 207,
+          "query_outside_support_range_fraction": 0.021739130434782608
+        },
+        {
+          "feature": "idw_vertical_gradient",
+          "support_mean": 0.022961983166298144,
+          "query_mean": -0.03180358612269866,
+          "support_unique": 216,
+          "query_outside_support_range_fraction": 0.0
+        },
+        {
+          "feature": "idw_vertical_curvature",
+          "support_mean": -0.17380008181561868,
+          "query_mean": -0.05191322923381656,
+          "support_unique": 198,
+          "query_outside_support_range_fraction": 0.007575757575757576
+        }
+      ]
+    },
+    {
+      "fold_id": 0,
+      "site_id": "tauranga_farmers_building",
+      "seed": 17,
+      "budget_n": 13,
+      "revealed_cpts": 13,
+      "standard_support_rows": 312,
+      "query_rows": 144,
+      "standard_support_counts": [
+        12.0
+      ],
+      "standard_query_counts": [
+        13.0
+      ],
+      "honest_anchor_ids": [
+        "location_fa134ff7a2f0b3c1",
+        "location_c011edd02b13052a",
+        "location_f0867c6d202b8441",
+        "location_b07bf282028bf75f",
+        "location_81260ca7690c7238",
+        "location_f002049cde7f3ed8",
+        "location_4bc7a71d44e8f381",
+        "location_c58e7b85035324e7"
+      ],
+      "honest_labelled_ids": [
+        "location_b2f78bf09b6f119c",
+        "location_8b0d80b31006dba2",
+        "location_06a64a56c069a5ea",
+        "location_1b5e6eced4b36e5e",
+        "location_147d4ea4032e6c20"
+      ],
+      "honest_context_counts": [
+        8.0
+      ],
+      "honest_query_counts": [
+        8.0
+      ],
+      "interpretation_limit": "Raw feature shift only; constant columns may be removed by preprocessing; no causal performance conclusion.",
+      "statistics": [
+        {
+          "feature": "depth_m",
+          "support_mean": 5.0,
+          "query_mean": 5.0,
+          "support_unique": 24,
+          "query_outside_support_range_fraction": 0.0
+        },
+        {
+          "feature": "neighbor_1_log_qc",
+          "support_mean": 0.7073542588573831,
+          "query_mean": 0.546664518463251,
+          "support_unique": 192,
+          "query_outside_support_range_fraction": 0.006944444444444444
+        },
+        {
+          "feature": "neighbor_2_log_qc",
+          "support_mean": 0.6350101264234687,
+          "query_mean": 0.5204660672076802,
+          "support_unique": 239,
+          "query_outside_support_range_fraction": 0.006944444444444444
+        },
+        {
+          "feature": "neighbor_3_log_qc",
+          "support_mean": 0.6577530167853434,
+          "query_mean": 0.4376938538203665,
+          "support_unique": 167,
+          "query_outside_support_range_fraction": 0.04861111111111111
+        },
+        {
+          "feature": "neighbor_1_log_distance",
+          "support_mean": 0.9943186047400214,
+          "query_mean": 0.9321116541890733,
+          "support_unique": 10,
+          "query_outside_support_range_fraction": 0.16666666666666666
+        },
+        {
+          "feature": "neighbor_2_log_distance",
+          "support_mean": 1.1373047234601699,
+          "query_mean": 1.1187060545670677,
+          "support_unique": 12,
+          "query_outside_support_range_fraction": 0.0
+        },
+        {
+          "feature": "neighbor_3_log_distance",
+          "support_mean": 1.2976731851533374,
+          "query_mean": 1.2497710419503,
+          "support_unique": 11,
+          "query_outside_support_range_fraction": 0.16666666666666666
+        },
+        {
+          "feature": "neighbor_1_valid",
+          "support_mean": 1.0,
+          "query_mean": 1.0,
+          "support_unique": 1,
+          "query_outside_support_range_fraction": 0.0
+        },
+        {
+          "feature": "neighbor_2_valid",
+          "support_mean": 1.0,
+          "query_mean": 1.0,
+          "support_unique": 1,
+          "query_outside_support_range_fraction": 0.0
+        },
+        {
+          "feature": "neighbor_3_valid",
+          "support_mean": 1.0,
+          "query_mean": 1.0,
+          "support_unique": 1,
+          "query_outside_support_range_fraction": 0.0
+        },
+        {
+          "feature": "neighbor_mean_log_qc",
+          "support_mean": 0.6126723378177846,
+          "query_mean": 0.6126723378177847,
+          "support_unique": 312,
+          "query_outside_support_range_fraction": 0.0
+        },
+        {
+          "feature": "neighbor_std_log_qc",
+          "support_mean": 0.6354977024291426,
+          "query_mean": 0.6389919424722297,
+          "support_unique": 312,
+          "query_outside_support_range_fraction": 0.0
+        },
+        {
+          "feature": "neighbor_median_log_qc",
+          "support_mean": 0.5664510328256557,
+          "query_mean": 0.5594876443365489,
+          "support_unique": 72,
+          "query_outside_support_range_fraction": 0.0
+        },
+        {
+          "feature": "idw_log_qc",
+          "support_mean": 0.6814929394955126,
+          "query_mean": 0.5234149821518724,
+          "support_unique": 312,
+          "query_outside_support_range_fraction": 0.006944444444444444
+        },
+        {
+          "feature": "support_count",
+          "support_mean": 12.0,
+          "query_mean": 13.0,
+          "support_unique": 1,
+          "query_outside_support_range_fraction": 1.0
+        },
+        {
+          "feature": "log_geometry_scale",
+          "support_mean": 2.6218506877978824,
+          "query_mean": 2.621850687797883,
+          "support_unique": 1,
+          "query_outside_support_range_fraction": 0.0
+        },
+        {
+          "feature": "kernel_10m_log_qc",
+          "support_mean": 0.6739025676415601,
+          "query_mean": 0.538976250526015,
+          "support_unique": 312,
+          "query_outside_support_range_fraction": 0.027777777777777776
+        },
+        {
+          "feature": "kernel_50m_log_qc",
+          "support_mean": 0.6375096867684513,
+          "query_mean": 0.5968592520118668,
+          "support_unique": 312,
+          "query_outside_support_range_fraction": 0.0
+        },
+        {
+          "feature": "kernel_10m_low_fraction",
+          "support_mean": 0.14224571996879518,
+          "query_mean": 0.20458567575808914,
+          "support_unique": 256,
+          "query_outside_support_range_fraction": 0.0
+        },
+        {
+          "feature": "kernel_50m_low_fraction",
+          "support_mean": 0.16212532821601386,
+          "query_mean": 0.18035614817984952,
+          "support_unique": 256,
+          "query_outside_support_range_fraction": 0.0
+        },
+        {
+          "feature": "idw_above_log_qc",
+          "support_mean": 0.6926120685849201,
+          "query_mean": 0.5264250453708892,
+          "support_unique": 299,
+          "query_outside_support_range_fraction": 0.007246376811594203
+        },
+        {
+          "feature": "idw_below_log_qc",
+          "support_mean": 0.6976226829381402,
+          "query_mean": 0.5243212989541467,
+          "support_unique": 299,
+          "query_outside_support_range_fraction": 0.007246376811594203
+        },
+        {
+          "feature": "idw_vertical_gradient",
+          "support_mean": -0.0005095663525290314,
+          "query_mean": -0.034426735980648555,
+          "support_unique": 312,
+          "query_outside_support_range_fraction": 0.006944444444444444
+        },
+        {
+          "feature": "idw_vertical_curvature",
+          "support_mean": -0.11057928639043957,
+          "query_mean": -0.06418995166104159,
+          "support_unique": 286,
+          "query_outside_support_range_fraction": 0.0
+        }
+      ]
+    }
+  ]
+}

@@ -6,9 +6,9 @@ from pathlib import Path
 import time
 import pandas as pd
 from cpt_budget.config import write_json
-from cpt_budget.types import PredictionBundle
+from cpt_budget.types import PredictionBundle, load_dataset
 from .common import (OUTPUT_ROOT, diagnostic_config, iter_validation_states,
-                     evaluated_frame, metrics_for, run_predictor)
+                     evaluated_frame, metrics_for, run_predictor, source_folds, SOURCE_RUN)
 
 
 def residual(config):
@@ -56,6 +56,25 @@ def context(config, mode):
     return run_predictor(factory, OUTPUT_ROOT / 'context_adaptation' / mode / 'validation', config=config)
 
 
+def prepare_contexts(config):
+    from .context_adapter import build_source_context_bank
+    dataset = load_dataset(config)
+    episodes = pd.read_parquet(SOURCE_RUN / 'inputs/episodes.parquet')
+    for fold in source_folds():
+        fid = fold['fold_id']
+        train = episodes[episodes.fold_id.eq(fid) & episodes.role.eq('train')]
+        bank = build_source_context_bank(dataset, train, fold_id=fid, source_sites=fold['train_sites'])
+        bank.save(OUTPUT_ROOT / 'context_adaptation' / f'fold_{fid}')
+        print(f'Source context bank prepared: fold {fid}', flush=True)
+
+
+def xgb_validation(config):
+    from .xgb24 import XGB24Predictor
+    def factory(fid):
+        return XGB24Predictor(config, OUTPUT_ROOT / 'xgb24' / f'fold_{fid}' / 'xgb24_training.json')
+    return run_predictor(factory, OUTPUT_ROOT / 'xgb24/validation', config=config)
+
+
 def point_guarded(config):
     """Reconstruct registered point-only variants from cached native medians."""
     from .residual_adapter import guarded_residual_frame
@@ -84,13 +103,18 @@ def point_guarded(config):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('candidate', choices=['residual', 'source_bank', 'honest', 'point_guarded'])
+    parser.add_argument('candidate', choices=['residual', 'source_bank', 'honest', 'point_guarded',
+                                             'prepare_contexts', 'xgb_validation'])
     args = parser.parse_args()
     config = diagnostic_config()
     if args.candidate == 'residual':
         residual(config)
     elif args.candidate == 'point_guarded':
         point_guarded(config)
+    elif args.candidate == 'prepare_contexts':
+        prepare_contexts(config)
+    elif args.candidate == 'xgb_validation':
+        xgb_validation(config)
     else:
         context(config, args.candidate)
 

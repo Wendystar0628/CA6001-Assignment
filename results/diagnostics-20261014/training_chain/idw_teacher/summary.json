@@ -1,0 +1,30 @@
+{
+  "probe": "idw_teacher",
+  "initial": {
+    "step": 0,
+    "crps_plus_mse_eval": 1.0377947092056274,
+    "official_inference_goal_log_mae": 0.3051516104043945,
+    "official_inference_truth_log_mae": 0.35566913693675944,
+    "official_inference_goal_log_rmse": 0.433939359419753,
+    "native_truth_brier": 3.3492683138651314e-07
+  },
+  "final": {
+    "step": 200,
+    "crps_plus_mse_eval": 0.0010812951950356364,
+    "official_inference_goal_log_mae": 0.0005559460202406603,
+    "official_inference_truth_log_mae": 0.33800062744533804,
+    "official_inference_goal_log_rmse": 0.0007423732304132013,
+    "native_truth_brier": 1.4711203143655698e-25
+  },
+  "optimizer_updates": 200,
+  "parameters": 11081864,
+  "all_parameter_delta_l2": 0.9021655515780931,
+  "relative_parameter_delta_l2": 0.0014791075682843537,
+  "amp_overflow_count": 0,
+  "amp_fp32_fallbacks": 0,
+  "save_reload_max_absolute_difference": 0.0,
+  "save_reload_allclose_atol_1e_6": true,
+  "checkpoint": "E:\\Study\\Msc_AAI\\CA6001-AI ALGORITHMS FUNDAMENTALS & APPLICATION\\Project\\runs\\diagnostics-20261014\\training_chain\\idw_teacher\\diagnostic_only.ckpt",
+  "elapsed_seconds": 43.43862269999954,
+  "generalization_claim": false
+}

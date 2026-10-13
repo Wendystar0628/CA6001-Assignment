@@ -4,6 +4,10 @@
 
 设计依据：[项目实现蓝图](CA6001_CPT_项目实现蓝图.md) · [研究设计](CA6001_CPT_高分项目设计.md) · [模块接口共识](docs/IMPLEMENTATION_CONTRACT.md)。
 
+## v0.3 诊断结果
+
+已并行完成训练链路、IDW教师、残差与上下文适配、独立24特征XGBoost诊断。TabPFN可近乎精确拟合固定训练目标；最好的点保护残差适配较IDW降低约1.81%平均误差，但校准风险误报率上升，新增候选均未通过综合门槛。[完整结果与复现](results/diagnostics-20261014/README.md) · [预登记协议及追加记录](docs/V3_DIAGNOSTIC_PROTOCOL.md)。分支`feat/v0.3-diagnostics`，标签`v0.3-diagnostics`。
+
 ## v0.2 入口
 
 v0.2已在 `feat/v0.2-risk-aware` 分支实现，使用独立的 `python -m cpt_budget.v2` 命令、`configs/v2.yaml` 和 `runs/v2/`。新增有效物理尺度与垂向特征、任务微调、有护栏的IDW残差、按组留一的风险校准，以及整根CPT的ALC/SUR选址。候选须通过完整源验证门槛才扩大第二轮测试。

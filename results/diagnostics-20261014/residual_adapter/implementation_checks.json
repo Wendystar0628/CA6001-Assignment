@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-14",
+  "component": "BaselineResidualTabPFNPredictor",
+  "source": "src/cpt_budget/diagnostics/residual_adapter.py",
+  "tests": "tests/test_diagnostics_residual_adapter.py",
+  "test_result": {"passed": 8, "duration_seconds": 7.61},
+  "gpu_started": false,
+  "real_tabpfn_inference_started": false,
+  "registered_alphas": [0.0, 0.25, 0.5, 1.0],
+  "context_target": "ln(qc_mpa) minus whole-location-and-coincident-location-out IDW",
+  "query_reconstruction": "Y = revealed_IDW + alpha * native_residual_distribution",
+  "physical_cdf": "F_Y(log threshold) = F_R((log threshold - revealed_IDW) / alpha)",
+  "alpha_zero_semantics": "IDW point prediction only; no native uncertainty columns",
+  "calibration_claim": false,
+  "checks": [
+    "all depths and coincident CPTs excluded from own context reference and features",
+    "no independent neighbor is rejected rather than converted to zero residual",
+    "native quantiles and CDF reconstructed at alpha 0.25, 0.5 and 1.0",
+    "alpha zero exactly matches IDW without loading the neural model",
+    "query truth mutations cannot change predictions or features",
+    "all affine variants reuse one native forward per whole-profile batch",
+    "query row order preserved",
+    "unregistered baseline and alpha rejected"
+  ]
+}

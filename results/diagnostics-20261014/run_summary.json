@@ -1,0 +1,46 @@
+{
+  "date": "2026-10-14",
+  "scope": "exploratory_validation_diagnostics",
+  "new_candidate_ids_including_alpha_zero_control": [
+    "xgb24",
+    "tabpfn_residual_a000",
+    "tabpfn_residual_a025",
+    "tabpfn_residual_a050",
+    "tabpfn_residual_a100",
+    "tabpfn_source_context",
+    "tabpfn_honest_context",
+    "tabpfn_guarded_a025",
+    "tabpfn_guarded_a050"
+  ],
+  "registered_reference_models": 6,
+  "all_model_ids": 15,
+  "states_per_model": 60,
+  "depth_rows_per_model": 8640,
+  "validation_seeds": [
+    17,
+    29
+  ],
+  "budgets": [
+    5,
+    7,
+    9,
+    11,
+    13
+  ],
+  "distinct_validation_sites": 4,
+  "diagnostic_training_updates": 400,
+  "new_targeted_tests_passed": 18,
+  "new_targeted_tests_failed": 0,
+  "new_candidates_promoted": 0,
+  "outer_test_executed": false,
+  "existing_v2_selection_replaced": false,
+  "best_point_adaptation": {
+    "model_id": "tabpfn_guarded_a025",
+    "log_mae": 0.6270079511549347,
+    "relative_reduction_vs_idw": 0.018130382094561748,
+    "relative_reduction_vs_fold_strong_reference": 0.004362810495143199,
+    "passed_comprehensive_gate": false,
+    "limitation": "Risk FPR increased after the common held-group-out calibration; the original point labels are preserved."
+  },
+  "independent_read_only_check": "Matched all state/cell keys, same site weighting, exact alpha=0 recovery, point-vs-risk distinction and held-group-out calibration boundaries."
+}

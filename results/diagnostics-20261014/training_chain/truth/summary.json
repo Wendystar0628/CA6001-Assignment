@@ -1,0 +1,30 @@
+{
+  "probe": "truth",
+  "initial": {
+    "step": 0,
+    "crps_plus_mse_eval": 1.3670811653137207,
+    "official_inference_goal_log_mae": 0.35566913693675944,
+    "official_inference_truth_log_mae": 0.35566913693675944,
+    "official_inference_goal_log_rmse": 0.5155894406776848,
+    "native_truth_brier": 3.3492683138651314e-07
+  },
+  "final": {
+    "step": 200,
+    "crps_plus_mse_eval": 0.004768408834934235,
+    "official_inference_goal_log_mae": 0.00275162326261427,
+    "official_inference_truth_log_mae": 0.00275162326261427,
+    "official_inference_goal_log_rmse": 0.007253466107995765,
+    "native_truth_brier": 3.3704900510432297e-16
+  },
+  "optimizer_updates": 200,
+  "parameters": 11081864,
+  "all_parameter_delta_l2": 1.0336984629577486,
+  "relative_parameter_delta_l2": 0.0016947568184245403,
+  "amp_overflow_count": 0,
+  "amp_fp32_fallbacks": 0,
+  "save_reload_max_absolute_difference": 0.0,
+  "save_reload_allclose_atol_1e_6": true,
+  "checkpoint": "E:\\Study\\Msc_AAI\\CA6001-AI ALGORITHMS FUNDAMENTALS & APPLICATION\\Project\\runs\\diagnostics-20261014\\training_chain\\truth\\diagnostic_only.ckpt",
+  "elapsed_seconds": 49.649683199997526,
+  "generalization_claim": false
+}
