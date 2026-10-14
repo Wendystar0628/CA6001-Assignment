@@ -1,0 +1,26 @@
+{
+  "aggregation": "Budget trapezoid mean, then seed mean, repeated-fold mean within each site, then equal unique-site mean.",
+  "scope": "Exploratory validation only; all 60 frozen states per model.",
+  "models": [
+    {
+      "model_id": "target_constant_median",
+      "registered_states": 60,
+      "unique_sites": 4,
+      "log_mae": 0.8891893571450752,
+      "h_point_mae_m": 0.9661458333333334,
+      "recall": 0.0,
+      "false_positive_rate": 0.0,
+      "sites_better_log_mae_than_idw": 1
+    },
+    {
+      "model_id": "target_depth_median",
+      "registered_states": 60,
+      "unique_sites": 4,
+      "log_mae": 0.7758187669420378,
+      "h_point_mae_m": 0.8193359375,
+      "recall": 0.20515692755467574,
+      "false_positive_rate": 0.034680020389300424,
+      "sites_better_log_mae_than_idw": 1
+    }
+  ]
+}

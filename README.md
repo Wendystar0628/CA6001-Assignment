@@ -4,6 +4,10 @@
 
 设计依据：[项目实现蓝图](CA6001_CPT_项目实现蓝图.md) · [研究设计](CA6001_CPT_高分项目设计.md) · [模块接口共识](docs/IMPLEMENTATION_CONTRACT.md)。
 
+## v0.5 新方向探索
+
+已并行实现并实验功能型剖面、图调和／Huber重建、单调剖面配准、条件神经过程，并加入常数／深度中位数低信息基线。九个新候选各完成60状态，保留原23个强参照／候选。图Huber误差较IDW改善约2.03%，形状配准厚度误差改善约5.58%，但新增方法均未通过完整综合门槛；常数弱参照误差比IDW高约39.24%。[完整研究与实测结果](results/v5-exploration-20261014/README.md) · [实验协议](docs/V5_NEW_DIRECTIONS_PROTOCOL.md)。标签`v0.5-exploration`，代码直接位于main。
+
 ## v0.4 主线实现
 
 已将既有v0.2/v0.3合入`main`，后续直接在主线上提交。新增与真实补勘轨迹对齐的源训练情景、IDW剩余误差的TabPFN梯度微调、逐查询物理事件损失，以及与同alpha未微调残差的公平比较。运行入口为`python -m cpt_budget.v4`，详见[运行说明](docs/V4_RUN_GUIDE.md)和[训练协议](docs/V4_RESIDUAL_TRAINING_PROTOCOL.md)。完整训练与回放的最终效果以归档结果为准。

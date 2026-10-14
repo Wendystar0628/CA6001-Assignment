@@ -1,0 +1,9 @@
+model_id,site_id,horizontal_edges,horizontal_scale_m,product_graph_nodes,product_graph_edges
+graph_harmonic,lower_hutt_town_hall,68,14.033376133946495,696,2299
+graph_harmonic,tauranga_farmers_building,69,18.172182037049026,672,2300
+graph_harmonic,christchurch_metro_sports_facility,93,6.006138526561724,936,3129
+graph_harmonic,marshland,45,26.191290537065118,480,1540
+graph_huber,lower_hutt_town_hall,68,14.033376133946495,696,2299
+graph_huber,tauranga_farmers_building,69,18.172182037049026,672,2300
+graph_huber,christchurch_metro_sports_facility,93,6.006138526561724,936,3129
+graph_huber,marshland,45,26.191290537065118,480,1540

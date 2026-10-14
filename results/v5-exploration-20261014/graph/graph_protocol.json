@@ -1,0 +1,23 @@
+{
+  "parameters": {
+    "neighbors": 4,
+    "vertical_weight": 0.15,
+    "huber_delta": 0.35,
+    "max_iterations": 40,
+    "tolerance": 1e-07,
+    "minimum_edge_weight": 1e-08
+  },
+  "sources": [
+    "https://mlg.eng.cam.ac.uk/zoubin/ssl.html",
+    "https://arxiv.org/abs/1901.09838",
+    "https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.linalg.spsolve.html"
+  ],
+  "candidates": [
+    "graph_harmonic",
+    "graph_huber"
+  ],
+  "selection": "Fixed before validation; no graph/penalty search",
+  "geometry_scope": "All usable planned positions in validation sites, through query() only",
+  "novelty": "Global graph-boundary reconstruction with adjacent-depth edges",
+  "limits": "Geometry alone cannot reveal hidden geological interfaces; no native probability."
+}

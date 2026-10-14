@@ -1,0 +1,11 @@
+{
+  "status_counts_query_profiles": {
+    "registered": 360
+  },
+  "max_support_shift_m": 0.5,
+  "mean_max_support_shift_m": 0.484375,
+  "mean_query_shift_m": 0.2421885675735363,
+  "numerical_failures": 0,
+  "failure_policy": "hard error; no exception-driven fallback",
+  "zero_deformation_policy": "identity warp exactly reduces to same-depth 3-neighbor IDW"
+}
