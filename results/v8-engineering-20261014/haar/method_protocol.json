@@ -1,0 +1,28 @@
+{
+  "family": "engineered_haar_count",
+  "variants": [
+    "equivalent",
+    "loo_bias",
+    "loo_blend",
+    "loo_localblend"
+  ],
+  "equivalent_reference": "v7_hcount_simplex_median_a100_gp",
+  "optimized": [
+    "cached orthonormal Haar matrix and coefficient sort",
+    "multi-output Cholesky solve",
+    "cached Delaunay and hull with batched barycentric/edge projection",
+    "batched stable count projection"
+  ],
+  "quality_variants": {
+    "loo_bias": "local 5-neighbour signed leave-group-out count bias; n/(n+4) shrinkage; +/-4-cell cap",
+    "loo_blend": "global support leave-group-out squared-error convex count blend; ridge 1 towards Haar",
+    "loo_localblend": "local 5-neighbour support leave-group-out squared-error convex count blend; ridge 1 towards Haar"
+  },
+  "truth_boundary": "only current revealed complete profiles; entire near_group held out for adaptation",
+  "query_truth_used": false,
+  "source_training": false,
+  "point_threshold": "log qc < 0",
+  "step_m": 0.25,
+  "risk_output": "independent frozen v6_empirical_graph_union_local native event head; not point-model CDF",
+  "all_options_before_scores": true
+}

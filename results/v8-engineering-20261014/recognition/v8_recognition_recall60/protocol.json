@@ -1,0 +1,41 @@
+{
+  "model_id": "v8_recognition_recall60",
+  "scope": "exploratory_validation_only",
+  "states": 60,
+  "rows": 8640,
+  "native_event_probability": true,
+  "source": "E:\\Study\\Msc_AAI\\CA6001-AI ALGORITHMS FUNDAMENTALS & APPLICATION\\Project\\runs\\v7-discovery-20261014\\final_extended",
+  "family": "recognition_engineering",
+  "models": {
+    "v8_recognition_fast": "exact",
+    "v8_recognition_localize": "localize",
+    "v8_recognition_amplitude": "amplitude",
+    "v8_recognition_recall60": "recall60"
+  },
+  "reference_point": "v7_joint_stack_analog_hmedian",
+  "reference_risk": "v6_empirical_graph_union_local",
+  "base": "support_stack_structural",
+  "mixture": "analog complete curves with shrinkage .5",
+  "depth_kernel": [
+    0.25,
+    0.5,
+    0.25
+  ],
+  "max_local_weight": 0.35,
+  "reliability": "Nonnegative per-depth Brier skill from support whole-near-group LOO against group-balanced depth climatology, smoothed one cell each direction",
+  "projection_weight": 0.5,
+  "crossing_projection": "Changed labels only, support same-class weighted median within depth +/-1 cell; preserves chosen class/count",
+  "count_quantiles": {
+    "exact": 0.5,
+    "localize": 0.5,
+    "amplitude": 0.5,
+    "recall60": 0.6
+  },
+  "risk_head": "Same existing native empirical-graph probability for all variants; separate task head, not the refined point CDF",
+  "parameter_freeze": "Three variants and numeric constants communicated to root before scoring",
+  "leakage_boundary": "No query labels, no site-specific exception, no calibration labels for point fit",
+  "independent_test": false,
+  "exploratory_reused_validation": true,
+  "benchmark_scope": "Condition and point-decision operator only; amplitude-base inference and separate risk head excluded",
+  "variant": "recall60"
+}

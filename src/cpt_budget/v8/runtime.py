@@ -130,3 +130,54 @@ def benchmark_specs():
             BenchmarkSpec('balanced_point_new',balanced_point_new_factory,'complete_point_path_with_internal_joint_probability','balanced_point','new'),
             BenchmarkSpec('balanced_full_old',balanced_full_old_factory,'complete_point_plus_native_empirical_risk_path','balanced_full','old','cuda'),
             BenchmarkSpec('balanced_full_new',balanced_full_new_factory,'complete_point_plus_native_empirical_risk_path','balanced_full','new','cuda')]
+
+class RecognitionPointPipeline:
+    """Compute the real structural-stack base before the analog decision."""
+    def __init__(self,fold_id,optimized,variant='exact'):
+        from . import structural,recognition
+        self.base=(structural.new_factory if optimized else structural.old_factory)(fold_id)
+        self.operator=recognition.FastRecognition(variant) if optimized else recognition.ReferenceRecognition()
+        self.optimized=optimized
+        self.model_id='v8_live_recognition_point'
+
+    def condition(self,observed):
+        self.base.condition(observed)
+        self.operator.condition(observed)
+
+    def predict(self,query):
+        query=query[[c for c in QUERY_COLUMNS if c in query]].copy()
+        if self.optimized:
+            values=self.base.engine.query(query)[:,:4]@self.base.weights
+        else:
+            from cpt_budget.v6.adaptive import member_predictions
+            values=member_predictions(self.base.observed,query,self.base.basis)@self.base.weights
+        result=self.operator.predict(query,values)
+        frame=point_prediction_frame(query,result['point']);frame['p_low_1']=result['probability']
+        return PredictionBundle(frame,self.model_id)
+
+class FamilyFullPipeline(BalancedPipeline):
+    def __init__(self,fold_id,optimized,family,variant='exact'):
+        if family=='haar':
+            from .haar import make_predictor
+            self.point=make_predictor(optimized=optimized)
+        elif family=='recognition':
+            self.point=RecognitionPointPipeline(fold_id,optimized,variant)
+        elif family=='balanced':
+            self.point=joint.LiveJointPredictor(fold_id,implementation='fast' if optimized else 'reference',policy=variant)
+        else:
+            raise ValueError('Unknown complete family')
+        self.risk=EmpiricalRiskPipeline(fold_id,optimized)
+        self.model_id=f'v8_live_{family}_full'
+        self.stage_timings={}
+
+def family_benchmark_specs():
+    from .benchmark import BenchmarkSpec
+    specs=[BenchmarkSpec(f'{family}_full_{version}',
+                lambda fid,family=family,fast=fast:FamilyFullPipeline(fid,fast,family),
+                f'complete_{family}_point_plus_native_empirical_risk_path',family+'_full',version,'cuda')
+            for family in ('haar','recognition') for version,fast in [('old',False),('new',True)]]
+    specs.extend(BenchmarkSpec(f'{family}_{variant}_full',
+        lambda fid,family=family,variant=variant:FamilyFullPipeline(fid,True,family,variant),
+        f'complete_{family}_quality_variant_plus_native_empirical_risk_path',device='cuda',version='quality_variant')
+        for family,variant in [('recognition','localize'),('recognition','recall60'),('balanced','count_shrink')])
+    return specs

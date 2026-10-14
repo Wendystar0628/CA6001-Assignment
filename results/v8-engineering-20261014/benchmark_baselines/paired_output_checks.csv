@@ -1,0 +1,13 @@
+pair_id,state_key,field,values,max_abs_difference,absolute_tolerance,equivalent,versions
+idw_optimized,f0_lower_hutt_town_hall_s17_n5,pred_log_qc,144,0.0,1e-12,True,old/new
+idw_optimized,f0_lower_hutt_town_hall_s17_n13,pred_log_qc,144,0.0,1e-12,True,old/new
+idw_optimized,f0_tauranga_farmers_building_s17_n5,pred_log_qc,144,0.0,1e-12,True,old/new
+idw_optimized,f0_tauranga_farmers_building_s17_n13,pred_log_qc,144,0.0,1e-12,True,old/new
+idw_optimized,f1_lower_hutt_town_hall_s17_n5,pred_log_qc,144,0.0,1e-12,True,old/new
+idw_optimized,f1_lower_hutt_town_hall_s17_n13,pred_log_qc,144,0.0,1e-12,True,old/new
+idw_optimized,f1_tauranga_farmers_building_s17_n5,pred_log_qc,144,0.0,1e-12,True,old/new
+idw_optimized,f1_tauranga_farmers_building_s17_n13,pred_log_qc,144,0.0,1e-12,True,old/new
+idw_optimized,f2_christchurch_metro_sports_facility_s17_n5,pred_log_qc,192,0.0,1e-12,True,old/new
+idw_optimized,f2_christchurch_metro_sports_facility_s17_n13,pred_log_qc,192,0.0,1e-12,True,old/new
+idw_optimized,f2_marshland_s17_n5,pred_log_qc,96,0.0,1e-12,True,old/new
+idw_optimized,f2_marshland_s17_n13,pred_log_qc,96,0.0,1e-12,True,old/new

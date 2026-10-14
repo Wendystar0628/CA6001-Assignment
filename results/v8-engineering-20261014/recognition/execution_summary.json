@@ -1,0 +1,14 @@
+{
+  "models": [
+    "v8_recognition_fast",
+    "v8_recognition_localize",
+    "v8_recognition_amplitude",
+    "v8_recognition_recall60"
+  ],
+  "states_per_model": 60,
+  "rows_per_model": 8640,
+  "model_count": 4,
+  "all_chosen_counts_equal_emitted_point_counts": true,
+  "real_inference_operator": true,
+  "base_recomputation_in_component_timing": false
+}

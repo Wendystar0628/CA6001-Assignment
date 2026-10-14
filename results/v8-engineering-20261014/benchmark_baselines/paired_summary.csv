@@ -1,0 +1,2 @@
+pair_id,states,scope,total_speedup_paired_state_median,total_speedup_paired_state_min,total_speedup_paired_state_max,total_speedup_ratio_of_state_medians
+idw_optimized,12,full unchanged 3NN/power-2 IDW point inference: condition + real geometry + original scalar idw_value,3.8647367621085165,2.8407577491693137,9.511576655468588,3.2588965816655753

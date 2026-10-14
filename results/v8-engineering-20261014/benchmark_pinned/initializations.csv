@@ -1,0 +1,79 @@
+model_id,fold_id,scope,device,factory_ms,explicit_weight_initialization_ms,initialization_ms,rss_after_initialization_mib
+target_constant_median,0,full point inference: support median + query prediction,cpu,0.0056999997468665,0.0008999995770864,0.0065999993239529,877.77734375
+target_constant_median,1,full point inference: support median + query prediction,cpu,0.0065999993239529,0.0013999997463542,0.0079999990703072,877.875
+target_constant_median,2,full point inference: support median + query prediction,cpu,0.0064999985625036,0.0010000003385357,0.0074999989010393,877.9296875
+idw,0,full point inference: condition + IDW geometry/features + prediction,cpu,0.0125000005937181,0.0008000006346264,0.0133000012283446,878.21875
+idw,1,full point inference: condition + IDW geometry/features + prediction,cpu,0.0098999989859294,0.0009000013960758,0.0108000003820052,665.2578125
+idw,2,full point inference: condition + IDW geometry/features + prediction,cpu,0.0110000000859145,0.0008000006346264,0.0118000007205409,665.5078125
+gp,0,full native-distribution inference: GP fit + mean/std/event prediction,cpu,0.6268000015552389,0.0005999991117278,0.6274000006669667,665.66796875
+gp,1,full native-distribution inference: GP fit + mean/std/event prediction,cpu,0.6197000002430286,0.0003999994078185,0.6200999996508472,672.8046875
+gp,2,full native-distribution inference: GP fit + mean/std/event prediction,cpu,0.5811999999423278,0.0003999994078185,0.5815999993501464,672.83203125
+structural_old,0,full point inference: source FPCA initialization separate; support LOO stack + simplex blend,cpu,3.027700000529876,0.0005000001692678,3.028200000699144,673.28125
+structural_old,1,full point inference: source FPCA initialization separate; support LOO stack + simplex blend,cpu,0.8096000001387438,0.0005000001692678,0.8101000003080117,670.02734375
+structural_old,2,full point inference: source FPCA initialization separate; support LOO stack + simplex blend,cpu,0.828199999887147,0.0005000001692678,0.8287000000564149,670.04296875
+structural_new,0,full point inference: source FPCA initialization separate; support LOO stack + simplex blend,cpu,0.8195999998861225,0.0005000001692678,0.8201000000553904,670.08984375
+structural_new,1,full point inference: source FPCA initialization separate; support LOO stack + simplex blend,cpu,0.7760999997117324,0.0005000001692678,0.7765999998810003,670.09375
+structural_new,2,full point inference: source FPCA initialization separate; support LOO stack + simplex blend,cpu,0.7673000000067987,0.0005000001692678,0.7678000001760665,670.09375
+joint_operator_old,0,component only: complete-curve error-mixture operator; IDW base computation excluded,cpu,0.0083000013546552,0.001200000042445,0.0095000013971002,670.29296875
+joint_operator_old,1,component only: complete-curve error-mixture operator; IDW base computation excluded,cpu,0.0071000013122102,0.0010999992809956,0.0082000005932059,670.4609375
+joint_operator_old,2,component only: complete-curve error-mixture operator; IDW base computation excluded,cpu,0.0079000001278473,0.0015999994502635,0.0094999995781108,670.6640625
+joint_operator_new,0,component only: complete-curve error-mixture operator; IDW base computation excluded,cpu,0.0083000013546552,0.000799998815637,0.0091000001702923,670.796875
+joint_operator_new,1,component only: complete-curve error-mixture operator; IDW base computation excluded,cpu,0.0087999997049337,0.0010000003385357,0.0098000000434694,670.80078125
+joint_operator_new,2,component only: complete-curve error-mixture operator; IDW base computation excluded,cpu,0.0068999997893115,0.0013000008038943,0.0082000005932059,670.80078125
+haar_old,0,full point inference: Haar detail transfer + simplex + thickness-count decision; separate empirical risk head excluded,cpu,0.0106000006780959,0.0010000003385357,0.0116000010166317,670.81640625
+haar_old,1,full point inference: Haar detail transfer + simplex + thickness-count decision; separate empirical risk head excluded,cpu,0.0114000013127224,0.0008999995770864,0.0123000008898088,670.82421875
+haar_old,2,full point inference: Haar detail transfer + simplex + thickness-count decision; separate empirical risk head excluded,cpu,0.0089999994088429,0.0010000003385357,0.0099999997473787,670.82421875
+haar_new,0,full point inference: Haar detail transfer + simplex + thickness-count decision; separate empirical risk head excluded,cpu,0.0115000002551823,0.0013000008038943,0.0128000010590767,670.828125
+haar_new,1,full point inference: Haar detail transfer + simplex + thickness-count decision; separate empirical risk head excluded,cpu,0.0099999997473787,0.0008999995770864,0.0108999993244651,670.83203125
+haar_new,2,full point inference: Haar detail transfer + simplex + thickness-count decision; separate empirical risk head excluded,cpu,0.0098000000434694,0.0013000008038943,0.0111000008473638,670.83203125
+recognition_operator_old,0,component only: complete-curve analog-mixture recognition operator; IDW base and independent risk head excluded,cpu,0.0098000000434694,0.0010000003385357,0.0108000003820052,670.84375
+recognition_operator_old,1,component only: complete-curve analog-mixture recognition operator; IDW base and independent risk head excluded,cpu,0.0094000006356509,0.0010999992809956,0.0104999999166466,670.84375
+recognition_operator_old,2,component only: complete-curve analog-mixture recognition operator; IDW base and independent risk head excluded,cpu,0.0084000002971151,0.0012999989849049,0.0096999992820201,670.82421875
+recognition_operator_new,0,component only: complete-curve analog-mixture recognition operator; IDW base and independent risk head excluded,cpu,0.0132000004668952,0.0010000003385357,0.014200000805431,670.85546875
+recognition_operator_new,1,component only: complete-curve analog-mixture recognition operator; IDW base and independent risk head excluded,cpu,0.0120999993669101,0.0008999995770864,0.0129999989439966,670.85546875
+recognition_operator_new,2,component only: complete-curve analog-mixture recognition operator; IDW base and independent risk head excluded,cpu,0.0110000000859145,0.0013000008038943,0.0123000008898088,670.85546875
+tabpfn_residual_old,0,full guarded residual point inference: feature preparation + trained TabPFN CUDA forward + IDW guard; source checkpoint load separate,cuda,2.114299999448121,1123.3178000002226,1125.4320999996708,934.65625
+tabpfn_residual_old,1,full guarded residual point inference: feature preparation + trained TabPFN CUDA forward + IDW guard; source checkpoint load separate,cuda,2.012200000535813,35.43379999973695,37.44600000027276,1922.12109375
+tabpfn_residual_old,2,full guarded residual point inference: feature preparation + trained TabPFN CUDA forward + IDW guard; source checkpoint load separate,cuda,1.927700001033372,35.94630000043253,37.8740000014659,1925.9140625
+tabpfn_residual_new,0,full guarded residual point inference: feature preparation + trained TabPFN CUDA forward + IDW guard; source checkpoint load separate,cuda,1.9751999989239264,37.39160000077391,39.36679999969783,1931.9375
+tabpfn_residual_new,1,full guarded residual point inference: feature preparation + trained TabPFN CUDA forward + IDW guard; source checkpoint load separate,cuda,1.9417999992583648,37.55000000091968,39.491800000178046,1931.234375
+tabpfn_residual_new,2,full guarded residual point inference: feature preparation + trained TabPFN CUDA forward + IDW guard; source checkpoint load separate,cuda,1.905099999930826,34.43700000025274,36.34210000018357,1934.40625
+balanced_point_old,0,complete_point_path_with_internal_joint_probability,cpu,0.8348000010300893,0.0008999995770864,0.8357000006071758,1920.078125
+balanced_point_old,1,complete_point_path_with_internal_joint_probability,cpu,0.8068999995884951,0.001100001099985,0.8080000006884802,1919.953125
+balanced_point_old,2,complete_point_path_with_internal_joint_probability,cpu,0.7998999990377342,0.0010000003385357,0.80089999937627,1919.953125
+balanced_point_new,0,complete_point_path_with_internal_joint_probability,cpu,0.7648999999219086,0.0010999992809956,0.7659999992029043,1920.75390625
+balanced_point_new,1,complete_point_path_with_internal_joint_probability,cpu,0.781700000516139,0.0008999995770864,0.7826000000932254,1920.76171875
+balanced_point_new,2,complete_point_path_with_internal_joint_probability,cpu,0.8006000007299008,0.0008999995770864,0.8015000003069872,1920.76171875
+balanced_full_old,0,complete_point_plus_native_empirical_risk_path,cuda,28.860899999926914,32.75190000022121,61.61280000014813,1937.84375
+balanced_full_old,1,complete_point_plus_native_empirical_risk_path,cuda,3.7092000002303394,36.03730000031646,39.7465000005468,1942.38671875
+balanced_full_old,2,complete_point_plus_native_empirical_risk_path,cuda,3.719000000273809,35.01180000057502,38.73080000084883,1945.76171875
+balanced_full_new,0,complete_point_plus_native_empirical_risk_path,cuda,3.7181999996391824,35.45339999982389,39.17159999946307,1945.74609375
+balanced_full_new,1,complete_point_plus_native_empirical_risk_path,cuda,3.676499998618965,37.895100000241655,41.57159999886062,1942.25390625
+balanced_full_new,2,complete_point_plus_native_empirical_risk_path,cuda,3.788899999563,35.73510000023816,39.52399999980116,1945.671875
+haar_full_old,0,complete_haar_point_plus_native_empirical_risk_path,cuda,3.059900000152993,34.19369999937771,37.25359999953071,1936.5625
+haar_full_old,1,complete_haar_point_plus_native_empirical_risk_path,cuda,3.153100000417908,36.34899999997288,39.50210000039078,1919.6484375
+haar_full_old,2,complete_haar_point_plus_native_empirical_risk_path,cuda,3.062899999349611,35.24640000068757,38.30930000003718,1913.44140625
+haar_full_new,0,complete_haar_point_plus_native_empirical_risk_path,cuda,3.174699999362929,37.56190000058268,40.73659999994561,1930.0703125
+haar_full_new,1,complete_haar_point_plus_native_empirical_risk_path,cuda,3.0975999998190678,33.08719999949972,36.184799999318784,1924.41796875
+haar_full_new,2,complete_haar_point_plus_native_empirical_risk_path,cuda,2.9884999985370087,36.60280000076455,39.59129999930156,1936.3125
+recognition_full_old,0,complete_recognition_point_plus_native_empirical_risk_path,cuda,3.71629999972356,35.2125999997952,38.92889999951876,1935.57421875
+recognition_full_old,1,complete_recognition_point_plus_native_empirical_risk_path,cuda,3.7841000012122095,33.25549999863142,37.03959999984363,1923.98828125
+recognition_full_old,2,complete_recognition_point_plus_native_empirical_risk_path,cuda,3.654399999504676,36.97860000102082,40.6330000005255,1918.53515625
+recognition_full_new,0,complete_recognition_point_plus_native_empirical_risk_path,cuda,3.872100000080536,32.831499998792424,36.70359999887296,1927.74609375
+recognition_full_new,1,complete_recognition_point_plus_native_empirical_risk_path,cuda,3.5909999987779884,35.76740000062273,39.35839999940072,1908.390625
+recognition_full_new,2,complete_recognition_point_plus_native_empirical_risk_path,cuda,3.7974000006215647,29.739699999481672,33.53710000010324,1933.078125
+recognition_localize_full,0,complete_recognition_quality_variant_plus_native_empirical_risk_path,cuda,3.5427999991952674,35.6831000008242,39.225900000019465,1939.8984375
+recognition_localize_full,1,complete_recognition_quality_variant_plus_native_empirical_risk_path,cuda,3.720599999724072,34.507999998822925,38.228599998547,1912.72265625
+recognition_localize_full,2,complete_recognition_quality_variant_plus_native_empirical_risk_path,cuda,3.5547000006772578,36.33950000039477,39.89420000107202,1911.08203125
+recognition_recall60_full,0,complete_recognition_quality_variant_plus_native_empirical_risk_path,cuda,3.860799999529263,35.97770000124001,39.83850000076927,1937.265625
+recognition_recall60_full,1,complete_recognition_quality_variant_plus_native_empirical_risk_path,cuda,3.698200000144425,34.53369999988354,38.23190000002796,1943.6328125
+recognition_recall60_full,2,complete_recognition_quality_variant_plus_native_empirical_risk_path,cuda,3.583900001103757,31.05839999989257,34.64230000099633,1940.8671875
+balanced_count_shrink_full,0,complete_balanced_quality_variant_plus_native_empirical_risk_path,cuda,3.736000000571949,33.162800000354764,36.89880000092671,1946.890625
+balanced_count_shrink_full,1,complete_balanced_quality_variant_plus_native_empirical_risk_path,cuda,3.750600000785198,31.418599999597063,35.16920000038226,1941.10546875
+balanced_count_shrink_full,2,complete_balanced_quality_variant_plus_native_empirical_risk_path,cuda,3.954100000555627,31.3280999998824,35.282200000438024,1929.9765625
+idw_optimized_old,0,full unchanged 3NN/power-2 IDW point inference: condition + real geometry + original scalar idw_value,cpu,1.1450000001786975,0.0008000006346264,1.145800000813324,1917.54296875
+idw_optimized_old,1,full unchanged 3NN/power-2 IDW point inference: condition + real geometry + original scalar idw_value,cpu,1.1140000005980255,0.0008999995770864,1.114900000175112,1917.54296875
+idw_optimized_old,2,full unchanged 3NN/power-2 IDW point inference: condition + real geometry + original scalar idw_value,cpu,1.136100001531304,0.0008999995770864,1.1370000011083905,1917.54296875
+idw_optimized_new,0,full unchanged 3NN/power-2 IDW point inference: condition + real geometry + original scalar idw_value,cpu,1.132900000811787,0.0008000006346264,1.1337000014464138,1917.56640625
+idw_optimized_new,1,full unchanged 3NN/power-2 IDW point inference: condition + real geometry + original scalar idw_value,cpu,1.1072999986936338,0.0006000009307172,1.107899999624351,1917.56640625
+idw_optimized_new,2,full unchanged 3NN/power-2 IDW point inference: condition + real geometry + original scalar idw_value,cpu,1.134500000262051,0.0005999991117278,1.1350999993737787,1917.56640625

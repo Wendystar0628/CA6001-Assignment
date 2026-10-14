@@ -1,0 +1,12 @@
+{
+  "model_id": "v8_structural_loo_simplex",
+  "scope": "exploratory_validation_only",
+  "states": 60,
+  "rows": 8640,
+  "native_event_probability": true,
+  "source": "E:\\Study\\Msc_AAI\\CA6001-AI ALGORITHMS FUNDAMENTALS & APPLICATION\\Project\\runs\\v7-discovery-20261014\\final_extended",
+  "engineering_scope": "structural point base",
+  "matched_risk_head": "gp",
+  "head_is_point_cdf": false,
+  "point_values_changed_by_head_attachment": false
+}

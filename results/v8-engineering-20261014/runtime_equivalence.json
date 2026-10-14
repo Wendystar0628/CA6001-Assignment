@@ -1,0 +1,7 @@
+{
+  "states": 60,
+  "live_point_max_abs_diff": 1.5543122344752192e-15,
+  "label_changes": 0,
+  "empirical_cdf_max_abs_diff": 8.881784197001252e-16,
+  "scope": "real complete point inference plus isolated empirical CDF; CUDA risk checked in paired serial benchmark"
+}

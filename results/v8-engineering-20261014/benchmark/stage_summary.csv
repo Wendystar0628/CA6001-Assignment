@@ -1,0 +1,17 @@
+model_id,stage,samples,median_ms,p95_ms
+balanced_full_old,point_condition_seconds,36,1018.1134999993446,1694.9202000005243
+balanced_full_old,risk_residual_condition_seconds,36,426.7915999998877,693.9837749996514
+balanced_full_old,risk_graph_condition_seconds,36,5.2460000006249174,8.362475000467384
+balanced_full_old,risk_error_condition_seconds,36,242.48909999914758,432.45312499902866
+balanced_full_old,point_predict_seconds,36,234.55380000086734,300.2096749996781
+balanced_full_old,risk_residual_predict_seconds,36,405.5927500003236,572.9632999996284
+balanced_full_old,risk_graph_predict_seconds,36,66.58825000067736,119.04397499938568
+balanced_full_old,risk_cdf_seconds,36,15.768349999234488,20.393124999827705
+balanced_full_new,point_condition_seconds,36,48.30654999932449,64.96332500046265
+balanced_full_new,risk_residual_condition_seconds,36,34.884149999925285,44.423049998840725
+balanced_full_new,risk_graph_condition_seconds,36,5.195600000661216,5.798725000204286
+balanced_full_new,risk_error_condition_seconds,36,9.50485000066692,10.674999999082502
+balanced_full_new,point_predict_seconds,36,20.117100000788923,25.543050001033407
+balanced_full_new,risk_residual_predict_seconds,36,112.83335000007355,122.08965000036187
+balanced_full_new,risk_graph_predict_seconds,36,64.98465000004217,99.82810000065001
+balanced_full_new,risk_cdf_seconds,36,3.6532000012812205,6.450174999372393

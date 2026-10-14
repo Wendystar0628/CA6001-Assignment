@@ -1,0 +1,7 @@
+model_id,fold_id,scope,device,factory_ms,explicit_weight_initialization_ms,initialization_ms,rss_after_initialization_mib
+idw_optimized_old,0,full unchanged 3NN/power-2 IDW point inference: condition + real geometry + original scalar idw_value,cpu,1.0856000008061528,0.0006999998731771484,1.08630000067933,118.77734375
+idw_optimized_old,1,full unchanged 3NN/power-2 IDW point inference: condition + real geometry + original scalar idw_value,cpu,1.0705000004236354,0.0008999995770864189,1.0714000000007218,119.375
+idw_optimized_old,2,full unchanged 3NN/power-2 IDW point inference: condition + real geometry + original scalar idw_value,cpu,1.9159999992552912,0.0006999998731771484,1.9166999991284683,119.74609375
+idw_optimized_new,0,full unchanged 3NN/power-2 IDW point inference: condition + real geometry + original scalar idw_value,cpu,1.6591999992670026,0.0010000003385357559,1.6601999996055383,120.09765625
+idw_optimized_new,1,full unchanged 3NN/power-2 IDW point inference: condition + real geometry + original scalar idw_value,cpu,4.575400000248919,0.0008999995770864189,4.576299999826006,120.4140625
+idw_optimized_new,2,full unchanged 3NN/power-2 IDW point inference: condition + real geometry + original scalar idw_value,cpu,1.6646999993099598,0.0008999995770864189,1.6655999988870462,120.54296875

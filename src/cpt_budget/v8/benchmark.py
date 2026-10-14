@@ -68,6 +68,49 @@ def resident_memory_mib():
     return float('nan')
 
 
+def apply_cpu_affinity(core):
+    """Restrict this benchmark process only; identify a logical CPU, not its type."""
+    if core is None:
+        return {'requested_logical_core': None, 'applied': False,
+                'note': 'Unpinned process; OS may migrate work between logical CPUs.'}
+    if int(core) != core or core < 0:
+        raise ValueError('CPU affinity must name a nonnegative logical core.')
+    core = int(core)
+    if os.name == 'nt':
+        kernel = ctypes.WinDLL('kernel32', use_last_error=True)
+        kernel.GetCurrentProcess.restype = ctypes.c_void_p
+        kernel.GetProcessAffinityMask.argtypes = [ctypes.c_void_p,
+            ctypes.POINTER(ctypes.c_size_t), ctypes.POINTER(ctypes.c_size_t)]
+        kernel.SetProcessAffinityMask.argtypes = [ctypes.c_void_p, ctypes.c_size_t]
+        handle = kernel.GetCurrentProcess()
+        process_mask, system_mask = ctypes.c_size_t(), ctypes.c_size_t()
+        if not kernel.GetProcessAffinityMask(handle, ctypes.byref(process_mask), ctypes.byref(system_mask)):
+            raise OSError(ctypes.get_last_error(), 'Cannot read process CPU affinity.')
+        previous = process_mask.value
+        requested = 1 << core
+        if not previous & requested:
+            raise ValueError(f'Logical core {core} is not in allowed mask {previous:#x}.')
+        if not kernel.SetProcessAffinityMask(handle, requested):
+            raise OSError(ctypes.get_last_error(), 'Cannot set process CPU affinity.')
+        if (not kernel.GetProcessAffinityMask(handle, ctypes.byref(process_mask), ctypes.byref(system_mask))
+                or process_mask.value != requested):
+            raise RuntimeError('CPU affinity verification failed; aborting benchmark.')
+        return {'requested_logical_core': core, 'applied': True,
+                'previous_allowed_mask': hex(previous), 'verified_process_mask': hex(process_mask.value),
+                'core_type': 'not inferred', 'frequency_locked': False}
+    if hasattr(os, 'sched_getaffinity') and hasattr(os, 'sched_setaffinity'):
+        allowed = os.sched_getaffinity(0)
+        if core not in allowed:
+            raise ValueError(f'Logical core {core} is not in allowed set {sorted(allowed)}.')
+        os.sched_setaffinity(0, {core})
+        if os.sched_getaffinity(0) != {core}:
+            raise RuntimeError('CPU affinity verification failed.')
+        return {'requested_logical_core': core, 'applied': True,
+                'previous_allowed_cores': sorted(allowed), 'verified_cores': [core],
+                'core_type': 'not inferred', 'frequency_locked': False}
+    raise RuntimeError('This platform cannot enforce the requested CPU affinity.')
+
+
 def _torch_for(spec):
     if not spec.device.startswith('cuda'):
         return None
@@ -228,6 +271,18 @@ def _write_outputs(output, samples, initializations, correctness, specs):
     sample_frame, init_frame = pd.DataFrame(samples), pd.DataFrame(initializations)
     sample_frame.to_csv(output / 'samples.csv', index=False)
     init_frame.to_csv(output / 'initializations.csv', index=False)
+    init_frame.groupby('model_id', sort=False).initialization_ms.agg(
+        fold_loads='count', median_ms='median', min_ms='min', max_ms='max').reset_index().to_csv(
+            output / 'initialization_summary.csv', index=False)
+    stage_values = []
+    for row in sample_frame.loc[sample_frame.model_id.str.contains('_full')].itertuples():
+        for stage, seconds in json.loads(row.stage_timings_json).items():
+            if stage.endswith('_seconds'):
+                stage_values.append({'model_id': row.model_id, 'stage': stage, 'ms': float(seconds)*1000})
+    if stage_values:
+        pd.DataFrame(stage_values).groupby(['model_id', 'stage'], sort=False).ms.agg(
+            samples='count', median_ms='median', p95_ms=lambda values: values.quantile(.95)).reset_index().to_csv(
+                output / 'stage_summary.csv', index=False)
     fields = ['condition_ms', 'predict_ms', 'total_ms', 'rss_after_mib', 'cuda_peak_allocated_mib']
     state_records, summary_records = [], []
     for name, group in sample_frame.groupby('model_id', sort=False):
@@ -246,6 +301,12 @@ def _write_outputs(output, samples, initializations, correctness, specs):
                 samples=len(cells), preparation_ms=cells.preparation_ms.iloc[0]))
     states = pd.DataFrame(state_records)
     states.to_csv(output / 'state_summary.csv', index=False)
+    if {'idw', 'idw_optimized_old'}.issubset(set(states.model_id)):
+        early = states.loc[states.model_id.eq('idw'), ['state_key', 'total_ms']]
+        late = states.loc[states.model_id.eq('idw_optimized_old'), ['state_key', 'total_ms']]
+        drift = early.merge(late, on='state_key', suffixes=('_early', '_late'), validate='one_to_one')
+        drift['late_vs_early_change_percent'] = 100*(drift.total_ms_late/drift.total_ms_early-1)
+        drift.to_csv(output / 'idw_timing_stability.csv', index=False)
     pd.DataFrame(summary_records).to_csv(output / 'summary.csv', index=False)
     paired, paired_summary = [], []
     for pair_id, group in states.loc[states.pair_id.ne('')].groupby('pair_id', sort=False):
@@ -276,7 +337,7 @@ def _write_outputs(output, samples, initializations, correctness, specs):
     return pd.DataFrame(summary_records)
 
 
-def run_specs(specs, states, output=RUN, *, repeats=3, warmups=1, native_reference=None):
+def run_specs(specs, states, output=RUN, *, repeats=3, warmups=1, native_reference=None, cpu_core=None):
     """Run sequentially; the caller must stop unrelated jobs before invoking."""
     specs, states = list(specs), list(states)
     if not specs or not states or repeats < 1 or warmups < 1:
@@ -286,6 +347,7 @@ def run_specs(specs, states, output=RUN, *, repeats=3, warmups=1, native_referen
     samples, initializations, correctness, remembered, native_checks = [], [], [], {}, []
     output = Path(output)
     output.mkdir(parents=True, exist_ok=True)
+    affinity = apply_cpu_affinity(cpu_core)
     for key in ('OMP_NUM_THREADS', 'MKL_NUM_THREADS', 'OPENBLAS_NUM_THREADS'):
         os.environ[key] = '1'
     # A loaded torch runtime can launch independent CPU pools even for CPU specs.
@@ -374,7 +436,7 @@ def run_specs(specs, states, output=RUN, *, repeats=3, warmups=1, native_referen
                                     'versions': '/'.join([other_version, spec.version])})
                         else:
                             remembered[key] = spec.version, payload
-                    if native_reference is not None and spec.pair_id == 'balanced_full':
+                    if native_reference is not None and 'native_empirical_risk' in spec.scope:
                         # Evaluation-only comparison after all timed forwards.
                         expected = native_reference[state.key]
                         actual = payload['p_low_1']
@@ -398,6 +460,9 @@ def run_specs(specs, states, output=RUN, *, repeats=3, warmups=1, native_referen
         write_json(output / 'protocol.json', {'scope': 'serial hot-state inference benchmark',
             'states_per_model': len(states), 'warmups_per_state': warmups,
             'measured_repeats_per_state': repeats, 'cpu_threads': 1,
+            'cpu_affinity': affinity,
+            'execution_order': [spec.name for spec in specs],
+            'remaining_timing_limits': 'Model entries executed sequentially in recorded order; CPU/GPU frequencies are not locked and order effects remain possible.',
             'state_selection': 'folds 0/1/2, two validation sites each, seed 17, budgets 5/13',
             'timing': 'perf_counter, device synchronize at timing boundaries for CUDA; fresh condition every repeat',
             'excluded': 'data loading, input DataFrame copies, optional declared prepare_state, evaluation and calibration',
@@ -419,6 +484,8 @@ def main():
     parser.add_argument('--groups', nargs='*', choices=['structural', 'joint', 'haar', 'recognition', 'tabpfn'],
                         default=['structural', 'joint', 'haar', 'recognition', 'tabpfn'])
     parser.add_argument('--without-baselines', action='store_true')
+    parser.add_argument('--cpu-core', type=int, default=None,
+                        help='Pin this process to an allowed logical CPU; its P/E type is not inferred.')
     args = parser.parse_args()
     specs = [] if args.without_baselines else baseline_specs()
     specs.extend(engineering_specs(args.groups))
@@ -429,7 +496,7 @@ def main():
     if len(states) != 12:
         raise ValueError('The runtime comparison requires exactly 12 frozen states.')
     native_reference = None
-    if any(spec.pair_id == 'balanced_full' for spec in specs):
+    if any('native_empirical_risk' in spec.scope for spec in specs):
         # This frozen reference is never returned to any predictor or adapter.
         reference = pd.read_parquet(PROJECT_ROOT / 'runs/v7-discovery-20261014/final_extended/predictions_oof.parquet',
             columns=[*STATE_KEYS, 'location_id', 'depth_index', 'p_low_1'],
@@ -443,7 +510,7 @@ def main():
             if len(selected) != len(state.query) or selected.p_low_1.isna().any():
                 raise ValueError('The evaluation-only native risk reference is incomplete.')
             native_reference[state.key] = selected.p_low_1.to_numpy(float)
-    run_specs(specs, states, args.output, native_reference=native_reference)
+    run_specs(specs, states, args.output, native_reference=native_reference, cpu_core=args.cpu_core)
 
 
 if __name__ == '__main__':
