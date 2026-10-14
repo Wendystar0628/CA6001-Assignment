@@ -24,7 +24,7 @@ python -m cpt_budget split --config configs/main.yaml
 
 `restore-inputs` 仅解析清单指定的 503 个 `.xlsx` / `.xls` 文件：取记录深度和 qc，保留有限、深度非负、qc 正值的样本，按深度稳定排序，在重复深度保留首条有效记录，转为 `float32` 后按原 `array_key` 写入压缩 NPZ。这与已有筛选审计程序的数值解析口径一致。它不重新筛选整库、不修改清单，也不改动原始 ZIP；缺少指定成员或单位无法确认为 qc/MPa 时会明确报错。
 
-`prepare` 再执行同坐标代表选择和 2–8 m 的 24 个中点网格检查；503 根候选不是最终可用数量。当前得到 495 个不同原始位置、492 个完整可用位置；3 根候选因主窗口内大采样缺口被排除。正式数量以本次运行的 `data_processed_v2/preparation.json` 为准。
+`prepare` 再执行同坐标代表选择和 2–8 m 的 24 个中点网格检查；503 根候选不是最终可用数量。当前得到 495 个不同原始位置（503 根中 8 根为同坐标的非代表剖面）、492 个完整可用位置；3 根候选因主窗口内大采样缺口被排除。正式数量以本次运行的 `data_processed_v2/preparation.json` 为准。
 
 如配置另一个原始包位置，可设置 `data.source_archive`，路径相对于 `project.input_dir`；默认是 `downloads/Global_CPT1196.zip`。
 
@@ -44,3 +44,5 @@ python -m cpt_budget split --config configs/main.yaml
 - **New Lock**：官方 Terneuzen 下载路径及本地下载清单可识别其项目身份，但现有工作簿仍不能确定全球坐标和 CRS。
 
 `configs/sites.yaml` 与生成的场地表对这 4 组保留 `grouping_verified=false`；每折划分会列出涉及的未核实组。默认可用于带限制说明的 pilot，不能声称它们已通过 250 m 的全球邻近关系核验。需要严格排除时，显式设置 `split.exclude_unverified_groups: true`；完整勘察组会一起排除。
+
+其中 Hollywood 与 New Lock 也是 v0.1 后未再参与比较的 4 个外层测试候选场地中的两个（另两个为 Chch Stadium、Wellington Airport），未来若在这些场地做独立测试，其独立性同样受上述分组未核实的限制。当前成绩只来自 4 个验证场地（Lower Hutt、Tauranga、Chch Metro Sports、Marshland），见[当前方案对比](../CA6001_CPT_当前方案对比.md#结论边界)。
