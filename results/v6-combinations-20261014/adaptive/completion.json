@@ -1,0 +1,13 @@
+{
+  "states": 60,
+  "rows_per_model": 8640,
+  "models": [
+    "support_stack_l1",
+    "support_stack_structural",
+    "support_residual_stack_l1",
+    "support_residual_stack_structural"
+  ],
+  "loo_selections": 120,
+  "query_truth_used": false,
+  "elapsed_seconds": 52.364567499999794
+}

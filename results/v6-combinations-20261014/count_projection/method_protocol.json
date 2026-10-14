@@ -1,0 +1,38 @@
+{
+  "round": 4,
+  "trigger": "Round 3 learned half-count improved thickness; event ranking changed point magnitudes.",
+  "candidates": {
+    "v6_count_project_fpca_guard_gp": [
+      "functional",
+      "v6_fpca_residual_sign_guard"
+    ],
+    "v6_count_project_graph_union_gp": [
+      "graph",
+      "v6_graph_residual_low_union"
+    ],
+    "v6_count_project_support_stack_gp": [
+      "adaptive",
+      "support_stack_structural"
+    ]
+  },
+  "frozen_count_file": "thickness_head/profile_decisions.csv",
+  "count_allowlist": [
+    "fold_id",
+    "site_id",
+    "seed",
+    "budget_n",
+    "location_id",
+    "half_count_decision",
+    "predicted_continuous_count",
+    "residual_point_count"
+  ],
+  "count_column": "half_count_decision",
+  "count_formula": "floor((source_predicted_count + original_residual_point_count)/2 + .5)",
+  "count_fitting": "Unchanged round-3 source-only count head; no refit or new parameter selection.",
+  "point_projection": "Ascending base logqc, stable depth tie-break, choose exactly k; only flipped cells set to +/- .05.",
+  "risk_head": "Frozen gp p_low_1; independent task head, not inferred from projected point values.",
+  "risk_intervals": "None transferred. GP event probability is not a native CDF of the projected point model.",
+  "query_truth_read_by_generator": false,
+  "outer_test_used": false,
+  "all_candidates_and_parameters_frozen_before_new_scores": true
+}

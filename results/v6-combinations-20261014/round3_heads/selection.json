@@ -1,0 +1,72 @@
+{
+  "scope": "adaptive_exploration_reused_validation",
+  "folds": {
+    "0": {
+      "baseline_model": "idw",
+      "selected_model": "idw",
+      "eligible_candidates": [],
+      "fallback": true
+    },
+    "1": {
+      "baseline_model": "idw",
+      "selected_model": "idw",
+      "eligible_candidates": [],
+      "fallback": true
+    },
+    "2": {
+      "baseline_model": "gp",
+      "selected_model": "gp",
+      "eligible_candidates": [],
+      "fallback": true
+    }
+  },
+  "method": {
+    "log_mae": 0.6297554548627837,
+    "h_point_mae_m": 0.64501953125,
+    "recall": 0.32772288602941174,
+    "false_positive_rate": 0.06377500652108407,
+    "risk_recall": 0.6214135263480393,
+    "risk_fpr": 0.36677998048475513,
+    "risk_brier": 0.12954328418446634
+  },
+  "baseline": {
+    "log_mae": 0.6297554548627837,
+    "h_point_mae_m": 0.64501953125,
+    "recall": 0.32772288602941174,
+    "false_positive_rate": 0.06377500652108407,
+    "risk_recall": 0.6214135263480393,
+    "risk_fpr": 0.36677998048475513,
+    "risk_brier": 0.12954328418446634
+  },
+  "global_checks": {
+    "profile_improves": false,
+    "thickness_guard": true,
+    "recall_guard": true,
+    "fpr_guard": true,
+    "majority_unique_sites_improve": false,
+    "all_folds_complete": true
+  },
+  "passed": false,
+  "improved_sites": 0,
+  "unique_sites": 4,
+  "relative_log_mae_reduction": 0.0,
+  "weak_controls_excluded_from_promotion": [
+    "target_constant_median",
+    "target_depth_median"
+  ],
+  "outer_test_executed": false,
+  "candidates": [
+    "v6_count_head_fpca50",
+    "v6_count_head_half_residual",
+    "v6_count_head_residual",
+    "v6_event_head_residual"
+  ],
+  "families": [
+    "thickness_head"
+  ],
+  "new_model_count": 4,
+  "metric_rows": 2160,
+  "clear_win_definition": "E reduction >=5%, H reduction >=10%, point recall >=baseline, risk guards and majority sites",
+  "clear_winners": [],
+  "selected_system_clear_win": false
+}

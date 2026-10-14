@@ -1,0 +1,12 @@
+{
+  "model_id": "v6_graph_residual_a075",
+  "scope": "exploratory_validation_only",
+  "states": 60,
+  "rows": 8640,
+  "native_event_probability": false,
+  "source": "E:\\Study\\Msc_AAI\\CA6001-AI ALGORITHMS FUNDAMENTALS & APPLICATION\\Project\\runs\\v5-exploration-20261014\\comparison",
+  "family": "graph",
+  "graph_weight": 0.75,
+  "reference_model": "residual_ft_crps_guarded_a050",
+  "mechanism": "convex_log_qc_mix"
+}

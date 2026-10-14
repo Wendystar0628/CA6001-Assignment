@@ -1,0 +1,15 @@
+{
+  "models": [
+    "v6_complement_adaptive_graph_gp",
+    "v6_complement_adaptive_graph_event",
+    "v6_complement_fpca_graph_gp",
+    "v6_complement_fpca_graph_event",
+    "v6_complement_median_four_gp",
+    "v6_complement_median_four_event"
+  ],
+  "states": 60,
+  "rows_per_model": 8640,
+  "elapsed_seconds": 17.00096050000002,
+  "query_truth_used": false,
+  "oof_calibrated_risk_used": false
+}

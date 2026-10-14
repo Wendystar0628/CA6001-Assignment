@@ -1,0 +1,14 @@
+{
+  "model_id": "v6_count_head_half_residual",
+  "scope": "exploratory_validation_only",
+  "states": 60,
+  "rows": 8640,
+  "native_event_probability": true,
+  "source": "E:\\Study\\Msc_AAI\\CA6001-AI ALGORITHMS FUNDAMENTALS & APPLICATION\\Project\\runs\\v5-exploration-20261014\\comparison",
+  "family": "source_thickness_event_heads",
+  "round": 3,
+  "formula": "Round mean of learned count and residual's existing low count; event ranking.",
+  "source_trained": true,
+  "native_probability_source": "Source-only ExtraTrees event classifier; same head for all four candidates.",
+  "point_margin": 0.05
+}

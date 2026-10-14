@@ -1,0 +1,13 @@
+{
+  "models": [
+    "v6_count_project_fpca_guard_gp",
+    "v6_count_project_graph_union_gp",
+    "v6_count_project_support_stack_gp"
+  ],
+  "states_per_model": 60,
+  "prediction_rows_per_model": 8640,
+  "profiles_per_model": 360,
+  "all_final_profile_counts_equal_round3_half_count": true,
+  "native_gp_probabilities_unchanged": true,
+  "parameters_frozen_before_scores": true
+}

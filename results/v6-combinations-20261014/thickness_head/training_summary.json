@@ -1,0 +1,572 @@
+{
+  "folds": [
+    {
+      "fold_id": 0,
+      "train_episodes": 408,
+      "validation_episodes": 24,
+      "train_profile_rows": 1600,
+      "train_event_rows": 38400,
+      "source_train_sites": [
+        "avondale",
+        "avonside",
+        "bexley",
+        "christchurch_central_city",
+        "hollywood",
+        "linwood_rudds_road",
+        "marshland",
+        "newlock",
+        "parkland_bower_ave_two",
+        "redcliffs_main_road",
+        "wainoni",
+        "wainoni_pak_n_save",
+        "wellington_college",
+        "whangarei_high_school"
+      ],
+      "source_validation_sites": [
+        "kaiapoi_near_river",
+        "lower_hutt_town_hall",
+        "tauranga_farmers_building"
+      ],
+      "profile_feature_count": 85,
+      "event_feature_count": 91,
+      "feature_seconds": 26.838388600000144,
+      "training_seconds": 49.919552900000326,
+      "train": {
+        "profiles": 1600,
+        "sites": 14,
+        "macro": {
+          "count_mae_m": 0.1423996209219583,
+          "rounded_count_mae_m": 0.1163374255952381,
+          "idw_thickness_mae_m": 0.4039639136904762,
+          "event_brier": 0.030153366692111088
+        },
+        "by_site": [
+          {
+            "site_id": "avondale",
+            "count_mae_m": 0.027407105350094333,
+            "rounded_count_mae_m": 0.0078125,
+            "idw_thickness_mae_m": 0.078125,
+            "event_brier": 0.008505715351917518
+          },
+          {
+            "site_id": "avonside",
+            "count_mae_m": 0.04268272056667194,
+            "rounded_count_mae_m": 0.03125,
+            "idw_thickness_mae_m": 0.10416666666666667,
+            "event_brier": 0.015249137082671033
+          },
+          {
+            "site_id": "bexley",
+            "count_mae_m": 0.008008251452235347,
+            "rounded_count_mae_m": 0.0,
+            "idw_thickness_mae_m": 0.0,
+            "event_brier": 1.9625473743549946e-05
+          },
+          {
+            "site_id": "christchurch_central_city",
+            "count_mae_m": 0.35781450962198674,
+            "rounded_count_mae_m": 0.34375,
+            "idw_thickness_mae_m": 0.678125,
+            "event_brier": 0.04964215874928601
+          },
+          {
+            "site_id": "hollywood",
+            "count_mae_m": 0.09146376430931313,
+            "rounded_count_mae_m": 0.02625,
+            "idw_thickness_mae_m": 0.13375,
+            "event_brier": 0.011423295087059668
+          },
+          {
+            "site_id": "linwood_rudds_road",
+            "count_mae_m": 0.05591490118744958,
+            "rounded_count_mae_m": 0.015625,
+            "idw_thickness_mae_m": 0.0625,
+            "event_brier": 0.007873011102673577
+          },
+          {
+            "site_id": "marshland",
+            "count_mae_m": 0.18834780078546248,
+            "rounded_count_mae_m": 0.1609375,
+            "idw_thickness_mae_m": 0.465625,
+            "event_brier": 0.03709303942883116
+          },
+          {
+            "site_id": "newlock",
+            "count_mae_m": 0.6924968286776786,
+            "rounded_count_mae_m": 0.691015625,
+            "idw_thickness_mae_m": 1.351953125,
+            "event_brier": 0.10529274075670973
+          },
+          {
+            "site_id": "parkland_bower_ave_two",
+            "count_mae_m": 0.07801918721793737,
+            "rounded_count_mae_m": 0.03125,
+            "idw_thickness_mae_m": 0.203125,
+            "event_brier": 0.013567795806730764
+          },
+          {
+            "site_id": "redcliffs_main_road",
+            "count_mae_m": 0.09186703127905466,
+            "rounded_count_mae_m": 0.078125,
+            "idw_thickness_mae_m": 0.171875,
+            "event_brier": 0.013801534868665685
+          },
+          {
+            "site_id": "wainoni",
+            "count_mae_m": 0.06732585739865937,
+            "rounded_count_mae_m": 0.057291666666666664,
+            "idw_thickness_mae_m": 0.21875,
+            "event_brier": 0.01950226828389424
+          },
+          {
+            "site_id": "wainoni_pak_n_save",
+            "count_mae_m": 0.06868944296770167,
+            "rounded_count_mae_m": 0.029166666666666667,
+            "idw_thickness_mae_m": 0.0625,
+            "event_brier": 0.009263273816124375
+          },
+          {
+            "site_id": "wellington_college",
+            "count_mae_m": 0.06230839808187458,
+            "rounded_count_mae_m": 0.0234375,
+            "idw_thickness_mae_m": 0.6484375,
+            "event_brier": 0.04440288407080606
+          },
+          {
+            "site_id": "whangarei_high_school",
+            "count_mae_m": 0.16124889401129608,
+            "rounded_count_mae_m": 0.1328125,
+            "idw_thickness_mae_m": 1.4765625,
+            "event_brier": 0.0865106538104419
+          }
+        ]
+      },
+      "validation": {
+        "profiles": 128,
+        "sites": 3,
+        "macro": {
+          "count_mae_m": 0.5303534688525043,
+          "rounded_count_mae_m": 0.5090277777777777,
+          "idw_thickness_mae_m": 0.5152777777777778,
+          "event_brier": 0.13184633779186425
+        },
+        "by_site": [
+          {
+            "site_id": "kaiapoi_near_river",
+            "count_mae_m": 0.5231178922536733,
+            "rounded_count_mae_m": 0.46875,
+            "idw_thickness_mae_m": 0.5,
+            "event_brier": 0.15374407457495834
+          },
+          {
+            "site_id": "lower_hutt_town_hall",
+            "count_mae_m": 0.3656451127771267,
+            "rounded_count_mae_m": 0.36666666666666664,
+            "idw_thickness_mae_m": 0.26666666666666666,
+            "event_brier": 0.07194696084817452
+          },
+          {
+            "site_id": "tauranga_farmers_building",
+            "count_mae_m": 0.7022974015267133,
+            "rounded_count_mae_m": 0.6916666666666667,
+            "idw_thickness_mae_m": 0.7791666666666667,
+            "event_brier": 0.16984797795245993
+          }
+        ]
+      },
+      "validation_usage": "Reporting only; no selection or updates.",
+      "effective_trees": {
+        "count": 256,
+        "event": 256
+      },
+      "unique_train_query_cpts": 200,
+      "unique_validation_query_cpts": 25,
+      "dependence_note": "Profile and event rows repeat CPTs across budgets/trajectories; not independent samples."
+    },
+    {
+      "fold_id": 1,
+      "train_episodes": 472,
+      "validation_episodes": 24,
+      "train_profile_rows": 1576,
+      "train_event_rows": 37824,
+      "source_train_sites": [
+        "avonside",
+        "bexley",
+        "cashmere_high_school",
+        "christchurch_central_city",
+        "christchurch_metro_sports_facility",
+        "christchurch_stadium",
+        "hollywood",
+        "new_brighton_willryan_ave",
+        "parkland_bower_ave_one",
+        "redcliffs_main_road",
+        "richmond",
+        "south_new_brighton",
+        "wellington_airport",
+        "wellington_college",
+        "whangarei_high_school"
+      ],
+      "source_validation_sites": [
+        "lower_hutt_town_hall",
+        "port_nelson",
+        "tauranga_farmers_building"
+      ],
+      "profile_feature_count": 85,
+      "event_feature_count": 91,
+      "feature_seconds": 33.165369900000314,
+      "training_seconds": 50.66892689999986,
+      "train": {
+        "profiles": 1576,
+        "sites": 15,
+        "macro": {
+          "count_mae_m": 0.10496198726478422,
+          "rounded_count_mae_m": 0.09124652777777778,
+          "idw_thickness_mae_m": 0.32996180555555554,
+          "event_brier": 0.026484925727922323
+        },
+        "by_site": [
+          {
+            "site_id": "avonside",
+            "count_mae_m": 0.04126314780156428,
+            "rounded_count_mae_m": 0.03125,
+            "idw_thickness_mae_m": 0.10416666666666667,
+            "event_brier": 0.008191505997732183
+          },
+          {
+            "site_id": "bexley",
+            "count_mae_m": 0.006372655661640236,
+            "rounded_count_mae_m": 0.0,
+            "idw_thickness_mae_m": 0.0,
+            "event_brier": 2.718342316715605e-05
+          },
+          {
+            "site_id": "cashmere_high_school",
+            "count_mae_m": 0.2586696692170677,
+            "rounded_count_mae_m": 0.25625,
+            "idw_thickness_mae_m": 0.69375,
+            "event_brier": 0.05540918636852114
+          },
+          {
+            "site_id": "christchurch_central_city",
+            "count_mae_m": 0.3743492988902433,
+            "rounded_count_mae_m": 0.36875,
+            "idw_thickness_mae_m": 0.678125,
+            "event_brier": 0.048741045260832096
+          },
+          {
+            "site_id": "christchurch_metro_sports_facility",
+            "count_mae_m": 0.22015513298689085,
+            "rounded_count_mae_m": 0.20234375,
+            "idw_thickness_mae_m": 0.57734375,
+            "event_brier": 0.06156928708298799
+          },
+          {
+            "site_id": "christchurch_stadium",
+            "count_mae_m": 0.12859152468785623,
+            "rounded_count_mae_m": 0.11,
+            "idw_thickness_mae_m": 0.2675,
+            "event_brier": 0.035609302707526845
+          },
+          {
+            "site_id": "hollywood",
+            "count_mae_m": 0.07766237068421335,
+            "rounded_count_mae_m": 0.0225,
+            "idw_thickness_mae_m": 0.13375,
+            "event_brier": 0.011559714556904088
+          },
+          {
+            "site_id": "new_brighton_willryan_ave",
+            "count_mae_m": 0.017250216505732486,
+            "rounded_count_mae_m": 0.0,
+            "idw_thickness_mae_m": 0.10416666666666667,
+            "event_brier": 0.010613591053846877
+          },
+          {
+            "site_id": "parkland_bower_ave_one",
+            "count_mae_m": 0.0002713097484723881,
+            "rounded_count_mae_m": 0.0,
+            "idw_thickness_mae_m": 0.0,
+            "event_brier": 2.509563579923474e-06
+          },
+          {
+            "site_id": "redcliffs_main_road",
+            "count_mae_m": 0.08208144325115574,
+            "rounded_count_mae_m": 0.07291666666666667,
+            "idw_thickness_mae_m": 0.171875,
+            "event_brier": 0.012151812153190528
+          },
+          {
+            "site_id": "richmond",
+            "count_mae_m": 0.05582380994449363,
+            "rounded_count_mae_m": 0.0390625,
+            "idw_thickness_mae_m": 0.09375,
+            "event_brier": 0.011769339664491606
+          },
+          {
+            "site_id": "south_new_brighton",
+            "count_mae_m": 0.00023457783000291324,
+            "rounded_count_mae_m": 0.0,
+            "idw_thickness_mae_m": 0.0,
+            "event_brier": 7.832237518172745e-08
+          },
+          {
+            "site_id": "wellington_airport",
+            "count_mae_m": 0.003040066780098396,
+            "rounded_count_mae_m": 0.0,
+            "idw_thickness_mae_m": 0.0,
+            "event_brier": 3.236027801593463e-05
+          },
+          {
+            "site_id": "wellington_college",
+            "count_mae_m": 0.05814678407327915,
+            "rounded_count_mae_m": 0.0234375,
+            "idw_thickness_mae_m": 0.6484375,
+            "event_brier": 0.040145818874535555
+          },
+          {
+            "site_id": "whangarei_high_school",
+            "count_mae_m": 0.2505178009090526,
+            "rounded_count_mae_m": 0.2421875,
+            "idw_thickness_mae_m": 1.4765625,
+            "event_brier": 0.10145115061112768
+          }
+        ]
+      },
+      "validation": {
+        "profiles": 128,
+        "sites": 3,
+        "macro": {
+          "count_mae_m": 0.7776116496023309,
+          "rounded_count_mae_m": 0.7791666666666667,
+          "idw_thickness_mae_m": 0.5569444444444445,
+          "event_brier": 0.15224875617858272
+        },
+        "by_site": [
+          {
+            "site_id": "lower_hutt_town_hall",
+            "count_mae_m": 0.4335778720663734,
+            "rounded_count_mae_m": 0.44166666666666665,
+            "idw_thickness_mae_m": 0.26666666666666666,
+            "event_brier": 0.06991507517385022
+          },
+          {
+            "site_id": "port_nelson",
+            "count_mae_m": 1.1943319617978112,
+            "rounded_count_mae_m": 1.1875,
+            "idw_thickness_mae_m": 0.625,
+            "event_brier": 0.21314541845531365
+          },
+          {
+            "site_id": "tauranga_farmers_building",
+            "count_mae_m": 0.7049251149428081,
+            "rounded_count_mae_m": 0.7083333333333334,
+            "idw_thickness_mae_m": 0.7791666666666667,
+            "event_brier": 0.17368577490658435
+          }
+        ]
+      },
+      "validation_usage": "Reporting only; no selection or updates.",
+      "effective_trees": {
+        "count": 256,
+        "event": 256
+      },
+      "unique_train_query_cpts": 190,
+      "unique_validation_query_cpts": 25,
+      "dependence_note": "Profile and event rows repeat CPTs across budgets/trajectories; not independent samples."
+    },
+    {
+      "fold_id": 2,
+      "train_episodes": 400,
+      "validation_episodes": 20,
+      "train_profile_rows": 1688,
+      "train_event_rows": 40512,
+      "source_train_sites": [
+        "avondale",
+        "cashmere_high_school",
+        "christchurch_stadium",
+        "kaiapoi_near_river",
+        "linwood_rudds_road",
+        "new_brighton_willryan_ave",
+        "newlock",
+        "parkland_bower_ave_one",
+        "parkland_bower_ave_two",
+        "port_nelson",
+        "richmond",
+        "south_new_brighton",
+        "wainoni",
+        "wainoni_pak_n_save",
+        "wellington_airport"
+      ],
+      "source_validation_sites": [
+        "christchurch_metro_sports_facility",
+        "marshland"
+      ],
+      "profile_feature_count": 85,
+      "event_feature_count": 91,
+      "feature_seconds": 19.33645320000005,
+      "training_seconds": 51.98725920000015,
+      "train": {
+        "profiles": 1688,
+        "sites": 15,
+        "macro": {
+          "count_mae_m": 0.12625428957770815,
+          "rounded_count_mae_m": 0.10977430555555555,
+          "idw_thickness_mae_m": 0.32417881944444443,
+          "event_brier": 0.03039504439407796
+        },
+        "by_site": [
+          {
+            "site_id": "avondale",
+            "count_mae_m": 0.038337009025968025,
+            "rounded_count_mae_m": 0.0078125,
+            "idw_thickness_mae_m": 0.078125,
+            "event_brier": 0.00900141238132766
+          },
+          {
+            "site_id": "cashmere_high_school",
+            "count_mae_m": 0.2321519647630553,
+            "rounded_count_mae_m": 0.2203125,
+            "idw_thickness_mae_m": 0.69375,
+            "event_brier": 0.051745419202114486
+          },
+          {
+            "site_id": "christchurch_stadium",
+            "count_mae_m": 0.1153927198616806,
+            "rounded_count_mae_m": 0.09375,
+            "idw_thickness_mae_m": 0.2675,
+            "event_brier": 0.03382023796190714
+          },
+          {
+            "site_id": "kaiapoi_near_river",
+            "count_mae_m": 0.18541976591458287,
+            "rounded_count_mae_m": 0.1875,
+            "idw_thickness_mae_m": 1.0234375,
+            "event_brier": 0.0651903766244037
+          },
+          {
+            "site_id": "linwood_rudds_road",
+            "count_mae_m": 0.04707789727344146,
+            "rounded_count_mae_m": 0.0,
+            "idw_thickness_mae_m": 0.0625,
+            "event_brier": 0.0073766313629981305
+          },
+          {
+            "site_id": "new_brighton_willryan_ave",
+            "count_mae_m": 0.0269767805042927,
+            "rounded_count_mae_m": 0.0,
+            "idw_thickness_mae_m": 0.10416666666666667,
+            "event_brier": 0.011812666316480364
+          },
+          {
+            "site_id": "newlock",
+            "count_mae_m": 0.7129572015877959,
+            "rounded_count_mae_m": 0.70859375,
+            "idw_thickness_mae_m": 1.351953125,
+            "event_brier": 0.1174134454671136
+          },
+          {
+            "site_id": "parkland_bower_ave_one",
+            "count_mae_m": 0.006179992384235999,
+            "rounded_count_mae_m": 0.0,
+            "idw_thickness_mae_m": 0.0,
+            "event_brier": 2.9042133949494386e-06
+          },
+          {
+            "site_id": "parkland_bower_ave_two",
+            "count_mae_m": 0.07372070459456116,
+            "rounded_count_mae_m": 0.036458333333333336,
+            "idw_thickness_mae_m": 0.203125,
+            "event_brier": 0.013307644815827288
+          },
+          {
+            "site_id": "port_nelson",
+            "count_mae_m": 0.2568628017060446,
+            "rounded_count_mae_m": 0.2578125,
+            "idw_thickness_mae_m": 0.703125,
+            "event_brier": 0.10473209142701206
+          },
+          {
+            "site_id": "richmond",
+            "count_mae_m": 0.05616700756911387,
+            "rounded_count_mae_m": 0.03125,
+            "idw_thickness_mae_m": 0.09375,
+            "event_brier": 0.011684323051746923
+          },
+          {
+            "site_id": "south_new_brighton",
+            "count_mae_m": 0.0006581706872218822,
+            "rounded_count_mae_m": 0.0,
+            "idw_thickness_mae_m": 0.0,
+            "event_brier": 9.979672966374758e-08
+          },
+          {
+            "site_id": "wainoni",
+            "count_mae_m": 0.07765441911904582,
+            "rounded_count_mae_m": 0.078125,
+            "idw_thickness_mae_m": 0.21875,
+            "event_brier": 0.02082815517859219
+          },
+          {
+            "site_id": "wainoni_pak_n_save",
+            "count_mae_m": 0.06342084242070672,
+            "rounded_count_mae_m": 0.025,
+            "idw_thickness_mae_m": 0.0625,
+            "event_brier": 0.008992874999525386
+          },
+          {
+            "site_id": "wellington_airport",
+            "count_mae_m": 0.0008370662538752916,
+            "rounded_count_mae_m": 0.0,
+            "idw_thickness_mae_m": 0.0,
+            "event_brier": 1.7383111995788318e-05
+          }
+        ]
+      },
+      "validation": {
+        "profiles": 120,
+        "sites": 2,
+        "macro": {
+          "count_mae_m": 0.6232909362963506,
+          "rounded_count_mae_m": 0.6171875,
+          "idw_thickness_mae_m": 0.6328125,
+          "event_brier": 0.11202794921258896
+        },
+        "by_site": [
+          {
+            "site_id": "christchurch_metro_sports_facility",
+            "count_mae_m": 0.5389087236951192,
+            "rounded_count_mae_m": 0.534375,
+            "idw_thickness_mae_m": 0.534375,
+            "event_brier": 0.11071873912721923
+          },
+          {
+            "site_id": "marshland",
+            "count_mae_m": 0.7076731488975819,
+            "rounded_count_mae_m": 0.7,
+            "idw_thickness_mae_m": 0.73125,
+            "event_brier": 0.11333715929795869
+          }
+        ]
+      },
+      "validation_usage": "Reporting only; no selection or updates.",
+      "effective_trees": {
+        "count": 256,
+        "event": 256
+      },
+      "unique_train_query_cpts": 210,
+      "unique_validation_query_cpts": 24,
+      "dependence_note": "Profile and event rows repeat CPTs across budgets/trajectories; not independent samples."
+    }
+  ],
+  "models": [
+    "v6_count_head_residual",
+    "v6_count_head_fpca50",
+    "v6_count_head_half_residual",
+    "v6_event_head_residual"
+  ],
+  "rows_per_model": 8640,
+  "states_per_model": 60,
+  "source_validation_was_report_only": true,
+  "query_labels_in_features": false,
+  "outer_test_used": false
+}

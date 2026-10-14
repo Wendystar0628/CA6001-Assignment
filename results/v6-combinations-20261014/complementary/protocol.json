@@ -1,0 +1,32 @@
+{
+  "models": [
+    "v6_complement_adaptive_graph_gp",
+    "v6_complement_adaptive_graph_event",
+    "v6_complement_fpca_graph_gp",
+    "v6_complement_fpca_graph_event",
+    "v6_complement_median_four_gp",
+    "v6_complement_median_four_event"
+  ],
+  "round": 4,
+  "selection_scope": "exploratory follow-up after rounds 1-3; no independent confirmation",
+  "point_heads": {
+    "adaptive_graph": "0.5 support_residual_stack_structural + 0.5 v6_graph_residual_low_union",
+    "fpca_graph": "0.5 v6_fpca_residual_w050 + 0.5 v6_graph_residual_low_union",
+    "median_four": "cellwise median(BEST, functional_fpca_krr, graph_huber, registered_profile_shape)"
+  },
+  "mixture_weights": "fixed 0.5; no alpha sweep",
+  "even_median": "arithmetic mean of the two middle ordered values",
+  "risk_head": "existing GP native p_low_1 only; never OOF-calibrated risk_probability",
+  "event_decoder": {
+    "tau": 0.5,
+    "potts": 0.25,
+    "cardinality": 0.25,
+    "margin": 0.05
+  },
+  "count_prior": "3NN IDW2 weighted median currently revealed low-resistance cell count",
+  "probability_semantics": {
+    "gp": "separate GP event head; not the CDF of the combined point estimate",
+    "event": "exact marginal of the finite event Gibbs model; not a calibrated geological probability"
+  },
+  "thickness_semantics": "H_point is computed from the actual final amplitude threshold, not a substituted count"
+}

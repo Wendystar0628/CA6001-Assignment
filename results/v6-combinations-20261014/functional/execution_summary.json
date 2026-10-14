@@ -1,0 +1,19 @@
+{
+  "models": [
+    "v6_fpca_residual_w025",
+    "v6_fpca_residual_w050",
+    "v6_fpca_residual_w075",
+    "v6_fpca_residual_sign_guard",
+    "v6_fpca_shape_residual_equal",
+    "v6_fpca_subspace_residual_detail"
+  ],
+  "prediction_rows_per_model": 8640,
+  "states_per_model": 60,
+  "row_alignment": "All profile transfers restored to original row order.",
+  "source_basis_ranks": {
+    "0": 8,
+    "1": 8,
+    "2": 8
+  },
+  "query_labels_consumed": false
+}

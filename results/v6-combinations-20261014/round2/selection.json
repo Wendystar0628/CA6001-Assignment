@@ -1,0 +1,85 @@
+{
+  "scope": "adaptive_exploration_reused_validation",
+  "folds": {
+    "0": {
+      "baseline_model": "idw",
+      "selected_model": "v6_event_potts_residual",
+      "eligible_candidates": [
+        "v6_event_cardinality_residual",
+        "v6_event_potts_residual",
+        "support_stack_l1",
+        "support_stack_structural"
+      ],
+      "fallback": false
+    },
+    "1": {
+      "baseline_model": "idw",
+      "selected_model": "v6_event_potts_residual",
+      "eligible_candidates": [
+        "v6_event_potts_residual",
+        "support_stack_l1",
+        "support_stack_structural"
+      ],
+      "fallback": false
+    },
+    "2": {
+      "baseline_model": "gp",
+      "selected_model": "gp",
+      "eligible_candidates": [],
+      "fallback": true
+    }
+  },
+  "method": {
+    "log_mae": 0.6127540959637208,
+    "h_point_mae_m": 0.6329752604166667,
+    "recall": 0.357601868872549,
+    "false_positive_rate": 0.07158982125016822,
+    "risk_recall": 0.640676700367647,
+    "risk_fpr": 0.24875462869245585,
+    "risk_brier": 0.12481688809254159
+  },
+  "baseline": {
+    "log_mae": 0.6297554548627837,
+    "h_point_mae_m": 0.64501953125,
+    "recall": 0.32772288602941174,
+    "false_positive_rate": 0.06377500652108407,
+    "risk_recall": 0.6214135263480393,
+    "risk_fpr": 0.36677998048475513,
+    "risk_brier": 0.12954328418446634
+  },
+  "global_checks": {
+    "profile_improves": true,
+    "thickness_guard": true,
+    "recall_guard": true,
+    "fpr_guard": true,
+    "majority_unique_sites_improve": false,
+    "all_folds_complete": true
+  },
+  "passed": false,
+  "improved_sites": 2,
+  "unique_sites": 4,
+  "relative_log_mae_reduction": 0.02699676321623501,
+  "weak_controls_excluded_from_promotion": [
+    "target_constant_median",
+    "target_depth_median"
+  ],
+  "outer_test_executed": false,
+  "candidates": [
+    "v6_event_adaptive_residual",
+    "v6_event_cardinality_idw",
+    "v6_event_cardinality_residual",
+    "v6_event_potts_residual",
+    "support_residual_stack_l1",
+    "support_residual_stack_structural",
+    "support_stack_l1",
+    "support_stack_structural"
+  ],
+  "families": [
+    "indicator",
+    "adaptive"
+  ],
+  "new_model_count": 8,
+  "metric_rows": 2400,
+  "clear_win_definition": "E reduction >=5%, H reduction >=10%, point recall >=baseline, risk guards and majority sites",
+  "clear_winners": []
+}
