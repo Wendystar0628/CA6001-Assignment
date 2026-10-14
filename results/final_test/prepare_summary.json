@@ -1,0 +1,32 @@
+{
+  "test_states": 100,
+  "distinct_observed_sets": 100,
+  "distinct_evaluation_sets": 19,
+  "per_site": {
+    "christchurch_stadium": {
+      "min": 5,
+      "max": 5,
+      "sum": 25
+    },
+    "hollywood": {
+      "min": 5,
+      "max": 5,
+      "sum": 25
+    },
+    "newlock": {
+      "min": 16,
+      "max": 16,
+      "sum": 80
+    },
+    "wellington_airport": {
+      "min": 6,
+      "max": 6,
+      "sum": 30
+    }
+  },
+  "frozen_state_reproduction": {
+    "checked": 60,
+    "mismatches": 0
+  },
+  "leakage_audit_passed": true
+}

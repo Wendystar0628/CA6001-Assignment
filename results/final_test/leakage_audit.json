@@ -1,0 +1,71 @@
+{
+  "created": "2026-10-14T22:24:12+08:00",
+  "all_passed": true,
+  "sites": [
+    {
+      "site_id": "christchurch_stadium",
+      "test_fold": 0,
+      "is_test_group_in_fold": true,
+      "leaks": {},
+      "lists_outside_fold_sources": {},
+      "gp_trend_refit_from_fold_train_sites_max_abs_diff": 0.0,
+      "gp_trend_fit_sites": "folds.json train_sites (fit_gp_trend, equal site weights)",
+      "risk_calibrator_training_sites": [
+        "lower_hutt_town_hall",
+        "tauranga_farmers_building"
+      ],
+      "runtime_target_only_components": "simplex/Haar/structural stacking weights/joint error atoms/graph/IDW/GP hyperparameters are fitted per state on revealed CPTs only",
+      "graph_planned_geometry": "coordinates of all locations of the site (no measurements), as for validation",
+      "passed": true
+    },
+    {
+      "site_id": "wellington_airport",
+      "test_fold": 0,
+      "is_test_group_in_fold": true,
+      "leaks": {},
+      "lists_outside_fold_sources": {},
+      "gp_trend_refit_from_fold_train_sites_max_abs_diff": 0.0,
+      "gp_trend_fit_sites": "folds.json train_sites (fit_gp_trend, equal site weights)",
+      "risk_calibrator_training_sites": [
+        "lower_hutt_town_hall",
+        "tauranga_farmers_building"
+      ],
+      "runtime_target_only_components": "simplex/Haar/structural stacking weights/joint error atoms/graph/IDW/GP hyperparameters are fitted per state on revealed CPTs only",
+      "graph_planned_geometry": "coordinates of all locations of the site (no measurements), as for validation",
+      "passed": true
+    },
+    {
+      "site_id": "newlock",
+      "test_fold": 1,
+      "is_test_group_in_fold": true,
+      "leaks": {},
+      "lists_outside_fold_sources": {},
+      "gp_trend_refit_from_fold_train_sites_max_abs_diff": 0.0,
+      "gp_trend_fit_sites": "folds.json train_sites (fit_gp_trend, equal site weights)",
+      "risk_calibrator_training_sites": [
+        "lower_hutt_town_hall",
+        "tauranga_farmers_building"
+      ],
+      "runtime_target_only_components": "simplex/Haar/structural stacking weights/joint error atoms/graph/IDW/GP hyperparameters are fitted per state on revealed CPTs only",
+      "graph_planned_geometry": "coordinates of all locations of the site (no measurements), as for validation",
+      "passed": true
+    },
+    {
+      "site_id": "hollywood",
+      "test_fold": 2,
+      "is_test_group_in_fold": true,
+      "leaks": {},
+      "lists_outside_fold_sources": {},
+      "gp_trend_refit_from_fold_train_sites_max_abs_diff": 0.0,
+      "gp_trend_fit_sites": "folds.json train_sites (fit_gp_trend, equal site weights)",
+      "risk_calibrator_training_sites": [
+        "christchurch_metro_sports_facility",
+        "marshland"
+      ],
+      "runtime_target_only_components": "simplex/Haar/structural stacking weights/joint error atoms/graph/IDW/GP hyperparameters are fitted per state on revealed CPTs only",
+      "graph_planned_geometry": "coordinates of all locations of the site (no measurements), as for validation",
+      "passed": true
+    }
+  ],
+  "note": "The GP trend refit reads the training-site labels of the fold (already embedded in the stored artifact); only the max absolute difference is recorded."
+}

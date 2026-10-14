@@ -1,0 +1,12 @@
+{
+  "check": "two complete independent blind runs (13 entries x 100 states) in separate processes",
+  "run_a": "runs/current/final_test_blind_A (code before the final unblind/score refactor and CUDA-evidence logging; prediction path unchanged)",
+  "run_b": "results/final_test/blind (frozen run)",
+  "predictions_file_sha256_equal": true,
+  "prediction_content_sha256_equal": true,
+  "max_abs_difference_all_float_columns": 0.0,
+  "point_label_differences": 0,
+  "risk_label_differences": 0,
+  "run_a_seconds": 429.0860442999983,
+  "run_b_seconds": 416.69427610000275
+}

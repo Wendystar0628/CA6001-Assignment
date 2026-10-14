@@ -1,0 +1,176 @@
+{
+  "created": "2026-10-14T22:41:28+08:00",
+  "models": [
+    "constant",
+    "idw",
+    "gp",
+    "xgb",
+    "tabpfn_joint",
+    "tabpfn_graph",
+    "balanced",
+    "thickness",
+    "recognition",
+    "simplex",
+    "count_shrink",
+    "thickness_guarded",
+    "cnp"
+  ],
+  "states": 100,
+  "prediction_rows": 249600,
+  "all_sanity_passed": true,
+  "n_sanity_failed": 0,
+  "total_seconds": 416.69427610000275,
+  "tabpfn_device": "NVIDIA GeForce RTX 4080",
+  "cuda_available": true,
+  "per_model_state_seconds": {
+    "balanced": {
+      "count": 100,
+      "mean": 0.4181,
+      "median": 0.3432,
+      "max": 1.1031,
+      "sum": 41.8051
+    },
+    "cnp": {
+      "count": 100,
+      "mean": 0.0442,
+      "median": 0.0369,
+      "max": 0.2486,
+      "sum": 4.4231
+    },
+    "constant": {
+      "count": 100,
+      "mean": 0.0064,
+      "median": 0.0059,
+      "max": 0.01,
+      "sum": 0.6437
+    },
+    "count_shrink": {
+      "count": 100,
+      "mean": 0.8566,
+      "median": 0.8317,
+      "max": 1.4674,
+      "sum": 85.6557
+    },
+    "gp": {
+      "count": 100,
+      "mean": 0.1868,
+      "median": 0.1544,
+      "max": 0.7155,
+      "sum": 18.6766
+    },
+    "idw": {
+      "count": 100,
+      "mean": 0.0191,
+      "median": 0.0179,
+      "max": 0.0359,
+      "sum": 1.9097
+    },
+    "recognition": {
+      "count": 100,
+      "mean": 0.4997,
+      "median": 0.3892,
+      "max": 0.9759,
+      "sum": 49.966
+    },
+    "simplex": {
+      "count": 100,
+      "mean": 0.0226,
+      "median": 0.0222,
+      "max": 0.0295,
+      "sum": 2.2555
+    },
+    "tabpfn_graph": {
+      "count": 100,
+      "mean": 0.2563,
+      "median": 0.1744,
+      "max": 0.7471,
+      "sum": 25.6263
+    },
+    "tabpfn_joint": {
+      "count": 100,
+      "mean": 0.3028,
+      "median": 0.231,
+      "max": 0.9498,
+      "sum": 30.276
+    },
+    "thickness": {
+      "count": 100,
+      "mean": 0.4132,
+      "median": 0.3201,
+      "max": 0.7665,
+      "sum": 41.3201
+    },
+    "thickness_guarded": {
+      "count": 100,
+      "mean": 0.4315,
+      "median": 0.3146,
+      "max": 0.9328,
+      "sum": 43.1508
+    },
+    "xgb": {
+      "count": 100,
+      "mean": 0.2702,
+      "median": 0.2075,
+      "max": 0.5718,
+      "sum": 27.0228
+    }
+  },
+  "cuda_memory_evidence": {
+    "constant": {
+      "catalog_device": "cpu",
+      "cuda_peak_extra_mb": 0.0
+    },
+    "idw": {
+      "catalog_device": "cpu",
+      "cuda_peak_extra_mb": 0.0
+    },
+    "gp": {
+      "catalog_device": "cpu",
+      "cuda_peak_extra_mb": 0.0
+    },
+    "xgb": {
+      "catalog_device": "cpu",
+      "cuda_peak_extra_mb": 0.0
+    },
+    "tabpfn_joint": {
+      "catalog_device": "cuda",
+      "cuda_peak_extra_mb": 196.7216796875
+    },
+    "tabpfn_graph": {
+      "catalog_device": "cuda",
+      "cuda_peak_extra_mb": 145.20556640625
+    },
+    "balanced": {
+      "catalog_device": "cuda",
+      "cuda_peak_extra_mb": 145.20556640625
+    },
+    "thickness": {
+      "catalog_device": "cuda",
+      "cuda_peak_extra_mb": 145.20556640625
+    },
+    "recognition": {
+      "catalog_device": "cuda",
+      "cuda_peak_extra_mb": 145.20556640625
+    },
+    "simplex": {
+      "catalog_device": "cpu",
+      "cuda_peak_extra_mb": 0.0
+    },
+    "count_shrink": {
+      "catalog_device": "cuda",
+      "cuda_peak_extra_mb": 187.5966796875
+    },
+    "thickness_guarded": {
+      "catalog_device": "cuda",
+      "cuda_peak_extra_mb": 145.20556640625
+    },
+    "cnp": {
+      "catalog_device": "cpu",
+      "cuda_peak_extra_mb": 0.0
+    }
+  },
+  "cuda_used_where_catalog_says": true,
+  "predictions_sha256": "f87c1f7b3aac2f93e15017b2c87a9db1815041138f82651dbc130c523fbf30a4",
+  "prediction_content_sha256": "1e9f2e5f067872d027061b10f4443c25d0c9fa57fde0c06165ff46770e9a6bf4",
+  "truth_access": "none: evaluation cells masked before model calls; PreparedDataset.truth patched to raise"
+}

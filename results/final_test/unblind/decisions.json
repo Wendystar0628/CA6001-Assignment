@@ -1,0 +1,164 @@
+{
+  "run_index": 1,
+  "rerun": false,
+  "created": "2026-10-14T22:51:17+08:00",
+  "protocol_sha256": "6f88d02f46a049a2d4b97ebd788ff458029451170877a9224d9fcaad11abb452",
+  "answers": {
+    "Q1_balanced_vs_idw": {
+      "log_mae": {
+        "outcome": "consistent_improvement",
+        "mean_entry": 0.5052478755928147,
+        "mean_reference": 0.5315168200853568,
+        "mean_site_difference": -0.026268944492542037,
+        "n_sites": 4,
+        "site_wins": 3,
+        "site_ties": 0,
+        "site_losses": 1
+      },
+      "h_point_mae_m": {
+        "outcome": "mean_improvement_only",
+        "mean_entry": 0.46294921875,
+        "mean_reference": 0.5035937500000001,
+        "mean_site_difference": -0.040644531249999984,
+        "n_sites": 4,
+        "site_wins": 2,
+        "site_ties": 1,
+        "site_losses": 1
+      },
+      "decision": "Balanced对IDW只有部分改进：log_mae、h_point_mae_m"
+    },
+    "Q2_thickness": {
+      "vs_idw_h_point_mae_m": {
+        "outcome": "consistent_improvement",
+        "mean_entry": 0.43828124999999996,
+        "mean_reference": 0.5035937500000001,
+        "mean_site_difference": -0.06531250000000002,
+        "n_sites": 4,
+        "site_wins": 3,
+        "site_ties": 1,
+        "site_losses": 0
+      },
+      "vs_thickness_guarded_h_point_mae_m": {
+        "outcome": "mean_improvement_only",
+        "mean_entry": 0.43828124999999996,
+        "mean_reference": 0.43882812499999996,
+        "mean_site_difference": -0.00054687500000003,
+        "n_sites": 4,
+        "site_wins": 1,
+        "site_ties": 1,
+        "site_losses": 2
+      },
+      "thickness_point_fpr": 0.04805470674376633,
+      "thickness_guarded_point_fpr": 0.045822143123624384,
+      "idw_point_fpr": 0.05481301819240565,
+      "fpr_guard_idw_plus_2pp": 0.07481301819240566,
+      "thickness_within_fpr_guard": true
+    },
+    "Q3_recognition": {
+      "recall_vs_idw": {
+        "outcome": "mean_improvement_only",
+        "mean_entry": 0.2844022114430418,
+        "mean_reference": 0.23371511125647082,
+        "mean_site_difference": 0.05068710018657097,
+        "n_sites": 3,
+        "site_wins": 2,
+        "site_ties": 1,
+        "site_losses": 0
+      },
+      "fpr_vs_idw": {
+        "outcome": "consistent_deterioration",
+        "mean_entry": 0.06328411092006438,
+        "mean_reference": 0.05481301819240565,
+        "mean_site_difference": 0.008471092727658724,
+        "n_sites": 4,
+        "site_wins": 0,
+        "site_ties": 1,
+        "site_losses": 3
+      },
+      "recognition_point_fpr": 0.06328411092006438,
+      "idw_point_fpr": 0.05481301819240565,
+      "fpr_increase_pp": 0.8471092727658724,
+      "within_fpr_guard_idw_plus_2pp": true
+    },
+    "Q4_tabpfn_vs_idw": {
+      "tabpfn_joint": {
+        "log_mae": {
+          "outcome": "consistent_improvement",
+          "mean_entry": 0.5060967860612406,
+          "mean_reference": 0.5315168200853568,
+          "mean_site_difference": -0.025420034024116057,
+          "n_sites": 4,
+          "site_wins": 3,
+          "site_ties": 0,
+          "site_losses": 1
+        },
+        "h_point_mae_m": {
+          "outcome": "mean_improvement_only",
+          "mean_entry": 0.46568359375000007,
+          "mean_reference": 0.5035937500000001,
+          "mean_site_difference": -0.03791015624999998,
+          "n_sites": 4,
+          "site_wins": 2,
+          "site_ties": 1,
+          "site_losses": 1
+        }
+      },
+      "tabpfn_graph": {
+        "log_mae": {
+          "outcome": "consistent_improvement",
+          "mean_entry": 0.5098159159587563,
+          "mean_reference": 0.5315168200853568,
+          "mean_site_difference": -0.0217009041266005,
+          "n_sites": 4,
+          "site_wins": 3,
+          "site_ties": 0,
+          "site_losses": 1
+        },
+        "h_point_mae_m": {
+          "outcome": "no_improvement",
+          "mean_entry": 0.5513281250000001,
+          "mean_reference": 0.5035937500000001,
+          "mean_site_difference": 0.047734374999999996,
+          "n_sites": 4,
+          "site_wins": 0,
+          "site_ties": 2,
+          "site_losses": 2
+        }
+      }
+    },
+    "Q5_rank_stability": {
+      "log_mae": {
+        "spearman_rho": 0.9120879120879121,
+        "stability": "stable",
+        "validation_top3": [
+          "count_shrink",
+          "balanced",
+          "tabpfn_joint"
+        ],
+        "test_top3": [
+          "count_shrink",
+          "balanced",
+          "tabpfn_joint"
+        ],
+        "top3_overlap": 3,
+        "balanced_test_rank": 2
+      },
+      "h_point_mae_m": {
+        "spearman_rho": 0.509641873278237,
+        "stability": "moderate",
+        "validation_top3": [
+          "thickness",
+          "thickness_guarded",
+          "tabpfn_joint"
+        ],
+        "test_top3": [
+          "thickness",
+          "thickness_guarded",
+          "simplex"
+        ],
+        "top3_overlap": 2,
+        "balanced_test_rank": 5
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+site_id,display_name,investigation_group,n_locations,n_near_groups,grouping_verified,fold_0,fold_1,fold_2,in_frozen_validation_states,frozen_validation_folds,test_fold,included,reason
+christchurch_metro_sports_facility,Christchurch Metro Sports Facility,investigation_christchurch_metro_sports_facility,39,35,True,test,train,validation,True,2,0,False,validation site of the 60 frozen states (v0.9.1 model selection/validation)
+christchurch_stadium,Christchurch Stadium,investigation_christchurch_stadium,23,20,True,test,train,train,False,,0,True,outer-test site: not used for v0.9.1 validation/selection
+hollywood,Hollywood,investigation_hollywood,25,13,False,train,train,test,False,,2,True,outer-test site: not used for v0.9.1 validation/selection
+lower_hutt_town_hall,Lower Hutt Town Hall,investigation_lower_hutt_town_hall,29,29,True,validation,validation,test,True,"0,1",2,False,validation site of the 60 frozen states (v0.9.1 model selection/validation)
+marshland,Marshland,investigation_marshland,20,20,True,train,test,validation,True,2,1,False,validation site of the 60 frozen states (v0.9.1 model selection/validation)
+newlock,New Lock,investigation_newlock,80,74,False,train,test,train,False,,1,True,outer-test site: not used for v0.9.1 validation/selection
+tauranga_farmers_building,Tauranga Farmers Building,investigation_tauranga_farmers_building,28,28,True,validation,validation,test,True,"0,1",2,False,validation site of the 60 frozen states (v0.9.1 model selection/validation)
+wellington_airport,Wellington Airport,investigation_wellington_airport,27,27,True,test,train,train,False,,0,True,outer-test site: not used for v0.9.1 validation/selection
