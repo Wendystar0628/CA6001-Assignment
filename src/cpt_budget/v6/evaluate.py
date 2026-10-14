@@ -13,6 +13,8 @@ from cpt_budget.v5 import compare as v5
 from .common import RUN, REFERENCE, BEST
 
 CORE = ['log_mae', 'h_point_mae_m', 'recall', 'false_positive_rate', 'risk_recall', 'risk_fpr', 'risk_brier']
+PROFILE_TARGET = .03
+THICKNESS_TARGET = .10
 
 def candidate_global_checks(curves, models, settings):
     folds = curves.groupby(['fold_id','site_id','model_id'])[CORE].mean().groupby(['fold_id','model_id']).mean()
@@ -47,7 +49,7 @@ def candidate_global_checks(curves, models, settings):
                    'candidate_comprehensive_gate':all(checks.values()) and local_pass==3,
                    'relative_log_mae_reduction':er,
                    'relative_thickness_reduction':hr,'improved_sites':improve,
-                   'clear_win':bool(all(checks.values()) and local_pass==3 and er>=.05 and hr>=.10 and method['recall']>=baseline['recall'])}
+                   'clear_win':bool(all(checks.values()) and local_pass==3 and er>=PROFILE_TARGET and hr>=THICKNESS_TARGET and method['recall']>=baseline['recall'])}
             rows.append(row)
             sites_all.append(sites.reset_index().assign(model_id=model, reference=ref_name))
     return pd.DataFrame(rows),pd.concat(sites_all,ignore_index=True)
@@ -112,20 +114,48 @@ def run(families, output_name):
     site_pairs.to_csv(output/'candidate_site_pairs.csv',index=False)
     selection.update(candidates=list(model_paths),families=families,new_model_count=len(model_paths),
                      metric_rows=len(metrics),scope='adaptive_exploration_reused_validation',
-                     clear_win_definition='E reduction >=5%, H reduction >=10%, point recall >=baseline, risk guards and majority sites',
+                     clear_win_definition='E reduction >=3%, H reduction >=10%, point recall >=baseline, risk guards and majority sites',
                      clear_winners=global_checks.loc[global_checks.reference.eq('fold_strong')&global_checks.clear_win,'model_id'].tolist())
     chosen,control=selection['method'],selection['baseline']
     selection['selected_system_clear_win']=bool(selection['passed'] and
-        1-chosen['log_mae']/control['log_mae']>=.05 and
-        1-chosen['h_point_mae_m']/control['h_point_mae_m']>=.10 and chosen['recall']>=control['recall'])
+        1-chosen['log_mae']/control['log_mae']>=PROFILE_TARGET and
+        1-chosen['h_point_mae_m']/control['h_point_mae_m']>=THICKNESS_TARGET and chosen['recall']>=control['recall'])
     write_json(output/'selection.json',_plain(selection))
     write_json(output/'calibrators.json',calibrators)
+    refresh_goal(output_name)
     print(macro.loc[list(model_paths)][CORE].sort_values('log_mae').to_string())
     print(json.dumps(_plain(selection),ensure_ascii=False,indent=2))
+
+def refresh_goal(output_name):
+    """Apply the user's explicit target revision without refitting any model."""
+    output=RUN/output_name
+    table=pd.read_csv(output/'candidate_global_gates.csv')
+    table['clear_win']=(table.candidate_comprehensive_gate &
+        (table.relative_log_mae_reduction>=PROFILE_TARGET) &
+        (table.relative_thickness_reduction>=THICKNESS_TARGET) &
+        (table.recall_method>=table.recall_baseline))
+    table.to_csv(output/'candidate_global_gates.csv',index=False)
+    selection=json.loads((output/'selection.json').read_text(encoding='utf-8'))
+    chosen,control=selection['method'],selection['baseline']
+    selection['clear_win_definition']='E reduction >=3%, H reduction >=10%, point recall >=baseline, risk guards and majority sites'
+    selection['goal_revision']={'date':'2026-10-14','requested_by':'user',
+        'previous_profile_reduction':.05,'profile_reduction':PROFILE_TARGET,
+        'thickness_reduction':THICKNESS_TARGET,'original_gate_changed':False,
+        'note':'Changed during final evaluation at explicit user request; no predictions or metrics refitted.'}
+    selection['clear_winners']=table.loc[table.reference.eq('fold_strong')&table.clear_win,'model_id'].tolist()
+    selection['selected_system_clear_win']=bool(selection['passed'] and
+        1-chosen['log_mae']/control['log_mae']>=PROFILE_TARGET and
+        1-chosen['h_point_mae_m']/control['h_point_mae_m']>=THICKNESS_TARGET and chosen['recall']>=control['recall'])
+    write_json(output/'selection.json',_plain(selection))
+    return selection
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--families',nargs='+',default=['graph','functional','alignment'])
     parser.add_argument('--output',default='round1')
+    parser.add_argument('--refresh-goal-only',action='store_true')
     args=parser.parse_args()
-    run(args.families,args.output)
+    if args.refresh_goal_only:
+        print(json.dumps(refresh_goal(args.output),ensure_ascii=False,indent=2))
+    else:
+        run(args.families,args.output)
