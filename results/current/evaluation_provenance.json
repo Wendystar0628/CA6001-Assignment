@@ -1,0 +1,32 @@
+{
+  "command": "python -m cpt_budget evaluate --source reference",
+  "prediction_source": "artifacts\\evaluation\\reference_predictions.parquet",
+  "models": [
+    "constant",
+    "idw",
+    "gp",
+    "xgb",
+    "tabpfn_joint",
+    "tabpfn_graph",
+    "balanced",
+    "thickness",
+    "recognition",
+    "simplex",
+    "count_shrink",
+    "thickness_guarded",
+    "cnp"
+  ],
+  "states_per_model": 60,
+  "risk": {
+    "calibration": "risk.crossfit_risk per model and outer fold: leave one validation investigation group out, monotone Platt, equal site weights",
+    "threshold": 0.2,
+    "threshold_rationale": "course scenario false-negative cost 4 : false-positive cost 1",
+    "risk_source": {
+      "shared_empirical_head": "p_low_1 of the shared empirical risk head v6_empirical_graph_union_local (computed from the tabpfn_graph point path, independent of the entry point path); identical risk metrics for every entry with this source",
+      "native_gp": "GP Gaussian predictive CDF p_low_1",
+      "platt_on_point": "no native probability; evaluation-time Platt calibration of -pred_log_qc"
+    }
+  },
+  "aggregation": "normalized trapezoid over budgets 5/7/9/11/13 -> mean over (fold, seed) per site -> equal-weight mean over 4 validation sites",
+  "caveat": "Exploratory: the same 4 validation sites were reused for model selection; no outer test."
+}

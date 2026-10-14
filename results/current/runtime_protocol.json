@@ -1,6 +1,8 @@
 {
-  "scope": "Retained subset of v0.8 fixed-core measurement; no new timing performed during cleanup.",
-  "states_per_model": 12,
+  "scope": "v0.9.1 uniform serial hot-state inference benchmark over every catalogue entry",
+  "command": "python -m cpt_budget benchmark --cpu-core 2",
+  "ported_from": "v0.8-engineering src/cpt_budget/v8/benchmark.py (run_specs, apply_cpu_affinity, _hardware)",
+  "states_per_path": 12,
   "warmups_per_state": 1,
   "measured_repeats_per_state": 3,
   "cpu_threads": 1,
@@ -13,116 +15,51 @@
     "frequency_locked": false
   },
   "execution_order": [
-    "target_constant_median",
-    "idw",
-    "gp",
-    "structural_old",
-    "structural_new",
-    "joint_operator_old",
-    "joint_operator_new",
-    "haar_old",
-    "haar_new",
-    "recognition_operator_old",
-    "recognition_operator_new",
-    "tabpfn_residual_old",
-    "tabpfn_residual_new",
-    "balanced_point_old",
-    "balanced_point_new",
-    "balanced_full_old",
-    "balanced_full_new",
-    "haar_full_old",
-    "haar_full_new",
-    "recognition_full_old",
-    "recognition_full_new",
-    "recognition_localize_full",
-    "recognition_recall60_full",
-    "balanced_count_shrink_full",
-    "idw_optimized_old",
-    "idw_optimized_new"
+    "constant/full",
+    "idw/full",
+    "gp/full",
+    "xgb/full",
+    "tabpfn_joint/full",
+    "tabpfn_graph/full",
+    "balanced/full",
+    "thickness/full",
+    "recognition/full",
+    "simplex/full",
+    "count_shrink/full",
+    "thickness_guarded/full",
+    "cnp/full",
+    "tabpfn_joint/point_only",
+    "balanced/point_only",
+    "thickness/point_only",
+    "recognition/point_only",
+    "count_shrink/point_only",
+    "thickness_guarded/point_only"
   ],
-  "remaining_timing_limits": "Model entries executed sequentially in recorded order; CPU/GPU frequencies are not locked and order effects remain possible.",
+  "device_policy": {
+    "full": "catalogue device: cuda = TabPFN residual components on CUDA (hard failure without CUDA); cpu = CPU only. All other numerical work runs on the pinned CPU core with 1 thread.",
+    "point_only": "CPU only for every entry with point_only_supported; tabpfn_joint runs TabPFN on CPU.",
+    "xgb": "XGBoost n_jobs forced to 1 for timing (configs/main.yaml keeps 4 for normal runs; outputs identical).",
+    "cnp": "torch CPU (hard-coded in runtime)."
+  },
   "state_selection": "folds 0/1/2, two validation sites each, seed 17, budgets 5/13",
-  "timing": "perf_counter, device synchronize at timing boundaries for CUDA; fresh condition every repeat",
-  "excluded": "data loading, input DataFrame copies, optional declared prepare_state, evaluation and calibration",
-  "initialization": "One measured construction + optional initialize() weight load per factory/fold; separate from warm inference; no cold-start distribution claimed. Framework import and CUDA context startup are outside factory timing.",
-  "quantiles": "Summary median/p95 over all 3 repetitions x 12 states; descriptive heterogeneous warm-state samples, not a stable tail-latency estimate",
-  "pairing": "Per-state medians old/new; ratios old divided by new. No cold reference versus warm optimized comparison.",
-  "memory": "RSS is absolute process working set sampled after inference, not model-exclusive or a per-model peak; CUDA peak allocated includes live weights and tensors and excludes reserved allocator memory",
-  "prediction_cache": "Final prediction files are not accepted by this runner.",
-  "models": [
-    {
-      "name": "target_constant_median",
-      "scope": "full point inference: support median + query prediction",
-      "pair_id": "",
-      "version": "baseline",
-      "device": "cpu",
-      "setup_note": "No per-state preparation outside timing.",
-      "equivalence_atol": 1e-08
-    },
-    {
-      "name": "gp",
-      "scope": "full native-distribution inference: GP fit + mean/std/event prediction",
-      "pair_id": "",
-      "version": "baseline",
-      "device": "cpu",
-      "setup_note": "No per-state preparation outside timing.",
-      "equivalence_atol": 1e-08
-    },
-    {
-      "name": "tabpfn_residual_new",
-      "scope": "full guarded residual point inference: feature preparation + trained TabPFN CUDA forward + IDW guard; source checkpoint load separate",
-      "pair_id": "tabpfn_residual",
-      "version": "new",
-      "device": "cuda",
-      "setup_note": "No per-state preparation outside timing.",
-      "equivalence_atol": 1e-05
-    },
-    {
-      "name": "balanced_full_new",
-      "scope": "complete_point_plus_native_empirical_risk_path",
-      "pair_id": "balanced_full",
-      "version": "new",
-      "device": "cuda",
-      "setup_note": "No per-state preparation outside timing.",
-      "equivalence_atol": 1e-08
-    },
-    {
-      "name": "haar_full_new",
-      "scope": "complete_haar_point_plus_native_empirical_risk_path",
-      "pair_id": "haar_full",
-      "version": "new",
-      "device": "cuda",
-      "setup_note": "No per-state preparation outside timing.",
-      "equivalence_atol": 1e-08
-    },
-    {
-      "name": "recognition_recall60_full",
-      "scope": "complete_recognition_quality_variant_plus_native_empirical_risk_path",
-      "pair_id": "",
-      "version": "quality_variant",
-      "device": "cuda",
-      "setup_note": "No per-state preparation outside timing.",
-      "equivalence_atol": 1e-08
-    },
-    {
-      "name": "balanced_count_shrink_full",
-      "scope": "complete_balanced_quality_variant_plus_native_empirical_risk_path",
-      "pair_id": "",
-      "version": "quality_variant",
-      "device": "cuda",
-      "setup_note": "No per-state preparation outside timing.",
-      "equivalence_atol": 1e-08
-    },
-    {
-      "name": "idw_optimized_new",
-      "scope": "full unchanged 3NN/power-2 IDW point inference: condition + real geometry + original scalar idw_value",
-      "pair_id": "idw_optimized",
-      "version": "new",
-      "device": "cpu",
-      "setup_note": "No per-state preparation outside timing.",
-      "equivalence_atol": 1e-12
-    }
-  ],
+  "timing": "perf_counter, torch.cuda.synchronize at timing boundaries for CUDA paths; fresh condition every repeat",
+  "excluded": "data loading, input DataFrame copies, output checks against the reference, evaluation and calibration",
+  "initialization": "One construction + explicit initialize() (TabPFN weight load) per path and fold, separate from warm inference. Framework import and CUDA context start-up are outside timing.",
+  "quantiles": "median/p95 over 3 repeats x 12 states; descriptive warm-state samples, not a stable tail estimate",
+  "memory": "RSS is the absolute process working set after inference; CUDA peak allocated includes live weights",
+  "remaining_timing_limits": "Entries run sequentially in the recorded order; CPU/GPU frequencies are not locked; order effects remain possible.",
+  "output_check": "Each state output compared with artifacts/evaluation/reference_predictions.parquet after timing (output_checks.csv; summary columns matches_reference etc.).",
+  "gpu_before": {
+    "gpu": "NVIDIA GeForce RTX 4080, 610.88, 16376 MiB, 3576 MiB, 2 %, 2535 MHz, 3135 MHz",
+    "compute_apps": "2620, [Insufficient Permissions], [N/A]\n8268, C:\\Windows\\System32\\ShellHost.exe, [N/A]\n14564, C:\\Windows\\SystemApps\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\\CrossDeviceResume.exe, [N/A]\n13732, C:\\Windows\\explorer.exe, [N/A]\n15552, C:\\Program Files\\NVIDIA Corporation\\NVIDIA app\\CEF\\NVIDIA Overlay.exe, [N/A]\n14868, C:\\Program Files\\NVIDIA Corporation\\NVIDIA app\\CEF\\NVIDIA Overlay.exe, [N/A]\n16692, C:\\Windows\\SystemApps\\Microsoft.Windows.StartMenuExperienceHost_cw5n1h2txyewy\\StartMenuExperienceHost.exe, [N/A]\n16668, C:\\Windows\\SystemApps\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\\SearchHost.exe, [N/A]\n9996, C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\155.0.4283.45\\msedgewebview2.exe, [N/A]\n20232, [Insufficient Permissions], [N/A]\n21560, C:\\Windows\\SystemApps\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\\TextInputHost.exe, [N/A]\n20624, C:\\Program Files\\WindowsApps\\Microsoft.YourPhone_1.26072.257.0_x64__8wekyb3d8bbwe\\PhoneExperienceHost.exe, [N/A]\n14148, [Insufficient Permissions], [N/A]\n20684, C:\\Users\\Administrator\\AppData\\Local\\Programs\\twinkle-tray\\Twinkle Tray.exe, [N/A]\n3636, C:\\Program Files\\LGHUB\\system_tray\\lghub_system_tray.exe, [N/A]\n23812, E:\\software\\QQ\\QQ.exe, [N/A]\n25736, C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\155.0.4283.45\\msedgewebview2.exe, [N/A]\n27584, C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\155.0.4283.45\\msedgewebview2.exe, [N/A]\n28400, E:\\software\\QQ\\QQEX.exe, [N/A]\n19564, C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe, [N/A]\n3188, C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\155.0.4283.45\\msedgewebview2.exe, [N/A]\n14244, [Insufficient Permissions], [N/A]\n6460, E:\\电脑软件\\Weixin\\Weixin.exe, [N/A]\n23404, C:\\Users\\Administrator\\AppData\\Roaming\\Tencent\\xwechat\\xplugin\\Plugins\\RadiumWMPF\\WeChatAppEx.exe, [N/A]\n7104, E:\\电脑软件\\Weixin\\Weixin.exe, [N/A]\n25384, C:\\Program Files\\WindowsApps\\Claude_2.37337.1.0_x64__pzs8sxrjxfjjc\\app\\claude.exe, [N/A]\n35080, C:\\Program Files\\WindowsApps\\Claude_2.37337.1.0_x64__pzs8sxrjxfjjc\\app\\claude.exe, [N/A]\n28728, C:\\Program Files\\WindowsApps\\OpenAI.Codex_26.1007.9446.0_x64__2p2nqsd0c76g0\\app\\ChatGPT.exe, [N/A]\n33780, C:\\Users\\Administrator\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\a9ba6825a525118c\\bin\\node_modules\\@oai\\sky\\bin\\windows\\swift\\x64\\codex-computer-use-swift.exe, [N/A]\n8708, C:\\Program Files\\Microsoft Office\\root\\Office16\\ONENOTE.EXE, [N/A]\n36308, C:\\Windows\\System32\\ApplicationFrameHost.exe, [N/A]\n19312, C:\\Windows\\ImmersiveControlPanel\\SystemSettings.exe, [N/A]\n8760, C:\\Windows\\SystemApps\\ShellExperienceHost_cw5n1h2txyewy\\ShellExperienceHost.exe, [N/A]\n42556, C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe, [N/A]\n25796, C:\\Program Files\\WindowsApps\\Microsoft.WindowsNotepad_11.2607.14.0_x64__8wekyb3d8bbwe\\Notepad\\Notepad.exe, [N/A]",
+    "note": "GPU/CPU clocks are not locked."
+  },
+  "gpu_after": {
+    "gpu": "NVIDIA GeForce RTX 4080, 610.88, 16376 MiB, 3878 MiB, 6 %, 2535 MHz, 3135 MHz",
+    "compute_apps": "2620, [Insufficient Permissions], [N/A]\n8268, C:\\Windows\\System32\\ShellHost.exe, [N/A]\n14564, C:\\Windows\\SystemApps\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\\CrossDeviceResume.exe, [N/A]\n13732, C:\\Windows\\explorer.exe, [N/A]\n15552, C:\\Program Files\\NVIDIA Corporation\\NVIDIA app\\CEF\\NVIDIA Overlay.exe, [N/A]\n14868, C:\\Program Files\\NVIDIA Corporation\\NVIDIA app\\CEF\\NVIDIA Overlay.exe, [N/A]\n16692, C:\\Windows\\SystemApps\\Microsoft.Windows.StartMenuExperienceHost_cw5n1h2txyewy\\StartMenuExperienceHost.exe, [N/A]\n16668, C:\\Windows\\SystemApps\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\\SearchHost.exe, [N/A]\n9996, C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\155.0.4283.45\\msedgewebview2.exe, [N/A]\n20232, [Insufficient Permissions], [N/A]\n21560, C:\\Windows\\SystemApps\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\\TextInputHost.exe, [N/A]\n20624, C:\\Program Files\\WindowsApps\\Microsoft.YourPhone_1.26072.257.0_x64__8wekyb3d8bbwe\\PhoneExperienceHost.exe, [N/A]\n14148, [Insufficient Permissions], [N/A]\n20684, C:\\Users\\Administrator\\AppData\\Local\\Programs\\twinkle-tray\\Twinkle Tray.exe, [N/A]\n3636, C:\\Program Files\\LGHUB\\system_tray\\lghub_system_tray.exe, [N/A]\n23812, E:\\software\\QQ\\QQ.exe, [N/A]\n25736, C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\155.0.4283.45\\msedgewebview2.exe, [N/A]\n27584, C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\155.0.4283.45\\msedgewebview2.exe, [N/A]\n28400, E:\\software\\QQ\\QQEX.exe, [N/A]\n19564, C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe, [N/A]\n3188, C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\155.0.4283.45\\msedgewebview2.exe, [N/A]\n14244, [Insufficient Permissions], [N/A]\n6460, E:\\电脑软件\\Weixin\\Weixin.exe, [N/A]\n23404, C:\\Users\\Administrator\\AppData\\Roaming\\Tencent\\xwechat\\xplugin\\Plugins\\RadiumWMPF\\WeChatAppEx.exe, [N/A]\n7104, E:\\电脑软件\\Weixin\\Weixin.exe, [N/A]\n25384, C:\\Program Files\\WindowsApps\\Claude_2.37337.1.0_x64__pzs8sxrjxfjjc\\app\\claude.exe, [N/A]\n35080, C:\\Program Files\\WindowsApps\\Claude_2.37337.1.0_x64__pzs8sxrjxfjjc\\app\\claude.exe, [N/A]\n28728, C:\\Program Files\\WindowsApps\\OpenAI.Codex_26.1007.9446.0_x64__2p2nqsd0c76g0\\app\\ChatGPT.exe, [N/A]\n33780, C:\\Users\\Administrator\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\a9ba6825a525118c\\bin\\node_modules\\@oai\\sky\\bin\\windows\\swift\\x64\\codex-computer-use-swift.exe, [N/A]\n8708, C:\\Program Files\\Microsoft Office\\root\\Office16\\ONENOTE.EXE, [N/A]\n36308, C:\\Windows\\System32\\ApplicationFrameHost.exe, [N/A]\n19312, C:\\Windows\\ImmersiveControlPanel\\SystemSettings.exe, [N/A]\n8760, C:\\Windows\\SystemApps\\ShellExperienceHost_cw5n1h2txyewy\\ShellExperienceHost.exe, [N/A]\n42556, C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe, [N/A]\n25796, C:\\Program Files\\WindowsApps\\Microsoft.WindowsNotepad_11.2607.14.0_x64__8wekyb3d8bbwe\\Notepad\\Notepad.exe, [N/A]\n8876, C:\\Users\\Administrator\\AppData\\Roaming\\uv\\python\\cpython-3.11.15-windows-x86_64-none\\python.exe, [N/A]",
+    "note": "GPU/CPU clocks are not locked."
+  },
+  "wall_seconds": 188.16149120000046,
   "hardware": {
     "platform": "Windows-10-10.0.26200-SP0",
     "processor": "Intel(R) Core(TM) i7-14700KF",
@@ -135,9 +72,9 @@
       "scikit-learn": "1.9.1",
       "torch": "2.11.0+cu128",
       "tabpfn": "9.2.0",
+      "xgboost": "3.2.0",
       "threadpoolctl": "3.7.0"
     },
-    "nvidia_smi": "NVIDIA GeForce RTX 4080, 610.88, 16376 MiB",
     "threadpools": [
       {
         "user_api": "blas",
@@ -163,14 +100,6 @@
         "user_api": "openmp",
         "internal_api": "openmp",
         "num_threads": 1,
-        "prefix": "vcomp",
-        "filepath": "E:\\Study\\Msc_AAI\\CA6001-AI ALGORITHMS FUNDAMENTALS & APPLICATION\\Project\\.venv\\Lib\\site-packages\\sklearn\\.libs\\vcomp140.dll",
-        "version": null
-      },
-      {
-        "user_api": "openmp",
-        "internal_api": "openmp",
-        "num_threads": 1,
         "prefix": "libiomp",
         "filepath": "E:\\Study\\Msc_AAI\\CA6001-AI ALGORITHMS FUNDAMENTALS & APPLICATION\\Project\\.venv\\Lib\\site-packages\\torch\\lib\\libiomp5md.dll",
         "version": null
@@ -184,6 +113,7 @@
         "version": null
       }
     ],
-    "source_commit_at_run_start": "d2ffa3265049114bd5b01d3731ccbbabe50156c5"
+    "source_commit_at_run_start": "3c413a2bc6c98b70e782f6f8206561653dd7d096",
+    "uncommitted_src_or_configs_changes": true
   }
 }

@@ -1,97 +1,229 @@
-model_id,pair_id,version,scope,state_key,fold_id,site_id,seed,budget_n,condition_ms,predict_ms,total_ms,rss_after_mib,cuda_peak_allocated_mib,samples,preparation_ms
-target_constant_median,,baseline,full point inference: support median + query prediction,f0_lower_hutt_town_hall_s17_n5,0,lower_hutt_town_hall,17,5,0.754400000005262,1.3887000004615402,2.188300000852905,877.8515625,,3,0.0003000004653586
-target_constant_median,,baseline,full point inference: support median + query prediction,f0_lower_hutt_town_hall_s17_n13,0,lower_hutt_town_hall,17,13,0.8073000008153031,1.324400000157766,2.173999999286025,877.859375,,3,0.0003999994078185
-target_constant_median,,baseline,full point inference: support median + query prediction,f0_tauranga_farmers_building_s17_n5,0,tauranga_farmers_building,17,5,0.7600999997521285,1.2993000000278698,2.04200000007404,877.859375,,3,0.0003000004653586
-target_constant_median,,baseline,full point inference: support median + query prediction,f0_tauranga_farmers_building_s17_n13,0,tauranga_farmers_building,17,13,0.7435000006807968,1.319400000284077,2.062499999738065,877.87109375,,3,0.0001999997039092
-target_constant_median,,baseline,full point inference: support median + query prediction,f1_lower_hutt_town_hall_s17_n5,1,lower_hutt_town_hall,17,5,0.7660999999643536,1.370199999655597,2.110400000674417,877.8828125,,3,0.0003000004653586
-target_constant_median,,baseline,full point inference: support median + query prediction,f1_lower_hutt_town_hall_s17_n13,1,lower_hutt_town_hall,17,13,0.7525000000896398,1.449999999749707,2.202499999839347,877.88671875,,3,0.0003000004653586
-target_constant_median,,baseline,full point inference: support median + query prediction,f1_tauranga_farmers_building_s17_n5,1,tauranga_farmers_building,17,5,0.7470000000466825,1.3527000010071788,2.1226000008027768,877.90625,,3,0.0003000004653586
-target_constant_median,,baseline,full point inference: support median + query prediction,f1_tauranga_farmers_building_s17_n13,1,tauranga_farmers_building,17,13,0.7487000002583954,1.368999999613152,2.117699999871548,877.9296875,,3,0.0001999997039092
-target_constant_median,,baseline,full point inference: support median + query prediction,f2_christchurch_metro_sports_facility_s17_n5,2,christchurch_metro_sports_facility,17,5,0.7467999985237839,1.462300000639516,2.2385000011126976,877.94140625,,3,0.0001999997039092
-target_constant_median,,baseline,full point inference: support median + query prediction,f2_christchurch_metro_sports_facility_s17_n13,2,christchurch_metro_sports_facility,17,13,0.802099999418715,1.329700000496814,2.130599999873084,877.9609375,,3,0.0002999986463692
-target_constant_median,,baseline,full point inference: support median + query prediction,f2_marshland_s17_n5,2,marshland,17,5,0.7540999995399034,1.3030999998591142,2.062699999441975,877.9765625,,3,0.0001999997039092
-target_constant_median,,baseline,full point inference: support median + query prediction,f2_marshland_s17_n13,2,marshland,17,13,0.774799998907838,1.3644999999087304,2.217400000517955,878.0,,3,0.0002999986463692
-gp,,baseline,full native-distribution inference: GP fit + mean/std/event prediction,f0_lower_hutt_town_hall_s17_n5,0,lower_hutt_town_hall,17,5,14.022299999851384,3.8465000016003614,17.946399999345886,668.38671875,,3,0.0001999997039092
-gp,,baseline,full native-distribution inference: GP fit + mean/std/event prediction,f0_lower_hutt_town_hall_s17_n13,0,lower_hutt_town_hall,17,13,139.54609999927925,4.786199999216478,144.532899999831,672.8046875,,3,0.0003000004653586
-gp,,baseline,full native-distribution inference: GP fit + mean/std/event prediction,f0_tauranga_farmers_building_s17_n5,0,tauranga_farmers_building,17,5,20.165800000540912,4.209600001559011,24.35120000154712,672.8046875,,3,0.0006000009307172
-gp,,baseline,full native-distribution inference: GP fit + mean/std/event prediction,f0_tauranga_farmers_building_s17_n13,0,tauranga_farmers_building,17,13,129.01469999997062,4.591799999616342,133.60649999958696,672.8046875,,3,0.0002999986463692
-gp,,baseline,full native-distribution inference: GP fit + mean/std/event prediction,f1_lower_hutt_town_hall_s17_n5,1,lower_hutt_town_hall,17,5,14.706199999636738,3.6595999990822734,18.30879999943136,672.8046875,,3,0.0001999997039092
-gp,,baseline,full native-distribution inference: GP fit + mean/std/event prediction,f1_lower_hutt_town_hall_s17_n13,1,lower_hutt_town_hall,17,13,139.7897999995621,4.734300000563962,144.3825000005745,672.8046875,,3,0.0002999986463692
-gp,,baseline,full native-distribution inference: GP fit + mean/std/event prediction,f1_tauranga_farmers_building_s17_n5,1,tauranga_farmers_building,17,5,20.377400000143098,4.221099999995204,24.55970000119123,672.8046875,,3,0.0003999994078185
-gp,,baseline,full native-distribution inference: GP fit + mean/std/event prediction,f1_tauranga_farmers_building_s17_n13,1,tauranga_farmers_building,17,13,113.44680000001972,4.906300000584452,118.35310000060416,672.82421875,,3,0.0005999991117278
-gp,,baseline,full native-distribution inference: GP fit + mean/std/event prediction,f2_christchurch_metro_sports_facility_s17_n5,2,christchurch_metro_sports_facility,17,5,17.30909999969299,4.37439999950584,21.679800000129035,672.83984375,,3,0.0001999997039092
-gp,,baseline,full native-distribution inference: GP fit + mean/std/event prediction,f2_christchurch_metro_sports_facility_s17_n13,2,christchurch_metro_sports_facility,17,13,193.83000000016185,5.128200000399374,198.9582000005612,672.8671875,,3,0.0005999991117278
-gp,,baseline,full native-distribution inference: GP fit + mean/std/event prediction,f2_marshland_s17_n5,2,marshland,17,5,31.78039999875181,4.009700000096927,35.98489999967569,673.04296875,,3,0.0005000001692678
-gp,,baseline,full native-distribution inference: GP fit + mean/std/event prediction,f2_marshland_s17_n13,2,marshland,17,13,106.55570000017178,4.637000000002445,111.19270000017424,673.07421875,,3,0.0003999994078185
-tabpfn_residual_new,tabpfn_residual,new,full guarded residual point inference: feature preparation + trained TabPFN CUDA forward + IDW guard; source checkpoint load separate,f0_lower_hutt_town_hall_s17_n5,0,lower_hutt_town_hall,17,5,12.493500000346105,73.94810000005236,86.44160000039847,1920.53125,97.638671875,3,0.0009000013960758
-tabpfn_residual_new,tabpfn_residual,new,full guarded residual point inference: feature preparation + trained TabPFN CUDA forward + IDW guard; source checkpoint load separate,f0_lower_hutt_town_hall_s17_n13,0,lower_hutt_town_hall,17,13,17.143500001111533,71.31490000028862,88.4842999985267,1926.25,166.86328125,3,0.0003999994078185
-tabpfn_residual_new,tabpfn_residual,new,full guarded residual point inference: feature preparation + trained TabPFN CUDA forward + IDW guard; source checkpoint load separate,f0_tauranga_farmers_building_s17_n5,0,tauranga_farmers_building,17,5,12.11940000030154,71.06000000021595,83.32489999884274,1926.5,97.638671875,3,0.0003000004653586
-tabpfn_residual_new,tabpfn_residual,new,full guarded residual point inference: feature preparation + trained TabPFN CUDA forward + IDW guard; source checkpoint load separate,f0_tauranga_farmers_building_s17_n13,0,tauranga_farmers_building,17,13,17.080999999961932,71.85369999933755,88.93469999929948,1926.75,166.86328125,3,0.0003999994078185
-tabpfn_residual_new,tabpfn_residual,new,full guarded residual point inference: feature preparation + trained TabPFN CUDA forward + IDW guard; source checkpoint load separate,f1_lower_hutt_town_hall_s17_n5,1,lower_hutt_town_hall,17,5,12.069899999914924,74.90679999864369,86.97669999855862,1922.203125,97.638671875,3,0.0009000013960758
-tabpfn_residual_new,tabpfn_residual,new,full guarded residual point inference: feature preparation + trained TabPFN CUDA forward + IDW guard; source checkpoint load separate,f1_lower_hutt_town_hall_s17_n13,1,lower_hutt_town_hall,17,13,16.94580000003043,74.99770000140416,91.68310000131896,1922.453125,166.86328125,3,0.0003999994078185
-tabpfn_residual_new,tabpfn_residual,new,full guarded residual point inference: feature preparation + trained TabPFN CUDA forward + IDW guard; source checkpoint load separate,f1_tauranga_farmers_building_s17_n5,1,tauranga_farmers_building,17,5,12.144799999077804,73.50589999987278,85.6538999996701,1922.203125,97.638671875,3,0.0004000012268079
-tabpfn_residual_new,tabpfn_residual,new,full guarded residual point inference: feature preparation + trained TabPFN CUDA forward + IDW guard; source checkpoint load separate,f1_tauranga_farmers_building_s17_n13,1,tauranga_farmers_building,17,13,16.778400000475813,73.4956999986025,90.27409999907832,1922.453125,166.86328125,3,0.0003999994078185
-tabpfn_residual_new,tabpfn_residual,new,full guarded residual point inference: feature preparation + trained TabPFN CUDA forward + IDW guard; source checkpoint load separate,f2_christchurch_metro_sports_facility_s17_n5,2,christchurch_metro_sports_facility,17,5,12.106700000003912,75.59659999969881,87.70329999970272,1919.34375,109.27685546875,3,0.0006999998731771
-tabpfn_residual_new,tabpfn_residual,new,full guarded residual point inference: feature preparation + trained TabPFN CUDA forward + IDW guard; source checkpoint load separate,f2_christchurch_metro_sports_facility_s17_n13,2,christchurch_metro_sports_facility,17,13,16.688600000634324,75.795200000357,93.0248999993637,1924.46875,196.9970703125,3,0.0003999994078185
-tabpfn_residual_new,tabpfn_residual,new,full guarded residual point inference: feature preparation + trained TabPFN CUDA forward + IDW guard; source checkpoint load separate,f2_marshland_s17_n5,2,marshland,17,5,12.128099999245023,76.70899999902758,88.8001000002987,1919.98828125,93.791015625,3,0.0005000001692678
-tabpfn_residual_new,tabpfn_residual,new,full guarded residual point inference: feature preparation + trained TabPFN CUDA forward + IDW guard; source checkpoint load separate,f2_marshland_s17_n13,2,marshland,17,13,16.834000000017113,72.82719999966503,89.54949999861128,1920.00390625,141.7978515625,3,0.0003999994078185
-balanced_full_new,balanced_full,new,complete_point_plus_native_empirical_risk_path,f0_lower_hutt_town_hall_s17_n5,0,lower_hutt_town_hall,17,5,37.35400000005029,156.51439999965078,193.3195000001433,1926.01953125,97.638671875,3,0.000799998815637
-balanced_full_new,balanced_full,new,complete_point_plus_native_empirical_risk_path,f0_lower_hutt_town_hall_s17_n13,0,lower_hutt_town_hall,17,13,54.1624999987107,127.43030000092403,181.7633000009664,1925.3984375,166.86328125,3,0.0005000001692678
-balanced_full_new,balanced_full,new,complete_point_plus_native_empirical_risk_path,f0_tauranga_farmers_building_s17_n5,0,tauranga_farmers_building,17,5,36.70879999845056,127.5091000006796,164.6848999989743,1925.1875,97.638671875,3,0.0003000004653586
-balanced_full_new,balanced_full,new,complete_point_plus_native_empirical_risk_path,f0_tauranga_farmers_building_s17_n13,0,tauranga_farmers_building,17,13,54.02959999992163,128.12920000033046,182.48959999982617,1925.4375,166.86328125,3,0.0005999991117278
-balanced_full_new,balanced_full,new,complete_point_plus_native_empirical_risk_path,f1_lower_hutt_town_hall_s17_n5,1,lower_hutt_town_hall,17,5,37.64670000055048,157.73540000009234,195.3821000006428,1929.62890625,97.638671875,3,0.0008000006346264
-balanced_full_new,balanced_full,new,complete_point_plus_native_empirical_risk_path,f1_lower_hutt_town_hall_s17_n13,1,lower_hutt_town_hall,17,13,54.14569999993546,126.79229999957896,181.17519999941572,1915.88671875,166.86328125,3,0.0005000001692678
-balanced_full_new,balanced_full,new,complete_point_plus_native_empirical_risk_path,f1_tauranga_farmers_building_s17_n5,1,tauranga_farmers_building,17,5,37.09340000023076,130.19009999879927,167.28349999903003,1927.33984375,97.638671875,3,0.0006000009307172
-balanced_full_new,balanced_full,new,complete_point_plus_native_empirical_risk_path,f1_tauranga_farmers_building_s17_n13,1,tauranga_farmers_building,17,13,54.06120000043302,126.23870000061288,180.1878000005672,1915.88671875,166.86328125,3,0.0003999994078185
-balanced_full_new,balanced_full,new,complete_point_plus_native_empirical_risk_path,f2_christchurch_metro_sports_facility_s17_n5,2,christchurch_metro_sports_facility,17,5,37.231900001643226,154.94799999942188,192.1799000010651,1930.2734375,109.27685546875,3,0.0005999991117278
-balanced_full_new,balanced_full,new,complete_point_plus_native_empirical_risk_path,f2_christchurch_metro_sports_facility_s17_n13,2,christchurch_metro_sports_facility,17,13,55.208600000696606,132.1672000012768,187.80169999990903,1934.921875,196.9970703125,3,0.0004000012268079
-balanced_full_new,balanced_full,new,complete_point_plus_native_empirical_risk_path,f2_marshland_s17_n5,2,marshland,17,5,37.8389999987121,122.0394000010856,159.8783999997977,1930.61328125,93.791015625,3,0.0005000001692678
-balanced_full_new,balanced_full,new,complete_point_plus_native_empirical_risk_path,f2_marshland_s17_n13,2,marshland,17,13,53.29100000017206,104.88540000005742,158.17640000022948,1932.48828125,141.7978515625,3,0.0004000012268079
-haar_full_new,haar_full,new,complete_haar_point_plus_native_empirical_risk_path,f0_lower_hutt_town_hall_s17_n5,0,lower_hutt_town_hall,17,5,26.523900000029244,153.2812000004924,179.80510000052163,1904.27734375,97.638671875,3,0.0008000006346264
-haar_full_new,haar_full,new,complete_haar_point_plus_native_empirical_risk_path,f0_lower_hutt_town_hall_s17_n13,0,lower_hutt_town_hall,17,13,31.792699999641627,125.20519999998214,156.99789999962377,1903.40234375,166.86328125,3,0.0008000006346264
-haar_full_new,haar_full,new,complete_haar_point_plus_native_empirical_risk_path,f0_tauranga_farmers_building_s17_n5,0,tauranga_farmers_building,17,5,26.582099999359343,126.75100000160457,153.9640999999392,1903.3046875,97.638671875,3,0.0005999991117278
-haar_full_new,haar_full,new,complete_haar_point_plus_native_empirical_risk_path,f0_tauranga_farmers_building_s17_n13,0,tauranga_farmers_building,17,13,31.14419999837992,111.33299999892188,142.50559999891266,1903.4296875,166.86328125,3,0.0004999983502784
-haar_full_new,haar_full,new,complete_haar_point_plus_native_empirical_risk_path,f1_lower_hutt_town_hall_s17_n5,1,lower_hutt_town_hall,17,5,26.370699999461067,151.51429999968968,177.54729999978736,1923.35546875,97.638671875,3,0.0006999998731771
-haar_full_new,haar_full,new,complete_haar_point_plus_native_empirical_risk_path,f1_lower_hutt_town_hall_s17_n13,1,lower_hutt_town_hall,17,13,32.027699999162,119.28079999961484,151.30849999877682,1923.23046875,166.86328125,3,0.0006000009307172
-haar_full_new,haar_full,new,complete_haar_point_plus_native_empirical_risk_path,f1_tauranga_farmers_building_s17_n5,1,tauranga_farmers_building,17,5,26.62439999949129,121.54910000026575,148.35320000020147,1922.984375,97.638671875,3,0.0005000001692678
-haar_full_new,haar_full,new,complete_haar_point_plus_native_empirical_risk_path,f1_tauranga_farmers_building_s17_n13,1,tauranga_farmers_building,17,13,31.9072000002052,119.30240000037884,151.20960000058403,1923.234375,166.86328125,3,0.0005000001692678
-haar_full_new,haar_full,new,complete_haar_point_plus_native_empirical_risk_path,f2_christchurch_metro_sports_facility_s17_n5,2,christchurch_metro_sports_facility,17,5,26.34330000000773,148.10510000097565,174.44840000098338,1922.78125,109.27685546875,3,0.0006000009307172
-haar_full_new,haar_full,new,complete_haar_point_plus_native_empirical_risk_path,f2_christchurch_metro_sports_facility_s17_n13,2,christchurch_metro_sports_facility,17,13,31.8477000000712,127.36760000007052,159.8679999988235,1921.8671875,196.9970703125,3,0.0006999998731771
-haar_full_new,haar_full,new,complete_haar_point_plus_native_empirical_risk_path,f2_marshland_s17_n5,2,marshland,17,5,26.31909999945492,117.34620000061112,143.6200000007375,1919.3046875,93.791015625,3,0.0006000009307172
-haar_full_new,haar_full,new,complete_haar_point_plus_native_empirical_risk_path,f2_marshland_s17_n13,2,marshland,17,13,31.950099999448867,101.17400000126509,133.20779999958177,1922.5703125,141.7978515625,3,0.0006000009307172
-recognition_recall60_full,,quality_variant,complete_recognition_quality_variant_plus_native_empirical_risk_path,f0_lower_hutt_town_hall_s17_n5,0,lower_hutt_town_hall,17,5,40.49040000063542,155.31709999959276,195.80750000022817,1933.734375,97.638671875,3,0.001100001099985
-recognition_recall60_full,,quality_variant,complete_recognition_quality_variant_plus_native_empirical_risk_path,f0_lower_hutt_town_hall_s17_n13,0,lower_hutt_town_hall,17,13,57.756500000323285,127.294100000654,185.1480000004813,1936.67578125,166.86328125,3,0.0006000009307172
-recognition_recall60_full,,quality_variant,complete_recognition_quality_variant_plus_native_empirical_risk_path,f0_tauranga_farmers_building_s17_n5,0,tauranga_farmers_building,17,5,40.06259999914619,130.0171999992017,169.82279999865568,1933.7578125,97.638671875,3,0.0006000009307172
-recognition_recall60_full,,quality_variant,complete_recognition_quality_variant_plus_native_empirical_risk_path,f0_tauranga_farmers_building_s17_n13,0,tauranga_farmers_building,17,13,58.07500000082655,128.20020000071963,186.2866999999824,1934.6171875,166.86328125,3,0.0006999998731771
-recognition_recall60_full,,quality_variant,complete_recognition_quality_variant_plus_native_empirical_risk_path,f1_lower_hutt_town_hall_s17_n5,1,lower_hutt_town_hall,17,5,40.781600000627805,154.65349999976752,195.43510000039527,1932.3359375,97.638671875,3,0.0005999991117278
-recognition_recall60_full,,quality_variant,complete_recognition_quality_variant_plus_native_empirical_risk_path,f1_lower_hutt_town_hall_s17_n13,1,lower_hutt_town_hall,17,13,57.338299999173614,128.5288999988552,186.07449999944947,1932.3359375,166.86328125,3,0.0006999998731771
-recognition_recall60_full,,quality_variant,complete_recognition_quality_variant_plus_native_empirical_risk_path,f1_tauranga_farmers_building_s17_n5,1,tauranga_farmers_building,17,5,40.78069999923173,127.6893000012933,169.30520000096294,1932.3984375,97.638671875,3,0.0006999998731771
-recognition_recall60_full,,quality_variant,complete_recognition_quality_variant_plus_native_empirical_risk_path,f1_tauranga_farmers_building_s17_n13,1,tauranga_farmers_building,17,13,58.080700000573415,127.66779999947175,186.27009999909205,1932.60546875,166.86328125,3,0.0010000003385357
-recognition_recall60_full,,quality_variant,complete_recognition_quality_variant_plus_native_empirical_risk_path,f2_christchurch_metro_sports_facility_s17_n5,2,christchurch_metro_sports_facility,17,5,40.00650000125461,154.3733999988035,194.19559999914784,1933.4296875,109.27685546875,3,0.0006000009307172
-recognition_recall60_full,,quality_variant,complete_recognition_quality_variant_plus_native_empirical_risk_path,f2_christchurch_metro_sports_facility_s17_n13,2,christchurch_metro_sports_facility,17,13,58.83990000074846,130.9718000011344,188.93050000042425,1936.359375,196.9970703125,3,0.0006000009307172
-recognition_recall60_full,,quality_variant,complete_recognition_quality_variant_plus_native_empirical_risk_path,f2_marshland_s17_n5,2,marshland,17,5,41.79160000057891,119.67300000105752,161.48990000147023,1934.234375,93.791015625,3,0.0008999995770864
-recognition_recall60_full,,quality_variant,complete_recognition_quality_variant_plus_native_empirical_risk_path,f2_marshland_s17_n13,2,marshland,17,13,56.6343999998935,105.34120000011173,161.97560000000522,1936.53125,141.7978515625,3,0.0006000009307172
-balanced_count_shrink_full,,quality_variant,complete_balanced_quality_variant_plus_native_empirical_risk_path,f0_lower_hutt_town_hall_s17_n5,0,lower_hutt_town_hall,17,5,36.81060000053549,230.51780000059807,267.3284000011336,1937.796875,97.638671875,3,0.0006999998731771
-balanced_count_shrink_full,,quality_variant,complete_balanced_quality_variant_plus_native_empirical_risk_path,f0_lower_hutt_town_hall_s17_n13,0,lower_hutt_town_hall,17,13,53.292500000679865,329.18359999894165,382.2863999994297,1937.125,166.86328125,3,0.0005999991117278
-balanced_count_shrink_full,,quality_variant,complete_balanced_quality_variant_plus_native_empirical_risk_path,f0_tauranga_farmers_building_s17_n5,0,tauranga_farmers_building,17,5,37.05230000014126,205.47109999824897,242.80990000079328,1937.19921875,97.638671875,3,0.0006999998731771
-balanced_count_shrink_full,,quality_variant,complete_balanced_quality_variant_plus_native_empirical_risk_path,f0_tauranga_farmers_building_s17_n13,0,tauranga_farmers_building,17,13,54.31660000067495,329.1989999997895,383.7652000001981,1937.19921875,166.86328125,3,0.000799998815637
-balanced_count_shrink_full,,quality_variant,complete_balanced_quality_variant_plus_native_empirical_risk_path,f1_lower_hutt_town_hall_s17_n5,1,lower_hutt_town_hall,17,5,37.49539999989793,233.68139999911364,270.48830000057933,1914.9609375,97.638671875,3,0.0005999991117278
-balanced_count_shrink_full,,quality_variant,complete_balanced_quality_variant_plus_native_empirical_risk_path,f1_lower_hutt_town_hall_s17_n13,1,lower_hutt_town_hall,17,13,54.30019999948854,330.7074000003922,385.0075999998808,1922.22265625,166.86328125,3,0.0005999991117278
-balanced_count_shrink_full,,quality_variant,complete_balanced_quality_variant_plus_native_empirical_risk_path,f1_tauranga_farmers_building_s17_n5,1,tauranga_farmers_building,17,5,36.87820000050124,206.8044000006921,243.95759999970323,1918.1171875,97.638671875,3,0.0004999983502784
-balanced_count_shrink_full,,quality_variant,complete_balanced_quality_variant_plus_native_empirical_risk_path,f1_tauranga_farmers_building_s17_n13,1,tauranga_farmers_building,17,13,54.43150000064634,328.0727000001207,382.7084999993531,1919.94140625,166.86328125,3,0.0006999998731771
-balanced_count_shrink_full,,quality_variant,complete_balanced_quality_variant_plus_native_empirical_risk_path,f2_christchurch_metro_sports_facility_s17_n5,2,christchurch_metro_sports_facility,17,5,37.30539999924076,229.1588000007323,266.46419999997306,1917.0859375,109.27685546875,3,0.0006999998731771
-balanced_count_shrink_full,,quality_variant,complete_balanced_quality_variant_plus_native_empirical_risk_path,f2_christchurch_metro_sports_facility_s17_n13,2,christchurch_metro_sports_facility,17,13,55.14029999903869,333.0772999997862,388.5540999999648,1916.3359375,196.9970703125,3,0.0006999998731771
-balanced_count_shrink_full,,quality_variant,complete_balanced_quality_variant_plus_native_empirical_risk_path,f2_marshland_s17_n5,2,marshland,17,5,37.90860000117391,199.32220000009693,237.23080000127084,1913.62109375,93.791015625,3,0.0006999998731771
-balanced_count_shrink_full,,quality_variant,complete_balanced_quality_variant_plus_native_empirical_risk_path,f2_marshland_s17_n13,2,marshland,17,13,53.122999999686726,307.0853000008356,360.4214000006323,1916.80859375,141.7978515625,3,0.0004000012268079
-idw_optimized_new,idw_optimized,new,full unchanged 3NN/power-2 IDW point inference: condition + real geometry + original scalar idw_value,f0_lower_hutt_town_hall_s17_n5,0,lower_hutt_town_hall,17,5,3.045800000109012,3.245799998694565,6.2915999988035765,1917.56640625,,3,0.0004000012268079
-idw_optimized_new,idw_optimized,new,full unchanged 3NN/power-2 IDW point inference: condition + real geometry + original scalar idw_value,f0_lower_hutt_town_hall_s17_n13,0,lower_hutt_town_hall,17,13,3.2308999998349464,3.173199998855125,6.354799999826355,1917.56640625,,3,0.0003000004653586
-idw_optimized_new,idw_optimized,new,full unchanged 3NN/power-2 IDW point inference: condition + real geometry + original scalar idw_value,f0_tauranga_farmers_building_s17_n5,0,tauranga_farmers_building,17,5,2.968400000099791,3.2879999998840503,6.2563999999838416,1917.56640625,,3,0.0002999986463692
-idw_optimized_new,idw_optimized,new,full unchanged 3NN/power-2 IDW point inference: condition + real geometry + original scalar idw_value,f0_tauranga_farmers_building_s17_n13,0,tauranga_farmers_building,17,13,3.209700000297744,3.1691999993199715,6.378899999617715,1917.56640625,,3,0.0003999994078185
-idw_optimized_new,idw_optimized,new,full unchanged 3NN/power-2 IDW point inference: condition + real geometry + original scalar idw_value,f1_lower_hutt_town_hall_s17_n5,1,lower_hutt_town_hall,17,5,3.1396000013046432,3.334899998662877,6.47449999996752,1917.56640625,,3,0.0003000004653586
-idw_optimized_new,idw_optimized,new,full unchanged 3NN/power-2 IDW point inference: condition + real geometry + original scalar idw_value,f1_lower_hutt_town_hall_s17_n13,1,lower_hutt_town_hall,17,13,3.175899999405374,3.176599999278551,6.383500000083586,1917.56640625,,3,0.0003999994078185
-idw_optimized_new,idw_optimized,new,full unchanged 3NN/power-2 IDW point inference: condition + real geometry + original scalar idw_value,f1_tauranga_farmers_building_s17_n5,1,tauranga_farmers_building,17,5,3.036699999938719,3.2963000012387056,6.255100000998937,1917.56640625,,3,0.0005000001692678
-idw_optimized_new,idw_optimized,new,full unchanged 3NN/power-2 IDW point inference: condition + real geometry + original scalar idw_value,f1_tauranga_farmers_building_s17_n13,1,tauranga_farmers_building,17,13,3.093899998930283,3.285999999206979,6.688699999358505,1917.56640625,,3,0.0005000001692678
-idw_optimized_new,idw_optimized,new,full unchanged 3NN/power-2 IDW point inference: condition + real geometry + original scalar idw_value,f2_christchurch_metro_sports_facility_s17_n5,2,christchurch_metro_sports_facility,17,5,3.1405999998241896,3.507299999910174,6.614600000830251,1917.56640625,,3,0.0003000004653586
-idw_optimized_new,idw_optimized,new,full unchanged 3NN/power-2 IDW point inference: condition + real geometry + original scalar idw_value,f2_christchurch_metro_sports_facility_s17_n13,2,christchurch_metro_sports_facility,17,13,3.180600000632694,3.5814000002574176,7.061199999952805,1917.56640625,,3,0.0003999994078185
-idw_optimized_new,idw_optimized,new,full unchanged 3NN/power-2 IDW point inference: condition + real geometry + original scalar idw_value,f2_marshland_s17_n5,2,marshland,17,5,3.0108999999356456,3.003399999215617,6.01000000096974,1917.56640625,,3,0.0003999994078185
-idw_optimized_new,idw_optimized,new,full unchanged 3NN/power-2 IDW point inference: condition + real geometry + original scalar idw_value,f2_marshland_s17_n13,2,marshland,17,13,3.1558999999106163,3.027799999472336,6.156499999633525,1917.56640625,,3,0.0006000009307172
+model_id,path,device,state_key,fold_id,site_id,seed,budget_n,condition_ms,predict_ms,total_ms,rss_after_mib,cuda_peak_allocated_mib,samples
+constant,full,cpu,f0_lower_hutt_town_hall_s17_n5,0,lower_hutt_town_hall,17,5,0.763700001698453,1.8267000014020596,2.5887000010698102,631.45703125,,3
+constant,full,cpu,f0_lower_hutt_town_hall_s17_n13,0,lower_hutt_town_hall,17,13,0.8600000001024455,1.8916000008175615,2.751600000920007,631.625,,3
+constant,full,cpu,f0_tauranga_farmers_building_s17_n5,0,tauranga_farmers_building,17,5,0.7924000019556843,1.8458999984432012,2.639300000737421,631.625,,3
+constant,full,cpu,f0_tauranga_farmers_building_s17_n13,0,tauranga_farmers_building,17,13,0.7579999983136076,1.8243000013171695,2.582299999630777,631.6328125,,3
+constant,full,cpu,f1_lower_hutt_town_hall_s17_n5,1,lower_hutt_town_hall,17,5,0.7999999979801942,1.8393999998806976,2.6335000002291054,631.68359375,,3
+constant,full,cpu,f1_lower_hutt_town_hall_s17_n13,1,lower_hutt_town_hall,17,13,0.7659000002604444,1.799000001483364,2.560500000981847,631.69921875,,3
+constant,full,cpu,f1_tauranga_farmers_building_s17_n5,1,tauranga_farmers_building,17,5,0.7380999995802995,1.800300000468269,2.5323000008938834,631.71484375,,3
+constant,full,cpu,f1_tauranga_farmers_building_s17_n13,1,tauranga_farmers_building,17,13,0.7779999978083652,1.8125999995390885,2.5937999998859596,631.734375,,3
+constant,full,cpu,f2_christchurch_metro_sports_facility_s17_n5,2,christchurch_metro_sports_facility,17,5,0.7469000011042226,1.8397000021650456,2.5936000020010397,631.7734375,,3
+constant,full,cpu,f2_christchurch_metro_sports_facility_s17_n13,2,christchurch_metro_sports_facility,17,13,0.7549000001745299,1.8211000024166424,2.5976000033551827,631.7890625,,3
+constant,full,cpu,f2_marshland_s17_n5,2,marshland,17,5,0.753100001020357,1.7961999983526766,2.54539999878034,631.890625,,3
+constant,full,cpu,f2_marshland_s17_n13,2,marshland,17,13,0.7695000022067688,1.803999999538064,2.573500001744833,631.921875,,3
+idw,full,cpu,f0_lower_hutt_town_hall_s17_n5,0,lower_hutt_town_hall,17,5,3.007600000273669,3.790599999774713,6.873900001664879,632.17578125,,3
+idw,full,cpu,f0_lower_hutt_town_hall_s17_n13,0,lower_hutt_town_hall,17,13,3.1501999983447604,3.6410000029718503,6.790200000978075,632.296875,,3
+idw,full,cpu,f0_tauranga_farmers_building_s17_n5,0,tauranga_farmers_building,17,5,3.0415999972319696,3.7211999988358,7.125699998141499,632.34765625,,3
+idw,full,cpu,f0_tauranga_farmers_building_s17_n13,0,tauranga_farmers_building,17,13,3.1204999977489933,3.6686000021290965,6.78909999987809,632.3984375,,3
+idw,full,cpu,f1_lower_hutt_town_hall_s17_n5,1,lower_hutt_town_hall,17,5,3.0413999993470497,3.7316000016289763,6.773000000976026,632.44921875,,3
+idw,full,cpu,f1_lower_hutt_town_hall_s17_n13,1,lower_hutt_town_hall,17,13,3.0280999999376945,3.6676999989140313,6.716100000630831,632.484375,,3
+idw,full,cpu,f1_tauranga_farmers_building_s17_n5,1,tauranga_farmers_building,17,5,2.936299999419134,3.6751999978150707,6.629700001212768,632.57421875,,3
+idw,full,cpu,f1_tauranga_farmers_building_s17_n13,1,tauranga_farmers_building,17,13,3.1562999974994455,3.66809999832185,6.843999999546213,632.58203125,,3
+idw,full,cpu,f2_christchurch_metro_sports_facility_s17_n5,2,christchurch_metro_sports_facility,17,5,2.9961999971419573,3.970000001572771,6.966199998714728,632.6640625,,3
+idw,full,cpu,f2_christchurch_metro_sports_facility_s17_n13,2,christchurch_metro_sports_facility,17,13,3.217099998437334,3.997800002252916,7.203499997558538,632.69921875,,3
+idw,full,cpu,f2_marshland_s17_n5,2,marshland,17,5,2.94190000204253,3.38489999921876,6.316899998637382,632.73828125,,3
+idw,full,cpu,f2_marshland_s17_n13,2,marshland,17,13,3.1190000008791685,3.4663999977055937,6.672400002571521,632.77734375,,3
+gp,full,cpu,f0_lower_hutt_town_hall_s17_n5,0,lower_hutt_town_hall,17,5,13.981599997350713,4.6005000003788155,18.636200002219994,681.1484375,,3
+gp,full,cpu,f0_lower_hutt_town_hall_s17_n13,0,lower_hutt_town_hall,17,13,129.2600000015227,5.35929999750806,134.61929999903077,684.8515625,,3
+gp,full,cpu,f0_tauranga_farmers_building_s17_n5,0,tauranga_farmers_building,17,5,20.320799998444272,4.756199999974342,25.076999998418614,684.875,,3
+gp,full,cpu,f0_tauranga_farmers_building_s17_n13,0,tauranga_farmers_building,17,13,118.28040000182227,5.1138000017090235,123.7122000020463,684.90234375,,3
+gp,full,cpu,f1_lower_hutt_town_hall_s17_n5,1,lower_hutt_town_hall,17,5,14.338199998746859,4.409900000609923,18.692400000873022,684.921875,,3
+gp,full,cpu,f1_lower_hutt_town_hall_s17_n13,1,lower_hutt_town_hall,17,13,124.61719999919296,5.3886000023339875,130.32150000071852,684.921875,,3
+gp,full,cpu,f1_tauranga_farmers_building_s17_n5,1,tauranga_farmers_building,17,5,20.629999999073334,5.2080999994359445,25.976400000217836,684.921875,,3
+gp,full,cpu,f1_tauranga_farmers_building_s17_n13,1,tauranga_farmers_building,17,13,111.59689999840339,5.3866999987803865,116.8930999992881,684.921875,,3
+gp,full,cpu,f2_christchurch_metro_sports_facility_s17_n5,2,christchurch_metro_sports_facility,17,5,17.341500002657995,4.538400000456022,21.844999999302672,684.9375,,3
+gp,full,cpu,f2_christchurch_metro_sports_facility_s17_n13,2,christchurch_metro_sports_facility,17,13,201.88989999951445,5.6034000008367,207.6173999994353,684.953125,,3
+gp,full,cpu,f2_marshland_s17_n5,2,marshland,17,5,32.68020000177785,4.9284999986412,37.75880000102916,685.09765625,,3
+gp,full,cpu,f2_marshland_s17_n13,2,marshland,17,13,106.65300000255229,5.190500000026077,111.84350000257837,685.11328125,,3
+xgb,full,cpu,f0_lower_hutt_town_hall_s17_n5,0,lower_hutt_town_hall,17,5,1.364899999316549,80.98699999754899,82.37910000025295,770.23828125,,3
+xgb,full,cpu,f0_lower_hutt_town_hall_s17_n13,0,lower_hutt_town_hall,17,13,1.3824000016029458,81.70869999958086,83.0911000011838,770.62890625,,3
+xgb,full,cpu,f0_tauranga_farmers_building_s17_n5,0,tauranga_farmers_building,17,5,1.3714000015170313,80.49769999706768,81.86909999858472,770.77734375,,3
+xgb,full,cpu,f0_tauranga_farmers_building_s17_n13,0,tauranga_farmers_building,17,13,1.3814999983878806,81.43180000115535,82.81329999954323,770.83984375,,3
+xgb,full,cpu,f1_lower_hutt_town_hall_s17_n5,1,lower_hutt_town_hall,17,5,1.3623999984702095,82.27460000125575,83.72830000007525,770.87890625,,3
+xgb,full,cpu,f1_lower_hutt_town_hall_s17_n13,1,lower_hutt_town_hall,17,13,1.4043000010133255,85.10349999778555,86.50779999879887,770.95703125,,3
+xgb,full,cpu,f1_tauranga_farmers_building_s17_n5,1,tauranga_farmers_building,17,5,1.3515999999071937,83.50030000292463,85.01730000352836,770.9609375,,3
+xgb,full,cpu,f1_tauranga_farmers_building_s17_n13,1,tauranga_farmers_building,17,13,1.51940000068862,85.63419999700272,87.24090000032447,771.0234375,,3
+xgb,full,cpu,f2_christchurch_metro_sports_facility_s17_n5,2,christchurch_metro_sports_facility,17,5,1.3822000000800472,107.91930000050343,109.39139999754843,770.91796875,,3
+xgb,full,cpu,f2_christchurch_metro_sports_facility_s17_n13,2,christchurch_metro_sports_facility,17,13,1.402600002620602,107.86059999736608,109.26319999998668,770.9921875,,3
+xgb,full,cpu,f2_marshland_s17_n5,2,marshland,17,5,1.3816999999107793,69.41899999947054,70.80069999938132,771.02734375,,3
+xgb,full,cpu,f2_marshland_s17_n13,2,marshland,17,13,1.545899998745881,68.98619999992661,70.53209999867249,771.0390625,,3
+tabpfn_joint,full,cuda,f0_lower_hutt_town_hall_s17_n5,0,lower_hutt_town_hall,17,5,34.04730000329437,161.67319999658503,195.7204999998794,1826.65625,97.638671875,3
+tabpfn_joint,full,cuda,f0_lower_hutt_town_hall_s17_n13,0,lower_hutt_town_hall,17,13,40.134399998351,134.7066000016639,176.20629999873927,1826.51953125,166.86328125,3
+tabpfn_joint,full,cuda,f0_tauranga_farmers_building_s17_n5,0,tauranga_farmers_building,17,5,33.38850000000093,131.92530000014813,165.72840000299038,1825.09765625,97.638671875,3
+tabpfn_joint,full,cuda,f0_tauranga_farmers_building_s17_n13,0,tauranga_farmers_building,17,13,41.57900000063819,135.7445000030566,185.31160000202362,1825.12109375,166.86328125,3
+tabpfn_joint,full,cuda,f1_lower_hutt_town_hall_s17_n5,1,lower_hutt_town_hall,17,5,33.670400000119116,166.7373000018415,200.38790000035078,1833.90234375,97.638671875,3
+tabpfn_joint,full,cuda,f1_lower_hutt_town_hall_s17_n13,1,lower_hutt_town_hall,17,13,36.42129999934696,131.99700000041048,168.18419999981415,1834.25390625,166.86328125,3
+tabpfn_joint,full,cuda,f1_tauranga_farmers_building_s17_n5,1,tauranga_farmers_building,17,5,32.695300000341376,133.89190000089002,166.26560000077006,1832.4765625,97.638671875,3
+tabpfn_joint,full,cuda,f1_tauranga_farmers_building_s17_n13,1,tauranga_farmers_building,17,13,42.02459999942221,137.84300000043004,184.0583000011975,1832.5625,166.86328125,3
+tabpfn_joint,full,cuda,f2_christchurch_metro_sports_facility_s17_n5,2,christchurch_metro_sports_facility,17,5,30.583200001274236,151.20499999829917,181.77749999813386,1836.12890625,109.27685546875,3
+tabpfn_joint,full,cuda,f2_christchurch_metro_sports_facility_s17_n13,2,christchurch_metro_sports_facility,17,13,37.188300000707386,132.9459999979008,170.2579999982845,1836.72265625,196.9970703125,3
+tabpfn_joint,full,cuda,f2_marshland_s17_n5,2,marshland,17,5,31.2428999968688,118.23910000020987,149.3238000002748,1836.8125,93.791015625,3
+tabpfn_joint,full,cuda,f2_marshland_s17_n13,2,marshland,17,13,37.08360000018729,107.10489999837591,143.04649999758112,1837.4765625,141.7978515625,3
+tabpfn_graph,full,cuda,f0_lower_hutt_town_hall_s17_n5,0,lower_hutt_town_hall,17,5,14.709600000060163,146.3657999993302,161.07539999939036,1840.328125,97.638671875,3
+tabpfn_graph,full,cuda,f0_lower_hutt_town_hall_s17_n13,0,lower_hutt_town_hall,17,13,19.705099999555387,114.84940000082133,134.55450000037672,1840.515625,166.86328125,3
+tabpfn_graph,full,cuda,f0_tauranga_farmers_building_s17_n5,0,tauranga_farmers_building,17,5,14.816499999142252,115.63729999761563,130.53719999879831,1839.59765625,97.638671875,3
+tabpfn_graph,full,cuda,f0_tauranga_farmers_building_s17_n13,0,tauranga_farmers_building,17,13,19.505100000969833,113.86579999816604,133.37089999913587,1838.30078125,166.86328125,3
+tabpfn_graph,full,cuda,f1_lower_hutt_town_hall_s17_n5,1,lower_hutt_town_hall,17,5,15.749199999845587,146.85860000099638,162.60780000084196,1841.58203125,97.638671875,3
+tabpfn_graph,full,cuda,f1_lower_hutt_town_hall_s17_n13,1,lower_hutt_town_hall,17,13,19.86380000016652,119.22229999981937,138.81119999859948,1841.83203125,166.86328125,3
+tabpfn_graph,full,cuda,f1_tauranga_farmers_building_s17_n5,1,tauranga_farmers_building,17,5,14.748999998118961,121.4187999976275,136.11829999717884,1841.6015625,97.638671875,3
+tabpfn_graph,full,cuda,f1_tauranga_farmers_building_s17_n13,1,tauranga_farmers_building,17,13,19.574100002500927,117.81479999990552,137.2655000013765,1839.69921875,166.86328125,3
+tabpfn_graph,full,cuda,f2_christchurch_metro_sports_facility_s17_n5,2,christchurch_metro_sports_facility,17,5,14.740399998117937,142.31310000104713,157.5641999988875,1846.1953125,109.27685546875,3
+tabpfn_graph,full,cuda,f2_christchurch_metro_sports_facility_s17_n13,2,christchurch_metro_sports_facility,17,13,19.932900002459064,118.16059999910067,138.18670000182465,1847.79296875,196.9970703125,3
+tabpfn_graph,full,cuda,f2_marshland_s17_n5,2,marshland,17,5,15.271299998858012,107.2426999999152,122.51399999877322,1844.55859375,93.791015625,3
+tabpfn_graph,full,cuda,f2_marshland_s17_n13,2,marshland,17,13,19.576599999709288,92.87039999981062,112.4469999995199,1849.59375,141.7978515625,3
+balanced,full,cuda,f0_lower_hutt_town_hall_s17_n5,0,lower_hutt_town_hall,17,5,38.263099999312544,159.43950000291807,201.44970000183093,1849.0,97.638671875,3
+balanced,full,cuda,f0_lower_hutt_town_hall_s17_n13,0,lower_hutt_town_hall,17,13,54.71100000067963,133.72660000095493,188.43760000163456,1847.484375,166.86328125,3
+balanced,full,cuda,f0_tauranga_farmers_building_s17_n5,0,tauranga_farmers_building,17,5,38.46680000060587,130.92880000112928,171.75510000015493,1847.453125,97.638671875,3
+balanced,full,cuda,f0_tauranga_farmers_building_s17_n13,0,tauranga_farmers_building,17,13,55.51190000187489,128.29369999963092,182.96770000233664,1847.5234375,166.86328125,3
+balanced,full,cuda,f1_lower_hutt_town_hall_s17_n5,1,lower_hutt_town_hall,17,5,40.53840000051423,161.19659999822034,201.73499999873457,1842.90625,97.638671875,3
+balanced,full,cuda,f1_lower_hutt_town_hall_s17_n13,1,lower_hutt_town_hall,17,13,55.98010000176146,128.08990000121412,183.33309999798075,1848.23046875,166.86328125,3
+balanced,full,cuda,f1_tauranga_farmers_building_s17_n5,1,tauranga_farmers_building,17,5,38.3300000030431,128.11859999783337,166.44860000087647,1846.703125,97.638671875,3
+balanced,full,cuda,f1_tauranga_farmers_building_s17_n13,1,tauranga_farmers_building,17,13,55.586099999345606,124.83309999879566,179.45989999861922,1846.640625,166.86328125,3
+balanced,full,cuda,f2_christchurch_metro_sports_facility_s17_n5,2,christchurch_metro_sports_facility,17,5,39.808800000173505,154.4863000017358,192.51280000025872,1844.0390625,109.27685546875,3
+balanced,full,cuda,f2_christchurch_metro_sports_facility_s17_n13,2,christchurch_metro_sports_facility,17,13,56.179100000008475,131.65769999977783,188.25650000144378,1846.859375,196.9970703125,3
+balanced,full,cuda,f2_marshland_s17_n5,2,marshland,17,5,39.162899996881606,117.28650000077323,157.72440000000643,1844.6328125,93.791015625,3
+balanced,full,cuda,f2_marshland_s17_n13,2,marshland,17,13,53.822400001081405,105.29550000137533,159.0892000021995,1848.1953125,141.7978515625,3
+thickness,full,cuda,f0_lower_hutt_town_hall_s17_n5,0,lower_hutt_town_hall,17,5,25.703300001623575,149.64519999921322,176.65299999862327,1856.12109375,97.638671875,3
+thickness,full,cuda,f0_lower_hutt_town_hall_s17_n13,0,lower_hutt_town_hall,17,13,31.306299999414477,121.77969999902416,154.40549999766517,1858.07421875,166.86328125,3
+thickness,full,cuda,f0_tauranga_farmers_building_s17_n5,0,tauranga_farmers_building,17,5,26.083900000230642,122.94879999899422,148.48169999822858,1856.1953125,97.638671875,3
+thickness,full,cuda,f0_tauranga_farmers_building_s17_n13,0,tauranga_farmers_building,17,13,31.5310000005411,119.83989999862388,151.37089999916498,1858.1484375,166.86328125,3
+thickness,full,cuda,f1_lower_hutt_town_hall_s17_n5,1,lower_hutt_town_hall,17,5,25.974100000894396,150.66289999958826,176.3509000011254,1848.6484375,97.638671875,3
+thickness,full,cuda,f1_lower_hutt_town_hall_s17_n13,1,lower_hutt_town_hall,17,13,30.904400002327748,119.81790000209003,150.99049999844283,1848.7109375,166.86328125,3
+thickness,full,cuda,f1_tauranga_farmers_building_s17_n5,1,tauranga_farmers_building,17,5,25.700900001538685,122.55759999970905,149.0005999985442,1848.65625,97.638671875,3
+thickness,full,cuda,f1_tauranga_farmers_building_s17_n13,1,tauranga_farmers_building,17,13,30.970400002843235,119.24960000033025,150.25140000216197,1849.15234375,166.86328125,3
+thickness,full,cuda,f2_christchurch_metro_sports_facility_s17_n5,2,christchurch_metro_sports_facility,17,5,25.73810000103549,145.4807999980403,171.2188999990758,1857.12890625,109.27685546875,3
+thickness,full,cuda,f2_christchurch_metro_sports_facility_s17_n13,2,christchurch_metro_sports_facility,17,13,31.236499999067746,127.12489999830723,158.36139999737497,1856.32421875,196.9970703125,3
+thickness,full,cuda,f2_marshland_s17_n5,2,marshland,17,5,26.061499997013016,112.88929999864195,138.50489999822457,1854.90625,93.791015625,3
+thickness,full,cuda,f2_marshland_s17_n13,2,marshland,17,13,30.89660000114236,99.43879999991623,130.1629999979923,1856.75,141.7978515625,3
+recognition,full,cuda,f0_lower_hutt_town_hall_s17_n5,0,lower_hutt_town_hall,17,5,41.349700000864686,154.12099999957718,196.41780000165454,1859.92578125,97.638671875,3
+recognition,full,cuda,f0_lower_hutt_town_hall_s17_n13,0,lower_hutt_town_hall,17,13,58.31849999958649,126.49419999797828,184.81269999756478,1859.98828125,166.86328125,3
+recognition,full,cuda,f0_tauranga_farmers_building_s17_n5,0,tauranga_farmers_building,17,5,40.89469999962603,127.99789999917266,168.9358000003267,1857.94140625,97.638671875,3
+recognition,full,cuda,f0_tauranga_farmers_building_s17_n13,0,tauranga_farmers_building,17,13,58.32459999874118,125.43590000132099,184.89250000129687,1858.84765625,166.86328125,3
+recognition,full,cuda,f1_lower_hutt_town_hall_s17_n5,1,lower_hutt_town_hall,17,5,41.79159999694093,154.64179999980843,195.9075999984634,1843.9921875,97.638671875,3
+recognition,full,cuda,f1_lower_hutt_town_hall_s17_n13,1,lower_hutt_town_hall,17,13,58.477999999013264,127.97679999857792,186.5576999989571,1842.80859375,166.86328125,3
+recognition,full,cuda,f1_tauranga_farmers_building_s17_n5,1,tauranga_farmers_building,17,5,41.091099999903236,128.51379999847268,169.38419999860344,1841.625,97.638671875,3
+recognition,full,cuda,f1_tauranga_farmers_building_s17_n13,1,tauranga_farmers_building,17,13,58.18079999880865,128.09439999909955,186.49849999928847,1841.6875,166.86328125,3
+recognition,full,cuda,f2_christchurch_metro_sports_facility_s17_n5,2,christchurch_metro_sports_facility,17,5,41.08740000083344,152.39759999894886,194.17449999673408,1851.8515625,109.27685546875,3
+recognition,full,cuda,f2_christchurch_metro_sports_facility_s17_n13,2,christchurch_metro_sports_facility,17,13,59.445099999720696,133.0621000015526,192.5072000012733,1837.390625,196.9970703125,3
+recognition,full,cuda,f2_marshland_s17_n5,2,marshland,17,5,41.99979999975767,116.60280000069179,158.60260000044946,1851.57421875,93.791015625,3
+recognition,full,cuda,f2_marshland_s17_n13,2,marshland,17,13,57.74830000154907,103.12779999730992,160.876099998859,1850.66015625,141.7978515625,3
+simplex,full,cpu,f0_lower_hutt_town_hall_s17_n5,0,lower_hutt_town_hall,17,5,5.322500001057051,3.6794000006921124,8.964399999968009,1850.66015625,,3
+simplex,full,cpu,f0_lower_hutt_town_hall_s17_n13,0,lower_hutt_town_hall,17,13,5.344499997590901,3.643000000010943,8.921799999370705,1850.66015625,,3
+simplex,full,cpu,f0_tauranga_farmers_building_s17_n5,0,tauranga_farmers_building,17,5,5.086499997560168,3.4449000013410114,8.531399998901179,1850.66015625,,3
+simplex,full,cpu,f0_tauranga_farmers_building_s17_n13,0,tauranga_farmers_building,17,13,5.315999998856569,3.603699999075616,8.919699997932184,1850.66015625,,3
+simplex,full,cpu,f1_lower_hutt_town_hall_s17_n5,1,lower_hutt_town_hall,17,5,5.309000000124797,3.6190000028000213,9.0438000006543,1850.66015625,,3
+simplex,full,cpu,f1_lower_hutt_town_hall_s17_n13,1,lower_hutt_town_hall,17,13,5.298200001561781,3.706100000272272,9.04860000082408,1850.66015625,,3
+simplex,full,cpu,f1_tauranga_farmers_building_s17_n5,1,tauranga_farmers_building,17,5,5.098800000268966,3.5166999987268355,8.615499998995801,1850.66015625,,3
+simplex,full,cpu,f1_tauranga_farmers_building_s17_n13,1,tauranga_farmers_building,17,13,5.597299998044036,3.6029999973834492,9.091799998714123,1850.66015625,,3
+simplex,full,cpu,f2_christchurch_metro_sports_facility_s17_n5,2,christchurch_metro_sports_facility,17,5,5.116000000271015,3.7120000015420374,8.922699998947792,1850.66015625,,3
+simplex,full,cpu,f2_christchurch_metro_sports_facility_s17_n13,2,christchurch_metro_sports_facility,17,13,5.415300001914147,3.774099997826852,9.279399997467408,1850.66015625,,3
+simplex,full,cpu,f2_marshland_s17_n5,2,marshland,17,5,5.146499999682419,3.5760999999183696,8.798199996817857,1850.66015625,,3
+simplex,full,cpu,f2_marshland_s17_n13,2,marshland,17,13,5.355000001145527,3.5957000000053085,8.84550000046147,1850.66015625,,3
+count_shrink,full,cuda,f0_lower_hutt_town_hall_s17_n5,0,lower_hutt_town_hall,17,5,37.76230000221403,232.32590000043274,270.0882000026468,1853.56640625,97.638671875,3
+count_shrink,full,cuda,f0_lower_hutt_town_hall_s17_n13,0,lower_hutt_town_hall,17,13,54.55939999956172,330.4244999999355,384.9687999972957,1853.4765625,166.86328125,3
+count_shrink,full,cuda,f0_tauranga_farmers_building_s17_n5,0,tauranga_farmers_building,17,5,37.982400001055794,205.5593000004592,243.31920000258833,1853.44140625,97.638671875,3
+count_shrink,full,cuda,f0_tauranga_farmers_building_s17_n13,0,tauranga_farmers_building,17,13,54.90569999892614,332.9379999995581,388.35739999922225,1853.5625,166.86328125,3
+count_shrink,full,cuda,f1_lower_hutt_town_hall_s17_n5,1,lower_hutt_town_hall,17,5,37.65389999898616,230.79219999999623,269.0337999993062,1852.7421875,97.638671875,3
+count_shrink,full,cuda,f1_lower_hutt_town_hall_s17_n13,1,lower_hutt_town_hall,17,13,54.26160000206437,333.0645000023651,387.18900000094436,1851.14453125,166.86328125,3
+count_shrink,full,cuda,f1_tauranga_farmers_building_s17_n5,1,tauranga_farmers_building,17,5,39.148799998656614,205.37460000196006,242.94519999966724,1850.9921875,97.638671875,3
+count_shrink,full,cuda,f1_tauranga_farmers_building_s17_n13,1,tauranga_farmers_building,17,13,54.29619999995339,333.3759999986796,387.5518999993801,1851.23046875,166.86328125,3
+count_shrink,full,cuda,f2_christchurch_metro_sports_facility_s17_n5,2,christchurch_metro_sports_facility,17,5,41.4719000000332,240.62220000269008,283.1609999993816,1855.890625,109.27685546875,3
+count_shrink,full,cuda,f2_christchurch_metro_sports_facility_s17_n13,2,christchurch_metro_sports_facility,17,13,62.95490000047721,376.71640000189655,436.4239999995334,1854.92578125,196.9970703125,3
+count_shrink,full,cuda,f2_marshland_s17_n5,2,marshland,17,5,42.591100002027815,216.76559999832534,258.7567000009585,1854.46875,93.791015625,3
+count_shrink,full,cuda,f2_marshland_s17_n13,2,marshland,17,13,61.139199999161065,345.6975999979477,406.83679999710876,1852.88671875,141.7978515625,3
+thickness_guarded,full,cuda,f0_lower_hutt_town_hall_s17_n5,0,lower_hutt_town_hall,17,5,27.713600000424776,159.81100000135484,191.8961000010313,1857.55078125,97.638671875,3
+thickness_guarded,full,cuda,f0_lower_hutt_town_hall_s17_n13,0,lower_hutt_town_hall,17,13,33.7760000002163,133.43380000151228,167.20980000172858,1854.9296875,166.86328125,3
+thickness_guarded,full,cuda,f0_tauranga_farmers_building_s17_n5,0,tauranga_farmers_building,17,5,28.628500000195345,131.4425000018673,160.07100000206265,1854.71875,97.638671875,3
+thickness_guarded,full,cuda,f0_tauranga_farmers_building_s17_n13,0,tauranga_farmers_building,17,13,34.59949999887613,132.02129999990575,166.02270000294084,1854.98046875,166.86328125,3
+thickness_guarded,full,cuda,f1_lower_hutt_town_hall_s17_n5,1,lower_hutt_town_hall,17,5,27.89900000061607,159.95990000010352,188.0487999987963,1854.2109375,97.638671875,3
+thickness_guarded,full,cuda,f1_lower_hutt_town_hall_s17_n13,1,lower_hutt_town_hall,17,13,34.3804000003729,128.68080000043847,162.55799999999,1856.4140625,166.86328125,3
+thickness_guarded,full,cuda,f1_tauranga_farmers_building_s17_n5,1,tauranga_farmers_building,17,5,29.46959999826504,131.56570000137435,161.97079999983544,1853.09765625,97.638671875,3
+thickness_guarded,full,cuda,f1_tauranga_farmers_building_s17_n13,1,tauranga_farmers_building,17,13,33.6219999990135,129.37180000153603,162.99380000054953,1855.30078125,166.86328125,3
+thickness_guarded,full,cuda,f2_christchurch_metro_sports_facility_s17_n5,2,christchurch_metro_sports_facility,17,5,28.115299999626586,160.65689999959432,188.4632999972382,1860.22265625,109.27685546875,3
+thickness_guarded,full,cuda,f2_christchurch_metro_sports_facility_s17_n13,2,christchurch_metro_sports_facility,17,13,34.20700000060606,134.9305000003369,170.10169999775826,1859.8515625,196.9970703125,3
+thickness_guarded,full,cuda,f2_marshland_s17_n5,2,marshland,17,5,28.111100000387523,120.93579999782378,149.0468999982113,1860.44921875,93.791015625,3
+thickness_guarded,full,cuda,f2_marshland_s17_n13,2,marshland,17,13,33.60930000053486,108.78500000035274,142.29809999960708,1860.76171875,141.7978515625,3
+cnp,full,cpu,f0_lower_hutt_town_hall_s17_n5,0,lower_hutt_town_hall,17,5,5.11249999908614,7.090400002198294,12.49910000115051,1822.3125,,3
+cnp,full,cpu,f0_lower_hutt_town_hall_s17_n13,0,lower_hutt_town_hall,17,13,10.184300001128577,7.1845999991637655,17.611999999644468,1821.4765625,,3
+cnp,full,cpu,f0_tauranga_farmers_building_s17_n5,0,tauranga_farmers_building,17,5,5.418100001406856,6.988299999648007,12.414199998602271,1821.49609375,,3
+cnp,full,cpu,f0_tauranga_farmers_building_s17_n13,0,tauranga_farmers_building,17,13,10.377999999036547,6.838500001322245,17.097700001613703,1821.49609375,,3
+cnp,full,cpu,f1_lower_hutt_town_hall_s17_n5,1,lower_hutt_town_hall,17,5,5.3496000000450294,7.643499997357139,13.070900000457186,1821.50390625,,3
+cnp,full,cpu,f1_lower_hutt_town_hall_s17_n13,1,lower_hutt_town_hall,17,13,10.041300000011688,7.2440000003553,17.450499999540625,1821.50390625,,3
+cnp,full,cpu,f1_tauranga_farmers_building_s17_n5,1,tauranga_farmers_building,17,5,5.362699997931486,7.126799999241484,12.48949999717297,1821.50390625,,3
+cnp,full,cpu,f1_tauranga_farmers_building_s17_n13,1,tauranga_farmers_building,17,13,10.407600002508843,7.118900000932626,17.52650000344147,1821.50390625,,3
+cnp,full,cpu,f2_christchurch_metro_sports_facility_s17_n5,2,christchurch_metro_sports_facility,17,5,5.573300000833115,8.73449999926379,14.182599999912782,1820.12890625,,3
+cnp,full,cpu,f2_christchurch_metro_sports_facility_s17_n13,2,christchurch_metro_sports_facility,17,13,10.357099999964703,8.971800001745578,19.42609999969136,1820.37109375,,3
+cnp,full,cpu,f2_marshland_s17_n5,2,marshland,17,5,5.495699999300996,5.815100001200335,11.310800000501331,1811.89453125,,3
+cnp,full,cpu,f2_marshland_s17_n13,2,marshland,17,13,10.213499997917097,6.555199997819727,16.93379999778699,1811.94140625,,3
+tabpfn_joint,point_only,cpu,f0_lower_hutt_town_hall_s17_n5,0,lower_hutt_town_hall,17,5,24.83829999982845,1177.467000001343,1202.524699998321,1897.1171875,,3
+tabpfn_joint,point_only,cpu,f0_lower_hutt_town_hall_s17_n13,0,lower_hutt_town_hall,17,13,30.14959999927669,2574.834800001554,2607.1225000014238,1955.9765625,,3
+tabpfn_joint,point_only,cpu,f0_tauranga_farmers_building_s17_n5,0,tauranga_farmers_building,17,5,27.002299997548107,1230.28659999909,1257.288899996638,1958.3359375,,3
+tabpfn_joint,point_only,cpu,f0_tauranga_farmers_building_s17_n13,0,tauranga_farmers_building,17,13,32.30900000198744,2660.560500000429,2696.2617999997747,1936.08984375,,3
+tabpfn_joint,point_only,cpu,f1_lower_hutt_town_hall_s17_n5,1,lower_hutt_town_hall,17,5,23.157700001320336,1144.6619000016653,1168.4870999997656,2000.03515625,,3
+tabpfn_joint,point_only,cpu,f1_lower_hutt_town_hall_s17_n13,1,lower_hutt_town_hall,17,13,31.498699998337543,2525.351000000228,2556.8496999985655,1952.1875,,3
+tabpfn_joint,point_only,cpu,f1_tauranga_farmers_building_s17_n5,1,tauranga_farmers_building,17,5,24.256800003058743,1200.9207000010065,1224.1847999976017,1974.4453125,,3
+tabpfn_joint,point_only,cpu,f1_tauranga_farmers_building_s17_n13,1,tauranga_farmers_building,17,13,29.980000002979068,2543.7976000030176,2573.0918000008387,1952.47265625,,3
+tabpfn_joint,point_only,cpu,f2_christchurch_metro_sports_facility_s17_n5,2,christchurch_metro_sports_facility,17,5,24.541200000385288,1374.2799999999988,1398.8661999974283,1979.8046875,,3
+tabpfn_joint,point_only,cpu,f2_christchurch_metro_sports_facility_s17_n13,2,christchurch_metro_sports_facility,17,13,29.85390000321786,2726.2615999970876,2756.1155000003055,1974.47265625,,3
+tabpfn_joint,point_only,cpu,f2_marshland_s17_n5,2,marshland,17,5,24.87199999814038,993.4391000024334,1019.8777000005066,1977.6875,,3
+tabpfn_joint,point_only,cpu,f2_marshland_s17_n13,2,marshland,17,13,30.235099999117665,2266.18629999939,2296.2460000017018,1990.921875,,3
+balanced,point_only,cpu,f0_lower_hutt_town_hall_s17_n5,0,lower_hutt_town_hall,17,5,20.45429999998305,9.246899997378932,29.410300001472933,1940.02734375,,3
+balanced,point_only,cpu,f0_lower_hutt_town_hall_s17_n13,0,lower_hutt_town_hall,17,13,31.455199998163152,11.442999999417225,43.25779999999213,1940.02734375,,3
+balanced,point_only,cpu,f0_tauranga_farmers_building_s17_n5,0,tauranga_farmers_building,17,5,20.281599998270394,10.090700001455843,29.81029999864404,1940.02734375,,3
+balanced,point_only,cpu,f0_tauranga_farmers_building_s17_n13,0,tauranga_farmers_building,17,13,32.86640000078478,11.40049999958137,44.236800000362564,1940.02734375,,3
+balanced,point_only,cpu,f1_lower_hutt_town_hall_s17_n5,1,lower_hutt_town_hall,17,5,20.3328000025067,9.290199999668403,29.477800002496224,1940.02734375,,3
+balanced,point_only,cpu,f1_lower_hutt_town_hall_s17_n13,1,lower_hutt_town_hall,17,13,32.24649999901885,11.399700000765733,43.353400000341935,1940.02734375,,3
+balanced,point_only,cpu,f1_tauranga_farmers_building_s17_n5,1,tauranga_farmers_building,17,5,19.45770000020275,9.989599999244092,29.567400000814814,1940.02734375,,3
+balanced,point_only,cpu,f1_tauranga_farmers_building_s17_n13,1,tauranga_farmers_building,17,13,32.298699999955716,11.238199997023912,43.745799997850554,1940.02734375,,3
+balanced,point_only,cpu,f2_christchurch_metro_sports_facility_s17_n5,2,christchurch_metro_sports_facility,17,5,20.010899999761023,9.562800001731375,29.395000001386506,1940.02734375,,3
+balanced,point_only,cpu,f2_christchurch_metro_sports_facility_s17_n13,2,christchurch_metro_sports_facility,17,13,33.3444000025338,9.768100000655977,43.23680000015884,1940.02734375,,3
+balanced,point_only,cpu,f2_marshland_s17_n5,2,marshland,17,5,20.000300002720905,8.99070000014035,29.068200001347577,1940.02734375,,3
+balanced,point_only,cpu,f2_marshland_s17_n13,2,marshland,17,13,31.279800001357216,10.00200000271434,41.43340000155149,1940.02734375,,3
+thickness,point_only,cpu,f0_lower_hutt_town_hall_s17_n5,0,lower_hutt_town_hall,17,5,5.99809999766876,3.818900000624126,9.984899999835761,1940.02734375,,3
+thickness,point_only,cpu,f0_lower_hutt_town_hall_s17_n13,0,lower_hutt_town_hall,17,13,5.985600000713021,4.082300001755357,10.010300000431016,1940.02734375,,3
+thickness,point_only,cpu,f0_tauranga_farmers_building_s17_n5,0,tauranga_farmers_building,17,5,5.9131999987585,4.027800001495052,9.941000000253553,1940.02734375,,3
+thickness,point_only,cpu,f0_tauranga_farmers_building_s17_n13,0,tauranga_farmers_building,17,13,6.100399998103967,4.119900000659982,9.946999998646788,1940.02734375,,3
+thickness,point_only,cpu,f1_lower_hutt_town_hall_s17_n5,1,lower_hutt_town_hall,17,5,5.8446000002732035,3.8991000001260545,9.607100000721402,1940.02734375,,3
+thickness,point_only,cpu,f1_lower_hutt_town_hall_s17_n13,1,lower_hutt_town_hall,17,13,6.032100001903018,3.728600000613369,9.760700002516387,1940.02734375,,3
+thickness,point_only,cpu,f1_tauranga_farmers_building_s17_n5,1,tauranga_farmers_building,17,5,5.952700001216726,3.688499997224426,9.78670000040438,1940.02734375,,3
+thickness,point_only,cpu,f1_tauranga_farmers_building_s17_n13,1,tauranga_farmers_building,17,13,6.427100001019426,4.235699998389464,10.860499998671003,1940.02734375,,3
+thickness,point_only,cpu,f2_christchurch_metro_sports_facility_s17_n5,2,christchurch_metro_sports_facility,17,5,5.820300000777934,4.1168999996443745,9.937200000422308,1940.02734375,,3
+thickness,point_only,cpu,f2_christchurch_metro_sports_facility_s17_n13,2,christchurch_metro_sports_facility,17,13,6.109900001320057,4.4956000019737985,10.416700002679136,1940.02734375,,3
+thickness,point_only,cpu,f2_marshland_s17_n5,2,marshland,17,5,5.885599999601254,3.997499999968568,9.883099999569822,1940.02734375,,3
+thickness,point_only,cpu,f2_marshland_s17_n13,2,marshland,17,13,6.188899998960551,4.014999998616986,10.381100000813603,1940.02734375,,3
+recognition,point_only,cpu,f0_lower_hutt_town_hall_s17_n5,0,lower_hutt_town_hall,17,5,23.81990000139922,9.80840000192984,33.42239999983576,1940.02734375,,3
+recognition,point_only,cpu,f0_lower_hutt_town_hall_s17_n13,0,lower_hutt_town_hall,17,13,35.40370000337134,12.235099999088561,47.50389999753679,1940.02734375,,3
+recognition,point_only,cpu,f0_tauranga_farmers_building_s17_n5,0,tauranga_farmers_building,17,5,22.99720000155503,9.547900001052767,32.55889999854844,1940.02734375,,3
+recognition,point_only,cpu,f0_tauranga_farmers_building_s17_n13,0,tauranga_farmers_building,17,13,36.53409999969881,11.693000000377651,48.22710000007646,1940.02734375,,3
+recognition,point_only,cpu,f1_lower_hutt_town_hall_s17_n5,1,lower_hutt_town_hall,17,5,23.612299999513198,9.279900001274655,32.935200000792975,1940.02734375,,3
+recognition,point_only,cpu,f1_lower_hutt_town_hall_s17_n13,1,lower_hutt_town_hall,17,13,34.836400001950096,11.50459999917075,46.34100000112085,1940.02734375,,3
+recognition,point_only,cpu,f1_tauranga_farmers_building_s17_n5,1,tauranga_farmers_building,17,5,23.911299998871982,9.572499999194406,33.67450000223471,1940.02734375,,3
+recognition,point_only,cpu,f1_tauranga_farmers_building_s17_n13,1,tauranga_farmers_building,17,13,35.47789999720408,11.453499999333872,47.038599997904385,1940.02734375,,3
+recognition,point_only,cpu,f2_christchurch_metro_sports_facility_s17_n5,2,christchurch_metro_sports_facility,17,5,22.996200001216494,9.756600000400795,32.41309999793884,1940.02734375,,3
+recognition,point_only,cpu,f2_christchurch_metro_sports_facility_s17_n13,2,christchurch_metro_sports_facility,17,13,37.18529999969178,9.620400000130758,47.85890000130166,1940.02734375,,3
+recognition,point_only,cpu,f2_marshland_s17_n5,2,marshland,17,5,23.779600000125356,8.922200002416503,33.191899998200824,1940.02734375,,3
+recognition,point_only,cpu,f2_marshland_s17_n13,2,marshland,17,13,34.9657999977353,9.647200000472367,44.61299999820767,1940.02734375,,3
+count_shrink,point_only,cpu,f0_lower_hutt_town_hall_s17_n5,0,lower_hutt_town_hall,17,5,19.568200001231162,92.88390000074287,112.45210000197403,1939.00390625,,3
+count_shrink,point_only,cpu,f0_lower_hutt_town_hall_s17_n13,0,lower_hutt_town_hall,17,13,31.521400000201538,231.84260000198265,263.3640000021842,1939.03515625,,3
+count_shrink,point_only,cpu,f0_tauranga_farmers_building_s17_n5,0,tauranga_farmers_building,17,5,19.233200000599027,92.64320000147563,111.87640000207466,1939.16015625,,3
+count_shrink,point_only,cpu,f0_tauranga_farmers_building_s17_n13,0,tauranga_farmers_building,17,13,31.937899999320507,230.60070000065025,262.53859999997076,1938.9765625,,3
+count_shrink,point_only,cpu,f1_lower_hutt_town_hall_s17_n5,1,lower_hutt_town_hall,17,5,19.65809999819612,92.25440000227536,111.9883999999729,1938.9765625,,3
+count_shrink,point_only,cpu,f1_lower_hutt_town_hall_s17_n13,1,lower_hutt_town_hall,17,13,32.00420000212034,235.43010000139475,268.7837000012223,1938.9765625,,3
+count_shrink,point_only,cpu,f1_tauranga_farmers_building_s17_n5,1,tauranga_farmers_building,17,5,20.366099997772835,91.42249999786145,112.07749999812222,1938.9765625,,3
+count_shrink,point_only,cpu,f1_tauranga_farmers_building_s17_n13,1,tauranga_farmers_building,17,13,31.968100000085542,228.60930000024382,260.41609999811044,1938.9765625,,3
+count_shrink,point_only,cpu,f2_christchurch_metro_sports_facility_s17_n5,2,christchurch_metro_sports_facility,17,5,20.539900000585476,91.87990000282298,112.60779999793158,1938.9765625,,3
+count_shrink,point_only,cpu,f2_christchurch_metro_sports_facility_s17_n13,2,christchurch_metro_sports_facility,17,13,32.8631000011228,225.34989999985555,258.82719999935944,1938.99609375,,3
+count_shrink,point_only,cpu,f2_marshland_s17_n5,2,marshland,17,5,20.81209999960265,91.48740000091493,112.43229999672621,1938.99609375,,3
+count_shrink,point_only,cpu,f2_marshland_s17_n13,2,marshland,17,13,30.893099999957485,229.93770000175573,261.26989999829675,1938.99609375,,3
+thickness_guarded,point_only,cpu,f0_lower_hutt_town_hall_s17_n5,0,lower_hutt_town_hall,17,5,5.928000002313638,4.1373999993084,10.065400001622038,1938.99609375,,3
+thickness_guarded,point_only,cpu,f0_lower_hutt_town_hall_s17_n13,0,lower_hutt_town_hall,17,13,6.240899998374516,4.274999999324791,10.40609999836306,1938.99609375,,3
+thickness_guarded,point_only,cpu,f0_tauranga_farmers_building_s17_n5,0,tauranga_farmers_building,17,5,6.335699999908684,4.179399998974986,10.51509999888367,1938.99609375,,3
+thickness_guarded,point_only,cpu,f0_tauranga_farmers_building_s17_n13,0,tauranga_farmers_building,17,13,6.288900000072317,3.9316999973380007,10.241100000712322,1938.99609375,,3
+thickness_guarded,point_only,cpu,f1_lower_hutt_town_hall_s17_n5,1,lower_hutt_town_hall,17,5,6.061299998691538,4.2661000006773975,10.352599998441292,1938.99609375,,3
+thickness_guarded,point_only,cpu,f1_lower_hutt_town_hall_s17_n13,1,lower_hutt_town_hall,17,13,6.359599999996135,4.571500001475215,10.93110000147135,1938.99609375,,3
+thickness_guarded,point_only,cpu,f1_tauranga_farmers_building_s17_n5,1,tauranga_farmers_building,17,5,5.8895999973174185,4.337300000770483,10.308699998859083,1938.99609375,,3
+thickness_guarded,point_only,cpu,f1_tauranga_farmers_building_s17_n13,1,tauranga_farmers_building,17,13,6.042899996828055,4.116500000236556,10.159399997064611,1938.99609375,,3
+thickness_guarded,point_only,cpu,f2_christchurch_metro_sports_facility_s17_n5,2,christchurch_metro_sports_facility,17,5,5.888499999855412,4.108400000404799,9.996900000260212,1938.99609375,,3
+thickness_guarded,point_only,cpu,f2_christchurch_metro_sports_facility_s17_n13,2,christchurch_metro_sports_facility,17,13,5.9897999999520835,4.498300000705058,10.86600000053295,1938.99609375,,3
+thickness_guarded,point_only,cpu,f2_marshland_s17_n5,2,marshland,17,5,5.9755000002041925,4.091599999810569,10.086900001624599,1938.99609375,,3
+thickness_guarded,point_only,cpu,f2_marshland_s17_n13,2,marshland,17,13,6.161500001326203,4.14920000184793,10.398000002169283,1938.99609375,,3
