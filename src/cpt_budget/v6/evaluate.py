@@ -35,11 +35,19 @@ def candidate_global_checks(curves, models, settings):
             checks['majority_unique_sites_improve'] = improve > len(sites)/2
             er = 1-method['log_mae']/baseline['log_mae']
             hr = 1-method['h_point_mae_m']/baseline['h_point_mae_m']
+            local_pass = 0
+            for fid in (0,1,2):
+                baseline_id = strong[fid] if ref_name == 'fold_strong' else ref_name
+                local = _gate(gate_values(folds.loc[(fid,model)]),
+                              gate_values(folds.loc[(fid,baseline_id)]),settings)
+                local_pass += int(all(local.values()))
             row = {'model_id':model,'reference':ref_name, **{k+'_method':v for k,v in method.items()},
                    **{k+'_baseline':v for k,v in baseline.items()}, **checks,
-                   'original_global_gate':all(checks.values()),'relative_log_mae_reduction':er,
+                   'pooled_gate_only':all(checks.values()),'fold_gates_passed':local_pass,
+                   'candidate_comprehensive_gate':all(checks.values()) and local_pass==3,
+                   'relative_log_mae_reduction':er,
                    'relative_thickness_reduction':hr,'improved_sites':improve,
-                   'clear_win':bool(all(checks.values()) and er>=.05 and hr>=.10 and method['recall']>=baseline['recall'])}
+                   'clear_win':bool(all(checks.values()) and local_pass==3 and er>=.05 and hr>=.10 and method['recall']>=baseline['recall'])}
             rows.append(row)
             sites_all.append(sites.reset_index().assign(model_id=model, reference=ref_name))
     return pd.DataFrame(rows),pd.concat(sites_all,ignore_index=True)
@@ -106,6 +114,10 @@ def run(families, output_name):
                      metric_rows=len(metrics),scope='adaptive_exploration_reused_validation',
                      clear_win_definition='E reduction >=5%, H reduction >=10%, point recall >=baseline, risk guards and majority sites',
                      clear_winners=global_checks.loc[global_checks.reference.eq('fold_strong')&global_checks.clear_win,'model_id'].tolist())
+    chosen,control=selection['method'],selection['baseline']
+    selection['selected_system_clear_win']=bool(selection['passed'] and
+        1-chosen['log_mae']/control['log_mae']>=.05 and
+        1-chosen['h_point_mae_m']/control['h_point_mae_m']>=.10 and chosen['recall']>=control['recall'])
     write_json(output/'selection.json',_plain(selection))
     write_json(output/'calibrators.json',calibrators)
     print(macro.loc[list(model_paths)][CORE].sort_values('log_mae').to_string())
