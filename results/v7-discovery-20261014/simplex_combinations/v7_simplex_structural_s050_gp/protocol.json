@@ -1,0 +1,30 @@
+{
+  "model_id": "v7_simplex_structural_s050_gp",
+  "scope": "exploratory_validation_only",
+  "states": 60,
+  "rows": 8640,
+  "native_event_probability": true,
+  "source": "E:\\Study\\Msc_AAI\\CA6001-AI ALGORITHMS FUNDAMENTALS & APPLICATION\\Project\\runs\\v6-combinations-20261014\\final",
+  "round": 2,
+  "selection_timing": "Fixed after first-round local geometry results, before combination results",
+  "simplex": "v7_simplex_linear",
+  "members": {
+    "residual": "residual_ft_crps_guarded_a050",
+    "fpca50": "v6_fpca_residual_w050",
+    "graph_union": "v6_graph_residual_low_union",
+    "structural": "support_stack_structural"
+  },
+  "simplex_weights": [
+    0.5,
+    0.75
+  ],
+  "median_members": [
+    "v7_simplex_linear",
+    "v6_fpca_residual_w050",
+    "v6_graph_residual_low_union"
+  ],
+  "point_control": "unchanged v7_simplex_linear",
+  "risk_head": "frozen GP native p_low_1, never OOF risk_probability",
+  "interpretation": "Separate point and risk heads; GP probability is not the CDF of the combined point predictor",
+  "extra_training_or_parameter_search": "none"
+}

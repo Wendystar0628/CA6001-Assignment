@@ -1,0 +1,149 @@
+{
+  "source_site_ids": [
+    "avondale",
+    "avonside",
+    "baytown",
+    "bexley",
+    "christchurch_central_city",
+    "christchurch_cnr_armagh_durham_st",
+    "hastings_hospital",
+    "hollywood",
+    "linwood_rudds_road",
+    "marshland",
+    "newlock",
+    "parkland_bower_ave_two",
+    "redcliffs_main_road",
+    "wainoni",
+    "wainoni_pak_n_save",
+    "wellington_college",
+    "whangarei_high_school"
+  ],
+  "source_profile_count": 262,
+  "site_counts": {
+    "avondale": {
+      "profiles": 9,
+      "ordered_pairs": 72
+    },
+    "avonside": {
+      "profiles": 10,
+      "ordered_pairs": 90
+    },
+    "baytown": {
+      "profiles": 3,
+      "ordered_pairs": 6
+    },
+    "bexley": {
+      "profiles": 14,
+      "ordered_pairs": 182
+    },
+    "christchurch_central_city": {
+      "profiles": 18,
+      "ordered_pairs": 306
+    },
+    "christchurch_cnr_armagh_durham_st": {
+      "profiles": 5,
+      "ordered_pairs": 20
+    },
+    "hollywood": {
+      "profiles": 25,
+      "ordered_pairs": 600
+    },
+    "linwood_rudds_road": {
+      "profiles": 7,
+      "ordered_pairs": 42
+    },
+    "marshland": {
+      "profiles": 20,
+      "ordered_pairs": 380
+    },
+    "newlock": {
+      "profiles": 80,
+      "ordered_pairs": 6320
+    },
+    "parkland_bower_ave_two": {
+      "profiles": 11,
+      "ordered_pairs": 110
+    },
+    "redcliffs_main_road": {
+      "profiles": 11,
+      "ordered_pairs": 110
+    },
+    "wainoni": {
+      "profiles": 11,
+      "ordered_pairs": 110
+    },
+    "wainoni_pak_n_save": {
+      "profiles": 16,
+      "ordered_pairs": 240
+    },
+    "wellington_college": {
+      "profiles": 12,
+      "ordered_pairs": 132
+    },
+    "whangarei_high_school": {
+      "profiles": 9,
+      "ordered_pairs": 72
+    }
+  },
+  "training_cell_pairs": 211008,
+  "depth_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23
+  ],
+  "transport_features": [
+    "log1p(normalised_distance)",
+    "normalised_depth",
+    "anchor_log_qc",
+    "anchor_previous_difference",
+    "anchor_next_difference",
+    "anchor_profile_mean",
+    "anchor_profile_q25",
+    "anchor_profile_min"
+  ],
+  "source_weighting": "equal total weight per source training site",
+  "transport_model": "HistGradientBoosting absolute error; 80 trees, depth <= 3, <= 7 leaves",
+  "variogram_model": "3 depth bands, 4 nonnegative radial terms each",
+  "variogram_coefficients": [
+    [
+      0.33766594847455866,
+      0.0,
+      0.0,
+      1.331122616904292
+    ],
+    [
+      0.47958656012762857,
+      0.0,
+      0.0,
+      0.3045166623786037
+    ],
+    [
+      0.24293777871306957,
+      0.06731413433281164,
+      0.0,
+      0.5232651290742033
+    ]
+  ],
+  "truth_boundary": "source train sites only; query profile never available"
+}

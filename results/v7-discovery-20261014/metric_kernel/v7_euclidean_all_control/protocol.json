@@ -1,0 +1,40 @@
+{
+  "model_id": "v7_euclidean_all_control",
+  "scope": "exploratory_validation_only",
+  "states": 60,
+  "rows": 8640,
+  "native_event_probability": false,
+  "source": "E:\\Study\\Msc_AAI\\CA6001-AI ALGORITHMS FUNDAMENTALS & APPLICATION\\Project\\runs\\v6-combinations-20261014\\final",
+  "family": "source pair transport and support supervised PSD geometry",
+  "methods": [
+    "source_pair_variance",
+    "support_psd_metric",
+    "source_pair_transport",
+    "metric_pair_transport",
+    "euclidean_all_control"
+  ],
+  "fit_scope": "source train + revealed target CPTs only",
+  "matched_control": "euclidean_all_control is ordinary all-neighbour IDW, not a new algorithm",
+  "query_scope": "location, horizontal coordinates, depth only",
+  "source_transport": {
+    "correction_weight": 0.5,
+    "correction_clip_log_qc": 0.75,
+    "model": "absolute-error HGB 80 iterations, max depth 3, max 7 leaves, min leaf 80"
+  },
+  "support_metric": {
+    "ridge": "pair count",
+    "condition_number_cap": 4,
+    "determinant": 1,
+    "target": "mean squared full-profile difference"
+  },
+  "limitations": [
+    "Pair observations are dependent, so pair count is not sample size.",
+    "Source relative-distance patterns need not transfer to different geology.",
+    "Positive interpolation weights are not a GP covariance or uncertainty model."
+  ],
+  "references": [
+    "https://papers.nips.cc/paper_files/paper/2002/hash/c3e4035af2a1cde9f21e1ae1951ac80b-Abstract.html",
+    "https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.HistGradientBoostingRegressor.html"
+  ],
+  "reference_scope": "metric learning motivation and official estimator; adaptations, not paper replications"
+}

@@ -1,0 +1,76 @@
+{
+  "model_id": "v7_local_event_dp_residual",
+  "scope": "exploratory_validation_only",
+  "states": 60,
+  "rows": 8640,
+  "native_event_probability": true,
+  "source": "E:\\Study\\Msc_AAI\\CA6001-AI ALGORITHMS FUNDAMENTALS & APPLICATION\\Project\\runs\\v6-combinations-20261014\\final",
+  "family": "revealed_target_adaptation_of_source_count_event_heads",
+  "candidates": {
+    "v7_local_count_residual": [
+      "count",
+      "residual"
+    ],
+    "v7_local_count_stack": [
+      "count",
+      "stack"
+    ],
+    "v7_local_half_count_residual": [
+      "half_count",
+      "residual"
+    ],
+    "v7_local_half_count_stack": [
+      "half_count",
+      "stack"
+    ],
+    "v7_local_event_dp_residual": [
+      "event_dp",
+      "residual"
+    ],
+    "v7_local_event_dp_stack": [
+      "event_dp",
+      "stack"
+    ]
+  },
+  "source_heads": "E:\\Study\\Msc_AAI\\CA6001-AI ALGORITHMS FUNDAMENTALS & APPLICATION\\Project\\runs\\v6-combinations-20261014\\thickness_head",
+  "parameters_agreed_before_new_results": true,
+  "target_context": "Current revealed complete profiles only; never unmeasured query labels.",
+  "local_crossfit": "Leave each full connected component of near-group equality or co-location <=1e-8 m out.",
+  "count_bias": "Median of within-component median true_count-minus-source_count residuals; multiply G/(G+10).",
+  "count_projection": "Round corrected count to nearest integer; choose ascending base logqc and only flip disagreements to +/- .05.",
+  "half_count": "Average local-corrected source count with the actual base point count before rounding.",
+  "probability_map": "sigmoid(a*logit(p)+b), a>=0; independent of query/base amplitudes.",
+  "map_objective": "sum(component-mean binary cross entropy)+0.5*((a-1)^2+.25*b^2)",
+  "map_bounds": {
+    "a": [
+      0.0,
+      4.0
+    ],
+    "b": [
+      -6.0,
+      6.0
+    ]
+  },
+  "map_fallback": "Identity if no independent component remains or numerical optimizer fails.",
+  "decoder": {
+    "tau": 0.5,
+    "potts": 0.25,
+    "cardinality": 0.25,
+    "margin": 0.05,
+    "target_count": "local-corrected source count"
+  },
+  "native_probability": "Count projections use local sigmoid-calibrated source event p. Event DP uses exact Gibbs marginals.",
+  "thickness_semantics": "Threshold actual final point predictions; no substitution of expected/predicted count for thickness.",
+  "outer_test_used": false,
+  "query_truth_used": false,
+  "old_oof_risk_used": false,
+  "sources": [
+    "https://scikit-learn.org/stable/modules/calibration.html",
+    "https://proceedings.mlr.press/v54/kull17a.html"
+  ],
+  "source_scope": "Regularized logistic probability calibration adapted to target support; not a reproduction of beta calibration.",
+  "mode_and_base": [
+    "event_dp",
+    "residual"
+  ]
+}

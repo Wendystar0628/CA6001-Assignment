@@ -1,0 +1,28 @@
+{
+  "scope": "adaptive_exploration_reused_validation",
+  "new_models": 37,
+  "reference_models": 90,
+  "metrics_rows": 7620,
+  "evaluation": "Same complete states, unique-site aggregation and leave-investigation-group-out calibration.",
+  "legacy_gate_role": "reference only; neither v6 3/10 goal nor old gates veto v7 exploratory promotion",
+  "promotion_status": "Pending result-based decision after all planned families and combinations.",
+  "pareto_axes": [
+    "log_mae",
+    "h_point_mae_m",
+    "point_balanced_error",
+    "risk_balanced_error"
+  ],
+  "new_pareto_models": [
+    "v7_simplex_linear",
+    "v7_local_event_dp_stack",
+    "v7_joint_error_hmedian_fpca",
+    "v7_local_half_count_stack",
+    "v7_joint_error_hmedian",
+    "v7_graph_lowrank_local",
+    "v7_haar_krr_median",
+    "v7_graph_biharmonic",
+    "v7_haar_krr_nearest"
+  ],
+  "independent_test": false,
+  "post_hoc_selection": true
+}

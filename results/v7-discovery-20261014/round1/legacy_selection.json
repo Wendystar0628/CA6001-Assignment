@@ -1,0 +1,133 @@
+{
+  "scope": "adaptive_exploration_reused_validation",
+  "folds": {
+    "0": {
+      "baseline_model": "idw",
+      "selected_model": "v7_simplex_linear",
+      "eligible_candidates": [
+        "v7_lad_affine",
+        "v7_simplex_linear",
+        "v7_graph_nuclear",
+        "v7_graph_nuclear_gradient"
+      ],
+      "fallback": false
+    },
+    "1": {
+      "baseline_model": "idw",
+      "selected_model": "v7_simplex_linear",
+      "eligible_candidates": [
+        "v7_lad_affine",
+        "v7_simplex_linear",
+        "v7_graph_nuclear",
+        "v7_graph_nuclear_gradient",
+        "v7_local_event_dp_residual",
+        "v7_local_event_dp_stack"
+      ],
+      "fallback": false
+    },
+    "2": {
+      "baseline_model": "gp",
+      "selected_model": "gp",
+      "eligible_candidates": [],
+      "fallback": true
+    }
+  },
+  "method": {
+    "log_mae": 0.610556368224169,
+    "h_point_mae_m": 0.6150716145833334,
+    "recall": 0.32210094975490194,
+    "false_positive_rate": 0.0724893105051958,
+    "risk_recall": 0.6503963694852941,
+    "risk_fpr": 0.21347988569659915,
+    "risk_brier": 0.12122368837978008
+  },
+  "baseline": {
+    "log_mae": 0.6297554548627837,
+    "h_point_mae_m": 0.64501953125,
+    "recall": 0.32772288602941174,
+    "false_positive_rate": 0.06377500652108407,
+    "risk_recall": 0.6214135263480393,
+    "risk_fpr": 0.36677998048475513,
+    "risk_brier": 0.12954328418446634
+  },
+  "global_checks": {
+    "profile_improves": true,
+    "thickness_guard": true,
+    "recall_guard": true,
+    "fpr_guard": true,
+    "majority_unique_sites_improve": false,
+    "all_folds_complete": true
+  },
+  "passed": false,
+  "improved_sites": 2,
+  "unique_sites": 4,
+  "relative_log_mae_reduction": 0.030486574574884684,
+  "weak_controls_excluded_from_promotion": [
+    "target_constant_median",
+    "target_depth_median"
+  ],
+  "outer_test_executed": false,
+  "candidates": [
+    "v7_lad_affine",
+    "v7_mls_affine",
+    "v7_simplex_linear",
+    "v7_cokriging_full",
+    "v7_cokriging_lmc",
+    "v7_cokriging_loo",
+    "v7_cokriging_rank6",
+    "v7_cokriging_short",
+    "v7_graph_biharmonic",
+    "v7_graph_lowrank_local",
+    "v7_graph_nuclear",
+    "v7_graph_nuclear_gradient",
+    "v7_profile_forest_direct",
+    "v7_profile_forest_direct_best50",
+    "v7_profile_forest_residual",
+    "v7_profile_forest_residual_best50",
+    "v7_joint_analog_hmedian",
+    "v7_joint_analog_median",
+    "v7_joint_error_hmedian",
+    "v7_joint_error_hmedian_fpca",
+    "v7_joint_error_median",
+    "v7_dct_krr_detail",
+    "v7_dct_krr_nearest",
+    "v7_haar_krr_median",
+    "v7_haar_krr_nearest",
+    "v7_haar_multiband",
+    "v7_euclidean_all_control",
+    "v7_metric_pair_transport",
+    "v7_source_pair_transport",
+    "v7_source_pair_variance",
+    "v7_support_psd_metric",
+    "v7_local_count_residual",
+    "v7_local_count_stack",
+    "v7_local_event_dp_residual",
+    "v7_local_event_dp_stack",
+    "v7_local_half_count_residual",
+    "v7_local_half_count_stack"
+  ],
+  "families": [
+    "local_geometry",
+    "cokriging",
+    "graph_completion",
+    "profile_forest",
+    "profile_distribution",
+    "multiscale",
+    "metric_kernel",
+    "local_transfer"
+  ],
+  "new_model_count": 37,
+  "metric_rows": 7620,
+  "clear_win_definition": "E reduction >=3%, H reduction >=10%, point recall >=baseline, risk guards and majority sites",
+  "clear_winners": [],
+  "selected_system_clear_win": false,
+  "goal_revision": {
+    "date": "2026-10-14",
+    "requested_by": "user",
+    "previous_profile_reduction": 0.05,
+    "profile_reduction": 0.03,
+    "thickness_reduction": 0.1,
+    "original_gate_changed": false,
+    "note": "Changed during final evaluation at explicit user request; no predictions or metrics refitted."
+  }
+}

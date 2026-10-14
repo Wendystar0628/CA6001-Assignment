@@ -1,0 +1,121 @@
+{
+  "model_id": "v7_joint_stack_error_hmedian",
+  "scope": "exploratory_validation_only",
+  "states": 60,
+  "rows": 8640,
+  "native_event_probability": true,
+  "source": "E:\\Study\\Msc_AAI\\CA6001-AI ALGORITHMS FUNDAMENTALS & APPLICATION\\Project\\runs\\v6-combinations-20261014\\final",
+  "round": 2,
+  "models": {
+    "v7_joint_simplex_analog_hmedian": [
+      "simplex",
+      "analog",
+      "thickness_median"
+    ],
+    "v7_joint_simplex_error_hmedian": [
+      "simplex",
+      "error",
+      "thickness_median"
+    ],
+    "v7_joint_stack_analog_hmedian": [
+      "stack",
+      "analog",
+      "thickness_median"
+    ],
+    "v7_joint_stack_error_hmedian": [
+      "stack",
+      "error",
+      "thickness_median"
+    ],
+    "v7_joint_simplex_best50_analog_hmedian": [
+      "simplex_best50",
+      "analog",
+      "thickness_median"
+    ],
+    "v7_joint_simplex_best50_error_hmedian": [
+      "simplex_best50",
+      "error",
+      "thickness_median"
+    ],
+    "v7_joint_simplex_analog_median": [
+      "simplex",
+      "analog",
+      "point_median"
+    ],
+    "v7_joint_simplex_error_median": [
+      "simplex",
+      "error",
+      "point_median"
+    ]
+  },
+  "selection_provenance": "Nominated after round-one local-geometry and whole-profile-distribution results; adaptive exploration, not independent confirmation",
+  "bases": {
+    "simplex": "v7_simplex_linear",
+    "stack": "support_stack_structural",
+    "simplex_best50": "0.5*v7_simplex_linear + 0.5*residual_ft_crps_guarded_a050"
+  },
+  "distribution_protocol": {
+    "models": {
+      "v7_joint_analog_median": [
+        "analog",
+        "point_median",
+        "best"
+      ],
+      "v7_joint_error_median": [
+        "error",
+        "point_median",
+        "best"
+      ],
+      "v7_joint_analog_hmedian": [
+        "analog",
+        "thickness_median",
+        "best"
+      ],
+      "v7_joint_error_hmedian": [
+        "error",
+        "thickness_median",
+        "best"
+      ],
+      "v7_joint_error_hmedian_fpca": [
+        "error",
+        "thickness_median",
+        "fpca50"
+      ]
+    },
+    "parameter_message_before_run": true,
+    "family": "finite_whole_profile_distribution",
+    "shrinkage": 0.5,
+    "analog_atoms": "base + 0.5*(revealed whole curve - weighted mean revealed whole curve)",
+    "error_atoms": "base + 0.5*(revealed whole curve - 3NN-IDW whole-group-held-out reference)",
+    "weights": "Gaussian horizontal kernel; scale median nonzero support pair distance; divide by near-group size",
+    "loo_exclusion": "Entire location, near group and colocated coordinates; recomputed from support only",
+    "joint_model": "One atom index is shared by every depth; enumerate finite support exactly, no random simulation",
+    "quantile_convention": "Lower inverse empirical CDF; no interpolation between counts",
+    "point_median": "Marginal logqc median minimizes expected absolute point error under the stipulated mixture",
+    "thickness_median": "Median of whole-atom low-cell counts minimizes expected absolute thickness error under the same mixture",
+    "event_location_decision": "At selected count, top marginal probabilities minimize expected Hamming loss; base-value ties minimize changes",
+    "crossing_margin_log_qc": 0.05,
+    "probability": "Exact marginal P(atom logqc < 0), before common external calibration",
+    "expected_thickness_is_point_thickness": false,
+    "prediction_interval_or_coverage_claim": false,
+    "calibrated_bayesian_posterior": false,
+    "transport_assumptions": "Analog deviations or LOO-IDW whole-profile errors transfer to the frozen amplitude base; not its own calibrated residuals",
+    "limits": "Only 5-13 support profiles; horizontal nonstationarity and source-model mismatch can invalidate transport",
+    "outer_test_used": false,
+    "validation_scope": "Exploration on repeatedly used frozen validation sites",
+    "sources": [
+      "https://fpp.robjhyndman.com/publications/forecasting-functional-time-series-2/",
+      "https://arxiv.org/abs/2004.03971"
+    ],
+    "source_relationship": "Functional/bootstrap curve dependence inspires the construction; this spatial finite mixture does not reproduce their estimators or inherit their validity guarantees"
+  },
+  "parameters_changed_from_round1": [],
+  "amplitude_source_allowlist": "Frozen cell keys and pred_log_qc only; never truth, old risk calibration or intervals",
+  "probability": "Exact marginal of the same complete-curve finite mixture around each new base",
+  "query_truth_in_prediction": false,
+  "independent_test_used": false,
+  "new_hyperparameter_search": false,
+  "base": "stack",
+  "kind": "error",
+  "decision": "thickness_median"
+}

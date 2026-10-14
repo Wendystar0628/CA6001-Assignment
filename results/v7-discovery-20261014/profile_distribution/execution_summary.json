@@ -1,0 +1,15 @@
+{
+  "models": [
+    "v7_joint_analog_median",
+    "v7_joint_error_median",
+    "v7_joint_analog_hmedian",
+    "v7_joint_error_hmedian",
+    "v7_joint_error_hmedian_fpca"
+  ],
+  "states_per_model": 60,
+  "rows_per_model": 8640,
+  "profile_decisions": 1800,
+  "atom_records": 9720,
+  "joint_vs_marginal_median_count_disagreements": 898,
+  "all_thickness_decisions_match_joint_median": true
+}

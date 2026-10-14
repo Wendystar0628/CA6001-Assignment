@@ -51,6 +51,12 @@ def run(output_name='final'):
             'anchor_metrics':{k:float(baseline[k]) for k in ['log_mae','h_point_mae_m','recall',
                 'false_positive_rate','risk_recall','risk_fpr','point_balanced_error','risk_balanced_error']}}
     write_json(output/'promotion.json',result)
+    discovery_path=output/'discovery.json'
+    if discovery_path.exists():
+        discovery=json.loads(discovery_path.read_text(encoding='utf-8'))
+        discovery.update(promotion_status='Complete: result-informed exploratory shortlist, not independent confirmation.',
+                         promoted_mainline=result['promoted_mainline'],representatives=representatives)
+        write_json(discovery_path,discovery)
     print(json.dumps(result,ensure_ascii=False,indent=2))
     return result
 

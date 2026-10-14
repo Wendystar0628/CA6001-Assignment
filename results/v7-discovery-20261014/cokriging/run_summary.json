@@ -1,0 +1,14 @@
+{
+  "candidate_count": 5,
+  "states_per_candidate": 60,
+  "prediction_rows_per_candidate": 8640,
+  "source_profiles_per_fold": [
+    262,
+    262,
+    262
+  ],
+  "maximum_linear_solve_absolute_residual": 9.248157795127554e-14,
+  "tests_passed": 6,
+  "runtime_errors": [],
+  "initial_run_interruption": "Stopped to use the canonical v7-discovery run directory; completed non-LOO caches were moved and resumed, and metadata relabelled. No LOO candidate had executed before near-group exclusion was added."
+}

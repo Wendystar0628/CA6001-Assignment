@@ -1,0 +1,718 @@
+{
+  "fold_id": 1,
+  "train_episodes": 472,
+  "validation_episodes": 24,
+  "source_train_sites": [
+    "avonside",
+    "bexley",
+    "cashmere_high_school",
+    "christchurch_central_city",
+    "christchurch_metro_sports_facility",
+    "christchurch_stadium",
+    "hollywood",
+    "new_brighton_willryan_ave",
+    "parkland_bower_ave_one",
+    "redcliffs_main_road",
+    "richmond",
+    "south_new_brighton",
+    "wellington_airport",
+    "wellington_college",
+    "whangarei_high_school"
+  ],
+  "source_validation_sites": [
+    "lower_hutt_town_hall",
+    "port_nelson",
+    "tauranga_farmers_building"
+  ],
+  "feature_count": 85,
+  "output_depths": 24,
+  "effective_trees": {
+    "direct": 256,
+    "residual": 256
+  },
+  "model_storage": {
+    "direct": {
+      "node_count": 73864,
+      "tree_array_bytes": 18909184,
+      "scope": "Internal node and output arrays only; not total process RSS."
+    },
+    "residual": {
+      "node_count": 36100,
+      "tree_array_bytes": 9241600,
+      "scope": "Internal node and output arrays only; not total process RSS."
+    }
+  },
+  "compressed_checkpoint_bytes": 22935036,
+  "feature_seconds": 33.31418029999986,
+  "training_seconds": 5.331599499999356,
+  "train": {
+    "profile_episode_rows": 1576,
+    "unique_query_cpts": 190,
+    "sites": 15,
+    "models": {
+      "direct": {
+        "macro": {
+          "log_mae": 0.21703289302356119,
+          "h_point_mae_m": 0.21932291666666667,
+          "recall": 0.3591686693583609,
+          "false_positive_rate": 0.0029438680253308616
+        },
+        "by_site": [
+          {
+            "site_id": "avonside",
+            "log_mae": 0.18429345319569831,
+            "h_point_mae_m": 0.1875,
+            "tp": 0,
+            "positive": 18,
+            "fp": 0,
+            "negative": 558,
+            "recall": 0.0,
+            "false_positive_rate": 0.0
+          },
+          {
+            "site_id": "bexley",
+            "log_mae": 0.10898800404606915,
+            "h_point_mae_m": 0.0,
+            "tp": 0,
+            "positive": 0,
+            "fp": 0,
+            "negative": 960,
+            "recall": null,
+            "false_positive_rate": 0.0
+          },
+          {
+            "site_id": "cashmere_high_school",
+            "log_mae": 0.4057918095297519,
+            "h_point_mae_m": 0.6921875,
+            "tp": 269,
+            "positive": 715,
+            "fp": 7,
+            "negative": 3125,
+            "recall": 0.37622377622377623,
+            "false_positive_rate": 0.00224
+          },
+          {
+            "site_id": "christchurch_central_city",
+            "log_mae": 0.4750846210043397,
+            "h_point_mae_m": 0.50625,
+            "tp": 87,
+            "positive": 385,
+            "fp": 26,
+            "negative": 3455,
+            "recall": 0.22597402597402597,
+            "false_positive_rate": 0.007525325615050651
+          },
+          {
+            "site_id": "christchurch_metro_sports_facility",
+            "log_mae": 0.23473043278401037,
+            "h_point_mae_m": 0.28203125,
+            "tp": 1170,
+            "positive": 1535,
+            "fp": 126,
+            "negative": 6145,
+            "recall": 0.762214983713355,
+            "false_positive_rate": 0.02050447518307567
+          },
+          {
+            "site_id": "christchurch_stadium",
+            "log_mae": 0.2196612432640952,
+            "h_point_mae_m": 0.255,
+            "tp": 212,
+            "positive": 425,
+            "fp": 9,
+            "negative": 4375,
+            "recall": 0.4988235294117647,
+            "false_positive_rate": 0.002057142857142857
+          },
+          {
+            "site_id": "hollywood",
+            "log_mae": 0.1344982777916172,
+            "h_point_mae_m": 0.07,
+            "tp": 64,
+            "positive": 100,
+            "fp": 20,
+            "negative": 4700,
+            "recall": 0.64,
+            "false_positive_rate": 0.00425531914893617
+          },
+          {
+            "site_id": "new_brighton_willryan_ave",
+            "log_mae": 0.16414475483273533,
+            "h_point_mae_m": 0.09375,
+            "tp": 0,
+            "positive": 9,
+            "fp": 0,
+            "negative": 567,
+            "recall": 0.0,
+            "false_positive_rate": 0.0
+          },
+          {
+            "site_id": "parkland_bower_ave_one",
+            "log_mae": 0.1876188825061623,
+            "h_point_mae_m": 0.0,
+            "tp": 0,
+            "positive": 0,
+            "fp": 0,
+            "negative": 384,
+            "recall": null,
+            "false_positive_rate": 0.0
+          },
+          {
+            "site_id": "redcliffs_main_road",
+            "log_mae": 0.17409227415706144,
+            "h_point_mae_m": 0.09375,
+            "tp": 12,
+            "positive": 30,
+            "fp": 0,
+            "negative": 1122,
+            "recall": 0.4,
+            "false_positive_rate": 0.0
+          },
+          {
+            "site_id": "richmond",
+            "log_mae": 0.2806605701612702,
+            "h_point_mae_m": 0.09375,
+            "tp": 0,
+            "positive": 12,
+            "fp": 0,
+            "negative": 756,
+            "recall": 0.0,
+            "false_positive_rate": 0.0
+          },
+          {
+            "site_id": "south_new_brighton",
+            "log_mae": 0.054967864992219756,
+            "h_point_mae_m": 0.0,
+            "tp": 0,
+            "positive": 0,
+            "fp": 0,
+            "negative": 1152,
+            "recall": null,
+            "false_positive_rate": 0.0
+          },
+          {
+            "site_id": "wellington_airport",
+            "log_mae": 0.05232273839822816,
+            "h_point_mae_m": 0.0,
+            "tp": 0,
+            "positive": 0,
+            "fp": 0,
+            "negative": 5760,
+            "recall": null,
+            "false_positive_rate": 0.0
+          },
+          {
+            "site_id": "wellington_college",
+            "log_mae": 0.23088306755327168,
+            "h_point_mae_m": 0.234375,
+            "tp": 26,
+            "positive": 56,
+            "fp": 0,
+            "negative": 712,
+            "recall": 0.4642857142857143,
+            "false_positive_rate": 0.0
+          },
+          {
+            "site_id": "whangarei_high_school",
+            "log_mae": 0.34775540113688724,
+            "h_point_mae_m": 0.78125,
+            "tp": 140,
+            "positive": 240,
+            "fp": 4,
+            "negative": 528,
+            "recall": 0.5833333333333334,
+            "false_positive_rate": 0.007575757575757576
+          }
+        ]
+      },
+      "residual": {
+        "macro": {
+          "log_mae": 0.30458194233744584,
+          "h_point_mae_m": 0.21307291666666664,
+          "recall": 0.31147053942417036,
+          "false_positive_rate": 0.009453914832028128
+        },
+        "by_site": [
+          {
+            "site_id": "avonside",
+            "log_mae": 0.25510638635509425,
+            "h_point_mae_m": 0.13541666666666666,
+            "tp": 3,
+            "positive": 18,
+            "fp": 6,
+            "negative": 558,
+            "recall": 0.16666666666666666,
+            "false_positive_rate": 0.010752688172043012
+          },
+          {
+            "site_id": "bexley",
+            "log_mae": 0.22166563092190078,
+            "h_point_mae_m": 0.0,
+            "tp": 0,
+            "positive": 0,
+            "fp": 0,
+            "negative": 960,
+            "recall": null,
+            "false_positive_rate": 0.0
+          },
+          {
+            "site_id": "cashmere_high_school",
+            "log_mae": 0.45818737168513984,
+            "h_point_mae_m": 0.6125,
+            "tp": 320,
+            "positive": 715,
+            "fp": 33,
+            "negative": 3125,
+            "recall": 0.44755244755244755,
+            "false_positive_rate": 0.01056
+          },
+          {
+            "site_id": "christchurch_central_city",
+            "log_mae": 0.5523483362167374,
+            "h_point_mae_m": 0.5140625,
+            "tp": 79,
+            "positive": 385,
+            "fp": 27,
+            "negative": 3455,
+            "recall": 0.2051948051948052,
+            "false_positive_rate": 0.007814761215629523
+          },
+          {
+            "site_id": "christchurch_metro_sports_facility",
+            "log_mae": 0.37418759954652103,
+            "h_point_mae_m": 0.43359375,
+            "tp": 942,
+            "positive": 1535,
+            "fp": 246,
+            "negative": 6145,
+            "recall": 0.6136807817589577,
+            "false_positive_rate": 0.04003254678600488
+          },
+          {
+            "site_id": "christchurch_stadium",
+            "log_mae": 0.40096878023883564,
+            "h_point_mae_m": 0.26875,
+            "tp": 196,
+            "positive": 425,
+            "fp": 110,
+            "negative": 4375,
+            "recall": 0.4611764705882353,
+            "false_positive_rate": 0.025142857142857144
+          },
+          {
+            "site_id": "hollywood",
+            "log_mae": 0.27770294921038885,
+            "h_point_mae_m": 0.09375,
+            "tp": 32,
+            "positive": 100,
+            "fp": 7,
+            "negative": 4700,
+            "recall": 0.32,
+            "false_positive_rate": 0.0014893617021276596
+          },
+          {
+            "site_id": "new_brighton_willryan_ave",
+            "log_mae": 0.21607678340495076,
+            "h_point_mae_m": 0.10416666666666667,
+            "tp": 0,
+            "positive": 9,
+            "fp": 1,
+            "negative": 567,
+            "recall": 0.0,
+            "false_positive_rate": 0.001763668430335097
+          },
+          {
+            "site_id": "parkland_bower_ave_one",
+            "log_mae": 0.2593765285605848,
+            "h_point_mae_m": 0.0,
+            "tp": 0,
+            "positive": 0,
+            "fp": 0,
+            "negative": 384,
+            "recall": null,
+            "false_positive_rate": 0.0
+          },
+          {
+            "site_id": "redcliffs_main_road",
+            "log_mae": 0.2763207411729115,
+            "h_point_mae_m": 0.13541666666666666,
+            "tp": 0,
+            "positive": 30,
+            "fp": 4,
+            "negative": 1122,
+            "recall": 0.0,
+            "false_positive_rate": 0.0035650623885918
+          },
+          {
+            "site_id": "richmond",
+            "log_mae": 0.38018549783116673,
+            "h_point_mae_m": 0.09375,
+            "tp": 0,
+            "positive": 12,
+            "fp": 0,
+            "negative": 756,
+            "recall": 0.0,
+            "false_positive_rate": 0.0
+          },
+          {
+            "site_id": "south_new_brighton",
+            "log_mae": 0.09681842107097466,
+            "h_point_mae_m": 0.0,
+            "tp": 0,
+            "positive": 0,
+            "fp": 0,
+            "negative": 1152,
+            "recall": null,
+            "false_positive_rate": 0.0
+          },
+          {
+            "site_id": "wellington_airport",
+            "log_mae": 0.13271450970227505,
+            "h_point_mae_m": 0.0,
+            "tp": 0,
+            "positive": 0,
+            "fp": 0,
+            "negative": 5760,
+            "recall": null,
+            "false_positive_rate": 0.0
+          },
+          {
+            "site_id": "wellington_college",
+            "log_mae": 0.23695795364234623,
+            "h_point_mae_m": 0.1953125,
+            "tp": 31,
+            "positive": 56,
+            "fp": 2,
+            "negative": 712,
+            "recall": 0.5535714285714286,
+            "false_positive_rate": 0.0028089887640449437
+          },
+          {
+            "site_id": "whangarei_high_school",
+            "log_mae": 0.4301116455018596,
+            "h_point_mae_m": 0.609375,
+            "tp": 158,
+            "positive": 240,
+            "fp": 20,
+            "negative": 528,
+            "recall": 0.6583333333333333,
+            "false_positive_rate": 0.03787878787878788
+          }
+        ]
+      },
+      "idw": {
+        "macro": {
+          "log_mae": 0.4973812459163666,
+          "h_point_mae_m": 0.32996180555555554,
+          "recall": 0.15666904991884525,
+          "false_positive_rate": 0.025377548769928163
+        },
+        "by_site": [
+          {
+            "site_id": "avonside",
+            "log_mae": 0.3057390377489208,
+            "h_point_mae_m": 0.10416666666666667,
+            "tp": 2,
+            "positive": 18,
+            "fp": 6,
+            "negative": 558,
+            "recall": 0.1111111111111111,
+            "false_positive_rate": 0.010752688172043012
+          },
+          {
+            "site_id": "bexley",
+            "log_mae": 0.30048619010382416,
+            "h_point_mae_m": 0.0,
+            "tp": 0,
+            "positive": 0,
+            "fp": 0,
+            "negative": 960,
+            "recall": null,
+            "false_positive_rate": 0.0
+          },
+          {
+            "site_id": "cashmere_high_school",
+            "log_mae": 0.8425833162803962,
+            "h_point_mae_m": 0.69375,
+            "tp": 244,
+            "positive": 715,
+            "fp": 49,
+            "negative": 3125,
+            "recall": 0.3412587412587413,
+            "false_positive_rate": 0.01568
+          },
+          {
+            "site_id": "christchurch_central_city",
+            "log_mae": 0.9028740682823315,
+            "h_point_mae_m": 0.678125,
+            "tp": 21,
+            "positive": 385,
+            "fp": 134,
+            "negative": 3455,
+            "recall": 0.05454545454545454,
+            "false_positive_rate": 0.03878437047756874
+          },
+          {
+            "site_id": "christchurch_metro_sports_facility",
+            "log_mae": 0.5139741469979104,
+            "h_point_mae_m": 0.57734375,
+            "tp": 895,
+            "positive": 1535,
+            "fp": 457,
+            "negative": 6145,
+            "recall": 0.5830618892508144,
+            "false_positive_rate": 0.07436940602115541
+          },
+          {
+            "site_id": "christchurch_stadium",
+            "log_mae": 0.5058295809821102,
+            "h_point_mae_m": 0.2675,
+            "tp": 181,
+            "positive": 425,
+            "fp": 206,
+            "negative": 4375,
+            "recall": 0.4258823529411765,
+            "false_positive_rate": 0.047085714285714286
+          },
+          {
+            "site_id": "hollywood",
+            "log_mae": 0.3367417334954754,
+            "h_point_mae_m": 0.13375,
+            "tp": 7,
+            "positive": 100,
+            "fp": 16,
+            "negative": 4700,
+            "recall": 0.07,
+            "false_positive_rate": 0.003404255319148936
+          },
+          {
+            "site_id": "new_brighton_willryan_ave",
+            "log_mae": 0.35153667584489995,
+            "h_point_mae_m": 0.10416666666666667,
+            "tp": 0,
+            "positive": 9,
+            "fp": 1,
+            "negative": 567,
+            "recall": 0.0,
+            "false_positive_rate": 0.001763668430335097
+          },
+          {
+            "site_id": "parkland_bower_ave_one",
+            "log_mae": 0.46103433733455507,
+            "h_point_mae_m": 0.0,
+            "tp": 0,
+            "positive": 0,
+            "fp": 0,
+            "negative": 384,
+            "recall": null,
+            "false_positive_rate": 0.0
+          },
+          {
+            "site_id": "redcliffs_main_road",
+            "log_mae": 0.31253506180516355,
+            "h_point_mae_m": 0.171875,
+            "tp": 0,
+            "positive": 30,
+            "fp": 7,
+            "negative": 1122,
+            "recall": 0.0,
+            "false_positive_rate": 0.006238859180035651
+          },
+          {
+            "site_id": "richmond",
+            "log_mae": 0.5630000893589204,
+            "h_point_mae_m": 0.09375,
+            "tp": 0,
+            "positive": 12,
+            "fp": 0,
+            "negative": 756,
+            "recall": 0.0,
+            "false_positive_rate": 0.0
+          },
+          {
+            "site_id": "south_new_brighton",
+            "log_mae": 0.09842989598164448,
+            "h_point_mae_m": 0.0,
+            "tp": 0,
+            "positive": 0,
+            "fp": 0,
+            "negative": 1152,
+            "recall": null,
+            "false_positive_rate": 0.0
+          },
+          {
+            "site_id": "wellington_airport",
+            "log_mae": 0.14163790264537085,
+            "h_point_mae_m": 0.0,
+            "tp": 0,
+            "positive": 0,
+            "fp": 0,
+            "negative": 5760,
+            "recall": null,
+            "false_positive_rate": 0.0
+          },
+          {
+            "site_id": "wellington_college",
+            "log_mae": 0.8464007445978331,
+            "h_point_mae_m": 0.6484375,
+            "tp": 0,
+            "positive": 56,
+            "fp": 41,
+            "negative": 712,
+            "recall": 0.0,
+            "false_positive_rate": 0.05758426966292135
+          },
+          {
+            "site_id": "whangarei_high_school",
+            "log_mae": 0.9779159072861432,
+            "h_point_mae_m": 1.4765625,
+            "tp": 33,
+            "positive": 240,
+            "fp": 66,
+            "negative": 528,
+            "recall": 0.1375,
+            "false_positive_rate": 0.125
+          }
+        ]
+      }
+    }
+  },
+  "validation": {
+    "profile_episode_rows": 128,
+    "unique_query_cpts": 25,
+    "sites": 3,
+    "models": {
+      "direct": {
+        "macro": {
+          "log_mae": 0.9279256156673538,
+          "h_point_mae_m": 1.4805555555555554,
+          "recall": 0.04437946718648473,
+          "false_positive_rate": 0.02813852813852814
+        },
+        "by_site": [
+          {
+            "site_id": "lower_hutt_town_hall",
+            "log_mae": 0.9385084034538994,
+            "h_point_mae_m": 0.5625,
+            "tp": 0,
+            "positive": 135,
+            "fp": 0,
+            "negative": 1305,
+            "recall": 0.0,
+            "false_positive_rate": 0.0
+          },
+          {
+            "site_id": "port_nelson",
+            "log_mae": 1.1271688931889068,
+            "h_point_mae_m": 2.75,
+            "tp": 14,
+            "positive": 108,
+            "fp": 6,
+            "negative": 84,
+            "recall": 0.12962962962962962,
+            "false_positive_rate": 0.07142857142857142
+          },
+          {
+            "site_id": "tauranga_farmers_building",
+            "log_mae": 0.7180995503592552,
+            "h_point_mae_m": 1.1291666666666667,
+            "tp": 1,
+            "positive": 285,
+            "fp": 15,
+            "negative": 1155,
+            "recall": 0.0035087719298245615,
+            "false_positive_rate": 0.012987012987012988
+          }
+        ]
+      },
+      "residual": {
+        "macro": {
+          "log_mae": 0.7931611584707436,
+          "h_point_mae_m": 0.5076388888888889,
+          "recall": 0.32014294996751136,
+          "false_positive_rate": 0.1779195899885555
+        },
+        "by_site": [
+          {
+            "site_id": "lower_hutt_town_hall",
+            "log_mae": 0.6535837885980749,
+            "h_point_mae_m": 0.3125,
+            "tp": 36,
+            "positive": 135,
+            "fp": 24,
+            "negative": 1305,
+            "recall": 0.26666666666666666,
+            "false_positive_rate": 0.01839080459770115
+          },
+          {
+            "site_id": "port_nelson",
+            "log_mae": 1.04797301635881,
+            "h_point_mae_m": 0.28125,
+            "tp": 70,
+            "positive": 108,
+            "fp": 39,
+            "negative": 84,
+            "recall": 0.6481481481481481,
+            "false_positive_rate": 0.4642857142857143
+          },
+          {
+            "site_id": "tauranga_farmers_building",
+            "log_mae": 0.6779266704553464,
+            "h_point_mae_m": 0.9291666666666667,
+            "tp": 13,
+            "positive": 285,
+            "fp": 59,
+            "negative": 1155,
+            "recall": 0.0456140350877193,
+            "false_positive_rate": 0.05108225108225108
+          }
+        ]
+      },
+      "idw": {
+        "macro": {
+          "log_mae": 0.7382973985455296,
+          "h_point_mae_m": 0.5569444444444445,
+          "recall": 0.3829759584145549,
+          "false_positive_rate": 0.21373505166608617
+        },
+        "by_site": [
+          {
+            "site_id": "lower_hutt_town_hall",
+            "log_mae": 0.6104419180042394,
+            "h_point_mae_m": 0.26666666666666666,
+            "tp": 39,
+            "positive": 135,
+            "fp": 34,
+            "negative": 1305,
+            "recall": 0.28888888888888886,
+            "false_positive_rate": 0.026053639846743294
+          },
+          {
+            "site_id": "port_nelson",
+            "log_mae": 0.9383929950706562,
+            "h_point_mae_m": 0.625,
+            "tp": 80,
+            "positive": 108,
+            "fp": 46,
+            "negative": 84,
+            "recall": 0.7407407407407407,
+            "false_positive_rate": 0.5476190476190477
+          },
+          {
+            "site_id": "tauranga_farmers_building",
+            "log_mae": 0.666057282561693,
+            "h_point_mae_m": 0.7791666666666667,
+            "tp": 34,
+            "positive": 285,
+            "fp": 78,
+            "negative": 1155,
+            "recall": 0.11929824561403508,
+            "false_positive_rate": 0.06753246753246753
+          }
+        ]
+      }
+    }
+  },
+  "validation_usage": "Reporting only; no selection or updates.",
+  "dependence_note": "Episode rows repeat query CPTs across budgets and trajectories; they are not independent CPTs."
+}

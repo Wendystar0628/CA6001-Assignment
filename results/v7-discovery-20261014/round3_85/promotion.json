@@ -1,0 +1,57 @@
+{
+  "rule": {
+    "timing": "Post-hoc exploratory decision after new-family and combination results; explicitly requested by user.",
+    "comparison": "IDW is the common strong anchor; GP, v4 and v6 remain fully reported references.",
+    "profile_and_thickness": "Both below IDW; no minimum percentage improvement.",
+    "point_balanced_error_tolerance": 0.01,
+    "point_fpr_tolerance": 0.02,
+    "risk_recall_tolerance": 0.02,
+    "risk_fpr_tolerance": 0.02,
+    "spatial_consistency": "At least 3 of 4 unique sites improve continuous error.",
+    "non_dominance": "Non-dominated among all current and historical fixed models on E,H,point BER,risk BER.",
+    "reason": "Observed useful frontier trades small identification changes for profile/thickness gains; retain explicit small error tolerances instead of a large percentage hurdle.",
+    "interpretation": "Promoted for continued development and frozen independent evaluation; not proven generalization.",
+    "specialist": "Remaining Pareto candidates are retained for their explicit tradeoff, not declared overall winners."
+  },
+  "new_configurations": 85,
+  "total_fixed_models": 175,
+  "promoted_mainline": [
+    "v7_pair_joint_simplex_empirical_graph",
+    "v7_pair_haar_thickness_empirical_graph",
+    "v7_pair_joint_recognition_empirical_graph"
+  ],
+  "representatives": {
+    "balanced": "v7_pair_joint_simplex_empirical_graph",
+    "thickness": "v7_pair_haar_thickness_empirical_graph",
+    "identification": "v7_pair_joint_recognition_empirical_graph"
+  },
+  "retained_specialists": [
+    "v7_simplex_structural_s050_gp",
+    "v7_simplex_structural_s075_gp",
+    "v7_simplex_graph_union_s075_gp",
+    "v7_simplex_residual_s075_gp",
+    "v7_pair_transfer_empirical_graph",
+    "v7_joint_simplex_analog_hmedian",
+    "v7_joint_simplex_error_hmedian",
+    "v7_hcount_simplex_median_a050_gp",
+    "v7_hcount_simplex_nearest_a050_gp",
+    "v7_joint_stack_error_hmedian",
+    "v7_hcount_simplex_nearest_a100_gp",
+    "v7_hcount_fpca_median_a100_gp",
+    "v7_graph_lowrank_local",
+    "v7_haar_krr_median"
+  ],
+  "legacy_gates_changed": false,
+  "outer_test_executed": false,
+  "selection_bias_acknowledged": true,
+  "anchor_metrics": {
+    "log_mae": 0.6385857548912574,
+    "h_point_mae_m": 0.63037109375,
+    "recall": 0.3737671450791855,
+    "false_positive_rate": 0.0727663395372843,
+    "risk_recall": 0.6954917574000754,
+    "risk_fpr": 0.383525087543083,
+    "point_balanced_error": 0.3494995972290494,
+    "risk_balanced_error": 0.3440166650715038
+  }
+}

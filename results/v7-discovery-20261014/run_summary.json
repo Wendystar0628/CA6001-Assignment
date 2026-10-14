@@ -1,0 +1,54 @@
+{
+  "date": "2026-10-14",
+  "version": "v0.7-discovery",
+  "branch": "main",
+  "implementation_commit": "600b184",
+  "parallel_new_method_directions": 8,
+  "new_configurations": 93,
+  "includes_matched_control": true,
+  "configuration_breakdown": {
+    "initial_methods_and_control": 37,
+    "structural_combinations": 40,
+    "independent_risk_pairings": 8,
+    "frontier_refinements": 8
+  },
+  "frozen_reference_models": 90,
+  "total_models": 183,
+  "states_per_model": 60,
+  "metric_rows": 10980,
+  "new_model_state_evaluations": 5580,
+  "depth_rows_per_model": 8640,
+  "unique_validation_sites": 4,
+  "targeted_checks_passed": 56,
+  "targeted_checks_failed": 0,
+  "outer_test_executed": false,
+  "incremental_evaluation": "Last 8 calibrated once against frozen first 85 and old 90; no old predictions or metrics retuned.",
+  "promotion_rule_timing": "Result-informed after 85 configurations; unchanged for the last 8.",
+  "mainline_candidates": [
+    "v7_frontier_structural_error_empirical",
+    "v7_frontier_structural_analog_empirical",
+    "v7_pair_joint_simplex_empirical_graph",
+    "v7_pair_haar_thickness_empirical_graph",
+    "v7_pair_joint_recognition_empirical_graph"
+  ],
+  "representatives": {
+    "balanced": "v7_frontier_structural_error_empirical",
+    "thickness": "v7_pair_haar_thickness_empirical_graph",
+    "identification": "v7_pair_joint_recognition_empirical_graph"
+  },
+  "retained_specialists": [
+    "v7_pair_transfer_empirical_graph",
+    "v7_joint_simplex_error_hmedian",
+    "v7_hcount_simplex_median_a050_gp",
+    "v7_hcount_simplex_nearest_a050_gp",
+    "v7_joint_stack_error_hmedian",
+    "v7_hcount_simplex_nearest_a100_gp",
+    "v7_hcount_fpca_median_a100_gp",
+    "v7_graph_lowrank_local",
+    "v7_haar_krr_median"
+  ],
+  "legacy_gate_scope": "Merged per-candidate legacy rows for all 93; legacy_selection is last-increment selection, not v7 promotion.",
+  "scope": "Repeated-validation adaptive discovery. Promotion is a research selection, not independent proof or budget-saving evidence.",
+  "large_local_outputs": "runs/v7-discovery-20261014; per-depth predictions, forests, source bases and full state contexts remain local.",
+  "archived_file_count": 213
+}

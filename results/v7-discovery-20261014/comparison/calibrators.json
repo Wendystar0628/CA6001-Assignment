@@ -1,0 +1,4794 @@
+{
+  "v7_frontier_graph_union_analog_empirical": {
+    "0": {
+      "calibrator_version": "v2_monotone_platt_1",
+      "source_role": "validation",
+      "fit_role": "evaluation",
+      "score_kind": "native_probability_logit",
+      "tau_mpa": 1.0,
+      "probability_epsilon": 1e-06,
+      "weighting": "equal_sites_then_equal_rows_within_site",
+      "group_column": "investigation_group",
+      "training_groups": [
+        "investigation_lower_hutt_town_hall",
+        "investigation_tauranga_farmers_building"
+      ],
+      "training_sites": [
+        "lower_hutt_town_hall",
+        "tauranga_farmers_building"
+      ],
+      "n_training_rows": 2880,
+      "n_training_sites": 2,
+      "n_training_groups": 2,
+      "n_positive_rows": 545,
+      "n_negative_rows": 2335,
+      "weighted_positive_prior": 0.1892361111111111,
+      "score_center": -2.6665590748956576,
+      "score_scale": 3.3471061636607624,
+      "slope": 2.9282369359609812,
+      "intercept": -2.6871177257371412,
+      "constant_probability": null,
+      "fallback_reason": null,
+      "risk_threshold": 0.2,
+      "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+      "optimizer_success": true,
+      "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "slope_l2": 1e-06,
+      "status": "fitted",
+      "objective": 0.3870368012068031,
+      "crossfit": {
+        "mode": "leave_investigation_group_out",
+        "complete": true,
+        "n_groups": 2,
+        "held_out_fits": {
+          "investigation_lower_hutt_town_hall": {
+            "calibrator_version": "v2_monotone_platt_1",
+            "source_role": "validation",
+            "fit_role": "evaluation",
+            "score_kind": "native_probability_logit",
+            "tau_mpa": 1.0,
+            "probability_epsilon": 1e-06,
+            "weighting": "equal_sites_then_equal_rows_within_site",
+            "group_column": "investigation_group",
+            "training_groups": [
+              "investigation_tauranga_farmers_building"
+            ],
+            "training_sites": [
+              "tauranga_farmers_building"
+            ],
+            "n_training_rows": 1440,
+            "n_training_sites": 1,
+            "n_training_groups": 1,
+            "n_positive_rows": 455,
+            "n_negative_rows": 985,
+            "weighted_positive_prior": 0.3159722222222222,
+            "score_center": -0.7792523082358608,
+            "score_scale": 0.8481641218471411,
+            "slope": 0.3534917441239336,
+            "intercept": -0.795404414903018,
+            "constant_probability": null,
+            "fallback_reason": null,
+            "risk_threshold": 0.2,
+            "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+            "optimizer_success": true,
+            "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+            "slope_l2": 1e-06,
+            "status": "fitted",
+            "objective": 0.6110368407737697,
+            "excluded_groups": [
+              "investigation_lower_hutt_town_hall"
+            ]
+          },
+          "investigation_tauranga_farmers_building": {
+            "calibrator_version": "v2_monotone_platt_1",
+            "source_role": "validation",
+            "fit_role": "evaluation",
+            "score_kind": "native_probability_logit",
+            "tau_mpa": 1.0,
+            "probability_epsilon": 1e-06,
+            "weighting": "equal_sites_then_equal_rows_within_site",
+            "group_column": "investigation_group",
+            "training_groups": [
+              "investigation_lower_hutt_town_hall"
+            ],
+            "training_sites": [
+              "lower_hutt_town_hall"
+            ],
+            "n_training_rows": 1440,
+            "n_training_sites": 1,
+            "n_training_groups": 1,
+            "n_positive_rows": 90,
+            "n_negative_rows": 1350,
+            "weighted_positive_prior": 0.0625,
+            "score_center": -4.553865841555455,
+            "score_scale": 3.816150324749182,
+            "slope": 6.405984467996254,
+            "intercept": -7.950729580026787,
+            "constant_probability": null,
+            "fallback_reason": null,
+            "risk_threshold": 0.2,
+            "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+            "optimizer_success": true,
+            "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+            "slope_l2": 1e-06,
+            "status": "fitted",
+            "objective": 0.1251759211125683,
+            "excluded_groups": [
+              "investigation_tauranga_farmers_building"
+            ]
+          }
+        }
+      },
+      "oof_calibrators": {
+        "investigation_lower_hutt_town_hall": {
+          "calibrator_version": "v2_monotone_platt_1",
+          "source_role": "validation",
+          "fit_role": "evaluation",
+          "score_kind": "native_probability_logit",
+          "tau_mpa": 1.0,
+          "probability_epsilon": 1e-06,
+          "weighting": "equal_sites_then_equal_rows_within_site",
+          "group_column": "investigation_group",
+          "training_groups": [
+            "investigation_tauranga_farmers_building"
+          ],
+          "training_sites": [
+            "tauranga_farmers_building"
+          ],
+          "n_training_rows": 1440,
+          "n_training_sites": 1,
+          "n_training_groups": 1,
+          "n_positive_rows": 455,
+          "n_negative_rows": 985,
+          "weighted_positive_prior": 0.3159722222222222,
+          "score_center": -0.7792523082358608,
+          "score_scale": 0.8481641218471411,
+          "slope": 0.3534917441239336,
+          "intercept": -0.795404414903018,
+          "constant_probability": null,
+          "fallback_reason": null,
+          "risk_threshold": 0.2,
+          "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+          "optimizer_success": true,
+          "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "slope_l2": 1e-06,
+          "status": "fitted",
+          "objective": 0.6110368407737697,
+          "excluded_groups": [
+            "investigation_lower_hutt_town_hall"
+          ]
+        },
+        "investigation_tauranga_farmers_building": {
+          "calibrator_version": "v2_monotone_platt_1",
+          "source_role": "validation",
+          "fit_role": "evaluation",
+          "score_kind": "native_probability_logit",
+          "tau_mpa": 1.0,
+          "probability_epsilon": 1e-06,
+          "weighting": "equal_sites_then_equal_rows_within_site",
+          "group_column": "investigation_group",
+          "training_groups": [
+            "investigation_lower_hutt_town_hall"
+          ],
+          "training_sites": [
+            "lower_hutt_town_hall"
+          ],
+          "n_training_rows": 1440,
+          "n_training_sites": 1,
+          "n_training_groups": 1,
+          "n_positive_rows": 90,
+          "n_negative_rows": 1350,
+          "weighted_positive_prior": 0.0625,
+          "score_center": -4.553865841555455,
+          "score_scale": 3.816150324749182,
+          "slope": 6.405984467996254,
+          "intercept": -7.950729580026787,
+          "constant_probability": null,
+          "fallback_reason": null,
+          "risk_threshold": 0.2,
+          "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+          "optimizer_success": true,
+          "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "slope_l2": 1e-06,
+          "status": "fitted",
+          "objective": 0.1251759211125683,
+          "excluded_groups": [
+            "investigation_tauranga_farmers_building"
+          ]
+        }
+      },
+      "excluded_groups": []
+    },
+    "1": {
+      "calibrator_version": "v2_monotone_platt_1",
+      "source_role": "validation",
+      "fit_role": "evaluation",
+      "score_kind": "native_probability_logit",
+      "tau_mpa": 1.0,
+      "probability_epsilon": 1e-06,
+      "weighting": "equal_sites_then_equal_rows_within_site",
+      "group_column": "investigation_group",
+      "training_groups": [
+        "investigation_lower_hutt_town_hall",
+        "investigation_tauranga_farmers_building"
+      ],
+      "training_sites": [
+        "lower_hutt_town_hall",
+        "tauranga_farmers_building"
+      ],
+      "n_training_rows": 2880,
+      "n_training_sites": 2,
+      "n_training_groups": 2,
+      "n_positive_rows": 545,
+      "n_negative_rows": 2335,
+      "weighted_positive_prior": 0.1892361111111111,
+      "score_center": -2.6258859924262934,
+      "score_scale": 3.336835820588869,
+      "slope": 2.9754099851960674,
+      "intercept": -2.709777620574043,
+      "constant_probability": null,
+      "fallback_reason": null,
+      "risk_threshold": 0.2,
+      "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+      "optimizer_success": true,
+      "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "slope_l2": 1e-06,
+      "status": "fitted",
+      "objective": 0.3862297405946516,
+      "crossfit": {
+        "mode": "leave_investigation_group_out",
+        "complete": true,
+        "n_groups": 2,
+        "held_out_fits": {
+          "investigation_lower_hutt_town_hall": {
+            "calibrator_version": "v2_monotone_platt_1",
+            "source_role": "validation",
+            "fit_role": "evaluation",
+            "score_kind": "native_probability_logit",
+            "tau_mpa": 1.0,
+            "probability_epsilon": 1e-06,
+            "weighting": "equal_sites_then_equal_rows_within_site",
+            "group_column": "investigation_group",
+            "training_groups": [
+              "investigation_tauranga_farmers_building"
+            ],
+            "training_sites": [
+              "tauranga_farmers_building"
+            ],
+            "n_training_rows": 1440,
+            "n_training_sites": 1,
+            "n_training_groups": 1,
+            "n_positive_rows": 455,
+            "n_negative_rows": 985,
+            "weighted_positive_prior": 0.3159722222222222,
+            "score_center": -0.7528387862612433,
+            "score_scale": 0.826921456226883,
+            "slope": 0.35863423002374556,
+            "intercept": -0.7959931893916041,
+            "constant_probability": null,
+            "fallback_reason": null,
+            "risk_threshold": 0.2,
+            "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+            "optimizer_success": true,
+            "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+            "slope_l2": 1e-06,
+            "status": "fitted",
+            "objective": 0.6106209519409805,
+            "excluded_groups": [
+              "investigation_lower_hutt_town_hall"
+            ]
+          },
+          "investigation_tauranga_farmers_building": {
+            "calibrator_version": "v2_monotone_platt_1",
+            "source_role": "validation",
+            "fit_role": "evaluation",
+            "score_kind": "native_probability_logit",
+            "tau_mpa": 1.0,
+            "probability_epsilon": 1e-06,
+            "weighting": "equal_sites_then_equal_rows_within_site",
+            "group_column": "investigation_group",
+            "training_groups": [
+              "investigation_lower_hutt_town_hall"
+            ],
+            "training_sites": [
+              "lower_hutt_town_hall"
+            ],
+            "n_training_rows": 1440,
+            "n_training_sites": 1,
+            "n_training_groups": 1,
+            "n_positive_rows": 90,
+            "n_negative_rows": 1350,
+            "weighted_positive_prior": 0.0625,
+            "score_center": -4.498933198591343,
+            "score_scale": 3.816875138030611,
+            "slope": 6.376295478562505,
+            "intercept": -7.928712833419747,
+            "constant_probability": null,
+            "fallback_reason": null,
+            "risk_threshold": 0.2,
+            "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+            "optimizer_success": true,
+            "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+            "slope_l2": 1e-06,
+            "status": "fitted",
+            "objective": 0.1246323616895242,
+            "excluded_groups": [
+              "investigation_tauranga_farmers_building"
+            ]
+          }
+        }
+      },
+      "oof_calibrators": {
+        "investigation_lower_hutt_town_hall": {
+          "calibrator_version": "v2_monotone_platt_1",
+          "source_role": "validation",
+          "fit_role": "evaluation",
+          "score_kind": "native_probability_logit",
+          "tau_mpa": 1.0,
+          "probability_epsilon": 1e-06,
+          "weighting": "equal_sites_then_equal_rows_within_site",
+          "group_column": "investigation_group",
+          "training_groups": [
+            "investigation_tauranga_farmers_building"
+          ],
+          "training_sites": [
+            "tauranga_farmers_building"
+          ],
+          "n_training_rows": 1440,
+          "n_training_sites": 1,
+          "n_training_groups": 1,
+          "n_positive_rows": 455,
+          "n_negative_rows": 985,
+          "weighted_positive_prior": 0.3159722222222222,
+          "score_center": -0.7528387862612433,
+          "score_scale": 0.826921456226883,
+          "slope": 0.35863423002374556,
+          "intercept": -0.7959931893916041,
+          "constant_probability": null,
+          "fallback_reason": null,
+          "risk_threshold": 0.2,
+          "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+          "optimizer_success": true,
+          "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "slope_l2": 1e-06,
+          "status": "fitted",
+          "objective": 0.6106209519409805,
+          "excluded_groups": [
+            "investigation_lower_hutt_town_hall"
+          ]
+        },
+        "investigation_tauranga_farmers_building": {
+          "calibrator_version": "v2_monotone_platt_1",
+          "source_role": "validation",
+          "fit_role": "evaluation",
+          "score_kind": "native_probability_logit",
+          "tau_mpa": 1.0,
+          "probability_epsilon": 1e-06,
+          "weighting": "equal_sites_then_equal_rows_within_site",
+          "group_column": "investigation_group",
+          "training_groups": [
+            "investigation_lower_hutt_town_hall"
+          ],
+          "training_sites": [
+            "lower_hutt_town_hall"
+          ],
+          "n_training_rows": 1440,
+          "n_training_sites": 1,
+          "n_training_groups": 1,
+          "n_positive_rows": 90,
+          "n_negative_rows": 1350,
+          "weighted_positive_prior": 0.0625,
+          "score_center": -4.498933198591343,
+          "score_scale": 3.816875138030611,
+          "slope": 6.376295478562505,
+          "intercept": -7.928712833419747,
+          "constant_probability": null,
+          "fallback_reason": null,
+          "risk_threshold": 0.2,
+          "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+          "optimizer_success": true,
+          "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "slope_l2": 1e-06,
+          "status": "fitted",
+          "objective": 0.1246323616895242,
+          "excluded_groups": [
+            "investigation_tauranga_farmers_building"
+          ]
+        }
+      },
+      "excluded_groups": []
+    },
+    "2": {
+      "calibrator_version": "v2_monotone_platt_1",
+      "source_role": "validation",
+      "fit_role": "evaluation",
+      "score_kind": "native_probability_logit",
+      "tau_mpa": 1.0,
+      "probability_epsilon": 1e-06,
+      "weighting": "equal_sites_then_equal_rows_within_site",
+      "group_column": "investigation_group",
+      "training_groups": [
+        "investigation_christchurch_metro_sports_facility",
+        "investigation_marshland"
+      ],
+      "training_sites": [
+        "christchurch_metro_sports_facility",
+        "marshland"
+      ],
+      "n_training_rows": 2880,
+      "n_training_sites": 2,
+      "n_training_groups": 2,
+      "n_positive_rows": 400,
+      "n_negative_rows": 2480,
+      "weighted_positive_prior": 0.1328125,
+      "score_center": -3.3730145942014436,
+      "score_scale": 3.727892104608005,
+      "slope": 2.4735312774071843,
+      "intercept": -2.939590459753289,
+      "constant_probability": null,
+      "fallback_reason": null,
+      "risk_threshold": 0.2,
+      "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+      "optimizer_success": true,
+      "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "slope_l2": 1e-06,
+      "status": "fitted",
+      "objective": 0.3170346019680865,
+      "crossfit": {
+        "mode": "leave_investigation_group_out",
+        "complete": true,
+        "n_groups": 2,
+        "held_out_fits": {
+          "investigation_christchurch_metro_sports_facility": {
+            "calibrator_version": "v2_monotone_platt_1",
+            "source_role": "validation",
+            "fit_role": "evaluation",
+            "score_kind": "native_probability_logit",
+            "tau_mpa": 1.0,
+            "probability_epsilon": 1e-06,
+            "weighting": "equal_sites_then_equal_rows_within_site",
+            "group_column": "investigation_group",
+            "training_groups": [
+              "investigation_marshland"
+            ],
+            "training_sites": [
+              "marshland"
+            ],
+            "n_training_rows": 960,
+            "n_training_sites": 1,
+            "n_training_groups": 1,
+            "n_positive_rows": 110,
+            "n_negative_rows": 850,
+            "weighted_positive_prior": 0.11458333333333334,
+            "score_center": -3.653579553574363,
+            "score_scale": 3.256037938632838,
+            "slope": 1.2852080874538319,
+            "intercept": -2.438393402579911,
+            "constant_probability": null,
+            "fallback_reason": null,
+            "risk_threshold": 0.2,
+            "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+            "optimizer_success": true,
+            "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+            "slope_l2": 1e-06,
+            "status": "fitted",
+            "objective": 0.3281807413642425,
+            "excluded_groups": [
+              "investigation_christchurch_metro_sports_facility"
+            ]
+          },
+          "investigation_marshland": {
+            "calibrator_version": "v2_monotone_platt_1",
+            "source_role": "validation",
+            "fit_role": "evaluation",
+            "score_kind": "native_probability_logit",
+            "tau_mpa": 1.0,
+            "probability_epsilon": 1e-06,
+            "weighting": "equal_sites_then_equal_rows_within_site",
+            "group_column": "investigation_group",
+            "training_groups": [
+              "investigation_christchurch_metro_sports_facility"
+            ],
+            "training_sites": [
+              "christchurch_metro_sports_facility"
+            ],
+            "n_training_rows": 1920,
+            "n_training_sites": 1,
+            "n_training_groups": 1,
+            "n_positive_rows": 290,
+            "n_negative_rows": 1630,
+            "weighted_positive_prior": 0.15104166666666669,
+            "score_center": -3.092449634828526,
+            "score_scale": 4.127365096102498,
+            "slope": 4.632540171012557,
+            "intercept": -4.153544505112431,
+            "constant_probability": null,
+            "fallback_reason": null,
+            "risk_threshold": 0.2,
+            "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+            "optimizer_success": true,
+            "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+            "slope_l2": 1e-06,
+            "status": "fitted",
+            "objective": 0.28150258685197377,
+            "excluded_groups": [
+              "investigation_marshland"
+            ]
+          }
+        }
+      },
+      "oof_calibrators": {
+        "investigation_christchurch_metro_sports_facility": {
+          "calibrator_version": "v2_monotone_platt_1",
+          "source_role": "validation",
+          "fit_role": "evaluation",
+          "score_kind": "native_probability_logit",
+          "tau_mpa": 1.0,
+          "probability_epsilon": 1e-06,
+          "weighting": "equal_sites_then_equal_rows_within_site",
+          "group_column": "investigation_group",
+          "training_groups": [
+            "investigation_marshland"
+          ],
+          "training_sites": [
+            "marshland"
+          ],
+          "n_training_rows": 960,
+          "n_training_sites": 1,
+          "n_training_groups": 1,
+          "n_positive_rows": 110,
+          "n_negative_rows": 850,
+          "weighted_positive_prior": 0.11458333333333334,
+          "score_center": -3.653579553574363,
+          "score_scale": 3.256037938632838,
+          "slope": 1.2852080874538319,
+          "intercept": -2.438393402579911,
+          "constant_probability": null,
+          "fallback_reason": null,
+          "risk_threshold": 0.2,
+          "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+          "optimizer_success": true,
+          "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "slope_l2": 1e-06,
+          "status": "fitted",
+          "objective": 0.3281807413642425,
+          "excluded_groups": [
+            "investigation_christchurch_metro_sports_facility"
+          ]
+        },
+        "investigation_marshland": {
+          "calibrator_version": "v2_monotone_platt_1",
+          "source_role": "validation",
+          "fit_role": "evaluation",
+          "score_kind": "native_probability_logit",
+          "tau_mpa": 1.0,
+          "probability_epsilon": 1e-06,
+          "weighting": "equal_sites_then_equal_rows_within_site",
+          "group_column": "investigation_group",
+          "training_groups": [
+            "investigation_christchurch_metro_sports_facility"
+          ],
+          "training_sites": [
+            "christchurch_metro_sports_facility"
+          ],
+          "n_training_rows": 1920,
+          "n_training_sites": 1,
+          "n_training_groups": 1,
+          "n_positive_rows": 290,
+          "n_negative_rows": 1630,
+          "weighted_positive_prior": 0.15104166666666669,
+          "score_center": -3.092449634828526,
+          "score_scale": 4.127365096102498,
+          "slope": 4.632540171012557,
+          "intercept": -4.153544505112431,
+          "constant_probability": null,
+          "fallback_reason": null,
+          "risk_threshold": 0.2,
+          "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+          "optimizer_success": true,
+          "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "slope_l2": 1e-06,
+          "status": "fitted",
+          "objective": 0.28150258685197377,
+          "excluded_groups": [
+            "investigation_marshland"
+          ]
+        }
+      },
+      "excluded_groups": []
+    }
+  },
+  "v7_frontier_graph_union_analog_joint": {
+    "0": {
+      "calibrator_version": "v2_monotone_platt_1",
+      "source_role": "validation",
+      "fit_role": "evaluation",
+      "score_kind": "native_probability_logit",
+      "tau_mpa": 1.0,
+      "probability_epsilon": 1e-06,
+      "weighting": "equal_sites_then_equal_rows_within_site",
+      "group_column": "investigation_group",
+      "training_groups": [
+        "investigation_lower_hutt_town_hall",
+        "investigation_tauranga_farmers_building"
+      ],
+      "training_sites": [
+        "lower_hutt_town_hall",
+        "tauranga_farmers_building"
+      ],
+      "n_training_rows": 2880,
+      "n_training_sites": 2,
+      "n_training_groups": 2,
+      "n_positive_rows": 545,
+      "n_negative_rows": 2335,
+      "weighted_positive_prior": 0.1892361111111111,
+      "score_center": -9.350665809152964,
+      "score_scale": 6.479739803880918,
+      "slope": 0.8174143443640044,
+      "intercept": -1.657503218162709,
+      "constant_probability": null,
+      "fallback_reason": null,
+      "risk_threshold": 0.2,
+      "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+      "optimizer_success": true,
+      "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "slope_l2": 1e-06,
+      "status": "fitted",
+      "objective": 0.4302880895168457,
+      "crossfit": {
+        "mode": "leave_investigation_group_out",
+        "complete": true,
+        "n_groups": 2,
+        "held_out_fits": {
+          "investigation_lower_hutt_town_hall": {
+            "calibrator_version": "v2_monotone_platt_1",
+            "source_role": "validation",
+            "fit_role": "evaluation",
+            "score_kind": "native_probability_logit",
+            "tau_mpa": 1.0,
+            "probability_epsilon": 1e-06,
+            "weighting": "equal_sites_then_equal_rows_within_site",
+            "group_column": "investigation_group",
+            "training_groups": [
+              "investigation_tauranga_farmers_building"
+            ],
+            "training_sites": [
+              "tauranga_farmers_building"
+            ],
+            "n_training_rows": 1440,
+            "n_training_sites": 1,
+            "n_training_groups": 1,
+            "n_positive_rows": 455,
+            "n_negative_rows": 985,
+            "weighted_positive_prior": 0.3159722222222222,
+            "score_center": -7.064313561559896,
+            "score_scale": 6.958061177193794,
+            "slope": 0.3418683471207737,
+            "intercept": -0.7932348566735056,
+            "constant_probability": null,
+            "fallback_reason": null,
+            "risk_threshold": 0.2,
+            "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+            "optimizer_success": true,
+            "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+            "slope_l2": 1e-06,
+            "status": "fitted",
+            "objective": 0.6112553773898487,
+            "excluded_groups": [
+              "investigation_lower_hutt_town_hall"
+            ]
+          },
+          "investigation_tauranga_farmers_building": {
+            "calibrator_version": "v2_monotone_platt_1",
+            "source_role": "validation",
+            "fit_role": "evaluation",
+            "score_kind": "native_probability_logit",
+            "tau_mpa": 1.0,
+            "probability_epsilon": 1e-06,
+            "weighting": "equal_sites_then_equal_rows_within_site",
+            "group_column": "investigation_group",
+            "training_groups": [
+              "investigation_lower_hutt_town_hall"
+            ],
+            "training_sites": [
+              "lower_hutt_town_hall"
+            ],
+            "n_training_rows": 1440,
+            "n_training_sites": 1,
+            "n_training_groups": 1,
+            "n_positive_rows": 90,
+            "n_negative_rows": 1350,
+            "weighted_positive_prior": 0.0625,
+            "score_center": -11.637018056746005,
+            "score_scale": 5.010451806601704,
+            "slope": 1.6258713728920413,
+            "intercept": -4.320668246211697,
+            "constant_probability": null,
+            "fallback_reason": null,
+            "risk_threshold": 0.2,
+            "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+            "optimizer_success": true,
+            "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+            "slope_l2": 1e-06,
+            "status": "fitted",
+            "objective": 0.13550334808622083,
+            "excluded_groups": [
+              "investigation_tauranga_farmers_building"
+            ]
+          }
+        }
+      },
+      "oof_calibrators": {
+        "investigation_lower_hutt_town_hall": {
+          "calibrator_version": "v2_monotone_platt_1",
+          "source_role": "validation",
+          "fit_role": "evaluation",
+          "score_kind": "native_probability_logit",
+          "tau_mpa": 1.0,
+          "probability_epsilon": 1e-06,
+          "weighting": "equal_sites_then_equal_rows_within_site",
+          "group_column": "investigation_group",
+          "training_groups": [
+            "investigation_tauranga_farmers_building"
+          ],
+          "training_sites": [
+            "tauranga_farmers_building"
+          ],
+          "n_training_rows": 1440,
+          "n_training_sites": 1,
+          "n_training_groups": 1,
+          "n_positive_rows": 455,
+          "n_negative_rows": 985,
+          "weighted_positive_prior": 0.3159722222222222,
+          "score_center": -7.064313561559896,
+          "score_scale": 6.958061177193794,
+          "slope": 0.3418683471207737,
+          "intercept": -0.7932348566735056,
+          "constant_probability": null,
+          "fallback_reason": null,
+          "risk_threshold": 0.2,
+          "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+          "optimizer_success": true,
+          "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "slope_l2": 1e-06,
+          "status": "fitted",
+          "objective": 0.6112553773898487,
+          "excluded_groups": [
+            "investigation_lower_hutt_town_hall"
+          ]
+        },
+        "investigation_tauranga_farmers_building": {
+          "calibrator_version": "v2_monotone_platt_1",
+          "source_role": "validation",
+          "fit_role": "evaluation",
+          "score_kind": "native_probability_logit",
+          "tau_mpa": 1.0,
+          "probability_epsilon": 1e-06,
+          "weighting": "equal_sites_then_equal_rows_within_site",
+          "group_column": "investigation_group",
+          "training_groups": [
+            "investigation_lower_hutt_town_hall"
+          ],
+          "training_sites": [
+            "lower_hutt_town_hall"
+          ],
+          "n_training_rows": 1440,
+          "n_training_sites": 1,
+          "n_training_groups": 1,
+          "n_positive_rows": 90,
+          "n_negative_rows": 1350,
+          "weighted_positive_prior": 0.0625,
+          "score_center": -11.637018056746005,
+          "score_scale": 5.010451806601704,
+          "slope": 1.6258713728920413,
+          "intercept": -4.320668246211697,
+          "constant_probability": null,
+          "fallback_reason": null,
+          "risk_threshold": 0.2,
+          "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+          "optimizer_success": true,
+          "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "slope_l2": 1e-06,
+          "status": "fitted",
+          "objective": 0.13550334808622083,
+          "excluded_groups": [
+            "investigation_tauranga_farmers_building"
+          ]
+        }
+      },
+      "excluded_groups": []
+    },
+    "1": {
+      "calibrator_version": "v2_monotone_platt_1",
+      "source_role": "validation",
+      "fit_role": "evaluation",
+      "score_kind": "native_probability_logit",
+      "tau_mpa": 1.0,
+      "probability_epsilon": 1e-06,
+      "weighting": "equal_sites_then_equal_rows_within_site",
+      "group_column": "investigation_group",
+      "training_groups": [
+        "investigation_lower_hutt_town_hall",
+        "investigation_tauranga_farmers_building"
+      ],
+      "training_sites": [
+        "lower_hutt_town_hall",
+        "tauranga_farmers_building"
+      ],
+      "n_training_rows": 2880,
+      "n_training_sites": 2,
+      "n_training_groups": 2,
+      "n_positive_rows": 545,
+      "n_negative_rows": 2335,
+      "weighted_positive_prior": 0.1892361111111111,
+      "score_center": -9.334007021390546,
+      "score_scale": 6.488257128160878,
+      "slope": 0.824626511717042,
+      "intercept": -1.6610651903945453,
+      "constant_probability": null,
+      "fallback_reason": null,
+      "risk_threshold": 0.2,
+      "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+      "optimizer_success": true,
+      "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "slope_l2": 1e-06,
+      "status": "fitted",
+      "objective": 0.42946388944131025,
+      "crossfit": {
+        "mode": "leave_investigation_group_out",
+        "complete": true,
+        "n_groups": 2,
+        "held_out_fits": {
+          "investigation_lower_hutt_town_hall": {
+            "calibrator_version": "v2_monotone_platt_1",
+            "source_role": "validation",
+            "fit_role": "evaluation",
+            "score_kind": "native_probability_logit",
+            "tau_mpa": 1.0,
+            "probability_epsilon": 1e-06,
+            "weighting": "equal_sites_then_equal_rows_within_site",
+            "group_column": "investigation_group",
+            "training_groups": [
+              "investigation_tauranga_farmers_building"
+            ],
+            "training_sites": [
+              "tauranga_farmers_building"
+            ],
+            "n_training_rows": 1440,
+            "n_training_sites": 1,
+            "n_training_groups": 1,
+            "n_positive_rows": 455,
+            "n_negative_rows": 985,
+            "weighted_positive_prior": 0.3159722222222222,
+            "score_center": -7.050192403642993,
+            "score_scale": 6.962369132834834,
+            "slope": 0.3465860479598343,
+            "intercept": -0.7938145229069943,
+            "constant_probability": null,
+            "fallback_reason": null,
+            "risk_threshold": 0.2,
+            "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+            "optimizer_success": true,
+            "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+            "slope_l2": 1e-06,
+            "status": "fitted",
+            "objective": 0.6109168099829276,
+            "excluded_groups": [
+              "investigation_lower_hutt_town_hall"
+            ]
+          },
+          "investigation_tauranga_farmers_building": {
+            "calibrator_version": "v2_monotone_platt_1",
+            "source_role": "validation",
+            "fit_role": "evaluation",
+            "score_kind": "native_probability_logit",
+            "tau_mpa": 1.0,
+            "probability_epsilon": 1e-06,
+            "weighting": "equal_sites_then_equal_rows_within_site",
+            "group_column": "investigation_group",
+            "training_groups": [
+              "investigation_lower_hutt_town_hall"
+            ],
+            "training_sites": [
+              "lower_hutt_town_hall"
+            ],
+            "n_training_rows": 1440,
+            "n_training_sites": 1,
+            "n_training_groups": 1,
+            "n_positive_rows": 90,
+            "n_negative_rows": 1350,
+            "weighted_positive_prior": 0.0625,
+            "score_center": -11.61782163913807,
+            "score_scale": 5.028792972864866,
+            "slope": 1.6785800565041997,
+            "intercept": -4.418195580287574,
+            "constant_probability": null,
+            "fallback_reason": null,
+            "risk_threshold": 0.2,
+            "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+            "optimizer_success": true,
+            "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+            "slope_l2": 1e-06,
+            "status": "fitted",
+            "objective": 0.13308475126691238,
+            "excluded_groups": [
+              "investigation_tauranga_farmers_building"
+            ]
+          }
+        }
+      },
+      "oof_calibrators": {
+        "investigation_lower_hutt_town_hall": {
+          "calibrator_version": "v2_monotone_platt_1",
+          "source_role": "validation",
+          "fit_role": "evaluation",
+          "score_kind": "native_probability_logit",
+          "tau_mpa": 1.0,
+          "probability_epsilon": 1e-06,
+          "weighting": "equal_sites_then_equal_rows_within_site",
+          "group_column": "investigation_group",
+          "training_groups": [
+            "investigation_tauranga_farmers_building"
+          ],
+          "training_sites": [
+            "tauranga_farmers_building"
+          ],
+          "n_training_rows": 1440,
+          "n_training_sites": 1,
+          "n_training_groups": 1,
+          "n_positive_rows": 455,
+          "n_negative_rows": 985,
+          "weighted_positive_prior": 0.3159722222222222,
+          "score_center": -7.050192403642993,
+          "score_scale": 6.962369132834834,
+          "slope": 0.3465860479598343,
+          "intercept": -0.7938145229069943,
+          "constant_probability": null,
+          "fallback_reason": null,
+          "risk_threshold": 0.2,
+          "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+          "optimizer_success": true,
+          "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "slope_l2": 1e-06,
+          "status": "fitted",
+          "objective": 0.6109168099829276,
+          "excluded_groups": [
+            "investigation_lower_hutt_town_hall"
+          ]
+        },
+        "investigation_tauranga_farmers_building": {
+          "calibrator_version": "v2_monotone_platt_1",
+          "source_role": "validation",
+          "fit_role": "evaluation",
+          "score_kind": "native_probability_logit",
+          "tau_mpa": 1.0,
+          "probability_epsilon": 1e-06,
+          "weighting": "equal_sites_then_equal_rows_within_site",
+          "group_column": "investigation_group",
+          "training_groups": [
+            "investigation_lower_hutt_town_hall"
+          ],
+          "training_sites": [
+            "lower_hutt_town_hall"
+          ],
+          "n_training_rows": 1440,
+          "n_training_sites": 1,
+          "n_training_groups": 1,
+          "n_positive_rows": 90,
+          "n_negative_rows": 1350,
+          "weighted_positive_prior": 0.0625,
+          "score_center": -11.61782163913807,
+          "score_scale": 5.028792972864866,
+          "slope": 1.6785800565041997,
+          "intercept": -4.418195580287574,
+          "constant_probability": null,
+          "fallback_reason": null,
+          "risk_threshold": 0.2,
+          "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+          "optimizer_success": true,
+          "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "slope_l2": 1e-06,
+          "status": "fitted",
+          "objective": 0.13308475126691238,
+          "excluded_groups": [
+            "investigation_tauranga_farmers_building"
+          ]
+        }
+      },
+      "excluded_groups": []
+    },
+    "2": {
+      "calibrator_version": "v2_monotone_platt_1",
+      "source_role": "validation",
+      "fit_role": "evaluation",
+      "score_kind": "native_probability_logit",
+      "tau_mpa": 1.0,
+      "probability_epsilon": 1e-06,
+      "weighting": "equal_sites_then_equal_rows_within_site",
+      "group_column": "investigation_group",
+      "training_groups": [
+        "investigation_christchurch_metro_sports_facility",
+        "investigation_marshland"
+      ],
+      "training_sites": [
+        "christchurch_metro_sports_facility",
+        "marshland"
+      ],
+      "n_training_rows": 2880,
+      "n_training_sites": 2,
+      "n_training_groups": 2,
+      "n_positive_rows": 400,
+      "n_negative_rows": 2480,
+      "weighted_positive_prior": 0.1328125,
+      "score_center": -10.31875966054097,
+      "score_scale": 6.557623524358012,
+      "slope": 0.935518491439703,
+      "intercept": -2.1928675157723143,
+      "constant_probability": null,
+      "fallback_reason": null,
+      "risk_threshold": 0.2,
+      "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+      "optimizer_success": true,
+      "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "slope_l2": 1e-06,
+      "status": "fitted",
+      "objective": 0.32528289880472555,
+      "crossfit": {
+        "mode": "leave_investigation_group_out",
+        "complete": true,
+        "n_groups": 2,
+        "held_out_fits": {
+          "investigation_christchurch_metro_sports_facility": {
+            "calibrator_version": "v2_monotone_platt_1",
+            "source_role": "validation",
+            "fit_role": "evaluation",
+            "score_kind": "native_probability_logit",
+            "tau_mpa": 1.0,
+            "probability_epsilon": 1e-06,
+            "weighting": "equal_sites_then_equal_rows_within_site",
+            "group_column": "investigation_group",
+            "training_groups": [
+              "investigation_marshland"
+            ],
+            "training_sites": [
+              "marshland"
+            ],
+            "n_training_rows": 960,
+            "n_training_sites": 1,
+            "n_training_groups": 1,
+            "n_positive_rows": 110,
+            "n_negative_rows": 850,
+            "weighted_positive_prior": 0.11458333333333334,
+            "score_center": -11.486328632790594,
+            "score_scale": 5.090969881338084,
+            "slope": 0.5210717985950017,
+            "intercept": -2.158959510666616,
+            "constant_probability": null,
+            "fallback_reason": null,
+            "risk_threshold": 0.2,
+            "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+            "optimizer_success": true,
+            "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+            "slope_l2": 1e-06,
+            "status": "fitted",
+            "objective": 0.33610203201899375,
+            "excluded_groups": [
+              "investigation_christchurch_metro_sports_facility"
+            ]
+          },
+          "investigation_marshland": {
+            "calibrator_version": "v2_monotone_platt_1",
+            "source_role": "validation",
+            "fit_role": "evaluation",
+            "score_kind": "native_probability_logit",
+            "tau_mpa": 1.0,
+            "probability_epsilon": 1e-06,
+            "weighting": "equal_sites_then_equal_rows_within_site",
+            "group_column": "investigation_group",
+            "training_groups": [
+              "investigation_christchurch_metro_sports_facility"
+            ],
+            "training_sites": [
+              "christchurch_metro_sports_facility"
+            ],
+            "n_training_rows": 1920,
+            "n_training_sites": 1,
+            "n_training_groups": 1,
+            "n_positive_rows": 290,
+            "n_negative_rows": 1630,
+            "weighted_positive_prior": 0.15104166666666669,
+            "score_center": -9.151190688291361,
+            "score_scale": 7.573667779340181,
+            "slope": 1.3180891992839532,
+            "intercept": -2.267405314041417,
+            "constant_probability": null,
+            "fallback_reason": null,
+            "risk_threshold": 0.2,
+            "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+            "optimizer_success": true,
+            "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+            "slope_l2": 1e-06,
+            "status": "fitted",
+            "objective": 0.30756456975922464,
+            "excluded_groups": [
+              "investigation_marshland"
+            ]
+          }
+        }
+      },
+      "oof_calibrators": {
+        "investigation_christchurch_metro_sports_facility": {
+          "calibrator_version": "v2_monotone_platt_1",
+          "source_role": "validation",
+          "fit_role": "evaluation",
+          "score_kind": "native_probability_logit",
+          "tau_mpa": 1.0,
+          "probability_epsilon": 1e-06,
+          "weighting": "equal_sites_then_equal_rows_within_site",
+          "group_column": "investigation_group",
+          "training_groups": [
+            "investigation_marshland"
+          ],
+          "training_sites": [
+            "marshland"
+          ],
+          "n_training_rows": 960,
+          "n_training_sites": 1,
+          "n_training_groups": 1,
+          "n_positive_rows": 110,
+          "n_negative_rows": 850,
+          "weighted_positive_prior": 0.11458333333333334,
+          "score_center": -11.486328632790594,
+          "score_scale": 5.090969881338084,
+          "slope": 0.5210717985950017,
+          "intercept": -2.158959510666616,
+          "constant_probability": null,
+          "fallback_reason": null,
+          "risk_threshold": 0.2,
+          "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+          "optimizer_success": true,
+          "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "slope_l2": 1e-06,
+          "status": "fitted",
+          "objective": 0.33610203201899375,
+          "excluded_groups": [
+            "investigation_christchurch_metro_sports_facility"
+          ]
+        },
+        "investigation_marshland": {
+          "calibrator_version": "v2_monotone_platt_1",
+          "source_role": "validation",
+          "fit_role": "evaluation",
+          "score_kind": "native_probability_logit",
+          "tau_mpa": 1.0,
+          "probability_epsilon": 1e-06,
+          "weighting": "equal_sites_then_equal_rows_within_site",
+          "group_column": "investigation_group",
+          "training_groups": [
+            "investigation_christchurch_metro_sports_facility"
+          ],
+          "training_sites": [
+            "christchurch_metro_sports_facility"
+          ],
+          "n_training_rows": 1920,
+          "n_training_sites": 1,
+          "n_training_groups": 1,
+          "n_positive_rows": 290,
+          "n_negative_rows": 1630,
+          "weighted_positive_prior": 0.15104166666666669,
+          "score_center": -9.151190688291361,
+          "score_scale": 7.573667779340181,
+          "slope": 1.3180891992839532,
+          "intercept": -2.267405314041417,
+          "constant_probability": null,
+          "fallback_reason": null,
+          "risk_threshold": 0.2,
+          "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+          "optimizer_success": true,
+          "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "slope_l2": 1e-06,
+          "status": "fitted",
+          "objective": 0.30756456975922464,
+          "excluded_groups": [
+            "investigation_marshland"
+          ]
+        }
+      },
+      "excluded_groups": []
+    }
+  },
+  "v7_frontier_graph_union_error_empirical": {
+    "0": {
+      "calibrator_version": "v2_monotone_platt_1",
+      "source_role": "validation",
+      "fit_role": "evaluation",
+      "score_kind": "native_probability_logit",
+      "tau_mpa": 1.0,
+      "probability_epsilon": 1e-06,
+      "weighting": "equal_sites_then_equal_rows_within_site",
+      "group_column": "investigation_group",
+      "training_groups": [
+        "investigation_lower_hutt_town_hall",
+        "investigation_tauranga_farmers_building"
+      ],
+      "training_sites": [
+        "lower_hutt_town_hall",
+        "tauranga_farmers_building"
+      ],
+      "n_training_rows": 2880,
+      "n_training_sites": 2,
+      "n_training_groups": 2,
+      "n_positive_rows": 545,
+      "n_negative_rows": 2335,
+      "weighted_positive_prior": 0.1892361111111111,
+      "score_center": -2.6665590748956576,
+      "score_scale": 3.3471061636607624,
+      "slope": 2.9282369359609812,
+      "intercept": -2.6871177257371412,
+      "constant_probability": null,
+      "fallback_reason": null,
+      "risk_threshold": 0.2,
+      "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+      "optimizer_success": true,
+      "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "slope_l2": 1e-06,
+      "status": "fitted",
+      "objective": 0.3870368012068031,
+      "crossfit": {
+        "mode": "leave_investigation_group_out",
+        "complete": true,
+        "n_groups": 2,
+        "held_out_fits": {
+          "investigation_lower_hutt_town_hall": {
+            "calibrator_version": "v2_monotone_platt_1",
+            "source_role": "validation",
+            "fit_role": "evaluation",
+            "score_kind": "native_probability_logit",
+            "tau_mpa": 1.0,
+            "probability_epsilon": 1e-06,
+            "weighting": "equal_sites_then_equal_rows_within_site",
+            "group_column": "investigation_group",
+            "training_groups": [
+              "investigation_tauranga_farmers_building"
+            ],
+            "training_sites": [
+              "tauranga_farmers_building"
+            ],
+            "n_training_rows": 1440,
+            "n_training_sites": 1,
+            "n_training_groups": 1,
+            "n_positive_rows": 455,
+            "n_negative_rows": 985,
+            "weighted_positive_prior": 0.3159722222222222,
+            "score_center": -0.7792523082358608,
+            "score_scale": 0.8481641218471411,
+            "slope": 0.3534917441239336,
+            "intercept": -0.795404414903018,
+            "constant_probability": null,
+            "fallback_reason": null,
+            "risk_threshold": 0.2,
+            "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+            "optimizer_success": true,
+            "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+            "slope_l2": 1e-06,
+            "status": "fitted",
+            "objective": 0.6110368407737697,
+            "excluded_groups": [
+              "investigation_lower_hutt_town_hall"
+            ]
+          },
+          "investigation_tauranga_farmers_building": {
+            "calibrator_version": "v2_monotone_platt_1",
+            "source_role": "validation",
+            "fit_role": "evaluation",
+            "score_kind": "native_probability_logit",
+            "tau_mpa": 1.0,
+            "probability_epsilon": 1e-06,
+            "weighting": "equal_sites_then_equal_rows_within_site",
+            "group_column": "investigation_group",
+            "training_groups": [
+              "investigation_lower_hutt_town_hall"
+            ],
+            "training_sites": [
+              "lower_hutt_town_hall"
+            ],
+            "n_training_rows": 1440,
+            "n_training_sites": 1,
+            "n_training_groups": 1,
+            "n_positive_rows": 90,
+            "n_negative_rows": 1350,
+            "weighted_positive_prior": 0.0625,
+            "score_center": -4.553865841555455,
+            "score_scale": 3.816150324749182,
+            "slope": 6.405984467996254,
+            "intercept": -7.950729580026787,
+            "constant_probability": null,
+            "fallback_reason": null,
+            "risk_threshold": 0.2,
+            "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+            "optimizer_success": true,
+            "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+            "slope_l2": 1e-06,
+            "status": "fitted",
+            "objective": 0.1251759211125683,
+            "excluded_groups": [
+              "investigation_tauranga_farmers_building"
+            ]
+          }
+        }
+      },
+      "oof_calibrators": {
+        "investigation_lower_hutt_town_hall": {
+          "calibrator_version": "v2_monotone_platt_1",
+          "source_role": "validation",
+          "fit_role": "evaluation",
+          "score_kind": "native_probability_logit",
+          "tau_mpa": 1.0,
+          "probability_epsilon": 1e-06,
+          "weighting": "equal_sites_then_equal_rows_within_site",
+          "group_column": "investigation_group",
+          "training_groups": [
+            "investigation_tauranga_farmers_building"
+          ],
+          "training_sites": [
+            "tauranga_farmers_building"
+          ],
+          "n_training_rows": 1440,
+          "n_training_sites": 1,
+          "n_training_groups": 1,
+          "n_positive_rows": 455,
+          "n_negative_rows": 985,
+          "weighted_positive_prior": 0.3159722222222222,
+          "score_center": -0.7792523082358608,
+          "score_scale": 0.8481641218471411,
+          "slope": 0.3534917441239336,
+          "intercept": -0.795404414903018,
+          "constant_probability": null,
+          "fallback_reason": null,
+          "risk_threshold": 0.2,
+          "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+          "optimizer_success": true,
+          "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "slope_l2": 1e-06,
+          "status": "fitted",
+          "objective": 0.6110368407737697,
+          "excluded_groups": [
+            "investigation_lower_hutt_town_hall"
+          ]
+        },
+        "investigation_tauranga_farmers_building": {
+          "calibrator_version": "v2_monotone_platt_1",
+          "source_role": "validation",
+          "fit_role": "evaluation",
+          "score_kind": "native_probability_logit",
+          "tau_mpa": 1.0,
+          "probability_epsilon": 1e-06,
+          "weighting": "equal_sites_then_equal_rows_within_site",
+          "group_column": "investigation_group",
+          "training_groups": [
+            "investigation_lower_hutt_town_hall"
+          ],
+          "training_sites": [
+            "lower_hutt_town_hall"
+          ],
+          "n_training_rows": 1440,
+          "n_training_sites": 1,
+          "n_training_groups": 1,
+          "n_positive_rows": 90,
+          "n_negative_rows": 1350,
+          "weighted_positive_prior": 0.0625,
+          "score_center": -4.553865841555455,
+          "score_scale": 3.816150324749182,
+          "slope": 6.405984467996254,
+          "intercept": -7.950729580026787,
+          "constant_probability": null,
+          "fallback_reason": null,
+          "risk_threshold": 0.2,
+          "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+          "optimizer_success": true,
+          "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "slope_l2": 1e-06,
+          "status": "fitted",
+          "objective": 0.1251759211125683,
+          "excluded_groups": [
+            "investigation_tauranga_farmers_building"
+          ]
+        }
+      },
+      "excluded_groups": []
+    },
+    "1": {
+      "calibrator_version": "v2_monotone_platt_1",
+      "source_role": "validation",
+      "fit_role": "evaluation",
+      "score_kind": "native_probability_logit",
+      "tau_mpa": 1.0,
+      "probability_epsilon": 1e-06,
+      "weighting": "equal_sites_then_equal_rows_within_site",
+      "group_column": "investigation_group",
+      "training_groups": [
+        "investigation_lower_hutt_town_hall",
+        "investigation_tauranga_farmers_building"
+      ],
+      "training_sites": [
+        "lower_hutt_town_hall",
+        "tauranga_farmers_building"
+      ],
+      "n_training_rows": 2880,
+      "n_training_sites": 2,
+      "n_training_groups": 2,
+      "n_positive_rows": 545,
+      "n_negative_rows": 2335,
+      "weighted_positive_prior": 0.1892361111111111,
+      "score_center": -2.6258859924262934,
+      "score_scale": 3.336835820588869,
+      "slope": 2.9754099851960674,
+      "intercept": -2.709777620574043,
+      "constant_probability": null,
+      "fallback_reason": null,
+      "risk_threshold": 0.2,
+      "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+      "optimizer_success": true,
+      "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "slope_l2": 1e-06,
+      "status": "fitted",
+      "objective": 0.3862297405946516,
+      "crossfit": {
+        "mode": "leave_investigation_group_out",
+        "complete": true,
+        "n_groups": 2,
+        "held_out_fits": {
+          "investigation_lower_hutt_town_hall": {
+            "calibrator_version": "v2_monotone_platt_1",
+            "source_role": "validation",
+            "fit_role": "evaluation",
+            "score_kind": "native_probability_logit",
+            "tau_mpa": 1.0,
+            "probability_epsilon": 1e-06,
+            "weighting": "equal_sites_then_equal_rows_within_site",
+            "group_column": "investigation_group",
+            "training_groups": [
+              "investigation_tauranga_farmers_building"
+            ],
+            "training_sites": [
+              "tauranga_farmers_building"
+            ],
+            "n_training_rows": 1440,
+            "n_training_sites": 1,
+            "n_training_groups": 1,
+            "n_positive_rows": 455,
+            "n_negative_rows": 985,
+            "weighted_positive_prior": 0.3159722222222222,
+            "score_center": -0.7528387862612433,
+            "score_scale": 0.826921456226883,
+            "slope": 0.35863423002374556,
+            "intercept": -0.7959931893916041,
+            "constant_probability": null,
+            "fallback_reason": null,
+            "risk_threshold": 0.2,
+            "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+            "optimizer_success": true,
+            "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+            "slope_l2": 1e-06,
+            "status": "fitted",
+            "objective": 0.6106209519409805,
+            "excluded_groups": [
+              "investigation_lower_hutt_town_hall"
+            ]
+          },
+          "investigation_tauranga_farmers_building": {
+            "calibrator_version": "v2_monotone_platt_1",
+            "source_role": "validation",
+            "fit_role": "evaluation",
+            "score_kind": "native_probability_logit",
+            "tau_mpa": 1.0,
+            "probability_epsilon": 1e-06,
+            "weighting": "equal_sites_then_equal_rows_within_site",
+            "group_column": "investigation_group",
+            "training_groups": [
+              "investigation_lower_hutt_town_hall"
+            ],
+            "training_sites": [
+              "lower_hutt_town_hall"
+            ],
+            "n_training_rows": 1440,
+            "n_training_sites": 1,
+            "n_training_groups": 1,
+            "n_positive_rows": 90,
+            "n_negative_rows": 1350,
+            "weighted_positive_prior": 0.0625,
+            "score_center": -4.498933198591343,
+            "score_scale": 3.816875138030611,
+            "slope": 6.376295478562505,
+            "intercept": -7.928712833419747,
+            "constant_probability": null,
+            "fallback_reason": null,
+            "risk_threshold": 0.2,
+            "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+            "optimizer_success": true,
+            "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+            "slope_l2": 1e-06,
+            "status": "fitted",
+            "objective": 0.1246323616895242,
+            "excluded_groups": [
+              "investigation_tauranga_farmers_building"
+            ]
+          }
+        }
+      },
+      "oof_calibrators": {
+        "investigation_lower_hutt_town_hall": {
+          "calibrator_version": "v2_monotone_platt_1",
+          "source_role": "validation",
+          "fit_role": "evaluation",
+          "score_kind": "native_probability_logit",
+          "tau_mpa": 1.0,
+          "probability_epsilon": 1e-06,
+          "weighting": "equal_sites_then_equal_rows_within_site",
+          "group_column": "investigation_group",
+          "training_groups": [
+            "investigation_tauranga_farmers_building"
+          ],
+          "training_sites": [
+            "tauranga_farmers_building"
+          ],
+          "n_training_rows": 1440,
+          "n_training_sites": 1,
+          "n_training_groups": 1,
+          "n_positive_rows": 455,
+          "n_negative_rows": 985,
+          "weighted_positive_prior": 0.3159722222222222,
+          "score_center": -0.7528387862612433,
+          "score_scale": 0.826921456226883,
+          "slope": 0.35863423002374556,
+          "intercept": -0.7959931893916041,
+          "constant_probability": null,
+          "fallback_reason": null,
+          "risk_threshold": 0.2,
+          "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+          "optimizer_success": true,
+          "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "slope_l2": 1e-06,
+          "status": "fitted",
+          "objective": 0.6106209519409805,
+          "excluded_groups": [
+            "investigation_lower_hutt_town_hall"
+          ]
+        },
+        "investigation_tauranga_farmers_building": {
+          "calibrator_version": "v2_monotone_platt_1",
+          "source_role": "validation",
+          "fit_role": "evaluation",
+          "score_kind": "native_probability_logit",
+          "tau_mpa": 1.0,
+          "probability_epsilon": 1e-06,
+          "weighting": "equal_sites_then_equal_rows_within_site",
+          "group_column": "investigation_group",
+          "training_groups": [
+            "investigation_lower_hutt_town_hall"
+          ],
+          "training_sites": [
+            "lower_hutt_town_hall"
+          ],
+          "n_training_rows": 1440,
+          "n_training_sites": 1,
+          "n_training_groups": 1,
+          "n_positive_rows": 90,
+          "n_negative_rows": 1350,
+          "weighted_positive_prior": 0.0625,
+          "score_center": -4.498933198591343,
+          "score_scale": 3.816875138030611,
+          "slope": 6.376295478562505,
+          "intercept": -7.928712833419747,
+          "constant_probability": null,
+          "fallback_reason": null,
+          "risk_threshold": 0.2,
+          "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+          "optimizer_success": true,
+          "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "slope_l2": 1e-06,
+          "status": "fitted",
+          "objective": 0.1246323616895242,
+          "excluded_groups": [
+            "investigation_tauranga_farmers_building"
+          ]
+        }
+      },
+      "excluded_groups": []
+    },
+    "2": {
+      "calibrator_version": "v2_monotone_platt_1",
+      "source_role": "validation",
+      "fit_role": "evaluation",
+      "score_kind": "native_probability_logit",
+      "tau_mpa": 1.0,
+      "probability_epsilon": 1e-06,
+      "weighting": "equal_sites_then_equal_rows_within_site",
+      "group_column": "investigation_group",
+      "training_groups": [
+        "investigation_christchurch_metro_sports_facility",
+        "investigation_marshland"
+      ],
+      "training_sites": [
+        "christchurch_metro_sports_facility",
+        "marshland"
+      ],
+      "n_training_rows": 2880,
+      "n_training_sites": 2,
+      "n_training_groups": 2,
+      "n_positive_rows": 400,
+      "n_negative_rows": 2480,
+      "weighted_positive_prior": 0.1328125,
+      "score_center": -3.3730145942014436,
+      "score_scale": 3.727892104608005,
+      "slope": 2.4735312774071843,
+      "intercept": -2.939590459753289,
+      "constant_probability": null,
+      "fallback_reason": null,
+      "risk_threshold": 0.2,
+      "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+      "optimizer_success": true,
+      "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "slope_l2": 1e-06,
+      "status": "fitted",
+      "objective": 0.3170346019680865,
+      "crossfit": {
+        "mode": "leave_investigation_group_out",
+        "complete": true,
+        "n_groups": 2,
+        "held_out_fits": {
+          "investigation_christchurch_metro_sports_facility": {
+            "calibrator_version": "v2_monotone_platt_1",
+            "source_role": "validation",
+            "fit_role": "evaluation",
+            "score_kind": "native_probability_logit",
+            "tau_mpa": 1.0,
+            "probability_epsilon": 1e-06,
+            "weighting": "equal_sites_then_equal_rows_within_site",
+            "group_column": "investigation_group",
+            "training_groups": [
+              "investigation_marshland"
+            ],
+            "training_sites": [
+              "marshland"
+            ],
+            "n_training_rows": 960,
+            "n_training_sites": 1,
+            "n_training_groups": 1,
+            "n_positive_rows": 110,
+            "n_negative_rows": 850,
+            "weighted_positive_prior": 0.11458333333333334,
+            "score_center": -3.653579553574363,
+            "score_scale": 3.256037938632838,
+            "slope": 1.2852080874538319,
+            "intercept": -2.438393402579911,
+            "constant_probability": null,
+            "fallback_reason": null,
+            "risk_threshold": 0.2,
+            "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+            "optimizer_success": true,
+            "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+            "slope_l2": 1e-06,
+            "status": "fitted",
+            "objective": 0.3281807413642425,
+            "excluded_groups": [
+              "investigation_christchurch_metro_sports_facility"
+            ]
+          },
+          "investigation_marshland": {
+            "calibrator_version": "v2_monotone_platt_1",
+            "source_role": "validation",
+            "fit_role": "evaluation",
+            "score_kind": "native_probability_logit",
+            "tau_mpa": 1.0,
+            "probability_epsilon": 1e-06,
+            "weighting": "equal_sites_then_equal_rows_within_site",
+            "group_column": "investigation_group",
+            "training_groups": [
+              "investigation_christchurch_metro_sports_facility"
+            ],
+            "training_sites": [
+              "christchurch_metro_sports_facility"
+            ],
+            "n_training_rows": 1920,
+            "n_training_sites": 1,
+            "n_training_groups": 1,
+            "n_positive_rows": 290,
+            "n_negative_rows": 1630,
+            "weighted_positive_prior": 0.15104166666666669,
+            "score_center": -3.092449634828526,
+            "score_scale": 4.127365096102498,
+            "slope": 4.632540171012557,
+            "intercept": -4.153544505112431,
+            "constant_probability": null,
+            "fallback_reason": null,
+            "risk_threshold": 0.2,
+            "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+            "optimizer_success": true,
+            "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+            "slope_l2": 1e-06,
+            "status": "fitted",
+            "objective": 0.28150258685197377,
+            "excluded_groups": [
+              "investigation_marshland"
+            ]
+          }
+        }
+      },
+      "oof_calibrators": {
+        "investigation_christchurch_metro_sports_facility": {
+          "calibrator_version": "v2_monotone_platt_1",
+          "source_role": "validation",
+          "fit_role": "evaluation",
+          "score_kind": "native_probability_logit",
+          "tau_mpa": 1.0,
+          "probability_epsilon": 1e-06,
+          "weighting": "equal_sites_then_equal_rows_within_site",
+          "group_column": "investigation_group",
+          "training_groups": [
+            "investigation_marshland"
+          ],
+          "training_sites": [
+            "marshland"
+          ],
+          "n_training_rows": 960,
+          "n_training_sites": 1,
+          "n_training_groups": 1,
+          "n_positive_rows": 110,
+          "n_negative_rows": 850,
+          "weighted_positive_prior": 0.11458333333333334,
+          "score_center": -3.653579553574363,
+          "score_scale": 3.256037938632838,
+          "slope": 1.2852080874538319,
+          "intercept": -2.438393402579911,
+          "constant_probability": null,
+          "fallback_reason": null,
+          "risk_threshold": 0.2,
+          "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+          "optimizer_success": true,
+          "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "slope_l2": 1e-06,
+          "status": "fitted",
+          "objective": 0.3281807413642425,
+          "excluded_groups": [
+            "investigation_christchurch_metro_sports_facility"
+          ]
+        },
+        "investigation_marshland": {
+          "calibrator_version": "v2_monotone_platt_1",
+          "source_role": "validation",
+          "fit_role": "evaluation",
+          "score_kind": "native_probability_logit",
+          "tau_mpa": 1.0,
+          "probability_epsilon": 1e-06,
+          "weighting": "equal_sites_then_equal_rows_within_site",
+          "group_column": "investigation_group",
+          "training_groups": [
+            "investigation_christchurch_metro_sports_facility"
+          ],
+          "training_sites": [
+            "christchurch_metro_sports_facility"
+          ],
+          "n_training_rows": 1920,
+          "n_training_sites": 1,
+          "n_training_groups": 1,
+          "n_positive_rows": 290,
+          "n_negative_rows": 1630,
+          "weighted_positive_prior": 0.15104166666666669,
+          "score_center": -3.092449634828526,
+          "score_scale": 4.127365096102498,
+          "slope": 4.632540171012557,
+          "intercept": -4.153544505112431,
+          "constant_probability": null,
+          "fallback_reason": null,
+          "risk_threshold": 0.2,
+          "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+          "optimizer_success": true,
+          "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "slope_l2": 1e-06,
+          "status": "fitted",
+          "objective": 0.28150258685197377,
+          "excluded_groups": [
+            "investigation_marshland"
+          ]
+        }
+      },
+      "excluded_groups": []
+    }
+  },
+  "v7_frontier_graph_union_error_joint": {
+    "0": {
+      "calibrator_version": "v2_monotone_platt_1",
+      "source_role": "validation",
+      "fit_role": "evaluation",
+      "score_kind": "native_probability_logit",
+      "tau_mpa": 1.0,
+      "probability_epsilon": 1e-06,
+      "weighting": "equal_sites_then_equal_rows_within_site",
+      "group_column": "investigation_group",
+      "training_groups": [
+        "investigation_lower_hutt_town_hall",
+        "investigation_tauranga_farmers_building"
+      ],
+      "training_sites": [
+        "lower_hutt_town_hall",
+        "tauranga_farmers_building"
+      ],
+      "n_training_rows": 2880,
+      "n_training_sites": 2,
+      "n_training_groups": 2,
+      "n_positive_rows": 545,
+      "n_negative_rows": 2335,
+      "weighted_positive_prior": 0.1892361111111111,
+      "score_center": -8.511047957960383,
+      "score_scale": 6.820747309538836,
+      "slope": 0.9263033303588164,
+      "intercept": -1.7112435648735846,
+      "constant_probability": null,
+      "fallback_reason": null,
+      "risk_threshold": 0.2,
+      "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+      "optimizer_success": true,
+      "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "slope_l2": 1e-06,
+      "status": "fitted",
+      "objective": 0.4208478522030251,
+      "crossfit": {
+        "mode": "leave_investigation_group_out",
+        "complete": true,
+        "n_groups": 2,
+        "held_out_fits": {
+          "investigation_lower_hutt_town_hall": {
+            "calibrator_version": "v2_monotone_platt_1",
+            "source_role": "validation",
+            "fit_role": "evaluation",
+            "score_kind": "native_probability_logit",
+            "tau_mpa": 1.0,
+            "probability_epsilon": 1e-06,
+            "weighting": "equal_sites_then_equal_rows_within_site",
+            "group_column": "investigation_group",
+            "training_groups": [
+              "investigation_tauranga_farmers_building"
+            ],
+            "training_sites": [
+              "tauranga_farmers_building"
+            ],
+            "n_training_rows": 1440,
+            "n_training_sites": 1,
+            "n_training_groups": 1,
+            "n_positive_rows": 455,
+            "n_negative_rows": 985,
+            "weighted_positive_prior": 0.3159722222222222,
+            "score_center": -5.716386086320766,
+            "score_scale": 6.878777787152553,
+            "slope": 0.36952978239542383,
+            "intercept": -0.7975209098903344,
+            "constant_probability": null,
+            "fallback_reason": null,
+            "risk_threshold": 0.2,
+            "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+            "optimizer_success": true,
+            "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+            "slope_l2": 1e-06,
+            "status": "fitted",
+            "objective": 0.6096622030978407,
+            "excluded_groups": [
+              "investigation_lower_hutt_town_hall"
+            ]
+          },
+          "investigation_tauranga_farmers_building": {
+            "calibrator_version": "v2_monotone_platt_1",
+            "source_role": "validation",
+            "fit_role": "evaluation",
+            "score_kind": "native_probability_logit",
+            "tau_mpa": 1.0,
+            "probability_epsilon": 1e-06,
+            "weighting": "equal_sites_then_equal_rows_within_site",
+            "group_column": "investigation_group",
+            "training_groups": [
+              "investigation_lower_hutt_town_hall"
+            ],
+            "training_sites": [
+              "lower_hutt_town_hall"
+            ],
+            "n_training_rows": 1440,
+            "n_training_sites": 1,
+            "n_training_groups": 1,
+            "n_positive_rows": 90,
+            "n_negative_rows": 1350,
+            "weighted_positive_prior": 0.0625,
+            "score_center": -11.30570982959998,
+            "score_scale": 5.487015028460092,
+            "slope": 1.6591290335984428,
+            "intercept": -4.21436059815744,
+            "constant_probability": null,
+            "fallback_reason": null,
+            "risk_threshold": 0.2,
+            "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+            "optimizer_success": true,
+            "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+            "slope_l2": 1e-06,
+            "status": "fitted",
+            "objective": 0.13696598474845884,
+            "excluded_groups": [
+              "investigation_tauranga_farmers_building"
+            ]
+          }
+        }
+      },
+      "oof_calibrators": {
+        "investigation_lower_hutt_town_hall": {
+          "calibrator_version": "v2_monotone_platt_1",
+          "source_role": "validation",
+          "fit_role": "evaluation",
+          "score_kind": "native_probability_logit",
+          "tau_mpa": 1.0,
+          "probability_epsilon": 1e-06,
+          "weighting": "equal_sites_then_equal_rows_within_site",
+          "group_column": "investigation_group",
+          "training_groups": [
+            "investigation_tauranga_farmers_building"
+          ],
+          "training_sites": [
+            "tauranga_farmers_building"
+          ],
+          "n_training_rows": 1440,
+          "n_training_sites": 1,
+          "n_training_groups": 1,
+          "n_positive_rows": 455,
+          "n_negative_rows": 985,
+          "weighted_positive_prior": 0.3159722222222222,
+          "score_center": -5.716386086320766,
+          "score_scale": 6.878777787152553,
+          "slope": 0.36952978239542383,
+          "intercept": -0.7975209098903344,
+          "constant_probability": null,
+          "fallback_reason": null,
+          "risk_threshold": 0.2,
+          "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+          "optimizer_success": true,
+          "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "slope_l2": 1e-06,
+          "status": "fitted",
+          "objective": 0.6096622030978407,
+          "excluded_groups": [
+            "investigation_lower_hutt_town_hall"
+          ]
+        },
+        "investigation_tauranga_farmers_building": {
+          "calibrator_version": "v2_monotone_platt_1",
+          "source_role": "validation",
+          "fit_role": "evaluation",
+          "score_kind": "native_probability_logit",
+          "tau_mpa": 1.0,
+          "probability_epsilon": 1e-06,
+          "weighting": "equal_sites_then_equal_rows_within_site",
+          "group_column": "investigation_group",
+          "training_groups": [
+            "investigation_lower_hutt_town_hall"
+          ],
+          "training_sites": [
+            "lower_hutt_town_hall"
+          ],
+          "n_training_rows": 1440,
+          "n_training_sites": 1,
+          "n_training_groups": 1,
+          "n_positive_rows": 90,
+          "n_negative_rows": 1350,
+          "weighted_positive_prior": 0.0625,
+          "score_center": -11.30570982959998,
+          "score_scale": 5.487015028460092,
+          "slope": 1.6591290335984428,
+          "intercept": -4.21436059815744,
+          "constant_probability": null,
+          "fallback_reason": null,
+          "risk_threshold": 0.2,
+          "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+          "optimizer_success": true,
+          "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "slope_l2": 1e-06,
+          "status": "fitted",
+          "objective": 0.13696598474845884,
+          "excluded_groups": [
+            "investigation_tauranga_farmers_building"
+          ]
+        }
+      },
+      "excluded_groups": []
+    },
+    "1": {
+      "calibrator_version": "v2_monotone_platt_1",
+      "source_role": "validation",
+      "fit_role": "evaluation",
+      "score_kind": "native_probability_logit",
+      "tau_mpa": 1.0,
+      "probability_epsilon": 1e-06,
+      "weighting": "equal_sites_then_equal_rows_within_site",
+      "group_column": "investigation_group",
+      "training_groups": [
+        "investigation_lower_hutt_town_hall",
+        "investigation_tauranga_farmers_building"
+      ],
+      "training_sites": [
+        "lower_hutt_town_hall",
+        "tauranga_farmers_building"
+      ],
+      "n_training_rows": 2880,
+      "n_training_sites": 2,
+      "n_training_groups": 2,
+      "n_positive_rows": 545,
+      "n_negative_rows": 2335,
+      "weighted_positive_prior": 0.1892361111111111,
+      "score_center": -8.48604604690383,
+      "score_scale": 6.827584815657385,
+      "slope": 0.9239438489020736,
+      "intercept": -1.7100387042102636,
+      "constant_probability": null,
+      "fallback_reason": null,
+      "risk_threshold": 0.2,
+      "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+      "optimizer_success": true,
+      "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "slope_l2": 1e-06,
+      "status": "fitted",
+      "objective": 0.4212676094615792,
+      "crossfit": {
+        "mode": "leave_investigation_group_out",
+        "complete": true,
+        "n_groups": 2,
+        "held_out_fits": {
+          "investigation_lower_hutt_town_hall": {
+            "calibrator_version": "v2_monotone_platt_1",
+            "source_role": "validation",
+            "fit_role": "evaluation",
+            "score_kind": "native_probability_logit",
+            "tau_mpa": 1.0,
+            "probability_epsilon": 1e-06,
+            "weighting": "equal_sites_then_equal_rows_within_site",
+            "group_column": "investigation_group",
+            "training_groups": [
+              "investigation_tauranga_farmers_building"
+            ],
+            "training_sites": [
+              "tauranga_farmers_building"
+            ],
+            "n_training_rows": 1440,
+            "n_training_sites": 1,
+            "n_training_groups": 1,
+            "n_positive_rows": 455,
+            "n_negative_rows": 985,
+            "weighted_positive_prior": 0.3159722222222222,
+            "score_center": -5.687198811364519,
+            "score_scale": 6.873873190007007,
+            "slope": 0.3653084485163737,
+            "intercept": -0.7969674245487994,
+            "constant_probability": null,
+            "fallback_reason": null,
+            "risk_threshold": 0.2,
+            "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+            "optimizer_success": true,
+            "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+            "slope_l2": 1e-06,
+            "status": "fitted",
+            "objective": 0.6099816658171894,
+            "excluded_groups": [
+              "investigation_lower_hutt_town_hall"
+            ]
+          },
+          "investigation_tauranga_farmers_building": {
+            "calibrator_version": "v2_monotone_platt_1",
+            "source_role": "validation",
+            "fit_role": "evaluation",
+            "score_kind": "native_probability_logit",
+            "tau_mpa": 1.0,
+            "probability_epsilon": 1e-06,
+            "weighting": "equal_sites_then_equal_rows_within_site",
+            "group_column": "investigation_group",
+            "training_groups": [
+              "investigation_lower_hutt_town_hall"
+            ],
+            "training_sites": [
+              "lower_hutt_town_hall"
+            ],
+            "n_training_rows": 1440,
+            "n_training_sites": 1,
+            "n_training_groups": 1,
+            "n_positive_rows": 90,
+            "n_negative_rows": 1350,
+            "weighted_positive_prior": 0.0625,
+            "score_center": -11.284893282443125,
+            "score_scale": 5.505870004088492,
+            "slope": 1.6612191250307937,
+            "intercept": -4.215001645696285,
+            "constant_probability": null,
+            "fallback_reason": null,
+            "risk_threshold": 0.2,
+            "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+            "optimizer_success": true,
+            "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+            "slope_l2": 1e-06,
+            "status": "fitted",
+            "objective": 0.1372812552916933,
+            "excluded_groups": [
+              "investigation_tauranga_farmers_building"
+            ]
+          }
+        }
+      },
+      "oof_calibrators": {
+        "investigation_lower_hutt_town_hall": {
+          "calibrator_version": "v2_monotone_platt_1",
+          "source_role": "validation",
+          "fit_role": "evaluation",
+          "score_kind": "native_probability_logit",
+          "tau_mpa": 1.0,
+          "probability_epsilon": 1e-06,
+          "weighting": "equal_sites_then_equal_rows_within_site",
+          "group_column": "investigation_group",
+          "training_groups": [
+            "investigation_tauranga_farmers_building"
+          ],
+          "training_sites": [
+            "tauranga_farmers_building"
+          ],
+          "n_training_rows": 1440,
+          "n_training_sites": 1,
+          "n_training_groups": 1,
+          "n_positive_rows": 455,
+          "n_negative_rows": 985,
+          "weighted_positive_prior": 0.3159722222222222,
+          "score_center": -5.687198811364519,
+          "score_scale": 6.873873190007007,
+          "slope": 0.3653084485163737,
+          "intercept": -0.7969674245487994,
+          "constant_probability": null,
+          "fallback_reason": null,
+          "risk_threshold": 0.2,
+          "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+          "optimizer_success": true,
+          "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "slope_l2": 1e-06,
+          "status": "fitted",
+          "objective": 0.6099816658171894,
+          "excluded_groups": [
+            "investigation_lower_hutt_town_hall"
+          ]
+        },
+        "investigation_tauranga_farmers_building": {
+          "calibrator_version": "v2_monotone_platt_1",
+          "source_role": "validation",
+          "fit_role": "evaluation",
+          "score_kind": "native_probability_logit",
+          "tau_mpa": 1.0,
+          "probability_epsilon": 1e-06,
+          "weighting": "equal_sites_then_equal_rows_within_site",
+          "group_column": "investigation_group",
+          "training_groups": [
+            "investigation_lower_hutt_town_hall"
+          ],
+          "training_sites": [
+            "lower_hutt_town_hall"
+          ],
+          "n_training_rows": 1440,
+          "n_training_sites": 1,
+          "n_training_groups": 1,
+          "n_positive_rows": 90,
+          "n_negative_rows": 1350,
+          "weighted_positive_prior": 0.0625,
+          "score_center": -11.284893282443125,
+          "score_scale": 5.505870004088492,
+          "slope": 1.6612191250307937,
+          "intercept": -4.215001645696285,
+          "constant_probability": null,
+          "fallback_reason": null,
+          "risk_threshold": 0.2,
+          "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+          "optimizer_success": true,
+          "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "slope_l2": 1e-06,
+          "status": "fitted",
+          "objective": 0.1372812552916933,
+          "excluded_groups": [
+            "investigation_tauranga_farmers_building"
+          ]
+        }
+      },
+      "excluded_groups": []
+    },
+    "2": {
+      "calibrator_version": "v2_monotone_platt_1",
+      "source_role": "validation",
+      "fit_role": "evaluation",
+      "score_kind": "native_probability_logit",
+      "tau_mpa": 1.0,
+      "probability_epsilon": 1e-06,
+      "weighting": "equal_sites_then_equal_rows_within_site",
+      "group_column": "investigation_group",
+      "training_groups": [
+        "investigation_christchurch_metro_sports_facility",
+        "investigation_marshland"
+      ],
+      "training_sites": [
+        "christchurch_metro_sports_facility",
+        "marshland"
+      ],
+      "n_training_rows": 2880,
+      "n_training_sites": 2,
+      "n_training_groups": 2,
+      "n_positive_rows": 400,
+      "n_negative_rows": 2480,
+      "weighted_positive_prior": 0.1328125,
+      "score_center": -9.945382416228062,
+      "score_scale": 6.669280669098009,
+      "slope": 0.9607979668056957,
+      "intercept": -2.2115605597445858,
+      "constant_probability": null,
+      "fallback_reason": null,
+      "risk_threshold": 0.2,
+      "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+      "optimizer_success": true,
+      "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "slope_l2": 1e-06,
+      "status": "fitted",
+      "objective": 0.32531044379209645,
+      "crossfit": {
+        "mode": "leave_investigation_group_out",
+        "complete": true,
+        "n_groups": 2,
+        "held_out_fits": {
+          "investigation_christchurch_metro_sports_facility": {
+            "calibrator_version": "v2_monotone_platt_1",
+            "source_role": "validation",
+            "fit_role": "evaluation",
+            "score_kind": "native_probability_logit",
+            "tau_mpa": 1.0,
+            "probability_epsilon": 1e-06,
+            "weighting": "equal_sites_then_equal_rows_within_site",
+            "group_column": "investigation_group",
+            "training_groups": [
+              "investigation_marshland"
+            ],
+            "training_sites": [
+              "marshland"
+            ],
+            "n_training_rows": 960,
+            "n_training_sites": 1,
+            "n_training_groups": 1,
+            "n_positive_rows": 110,
+            "n_negative_rows": 850,
+            "weighted_positive_prior": 0.11458333333333334,
+            "score_center": -11.156967596265506,
+            "score_scale": 5.290193774066714,
+            "slope": 0.5509726783724394,
+            "intercept": -2.1715939930142985,
+            "constant_probability": null,
+            "fallback_reason": null,
+            "risk_threshold": 0.2,
+            "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+            "optimizer_success": true,
+            "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+            "slope_l2": 1e-06,
+            "status": "fitted",
+            "objective": 0.3346778657881671,
+            "excluded_groups": [
+              "investigation_christchurch_metro_sports_facility"
+            ]
+          },
+          "investigation_marshland": {
+            "calibrator_version": "v2_monotone_platt_1",
+            "source_role": "validation",
+            "fit_role": "evaluation",
+            "score_kind": "native_probability_logit",
+            "tau_mpa": 1.0,
+            "probability_epsilon": 1e-06,
+            "weighting": "equal_sites_then_equal_rows_within_site",
+            "group_column": "investigation_group",
+            "training_groups": [
+              "investigation_christchurch_metro_sports_facility"
+            ],
+            "training_sites": [
+              "christchurch_metro_sports_facility"
+            ],
+            "n_training_rows": 1920,
+            "n_training_sites": 1,
+            "n_training_groups": 1,
+            "n_positive_rows": 290,
+            "n_negative_rows": 1630,
+            "weighted_positive_prior": 0.15104166666666669,
+            "score_center": -8.733797236190629,
+            "score_scale": 7.618174441574672,
+            "slope": 1.3574353872723672,
+            "intercept": -2.3027372826644283,
+            "constant_probability": null,
+            "fallback_reason": null,
+            "risk_threshold": 0.2,
+            "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+            "optimizer_success": true,
+            "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+            "slope_l2": 1e-06,
+            "status": "fitted",
+            "objective": 0.3087343454040117,
+            "excluded_groups": [
+              "investigation_marshland"
+            ]
+          }
+        }
+      },
+      "oof_calibrators": {
+        "investigation_christchurch_metro_sports_facility": {
+          "calibrator_version": "v2_monotone_platt_1",
+          "source_role": "validation",
+          "fit_role": "evaluation",
+          "score_kind": "native_probability_logit",
+          "tau_mpa": 1.0,
+          "probability_epsilon": 1e-06,
+          "weighting": "equal_sites_then_equal_rows_within_site",
+          "group_column": "investigation_group",
+          "training_groups": [
+            "investigation_marshland"
+          ],
+          "training_sites": [
+            "marshland"
+          ],
+          "n_training_rows": 960,
+          "n_training_sites": 1,
+          "n_training_groups": 1,
+          "n_positive_rows": 110,
+          "n_negative_rows": 850,
+          "weighted_positive_prior": 0.11458333333333334,
+          "score_center": -11.156967596265506,
+          "score_scale": 5.290193774066714,
+          "slope": 0.5509726783724394,
+          "intercept": -2.1715939930142985,
+          "constant_probability": null,
+          "fallback_reason": null,
+          "risk_threshold": 0.2,
+          "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+          "optimizer_success": true,
+          "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "slope_l2": 1e-06,
+          "status": "fitted",
+          "objective": 0.3346778657881671,
+          "excluded_groups": [
+            "investigation_christchurch_metro_sports_facility"
+          ]
+        },
+        "investigation_marshland": {
+          "calibrator_version": "v2_monotone_platt_1",
+          "source_role": "validation",
+          "fit_role": "evaluation",
+          "score_kind": "native_probability_logit",
+          "tau_mpa": 1.0,
+          "probability_epsilon": 1e-06,
+          "weighting": "equal_sites_then_equal_rows_within_site",
+          "group_column": "investigation_group",
+          "training_groups": [
+            "investigation_christchurch_metro_sports_facility"
+          ],
+          "training_sites": [
+            "christchurch_metro_sports_facility"
+          ],
+          "n_training_rows": 1920,
+          "n_training_sites": 1,
+          "n_training_groups": 1,
+          "n_positive_rows": 290,
+          "n_negative_rows": 1630,
+          "weighted_positive_prior": 0.15104166666666669,
+          "score_center": -8.733797236190629,
+          "score_scale": 7.618174441574672,
+          "slope": 1.3574353872723672,
+          "intercept": -2.3027372826644283,
+          "constant_probability": null,
+          "fallback_reason": null,
+          "risk_threshold": 0.2,
+          "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+          "optimizer_success": true,
+          "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "slope_l2": 1e-06,
+          "status": "fitted",
+          "objective": 0.3087343454040117,
+          "excluded_groups": [
+            "investigation_marshland"
+          ]
+        }
+      },
+      "excluded_groups": []
+    }
+  },
+  "v7_frontier_structural_analog_empirical": {
+    "0": {
+      "calibrator_version": "v2_monotone_platt_1",
+      "source_role": "validation",
+      "fit_role": "evaluation",
+      "score_kind": "native_probability_logit",
+      "tau_mpa": 1.0,
+      "probability_epsilon": 1e-06,
+      "weighting": "equal_sites_then_equal_rows_within_site",
+      "group_column": "investigation_group",
+      "training_groups": [
+        "investigation_lower_hutt_town_hall",
+        "investigation_tauranga_farmers_building"
+      ],
+      "training_sites": [
+        "lower_hutt_town_hall",
+        "tauranga_farmers_building"
+      ],
+      "n_training_rows": 2880,
+      "n_training_sites": 2,
+      "n_training_groups": 2,
+      "n_positive_rows": 545,
+      "n_negative_rows": 2335,
+      "weighted_positive_prior": 0.1892361111111111,
+      "score_center": -2.6665590748956576,
+      "score_scale": 3.3471061636607624,
+      "slope": 2.9282369359609812,
+      "intercept": -2.6871177257371412,
+      "constant_probability": null,
+      "fallback_reason": null,
+      "risk_threshold": 0.2,
+      "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+      "optimizer_success": true,
+      "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "slope_l2": 1e-06,
+      "status": "fitted",
+      "objective": 0.3870368012068031,
+      "crossfit": {
+        "mode": "leave_investigation_group_out",
+        "complete": true,
+        "n_groups": 2,
+        "held_out_fits": {
+          "investigation_lower_hutt_town_hall": {
+            "calibrator_version": "v2_monotone_platt_1",
+            "source_role": "validation",
+            "fit_role": "evaluation",
+            "score_kind": "native_probability_logit",
+            "tau_mpa": 1.0,
+            "probability_epsilon": 1e-06,
+            "weighting": "equal_sites_then_equal_rows_within_site",
+            "group_column": "investigation_group",
+            "training_groups": [
+              "investigation_tauranga_farmers_building"
+            ],
+            "training_sites": [
+              "tauranga_farmers_building"
+            ],
+            "n_training_rows": 1440,
+            "n_training_sites": 1,
+            "n_training_groups": 1,
+            "n_positive_rows": 455,
+            "n_negative_rows": 985,
+            "weighted_positive_prior": 0.3159722222222222,
+            "score_center": -0.7792523082358608,
+            "score_scale": 0.8481641218471411,
+            "slope": 0.3534917441239336,
+            "intercept": -0.795404414903018,
+            "constant_probability": null,
+            "fallback_reason": null,
+            "risk_threshold": 0.2,
+            "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+            "optimizer_success": true,
+            "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+            "slope_l2": 1e-06,
+            "status": "fitted",
+            "objective": 0.6110368407737697,
+            "excluded_groups": [
+              "investigation_lower_hutt_town_hall"
+            ]
+          },
+          "investigation_tauranga_farmers_building": {
+            "calibrator_version": "v2_monotone_platt_1",
+            "source_role": "validation",
+            "fit_role": "evaluation",
+            "score_kind": "native_probability_logit",
+            "tau_mpa": 1.0,
+            "probability_epsilon": 1e-06,
+            "weighting": "equal_sites_then_equal_rows_within_site",
+            "group_column": "investigation_group",
+            "training_groups": [
+              "investigation_lower_hutt_town_hall"
+            ],
+            "training_sites": [
+              "lower_hutt_town_hall"
+            ],
+            "n_training_rows": 1440,
+            "n_training_sites": 1,
+            "n_training_groups": 1,
+            "n_positive_rows": 90,
+            "n_negative_rows": 1350,
+            "weighted_positive_prior": 0.0625,
+            "score_center": -4.553865841555455,
+            "score_scale": 3.816150324749182,
+            "slope": 6.405984467996254,
+            "intercept": -7.950729580026787,
+            "constant_probability": null,
+            "fallback_reason": null,
+            "risk_threshold": 0.2,
+            "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+            "optimizer_success": true,
+            "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+            "slope_l2": 1e-06,
+            "status": "fitted",
+            "objective": 0.1251759211125683,
+            "excluded_groups": [
+              "investigation_tauranga_farmers_building"
+            ]
+          }
+        }
+      },
+      "oof_calibrators": {
+        "investigation_lower_hutt_town_hall": {
+          "calibrator_version": "v2_monotone_platt_1",
+          "source_role": "validation",
+          "fit_role": "evaluation",
+          "score_kind": "native_probability_logit",
+          "tau_mpa": 1.0,
+          "probability_epsilon": 1e-06,
+          "weighting": "equal_sites_then_equal_rows_within_site",
+          "group_column": "investigation_group",
+          "training_groups": [
+            "investigation_tauranga_farmers_building"
+          ],
+          "training_sites": [
+            "tauranga_farmers_building"
+          ],
+          "n_training_rows": 1440,
+          "n_training_sites": 1,
+          "n_training_groups": 1,
+          "n_positive_rows": 455,
+          "n_negative_rows": 985,
+          "weighted_positive_prior": 0.3159722222222222,
+          "score_center": -0.7792523082358608,
+          "score_scale": 0.8481641218471411,
+          "slope": 0.3534917441239336,
+          "intercept": -0.795404414903018,
+          "constant_probability": null,
+          "fallback_reason": null,
+          "risk_threshold": 0.2,
+          "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+          "optimizer_success": true,
+          "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "slope_l2": 1e-06,
+          "status": "fitted",
+          "objective": 0.6110368407737697,
+          "excluded_groups": [
+            "investigation_lower_hutt_town_hall"
+          ]
+        },
+        "investigation_tauranga_farmers_building": {
+          "calibrator_version": "v2_monotone_platt_1",
+          "source_role": "validation",
+          "fit_role": "evaluation",
+          "score_kind": "native_probability_logit",
+          "tau_mpa": 1.0,
+          "probability_epsilon": 1e-06,
+          "weighting": "equal_sites_then_equal_rows_within_site",
+          "group_column": "investigation_group",
+          "training_groups": [
+            "investigation_lower_hutt_town_hall"
+          ],
+          "training_sites": [
+            "lower_hutt_town_hall"
+          ],
+          "n_training_rows": 1440,
+          "n_training_sites": 1,
+          "n_training_groups": 1,
+          "n_positive_rows": 90,
+          "n_negative_rows": 1350,
+          "weighted_positive_prior": 0.0625,
+          "score_center": -4.553865841555455,
+          "score_scale": 3.816150324749182,
+          "slope": 6.405984467996254,
+          "intercept": -7.950729580026787,
+          "constant_probability": null,
+          "fallback_reason": null,
+          "risk_threshold": 0.2,
+          "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+          "optimizer_success": true,
+          "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "slope_l2": 1e-06,
+          "status": "fitted",
+          "objective": 0.1251759211125683,
+          "excluded_groups": [
+            "investigation_tauranga_farmers_building"
+          ]
+        }
+      },
+      "excluded_groups": []
+    },
+    "1": {
+      "calibrator_version": "v2_monotone_platt_1",
+      "source_role": "validation",
+      "fit_role": "evaluation",
+      "score_kind": "native_probability_logit",
+      "tau_mpa": 1.0,
+      "probability_epsilon": 1e-06,
+      "weighting": "equal_sites_then_equal_rows_within_site",
+      "group_column": "investigation_group",
+      "training_groups": [
+        "investigation_lower_hutt_town_hall",
+        "investigation_tauranga_farmers_building"
+      ],
+      "training_sites": [
+        "lower_hutt_town_hall",
+        "tauranga_farmers_building"
+      ],
+      "n_training_rows": 2880,
+      "n_training_sites": 2,
+      "n_training_groups": 2,
+      "n_positive_rows": 545,
+      "n_negative_rows": 2335,
+      "weighted_positive_prior": 0.1892361111111111,
+      "score_center": -2.6258859924262934,
+      "score_scale": 3.336835820588869,
+      "slope": 2.9754099851960674,
+      "intercept": -2.709777620574043,
+      "constant_probability": null,
+      "fallback_reason": null,
+      "risk_threshold": 0.2,
+      "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+      "optimizer_success": true,
+      "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "slope_l2": 1e-06,
+      "status": "fitted",
+      "objective": 0.3862297405946516,
+      "crossfit": {
+        "mode": "leave_investigation_group_out",
+        "complete": true,
+        "n_groups": 2,
+        "held_out_fits": {
+          "investigation_lower_hutt_town_hall": {
+            "calibrator_version": "v2_monotone_platt_1",
+            "source_role": "validation",
+            "fit_role": "evaluation",
+            "score_kind": "native_probability_logit",
+            "tau_mpa": 1.0,
+            "probability_epsilon": 1e-06,
+            "weighting": "equal_sites_then_equal_rows_within_site",
+            "group_column": "investigation_group",
+            "training_groups": [
+              "investigation_tauranga_farmers_building"
+            ],
+            "training_sites": [
+              "tauranga_farmers_building"
+            ],
+            "n_training_rows": 1440,
+            "n_training_sites": 1,
+            "n_training_groups": 1,
+            "n_positive_rows": 455,
+            "n_negative_rows": 985,
+            "weighted_positive_prior": 0.3159722222222222,
+            "score_center": -0.7528387862612433,
+            "score_scale": 0.826921456226883,
+            "slope": 0.35863423002374556,
+            "intercept": -0.7959931893916041,
+            "constant_probability": null,
+            "fallback_reason": null,
+            "risk_threshold": 0.2,
+            "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+            "optimizer_success": true,
+            "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+            "slope_l2": 1e-06,
+            "status": "fitted",
+            "objective": 0.6106209519409805,
+            "excluded_groups": [
+              "investigation_lower_hutt_town_hall"
+            ]
+          },
+          "investigation_tauranga_farmers_building": {
+            "calibrator_version": "v2_monotone_platt_1",
+            "source_role": "validation",
+            "fit_role": "evaluation",
+            "score_kind": "native_probability_logit",
+            "tau_mpa": 1.0,
+            "probability_epsilon": 1e-06,
+            "weighting": "equal_sites_then_equal_rows_within_site",
+            "group_column": "investigation_group",
+            "training_groups": [
+              "investigation_lower_hutt_town_hall"
+            ],
+            "training_sites": [
+              "lower_hutt_town_hall"
+            ],
+            "n_training_rows": 1440,
+            "n_training_sites": 1,
+            "n_training_groups": 1,
+            "n_positive_rows": 90,
+            "n_negative_rows": 1350,
+            "weighted_positive_prior": 0.0625,
+            "score_center": -4.498933198591343,
+            "score_scale": 3.816875138030611,
+            "slope": 6.376295478562505,
+            "intercept": -7.928712833419747,
+            "constant_probability": null,
+            "fallback_reason": null,
+            "risk_threshold": 0.2,
+            "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+            "optimizer_success": true,
+            "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+            "slope_l2": 1e-06,
+            "status": "fitted",
+            "objective": 0.1246323616895242,
+            "excluded_groups": [
+              "investigation_tauranga_farmers_building"
+            ]
+          }
+        }
+      },
+      "oof_calibrators": {
+        "investigation_lower_hutt_town_hall": {
+          "calibrator_version": "v2_monotone_platt_1",
+          "source_role": "validation",
+          "fit_role": "evaluation",
+          "score_kind": "native_probability_logit",
+          "tau_mpa": 1.0,
+          "probability_epsilon": 1e-06,
+          "weighting": "equal_sites_then_equal_rows_within_site",
+          "group_column": "investigation_group",
+          "training_groups": [
+            "investigation_tauranga_farmers_building"
+          ],
+          "training_sites": [
+            "tauranga_farmers_building"
+          ],
+          "n_training_rows": 1440,
+          "n_training_sites": 1,
+          "n_training_groups": 1,
+          "n_positive_rows": 455,
+          "n_negative_rows": 985,
+          "weighted_positive_prior": 0.3159722222222222,
+          "score_center": -0.7528387862612433,
+          "score_scale": 0.826921456226883,
+          "slope": 0.35863423002374556,
+          "intercept": -0.7959931893916041,
+          "constant_probability": null,
+          "fallback_reason": null,
+          "risk_threshold": 0.2,
+          "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+          "optimizer_success": true,
+          "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "slope_l2": 1e-06,
+          "status": "fitted",
+          "objective": 0.6106209519409805,
+          "excluded_groups": [
+            "investigation_lower_hutt_town_hall"
+          ]
+        },
+        "investigation_tauranga_farmers_building": {
+          "calibrator_version": "v2_monotone_platt_1",
+          "source_role": "validation",
+          "fit_role": "evaluation",
+          "score_kind": "native_probability_logit",
+          "tau_mpa": 1.0,
+          "probability_epsilon": 1e-06,
+          "weighting": "equal_sites_then_equal_rows_within_site",
+          "group_column": "investigation_group",
+          "training_groups": [
+            "investigation_lower_hutt_town_hall"
+          ],
+          "training_sites": [
+            "lower_hutt_town_hall"
+          ],
+          "n_training_rows": 1440,
+          "n_training_sites": 1,
+          "n_training_groups": 1,
+          "n_positive_rows": 90,
+          "n_negative_rows": 1350,
+          "weighted_positive_prior": 0.0625,
+          "score_center": -4.498933198591343,
+          "score_scale": 3.816875138030611,
+          "slope": 6.376295478562505,
+          "intercept": -7.928712833419747,
+          "constant_probability": null,
+          "fallback_reason": null,
+          "risk_threshold": 0.2,
+          "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+          "optimizer_success": true,
+          "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "slope_l2": 1e-06,
+          "status": "fitted",
+          "objective": 0.1246323616895242,
+          "excluded_groups": [
+            "investigation_tauranga_farmers_building"
+          ]
+        }
+      },
+      "excluded_groups": []
+    },
+    "2": {
+      "calibrator_version": "v2_monotone_platt_1",
+      "source_role": "validation",
+      "fit_role": "evaluation",
+      "score_kind": "native_probability_logit",
+      "tau_mpa": 1.0,
+      "probability_epsilon": 1e-06,
+      "weighting": "equal_sites_then_equal_rows_within_site",
+      "group_column": "investigation_group",
+      "training_groups": [
+        "investigation_christchurch_metro_sports_facility",
+        "investigation_marshland"
+      ],
+      "training_sites": [
+        "christchurch_metro_sports_facility",
+        "marshland"
+      ],
+      "n_training_rows": 2880,
+      "n_training_sites": 2,
+      "n_training_groups": 2,
+      "n_positive_rows": 400,
+      "n_negative_rows": 2480,
+      "weighted_positive_prior": 0.1328125,
+      "score_center": -3.3730145942014436,
+      "score_scale": 3.727892104608005,
+      "slope": 2.4735312774071843,
+      "intercept": -2.939590459753289,
+      "constant_probability": null,
+      "fallback_reason": null,
+      "risk_threshold": 0.2,
+      "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+      "optimizer_success": true,
+      "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "slope_l2": 1e-06,
+      "status": "fitted",
+      "objective": 0.3170346019680865,
+      "crossfit": {
+        "mode": "leave_investigation_group_out",
+        "complete": true,
+        "n_groups": 2,
+        "held_out_fits": {
+          "investigation_christchurch_metro_sports_facility": {
+            "calibrator_version": "v2_monotone_platt_1",
+            "source_role": "validation",
+            "fit_role": "evaluation",
+            "score_kind": "native_probability_logit",
+            "tau_mpa": 1.0,
+            "probability_epsilon": 1e-06,
+            "weighting": "equal_sites_then_equal_rows_within_site",
+            "group_column": "investigation_group",
+            "training_groups": [
+              "investigation_marshland"
+            ],
+            "training_sites": [
+              "marshland"
+            ],
+            "n_training_rows": 960,
+            "n_training_sites": 1,
+            "n_training_groups": 1,
+            "n_positive_rows": 110,
+            "n_negative_rows": 850,
+            "weighted_positive_prior": 0.11458333333333334,
+            "score_center": -3.653579553574363,
+            "score_scale": 3.256037938632838,
+            "slope": 1.2852080874538319,
+            "intercept": -2.438393402579911,
+            "constant_probability": null,
+            "fallback_reason": null,
+            "risk_threshold": 0.2,
+            "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+            "optimizer_success": true,
+            "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+            "slope_l2": 1e-06,
+            "status": "fitted",
+            "objective": 0.3281807413642425,
+            "excluded_groups": [
+              "investigation_christchurch_metro_sports_facility"
+            ]
+          },
+          "investigation_marshland": {
+            "calibrator_version": "v2_monotone_platt_1",
+            "source_role": "validation",
+            "fit_role": "evaluation",
+            "score_kind": "native_probability_logit",
+            "tau_mpa": 1.0,
+            "probability_epsilon": 1e-06,
+            "weighting": "equal_sites_then_equal_rows_within_site",
+            "group_column": "investigation_group",
+            "training_groups": [
+              "investigation_christchurch_metro_sports_facility"
+            ],
+            "training_sites": [
+              "christchurch_metro_sports_facility"
+            ],
+            "n_training_rows": 1920,
+            "n_training_sites": 1,
+            "n_training_groups": 1,
+            "n_positive_rows": 290,
+            "n_negative_rows": 1630,
+            "weighted_positive_prior": 0.15104166666666669,
+            "score_center": -3.092449634828526,
+            "score_scale": 4.127365096102498,
+            "slope": 4.632540171012557,
+            "intercept": -4.153544505112431,
+            "constant_probability": null,
+            "fallback_reason": null,
+            "risk_threshold": 0.2,
+            "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+            "optimizer_success": true,
+            "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+            "slope_l2": 1e-06,
+            "status": "fitted",
+            "objective": 0.28150258685197377,
+            "excluded_groups": [
+              "investigation_marshland"
+            ]
+          }
+        }
+      },
+      "oof_calibrators": {
+        "investigation_christchurch_metro_sports_facility": {
+          "calibrator_version": "v2_monotone_platt_1",
+          "source_role": "validation",
+          "fit_role": "evaluation",
+          "score_kind": "native_probability_logit",
+          "tau_mpa": 1.0,
+          "probability_epsilon": 1e-06,
+          "weighting": "equal_sites_then_equal_rows_within_site",
+          "group_column": "investigation_group",
+          "training_groups": [
+            "investigation_marshland"
+          ],
+          "training_sites": [
+            "marshland"
+          ],
+          "n_training_rows": 960,
+          "n_training_sites": 1,
+          "n_training_groups": 1,
+          "n_positive_rows": 110,
+          "n_negative_rows": 850,
+          "weighted_positive_prior": 0.11458333333333334,
+          "score_center": -3.653579553574363,
+          "score_scale": 3.256037938632838,
+          "slope": 1.2852080874538319,
+          "intercept": -2.438393402579911,
+          "constant_probability": null,
+          "fallback_reason": null,
+          "risk_threshold": 0.2,
+          "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+          "optimizer_success": true,
+          "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "slope_l2": 1e-06,
+          "status": "fitted",
+          "objective": 0.3281807413642425,
+          "excluded_groups": [
+            "investigation_christchurch_metro_sports_facility"
+          ]
+        },
+        "investigation_marshland": {
+          "calibrator_version": "v2_monotone_platt_1",
+          "source_role": "validation",
+          "fit_role": "evaluation",
+          "score_kind": "native_probability_logit",
+          "tau_mpa": 1.0,
+          "probability_epsilon": 1e-06,
+          "weighting": "equal_sites_then_equal_rows_within_site",
+          "group_column": "investigation_group",
+          "training_groups": [
+            "investigation_christchurch_metro_sports_facility"
+          ],
+          "training_sites": [
+            "christchurch_metro_sports_facility"
+          ],
+          "n_training_rows": 1920,
+          "n_training_sites": 1,
+          "n_training_groups": 1,
+          "n_positive_rows": 290,
+          "n_negative_rows": 1630,
+          "weighted_positive_prior": 0.15104166666666669,
+          "score_center": -3.092449634828526,
+          "score_scale": 4.127365096102498,
+          "slope": 4.632540171012557,
+          "intercept": -4.153544505112431,
+          "constant_probability": null,
+          "fallback_reason": null,
+          "risk_threshold": 0.2,
+          "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+          "optimizer_success": true,
+          "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "slope_l2": 1e-06,
+          "status": "fitted",
+          "objective": 0.28150258685197377,
+          "excluded_groups": [
+            "investigation_marshland"
+          ]
+        }
+      },
+      "excluded_groups": []
+    }
+  },
+  "v7_frontier_structural_analog_joint": {
+    "0": {
+      "calibrator_version": "v2_monotone_platt_1",
+      "source_role": "validation",
+      "fit_role": "evaluation",
+      "score_kind": "native_probability_logit",
+      "tau_mpa": 1.0,
+      "probability_epsilon": 1e-06,
+      "weighting": "equal_sites_then_equal_rows_within_site",
+      "group_column": "investigation_group",
+      "training_groups": [
+        "investigation_lower_hutt_town_hall",
+        "investigation_tauranga_farmers_building"
+      ],
+      "training_sites": [
+        "lower_hutt_town_hall",
+        "tauranga_farmers_building"
+      ],
+      "n_training_rows": 2880,
+      "n_training_sites": 2,
+      "n_training_groups": 2,
+      "n_positive_rows": 545,
+      "n_negative_rows": 2335,
+      "weighted_positive_prior": 0.1892361111111111,
+      "score_center": -9.301733278514114,
+      "score_scale": 6.492431737354323,
+      "slope": 0.8139622792088539,
+      "intercept": -1.6559216603939164,
+      "constant_probability": null,
+      "fallback_reason": null,
+      "risk_threshold": 0.2,
+      "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+      "optimizer_success": true,
+      "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "slope_l2": 1e-06,
+      "status": "fitted",
+      "objective": 0.43095075791839893,
+      "crossfit": {
+        "mode": "leave_investigation_group_out",
+        "complete": true,
+        "n_groups": 2,
+        "held_out_fits": {
+          "investigation_lower_hutt_town_hall": {
+            "calibrator_version": "v2_monotone_platt_1",
+            "source_role": "validation",
+            "fit_role": "evaluation",
+            "score_kind": "native_probability_logit",
+            "tau_mpa": 1.0,
+            "probability_epsilon": 1e-06,
+            "weighting": "equal_sites_then_equal_rows_within_site",
+            "group_column": "investigation_group",
+            "training_groups": [
+              "investigation_tauranga_farmers_building"
+            ],
+            "training_sites": [
+              "tauranga_farmers_building"
+            ],
+            "n_training_rows": 1440,
+            "n_training_sites": 1,
+            "n_training_groups": 1,
+            "n_positive_rows": 455,
+            "n_negative_rows": 985,
+            "weighted_positive_prior": 0.3159722222222222,
+            "score_center": -7.110221412195226,
+            "score_scale": 6.954737104396399,
+            "slope": 0.32900434132198875,
+            "intercept": -0.7916845020513279,
+            "constant_probability": null,
+            "fallback_reason": null,
+            "risk_threshold": 0.2,
+            "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+            "optimizer_success": true,
+            "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+            "slope_l2": 1e-06,
+            "status": "fitted",
+            "objective": 0.6121524539267533,
+            "excluded_groups": [
+              "investigation_lower_hutt_town_hall"
+            ]
+          },
+          "investigation_tauranga_farmers_building": {
+            "calibrator_version": "v2_monotone_platt_1",
+            "source_role": "validation",
+            "fit_role": "evaluation",
+            "score_kind": "native_probability_logit",
+            "tau_mpa": 1.0,
+            "probability_epsilon": 1e-06,
+            "weighting": "equal_sites_then_equal_rows_within_site",
+            "group_column": "investigation_group",
+            "training_groups": [
+              "investigation_lower_hutt_town_hall"
+            ],
+            "training_sites": [
+              "lower_hutt_town_hall"
+            ],
+            "n_training_rows": 1440,
+            "n_training_sites": 1,
+            "n_training_groups": 1,
+            "n_positive_rows": 90,
+            "n_negative_rows": 1350,
+            "weighted_positive_prior": 0.0625,
+            "score_center": -11.493245144832972,
+            "score_scale": 5.1312301660235775,
+            "slope": 1.9696798018810568,
+            "intercept": -4.957923702524142,
+            "constant_probability": null,
+            "fallback_reason": null,
+            "risk_threshold": 0.2,
+            "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+            "optimizer_success": true,
+            "optimizer_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+            "slope_l2": 1e-06,
+            "status": "fitted",
+            "objective": 0.1246835642297354,
+            "excluded_groups": [
+              "investigation_tauranga_farmers_building"
+            ]
+          }
+        }
+      },
+      "oof_calibrators": {
+        "investigation_lower_hutt_town_hall": {
+          "calibrator_version": "v2_monotone_platt_1",
+          "source_role": "validation",
+          "fit_role": "evaluation",
+          "score_kind": "native_probability_logit",
+          "tau_mpa": 1.0,
+          "probability_epsilon": 1e-06,
+          "weighting": "equal_sites_then_equal_rows_within_site",
+          "group_column": "investigation_group",
+          "training_groups": [
+            "investigation_tauranga_farmers_building"
+          ],
+          "training_sites": [
+            "tauranga_farmers_building"
+          ],
+          "n_training_rows": 1440,
+          "n_training_sites": 1,
+          "n_training_groups": 1,
+          "n_positive_rows": 455,
+          "n_negative_rows": 985,
+          "weighted_positive_prior": 0.3159722222222222,
+          "score_center": -7.110221412195226,
+          "score_scale": 6.954737104396399,
+          "slope": 0.32900434132198875,
+          "intercept": -0.7916845020513279,
+          "constant_probability": null,
+          "fallback_reason": null,
+          "risk_threshold": 0.2,
+          "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+          "optimizer_success": true,
+          "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "slope_l2": 1e-06,
+          "status": "fitted",
+          "objective": 0.6121524539267533,
+          "excluded_groups": [
+            "investigation_lower_hutt_town_hall"
+          ]
+        },
+        "investigation_tauranga_farmers_building": {
+          "calibrator_version": "v2_monotone_platt_1",
+          "source_role": "validation",
+          "fit_role": "evaluation",
+          "score_kind": "native_probability_logit",
+          "tau_mpa": 1.0,
+          "probability_epsilon": 1e-06,
+          "weighting": "equal_sites_then_equal_rows_within_site",
+          "group_column": "investigation_group",
+          "training_groups": [
+            "investigation_lower_hutt_town_hall"
+          ],
+          "training_sites": [
+            "lower_hutt_town_hall"
+          ],
+          "n_training_rows": 1440,
+          "n_training_sites": 1,
+          "n_training_groups": 1,
+          "n_positive_rows": 90,
+          "n_negative_rows": 1350,
+          "weighted_positive_prior": 0.0625,
+          "score_center": -11.493245144832972,
+          "score_scale": 5.1312301660235775,
+          "slope": 1.9696798018810568,
+          "intercept": -4.957923702524142,
+          "constant_probability": null,
+          "fallback_reason": null,
+          "risk_threshold": 0.2,
+          "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+          "optimizer_success": true,
+          "optimizer_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+          "slope_l2": 1e-06,
+          "status": "fitted",
+          "objective": 0.1246835642297354,
+          "excluded_groups": [
+            "investigation_tauranga_farmers_building"
+          ]
+        }
+      },
+      "excluded_groups": []
+    },
+    "1": {
+      "calibrator_version": "v2_monotone_platt_1",
+      "source_role": "validation",
+      "fit_role": "evaluation",
+      "score_kind": "native_probability_logit",
+      "tau_mpa": 1.0,
+      "probability_epsilon": 1e-06,
+      "weighting": "equal_sites_then_equal_rows_within_site",
+      "group_column": "investigation_group",
+      "training_groups": [
+        "investigation_lower_hutt_town_hall",
+        "investigation_tauranga_farmers_building"
+      ],
+      "training_sites": [
+        "lower_hutt_town_hall",
+        "tauranga_farmers_building"
+      ],
+      "n_training_rows": 2880,
+      "n_training_sites": 2,
+      "n_training_groups": 2,
+      "n_positive_rows": 545,
+      "n_negative_rows": 2335,
+      "weighted_positive_prior": 0.1892361111111111,
+      "score_center": -9.278277508700075,
+      "score_scale": 6.490936443589038,
+      "slope": 0.8294479962078422,
+      "intercept": -1.6638583851317192,
+      "constant_probability": null,
+      "fallback_reason": null,
+      "risk_threshold": 0.2,
+      "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+      "optimizer_success": true,
+      "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "slope_l2": 1e-06,
+      "status": "fitted",
+      "objective": 0.429210953125443,
+      "crossfit": {
+        "mode": "leave_investigation_group_out",
+        "complete": true,
+        "n_groups": 2,
+        "held_out_fits": {
+          "investigation_lower_hutt_town_hall": {
+            "calibrator_version": "v2_monotone_platt_1",
+            "source_role": "validation",
+            "fit_role": "evaluation",
+            "score_kind": "native_probability_logit",
+            "tau_mpa": 1.0,
+            "probability_epsilon": 1e-06,
+            "weighting": "equal_sites_then_equal_rows_within_site",
+            "group_column": "investigation_group",
+            "training_groups": [
+              "investigation_tauranga_farmers_building"
+            ],
+            "training_sites": [
+              "tauranga_farmers_building"
+            ],
+            "n_training_rows": 1440,
+            "n_training_sites": 1,
+            "n_training_groups": 1,
+            "n_positive_rows": 455,
+            "n_negative_rows": 985,
+            "weighted_positive_prior": 0.3159722222222222,
+            "score_center": -7.0345911315297265,
+            "score_scale": 6.928756638153701,
+            "slope": 0.34754772335444395,
+            "intercept": -0.7939770323977677,
+            "constant_probability": null,
+            "fallback_reason": null,
+            "risk_threshold": 0.2,
+            "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+            "optimizer_success": true,
+            "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+            "slope_l2": 1e-06,
+            "status": "fitted",
+            "objective": 0.6108626409351187,
+            "excluded_groups": [
+              "investigation_lower_hutt_town_hall"
+            ]
+          },
+          "investigation_tauranga_farmers_building": {
+            "calibrator_version": "v2_monotone_platt_1",
+            "source_role": "validation",
+            "fit_role": "evaluation",
+            "score_kind": "native_probability_logit",
+            "tau_mpa": 1.0,
+            "probability_epsilon": 1e-06,
+            "weighting": "equal_sites_then_equal_rows_within_site",
+            "group_column": "investigation_group",
+            "training_groups": [
+              "investigation_lower_hutt_town_hall"
+            ],
+            "training_sites": [
+              "lower_hutt_town_hall"
+            ],
+            "n_training_rows": 1440,
+            "n_training_sites": 1,
+            "n_training_groups": 1,
+            "n_positive_rows": 90,
+            "n_negative_rows": 1350,
+            "weighted_positive_prior": 0.0625,
+            "score_center": -11.521963885870395,
+            "score_scale": 5.117478496336471,
+            "slope": 1.8092560724717566,
+            "intercept": -4.646494357920129,
+            "constant_probability": null,
+            "fallback_reason": null,
+            "risk_threshold": 0.2,
+            "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+            "optimizer_success": true,
+            "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+            "slope_l2": 1e-06,
+            "status": "fitted",
+            "objective": 0.12973227899520592,
+            "excluded_groups": [
+              "investigation_tauranga_farmers_building"
+            ]
+          }
+        }
+      },
+      "oof_calibrators": {
+        "investigation_lower_hutt_town_hall": {
+          "calibrator_version": "v2_monotone_platt_1",
+          "source_role": "validation",
+          "fit_role": "evaluation",
+          "score_kind": "native_probability_logit",
+          "tau_mpa": 1.0,
+          "probability_epsilon": 1e-06,
+          "weighting": "equal_sites_then_equal_rows_within_site",
+          "group_column": "investigation_group",
+          "training_groups": [
+            "investigation_tauranga_farmers_building"
+          ],
+          "training_sites": [
+            "tauranga_farmers_building"
+          ],
+          "n_training_rows": 1440,
+          "n_training_sites": 1,
+          "n_training_groups": 1,
+          "n_positive_rows": 455,
+          "n_negative_rows": 985,
+          "weighted_positive_prior": 0.3159722222222222,
+          "score_center": -7.0345911315297265,
+          "score_scale": 6.928756638153701,
+          "slope": 0.34754772335444395,
+          "intercept": -0.7939770323977677,
+          "constant_probability": null,
+          "fallback_reason": null,
+          "risk_threshold": 0.2,
+          "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+          "optimizer_success": true,
+          "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "slope_l2": 1e-06,
+          "status": "fitted",
+          "objective": 0.6108626409351187,
+          "excluded_groups": [
+            "investigation_lower_hutt_town_hall"
+          ]
+        },
+        "investigation_tauranga_farmers_building": {
+          "calibrator_version": "v2_monotone_platt_1",
+          "source_role": "validation",
+          "fit_role": "evaluation",
+          "score_kind": "native_probability_logit",
+          "tau_mpa": 1.0,
+          "probability_epsilon": 1e-06,
+          "weighting": "equal_sites_then_equal_rows_within_site",
+          "group_column": "investigation_group",
+          "training_groups": [
+            "investigation_lower_hutt_town_hall"
+          ],
+          "training_sites": [
+            "lower_hutt_town_hall"
+          ],
+          "n_training_rows": 1440,
+          "n_training_sites": 1,
+          "n_training_groups": 1,
+          "n_positive_rows": 90,
+          "n_negative_rows": 1350,
+          "weighted_positive_prior": 0.0625,
+          "score_center": -11.521963885870395,
+          "score_scale": 5.117478496336471,
+          "slope": 1.8092560724717566,
+          "intercept": -4.646494357920129,
+          "constant_probability": null,
+          "fallback_reason": null,
+          "risk_threshold": 0.2,
+          "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+          "optimizer_success": true,
+          "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "slope_l2": 1e-06,
+          "status": "fitted",
+          "objective": 0.12973227899520592,
+          "excluded_groups": [
+            "investigation_tauranga_farmers_building"
+          ]
+        }
+      },
+      "excluded_groups": []
+    },
+    "2": {
+      "calibrator_version": "v2_monotone_platt_1",
+      "source_role": "validation",
+      "fit_role": "evaluation",
+      "score_kind": "native_probability_logit",
+      "tau_mpa": 1.0,
+      "probability_epsilon": 1e-06,
+      "weighting": "equal_sites_then_equal_rows_within_site",
+      "group_column": "investigation_group",
+      "training_groups": [
+        "investigation_christchurch_metro_sports_facility",
+        "investigation_marshland"
+      ],
+      "training_sites": [
+        "christchurch_metro_sports_facility",
+        "marshland"
+      ],
+      "n_training_rows": 2880,
+      "n_training_sites": 2,
+      "n_training_groups": 2,
+      "n_positive_rows": 400,
+      "n_negative_rows": 2480,
+      "weighted_positive_prior": 0.1328125,
+      "score_center": -10.372738517537123,
+      "score_scale": 6.525107600967964,
+      "slope": 1.0216643795395668,
+      "intercept": -2.2456417281280348,
+      "constant_probability": null,
+      "fallback_reason": null,
+      "risk_threshold": 0.2,
+      "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+      "optimizer_success": true,
+      "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "slope_l2": 1e-06,
+      "status": "fitted",
+      "objective": 0.3141383197527172,
+      "crossfit": {
+        "mode": "leave_investigation_group_out",
+        "complete": true,
+        "n_groups": 2,
+        "held_out_fits": {
+          "investigation_christchurch_metro_sports_facility": {
+            "calibrator_version": "v2_monotone_platt_1",
+            "source_role": "validation",
+            "fit_role": "evaluation",
+            "score_kind": "native_probability_logit",
+            "tau_mpa": 1.0,
+            "probability_epsilon": 1e-06,
+            "weighting": "equal_sites_then_equal_rows_within_site",
+            "group_column": "investigation_group",
+            "training_groups": [
+              "investigation_marshland"
+            ],
+            "training_sites": [
+              "marshland"
+            ],
+            "n_training_rows": 960,
+            "n_training_sites": 1,
+            "n_training_groups": 1,
+            "n_positive_rows": 110,
+            "n_negative_rows": 850,
+            "weighted_positive_prior": 0.11458333333333334,
+            "score_center": -11.480169664403084,
+            "score_scale": 5.0479316691446,
+            "slope": 0.6194414842876755,
+            "intercept": -2.205972346956926,
+            "constant_probability": null,
+            "fallback_reason": null,
+            "risk_threshold": 0.2,
+            "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+            "optimizer_success": true,
+            "optimizer_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+            "slope_l2": 1e-06,
+            "status": "fitted",
+            "objective": 0.32768977515793796,
+            "excluded_groups": [
+              "investigation_christchurch_metro_sports_facility"
+            ]
+          },
+          "investigation_marshland": {
+            "calibrator_version": "v2_monotone_platt_1",
+            "source_role": "validation",
+            "fit_role": "evaluation",
+            "score_kind": "native_probability_logit",
+            "tau_mpa": 1.0,
+            "probability_epsilon": 1e-06,
+            "weighting": "equal_sites_then_equal_rows_within_site",
+            "group_column": "investigation_group",
+            "training_groups": [
+              "investigation_christchurch_metro_sports_facility"
+            ],
+            "training_sites": [
+              "christchurch_metro_sports_facility"
+            ],
+            "n_training_rows": 1920,
+            "n_training_sites": 1,
+            "n_training_groups": 1,
+            "n_positive_rows": 290,
+            "n_negative_rows": 1630,
+            "weighted_positive_prior": 0.15104166666666669,
+            "score_center": -9.265307370671179,
+            "score_scale": 7.564366251178558,
+            "slope": 1.4053412867002513,
+            "intercept": -2.3250037699190913,
+            "constant_probability": null,
+            "fallback_reason": null,
+            "risk_threshold": 0.2,
+            "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+            "optimizer_success": true,
+            "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+            "slope_l2": 1e-06,
+            "status": "fitted",
+            "objective": 0.29504599237134477,
+            "excluded_groups": [
+              "investigation_marshland"
+            ]
+          }
+        }
+      },
+      "oof_calibrators": {
+        "investigation_christchurch_metro_sports_facility": {
+          "calibrator_version": "v2_monotone_platt_1",
+          "source_role": "validation",
+          "fit_role": "evaluation",
+          "score_kind": "native_probability_logit",
+          "tau_mpa": 1.0,
+          "probability_epsilon": 1e-06,
+          "weighting": "equal_sites_then_equal_rows_within_site",
+          "group_column": "investigation_group",
+          "training_groups": [
+            "investigation_marshland"
+          ],
+          "training_sites": [
+            "marshland"
+          ],
+          "n_training_rows": 960,
+          "n_training_sites": 1,
+          "n_training_groups": 1,
+          "n_positive_rows": 110,
+          "n_negative_rows": 850,
+          "weighted_positive_prior": 0.11458333333333334,
+          "score_center": -11.480169664403084,
+          "score_scale": 5.0479316691446,
+          "slope": 0.6194414842876755,
+          "intercept": -2.205972346956926,
+          "constant_probability": null,
+          "fallback_reason": null,
+          "risk_threshold": 0.2,
+          "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+          "optimizer_success": true,
+          "optimizer_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+          "slope_l2": 1e-06,
+          "status": "fitted",
+          "objective": 0.32768977515793796,
+          "excluded_groups": [
+            "investigation_christchurch_metro_sports_facility"
+          ]
+        },
+        "investigation_marshland": {
+          "calibrator_version": "v2_monotone_platt_1",
+          "source_role": "validation",
+          "fit_role": "evaluation",
+          "score_kind": "native_probability_logit",
+          "tau_mpa": 1.0,
+          "probability_epsilon": 1e-06,
+          "weighting": "equal_sites_then_equal_rows_within_site",
+          "group_column": "investigation_group",
+          "training_groups": [
+            "investigation_christchurch_metro_sports_facility"
+          ],
+          "training_sites": [
+            "christchurch_metro_sports_facility"
+          ],
+          "n_training_rows": 1920,
+          "n_training_sites": 1,
+          "n_training_groups": 1,
+          "n_positive_rows": 290,
+          "n_negative_rows": 1630,
+          "weighted_positive_prior": 0.15104166666666669,
+          "score_center": -9.265307370671179,
+          "score_scale": 7.564366251178558,
+          "slope": 1.4053412867002513,
+          "intercept": -2.3250037699190913,
+          "constant_probability": null,
+          "fallback_reason": null,
+          "risk_threshold": 0.2,
+          "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+          "optimizer_success": true,
+          "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "slope_l2": 1e-06,
+          "status": "fitted",
+          "objective": 0.29504599237134477,
+          "excluded_groups": [
+            "investigation_marshland"
+          ]
+        }
+      },
+      "excluded_groups": []
+    }
+  },
+  "v7_frontier_structural_error_empirical": {
+    "0": {
+      "calibrator_version": "v2_monotone_platt_1",
+      "source_role": "validation",
+      "fit_role": "evaluation",
+      "score_kind": "native_probability_logit",
+      "tau_mpa": 1.0,
+      "probability_epsilon": 1e-06,
+      "weighting": "equal_sites_then_equal_rows_within_site",
+      "group_column": "investigation_group",
+      "training_groups": [
+        "investigation_lower_hutt_town_hall",
+        "investigation_tauranga_farmers_building"
+      ],
+      "training_sites": [
+        "lower_hutt_town_hall",
+        "tauranga_farmers_building"
+      ],
+      "n_training_rows": 2880,
+      "n_training_sites": 2,
+      "n_training_groups": 2,
+      "n_positive_rows": 545,
+      "n_negative_rows": 2335,
+      "weighted_positive_prior": 0.1892361111111111,
+      "score_center": -2.6665590748956576,
+      "score_scale": 3.3471061636607624,
+      "slope": 2.9282369359609812,
+      "intercept": -2.6871177257371412,
+      "constant_probability": null,
+      "fallback_reason": null,
+      "risk_threshold": 0.2,
+      "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+      "optimizer_success": true,
+      "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "slope_l2": 1e-06,
+      "status": "fitted",
+      "objective": 0.3870368012068031,
+      "crossfit": {
+        "mode": "leave_investigation_group_out",
+        "complete": true,
+        "n_groups": 2,
+        "held_out_fits": {
+          "investigation_lower_hutt_town_hall": {
+            "calibrator_version": "v2_monotone_platt_1",
+            "source_role": "validation",
+            "fit_role": "evaluation",
+            "score_kind": "native_probability_logit",
+            "tau_mpa": 1.0,
+            "probability_epsilon": 1e-06,
+            "weighting": "equal_sites_then_equal_rows_within_site",
+            "group_column": "investigation_group",
+            "training_groups": [
+              "investigation_tauranga_farmers_building"
+            ],
+            "training_sites": [
+              "tauranga_farmers_building"
+            ],
+            "n_training_rows": 1440,
+            "n_training_sites": 1,
+            "n_training_groups": 1,
+            "n_positive_rows": 455,
+            "n_negative_rows": 985,
+            "weighted_positive_prior": 0.3159722222222222,
+            "score_center": -0.7792523082358608,
+            "score_scale": 0.8481641218471411,
+            "slope": 0.3534917441239336,
+            "intercept": -0.795404414903018,
+            "constant_probability": null,
+            "fallback_reason": null,
+            "risk_threshold": 0.2,
+            "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+            "optimizer_success": true,
+            "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+            "slope_l2": 1e-06,
+            "status": "fitted",
+            "objective": 0.6110368407737697,
+            "excluded_groups": [
+              "investigation_lower_hutt_town_hall"
+            ]
+          },
+          "investigation_tauranga_farmers_building": {
+            "calibrator_version": "v2_monotone_platt_1",
+            "source_role": "validation",
+            "fit_role": "evaluation",
+            "score_kind": "native_probability_logit",
+            "tau_mpa": 1.0,
+            "probability_epsilon": 1e-06,
+            "weighting": "equal_sites_then_equal_rows_within_site",
+            "group_column": "investigation_group",
+            "training_groups": [
+              "investigation_lower_hutt_town_hall"
+            ],
+            "training_sites": [
+              "lower_hutt_town_hall"
+            ],
+            "n_training_rows": 1440,
+            "n_training_sites": 1,
+            "n_training_groups": 1,
+            "n_positive_rows": 90,
+            "n_negative_rows": 1350,
+            "weighted_positive_prior": 0.0625,
+            "score_center": -4.553865841555455,
+            "score_scale": 3.816150324749182,
+            "slope": 6.405984467996254,
+            "intercept": -7.950729580026787,
+            "constant_probability": null,
+            "fallback_reason": null,
+            "risk_threshold": 0.2,
+            "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+            "optimizer_success": true,
+            "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+            "slope_l2": 1e-06,
+            "status": "fitted",
+            "objective": 0.1251759211125683,
+            "excluded_groups": [
+              "investigation_tauranga_farmers_building"
+            ]
+          }
+        }
+      },
+      "oof_calibrators": {
+        "investigation_lower_hutt_town_hall": {
+          "calibrator_version": "v2_monotone_platt_1",
+          "source_role": "validation",
+          "fit_role": "evaluation",
+          "score_kind": "native_probability_logit",
+          "tau_mpa": 1.0,
+          "probability_epsilon": 1e-06,
+          "weighting": "equal_sites_then_equal_rows_within_site",
+          "group_column": "investigation_group",
+          "training_groups": [
+            "investigation_tauranga_farmers_building"
+          ],
+          "training_sites": [
+            "tauranga_farmers_building"
+          ],
+          "n_training_rows": 1440,
+          "n_training_sites": 1,
+          "n_training_groups": 1,
+          "n_positive_rows": 455,
+          "n_negative_rows": 985,
+          "weighted_positive_prior": 0.3159722222222222,
+          "score_center": -0.7792523082358608,
+          "score_scale": 0.8481641218471411,
+          "slope": 0.3534917441239336,
+          "intercept": -0.795404414903018,
+          "constant_probability": null,
+          "fallback_reason": null,
+          "risk_threshold": 0.2,
+          "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+          "optimizer_success": true,
+          "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "slope_l2": 1e-06,
+          "status": "fitted",
+          "objective": 0.6110368407737697,
+          "excluded_groups": [
+            "investigation_lower_hutt_town_hall"
+          ]
+        },
+        "investigation_tauranga_farmers_building": {
+          "calibrator_version": "v2_monotone_platt_1",
+          "source_role": "validation",
+          "fit_role": "evaluation",
+          "score_kind": "native_probability_logit",
+          "tau_mpa": 1.0,
+          "probability_epsilon": 1e-06,
+          "weighting": "equal_sites_then_equal_rows_within_site",
+          "group_column": "investigation_group",
+          "training_groups": [
+            "investigation_lower_hutt_town_hall"
+          ],
+          "training_sites": [
+            "lower_hutt_town_hall"
+          ],
+          "n_training_rows": 1440,
+          "n_training_sites": 1,
+          "n_training_groups": 1,
+          "n_positive_rows": 90,
+          "n_negative_rows": 1350,
+          "weighted_positive_prior": 0.0625,
+          "score_center": -4.553865841555455,
+          "score_scale": 3.816150324749182,
+          "slope": 6.405984467996254,
+          "intercept": -7.950729580026787,
+          "constant_probability": null,
+          "fallback_reason": null,
+          "risk_threshold": 0.2,
+          "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+          "optimizer_success": true,
+          "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "slope_l2": 1e-06,
+          "status": "fitted",
+          "objective": 0.1251759211125683,
+          "excluded_groups": [
+            "investigation_tauranga_farmers_building"
+          ]
+        }
+      },
+      "excluded_groups": []
+    },
+    "1": {
+      "calibrator_version": "v2_monotone_platt_1",
+      "source_role": "validation",
+      "fit_role": "evaluation",
+      "score_kind": "native_probability_logit",
+      "tau_mpa": 1.0,
+      "probability_epsilon": 1e-06,
+      "weighting": "equal_sites_then_equal_rows_within_site",
+      "group_column": "investigation_group",
+      "training_groups": [
+        "investigation_lower_hutt_town_hall",
+        "investigation_tauranga_farmers_building"
+      ],
+      "training_sites": [
+        "lower_hutt_town_hall",
+        "tauranga_farmers_building"
+      ],
+      "n_training_rows": 2880,
+      "n_training_sites": 2,
+      "n_training_groups": 2,
+      "n_positive_rows": 545,
+      "n_negative_rows": 2335,
+      "weighted_positive_prior": 0.1892361111111111,
+      "score_center": -2.6258859924262934,
+      "score_scale": 3.336835820588869,
+      "slope": 2.9754099851960674,
+      "intercept": -2.709777620574043,
+      "constant_probability": null,
+      "fallback_reason": null,
+      "risk_threshold": 0.2,
+      "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+      "optimizer_success": true,
+      "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "slope_l2": 1e-06,
+      "status": "fitted",
+      "objective": 0.3862297405946516,
+      "crossfit": {
+        "mode": "leave_investigation_group_out",
+        "complete": true,
+        "n_groups": 2,
+        "held_out_fits": {
+          "investigation_lower_hutt_town_hall": {
+            "calibrator_version": "v2_monotone_platt_1",
+            "source_role": "validation",
+            "fit_role": "evaluation",
+            "score_kind": "native_probability_logit",
+            "tau_mpa": 1.0,
+            "probability_epsilon": 1e-06,
+            "weighting": "equal_sites_then_equal_rows_within_site",
+            "group_column": "investigation_group",
+            "training_groups": [
+              "investigation_tauranga_farmers_building"
+            ],
+            "training_sites": [
+              "tauranga_farmers_building"
+            ],
+            "n_training_rows": 1440,
+            "n_training_sites": 1,
+            "n_training_groups": 1,
+            "n_positive_rows": 455,
+            "n_negative_rows": 985,
+            "weighted_positive_prior": 0.3159722222222222,
+            "score_center": -0.7528387862612433,
+            "score_scale": 0.826921456226883,
+            "slope": 0.35863423002374556,
+            "intercept": -0.7959931893916041,
+            "constant_probability": null,
+            "fallback_reason": null,
+            "risk_threshold": 0.2,
+            "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+            "optimizer_success": true,
+            "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+            "slope_l2": 1e-06,
+            "status": "fitted",
+            "objective": 0.6106209519409805,
+            "excluded_groups": [
+              "investigation_lower_hutt_town_hall"
+            ]
+          },
+          "investigation_tauranga_farmers_building": {
+            "calibrator_version": "v2_monotone_platt_1",
+            "source_role": "validation",
+            "fit_role": "evaluation",
+            "score_kind": "native_probability_logit",
+            "tau_mpa": 1.0,
+            "probability_epsilon": 1e-06,
+            "weighting": "equal_sites_then_equal_rows_within_site",
+            "group_column": "investigation_group",
+            "training_groups": [
+              "investigation_lower_hutt_town_hall"
+            ],
+            "training_sites": [
+              "lower_hutt_town_hall"
+            ],
+            "n_training_rows": 1440,
+            "n_training_sites": 1,
+            "n_training_groups": 1,
+            "n_positive_rows": 90,
+            "n_negative_rows": 1350,
+            "weighted_positive_prior": 0.0625,
+            "score_center": -4.498933198591343,
+            "score_scale": 3.816875138030611,
+            "slope": 6.376295478562505,
+            "intercept": -7.928712833419747,
+            "constant_probability": null,
+            "fallback_reason": null,
+            "risk_threshold": 0.2,
+            "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+            "optimizer_success": true,
+            "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+            "slope_l2": 1e-06,
+            "status": "fitted",
+            "objective": 0.1246323616895242,
+            "excluded_groups": [
+              "investigation_tauranga_farmers_building"
+            ]
+          }
+        }
+      },
+      "oof_calibrators": {
+        "investigation_lower_hutt_town_hall": {
+          "calibrator_version": "v2_monotone_platt_1",
+          "source_role": "validation",
+          "fit_role": "evaluation",
+          "score_kind": "native_probability_logit",
+          "tau_mpa": 1.0,
+          "probability_epsilon": 1e-06,
+          "weighting": "equal_sites_then_equal_rows_within_site",
+          "group_column": "investigation_group",
+          "training_groups": [
+            "investigation_tauranga_farmers_building"
+          ],
+          "training_sites": [
+            "tauranga_farmers_building"
+          ],
+          "n_training_rows": 1440,
+          "n_training_sites": 1,
+          "n_training_groups": 1,
+          "n_positive_rows": 455,
+          "n_negative_rows": 985,
+          "weighted_positive_prior": 0.3159722222222222,
+          "score_center": -0.7528387862612433,
+          "score_scale": 0.826921456226883,
+          "slope": 0.35863423002374556,
+          "intercept": -0.7959931893916041,
+          "constant_probability": null,
+          "fallback_reason": null,
+          "risk_threshold": 0.2,
+          "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+          "optimizer_success": true,
+          "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "slope_l2": 1e-06,
+          "status": "fitted",
+          "objective": 0.6106209519409805,
+          "excluded_groups": [
+            "investigation_lower_hutt_town_hall"
+          ]
+        },
+        "investigation_tauranga_farmers_building": {
+          "calibrator_version": "v2_monotone_platt_1",
+          "source_role": "validation",
+          "fit_role": "evaluation",
+          "score_kind": "native_probability_logit",
+          "tau_mpa": 1.0,
+          "probability_epsilon": 1e-06,
+          "weighting": "equal_sites_then_equal_rows_within_site",
+          "group_column": "investigation_group",
+          "training_groups": [
+            "investigation_lower_hutt_town_hall"
+          ],
+          "training_sites": [
+            "lower_hutt_town_hall"
+          ],
+          "n_training_rows": 1440,
+          "n_training_sites": 1,
+          "n_training_groups": 1,
+          "n_positive_rows": 90,
+          "n_negative_rows": 1350,
+          "weighted_positive_prior": 0.0625,
+          "score_center": -4.498933198591343,
+          "score_scale": 3.816875138030611,
+          "slope": 6.376295478562505,
+          "intercept": -7.928712833419747,
+          "constant_probability": null,
+          "fallback_reason": null,
+          "risk_threshold": 0.2,
+          "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+          "optimizer_success": true,
+          "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "slope_l2": 1e-06,
+          "status": "fitted",
+          "objective": 0.1246323616895242,
+          "excluded_groups": [
+            "investigation_tauranga_farmers_building"
+          ]
+        }
+      },
+      "excluded_groups": []
+    },
+    "2": {
+      "calibrator_version": "v2_monotone_platt_1",
+      "source_role": "validation",
+      "fit_role": "evaluation",
+      "score_kind": "native_probability_logit",
+      "tau_mpa": 1.0,
+      "probability_epsilon": 1e-06,
+      "weighting": "equal_sites_then_equal_rows_within_site",
+      "group_column": "investigation_group",
+      "training_groups": [
+        "investigation_christchurch_metro_sports_facility",
+        "investigation_marshland"
+      ],
+      "training_sites": [
+        "christchurch_metro_sports_facility",
+        "marshland"
+      ],
+      "n_training_rows": 2880,
+      "n_training_sites": 2,
+      "n_training_groups": 2,
+      "n_positive_rows": 400,
+      "n_negative_rows": 2480,
+      "weighted_positive_prior": 0.1328125,
+      "score_center": -3.3730145942014436,
+      "score_scale": 3.727892104608005,
+      "slope": 2.4735312774071843,
+      "intercept": -2.939590459753289,
+      "constant_probability": null,
+      "fallback_reason": null,
+      "risk_threshold": 0.2,
+      "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+      "optimizer_success": true,
+      "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "slope_l2": 1e-06,
+      "status": "fitted",
+      "objective": 0.3170346019680865,
+      "crossfit": {
+        "mode": "leave_investigation_group_out",
+        "complete": true,
+        "n_groups": 2,
+        "held_out_fits": {
+          "investigation_christchurch_metro_sports_facility": {
+            "calibrator_version": "v2_monotone_platt_1",
+            "source_role": "validation",
+            "fit_role": "evaluation",
+            "score_kind": "native_probability_logit",
+            "tau_mpa": 1.0,
+            "probability_epsilon": 1e-06,
+            "weighting": "equal_sites_then_equal_rows_within_site",
+            "group_column": "investigation_group",
+            "training_groups": [
+              "investigation_marshland"
+            ],
+            "training_sites": [
+              "marshland"
+            ],
+            "n_training_rows": 960,
+            "n_training_sites": 1,
+            "n_training_groups": 1,
+            "n_positive_rows": 110,
+            "n_negative_rows": 850,
+            "weighted_positive_prior": 0.11458333333333334,
+            "score_center": -3.653579553574363,
+            "score_scale": 3.256037938632838,
+            "slope": 1.2852080874538319,
+            "intercept": -2.438393402579911,
+            "constant_probability": null,
+            "fallback_reason": null,
+            "risk_threshold": 0.2,
+            "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+            "optimizer_success": true,
+            "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+            "slope_l2": 1e-06,
+            "status": "fitted",
+            "objective": 0.3281807413642425,
+            "excluded_groups": [
+              "investigation_christchurch_metro_sports_facility"
+            ]
+          },
+          "investigation_marshland": {
+            "calibrator_version": "v2_monotone_platt_1",
+            "source_role": "validation",
+            "fit_role": "evaluation",
+            "score_kind": "native_probability_logit",
+            "tau_mpa": 1.0,
+            "probability_epsilon": 1e-06,
+            "weighting": "equal_sites_then_equal_rows_within_site",
+            "group_column": "investigation_group",
+            "training_groups": [
+              "investigation_christchurch_metro_sports_facility"
+            ],
+            "training_sites": [
+              "christchurch_metro_sports_facility"
+            ],
+            "n_training_rows": 1920,
+            "n_training_sites": 1,
+            "n_training_groups": 1,
+            "n_positive_rows": 290,
+            "n_negative_rows": 1630,
+            "weighted_positive_prior": 0.15104166666666669,
+            "score_center": -3.092449634828526,
+            "score_scale": 4.127365096102498,
+            "slope": 4.632540171012557,
+            "intercept": -4.153544505112431,
+            "constant_probability": null,
+            "fallback_reason": null,
+            "risk_threshold": 0.2,
+            "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+            "optimizer_success": true,
+            "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+            "slope_l2": 1e-06,
+            "status": "fitted",
+            "objective": 0.28150258685197377,
+            "excluded_groups": [
+              "investigation_marshland"
+            ]
+          }
+        }
+      },
+      "oof_calibrators": {
+        "investigation_christchurch_metro_sports_facility": {
+          "calibrator_version": "v2_monotone_platt_1",
+          "source_role": "validation",
+          "fit_role": "evaluation",
+          "score_kind": "native_probability_logit",
+          "tau_mpa": 1.0,
+          "probability_epsilon": 1e-06,
+          "weighting": "equal_sites_then_equal_rows_within_site",
+          "group_column": "investigation_group",
+          "training_groups": [
+            "investigation_marshland"
+          ],
+          "training_sites": [
+            "marshland"
+          ],
+          "n_training_rows": 960,
+          "n_training_sites": 1,
+          "n_training_groups": 1,
+          "n_positive_rows": 110,
+          "n_negative_rows": 850,
+          "weighted_positive_prior": 0.11458333333333334,
+          "score_center": -3.653579553574363,
+          "score_scale": 3.256037938632838,
+          "slope": 1.2852080874538319,
+          "intercept": -2.438393402579911,
+          "constant_probability": null,
+          "fallback_reason": null,
+          "risk_threshold": 0.2,
+          "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+          "optimizer_success": true,
+          "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "slope_l2": 1e-06,
+          "status": "fitted",
+          "objective": 0.3281807413642425,
+          "excluded_groups": [
+            "investigation_christchurch_metro_sports_facility"
+          ]
+        },
+        "investigation_marshland": {
+          "calibrator_version": "v2_monotone_platt_1",
+          "source_role": "validation",
+          "fit_role": "evaluation",
+          "score_kind": "native_probability_logit",
+          "tau_mpa": 1.0,
+          "probability_epsilon": 1e-06,
+          "weighting": "equal_sites_then_equal_rows_within_site",
+          "group_column": "investigation_group",
+          "training_groups": [
+            "investigation_christchurch_metro_sports_facility"
+          ],
+          "training_sites": [
+            "christchurch_metro_sports_facility"
+          ],
+          "n_training_rows": 1920,
+          "n_training_sites": 1,
+          "n_training_groups": 1,
+          "n_positive_rows": 290,
+          "n_negative_rows": 1630,
+          "weighted_positive_prior": 0.15104166666666669,
+          "score_center": -3.092449634828526,
+          "score_scale": 4.127365096102498,
+          "slope": 4.632540171012557,
+          "intercept": -4.153544505112431,
+          "constant_probability": null,
+          "fallback_reason": null,
+          "risk_threshold": 0.2,
+          "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+          "optimizer_success": true,
+          "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "slope_l2": 1e-06,
+          "status": "fitted",
+          "objective": 0.28150258685197377,
+          "excluded_groups": [
+            "investigation_marshland"
+          ]
+        }
+      },
+      "excluded_groups": []
+    }
+  },
+  "v7_frontier_structural_error_joint": {
+    "0": {
+      "calibrator_version": "v2_monotone_platt_1",
+      "source_role": "validation",
+      "fit_role": "evaluation",
+      "score_kind": "native_probability_logit",
+      "tau_mpa": 1.0,
+      "probability_epsilon": 1e-06,
+      "weighting": "equal_sites_then_equal_rows_within_site",
+      "group_column": "investigation_group",
+      "training_groups": [
+        "investigation_lower_hutt_town_hall",
+        "investigation_tauranga_farmers_building"
+      ],
+      "training_sites": [
+        "lower_hutt_town_hall",
+        "tauranga_farmers_building"
+      ],
+      "n_training_rows": 2880,
+      "n_training_sites": 2,
+      "n_training_groups": 2,
+      "n_positive_rows": 545,
+      "n_negative_rows": 2335,
+      "weighted_positive_prior": 0.1892361111111111,
+      "score_center": -8.368028537357814,
+      "score_scale": 6.879719242164068,
+      "slope": 0.9231367277622464,
+      "intercept": -1.7083828656329496,
+      "constant_probability": null,
+      "fallback_reason": null,
+      "risk_threshold": 0.2,
+      "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+      "optimizer_success": true,
+      "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "slope_l2": 1e-06,
+      "status": "fitted",
+      "objective": 0.4217573530737593,
+      "crossfit": {
+        "mode": "leave_investigation_group_out",
+        "complete": true,
+        "n_groups": 2,
+        "held_out_fits": {
+          "investigation_lower_hutt_town_hall": {
+            "calibrator_version": "v2_monotone_platt_1",
+            "source_role": "validation",
+            "fit_role": "evaluation",
+            "score_kind": "native_probability_logit",
+            "tau_mpa": 1.0,
+            "probability_epsilon": 1e-06,
+            "weighting": "equal_sites_then_equal_rows_within_site",
+            "group_column": "investigation_group",
+            "training_groups": [
+              "investigation_tauranga_farmers_building"
+            ],
+            "training_sites": [
+              "tauranga_farmers_building"
+            ],
+            "n_training_rows": 1440,
+            "n_training_sites": 1,
+            "n_training_groups": 1,
+            "n_positive_rows": 455,
+            "n_negative_rows": 985,
+            "weighted_positive_prior": 0.3159722222222222,
+            "score_center": -5.693358015739522,
+            "score_scale": 6.83425531689007,
+            "slope": 0.36425215619409934,
+            "intercept": -0.7969046743196191,
+            "constant_probability": null,
+            "fallback_reason": null,
+            "risk_threshold": 0.2,
+            "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+            "optimizer_success": true,
+            "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+            "slope_l2": 1e-06,
+            "status": "fitted",
+            "objective": 0.6100821787296654,
+            "excluded_groups": [
+              "investigation_lower_hutt_town_hall"
+            ]
+          },
+          "investigation_tauranga_farmers_building": {
+            "calibrator_version": "v2_monotone_platt_1",
+            "source_role": "validation",
+            "fit_role": "evaluation",
+            "score_kind": "native_probability_logit",
+            "tau_mpa": 1.0,
+            "probability_epsilon": 1e-06,
+            "weighting": "equal_sites_then_equal_rows_within_site",
+            "group_column": "investigation_group",
+            "training_groups": [
+              "investigation_lower_hutt_town_hall"
+            ],
+            "training_sites": [
+              "lower_hutt_town_hall"
+            ],
+            "n_training_rows": 1440,
+            "n_training_sites": 1,
+            "n_training_groups": 1,
+            "n_positive_rows": 90,
+            "n_negative_rows": 1350,
+            "weighted_positive_prior": 0.0625,
+            "score_center": -11.042699058976089,
+            "score_scale": 5.800543351026451,
+            "slope": 1.7176692909067228,
+            "intercept": -4.232434437155165,
+            "constant_probability": null,
+            "fallback_reason": null,
+            "risk_threshold": 0.2,
+            "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+            "optimizer_success": true,
+            "optimizer_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+            "slope_l2": 1e-06,
+            "status": "fitted",
+            "objective": 0.13574925525932555,
+            "excluded_groups": [
+              "investigation_tauranga_farmers_building"
+            ]
+          }
+        }
+      },
+      "oof_calibrators": {
+        "investigation_lower_hutt_town_hall": {
+          "calibrator_version": "v2_monotone_platt_1",
+          "source_role": "validation",
+          "fit_role": "evaluation",
+          "score_kind": "native_probability_logit",
+          "tau_mpa": 1.0,
+          "probability_epsilon": 1e-06,
+          "weighting": "equal_sites_then_equal_rows_within_site",
+          "group_column": "investigation_group",
+          "training_groups": [
+            "investigation_tauranga_farmers_building"
+          ],
+          "training_sites": [
+            "tauranga_farmers_building"
+          ],
+          "n_training_rows": 1440,
+          "n_training_sites": 1,
+          "n_training_groups": 1,
+          "n_positive_rows": 455,
+          "n_negative_rows": 985,
+          "weighted_positive_prior": 0.3159722222222222,
+          "score_center": -5.693358015739522,
+          "score_scale": 6.83425531689007,
+          "slope": 0.36425215619409934,
+          "intercept": -0.7969046743196191,
+          "constant_probability": null,
+          "fallback_reason": null,
+          "risk_threshold": 0.2,
+          "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+          "optimizer_success": true,
+          "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "slope_l2": 1e-06,
+          "status": "fitted",
+          "objective": 0.6100821787296654,
+          "excluded_groups": [
+            "investigation_lower_hutt_town_hall"
+          ]
+        },
+        "investigation_tauranga_farmers_building": {
+          "calibrator_version": "v2_monotone_platt_1",
+          "source_role": "validation",
+          "fit_role": "evaluation",
+          "score_kind": "native_probability_logit",
+          "tau_mpa": 1.0,
+          "probability_epsilon": 1e-06,
+          "weighting": "equal_sites_then_equal_rows_within_site",
+          "group_column": "investigation_group",
+          "training_groups": [
+            "investigation_lower_hutt_town_hall"
+          ],
+          "training_sites": [
+            "lower_hutt_town_hall"
+          ],
+          "n_training_rows": 1440,
+          "n_training_sites": 1,
+          "n_training_groups": 1,
+          "n_positive_rows": 90,
+          "n_negative_rows": 1350,
+          "weighted_positive_prior": 0.0625,
+          "score_center": -11.042699058976089,
+          "score_scale": 5.800543351026451,
+          "slope": 1.7176692909067228,
+          "intercept": -4.232434437155165,
+          "constant_probability": null,
+          "fallback_reason": null,
+          "risk_threshold": 0.2,
+          "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+          "optimizer_success": true,
+          "optimizer_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+          "slope_l2": 1e-06,
+          "status": "fitted",
+          "objective": 0.13574925525932555,
+          "excluded_groups": [
+            "investigation_tauranga_farmers_building"
+          ]
+        }
+      },
+      "excluded_groups": []
+    },
+    "1": {
+      "calibrator_version": "v2_monotone_platt_1",
+      "source_role": "validation",
+      "fit_role": "evaluation",
+      "score_kind": "native_probability_logit",
+      "tau_mpa": 1.0,
+      "probability_epsilon": 1e-06,
+      "weighting": "equal_sites_then_equal_rows_within_site",
+      "group_column": "investigation_group",
+      "training_groups": [
+        "investigation_lower_hutt_town_hall",
+        "investigation_tauranga_farmers_building"
+      ],
+      "training_sites": [
+        "lower_hutt_town_hall",
+        "tauranga_farmers_building"
+      ],
+      "n_training_rows": 2880,
+      "n_training_sites": 2,
+      "n_training_groups": 2,
+      "n_positive_rows": 545,
+      "n_negative_rows": 2335,
+      "weighted_positive_prior": 0.1892361111111111,
+      "score_center": -8.385929458959648,
+      "score_scale": 6.895253802074977,
+      "slope": 0.9221513800757944,
+      "intercept": -1.7076360148645058,
+      "constant_probability": null,
+      "fallback_reason": null,
+      "risk_threshold": 0.2,
+      "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+      "optimizer_success": true,
+      "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "slope_l2": 1e-06,
+      "status": "fitted",
+      "objective": 0.4216361292173019,
+      "crossfit": {
+        "mode": "leave_investigation_group_out",
+        "complete": true,
+        "n_groups": 2,
+        "held_out_fits": {
+          "investigation_lower_hutt_town_hall": {
+            "calibrator_version": "v2_monotone_platt_1",
+            "source_role": "validation",
+            "fit_role": "evaluation",
+            "score_kind": "native_probability_logit",
+            "tau_mpa": 1.0,
+            "probability_epsilon": 1e-06,
+            "weighting": "equal_sites_then_equal_rows_within_site",
+            "group_column": "investigation_group",
+            "training_groups": [
+              "investigation_tauranga_farmers_building"
+            ],
+            "training_sites": [
+              "tauranga_farmers_building"
+            ],
+            "n_training_rows": 1440,
+            "n_training_sites": 1,
+            "n_training_groups": 1,
+            "n_positive_rows": 455,
+            "n_negative_rows": 985,
+            "weighted_positive_prior": 0.3159722222222222,
+            "score_center": -5.694189754851058,
+            "score_scale": 6.841852934901546,
+            "slope": 0.35712394291333877,
+            "intercept": -0.7959521456388847,
+            "constant_probability": null,
+            "fallback_reason": null,
+            "risk_threshold": 0.2,
+            "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+            "optimizer_success": true,
+            "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+            "slope_l2": 1e-06,
+            "status": "fitted",
+            "objective": 0.6105914161122843,
+            "excluded_groups": [
+              "investigation_lower_hutt_town_hall"
+            ]
+          },
+          "investigation_tauranga_farmers_building": {
+            "calibrator_version": "v2_monotone_platt_1",
+            "source_role": "validation",
+            "fit_role": "evaluation",
+            "score_kind": "native_probability_logit",
+            "tau_mpa": 1.0,
+            "probability_epsilon": 1e-06,
+            "weighting": "equal_sites_then_equal_rows_within_site",
+            "group_column": "investigation_group",
+            "training_groups": [
+              "investigation_lower_hutt_town_hall"
+            ],
+            "training_sites": [
+              "lower_hutt_town_hall"
+            ],
+            "n_training_rows": 1440,
+            "n_training_sites": 1,
+            "n_training_groups": 1,
+            "n_positive_rows": 90,
+            "n_negative_rows": 1350,
+            "weighted_positive_prior": 0.0625,
+            "score_center": -11.077669163068222,
+            "score_scale": 5.812673493143143,
+            "slope": 1.71495815672273,
+            "intercept": -4.2340758856097285,
+            "constant_probability": null,
+            "fallback_reason": null,
+            "risk_threshold": 0.2,
+            "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+            "optimizer_success": true,
+            "optimizer_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+            "slope_l2": 1e-06,
+            "status": "fitted",
+            "objective": 0.1341355162145739,
+            "excluded_groups": [
+              "investigation_tauranga_farmers_building"
+            ]
+          }
+        }
+      },
+      "oof_calibrators": {
+        "investigation_lower_hutt_town_hall": {
+          "calibrator_version": "v2_monotone_platt_1",
+          "source_role": "validation",
+          "fit_role": "evaluation",
+          "score_kind": "native_probability_logit",
+          "tau_mpa": 1.0,
+          "probability_epsilon": 1e-06,
+          "weighting": "equal_sites_then_equal_rows_within_site",
+          "group_column": "investigation_group",
+          "training_groups": [
+            "investigation_tauranga_farmers_building"
+          ],
+          "training_sites": [
+            "tauranga_farmers_building"
+          ],
+          "n_training_rows": 1440,
+          "n_training_sites": 1,
+          "n_training_groups": 1,
+          "n_positive_rows": 455,
+          "n_negative_rows": 985,
+          "weighted_positive_prior": 0.3159722222222222,
+          "score_center": -5.694189754851058,
+          "score_scale": 6.841852934901546,
+          "slope": 0.35712394291333877,
+          "intercept": -0.7959521456388847,
+          "constant_probability": null,
+          "fallback_reason": null,
+          "risk_threshold": 0.2,
+          "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+          "optimizer_success": true,
+          "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "slope_l2": 1e-06,
+          "status": "fitted",
+          "objective": 0.6105914161122843,
+          "excluded_groups": [
+            "investigation_lower_hutt_town_hall"
+          ]
+        },
+        "investigation_tauranga_farmers_building": {
+          "calibrator_version": "v2_monotone_platt_1",
+          "source_role": "validation",
+          "fit_role": "evaluation",
+          "score_kind": "native_probability_logit",
+          "tau_mpa": 1.0,
+          "probability_epsilon": 1e-06,
+          "weighting": "equal_sites_then_equal_rows_within_site",
+          "group_column": "investigation_group",
+          "training_groups": [
+            "investigation_lower_hutt_town_hall"
+          ],
+          "training_sites": [
+            "lower_hutt_town_hall"
+          ],
+          "n_training_rows": 1440,
+          "n_training_sites": 1,
+          "n_training_groups": 1,
+          "n_positive_rows": 90,
+          "n_negative_rows": 1350,
+          "weighted_positive_prior": 0.0625,
+          "score_center": -11.077669163068222,
+          "score_scale": 5.812673493143143,
+          "slope": 1.71495815672273,
+          "intercept": -4.2340758856097285,
+          "constant_probability": null,
+          "fallback_reason": null,
+          "risk_threshold": 0.2,
+          "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+          "optimizer_success": true,
+          "optimizer_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+          "slope_l2": 1e-06,
+          "status": "fitted",
+          "objective": 0.1341355162145739,
+          "excluded_groups": [
+            "investigation_tauranga_farmers_building"
+          ]
+        }
+      },
+      "excluded_groups": []
+    },
+    "2": {
+      "calibrator_version": "v2_monotone_platt_1",
+      "source_role": "validation",
+      "fit_role": "evaluation",
+      "score_kind": "native_probability_logit",
+      "tau_mpa": 1.0,
+      "probability_epsilon": 1e-06,
+      "weighting": "equal_sites_then_equal_rows_within_site",
+      "group_column": "investigation_group",
+      "training_groups": [
+        "investigation_christchurch_metro_sports_facility",
+        "investigation_marshland"
+      ],
+      "training_sites": [
+        "christchurch_metro_sports_facility",
+        "marshland"
+      ],
+      "n_training_rows": 2880,
+      "n_training_sites": 2,
+      "n_training_groups": 2,
+      "n_positive_rows": 400,
+      "n_negative_rows": 2480,
+      "weighted_positive_prior": 0.1328125,
+      "score_center": -9.966273314453721,
+      "score_scale": 6.568433982369702,
+      "slope": 1.0061337748839525,
+      "intercept": -2.2422931461571602,
+      "constant_probability": null,
+      "fallback_reason": null,
+      "risk_threshold": 0.2,
+      "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+      "optimizer_success": true,
+      "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "slope_l2": 1e-06,
+      "status": "fitted",
+      "objective": 0.3207521314432997,
+      "crossfit": {
+        "mode": "leave_investigation_group_out",
+        "complete": true,
+        "n_groups": 2,
+        "held_out_fits": {
+          "investigation_christchurch_metro_sports_facility": {
+            "calibrator_version": "v2_monotone_platt_1",
+            "source_role": "validation",
+            "fit_role": "evaluation",
+            "score_kind": "native_probability_logit",
+            "tau_mpa": 1.0,
+            "probability_epsilon": 1e-06,
+            "weighting": "equal_sites_then_equal_rows_within_site",
+            "group_column": "investigation_group",
+            "training_groups": [
+              "investigation_marshland"
+            ],
+            "training_sites": [
+              "marshland"
+            ],
+            "n_training_rows": 960,
+            "n_training_sites": 1,
+            "n_training_groups": 1,
+            "n_positive_rows": 110,
+            "n_negative_rows": 850,
+            "weighted_positive_prior": 0.11458333333333334,
+            "score_center": -11.079857302722525,
+            "score_scale": 5.2347189749157375,
+            "slope": 0.53941117960115,
+            "intercept": -2.1662773138790583,
+            "constant_probability": null,
+            "fallback_reason": null,
+            "risk_threshold": 0.2,
+            "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+            "optimizer_success": true,
+            "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+            "slope_l2": 1e-06,
+            "status": "fitted",
+            "objective": 0.33627483404716724,
+            "excluded_groups": [
+              "investigation_christchurch_metro_sports_facility"
+            ]
+          },
+          "investigation_marshland": {
+            "calibrator_version": "v2_monotone_platt_1",
+            "source_role": "validation",
+            "fit_role": "evaluation",
+            "score_kind": "native_probability_logit",
+            "tau_mpa": 1.0,
+            "probability_epsilon": 1e-06,
+            "weighting": "equal_sites_then_equal_rows_within_site",
+            "group_column": "investigation_group",
+            "training_groups": [
+              "investigation_christchurch_metro_sports_facility"
+            ],
+            "training_sites": [
+              "christchurch_metro_sports_facility"
+            ],
+            "n_training_rows": 1920,
+            "n_training_sites": 1,
+            "n_training_groups": 1,
+            "n_positive_rows": 290,
+            "n_negative_rows": 1630,
+            "weighted_positive_prior": 0.15104166666666669,
+            "score_center": -8.852689326184926,
+            "score_scale": 7.5104080193620675,
+            "slope": 1.4812834595220392,
+            "intercept": -2.3996083325354887,
+            "constant_probability": null,
+            "fallback_reason": null,
+            "risk_threshold": 0.2,
+            "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+            "optimizer_success": true,
+            "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+            "slope_l2": 1e-06,
+            "status": "fitted",
+            "objective": 0.2950451026129743,
+            "excluded_groups": [
+              "investigation_marshland"
+            ]
+          }
+        }
+      },
+      "oof_calibrators": {
+        "investigation_christchurch_metro_sports_facility": {
+          "calibrator_version": "v2_monotone_platt_1",
+          "source_role": "validation",
+          "fit_role": "evaluation",
+          "score_kind": "native_probability_logit",
+          "tau_mpa": 1.0,
+          "probability_epsilon": 1e-06,
+          "weighting": "equal_sites_then_equal_rows_within_site",
+          "group_column": "investigation_group",
+          "training_groups": [
+            "investigation_marshland"
+          ],
+          "training_sites": [
+            "marshland"
+          ],
+          "n_training_rows": 960,
+          "n_training_sites": 1,
+          "n_training_groups": 1,
+          "n_positive_rows": 110,
+          "n_negative_rows": 850,
+          "weighted_positive_prior": 0.11458333333333334,
+          "score_center": -11.079857302722525,
+          "score_scale": 5.2347189749157375,
+          "slope": 0.53941117960115,
+          "intercept": -2.1662773138790583,
+          "constant_probability": null,
+          "fallback_reason": null,
+          "risk_threshold": 0.2,
+          "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+          "optimizer_success": true,
+          "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "slope_l2": 1e-06,
+          "status": "fitted",
+          "objective": 0.33627483404716724,
+          "excluded_groups": [
+            "investigation_christchurch_metro_sports_facility"
+          ]
+        },
+        "investigation_marshland": {
+          "calibrator_version": "v2_monotone_platt_1",
+          "source_role": "validation",
+          "fit_role": "evaluation",
+          "score_kind": "native_probability_logit",
+          "tau_mpa": 1.0,
+          "probability_epsilon": 1e-06,
+          "weighting": "equal_sites_then_equal_rows_within_site",
+          "group_column": "investigation_group",
+          "training_groups": [
+            "investigation_christchurch_metro_sports_facility"
+          ],
+          "training_sites": [
+            "christchurch_metro_sports_facility"
+          ],
+          "n_training_rows": 1920,
+          "n_training_sites": 1,
+          "n_training_groups": 1,
+          "n_positive_rows": 290,
+          "n_negative_rows": 1630,
+          "weighted_positive_prior": 0.15104166666666669,
+          "score_center": -8.852689326184926,
+          "score_scale": 7.5104080193620675,
+          "slope": 1.4812834595220392,
+          "intercept": -2.3996083325354887,
+          "constant_probability": null,
+          "fallback_reason": null,
+          "risk_threshold": 0.2,
+          "threshold_rationale": "course_scenario_false_negative_cost_4_false_positive_cost_1",
+          "optimizer_success": true,
+          "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "slope_l2": 1e-06,
+          "status": "fitted",
+          "objective": 0.2950451026129743,
+          "excluded_groups": [
+            "investigation_marshland"
+          ]
+        }
+      },
+      "excluded_groups": []
+    }
+  }
+}

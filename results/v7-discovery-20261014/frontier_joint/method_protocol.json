@@ -1,0 +1,109 @@
+{
+  "round": "final_targeted",
+  "models": {
+    "v7_frontier_structural_analog_joint": [
+      "v7_frontier_structural_analog",
+      "joint"
+    ],
+    "v7_frontier_structural_analog_empirical": [
+      "v7_frontier_structural_analog",
+      "empirical"
+    ],
+    "v7_frontier_structural_error_joint": [
+      "v7_frontier_structural_error",
+      "joint"
+    ],
+    "v7_frontier_structural_error_empirical": [
+      "v7_frontier_structural_error",
+      "empirical"
+    ],
+    "v7_frontier_graph_union_analog_joint": [
+      "v7_frontier_graph_union_analog",
+      "joint"
+    ],
+    "v7_frontier_graph_union_analog_empirical": [
+      "v7_frontier_graph_union_analog",
+      "empirical"
+    ],
+    "v7_frontier_graph_union_error_joint": [
+      "v7_frontier_graph_union_error",
+      "joint"
+    ],
+    "v7_frontier_graph_union_error_empirical": [
+      "v7_frontier_graph_union_error",
+      "empirical"
+    ]
+  },
+  "point_bases": {
+    "structural": "v7_simplex_structural_s050_gp",
+    "graph_union": "v7_simplex_graph_union_s075_gp"
+  },
+  "selection_provenance": "Nominated after 85 configurations were evaluated; adaptive frontier repair, not independent confirmation",
+  "motivation": "Improve thickness and point low-qc recognition while retaining strong continuous amplitude bases",
+  "distribution_protocol": {
+    "models": {
+      "v7_joint_analog_median": [
+        "analog",
+        "point_median",
+        "best"
+      ],
+      "v7_joint_error_median": [
+        "error",
+        "point_median",
+        "best"
+      ],
+      "v7_joint_analog_hmedian": [
+        "analog",
+        "thickness_median",
+        "best"
+      ],
+      "v7_joint_error_hmedian": [
+        "error",
+        "thickness_median",
+        "best"
+      ],
+      "v7_joint_error_hmedian_fpca": [
+        "error",
+        "thickness_median",
+        "fpca50"
+      ]
+    },
+    "parameter_message_before_run": true,
+    "family": "finite_whole_profile_distribution",
+    "shrinkage": 0.5,
+    "analog_atoms": "base + 0.5*(revealed whole curve - weighted mean revealed whole curve)",
+    "error_atoms": "base + 0.5*(revealed whole curve - 3NN-IDW whole-group-held-out reference)",
+    "weights": "Gaussian horizontal kernel; scale median nonzero support pair distance; divide by near-group size",
+    "loo_exclusion": "Entire location, near group and colocated coordinates; recomputed from support only",
+    "joint_model": "One atom index is shared by every depth; enumerate finite support exactly, no random simulation",
+    "quantile_convention": "Lower inverse empirical CDF; no interpolation between counts",
+    "point_median": "Marginal logqc median minimizes expected absolute point error under the stipulated mixture",
+    "thickness_median": "Median of whole-atom low-cell counts minimizes expected absolute thickness error under the same mixture",
+    "event_location_decision": "At selected count, top marginal probabilities minimize expected Hamming loss; base-value ties minimize changes",
+    "crossing_margin_log_qc": 0.05,
+    "probability": "Exact marginal P(atom logqc < 0), before common external calibration",
+    "expected_thickness_is_point_thickness": false,
+    "prediction_interval_or_coverage_claim": false,
+    "calibrated_bayesian_posterior": false,
+    "transport_assumptions": "Analog deviations or LOO-IDW whole-profile errors transfer to the frozen amplitude base; not its own calibrated residuals",
+    "limits": "Only 5-13 support profiles; horizontal nonstationarity and source-model mismatch can invalidate transport",
+    "outer_test_used": false,
+    "validation_scope": "Exploration on repeatedly used frozen validation sites",
+    "sources": [
+      "https://fpp.robjhyndman.com/publications/forecasting-functional-time-series-2/",
+      "https://arxiv.org/abs/2004.03971"
+    ],
+    "source_relationship": "Functional/bootstrap curve dependence inspires the construction; this spatial finite mixture does not reproduce their estimators or inherit their validity guarantees"
+  },
+  "parameters_changed_from_first_round": [],
+  "new_bandwidth_alpha_or_margin_search": false,
+  "point_inputs": "Only frozen keys and pred_log_qc from the two named point caches",
+  "joint_head": "Exact marginal event probability of the same finite whole-curve mixture",
+  "empirical_head": "v6_empirical_graph_union_local",
+  "empirical_source": "Frozen native p_low_1 only; no OOF risk probability or intervals",
+  "empirical_head_is_joint_probability_of_new_point_model": false,
+  "empirical_head_interpretation": "Independent existing support-error event head paired with a new point decision",
+  "head_switch_changes_point_predictions": false,
+  "query_truth_in_prediction": false,
+  "outer_test_used": false
+}
