@@ -19,14 +19,15 @@ def describe(output_name):
     ranking=pd.read_csv(output/'all_model_ranking.csv')
     ranking['point_balanced_error']=.5*(1-ranking.recall+ranking.false_positive_rate)
     ranking['risk_balanced_error']=.5*(1-ranking.risk_recall+ranking.risk_fpr)
-    ranking['is_new']=ranking.model_id.isin(selection['candidates'])
+    ranking['is_new']=ranking.model_id.str.startswith('v7_')
     costs=['log_mae','h_point_mae_m','point_balanced_error','risk_balanced_error']
     ranking['pareto_all']=pareto_flags(ranking[costs])
     ranking.to_csv(output/'discovery_ranking.csv',index=False)
     ranking.loc[ranking.pareto_all].to_csv(output/'pareto_frontier.csv',index=False)
     ranking.loc[ranking.is_new].sort_values('h_point_mae_m').to_csv(output/'new_thickness_ranking.csv',index=False)
-    summary={'scope':'adaptive_exploration_reused_validation','new_models':selection['new_model_count'],
-             'reference_models':len(ranking)-selection['new_model_count'],'metrics_rows':selection['metric_rows'],
+    summary={'scope':'adaptive_exploration_reused_validation','new_models':int(ranking.is_new.sum()),
+             'newly_calibrated_in_this_step':selection['new_model_count'],
+             'reference_models':int((~ranking.is_new).sum()),'metrics_rows':selection['metric_rows'],
              'evaluation':'Same complete states, unique-site aggregation and leave-investigation-group-out calibration.',
              'legacy_gate_role':'reference only; neither v6 3/10 goal nor old gates veto v7 exploratory promotion',
              'promotion_status':'Pending result-based decision after all planned families and combinations.',
@@ -36,9 +37,11 @@ def describe(output_name):
     print(ranking.loc[ranking.is_new,['model_id',*costs,'recall','false_positive_rate','pareto_all']].sort_values('log_mae').to_string(index=False))
     return summary
 
-def run(families,output_name):
+def run(families,output_name,reference_output=None):
     # Reuse verified common calibration/metrics, without changing any v6 files.
-    core.RUN,core.REFERENCE=RUN,REFERENCE
+    if reference_output==output_name:
+        raise ValueError('Incremental reference must be a separate completed output')
+    core.RUN,core.REFERENCE=RUN,(RUN/reference_output if reference_output else REFERENCE)
     core.run(families,output_name)
     output=RUN/output_name
     for old,new in [('selection.json','legacy_selection.json'),
@@ -51,5 +54,6 @@ if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--families',nargs='+',required=True)
     parser.add_argument('--output',default='round1')
+    parser.add_argument('--reference-output',help='Reuse a completed same-state comparison without recalibrating old candidates')
     args=parser.parse_args()
-    run(args.families,args.output)
+    run(args.families,args.output,args.reference_output)
