@@ -1,6 +1,7 @@
 """Retained inference component, consolidated from cpt_budget.v5.weak_baselines (v0.8-engineering)."""
 from __future__ import annotations
 import numpy as np
+import pandas as pd
 from cpt_budget.models.base import validate_observed, validate_query_site
 from cpt_budget.models.distribution import point_prediction_frame
 from cpt_budget.types import PredictionBundle

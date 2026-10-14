@@ -1,5 +1,6 @@
 """Retained inference component, consolidated from cpt_budget.v2.residual (v0.8-engineering)."""
 from __future__ import annotations
+import pandas as pd
 import json
 from pathlib import Path
 from xgboost import XGBRegressor

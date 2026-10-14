@@ -148,8 +148,22 @@
     },
     {
       "path": "artifacts/evaluation/reference_predictions.parquet",
+      "bytes": 2793601,
+      "origin": "v0.9.1: v0.8 selected evaluation snapshot (11 unchanged entries; v0.9.0 thickness rows renamed thickness_guarded; tabpfn_fpca rows removed; GP q10/q25/q75/q90 added from live GP after q05/q95/p_low_1/point matched the archive <=9e-11) + live v0.9.1 predictions for thickness and tabpfn_joint, frozen after all 60 states matched the archived v0.8 per-state metrics (results/current/port_equivalence.csv)",
+      "sha256": "b8504605d226f4d1e9ae440ac69147335f7b2db21b24b23d0054aa98e774ec38"
+    },
+    {
+      "path": "artifacts/evaluation/reference_predictions.v0.9.0.parquet",
       "bytes": 2393322,
-      "origin": "v0.8 selected evaluation snapshot"
+      "sha256": "e042430b33017767a970dec626f542642ef7c963450f909551a5c5761dacf23a",
+      "origin": "Unmodified v0.9.0 reference (12 entries incl. tabpfn_fpca and v8_haar_fast as thickness); backup kept before the v0.9.1 rebuild; not read by any command"
+    },
+    {
+      "path": "artifacts/evaluation/test_states.parquet",
+      "bytes": 26043,
+      "origin": "final outer test states (final-test --prepare; seeds 17/29/43/71/101, maximin, budgets 5-13)",
+      "sha256": "951b6cfb6bb87a58e78cf52c987e6c4f0e2ade0278598e079babb23850a2476a"
     }
-  ]
+  ],
+  "reference_version": "0.9.1"
 }

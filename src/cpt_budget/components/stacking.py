@@ -4,8 +4,8 @@ import itertools
 import json
 import numpy as np
 from scipy.special import expit
-from cpt_budget.config import PROJECT_ROOT
 from cpt_budget.components.functional import ProfileBasis
+from cpt_budget.experiment import model_asset
 MEMBERS = ('idw', 'functional_fpca_krr', 'registered_profile_shape', 'spatial_weighted_median')
 
 def simplex_candidates():
@@ -38,7 +38,6 @@ def fit_weights(observed, loo_predictions, *, objective='l1'):
     return (weights[best], {'objective': objective, 'loss': float(loss[best]), 'loo_log_mae': float(l1[best]), 'loo_soft_thickness_mae_m': float(thickness[best]), 'loo_weighted_event_brier': float(event[best]), 'regularization': float(regularization[best]), 'weights': dict(zip(MEMBERS, weights[best].tolist()))})
 
 def load_basis(fold_id):
-    path = PROJECT_ROOT / 'artifacts/models' / f'fold_{fold_id}'
-    manifest = json.loads((path / 'basis_manifest.json').read_text(encoding='utf-8'))
-    with np.load(path / 'basis.npz') as arrays:
+    manifest = json.loads(model_asset(fold_id, 'basis_manifest.json').read_text(encoding='utf-8'))
+    with np.load(model_asset(fold_id, 'basis.npz')) as arrays:
         return ProfileBasis(arrays['depth_indices'].copy(), arrays['components'].copy(), arrays['eigenvalues'].copy(), manifest['retained_variance'], tuple(manifest['source_site_ids']), manifest['source_profile_count'])

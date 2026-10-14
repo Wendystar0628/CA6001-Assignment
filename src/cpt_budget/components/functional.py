@@ -3,6 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from pathlib import Path
 import numpy as np
+import pandas as pd
 from cpt_budget.config import write_json
 from cpt_budget.models.base import validate_observed, validate_query_site
 from cpt_budget.models.distribution import point_prediction_frame

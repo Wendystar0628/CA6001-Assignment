@@ -86,8 +86,21 @@ class _SimplexGeometry:
         return weights @ self.profiles
 
 class _FastCore:
+    """Simplex base plus Haar-transferred profile used only for the low count.
 
-    def __init__(self, xy, profiles):
+    ``detail='median'`` is v8_haar_fast / v7 haar_krr_median (3NN inverse-square
+    weighted-median detail coefficients). ``detail='nearest'`` is v7
+    haar_krr_nearest: the 21 detail coefficients of the single geometry-nearest
+    revealed profile (first index on ties). The coarse KRR and the exact-coordinate
+    override are shared.
+    """
+
+    DETAILS = ('median', 'nearest')
+
+    def __init__(self, xy, profiles, detail='median'):
+        if detail not in self.DETAILS:
+            raise ValueError(f'Unknown Haar detail rule: {detail}')
+        self.detail = detail
         self.xy, self.profiles = (np.asarray(xy, float), np.asarray(profiles, float))
         self.simplex = _SimplexGeometry(self.xy, self.profiles)
         coefficients = self.profiles @ HAAR_MATRIX
@@ -99,6 +112,7 @@ class _FastCore:
         kernel = np.exp(-0.5 * (distance / self.length_scale) ** 2)
         self.coarse_fit = cho_solve(cho_factor(kernel + 0.1 * np.eye(len(xy)), check_finite=False), coefficients[:, :3] - self.coarse_mean, check_finite=False)
         detail = coefficients[:, 3:]
+        self.detail_coefficients = detail
         self.detail_order = np.argsort(detail, axis=0, kind='stable')
         self.sorted_detail = np.take_along_axis(detail, self.detail_order, axis=0)
 
@@ -106,10 +120,13 @@ class _FastCore:
         base = self.simplex.predict(xy)
         distance = np.linalg.norm(np.asarray(xy)[:, None] - self.xy[None], axis=2)
         coarse = self.coarse_mean + np.exp(-0.5 * (distance / self.length_scale) ** 2) @ self.coarse_fit
-        weight = local_weights(distance, power=2.0, neighbours=3)
-        cumulative = np.cumsum(weight[:, self.detail_order], axis=1)
-        index = np.minimum((cumulative < 0.5).sum(axis=1), len(self.xy) - 1)
-        detail = self.sorted_detail[index, np.arange(21)[None]]
+        if self.detail == 'nearest':
+            detail = self.detail_coefficients[np.argmin(distance, axis=1)]
+        else:
+            weight = local_weights(distance, power=2.0, neighbours=3)
+            cumulative = np.cumsum(weight[:, self.detail_order], axis=1)
+            index = np.minimum((cumulative < 0.5).sum(axis=1), len(self.xy) - 1)
+            detail = self.sorted_detail[index, np.arange(21)[None]]
         haar = np.column_stack((coarse, detail)) @ HAAR_MATRIX.T
         zero = distance <= 1e-08
         exact = zero.any(axis=1)

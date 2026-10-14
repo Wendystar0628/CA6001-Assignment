@@ -3,72 +3,133 @@
     "id": "constant",
     "name": "弱基线：常数中位数",
     "group": "baseline",
-    "source_model_id": "target_constant_median"
+    "source_model_id": "target_constant_median",
+    "study_version": "0.5-exploration",
+    "risk_source": "platt_on_point",
+    "device": "cpu",
+    "point_only_supported": false
   },
   {
     "id": "idw",
     "name": "强基线：3NN IDW",
     "group": "baseline",
-    "source_model_id": "idw"
+    "source_model_id": "idw",
+    "study_version": "0.4-residual",
+    "risk_source": "platt_on_point",
+    "device": "cpu",
+    "point_only_supported": false
   },
   {
     "id": "gp",
     "name": "强基线：空间GP",
     "group": "baseline",
-    "source_model_id": "gp"
+    "source_model_id": "gp",
+    "study_version": "0.4-residual",
+    "risk_source": "native_gp",
+    "device": "cpu",
+    "point_only_supported": false
   },
   {
     "id": "xgb",
     "name": "强基线：同轨迹XGBoost残差",
     "group": "baseline",
-    "source_model_id": "xgb_residual_matched"
+    "source_model_id": "xgb_residual_matched",
+    "study_version": "0.4-residual",
+    "risk_source": "platt_on_point",
+    "device": "cpu",
+    "point_only_supported": false
   },
   {
-    "id": "tabpfn_fpca",
-    "name": "TabPFN＋FPCA符号保护",
+    "id": "tabpfn_joint",
+    "name": "TabPFN：残差与三角网各半作底座＋整曲线决策",
     "group": "tabpfn",
-    "source_model_id": "v6_fpca_residual_sign_guard"
+    "source_model_id": "v7_pair_joint_simplex_empirical_graph",
+    "study_version": "0.7-discovery",
+    "risk_source": "shared_empirical_head",
+    "device": "cuda",
+    "point_only_supported": true,
+    "note": "v0.7 promoted mainline. Amplitude base = 0.5*guarded TabPFN residual (residual_ft_crps_guarded_a050) + 0.5*simplex; the complete-curve empirical-error count decision (FastJointAdapter, reference policy) sets the low labels. TabPFN supplies only half of the amplitude base. Replaces v0.9.0 tabpfn_fpca (v6_fpca_residual_sign_guard), which was dominated and whose point labels equalled IDW by construction."
   },
   {
     "id": "tabpfn_graph",
     "name": "TabPFN＋图Huber低值并集",
     "group": "tabpfn",
-    "source_model_id": "v6_graph_residual_low_union"
+    "source_model_id": "v6_graph_residual_low_union",
+    "study_version": "0.6-combinations",
+    "risk_source": "platt_on_point",
+    "device": "cuda",
+    "point_only_supported": false
   },
   {
     "id": "balanced",
     "name": "均衡：结构融合＋整曲线决策",
     "group": "selected",
-    "source_model_id": "v8_balanced_fast"
+    "source_model_id": "v8_balanced_fast",
+    "study_version": "0.8-engineering",
+    "risk_source": "shared_empirical_head",
+    "device": "cuda",
+    "point_only_supported": true
   },
   {
     "id": "thickness",
-    "name": "厚度：Haar计数决策",
+    "name": "厚度：Haar计数决策（最近剖面细节，历史最优厚度）",
     "group": "selected",
-    "source_model_id": "v8_haar_fast"
+    "source_model_id": "v7_hcount_simplex_nearest_a100_gp",
+    "study_version": "0.7-discovery",
+    "risk_source": "shared_empirical_head",
+    "device": "cuda",
+    "point_only_supported": true,
+    "note": "Point path = archived v7_hcount_simplex_nearest_a100_gp (simplex base; Haar coarse KRR + detail coefficients of the geometry-nearest revealed CPT; low count projected onto the simplex base). Best point-thickness MAE on the shared protocol (0.472493 m), but point FPR 10.05% exceeds the v0.7 promotion guard (IDW+2pp = 9.28%). The archived v0.7 ID used the GP risk head (risk recall/FPR 62.20%/24.87%); here it is paired with the shared empirical risk head like the other main schemes. Point metrics are identical either way."
   },
   {
     "id": "recognition",
     "name": "识别：可靠性定位＋60%计数",
     "group": "selected",
-    "source_model_id": "v8_recognition_recall60"
+    "source_model_id": "v8_recognition_recall60",
+    "study_version": "0.8-engineering",
+    "risk_source": "shared_empirical_head",
+    "device": "cuda",
+    "point_only_supported": true
   },
   {
     "id": "simplex",
     "name": "讨论：三角网单独插值",
     "group": "discussion",
-    "source_model_id": "v7_simplex_linear"
+    "source_model_id": "v7_simplex_linear",
+    "study_version": "0.7-discovery",
+    "risk_source": "platt_on_point",
+    "device": "cpu",
+    "point_only_supported": false
   },
   {
     "id": "count_shrink",
     "name": "讨论：支持集计数收缩",
     "group": "discussion",
-    "source_model_id": "v8_balanced_count_shrink"
+    "source_model_id": "v8_balanced_count_shrink",
+    "study_version": "0.8-engineering",
+    "risk_source": "shared_empirical_head",
+    "device": "cuda",
+    "point_only_supported": true
+  },
+  {
+    "id": "thickness_guarded",
+    "name": "讨论：Haar厚度（FPR护栏内最优）",
+    "group": "discussion",
+    "source_model_id": "v8_haar_fast",
+    "study_version": "0.8-engineering",
+    "risk_source": "shared_empirical_head",
+    "device": "cuda",
+    "point_only_supported": true,
+    "note": "The v0.9.0 thickness entry (3NN weighted-median Haar detail). Best thickness configuration that satisfies the documented v0.7 point-FPR guard (point FPR <= IDW+2pp = 9.28%)."
   },
   {
     "id": "cnp",
     "name": "讨论：条件神经过程负结果",
     "group": "discussion",
-    "source_model_id": "cnp_profile"
+    "source_model_id": "cnp_profile",
+    "study_version": "0.5-exploration",
+    "risk_source": "platt_on_point",
+    "device": "cpu",
+    "point_only_supported": false
   }
 ]

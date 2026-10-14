@@ -51,6 +51,14 @@ def iter_states(folds=None,seeds=None,budgets=None):
         yield EvaluationState(meta,observed,query,dataset.truth(list(row.evaluation_ids)))
 
 def planned_geometry():
+    """Geometry-only plan (no measurements) of every replay-eligible site.
+
+    The graph component builds its graph per site from that site's rows only, so
+    adding sites does not change any prediction; it lets the final outer test
+    (docs/FINAL_TEST_PROTOCOL.md) condition on test sites. The 4 validation
+    sites of the frozen states are a subset (checked)."""
     dataset=load_dataset(diagnostic_config())
-    sites=pd.read_parquet(ASSETS/'evaluation/states.parquet').site_id.unique()
+    sites=set(dataset.sites.loc[dataset.sites.replay_eligible.astype(bool),'site_id'])
+    frozen=set(pd.read_parquet(ASSETS/'evaluation/states.parquet').site_id.unique())
+    if not frozen<=sites:raise ValueError('Frozen validation sites must be replay-eligible')
     return dataset.query(dataset.locations().loc[lambda f:f.site_id.isin(sites),'location_id'])

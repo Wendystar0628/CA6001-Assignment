@@ -1,6 +1,7 @@
 """Retained inference component, consolidated from cpt_budget.models.tabpfn_adapter (v0.8-engineering)."""
 from __future__ import annotations
 from importlib.metadata import version
+import warnings
 from pathlib import Path
 from cpt_budget.types import QUERY_COLUMNS
 
@@ -23,7 +24,16 @@ def estimator_options(config=None):
         raise ValueError('Historical context banks are outside the registered experiment')
     if settings.get('n_estimators', 1) != 1:
         raise ValueError('The registered experiment uses exactly one estimator')
-    return dict(n_estimators=1, device=settings.get('device', 'cuda' if torch.cuda.is_available() else 'cpu'), random_state=int(config.get('split', {}).get('seed', 20261013)), n_preprocessing_jobs=1, show_progress_bar=False, categorical_features_indices=[], inference_config={'MIN_NUMBER_SAMPLES_FOR_CATEGORICAL_INFERENCE': 1000000})
+    device = settings.get('device', 'auto')
+    if device in (None, 'auto'):
+        device = 'cuda' if torch.cuda.is_available() else 'cpu'
+        if device == 'cpu':
+            warnings.warn('TabPFN device=auto resolved to CPU (CUDA unavailable); outputs may differ from the CUDA reference.', RuntimeWarning, stacklevel=2)
+    elif device == 'cuda' and not torch.cuda.is_available():
+        raise RuntimeError('tabpfn.device=cuda but CUDA is unavailable; CPU fallback is not silent.')
+    elif device not in ('cpu', 'cuda'):
+        raise ValueError(f'Unsupported TabPFN device: {device}')
+    return dict(n_estimators=1, device=device, random_state=int(config.get('split', {}).get('seed', 20261013)), n_preprocessing_jobs=1, show_progress_bar=False, categorical_features_indices=[], inference_config={'MIN_NUMBER_SAMPLES_FOR_CATEGORICAL_INFERENCE': 1000000})
 
 def make_estimator(config=None, artifact=None, *, training=False):
     _, cls, model_version = _runtime()

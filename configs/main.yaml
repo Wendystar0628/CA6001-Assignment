@@ -1,79 +1,96 @@
+# v0.9.1 main configuration. Only comments were added; values are unchanged.
+#
+# Frozen-state reality: the 60 evaluation states (seeds 17/29, maximin policy,
+# budgets 5-13, 4 validation sites) are read from artifacts/evaluation/states.parquet,
+# produced by the v0.2 run. They do NOT follow replay.seeds / replay.policies below;
+# re-running `split` rewrites data_processed_v2 splits but never the frozen states.
+#
+# Key status in the current code (grep of src/cpt_budget):
+#   [used]          read by a CLI path (restore-inputs / prepare / split / predict /
+#                   verify / evaluate / benchmark)
+#   [split only]    read only by `split`, whose output the frozen states do not use
+#   [library only]  read only by acquisition.py / replay.py / economics.py, which no
+#                   CLI command calls
+#   [descriptive]   documents fixed behaviour; the code does not read the key
+#   [unused]        not read anywhere; kept from the v0.1-v0.8 pipeline
 project:
-  name: ca6001_cpt_budget
-  input_dir: Data
-  prepared_dir: data_processed_v2
-  output_dir: runs/current
+  name: ca6001_cpt_budget          # [descriptive]
+  input_dir: Data                  # [used] restore-inputs / prepare
+  prepared_dir: data_processed_v2  # [used] prepare / split / status / frozen-state loading
+  output_dir: runs/current         # [descriptive] commands use their own --output defaults
 run:
-  mode: curated_current
+  mode: curated_current            # [used] GP only: any value other than "pilot" requires the per-fold GP trend file
 data:
-  manifest: cpt_screened_spatial_profiles.json
-  arrays: cpt_screened_depth_qc.npz
-  depth_start_m: 2.0
-  depth_end_m: 8.0
-  depth_step_m: 0.25
-  sampling: cell_midpoint
-  max_interpolation_gap_m: 0.5
-  representative: source_file_lexicographic
-  target: natural_log_qc_mpa
-  tau_mpa: 1.0
-  sensitivity_tau_mpa:
+  manifest: cpt_screened_spatial_profiles.json  # [used]
+  arrays: cpt_screened_depth_qc.npz             # [used]
+  depth_start_m: 2.0               # [used]
+  depth_end_m: 8.0                 # [used]
+  depth_step_m: 0.25               # [used] also the thickness unit in evaluate
+  sampling: cell_midpoint          # [descriptive] midpoint sampling is hard-coded
+  max_interpolation_gap_m: 0.5     # [used] prepare
+  representative: source_file_lexicographic  # [descriptive] hard-coded in prepare
+  target: natural_log_qc_mpa       # [descriptive] ln(qc/MPa) is hard-coded
+  tau_mpa: 1.0                     # [used] low-qc threshold for labels and metrics
+  sensitivity_tau_mpa:             # [unused] no 0.5/2 MPa sensitivity results exist in v0.9.x
   - 0.5
   - 2.0
 split:
-  outer_folds: 3
-  grouping_radius_m: 250
-  within_site_near_radius_m: 2.0
-  evaluation_unit: near_group
-  validation_fraction: 0.2
-  seed: 20261013
-episodes:
-  support_sizes:
+  outer_folds: 3                   # [used] split
+  grouping_radius_m: 250           # [used] prepare / split
+  within_site_near_radius_m: 2.0   # [used] prepare
+  evaluation_unit: near_group      # [unused]
+  validation_fraction: 0.2         # [used] split
+  seed: 20261013                   # [used] split; also TabPFN and GP random_state
+episodes:                          # source-training episodes; current models are already trained
+  support_sizes:                   # [split only]
   - 5
   - 9
   - 13
-  masks_per_site: 3
-  query_profiles_per_batch: 8
-  max_rows: 512
+  masks_per_site: 3                # [split only]
+  query_profiles_per_batch: 8      # [used] TabPFN residual inference batch size (capped at 8); also split
+  max_rows: 512                    # [unused]
 replay:
-  min_site_locations: 20
-  seeds:
+  min_site_locations: 20           # [used] prepare: replay-eligible sites need >= 20 locations
+  seeds:                           # [split only] the frozen states use seeds 17 and 29 only
   - 17
   - 29
   - 43
   - 71
   - 101
-  evaluation_fraction: 0.2
-  initial_locations: 5
-  batch_size: 2
-  budgets:
+  evaluation_fraction: 0.2         # [split only]
+  initial_locations: 5             # [split only] also library economics
+  batch_size: 2                    # [library only]
+  budgets:                         # [split only] the frozen states use the same budgets
   - 5
   - 7
   - 9
   - 11
   - 13
-  policies:
+  policies:                        # [unused] the frozen states use maximin only
   - maximin
   - uncertainty
   - threshold_uncertainty
-  model_policy_grid: full_3_by_3
-  save_first_round_all_scores: true
-  threshold_weight: 1.0
-  batch_spacing: median_pool_nearest_neighbor
-quality:
-  reference_model: gp
-  reference_policy: maximin
-  reference_budget: 13
-  recall_tolerance: 0.05
-  budget_measure: n_stable
-  validation_seeds:
+  model_policy_grid: full_3_by_3   # [unused]
+  save_first_round_all_scores: true  # [unused]
+  threshold_weight: 1.0            # [library only] acquisition.py
+  batch_spacing: median_pool_nearest_neighbor  # [unused]
+quality:                           # attainment/cost targets: no v0.9.x result uses them
+  reference_model: gp              # [library only] economics.py
+  reference_policy: maximin        # [library only]
+  reference_budget: 13             # [library only]
+  recall_tolerance: 0.05           # [library only]
+  budget_measure: n_stable         # [unused]
+  validation_seeds:                # [unused]
   - 17
   - 29
-  target_version: joint_v2
-tabpfn:
+  target_version: joint_v2         # [unused]
+tabpfn:                            # [used] the adapter rejects any other value
+  # No `device` key: TabPFN uses CUDA when available, otherwise falls back to CPU with a
+  # RuntimeWarning (CPU outputs are not reference-equivalent). `benchmark` requires CUDA.
   package_version: 9.2.0
   model_generation: v2
   n_estimators: 1
   target_context_only: true
 v2:
   residual:
-    n_jobs: 4
+    n_jobs: 4                      # [used] XGBoost threads; benchmark forces 1 (same outputs)

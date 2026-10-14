@@ -25,4 +25,4 @@ deliverables/recording/
 build/
 dist/
 artifacts/models/
-artifacts/evaluation/reference_predictions.parquet
+artifacts/evaluation/reference_predictions*.parquet
