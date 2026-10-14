@@ -1,8 +1,10 @@
 project:
   name: ca6001_cpt_budget
   input_dir: Data
-  prepared_dir: data_processed
-  output_dir: runs
+  prepared_dir: data_processed_v2
+  output_dir: runs/current
+run:
+  mode: curated_current
 data:
   manifest: cpt_screened_spatial_profiles.json
   arrays: cpt_screened_depth_qc.npz
@@ -14,69 +16,64 @@ data:
   representative: source_file_lexicographic
   target: natural_log_qc_mpa
   tau_mpa: 1.0
-  sensitivity_tau_mpa: [0.5, 2.0]
-features:
-  version: neighbors16_scaled_v2
-  nearest_neighbors: 3
-  distance_scale: frozen_planned_geometry_median_nn
-  include_physical_scale: true
-  leave_location_out_for_context: true
+  sensitivity_tau_mpa:
+  - 0.5
+  - 2.0
 split:
   outer_folds: 3
   grouping_radius_m: 250
   within_site_near_radius_m: 2.0
   evaluation_unit: near_group
-  validation_fraction: 0.20
+  validation_fraction: 0.2
   seed: 20261013
 episodes:
-  support_sizes: [5, 9, 13]
+  support_sizes:
+  - 5
+  - 9
+  - 13
   masks_per_site: 3
   query_profiles_per_batch: 8
   max_rows: 512
-tabpfn:
-  package_version: 9.2.0
-  model_generation: v2
-  model_repo: Prior-Labs/TabPFN-v2-reg
-  checkpoint_filename: tabpfn-v2-regressor.ckpt
-  n_estimators: 1
-  output_quantiles: [0.05, 0.10, 0.25, 0.50, 0.75, 0.90, 0.95]
-  target_context_only: true
-  learning_rate: 0.00001
-  weight_decay: 0.01
-  max_epochs: 10
-  early_stopping_patience: 3
-  gradient_clip: 1.0
 replay:
   min_site_locations: 20
-  seeds: [17, 29, 43, 71, 101]
-  evaluation_fraction: 0.20
+  seeds:
+  - 17
+  - 29
+  - 43
+  - 71
+  - 101
+  evaluation_fraction: 0.2
   initial_locations: 5
   batch_size: 2
-  budgets: [5, 7, 9, 11, 13]
-  policies: [maximin, uncertainty, threshold_uncertainty]
+  budgets:
+  - 5
+  - 7
+  - 9
+  - 11
+  - 13
+  policies:
+  - maximin
+  - uncertainty
+  - threshold_uncertainty
   model_policy_grid: full_3_by_3
   save_first_round_all_scores: true
   threshold_weight: 1.0
   batch_spacing: median_pool_nearest_neighbor
-presentation:
-  style_config: configs/presentation.yaml
-  presets: [report, slides]
-  profile_qc_axis: log
-  profile_axis_seed_range_mpa: [0.05, 100.0]
-  profile_axis_expand_if_needed: true
-  representative_seed: 17
-  representative_profile: eval_nearest_site_geometry_center
-  pairwise_tie_tolerance: null
-  relative_error_view: false
-  export_demo_frames: true
 quality:
   reference_model: gp
   reference_policy: maximin
   reference_budget: 13
   recall_tolerance: 0.05
   budget_measure: n_stable
-economics:
-  currency: null
-  marginal_cost_per_cpt: null
-  extra_analysis_cost: null
-  extra_mobilization_cost: null
+  validation_seeds:
+  - 17
+  - 29
+  target_version: joint_v2
+tabpfn:
+  package_version: 9.2.0
+  model_generation: v2
+  n_estimators: 1
+  target_context_only: true
+v2:
+  residual:
+    n_jobs: 4

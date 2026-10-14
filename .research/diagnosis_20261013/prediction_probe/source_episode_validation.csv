@@ -1,7 +1,0 @@
-model_id,site_id,log_mae
-idw,kaiapoi_near_river,1.1350331493991779
-idw,lower_hutt_town_hall,0.7049854146570752
-idw,tauranga_farmers_building,0.6328418611716992
-residual_xgb,kaiapoi_near_river,1.0648286242948664
-residual_xgb,lower_hutt_town_hall,0.6959252473286419
-residual_xgb,tauranga_farmers_building,0.6537952825794432

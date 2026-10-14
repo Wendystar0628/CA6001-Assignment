@@ -1,3 +1,5 @@
+> 当前工程已于2026-10-14整理为12个保留入口。本文作为设计背景保留；实际模型名单、运行方式和完成边界以[当前实现状态](docs/IMPLEMENTATION_STATUS.md)及[运行说明](docs/RUN_GUIDE.md)为准。历史训练/探索代码见Git标签`v0.8-engineering`。
+
 **CA6001 Cone Penetration Test (CPT) 项目设计与严格可行性评审｜2026-10-13**
 
 建议采用：**面向低锥阻层识别的预算受限 CPT 补勘：表格基础模型迁移与自适应选址**。(注：表格基础模型 TabPFN 为目前研究前沿，年内有 Nature 等顶刊发表)

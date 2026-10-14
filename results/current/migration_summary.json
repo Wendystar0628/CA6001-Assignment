@@ -1,0 +1,20 @@
+{
+  "models": [
+    "constant",
+    "idw",
+    "gp",
+    "xgb",
+    "tabpfn_fpca",
+    "tabpfn_graph",
+    "balanced",
+    "thickness",
+    "recognition",
+    "simplex",
+    "count_shrink",
+    "cnp"
+  ],
+  "states_per_model": 60,
+  "checks": 720,
+  "passed": true,
+  "comparison": "Archived v0.8 predictions; same complete observed/query states."
+}

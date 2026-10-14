@@ -1,8 +1,0 @@
-pair_id,states,scope,total_speedup_paired_state_median,total_speedup_paired_state_min,total_speedup_paired_state_max,total_speedup_ratio_of_state_medians
-structural_point,12,full point inference: source FPCA initialization separate; support LOO stack + simplex blend,16.50632778894753,15.478300394127093,19.548397480273675,17.327454989255198
-joint_operator,12,component only: complete-curve error-mixture operator; IDW base computation excluded,17.809859810951785,10.573693474887984,24.739771601056372,17.744847894951143
-haar_point,12,full point inference: Haar detail transfer + simplex + thickness-count decision; separate empirical risk head excluded,3.717921241733145,2.769289131089823,4.33066069288448,3.685473031849452
-recognition_operator,12,component only: complete-curve analog-mixture recognition operator; IDW base and independent risk head excluded,17.900374378513785,11.79712210750126,25.28484782112601,18.23746284812934
-tabpfn_residual,12,full guarded residual point inference: feature preparation + trained TabPFN CUDA forward + IDW guard; source checkpoint load separate,5.366096599313316,2.9000898676339752,9.820736110058728,5.834175001526898
-balanced_point,12,complete_point_path_with_internal_joint_probability,16.670427235825038,11.246957103855976,20.43740884799839,16.822635791288047
-balanced_full,12,complete_point_plus_native_empirical_risk_path,7.897951407822449,5.658236210573195,11.07750386165621,7.433920097776656

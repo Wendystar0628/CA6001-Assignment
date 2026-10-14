@@ -1,0 +1,25 @@
+model_id,fold_id,scope,device,factory_ms,explicit_weight_initialization_ms,initialization_ms,rss_after_initialization_mib
+target_constant_median,0,full point inference: support median + query prediction,cpu,0.0056999997468665,0.0008999995770864,0.0065999993239529,877.77734375
+target_constant_median,1,full point inference: support median + query prediction,cpu,0.0065999993239529,0.0013999997463542,0.0079999990703072,877.875
+target_constant_median,2,full point inference: support median + query prediction,cpu,0.0064999985625036,0.0010000003385357,0.0074999989010393,877.9296875
+gp,0,full native-distribution inference: GP fit + mean/std/event prediction,cpu,0.6268000015552389,0.0005999991117278,0.6274000006669667,665.66796875
+gp,1,full native-distribution inference: GP fit + mean/std/event prediction,cpu,0.6197000002430286,0.0003999994078185,0.6200999996508472,672.8046875
+gp,2,full native-distribution inference: GP fit + mean/std/event prediction,cpu,0.5811999999423278,0.0003999994078185,0.5815999993501464,672.83203125
+tabpfn_residual_new,0,full guarded residual point inference: feature preparation + trained TabPFN CUDA forward + IDW guard; source checkpoint load separate,cuda,1.9751999989239264,37.39160000077391,39.36679999969783,1931.9375
+tabpfn_residual_new,1,full guarded residual point inference: feature preparation + trained TabPFN CUDA forward + IDW guard; source checkpoint load separate,cuda,1.9417999992583648,37.55000000091968,39.491800000178046,1931.234375
+tabpfn_residual_new,2,full guarded residual point inference: feature preparation + trained TabPFN CUDA forward + IDW guard; source checkpoint load separate,cuda,1.905099999930826,34.43700000025274,36.34210000018357,1934.40625
+balanced_full_new,0,complete_point_plus_native_empirical_risk_path,cuda,3.7181999996391824,35.45339999982389,39.17159999946307,1945.74609375
+balanced_full_new,1,complete_point_plus_native_empirical_risk_path,cuda,3.676499998618965,37.895100000241655,41.57159999886062,1942.25390625
+balanced_full_new,2,complete_point_plus_native_empirical_risk_path,cuda,3.788899999563,35.73510000023816,39.52399999980116,1945.671875
+haar_full_new,0,complete_haar_point_plus_native_empirical_risk_path,cuda,3.174699999362929,37.56190000058268,40.73659999994561,1930.0703125
+haar_full_new,1,complete_haar_point_plus_native_empirical_risk_path,cuda,3.097599999819068,33.08719999949972,36.184799999318784,1924.41796875
+haar_full_new,2,complete_haar_point_plus_native_empirical_risk_path,cuda,2.9884999985370087,36.60280000076455,39.59129999930156,1936.3125
+recognition_recall60_full,0,complete_recognition_quality_variant_plus_native_empirical_risk_path,cuda,3.860799999529263,35.97770000124001,39.83850000076927,1937.265625
+recognition_recall60_full,1,complete_recognition_quality_variant_plus_native_empirical_risk_path,cuda,3.698200000144425,34.53369999988354,38.23190000002796,1943.6328125
+recognition_recall60_full,2,complete_recognition_quality_variant_plus_native_empirical_risk_path,cuda,3.583900001103757,31.05839999989257,34.64230000099633,1940.8671875
+balanced_count_shrink_full,0,complete_balanced_quality_variant_plus_native_empirical_risk_path,cuda,3.736000000571949,33.162800000354764,36.89880000092671,1946.890625
+balanced_count_shrink_full,1,complete_balanced_quality_variant_plus_native_empirical_risk_path,cuda,3.750600000785198,31.418599999597063,35.16920000038226,1941.10546875
+balanced_count_shrink_full,2,complete_balanced_quality_variant_plus_native_empirical_risk_path,cuda,3.954100000555627,31.3280999998824,35.282200000438024,1929.9765625
+idw_optimized_new,0,full unchanged 3NN/power-2 IDW point inference: condition + real geometry + original scalar idw_value,cpu,1.132900000811787,0.0008000006346264,1.1337000014464138,1917.56640625
+idw_optimized_new,1,full unchanged 3NN/power-2 IDW point inference: condition + real geometry + original scalar idw_value,cpu,1.1072999986936338,0.0006000009307172,1.107899999624351,1917.56640625
+idw_optimized_new,2,full unchanged 3NN/power-2 IDW point inference: condition + real geometry + original scalar idw_value,cpu,1.134500000262051,0.0005999991117278,1.1350999993737787,1917.56640625

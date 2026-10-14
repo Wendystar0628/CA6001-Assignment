@@ -1,9 +1,0 @@
-{
-  "model_id": "v8_tabpfn_guarded_fast",
-  "reference": "residual_ft_crps_guarded_a050",
-  "scope": "engineering_equivalence_only",
-  "states": 60,
-  "rows": 8640,
-  "same_weights_estimators_precision_query_batch": true,
-  "native_event_probability": false
-}

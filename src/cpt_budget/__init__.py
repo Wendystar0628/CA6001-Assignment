@@ -1,3 +1,2 @@
-"""Budget-limited CPT reconstruction and replay experiments."""
-
-__version__ = "0.1.0"
+"""Curated CA6001 CPT models and evaluation."""
+__version__ = "0.9.0"

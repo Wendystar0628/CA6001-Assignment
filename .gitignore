@@ -24,3 +24,5 @@ deliverables/recording/
 .cache/
 build/
 dist/
+artifacts/models/
+artifacts/evaluation/reference_predictions.parquet

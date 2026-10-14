@@ -1,9 +1,0 @@
-{
-  "reference": "v7_simplex_structural_s050_gp",
-  "scope": "point head only",
-  "states": 60,
-  "cells": 8640,
-  "max_absolute_difference": 1.5543122344752192e-15,
-  "threshold_label_differences": 0,
-  "allclose_atol_1e_10": true
-}

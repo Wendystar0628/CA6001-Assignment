@@ -1,0 +1,155 @@
+{
+  "source_tag": "v0.8-engineering",
+  "files": [
+    {
+      "path": "artifacts/models/fold_0/tabpfn.ckpt",
+      "bytes": 44425518,
+      "origin": "runs/v4-residual-20261014/checkpoints/fold_0/residual_crps/tabpfn_residual_crps.ckpt"
+    },
+    {
+      "path": "artifacts/models/fold_0/tabpfn_training.json",
+      "bytes": 28034,
+      "origin": "runs/v4-residual-20261014/checkpoints/fold_0/residual_crps/summary.json"
+    },
+    {
+      "path": "artifacts/models/fold_0/xgb.json",
+      "bytes": 8847,
+      "origin": "runs/v4-residual-20261014/matched_xgb/fold_0/idw_residual.json"
+    },
+    {
+      "path": "artifacts/models/fold_0/residual_trees.ubj",
+      "bytes": 63298,
+      "origin": "runs/v4-residual-20261014/matched_xgb/fold_0/residual_trees.ubj"
+    },
+    {
+      "path": "artifacts/models/fold_0/cnp.pt",
+      "bytes": 129853,
+      "origin": "runs/v5-exploration-20261014/neural_process/fold_0/best.pt"
+    },
+    {
+      "path": "artifacts/models/fold_0/cnp_training.json",
+      "bytes": 19425,
+      "origin": "runs/v5-exploration-20261014/neural_process/fold_0/summary.json"
+    },
+    {
+      "path": "artifacts/models/fold_0/basis.npz",
+      "bytes": 2706,
+      "origin": "runs/v5-exploration-20261014/functional/bases/fold_0/basis.npz"
+    },
+    {
+      "path": "artifacts/models/fold_0/basis_manifest.json",
+      "bytes": 1045,
+      "origin": "runs/v5-exploration-20261014/functional/bases/fold_0/basis_manifest.json"
+    },
+    {
+      "path": "artifacts/models/fold_0/gp_trend.json",
+      "bytes": 680,
+      "origin": "runs/v2/v2-validation-20261013-r2/checkpoints/fold_0/gp_trend.json"
+    },
+    {
+      "path": "artifacts/models/fold_1/tabpfn.ckpt",
+      "bytes": 44425646,
+      "origin": "runs/v4-residual-20261014/checkpoints/fold_1/residual_crps/tabpfn_residual_crps.ckpt"
+    },
+    {
+      "path": "artifacts/models/fold_1/tabpfn_training.json",
+      "bytes": 28824,
+      "origin": "runs/v4-residual-20261014/checkpoints/fold_1/residual_crps/summary.json"
+    },
+    {
+      "path": "artifacts/models/fold_1/xgb.json",
+      "bytes": 8872,
+      "origin": "runs/v4-residual-20261014/matched_xgb/fold_1/idw_residual.json"
+    },
+    {
+      "path": "artifacts/models/fold_1/residual_trees.ubj",
+      "bytes": 65011,
+      "origin": "runs/v4-residual-20261014/matched_xgb/fold_1/residual_trees.ubj"
+    },
+    {
+      "path": "artifacts/models/fold_1/cnp.pt",
+      "bytes": 132477,
+      "origin": "runs/v5-exploration-20261014/neural_process/fold_1/best.pt"
+    },
+    {
+      "path": "artifacts/models/fold_1/cnp_training.json",
+      "bytes": 22085,
+      "origin": "runs/v5-exploration-20261014/neural_process/fold_1/summary.json"
+    },
+    {
+      "path": "artifacts/models/fold_1/basis.npz",
+      "bytes": 2706,
+      "origin": "runs/v5-exploration-20261014/functional/bases/fold_1/basis.npz"
+    },
+    {
+      "path": "artifacts/models/fold_1/basis_manifest.json",
+      "bytes": 1142,
+      "origin": "runs/v5-exploration-20261014/functional/bases/fold_1/basis_manifest.json"
+    },
+    {
+      "path": "artifacts/models/fold_1/gp_trend.json",
+      "bytes": 680,
+      "origin": "runs/v2/v2-validation-20261013-r2/checkpoints/fold_1/gp_trend.json"
+    },
+    {
+      "path": "artifacts/models/fold_2/tabpfn.ckpt",
+      "bytes": 44424878,
+      "origin": "runs/v4-residual-20261014/checkpoints/fold_2/residual_crps/tabpfn_residual_crps.ckpt"
+    },
+    {
+      "path": "artifacts/models/fold_2/tabpfn_training.json",
+      "bytes": 26567,
+      "origin": "runs/v4-residual-20261014/checkpoints/fold_2/residual_crps/summary.json"
+    },
+    {
+      "path": "artifacts/models/fold_2/xgb.json",
+      "bytes": 8729,
+      "origin": "runs/v4-residual-20261014/matched_xgb/fold_2/idw_residual.json"
+    },
+    {
+      "path": "artifacts/models/fold_2/residual_trees.ubj",
+      "bytes": 65351,
+      "origin": "runs/v4-residual-20261014/matched_xgb/fold_2/residual_trees.ubj"
+    },
+    {
+      "path": "artifacts/models/fold_2/cnp.pt",
+      "bytes": 129597,
+      "origin": "runs/v5-exploration-20261014/neural_process/fold_2/best.pt"
+    },
+    {
+      "path": "artifacts/models/fold_2/cnp_training.json",
+      "bytes": 19200,
+      "origin": "runs/v5-exploration-20261014/neural_process/fold_2/summary.json"
+    },
+    {
+      "path": "artifacts/models/fold_2/basis.npz",
+      "bytes": 2706,
+      "origin": "runs/v5-exploration-20261014/functional/bases/fold_2/basis.npz"
+    },
+    {
+      "path": "artifacts/models/fold_2/basis_manifest.json",
+      "bytes": 1041,
+      "origin": "runs/v5-exploration-20261014/functional/bases/fold_2/basis_manifest.json"
+    },
+    {
+      "path": "artifacts/models/fold_2/gp_trend.json",
+      "bytes": 681,
+      "origin": "runs/v2/v2-validation-20261013-r2/checkpoints/fold_2/gp_trend.json"
+    },
+    {
+      "path": "artifacts/evaluation/states.parquet",
+      "bytes": 18974,
+      "origin": "v0.8 selected evaluation snapshot"
+    },
+    {
+      "path": "artifacts/evaluation/folds.json",
+      "bytes": 9476,
+      "origin": "v0.8 selected evaluation snapshot"
+    },
+    {
+      "path": "artifacts/evaluation/reference_predictions.parquet",
+      "bytes": 2393322,
+      "origin": "v0.8 selected evaluation snapshot"
+    }
+  ]
+}

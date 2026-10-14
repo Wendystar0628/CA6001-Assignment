@@ -1,4 +1,0 @@
-* text=auto eol=lf
-*.pdf -text
-*.png -text
-*.parquet -text

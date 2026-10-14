@@ -1,0 +1,74 @@
+[
+  {
+    "id": "constant",
+    "name": "弱基线：常数中位数",
+    "group": "baseline",
+    "source_model_id": "target_constant_median"
+  },
+  {
+    "id": "idw",
+    "name": "强基线：3NN IDW",
+    "group": "baseline",
+    "source_model_id": "idw"
+  },
+  {
+    "id": "gp",
+    "name": "强基线：空间GP",
+    "group": "baseline",
+    "source_model_id": "gp"
+  },
+  {
+    "id": "xgb",
+    "name": "强基线：同轨迹XGBoost残差",
+    "group": "baseline",
+    "source_model_id": "xgb_residual_matched"
+  },
+  {
+    "id": "tabpfn_fpca",
+    "name": "TabPFN＋FPCA符号保护",
+    "group": "tabpfn",
+    "source_model_id": "v6_fpca_residual_sign_guard"
+  },
+  {
+    "id": "tabpfn_graph",
+    "name": "TabPFN＋图Huber低值并集",
+    "group": "tabpfn",
+    "source_model_id": "v6_graph_residual_low_union"
+  },
+  {
+    "id": "balanced",
+    "name": "均衡：结构融合＋整曲线决策",
+    "group": "selected",
+    "source_model_id": "v8_balanced_fast"
+  },
+  {
+    "id": "thickness",
+    "name": "厚度：Haar计数决策",
+    "group": "selected",
+    "source_model_id": "v8_haar_fast"
+  },
+  {
+    "id": "recognition",
+    "name": "识别：可靠性定位＋60%计数",
+    "group": "selected",
+    "source_model_id": "v8_recognition_recall60"
+  },
+  {
+    "id": "simplex",
+    "name": "讨论：三角网单独插值",
+    "group": "discussion",
+    "source_model_id": "v7_simplex_linear"
+  },
+  {
+    "id": "count_shrink",
+    "name": "讨论：支持集计数收缩",
+    "group": "discussion",
+    "source_model_id": "v8_balanced_count_shrink"
+  },
+  {
+    "id": "cnp",
+    "name": "讨论：条件神经过程负结果",
+    "group": "discussion",
+    "source_model_id": "cnp_profile"
+  }
+]

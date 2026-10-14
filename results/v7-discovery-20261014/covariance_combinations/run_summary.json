@@ -1,9 +1,0 @@
-{
-  "candidate_count": 6,
-  "states_per_candidate": 60,
-  "rows_per_candidate": 8640,
-  "risk_head": "frozen native gp p_low_1",
-  "run_id": "v7-discovery-20261014",
-  "round": 2,
-  "runtime_errors": []
-}

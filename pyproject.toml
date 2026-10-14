@@ -4,13 +4,13 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ca6001-cpt-budget"
-version = "0.1.0"
+version = "0.9.0"
 description = "Grouped CPT prediction and budget-limited investigation replay"
 requires-python = ">=3.11,<3.12"
 dependencies = [
   "numpy>=1.26", "pandas>=2.2", "pyarrow>=17", "scipy>=1.13",
-  "scikit-learn>=1.5", "xgboost>=2.1", "PyYAML>=6", "matplotlib>=3.9",
-  "openpyxl>=3.1", "xlrd>=2", "imageio>=2.35", "imageio-ffmpeg>=0.5",
+  "scikit-learn>=1.5", "xgboost>=2.1", "PyYAML>=6", "threadpoolctl>=3",
+  "openpyxl>=3.1", "xlrd>=2",
 ]
 
 [project.optional-dependencies]
@@ -18,7 +18,7 @@ tabpfn = ["tabpfn==9.2.0", "torch>=2.5"]
 dev = ["pytest>=8"]
 
 [project.scripts]
-cpt-budget = "cpt_budget.__main__:main"
+cpt-budget = "cpt_budget.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

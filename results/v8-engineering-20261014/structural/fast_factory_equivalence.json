@@ -1,7 +1,0 @@
-{
-  "states": 60,
-  "cells": 8640,
-  "max_absolute_difference": 1.5543122344752192e-15,
-  "threshold_label_differences": 0,
-  "factory": "new_factory(fold), quality_context=False"
-}

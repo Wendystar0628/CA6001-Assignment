@@ -24,7 +24,7 @@ python -m cpt_budget split --config configs/main.yaml
 
 `restore-inputs` 仅解析清单指定的 503 个 `.xlsx` / `.xls` 文件：取记录深度和 qc，保留有限、深度非负、qc 正值的样本，按深度稳定排序，在重复深度保留首条有效记录，转为 `float32` 后按原 `array_key` 写入压缩 NPZ。这与已有筛选审计程序的数值解析口径一致。它不重新筛选整库、不修改清单，也不改动原始 ZIP；缺少指定成员或单位无法确认为 qc/MPa 时会明确报错。
 
-`prepare` 再执行同坐标代表选择和 2–8 m 的 24 个中点网格检查；503 根候选不是最终可用数量。当前得到 495 个不同原始位置、492 个完整可用位置；3 根候选因主窗口内大采样缺口被排除。正式数量以本次运行的 `data_processed/preparation.json` 为准。
+`prepare` 再执行同坐标代表选择和 2–8 m 的 24 个中点网格检查；503 根候选不是最终可用数量。当前得到 495 个不同原始位置、492 个完整可用位置；3 根候选因主窗口内大采样缺口被排除。正式数量以本次运行的 `data_processed_v2/preparation.json` 为准。
 
 如配置另一个原始包位置，可设置 `data.source_archive`，路径相对于 `project.input_dir`；默认是 `downloads/Global_CPT1196.zip`。
 

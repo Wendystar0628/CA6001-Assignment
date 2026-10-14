@@ -1,7 +1,0 @@
-{
-  "states": 60,
-  "models": 3,
-  "rows_each": 8640,
-  "timing_warning": "concurrent diagnostic timings; final benchmark must run serially",
-  "query_truth_used": false
-}

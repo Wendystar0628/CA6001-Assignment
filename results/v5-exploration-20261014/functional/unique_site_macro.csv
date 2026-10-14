@@ -1,3 +1,0 @@
-model_id,log_mae,h_point_mae_m,recall,false_positive_rate,risk_recall,risk_fpr,risk_brier,coverage_90,width_90_log
-functional_fpca_krr,0.6327966708516084,0.6253255208333334,0.29865505396870284,0.053030687502082424,,,,,
-functional_fpca_linear,0.6945242369319774,0.7791341145833334,0.2814324978789593,0.04857225858166814,,,,,
