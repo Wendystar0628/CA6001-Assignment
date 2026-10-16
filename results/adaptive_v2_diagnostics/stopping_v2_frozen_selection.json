@@ -1,0 +1,73 @@
+{
+  "selected_candidate_id": "without_native_u",
+  "selected_candidate": {
+    "candidate_id": "without_native_u",
+    "h_max": null,
+    "use_native_u": false,
+    "changes": 1,
+    "tie_order": 2
+  },
+  "candidate_count": 4,
+  "candidates": [
+    {
+      "candidate_id": "original",
+      "h_max": null,
+      "use_native_u": true,
+      "changes": 0,
+      "tie_order": 0
+    },
+    {
+      "candidate_id": "h_one_depth_cell",
+      "h_max": 0.25,
+      "use_native_u": true,
+      "changes": 1,
+      "tie_order": 1
+    },
+    {
+      "candidate_id": "without_native_u",
+      "h_max": null,
+      "use_native_u": false,
+      "changes": 1,
+      "tie_order": 2
+    },
+    {
+      "candidate_id": "h_one_depth_cell_without_native_u",
+      "h_max": 0.25,
+      "use_native_u": false,
+      "changes": 2,
+      "tie_order": 3
+    }
+  ],
+  "selection_source": "development site-equal verified saving minus false stop rate only",
+  "evaluation_accessed_before_selection": false,
+  "tie_rule": "fewer changes, then original / retain native U with H=.25 / remove U only / both changes",
+  "base_rule": {
+    "delta_q90_max": 0.081505897267226,
+    "delta_h90_max": 0.0,
+    "support_log_mae_max": 0.583650490224038,
+    "uncertainty_q90_max": 0.46132889903634966,
+    "min_observed": 9,
+    "consecutive_rounds": 2
+  },
+  "quality_targets_unchanged": {
+    "scope": "profile_and_cumulative_thickness_research_targets",
+    "absolute_target_source": "development_full_plan_75th_percentile_plus_predeclared_margin",
+    "absolute_log_margin": 0.05,
+    "absolute_thickness_margin_m": 0.1,
+    "relative_log_tolerance": 0.05,
+    "relative_thickness_tolerance_m": 0.25,
+    "low_qc_recall_target": 0.5,
+    "low_qc_fpr_target": 0.1,
+    "low_qc_target_role": "separate_diagnostic_not_an_engineering_safety_claim",
+    "absolute_log_mae_max": 0.626458169250689,
+    "absolute_thickness_mae_max_m": 0.88125
+  },
+  "acquisition_variant_unchanged": "UDS",
+  "primary_model_unchanged": "tabpfn_graph",
+  "support_lgo_gate_retained": true,
+  "audit_read_online": false,
+  "future_round_read_online": false,
+  "evaluation_scope": "finite exploratory re-evaluation after historical unblinding; no new blinded generalisation claim",
+  "signal_scope": "uses original all-plan-grid signals only; does not calibrate v2 remaining-grid or dynamic-support signals",
+  "censoring_policy": "monotone relaxations should stop no later than original; unavailable later rounds are never fabricated"
+}

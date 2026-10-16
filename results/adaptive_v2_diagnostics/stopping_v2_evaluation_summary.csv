@@ -1,0 +1,4 @@
+method,trajectories,censored_trajectories,quality_passing_decisions,early_stops,false_early_stops,saved_cpt,verified_saved_cpt,site_equal_verified_saved_fraction,site_equal_false_stop_rate,selection_score
+development_selected_adaptive,12,0,9,3,0,30,30,0.11904761904761903,0.0,0.11904761904761903
+original_adaptive,12,0,9,3,0,30,30,0.11904761904761903,0.0,0.11904761904761903
+original_sequential,12,0,9,4,0,34,34,0.1357142857142857,0.0,0.1357142857142857

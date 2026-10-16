@@ -1,0 +1,13 @@
+site_id,method,trajectories,censored_trajectories,quality_passing_decisions,early_stops,false_early_stops,saved_cpt,verified_saved_cpt,site_equal_verified_saved_fraction,site_equal_false_stop_rate,selection_score
+christchurch_stadium,development_selected_adaptive,3,0,3,0,0,0,0,0.0,0.0,0.0
+christchurch_stadium,original_adaptive,3,0,3,0,0,0,0,0.0,0.0,0.0
+christchurch_stadium,original_sequential,3,0,3,0,0,0,0,0.0,0.0,0.0
+hollywood,development_selected_adaptive,3,0,3,0,0,0,0,0.0,0.0,0.0
+hollywood,original_adaptive,3,0,3,0,0,0,0,0.0,0.0,0.0
+hollywood,original_sequential,3,0,3,1,0,4,4,0.06666666666666667,0.0,0.06666666666666667
+newlock,development_selected_adaptive,3,0,0,0,0,0,0,0.0,0.0,0.0
+newlock,original_adaptive,3,0,0,0,0,0,0,0.0,0.0,0.0
+newlock,original_sequential,3,0,0,0,0,0,0,0.0,0.0,0.0
+wellington_airport,development_selected_adaptive,3,0,3,3,0,30,30,0.4761904761904761,0.0,0.4761904761904761
+wellington_airport,original_adaptive,3,0,3,3,0,30,30,0.4761904761904761,0.0,0.4761904761904761
+wellington_airport,original_sequential,3,0,3,3,0,30,30,0.4761904761904761,0.0,0.4761904761904761

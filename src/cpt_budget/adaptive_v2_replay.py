@@ -27,7 +27,7 @@ def make_experimental_predictor(model_id, split, geometry):
     if model_id in MAIN_MODEL_IDS + ABLATION_MODEL_IDS:
         return make_predictor(model_id, split['fold_id'], role=split['role'], geometry=geometry,
                               device='cuda').initialize()
-    if model_id.startswith('target_tree_'):
+    if model_id.startswith(('target_tree_', 'target_et_', 'target_rf_', 'target_xgb_')):
         from .adaptive_v2_target_trees import make_target_tree_predictor
         return make_target_tree_predictor(model_id, split['fold_id']).initialize()
     from .adaptive_v2_models import make_v2_predictor

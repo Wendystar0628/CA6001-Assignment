@@ -1,0 +1,5 @@
+candidate_id,trajectories,censored_trajectories,quality_passing_decisions,early_stops,false_early_stops,saved_cpt,verified_saved_cpt,site_equal_verified_saved_fraction,site_equal_false_stop_rate,selection_score,changes,tie_order,ranking_score
+without_native_u,12,0,8,2,0,19,19,0.051075268817204304,0.0,0.051075268817204304,1,2,0.051075268817
+h_one_depth_cell_without_native_u,12,0,8,2,0,19,19,0.051075268817204304,0.0,0.051075268817204304,2,3,0.051075268817
+original,12,0,8,1,0,6,6,0.016129032258064516,0.0,0.016129032258064516,0,0,0.016129032258
+h_one_depth_cell,12,0,8,1,0,6,6,0.016129032258064516,0.0,0.016129032258064516,1,1,0.016129032258

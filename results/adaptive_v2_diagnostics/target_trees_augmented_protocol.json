@@ -1,0 +1,28 @@
+{
+  "kind": "post_unblinding_exploratory_diagnostic",
+  "sites": [
+    "newlock"
+  ],
+  "seeds": [
+    17,
+    29,
+    43
+  ],
+  "budgets": [
+    64
+  ],
+  "models": [
+    "target_tree_augmented_cv"
+  ],
+  "online_label_access": "currently revealed near groups only; no audit or future candidate labels",
+  "source_weights_used": false,
+  "parameter_selection": "finite six target trees or one median-tree mechanism with native/half/full count modes; revealed-near-group CV",
+  "quality": {
+    "log_mae_max": 0.626458169250689,
+    "thickness_mae_max_m": 0.88125,
+    "relative_log_tolerance": 0.05,
+    "relative_thickness_tolerance_m": 0.25,
+    "low_recall_min": 0.5,
+    "low_fpr_max": 0.1
+  }
+}
