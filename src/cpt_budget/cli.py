@@ -98,10 +98,10 @@ def main():
     sub=parser.add_subparsers(dest='command',required=True)
     sub.add_parser('models');sub.add_parser('status')
     p=sub.add_parser('adaptive',help='Adaptive CPT replay, development-only selection and economic evaluation.')
-    p.add_argument('--stage',choices=['prepare','pilot','compare-development','calibrate','freeze','compare-evaluation','evaluate','publish','economics','all'],default='all')
+    p.add_argument('--stage',choices=['prepare','pilot','compare-development','calibrate','freeze','compare-evaluation','evaluate','evaluate-partition','publish','economics','all'],default='all')
     p.add_argument('--config',default='configs/adaptive_v1.yaml')
-    p.add_argument('--sites',nargs='+',help='Pilot sites only.')
-    p.add_argument('--seeds',nargs='+',type=int,help='Pilot seeds only.')
+    p.add_argument('--sites',nargs='+',help='Pilot or frozen evaluation partition sites.')
+    p.add_argument('--seeds',nargs='+',type=int,help='Pilot or frozen evaluation partition seeds.')
     for command in ['restore-inputs','prepare','split']:
         p=sub.add_parser(command);p.add_argument('--config',default='configs/main.yaml')
     p=sub.add_parser('verify');p.add_argument('--models',nargs='+');p.add_argument('--folds',nargs='+',type=int)
@@ -138,8 +138,8 @@ def main():
     elif args.command=='status':status()
     elif args.command=='adaptive':
         from .adaptive_run import run
-        if (args.sites or args.seeds) and args.stage!='pilot':
-            raise SystemExit('--sites/--seeds apply only to the pilot; formal seeds are frozen in the config')
+        if (args.sites or args.seeds) and args.stage not in ('pilot','evaluate-partition'):
+            raise SystemExit('--sites/--seeds apply only to pilot or frozen evaluate-partition jobs')
         run(args.stage,args.config,args.sites,args.seeds)
     elif args.command in ('restore-inputs','prepare','split'):
         config=load_config(args.config)

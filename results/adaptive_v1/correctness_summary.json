@@ -1,0 +1,10 @@
+{
+  "published_trajectories": 72,
+  "evaluation_trajectories": 36,
+  "whole_group_counts_and_audit_exclusion_passed": true,
+  "frozen_inputs_unchanged": true,
+  "paired_initial_contexts_checked": 24,
+  "max_initial_prediction_difference": 0.0,
+  "initial_label_changes": 0,
+  "economic_component_recomputation_passed": true
+}

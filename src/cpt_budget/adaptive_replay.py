@@ -210,7 +210,11 @@ def run_trajectory(dataset, split, model_id, policy_id, weights=(.5, .3, .2),
                         "support_diagnostic_s": support_s, "select_s": select_s,
                         "runtime_s": elapsed, "elapsed_trajectory_s": perf_counter() - start})
         if log is not None:
-            log(f"{meta['run_id']} round={round_index} n={len(known)}/{len(plan)} stop={reason or '-'} ({elapsed:.2f}s)")
+            message = f"{meta['run_id']} round={round_index} n={len(known)}/{len(plan)} stop={reason or '-'} ({elapsed:.2f}s)"
+            if log is print:
+                print(message, flush=True)
+            else:
+                log(message)
         if stopped:
             break
         # Complete the batch before any label is revealed or model conditioned.

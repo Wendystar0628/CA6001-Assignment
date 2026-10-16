@@ -1,0 +1,29 @@
+{
+  "primary_model": "tabpfn_graph",
+  "acquisition_variant": "UDS",
+  "n_trajectories": 72,
+  "evaluation_sites": 4,
+  "seeds": [
+    17,
+    29,
+    43
+  ],
+  "environment": {
+    "python": "3.11.15",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "cpu": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+    "logical_cpu_count": 28,
+    "packages": {
+      "numpy": "2.4.6",
+      "pandas": "3.0.6",
+      "scipy": "1.17.1",
+      "scikit-learn": "1.9.1",
+      "xgboost": "3.2.0",
+      "tabpfn": "9.2.0"
+    },
+    "torch": "2.11.0+cu128",
+    "cuda_available": true,
+    "gpu": "NVIDIA GeForce RTX 4080",
+    "peak_cuda_allocated_mb": 735.54296875
+  }
+}

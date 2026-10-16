@@ -56,6 +56,8 @@ Quantities and stopping decisions come from the saved trajectories. Failed early
 
 ## Reproduction and outputs
 
+Model execution time is not a comparative performance outcome in this experiment: the computer is shared with other CPU/GPU workloads. Performance conclusions use prediction and investigation quality. Fieldwork, review and waiting days in the economic scenarios describe site operations and are distinct from model execution time.
+
 Run `python -m cpt_budget adaptive --stage all` in the existing project environment for a fresh experiment directory. Individual stages are `prepare`, `pilot`, `compare-development`, `calibrate`, `freeze`, `compare-evaluation`, `evaluate`, `publish` and `economics`. The `freeze` stage selects and freezes using already completed development trajectories without repeating model inference. A completed evaluation is not reused for a new selection; use a new configured output/work directory for another experiment.
 
 `results/adaptive_v1/` contains the frozen split and configuration, E1/E2 comparisons, online trajectories, separate quality audit, final decisions, resource records, economic input provenance, economic results and sensitivity. Large per-cell predictions stay under ignored `runs/adaptive_v1/`. Four focused guarantees are checked: hidden-label isolation, whole-group/count correctness, same-input comparison, and economic recomputation.

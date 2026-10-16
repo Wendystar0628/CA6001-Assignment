@@ -362,7 +362,7 @@ def calibrate(config, run_replays=True):
     return frozen
 
 
-def evaluate_replays(config):
+def evaluate_replays(config, sites=None, seeds=None, publish_outputs=True):
     from .adaptive_policy import StopRule
     from .adaptive_replay import run_trajectory
     from .adaptive_models import AdaptiveModelSuite, make_predictor
@@ -374,6 +374,8 @@ def evaluate_replays(config):
         raise ValueError('Configuration, prepared data or source weights changed after selection')
     dataset = load_dataset(load_config())
     for split in _splits(config, 'evaluation'):
+        if sites and split['site_id'] not in sites or seeds and split['seed'] not in seeds:
+            continue
         model_id = frozen['primary_model']
         helper = 'tabpfn_joint' if model_id == 'xgb' else 'xgb'
         needed = tuple(dict.fromkeys((model_id, 'gp', helper)))
@@ -383,6 +385,11 @@ def evaluate_replays(config):
         support = make_predictor(model_id, split['fold_id'], role=split['role'],
                                  geometry=geometry, device=config['experiment']['device']).initialize()
         for policy, variant in [('B_full', 'full'), ('B_seq', 'maximin'), ('P_adapt', frozen['acquisition_variant'])]:
+            label = f"evaluation/{split['site_id']}_s{split['seed']}_{policy}_{variant}"
+            completed = work / label
+            if all((completed / name).exists() for name in ['trajectories.csv', 'quality.csv', 'predictions.parquet', 'runtime.csv', 'selections.csv']):
+                print(f'Reuse completed frozen trajectory {label}', flush=True)
+                continue
             print(f"E3 evaluation {split['site_id']} seed={split['seed']} {policy}/{variant}", flush=True)
             result = run_trajectory(dataset, split, frozen['primary_model'], policy,
                                     weights=frozen['acquisition_weights'],
@@ -393,17 +400,35 @@ def evaluate_replays(config):
                 result[key]['variant'] = variant
                 if 'run_id' in result[key]:
                     result[key]['run_id'] = result[key].run_id.astype(str) + '_' + variant
-            label = f"evaluation/{split['site_id']}_s{split['seed']}_{policy}_{variant}"
             _store_result(result, split, dataset, work, label)
-    return publish(config)
+    return publish(config) if publish_outputs else None
 
 
 def publish(config):
     output, work = _paths(config)
     frozen = json.loads((output / 'frozen_config.json').read_text(encoding='utf-8'))
+    comparison = pd.read_csv(output / 'model_comparison.csv')
+    comparison[comparison.full_endpoint.eq(True)].to_csv(output / 'full_plan_model_sensitivity.csv', index=False)
     pairs = _read_runs(work, 'development') + _read_runs(work, 'evaluation')
     pairs = [(t, a) for t, a in pairs if t.policy_id.iloc[0] != 'P_adapt' or t.variant.iloc[0] == frozen['acquisition_variant']]
+    expected = len(_splits(config)) * 3
+    if len(pairs) != expected:
+        raise ValueError(f'Formal publication requires all {expected} trajectories, found {len(pairs)}')
     audit = _attach_quality(pairs, frozen['quality'])
+    signal_checks = []
+    for trajectory, _ in pairs:
+        if trajectory.policy_id.iloc[0] == 'B_full':
+            continue
+        linked = trajectory.merge(audit[['run_id', 'policy_id', 'round', 'log_mae', 'thickness_mae_m']],
+                                  on=['run_id', 'policy_id', 'round'], validate='one_to_one')
+        values = linked[['uncertainty_q90', 'log_mae', 'thickness_mae_m']].dropna()
+        record = {key: trajectory.iloc[0][key] for key in ['run_id', 'site_id', 'seed', 'role', 'policy_id']}
+        record['n_rounds'] = len(values)
+        for metric in ['log_mae', 'thickness_mae_m']:
+            record[f'gp_uncertainty_vs_{metric}_spearman'] = (float(values.uncertainty_q90.corr(values[metric], method='spearman'))
+                if len(values) >= 3 and values.uncertainty_q90.nunique() > 1 and values[metric].nunique() > 1 else None)
+        signal_checks.append(record)
+    pd.DataFrame(signal_checks).to_csv(output / 'signal_diagnostics.csv', index=False)
     decisions = pd.DataFrame([_decision(t, audit, frozen['stop_rule']) for t, _ in pairs])
     traces, selected, timings = [], [], []
     for t, _ in pairs:
@@ -483,6 +508,8 @@ def run(stage='all', config_path='configs/adaptive_v1.yaml', sites=None, seeds=N
             compare(config, role='evaluation')
         if stage in ('evaluate', 'all'):
             evaluate_replays(config)
+        if stage == 'evaluate-partition':
+            return evaluate_replays(config, sites, seeds, publish_outputs=False)
         if stage == 'publish':
             publish(config)
         if stage == 'economics':
