@@ -1,0 +1,375 @@
+{
+  "kind": "post_unblinding_exploratory_diagnostic",
+  "states": "original v1 geometry-only maximin",
+  "sites": [
+    "newlock"
+  ],
+  "seeds": [
+    17,
+    29,
+    43
+  ],
+  "budgets": [
+    5,
+    13,
+    25,
+    41,
+    64
+  ],
+  "models": [
+    "target_trend_gp",
+    "target_fpca_gp",
+    "target_profile_cv",
+    "target_scalar_median",
+    "target_depth_mean",
+    "target_depth_median",
+    "target_joint_cv"
+  ],
+  "online_label_access": "revealed near groups only; no audit or unrevealed candidate curves",
+  "source_weights_used": false,
+  "timing_compared": false,
+  "parameter_selection": "finite candidates; revealed-group cross-validation only",
+  "quality": {
+    "log_mae_max": 0.626458169250689,
+    "thickness_mae_max_m": 0.88125,
+    "relative_log_tolerance": 0.05,
+    "relative_thickness_tolerance_m": 0.25,
+    "low_recall_min": 0.5,
+    "low_fpr_max": 0.1
+  },
+  "candidate_grid": {
+    "target_trend_gp": [
+      {
+        "kind": "gp",
+        "length_ratio": 0.5,
+        "ridge": 0.05,
+        "count_mode": "native"
+      },
+      {
+        "kind": "gp",
+        "length_ratio": 0.5,
+        "ridge": 0.25,
+        "count_mode": "native"
+      },
+      {
+        "kind": "gp",
+        "length_ratio": 1.0,
+        "ridge": 0.05,
+        "count_mode": "native"
+      },
+      {
+        "kind": "gp",
+        "length_ratio": 1.0,
+        "ridge": 0.25,
+        "count_mode": "native"
+      },
+      {
+        "kind": "gp",
+        "length_ratio": 2.0,
+        "ridge": 0.05,
+        "count_mode": "native"
+      },
+      {
+        "kind": "gp",
+        "length_ratio": 2.0,
+        "ridge": 0.25,
+        "count_mode": "native"
+      },
+      {
+        "kind": "gp",
+        "length_ratio": 4.0,
+        "ridge": 0.05,
+        "count_mode": "native"
+      },
+      {
+        "kind": "gp",
+        "length_ratio": 4.0,
+        "ridge": 0.25,
+        "count_mode": "native"
+      }
+    ],
+    "target_fpca_gp": [
+      {
+        "kind": "fpca",
+        "length_ratio": 0.5,
+        "ridge": 0.05,
+        "count_mode": "native"
+      },
+      {
+        "kind": "fpca",
+        "length_ratio": 0.5,
+        "ridge": 0.25,
+        "count_mode": "native"
+      },
+      {
+        "kind": "fpca",
+        "length_ratio": 1.0,
+        "ridge": 0.05,
+        "count_mode": "native"
+      },
+      {
+        "kind": "fpca",
+        "length_ratio": 1.0,
+        "ridge": 0.25,
+        "count_mode": "native"
+      },
+      {
+        "kind": "fpca",
+        "length_ratio": 2.0,
+        "ridge": 0.05,
+        "count_mode": "native"
+      },
+      {
+        "kind": "fpca",
+        "length_ratio": 2.0,
+        "ridge": 0.25,
+        "count_mode": "native"
+      },
+      {
+        "kind": "fpca",
+        "length_ratio": 4.0,
+        "ridge": 0.05,
+        "count_mode": "native"
+      },
+      {
+        "kind": "fpca",
+        "length_ratio": 4.0,
+        "ridge": 0.25,
+        "count_mode": "native"
+      }
+    ],
+    "target_profile_cv": [
+      {
+        "kind": "gp",
+        "length_ratio": 0.5,
+        "ridge": 0.05,
+        "count_mode": "native"
+      },
+      {
+        "kind": "gp",
+        "length_ratio": 0.5,
+        "ridge": 0.25,
+        "count_mode": "native"
+      },
+      {
+        "kind": "gp",
+        "length_ratio": 1.0,
+        "ridge": 0.05,
+        "count_mode": "native"
+      },
+      {
+        "kind": "gp",
+        "length_ratio": 1.0,
+        "ridge": 0.25,
+        "count_mode": "native"
+      },
+      {
+        "kind": "gp",
+        "length_ratio": 2.0,
+        "ridge": 0.05,
+        "count_mode": "native"
+      },
+      {
+        "kind": "gp",
+        "length_ratio": 2.0,
+        "ridge": 0.25,
+        "count_mode": "native"
+      },
+      {
+        "kind": "gp",
+        "length_ratio": 4.0,
+        "ridge": 0.05,
+        "count_mode": "native"
+      },
+      {
+        "kind": "gp",
+        "length_ratio": 4.0,
+        "ridge": 0.25,
+        "count_mode": "native"
+      },
+      {
+        "kind": "fpca",
+        "length_ratio": 0.5,
+        "ridge": 0.05,
+        "count_mode": "native"
+      },
+      {
+        "kind": "fpca",
+        "length_ratio": 0.5,
+        "ridge": 0.25,
+        "count_mode": "native"
+      },
+      {
+        "kind": "fpca",
+        "length_ratio": 1.0,
+        "ridge": 0.05,
+        "count_mode": "native"
+      },
+      {
+        "kind": "fpca",
+        "length_ratio": 1.0,
+        "ridge": 0.25,
+        "count_mode": "native"
+      },
+      {
+        "kind": "fpca",
+        "length_ratio": 2.0,
+        "ridge": 0.05,
+        "count_mode": "native"
+      },
+      {
+        "kind": "fpca",
+        "length_ratio": 2.0,
+        "ridge": 0.25,
+        "count_mode": "native"
+      },
+      {
+        "kind": "fpca",
+        "length_ratio": 4.0,
+        "ridge": 0.05,
+        "count_mode": "native"
+      },
+      {
+        "kind": "fpca",
+        "length_ratio": 4.0,
+        "ridge": 0.25,
+        "count_mode": "native"
+      },
+      {
+        "kind": "local_median",
+        "length_ratio": 0.5,
+        "ridge": 0.1,
+        "count_mode": "native"
+      },
+      {
+        "kind": "local_median",
+        "length_ratio": 1.0,
+        "ridge": 0.1,
+        "count_mode": "native"
+      },
+      {
+        "kind": "local_median",
+        "length_ratio": 2.0,
+        "ridge": 0.1,
+        "count_mode": "native"
+      },
+      {
+        "kind": "local_median",
+        "length_ratio": 4.0,
+        "ridge": 0.1,
+        "count_mode": "native"
+      },
+      {
+        "kind": "depth_mean",
+        "length_ratio": 1.0,
+        "ridge": 0.1,
+        "count_mode": "native"
+      },
+      {
+        "kind": "depth_median",
+        "length_ratio": 1.0,
+        "ridge": 0.1,
+        "count_mode": "native"
+      }
+    ],
+    "target_scalar_median": [
+      {
+        "kind": "scalar",
+        "length_ratio": 1.0,
+        "ridge": 0.1,
+        "count_mode": "native"
+      }
+    ],
+    "target_depth_mean": [
+      {
+        "kind": "depth_mean",
+        "length_ratio": 1.0,
+        "ridge": 0.1,
+        "count_mode": "native"
+      }
+    ],
+    "target_depth_median": [
+      {
+        "kind": "depth_median",
+        "length_ratio": 1.0,
+        "ridge": 0.1,
+        "count_mode": "native"
+      }
+    ],
+    "target_joint_cv": [
+      {
+        "kind": "gp",
+        "length_ratio": 1.0,
+        "ridge": 0.25,
+        "count_mode": "native"
+      },
+      {
+        "kind": "gp",
+        "length_ratio": 1.0,
+        "ridge": 0.25,
+        "count_mode": "half"
+      },
+      {
+        "kind": "gp",
+        "length_ratio": 1.0,
+        "ridge": 0.25,
+        "count_mode": "empirical"
+      },
+      {
+        "kind": "gp",
+        "length_ratio": 2.0,
+        "ridge": 0.25,
+        "count_mode": "native"
+      },
+      {
+        "kind": "gp",
+        "length_ratio": 2.0,
+        "ridge": 0.25,
+        "count_mode": "half"
+      },
+      {
+        "kind": "gp",
+        "length_ratio": 2.0,
+        "ridge": 0.25,
+        "count_mode": "empirical"
+      },
+      {
+        "kind": "fpca",
+        "length_ratio": 1.0,
+        "ridge": 0.25,
+        "count_mode": "native"
+      },
+      {
+        "kind": "fpca",
+        "length_ratio": 1.0,
+        "ridge": 0.25,
+        "count_mode": "half"
+      },
+      {
+        "kind": "fpca",
+        "length_ratio": 1.0,
+        "ridge": 0.25,
+        "count_mode": "empirical"
+      },
+      {
+        "kind": "fpca",
+        "length_ratio": 2.0,
+        "ridge": 0.25,
+        "count_mode": "native"
+      },
+      {
+        "kind": "fpca",
+        "length_ratio": 2.0,
+        "ridge": 0.25,
+        "count_mode": "half"
+      },
+      {
+        "kind": "fpca",
+        "length_ratio": 2.0,
+        "ridge": 0.25,
+        "count_mode": "empirical"
+      }
+    ]
+  },
+  "inner_cv_grouping": "whole near-group; profile basis and empirical counts re-fit within every training fold"
+}

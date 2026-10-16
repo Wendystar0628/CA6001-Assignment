@@ -1,0 +1,428 @@
+{
+  "experiment_kind": "post_unblinding_offline_metadata_diagnostic",
+  "metadata": {
+    "locations": {
+      "sheet_count": 1,
+      "row_count": 98,
+      "columns": [
+        "NO",
+        "X(m)",
+        "Y(m)"
+      ],
+      "nonempty_properties": {},
+      "has_ground_elevation": false,
+      "has_explicit_crs": false
+    },
+    "global_members": [
+      "CPT_3_1196/@Newlock/DKMP10_000.xls",
+      "CPT_3_1196/@Newlock/DKMP11C_000.xls",
+      "CPT_3_1196/@Newlock/DKMP12A-A_001.xls",
+      "CPT_3_1196/@Newlock/DKMP12A-B_002.xls",
+      "CPT_3_1196/@Newlock/DKMP12A-C_004.xls",
+      "CPT_3_1196/@Newlock/DKMP12A-D_005.xls",
+      "CPT_3_1196/@Newlock/DKMP12A_000.xls",
+      "CPT_3_1196/@Newlock/DKMP12C_003.xls",
+      "CPT_3_1196/@Newlock/DKMP13A-A_000.xls",
+      "CPT_3_1196/@Newlock/DKMP14A-B_000.xls",
+      "CPT_3_1196/@Newlock/DKMP15A-A_001.xls",
+      "CPT_3_1196/@Newlock/DKMP15C-A_001.xls",
+      "CPT_3_1196/@Newlock/DKMP15C_000.xls",
+      "CPT_3_1196/@Newlock/DKMP16B_000.xls",
+      "CPT_3_1196/@Newlock/DKMP17B_000.xls",
+      "CPT_3_1196/@Newlock/DKMP18C_000.xls",
+      "CPT_3_1196/@Newlock/DKMP19C_000.xls",
+      "CPT_3_1196/@Newlock/DKMP1_000.xls",
+      "CPT_3_1196/@Newlock/DKMP20B_000.xls",
+      "CPT_3_1196/@Newlock/DKMP21A_001.xls",
+      "CPT_3_1196/@Newlock/DKMP26A_000.xls",
+      "CPT_3_1196/@Newlock/DKMP27A_000.xls",
+      "CPT_3_1196/@Newlock/DKMP28C_000.xls",
+      "CPT_3_1196/@Newlock/DKMP29A_001.xls",
+      "CPT_3_1196/@Newlock/DKMP2_000.xls",
+      "CPT_3_1196/@Newlock/DKMP3_000.xls",
+      "CPT_3_1196/@Newlock/DKMP4_000.xls",
+      "CPT_3_1196/@Newlock/DKMP5_000.xls",
+      "CPT_3_1196/@Newlock/DKMP6_000.xls",
+      "CPT_3_1196/@Newlock/DKMP7_000.xls",
+      "CPT_3_1196/@Newlock/DKMP8_000.xls",
+      "CPT_3_1196/@Newlock/DKMP9_002.xls",
+      "CPT_3_1196/@Newlock/S30.xls",
+      "CPT_3_1196/@Newlock/S31.xls",
+      "CPT_3_1196/@Newlock/S32.xls",
+      "CPT_3_1196/@Newlock/S33.xls",
+      "CPT_3_1196/@Newlock/S34.xls",
+      "CPT_3_1196/@Newlock/S35.xls",
+      "CPT_3_1196/@Newlock/S36.xls",
+      "CPT_3_1196/@Newlock/S37.xls",
+      "CPT_3_1196/@Newlock/S38.xls",
+      "CPT_3_1196/@Newlock/S39.xls",
+      "CPT_3_1196/@Newlock/S40.xls",
+      "CPT_3_1196/@Newlock/S41.xls",
+      "CPT_3_1196/@Newlock/S42.xls",
+      "CPT_3_1196/@Newlock/S43.xls",
+      "CPT_3_1196/@Newlock/S44.xls",
+      "CPT_3_1196/@Newlock/S44A.xls",
+      "CPT_3_1196/@Newlock/S45.xls",
+      "CPT_3_1196/@Newlock/S46.xls",
+      "CPT_3_1196/@Newlock/S47.xls",
+      "CPT_3_1196/@Newlock/S48.xls",
+      "CPT_3_1196/@Newlock/S49.xls",
+      "CPT_3_1196/@Newlock/S50.xls",
+      "CPT_3_1196/@Newlock/S51.xls",
+      "CPT_3_1196/@Newlock/S52.xls",
+      "CPT_3_1196/@Newlock/S53.xls",
+      "CPT_3_1196/@Newlock/S54.xls",
+      "CPT_3_1196/@Newlock/S55.xls",
+      "CPT_3_1196/@Newlock/S56.xls",
+      "CPT_3_1196/@Newlock/S57.xls",
+      "CPT_3_1196/@Newlock/S58.xls",
+      "CPT_3_1196/@Newlock/S59.xls",
+      "CPT_3_1196/@Newlock/S60.xls",
+      "CPT_3_1196/@Newlock/S61.xls",
+      "CPT_3_1196/@Newlock/S62.xls",
+      "CPT_3_1196/@Newlock/S63.xls",
+      "CPT_3_1196/@Newlock/S64.xls",
+      "CPT_3_1196/@Newlock/S65.xls",
+      "CPT_3_1196/@Newlock/S66.xls",
+      "CPT_3_1196/@Newlock/S67.xls",
+      "CPT_3_1196/@Newlock/S68.xls",
+      "CPT_3_1196/@Newlock/S69A.xls",
+      "CPT_3_1196/@Newlock/S70.xls",
+      "CPT_3_1196/@Newlock/S71.xls",
+      "CPT_3_1196/@Newlock/S72.xls",
+      "CPT_3_1196/@Newlock/S73.xls",
+      "CPT_3_1196/@Newlock/S74.xls",
+      "CPT_3_1196/@Newlock/S75.xls",
+      "CPT_3_1196/@Newlock/S76.xls",
+      "CPT_3_1196/@Newlock/S77.xls",
+      "CPT_3_1196/@Newlock/S78.xls",
+      "CPT_3_1196/@Newlock/S79.xls",
+      "CPT_3_1196/@Newlock/S80.xls",
+      "CPT_3_1196/@Newlock/S81.xls",
+      "CPT_3_1196/@Newlock/S82.xls",
+      "CPT_3_1196/@Newlock/S83.xls",
+      "CPT_3_1196/@Newlock/S84.xls",
+      "CPT_3_1196/@Newlock/S85.xls",
+      "CPT_3_1196/@Newlock/S86.xls",
+      "CPT_3_1196/@Newlock/S87.xls",
+      "CPT_3_1196/@Newlock/S88.xls",
+      "CPT_3_1196/@Newlock/S89.xls",
+      "CPT_3_1196/@Newlock/S90.xls",
+      "CPT_3_1196/@Newlock/S91.xls",
+      "CPT_3_1196/@Newlock/S92.xls",
+      "CPT_3_1196/@Newlock/SM67.xls",
+      "CPT_3_1196/@Newlock/SM69.xls",
+      "CPT_3_1196/@Newlock/locations.xlsx"
+    ],
+    "independent_archive": {
+      "members": [
+        "DKMP10_000.xls",
+        "DKMP11C_000.xls",
+        "DKMP12A-A_001.xls",
+        "DKMP12A-B_002.xls",
+        "DKMP12A-C_004.xls",
+        "DKMP12A-D_005.xls",
+        "DKMP12A_000.xls",
+        "DKMP12C_003.xls",
+        "DKMP13A-A_000.xls",
+        "DKMP14A-B_000.xls",
+        "DKMP15A-A_001.xls",
+        "DKMP15C-A_001.xls",
+        "DKMP15C_000.xls",
+        "DKMP16B_000.xls",
+        "DKMP17B_000.xls",
+        "DKMP18C_000.xls",
+        "DKMP19C_000.xls",
+        "DKMP1_000.xls",
+        "DKMP20B_000.xls",
+        "DKMP21A_001.xls",
+        "DKMP26A_000.xls",
+        "DKMP27A_000.xls",
+        "DKMP28C_000.xls",
+        "DKMP29A_001.xls",
+        "DKMP2_000.xls",
+        "DKMP3_000.xls",
+        "DKMP4_000.xls",
+        "DKMP5_000.xls",
+        "DKMP6_000.xls",
+        "DKMP7_000.xls",
+        "DKMP8_000.xls",
+        "DKMP9_002.xls",
+        "locations.xlsx",
+        "S30.xls",
+        "S31.xls",
+        "S32.xls",
+        "S33.xls",
+        "S34.xls",
+        "S35.xls",
+        "S36.xls",
+        "S37.xls",
+        "S38.xls",
+        "S39.xls",
+        "S40.xls",
+        "S41.xls",
+        "S42.xls",
+        "S43.xls",
+        "S44.xls",
+        "S44A.xls",
+        "S45.xls",
+        "S46.xls",
+        "S47.xls",
+        "S48.xls",
+        "S49.xls",
+        "S50.xls",
+        "S51.xls",
+        "S52.xls",
+        "S53.xls",
+        "S54.xls",
+        "S55.xls",
+        "S56.xls",
+        "S57.xls",
+        "S58.xls",
+        "S59.xls",
+        "S60.xls",
+        "S61.xls",
+        "S62.xls",
+        "S63.xls",
+        "S64.xls",
+        "S65.xls",
+        "S66.xls",
+        "S67.xls",
+        "S68.xls",
+        "S69A.xls",
+        "S70.xls",
+        "S71.xls",
+        "S72.xls",
+        "S73.xls",
+        "S74.xls",
+        "S75.xls",
+        "S76.xls",
+        "S77.xls",
+        "S78.xls",
+        "S79.xls",
+        "S80.xls",
+        "S81.xls",
+        "S82.xls",
+        "S83.xls",
+        "S84.xls",
+        "S85.xls",
+        "S86.xls",
+        "S87.xls",
+        "S88.xls",
+        "S89.xls",
+        "S90.xls",
+        "S91.xls",
+        "S92.xls",
+        "SM67.xls",
+        "SM69.xls"
+      ],
+      "same_filename_count": 99,
+      "byte_identical_member_count": 77,
+      "missing_from_global": [],
+      "changed_container_numeric_checks": [
+        {
+          "source_filename": "DKMP11C_000.xls",
+          "numeric_data_identical": true
+        },
+        {
+          "source_filename": "DKMP12A-A_001.xls",
+          "numeric_data_identical": true
+        },
+        {
+          "source_filename": "DKMP12A-C_004.xls",
+          "numeric_data_identical": true
+        },
+        {
+          "source_filename": "DKMP12C_003.xls",
+          "numeric_data_identical": true
+        },
+        {
+          "source_filename": "DKMP14A-B_000.xls",
+          "numeric_data_identical": true
+        },
+        {
+          "source_filename": "DKMP15C_000.xls",
+          "numeric_data_identical": true
+        },
+        {
+          "source_filename": "DKMP16B_000.xls",
+          "numeric_data_identical": true
+        },
+        {
+          "source_filename": "DKMP18C_000.xls",
+          "numeric_data_identical": true
+        },
+        {
+          "source_filename": "DKMP1_000.xls",
+          "numeric_data_identical": true
+        },
+        {
+          "source_filename": "DKMP20B_000.xls",
+          "numeric_data_identical": true
+        },
+        {
+          "source_filename": "DKMP26A_000.xls",
+          "numeric_data_identical": true
+        },
+        {
+          "source_filename": "DKMP28C_000.xls",
+          "numeric_data_identical": true
+        },
+        {
+          "source_filename": "DKMP29A_001.xls",
+          "numeric_data_identical": true
+        },
+        {
+          "source_filename": "DKMP2_000.xls",
+          "numeric_data_identical": true
+        },
+        {
+          "source_filename": "DKMP3_000.xls",
+          "numeric_data_identical": true
+        },
+        {
+          "source_filename": "DKMP5_000.xls",
+          "numeric_data_identical": true
+        },
+        {
+          "source_filename": "DKMP7_000.xls",
+          "numeric_data_identical": true
+        },
+        {
+          "source_filename": "DKMP9_002.xls",
+          "numeric_data_identical": true
+        },
+        {
+          "source_filename": "S70.xls",
+          "numeric_data_identical": true
+        },
+        {
+          "source_filename": "S86.xls",
+          "numeric_data_identical": true
+        },
+        {
+          "source_filename": "SM67.xls",
+          "numeric_data_identical": true
+        },
+        {
+          "source_filename": "SM69.xls",
+          "numeric_data_identical": true
+        }
+      ]
+    }
+  },
+  "n_prepared_locations": 80,
+  "n_near_groups": 74,
+  "prepared_depth_reference": [
+    "recorded_depth_m"
+  ],
+  "raw_header_counts": {
+    "[\"Depth (m)\", \"qc  (Mpa)\", \"fs  (Kpa)\", \"u2  (Kpa)\"]": 94,
+    "[\"Depth (m)\", \"qc  (Mpa)\", \"fs  (Kpa)\", \" u2  (Kpa)\"]": 1,
+    "[\"Depth (m)\", \"qc (MPa)\", \"fs (KPa)\", \"u2 (KPa)\"]": 1,
+    "[\"Depth (m)\", \" qc  (Mpa)\", \"fs  (Kpa)\", \" u2  (Kpa)\"]": 1,
+    "[\"Depth (m)\", \"qc  (Mpa)\", \" fs  (Kpa)\", \"u2  (Kpa)\"]": 1
+  },
+  "raw_sheet_count_counts": {
+    "1": 98
+  },
+  "source_prepared_coordinate_max_abs_difference_m": 0.0,
+  "raw_depth_nonincreasing_profile_n": 2,
+  "raw_depth_nonincreasing_2_8m_event_n": 0,
+  "spatial_spearman": {
+    "distance_vs_curve_mae": 0.02747260309333908,
+    "distance_vs_h_difference": 0.002627973169209576,
+    "abs_dx_vs_curve_mae": 0.0788318529435379,
+    "abs_dy_vs_curve_mae": -0.001276300625646091
+  },
+  "nearest_outside_group": {
+    "mean_distance_m": 76.66474543176825,
+    "median_distance_m": 62.34653180709177,
+    "mean_curve_log_mae": 1.0637881153117568,
+    "median_curve_log_mae": 0.8490115988415411,
+    "mean_h_abs_diff_m": 1.396875,
+    "five_neighbor_mean_h_std_m": 1.193503721935429
+  },
+  "within_near_group": {
+    "pair_n": 9,
+    "mean_curve_log_mae": 0.337751915440716,
+    "mean_h_abs_diff_m": 0.16666666666666666
+  },
+  "nearest_oracle_vertical_alignment": {
+    "unique_nearest_pair_n": 58,
+    "central_unshifted_log_mae": 1.1084763974086704,
+    "central_oracle_shifted_log_mae": 0.9033313014537024,
+    "fraction_selected_nonzero_shift": 0.8620689655172413,
+    "meaning": "Diagnostic only; selecting the shift requires both true curves."
+  },
+  "audit_geometry_summary": [
+    {
+      "seed": 17,
+      "n_audit": 16,
+      "inside_hull_fraction": 0.75,
+      "mean_nearest_distance_m": 92.68232650012573,
+      "mean_nearest_curve_log_mae": 1.2958824733048269,
+      "mean_nearest_h_difference_m": 1.984375
+    },
+    {
+      "seed": 29,
+      "n_audit": 16,
+      "inside_hull_fraction": 0.9375,
+      "mean_nearest_distance_m": 130.85349604334237,
+      "mean_nearest_curve_log_mae": 1.2098174984517973,
+      "mean_nearest_h_difference_m": 2.0
+    },
+    {
+      "seed": 43,
+      "n_audit": 16,
+      "inside_hull_fraction": 0.9375,
+      "mean_nearest_distance_m": 94.3395640459891,
+      "mean_nearest_curve_log_mae": 1.0672157320925446,
+      "mean_nearest_h_difference_m": 1.765625
+    }
+  ],
+  "grouped_leaveout": [
+    {
+      "method": "all_depth_median",
+      "n_locations": 80,
+      "log_mae": 0.9702023240808973,
+      "thickness_mae_m": 1.43125,
+      "recall": 0.0,
+      "fpr": 0.0
+    },
+    {
+      "method": "five_nearest_depth_median",
+      "n_locations": 80,
+      "log_mae": 0.9256302718797226,
+      "thickness_mae_m": 1.421875,
+      "recall": 0.14847161572052403,
+      "fpr": 0.09781121751025992
+    },
+    {
+      "method": "same_family_depth_median",
+      "n_locations": 79,
+      "log_mae": 0.9984677834729435,
+      "thickness_mae_m": 1.4145569620253164,
+      "recall": 0.0,
+      "fpr": 0.0
+    },
+    {
+      "method": "same_family_five_nearest_depth_median",
+      "n_locations": 79,
+      "log_mae": 0.9259993935294422,
+      "thickness_mae_m": 1.1740506329113924,
+      "recall": 0.174496644295302,
+      "fpr": 0.06073153899240856
+    }
+  ],
+  "oracle_alignment_warning": "QC-based shifts use both complete curves and cannot be used as unrevealed/audit geometry. No elevations or datum offsets are supplied in either archive.",
+  "limitations": [
+    "Depth header identifies a depth axis in metres but does not establish a common ground/elevation datum.",
+    "Survey identifier family is known from workbook names; its role as a geologic or elevation covariate is unverified.",
+    "Pair statistics reuse locations and are descriptive; no independent-pair confidence claims are made.",
+    "Known/future/audit labels are all read for offline diagnostics; no saving or online generalisation claim is made.",
+    "fs and u2 are measured CPT responses and cannot serve as features before a location is investigated."
+  ],
+  "mutations": "only new diagnostic script and CSV/JSON outputs",
+  "timing_compared": false
+}

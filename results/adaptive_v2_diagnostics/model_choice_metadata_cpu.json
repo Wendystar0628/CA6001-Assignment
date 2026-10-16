@@ -1,0 +1,41 @@
+{
+  "scope": "post-unblind exploratory diagnostics; original frozen splits and thresholds",
+  "site": "newlock",
+  "fold_id": 1,
+  "seeds": [
+    17,
+    29,
+    43
+  ],
+  "quality": {
+    "scope": "profile_and_cumulative_thickness_research_targets",
+    "absolute_target_source": "development_full_plan_75th_percentile_plus_predeclared_margin",
+    "absolute_log_margin": 0.05,
+    "absolute_thickness_margin_m": 0.1,
+    "relative_log_tolerance": 0.05,
+    "relative_thickness_tolerance_m": 0.25,
+    "low_qc_recall_target": 0.5,
+    "low_qc_fpr_target": 0.1,
+    "low_qc_target_role": "separate_diagnostic_not_an_engineering_safety_claim",
+    "absolute_log_mae_max": 0.626458169250689,
+    "absolute_thickness_mae_max_m": 0.88125
+  },
+  "states": [
+    "original initial",
+    "same-model original full"
+  ],
+  "prediction_boundary": "Only observed(initial_ids/full_ids) conditions models; audit truth scored after prediction; point-only old paths",
+  "model_ids": [
+    "balanced",
+    "idw",
+    "recognition",
+    "revealed_depth_mean",
+    "revealed_depth_median",
+    "revealed_global_median",
+    "simplex",
+    "thickness"
+  ],
+  "n_predictions": 48,
+  "initial_complete_pass_models": [],
+  "full_complete_pass_models": []
+}

@@ -1,0 +1,19 @@
+{
+  "policies": [
+    "latent_ivr",
+    "target_ivr"
+  ],
+  "coverage_weight": 0.15,
+  "primary_policy": "latent_ivr",
+  "retrospective_diagnostic_only": true,
+  "oracle_enabled": true,
+  "oracle_point_model": "gp_only",
+  "oracle_scope": "initial_state_label_free_selected_group_sample",
+  "oracle_does_not_estimate_tabpfn_graph_candidate_gain": true,
+  "information_boundary": "policy_full_plan_geometry_and_revealed_gp_context_only",
+  "v1_rank_issue": "group_mean_signals_are_ranked_equally_despite_group_size_and_arbitrarily_small_differences",
+  "v1_batch_issue": "U_and_D_ranks_remain_stale_within_batch_only_distance_is_updated",
+  "v2_objective": "average_full_plan_latent_variance_reduction_per_added_CPT_then_hypothetical_covariance_update",
+  "target_ivr": "continuous_primary_helper_profile_discrepancy_weights_normalised_by_observed_MAD",
+  "quality_targets_changed": false
+}

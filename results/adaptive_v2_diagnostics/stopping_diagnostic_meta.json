@@ -1,0 +1,37 @@
+{
+  "quality_targets_unchanged": {
+    "scope": "profile_and_cumulative_thickness_research_targets",
+    "absolute_target_source": "development_full_plan_75th_percentile_plus_predeclared_margin",
+    "absolute_log_margin": 0.05,
+    "absolute_thickness_margin_m": 0.1,
+    "relative_log_tolerance": 0.05,
+    "relative_thickness_tolerance_m": 0.25,
+    "low_qc_recall_target": 0.5,
+    "low_qc_fpr_target": 0.1,
+    "low_qc_target_role": "separate_diagnostic_not_an_engineering_safety_claim",
+    "absolute_log_mae_max": 0.626458169250689,
+    "absolute_thickness_mae_max_m": 0.88125
+  },
+  "source_rule": {
+    "delta_q90_max": 0.081505897267226,
+    "delta_h90_max": 0.0,
+    "support_log_mae_max": 0.583650490224038,
+    "uncertainty_q90_max": 0.46132889903634966,
+    "min_observed": 9,
+    "consecutive_rounds": 2
+  },
+  "oracle_not_deployable": true,
+  "evaluation_scope": "post-unblinding exploratory diagnosis; audit used after decisions only",
+  "ablation_scope": "All single-condition removals and H=.25 are post-hoc diagnostics, not development-frozen deployable policies",
+  "h_one_depth_cell": ".25 m is one registered depth cell; this changes an online stability signal only and never changes audit thickness error targets",
+  "corrected_signal_scope": "New remaining-grid and dynamic-support signals require new development calibration; original fixed-grid thresholds cannot be reused as calibrated v2 thresholds",
+  "trace_count": 84,
+  "nonfull_trajectory_count": 60,
+  "development_variants": [
+    "UDS",
+    "US",
+    "maximin"
+  ],
+  "censoring": "Early-stopped evaluation traces do not contain later counterfactual rounds",
+  "remaining_grid_diagnostic": "Known-plan dilution identified from geometry/counts; original full-grid predictions were not saved, so corrected q90 cannot be reconstructed from CSV alone"
+}

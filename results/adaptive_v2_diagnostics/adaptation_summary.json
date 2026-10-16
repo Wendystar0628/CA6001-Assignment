@@ -1,0 +1,57 @@
+{
+  "n_states": 105,
+  "quality_pass_states": 0,
+  "all_quality_pass_states": 0,
+  "full_plan": [
+    {
+      "model_id": "target_depth_mean",
+      "log_mae": 0.9401088603952982,
+      "thickness_mae_m": 1.0885416666666667,
+      "recall": 0.0,
+      "fpr": 0.0
+    },
+    {
+      "model_id": "target_depth_median",
+      "log_mae": 0.9512308661390927,
+      "thickness_mae_m": 1.0885416666666667,
+      "recall": 0.0,
+      "fpr": 0.0
+    },
+    {
+      "model_id": "target_fpca_gp",
+      "log_mae": 0.8891526795649295,
+      "thickness_mae_m": 1.1197916666666667,
+      "recall": 0.12604617604617604,
+      "fpr": 0.06457688234742158
+    },
+    {
+      "model_id": "target_joint_cv",
+      "log_mae": 0.9288849384271828,
+      "thickness_mae_m": 1.1666666666666667,
+      "recall": 0.25012025012025013,
+      "fpr": 0.1459951557671427
+    },
+    {
+      "model_id": "target_profile_cv",
+      "log_mae": 0.902810568828282,
+      "thickness_mae_m": 1.046875,
+      "recall": 0.0722222222222222,
+      "fpr": 0.024061339660326236
+    },
+    {
+      "model_id": "target_scalar_median",
+      "log_mae": 0.9581871332254726,
+      "thickness_mae_m": 1.0885416666666667,
+      "recall": 0.0,
+      "fpr": 0.0
+    },
+    {
+      "model_id": "target_trend_gp",
+      "log_mae": 0.8911011361090858,
+      "thickness_mae_m": 1.125,
+      "recall": 0.13037518037518037,
+      "fpr": 0.055833701961099706
+    }
+  ],
+  "decision": "No new target-only family passes frozen absolute quality; do not promote on point savings."
+}

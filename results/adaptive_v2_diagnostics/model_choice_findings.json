@@ -1,0 +1,41 @@
+{
+  "scope": "post-unblind exploratory diagnostics; original frozen splits and thresholds",
+  "quality": {
+    "scope": "profile_and_cumulative_thickness_research_targets",
+    "absolute_target_source": "development_full_plan_75th_percentile_plus_predeclared_margin",
+    "absolute_log_margin": 0.05,
+    "absolute_thickness_margin_m": 0.1,
+    "relative_log_tolerance": 0.05,
+    "relative_thickness_tolerance_m": 0.25,
+    "low_qc_recall_target": 0.5,
+    "low_qc_fpr_target": 0.1,
+    "low_qc_target_role": "separate_diagnostic_not_an_engineering_safety_claim",
+    "absolute_log_mae_max": 0.626458169250689,
+    "absolute_thickness_mae_max_m": 0.88125
+  },
+  "models": 17,
+  "split_state_model_predictions": 102,
+  "absolute_profile_thickness_passes": 0,
+  "complete_task_passes": 0,
+  "ai_frozen_endpoint_matches": 54,
+  "ai_frozen_max_abs_metric_difference": {
+    "log_mae": 4.035731082652205e-09,
+    "thickness_mae_m": 0.0,
+    "recall": 0.0,
+    "fpr": 0.0
+  },
+  "best_newlock_full_log_model": {
+    "state": "full",
+    "model_id": "gp",
+    "log_mae": 0.8364611879811488,
+    "thickness_mae_m": 0.9947916666666666,
+    "recall": 0.0722222222222222,
+    "fpr": 0.007315585581962668,
+    "audit_pass": 0.0,
+    "low_qc_audit_pass": 0.0,
+    "complete_task_pass": 0.0
+  },
+  "selection_diagnosis": "graph wins development log-MAE, joint improves thickness and absolute joint pass rate; neither passes NewLock even at the full endpoint",
+  "next_model_direction": "Current endpoints require improved modeling of local heterogeneity; pure revealed depth/global priors do not solve the error. Full-plan failure alone does not prove every intermediate subset must fail; new trajectories still require actual quality scoring.",
+  "simple_priors": "depthwise mean/median or global median of revealed log(qc) only; threshold labels always qc<1MPa"
+}
