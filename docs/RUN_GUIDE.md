@@ -14,14 +14,13 @@
 .venv/Scripts/python.exe -m cpt_budget adaptive --stage evaluate
 .venv/Scripts/python.exe -m cpt_budget adaptive --stage publish
 .venv/Scripts/python.exe -m cpt_budget.adaptive_display --notebook
-.venv/Scripts/python.exe reports/build_adaptive_report.py
 ```
 
 `prepare`生成24个完整组划分与表示诊断；`pilot`默认一个开发场地、种子17。`calibrate`跑完全部开发轨迹并选定主模型、选点配置和停止阈值；`freeze`可用已有开发轨迹重建同一选择，不重复推理。评价开始后不再允许重新选阈值。`evaluate`运行三种决策方案并在轨迹返回后独立读取审计真值；`publish`按保存的在线停止点生成表格与经济结果，不移动停止位置。`economics`仅重算既定决策的情景费用。单次完整新实验可用`--stage all`，新的研究版本需在配置中设置新output/work目录。
 
 结果位于`results/adaptive_v1/`，逐单元预测位于忽略的`runs/adaptive_v1/`。正式配置包括种子17/29/43；`--sites`、`--seeds`可用于pilot或`evaluate-partition`；后者仅运行固定配置中的独立场地/种子分区，不发布不完整总表。全部分区结束后用`evaluate`复用已完成轨迹并汇总，或用`publish`仅汇总。经济配置为`configs/economics_case.yaml`，默认α=1，保留错误早停补满/返场和负收益。
 
-展示生成器从CSV读取真实结果，输出六张PNG/SVG/PDF图、离线交互HTML与可执行Notebook。正式报告生成及PDF排版说明见[`reports/README.md`](../reports/README.md)。
+展示生成器从CSV读取真实结果，输出六张PNG/SVG/PDF图、离线交互HTML与可执行Notebook。当前仅维护实验结果、图表、Notebook和交互展示。
 
 ## v0.9.1历史命令
 

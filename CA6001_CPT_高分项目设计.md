@@ -4,7 +4,7 @@
 >
 > v0.9.1的13入口结果及已揭盲档案保存在`results/current/`与`results/final_test/`。新阶段的8场地、3种子结果属于有限数据重评估；具体结论以`results/adaptive_v1/`为准。早期正文的模型、命令、状态数量和未实现事项不代表当前状态。
 >
-> 正式提交报告采用课程模板，正文连参考文献最多10页、封面另计；Word与PDF见`reports/`，Notebook用于实验、分析与绘图，交互展示见`CA6001_项目状态.html`。
+> 当前仅交付实验数据、图表、Notebook和交互展示，不生成独立Report。下文是历史设计，不构成后续报告写作任务。
 
 **CA6001 Cone Penetration Test (CPT) 项目设计与严格可行性评审｜2026-10-13**
 

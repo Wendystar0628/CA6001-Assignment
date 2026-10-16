@@ -3,7 +3,6 @@
 本项目研究有限已测CPT条件下的2–8 m锥阻剖面重建、累计低锥阻厚度预测、自适应补勘与停止决策，并将实际回放工作量接入经济情景。当前阶段为`adaptive_v1`，在v0.9.1工程上扩展。
 
 - [交互展示](CA6001_项目状态.html) · [当前实现状态](docs/IMPLEMENTATION_STATUS.md)
-- [正式报告PDF](reports/CA6001_Adaptive_CPT_Report.pdf) · [可编辑Word](reports/CA6001_Adaptive_CPT_Report.docx)
 - [实验与绘图Notebook](notebooks/CA6001_report_figures.ipynb)
 - [自适应实验协议](docs/ADAPTIVE_PROTOCOL.md) · [运行说明](docs/RUN_GUIDE.md)
 - [结果与复现文件](results/adaptive_v1/README.md) · [经济参数来源](docs/ECONOMIC_CASE_SOURCES.md)
@@ -28,18 +27,17 @@ joint的剖面误差较XGBoost低约2.87%，graph低约1.81%；GP厚度误差更
 
 Airport三个种子均从21根降至11根，约省47.62%；B_seq和P_adapt停止数量相同。四场地等权省点率为顺序早停13.57%、自适应早停11.90%，自适应本轮未增加额外节约。两策略均无错误早停；New Lock仍需64根，完整计划下也未达到研究质量目标。
 
-主α=1、EUR2025情景中，Airport净收益为€23,300；New Lock约为−€55,933（三种子均值）。数值来自真实停止根数与明确的成本/工期假设，不能视为实际合同收益。完整正负结果、来源与敏感性见正式报告及结果目录。
+主α=1、EUR2025情景中，Airport净收益为€23,300；New Lock约为−€55,933（三种子均值）。数值来自真实停止根数与明确的成本/工期假设，不能视为实际合同收益。完整正负结果、来源与敏感性见结果目录和交互展示。
 
 ## 运行
 
-在Project根目录使用现有`.venv`。全新环境按`requirements-lock.txt`和`pyproject.toml`安装；报告与Notebook依赖可用`.[report]`，模型依赖见`.[tabpfn]`。
+在Project根目录使用现有`.venv`。全新环境按`requirements-lock.txt`和`pyproject.toml`安装；Notebook与绘图依赖可用`.[notebook]`，模型依赖见`.[tabpfn]`。
 
 ```powershell
 .venv/Scripts/python.exe -m cpt_budget status
 .venv/Scripts/python.exe -m cpt_budget adaptive --stage pilot
 .venv/Scripts/python.exe -m cpt_budget adaptive --stage publish
 .venv/Scripts/python.exe -m cpt_budget.adaptive_display --notebook
-.venv/Scripts/python.exe reports/build_adaptive_report.py
 ```
 
 完整重跑应使用新的配置输出目录；已有评价结果不会被重新用于选择阈值。大权重、原始数据和逐单元预测保存在本地，获取方式见[Data说明](Data/README.md)。新实验的配置、位置划分、权重指纹、轨迹、事后审核和经济输入均可追溯。
@@ -48,4 +46,4 @@ Airport三个种子均从21根降至11根，约省47.62%；B_seq和P_adapt停止
 
 492个可用代表位置来自31个场地，每孔24个深度单元；深度行和种子不是独立工地。8个回放场地已有开发或揭盲历史，本轮使用对应外层折权重进行有限数据重评估。`qc < 1 MPa`是研究指标，停止审核对应剖面与累计厚度研究目标，低值识别另行检查。经济金额是有来源或明确假设的反事实情景，主情景α=1。
 
-v0.9.1的13入口及旧成绩保存在[历史方案对比](CA6001_CPT_当前方案对比.md)、`results/current/`与`results/final_test/`；旧Notebook和HTML位于`notebooks/archive/`。项目背景见[原始设计](CA6001_CPT_高分项目设计.md)与[实现蓝图](CA6001_CPT_项目实现蓝图.md)。正式报告按课程模板输出Word/PDF，Notebook作为实验分析与绘图材料。
+v0.9.1的13入口及旧成绩保存在[历史方案对比](CA6001_CPT_当前方案对比.md)、`results/current/`与`results/final_test/`；旧Notebook和HTML位于`notebooks/archive/`。项目背景见[原始设计](CA6001_CPT_高分项目设计.md)与[实现蓝图](CA6001_CPT_项目实现蓝图.md)。当前交付为实验数据、图表、Notebook和交互展示；不生成独立Report。

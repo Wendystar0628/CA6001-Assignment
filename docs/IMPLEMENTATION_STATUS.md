@@ -1,6 +1,6 @@
 # 当前项目实现状态
 
-更新日期：2026-10-17。当前阶段为 **adaptive_v1：AI自适应CPT补勘与经济效益评价**，使用已有v0.9.1权重并更新目标场地上下文。完整实现、结果和报告已按[执行方案](../CPT_AI自适应补勘与经济效益_执行方案.md)推进；方法与冻结规则见[实验协议](ADAPTIVE_PROTOCOL.md)。
+更新日期：2026-10-17。当前阶段为 **adaptive_v1：AI自适应CPT补勘与经济效益评价**，使用已有v0.9.1权重并更新目标场地上下文。完整实现与实验结果已按[执行方案](../CPT_AI自适应补勘与经济效益_执行方案.md)推进；方法与冻结规则见[实验协议](ADAPTIVE_PROTOCOL.md)。
 
 ## 已完成的研究链路
 
@@ -35,7 +35,6 @@ New Lock全部64→64，冻结模型在完整计划下的隐藏审计仍未达�
 ## 交付与复现
 
 - [离线交互展示](../CA6001_项目状态.html)：场地、种子、策略和轮次联动；六张核心图由真实CSV生成。
-- [正式PDF报告](../reports/CA6001_Adaptive_CPT_Report.pdf) / [可编辑Word](../reports/CA6001_Adaptive_CPT_Report.docx)：按课程模板，封面外最多10页。
 - [英式英语实验Notebook](../notebooks/CA6001_report_figures.ipynb)、[运行说明](RUN_GUIDE.md)、[经济来源](ECONOMIC_CASE_SOURCES.md)。
 - [冻结配置](../results/adaptive_v1/frozen_config.json)、[轨迹](../results/adaptive_v1/trajectories.csv)、[事后审核](../results/adaptive_v1/quality_audit.csv)、[经济与敏感性](../results/adaptive_v1/README.md)。
 

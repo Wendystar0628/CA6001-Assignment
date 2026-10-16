@@ -1,4 +1,4 @@
-"""CSV-driven figures, report notebook and local adaptive-investigation display.
+"""CSV-driven figures, experiment notebook and local adaptive-investigation display.
 
 The six figures form an evidence chain: method, measured locations, model
 quality, stopping, site outcomes, and economic consequences.  Site is the
@@ -497,7 +497,7 @@ def build_notebook(root: Path) -> None:
     md, code = nbf.v4.new_markdown_cell, nbf.v4.new_code_cell
     nb.cells = [md("""# Machine learning-guided adaptive CPT investigation and economic benefit assessment
 
-This report companion follows one question: **can a model-guided investigation complete fewer planned CPTs while retaining the required prediction quality?** It compares five AI methods, evaluates sequential and adaptive stopping against the full candidate plan, and translates the observed work reduction into explicitly defined economic scenarios.
+This experiment notebook follows one question: **can a model-guided investigation complete fewer planned CPTs while retaining the required prediction quality?** It compares five AI methods, evaluates sequential and adaptive stopping against the full candidate plan, and translates the observed work reduction into explicitly defined economic scenarios.
 
 The public CPT measurements come from the [ISSMGE TC304 CPT database](https://tc304.org/cpt_databases.html). The prediction task covers 2–8 m, using 24 depth cells of 0.25 m. The research threshold qc < 1 MPa defines cumulative low-cone-resistance thickness; it is not a soil classification or a design safety criterion. The previous fixed-budget investigation remains available in the [v0.9.1 notebook](archive/CA6001_report_figures_v0.9.1.ipynb).
 
@@ -616,7 +616,7 @@ def build(root: Path, notebook: bool = False) -> dict:
     notes = "# Figure evidence and export notes\n\n"
     for name, caption in zip(FIGURES, CAPTIONS):
         notes += f"- **{name}:** {caption}\n"
-    notes += "\nAll figures use actual saved CSV observations. Figure 3 averages budgets and seeds within site, then sites equally; site marks and ranges show between-site variation, not confidence intervals. Figures 2 and 4 show the pre-specified New Lock case and one stated seed without an uncertainty interval. Figure 5 shows within-site seed ranges. Figure 6 shows New Lock means and ranges over the three seeds; these are descriptive ranges in a deterministic parameter scenario, not financial confidence intervals. No significance tests are used. Exports are 183 mm wide before tight bounding-box trimming; source expressions divide mm by 25.4 to obtain inches. PNG uses the requested 300 dpi report resolution; editable SVG/PDF are supplied instead of a submission TIFF.\n"
+    notes += "\nAll figures use actual saved CSV observations. Figure 3 averages budgets and seeds within site, then sites equally; site marks and ranges show between-site variation, not confidence intervals. Figures 2 and 4 show the pre-specified New Lock case and one stated seed without an uncertainty interval. Figure 5 shows within-site seed ranges. Figure 6 shows New Lock means and ranges over the three seeds; these are descriptive ranges in a deterministic parameter scenario, not financial confidence intervals. No significance tests are used. Exports are 183 mm wide before tight bounding-box trimming; source expressions divide mm by 25.4 to obtain inches. PNG uses the requested 300 dpi figure resolution; editable SVG/PDF are supplied instead of a submission TIFF.\n"
     metrics = evaluation(tables["model_comparison"])
     notes += "\n## Defined metrics and missing observations\n\n"
     for metric in ["log_mae", "thickness_mae_m", "recall", "fpr"]:

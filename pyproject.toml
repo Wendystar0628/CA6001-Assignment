@@ -16,7 +16,7 @@ dependencies = [
 [project.optional-dependencies]
 tabpfn = ["tabpfn==9.2.0", "torch>=2.5"]
 dev = ["pytest>=8"]
-report = ["matplotlib>=3.9", "nbformat>=5.10", "nbclient>=0.10", "ipykernel>=6", "python-docx==1.2.0"]
+notebook = ["matplotlib>=3.9", "nbformat>=5.10", "nbclient>=0.10", "ipykernel>=6"]
 
 [project.scripts]
 cpt-budget = "cpt_budget.cli:main"

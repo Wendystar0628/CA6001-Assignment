@@ -37,7 +37,7 @@ Development has 72 registered states, 72 distinct known sets and 12 audit sets. 
 - `economic_results.csv`: α=1 owner-financial scenario, including actual stop counts, claimed versus reliable saved CPTs, repair costs, field/review/waiting days and signed net benefits.
 - `sensitivity.csv`: α, individual parameter ranges and the α-by-daily-net-benefit scenario grid.
 - `social_user_benefit.csv`: separately labelled shipping-user effects, excluded from owner net benefit.
-- `figures/`: six scientific figures exported to PNG, SVG and PDF. The project HTML, Notebook and formal report read these actual tables.
+- `figures/`: six scientific figures exported to PNG, SVG and PDF. The project HTML and experiment Notebook read these actual tables.
 
 New Lock provides the case background. Other sites use the same monetary assumptions as a standardised scenario transfer. Amounts are not historical contract savings; whole-CPT substitution applies only to the explicitly assumed supplementary task. Failed early stops are completed to the full plan with remobilisation and delay. Model execution times are not comparative outcomes; economic fieldwork and review days are separate operational assumptions.
 
