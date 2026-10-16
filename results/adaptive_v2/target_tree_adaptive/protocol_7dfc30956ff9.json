@@ -1,0 +1,49 @@
+{
+  "version": "adaptive_v2_acquisition_sweep",
+  "scope": "post_unblind_exploration",
+  "purpose": "test whether legal acquisition and revealed-only adaptation create quality-passing states",
+  "sites": [
+    "newlock"
+  ],
+  "seeds": [
+    17,
+    29,
+    43
+  ],
+  "models": [
+    "target_et_residual"
+  ],
+  "policies": [
+    "target_ivr"
+  ],
+  "split_source": "results/adaptive_v1/splits.json",
+  "absolute_goals": {
+    "log_mae": 0.626458169250689,
+    "thickness_mae_m": 0.88125
+  },
+  "relative_goals": {
+    "log_mae_tolerance": 0.05,
+    "thickness_mae_tolerance_m": 0.25
+  },
+  "low_qc_goals": {
+    "recall": 0.5,
+    "fpr": 0.1
+  },
+  "batch_size": 2,
+  "atomic_near_groups": true,
+  "coverage_weight": 0.15,
+  "stop_rule": null,
+  "online_early_savings_claimed": false,
+  "model_selection": "revealed_group_cv_for_target_models; immutable_fold_source_for_v1_models",
+  "helper_for_UDS_and_target_ivr": "gp; revealed_depth_median_when_primary_is_gp",
+  "monitor": "current_remaining_plan_only",
+  "support_max_groups": 5,
+  "support_diagnostics": false,
+  "audit_labels_used_for_decisions": false,
+  "future_labels_used_for_acquisition": false,
+  "audit_geometry_used_for_acquisition": false,
+  "oracle_metrics": "offline opportunity upper bound only; not an online stopping policy",
+  "no_runtime_comparison": true,
+  "no_report": true,
+  "no_display_changes": true
+}

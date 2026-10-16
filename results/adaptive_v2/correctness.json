@@ -1,0 +1,17 @@
+{
+  "trajectories": 15,
+  "states": 432,
+  "all_frozen_splits_preserved": true,
+  "all_near_groups_atomic": true,
+  "all_full_endpoints_reached": true,
+  "audit_ids_never_revealed": true,
+  "initial_prediction_max_abs_difference": 4.440892098500626e-16,
+  "full_prediction_max_abs_difference": 4.440892098500626e-16,
+  "original_frozen_inputs_unchanged": true,
+  "original_frozen_split_unchanged": true,
+  "truth_used_only_for_offline_scores": true,
+  "no_online_early_stop_used": true,
+  "no_runtime_comparison": true,
+  "no_report_generated": true,
+  "no_display_edited": true
+}

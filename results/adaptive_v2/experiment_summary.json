@@ -1,0 +1,22 @@
+{
+  "scope": "post-unblind finite exploration",
+  "primary_site": "newlock",
+  "seeds": [
+    17,
+    29,
+    43
+  ],
+  "trajectories": 15,
+  "states": 432,
+  "quality_targets_unchanged": true,
+  "reconstruction_pass_states": 0,
+  "complete_task_pass_states": 0,
+  "online_verified_saved_cpt": 0,
+  "savings_scope": "All new acquisition paths are full diagnostic sweeps. Oracle opportunities are not online savings.",
+  "model_probe_states": 360,
+  "model_probe_scope": "Model probes overlap controls/contexts; 360 rows are not 360 independent experiments.",
+  "gp_initialization_fits": 6,
+  "gp_kernel_change_probe_states": 2,
+  "stopping_experiment": "results/adaptive_v2_diagnostics/stopping_v2_frozen_selection.json",
+  "promotion": "No candidate is promoted solely on log-MAE, stability or offline oracle opportunity."
+}
