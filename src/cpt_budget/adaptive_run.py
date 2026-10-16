@@ -4,7 +4,9 @@ from __future__ import annotations
 import gc
 import hashlib
 import json
+import os
 import platform
+from importlib.metadata import version
 from dataclasses import asdict
 from datetime import datetime
 from pathlib import Path
@@ -52,6 +54,8 @@ def _score(frame, truth):
 def _environment():
     import torch
     return {'python': platform.python_version(), 'platform': platform.platform(),
+            'cpu': platform.processor(), 'logical_cpu_count': os.cpu_count(),
+            'packages': {name: version(name) for name in ['numpy', 'pandas', 'scipy', 'scikit-learn', 'xgboost', 'tabpfn']},
             'torch': torch.__version__, 'cuda_available': torch.cuda.is_available(),
             'gpu': torch.cuda.get_device_name(0) if torch.cuda.is_available() else None,
             'peak_cuda_allocated_mb': torch.cuda.max_memory_allocated() / 2**20 if torch.cuda.is_available() else None}
@@ -199,6 +203,8 @@ def score_trajectory(result, dataset, split):
 def _store_result(result, split, dataset, work, label):
     folder = work / label
     folder.mkdir(parents=True, exist_ok=True)
+    result['runtime']['stage'] = 'E3_' + label.split('/')[0]
+    result['runtime']['process_peak_cuda_allocated_mb'] = _environment()['peak_cuda_allocated_mb']
     for name in ['trajectories', 'selections', 'runtime']:
         result[name].to_csv(folder / f'{name}.csv', index=False)
     result['predictions'].to_parquet(folder / 'predictions.parquet', index=False)
@@ -340,12 +346,15 @@ def calibrate(config, run_replays=True):
     trials = pd.DataFrame(trials).sort_values(['score', 'false_early_stop_rate', 'variant', 'quantile'], ascending=[False, True, False, True])
     trials.to_csv(output / 'stop_calibration.csv', index=False)
     winner = trials.iloc[0]
+    environment = _environment()
+    if not run_replays and (output / 'frozen_config.json').exists():
+        environment.update(json.loads((output / 'frozen_config.json').read_text(encoding='utf-8')).get('environment', {}))
     frozen = {'created_at': datetime.now().astimezone().isoformat(), 'experiment': config,
               'primary_model': model_id, 'acquisition_variant': winner.variant,
               'acquisition_weights': config['acquisition']['candidates'][winner.variant],
               'stop_rule': rule_by_trial[winner.trial_id], 'quality': quality,
               'selection_source': 'development sites only; no evaluation outcomes used',
-              'environment': _environment(),
+              'environment': environment,
               'frozen_inputs_sha256': _frozen_inputs(config),
               'split_sha256': _split_fingerprint(output / 'splits.json')}
     write_json(output / 'frozen_config.json', frozen)
@@ -426,16 +435,22 @@ def publish(config):
     decisions.to_csv(output / 'decisions.csv', index=False)
     selections.to_csv(output / 'selections.csv', index=False)
     e1_runtime = [pd.read_csv(p) for p in work.glob('e1_runtime_*.csv')]
-    pd.concat(timings + e1_runtime, ignore_index=True).to_csv(output / 'runtime.csv', index=False)
+    runtime = pd.concat(timings + e1_runtime, ignore_index=True)
+    runtime.to_csv(output / 'runtime.csv', index=False)
     manifest = pd.read_csv(output / 'data_manifest.csv')
     locations = manifest.copy()
     locations['role'] = locations['partition'].map({'S0': 'initial', 'C': 'candidate', 'A': 'audit'}) if 'partition' in locations else locations.get('side', '').map({'S0': 'initial', 'C': 'candidate', 'A': 'audit'})
     locations.to_csv(output / 'locations.csv', index=False)
     economics(config)
+    environment = _environment()
+    if 'process_peak_cuda_allocated_mb' in runtime:
+        recorded_peak = runtime.process_peak_cuda_allocated_mb.max()
+        if pd.notna(recorded_peak):
+            environment['peak_cuda_allocated_mb'] = float(recorded_peak)
     write_json(output / 'run_summary.json', {'primary_model': frozen['primary_model'],
                'acquisition_variant': frozen['acquisition_variant'], 'n_trajectories': len(decisions),
                'evaluation_sites': int(decisions[decisions.role.eq('evaluation')].site_id.nunique()),
-               'seeds': config['experiment']['seeds'], 'environment': _environment()})
+               'seeds': config['experiment']['seeds'], 'environment': environment})
     return decisions
 
 

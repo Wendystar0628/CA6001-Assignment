@@ -1,0 +1,151 @@
+{
+  "created_at": "2026-10-17T04:33:13.342634+08:00",
+  "experiment": {
+    "experiment": {
+      "version": "adaptive_v1",
+      "description": "Limited-data site-held-out re-evaluation; historical test sites have already been inspected.",
+      "seeds": [
+        17,
+        29,
+        43
+      ],
+      "initial_locations": 5,
+      "batch_size": 2,
+      "audit_fraction": 0.2,
+      "output": "results/adaptive_v1",
+      "work": "runs/adaptive_v1",
+      "device": "cuda",
+      "cpu_threads": 1
+    },
+    "models": {
+      "main": [
+        "gp",
+        "xgb",
+        "cnp",
+        "tabpfn_joint",
+        "tabpfn_graph"
+      ],
+      "ablations": [
+        "tabpfn_residual_raw",
+        "tabpfn_residual_guarded",
+        "tabpfn_residual_unfinetuned",
+        "tabpfn_joint_unfinetuned"
+      ],
+      "observation_checkpoints": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "selection": "development_site_equal_mean_log_mae_at_registered_states"
+    },
+    "acquisition": {
+      "candidates": {
+        "UDS": [
+          0.5,
+          0.3,
+          0.2
+        ],
+        "US": [
+          0.7,
+          0.0,
+          0.3
+        ]
+      },
+      "min_spacing": "atomic_near_group"
+    },
+    "stopping": {
+      "min_observed": 9,
+      "consecutive_rounds": 2,
+      "support_max_initial_groups": 5,
+      "candidate_quantiles": [
+        0.5,
+        0.75,
+        0.9
+      ],
+      "selection": "maximise_development_site_equal_verified_saved_fraction_minus_false_stop_rate"
+    },
+    "quality": {
+      "scope": "profile_and_cumulative_thickness_research_targets",
+      "absolute_target_source": "development_full_plan_75th_percentile_plus_predeclared_margin",
+      "absolute_log_margin": 0.05,
+      "absolute_thickness_margin_m": 0.1,
+      "relative_log_tolerance": 0.05,
+      "relative_thickness_tolerance_m": 0.25,
+      "low_qc_recall_target": 0.5,
+      "low_qc_fpr_target": 0.1,
+      "low_qc_target_role": "separate_diagnostic_not_an_engineering_safety_claim"
+    },
+    "economics": {
+      "config": "configs/economics_case.yaml",
+      "primary_alpha": 1.0
+    },
+    "_path": "E:\\Study\\Msc_AAI\\CA6001-AI ALGORITHMS FUNDAMENTALS & APPLICATION\\Project\\configs\\adaptive_v1.yaml"
+  },
+  "primary_model": "tabpfn_graph",
+  "acquisition_variant": "UDS",
+  "acquisition_weights": [
+    0.5,
+    0.3,
+    0.2
+  ],
+  "stop_rule": {
+    "delta_q90_max": 0.081505897267226,
+    "delta_h90_max": 0.0,
+    "support_log_mae_max": 0.583650490224038,
+    "uncertainty_q90_max": 0.46132889903634966,
+    "min_observed": 9,
+    "consecutive_rounds": 2
+  },
+  "quality": {
+    "scope": "profile_and_cumulative_thickness_research_targets",
+    "absolute_target_source": "development_full_plan_75th_percentile_plus_predeclared_margin",
+    "absolute_log_margin": 0.05,
+    "absolute_thickness_margin_m": 0.1,
+    "relative_log_tolerance": 0.05,
+    "relative_thickness_tolerance_m": 0.25,
+    "low_qc_recall_target": 0.5,
+    "low_qc_fpr_target": 0.1,
+    "low_qc_target_role": "separate_diagnostic_not_an_engineering_safety_claim",
+    "absolute_log_mae_max": 0.626458169250689,
+    "absolute_thickness_mae_max_m": 0.88125
+  },
+  "selection_source": "development sites only; no evaluation outcomes used",
+  "environment": {
+    "python": "3.11.15",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "cpu": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+    "logical_cpu_count": 28,
+    "packages": {
+      "numpy": "2.4.6",
+      "pandas": "3.0.6",
+      "scipy": "1.17.1",
+      "scikit-learn": "1.9.1",
+      "xgboost": "3.2.0",
+      "tabpfn": "9.2.0"
+    },
+    "torch": "2.11.0+cu128",
+    "cuda_available": true,
+    "gpu": "NVIDIA GeForce RTX 4080",
+    "peak_cuda_allocated_mb": 413.6533203125
+  },
+  "frozen_inputs_sha256": {
+    "configs\\adaptive_v1.yaml": "bf38ec874a93246ab253b87fb08f54db3fc50bd43fc80428b40fd625098abf0f",
+    "data_processed_v2\\grid.parquet": "730071caa869ca82163bc54ceffc53d3806d93c70531a3f3d8574c83ab66fdb1",
+    "data_processed_v2\\profiles.parquet": "ffec7a19af0b736bb6c144ddd54a33094c69036c852baf56db1f16b1e5760750",
+    "artifacts\\models\\fold_0\\tabpfn.ckpt": "ad9aab2ad4b11b5e13cf5d69da0be6b526603fde842ff2e8f6b3091933a7702c",
+    "artifacts\\models\\fold_0\\gp_trend.json": "adfc20e219ccdf107b53d35da422acecb0dd23ea1aba2dff3d963000318592fb",
+    "artifacts\\models\\fold_0\\xgb.json": "a25d2a725c4f8993abc69dbbce98635f4d28415a96b589c500d9b72803fcd9df",
+    "artifacts\\models\\fold_0\\residual_trees.ubj": "32e848276487236150c36c746ec58775be4f2cf081661be4464d32d4d8da905a",
+    "artifacts\\models\\fold_1\\tabpfn.ckpt": "70ef307e979013ab5d4b73fdf9033575465a91af69ea5475c31b9550a070df34",
+    "artifacts\\models\\fold_1\\gp_trend.json": "c966e5c792a539574e0db20478888fa60b2e3f29833a897422d3434830f304fd",
+    "artifacts\\models\\fold_1\\xgb.json": "a0aed7890dfceeb192b4fa47294731e0568f057da98f20742fff3e0ae4dc6ece",
+    "artifacts\\models\\fold_1\\residual_trees.ubj": "8fb374f86c4851b9198568131442e46f491a80e5a7655324e9de7e674aec2ed6",
+    "artifacts\\models\\fold_2\\tabpfn.ckpt": "9d22d6140e801f7f09ccbe98f04eee71dab44ca13a21e47804e484f4e446ccb4",
+    "artifacts\\models\\fold_2\\gp_trend.json": "26033aa46bca01b5a36d64f2386253bee09414e8af85fd998567d25828878890",
+    "artifacts\\models\\fold_2\\xgb.json": "e3d8217741fafb044f8de8c724a8ac03e7287a2368a1ea9299d6807df5d33f36",
+    "artifacts\\models\\fold_2\\residual_trees.ubj": "c94f027f1f76b8388bd667b7e73480fa29baa7e485d5890f024fa52193652c82"
+  },
+  "split_sha256": "906c1fc6a89e549179ebc1e000d917320df5735eedadc468b248280028409f28"
+}
