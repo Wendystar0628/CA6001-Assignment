@@ -1,6 +1,6 @@
-# CA6001 CPT 当前方案对比与取舍
+# CA6001 CPT v0.9.1 历史预测方案对比与取舍
 
-日期：2026-10-14；版本v0.9.1（工作区版本，尚未提交；上一个标签为`v0.9-curated`）。本文比较当前13个固定模型入口。完整实验历史见Git标签`v0.8-engineering`，本版变更见[`CHANGES_v0.9.1.md`](results/current/CHANGES_v0.9.1.md)。
+本页保存v0.9.1的13个固定入口比较。新的五AI、自适应停止与经济评价见[自适应实验协议](docs/ADAPTIVE_PROTOCOL.md)、[当前实现状态](docs/IMPLEMENTATION_STATUS.md)及`results/adaptive_v1/`。原始对比数据和本页指标保持不变，历史训练与探索见Git标签`v0.8-engineering`。
 
 ## 指标总表
 

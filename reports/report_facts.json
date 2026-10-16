@@ -1,0 +1,326 @@
+{
+  "status": "final",
+  "text": {
+    "student_names": "____________________________",
+    "cover_summary": "A study of shallow cone-resistance prediction, adaptive supplementary investigation and project economic scenarios.",
+    "initial_count": "five",
+    "data_summary": "Screening retains 492 representative profiles with complete 24-cell windows. Eight replay sites contain 271 positions; the remaining 221 positions lie outside the decision-replay cohort.",
+    "data_roles": "Four development sites determine the decision configuration. Four evaluation sites are replayed using seeds 17, 29 and 43, producing 24 site-seed allocations in total. The assigned source checkpoints exclude their target site. Since these sites have a development history, this is a site-held-out re-evaluation, rather than a new blind trial. New Lock retains 80 of 98 original soundings: 15 begin deeper than 2 m and three end shallower than 8 m.",
+    "representation_analysis": "Exact threshold crossings of the piecewise-linear raw curve provide a representation reference. The 0.25 m grid has thickness MAE 0.0925 m and 90th-percentile absolute error 0.2565 m. Among 805 raw low-value intervals shorter than 0.25 m, 498 have no grid midpoint. A 0.1 m diagnostic reduces representation MAE to 0.0335 m. For New Lock, the 0.25 m representation MAE is 0.1389 m. All models nevertheless retain the same 0.25 m output grid, so that comparison measures algorithms consistently.",
+    "cnp_diagnosis": "The 26,817-parameter source network received 500–1,200 gradient updates and reduced validation error. A weak result cannot therefore be attributed to an untrained checkpoint alone.",
+    "tabpfn_training_evidence": "The retained v2 checkpoints, loaded with package 9.2.0, received 500–600 successful CRPS-plus-MSE updates. Matched checkpoint comparison confirmed finite learned parameters and actual changes from the pretrained base. These weights remain fixed during context updates in replay.",
+    "batch_rule": "Batches nominally target two locations, but may exceed two because near groups remain indivisible. Within a batch, distances update after a group is selected while uncertainty and disagreement remain fixed; no selected curve is revealed before the batch is complete.",
+    "model_selection_rule": "Selection minimises development log-MAE over registered support states, averaging within seeds and then equally across sites. This selects TabPFN graph (0.5782), ahead of XGBoost (0.5970). Joint gives lower development thickness MAE (0.4826 m). Evaluation results cannot change the selected primary model.",
+    "development_boundary": "The development choice is frozen before evaluation.",
+    "quality_rule": "Research targets are log-MAE ≤0.6265 and thickness MAE ≤0.8813 m, derived from development full-plan 75th percentiles plus predeclared margins. Relative loss against Bfull must not exceed 0.05 log-MAE or 0.25 m. Recall ≥0.5 and false-positive rate ≤0.1 are separate low-event diagnostics.",
+    "acquisition_rule": "The frozen heuristic is a(x) = 0.5 rank(U) + 0.3 rank(D) + 0.2 rank(S), with XGBoost as the disagreement partner. Development compares this with a U-plus-S alternative; verified savings minus failed-stop frequency selects the configuration.",
+    "stopping_rule": "All four signals must pass for two consecutive rounds after at least nine observations and full quadrant coverage. Frozen limits are 0.0815 for log-change, zero for thickness change, 0.5837 for support log-MAE and 0.4613 for GP log-standard-deviation. Only development trajectories select these values.",
+    "implementation_details": "Python 3.11.15 uses PyTorch 2.11.0, scikit-learn 1.9.1, XGBoost 3.2.0 and TabPFN 9.2.0 (Pedregosa et al., 2011; Prior Labs, n.d.; PyTorch Contributors, n.d.). TabPFN runs on an RTX 4080 with 16 GB; CPU thread pools are limited to one.",
+    "implementation_checks": "Label-perturbation checks verify unchanged online decisions; whole-group counts, full endpoints and economic arithmetic are also checked.",
+    "discussion_prediction": "The best profile result preserves a spatial trend while adding TabPFN residual information and complete-curve decisions. This structure captures local context beyond a generic tabular fit. The graph hybrid obtains more detections at higher false-positive and thickness error. CNP’s zero recall despite genuine training shows how a modest thickness MAE can arise by predicting no low intervals when these are uncommon. Mixed fine-tuning results support judging the complete prediction pipeline.",
+    "discussion_limits": "The four evaluation sites support a descriptive re-evaluation. Confirmation on new investigations with engineer-defined acceptance criteria and actual project prices is the next evidence step.",
+    "model_result_summary": "E1 compares 63 registered evaluation states per model: 62 distinct observed sets and 11 distinct audit sets across four sites and three seeds. Group-atomic jumps explain the difference from 72 development states. Metrics average states within seeds, seeds within sites, then sites equally; registered states are not independent field samples.",
+    "model_interpretation": "TabPFN joint has the lowest evaluation log-MAE (0.4971), 2.87% below XGBoost. The frozen graph primary achieves 1.81% lower error and 36.3% recall, with 9.6% FPR. GP has the best thickness MAE (0.4003 m) but only 14.0% recall. Thus prediction, thickness and detection favour different methods; evaluation does not retrospectively change the selected primary.",
+    "ablation_summary": "Matched E2 variants show that source adaptation improves raw residual log-MAE from 0.5065 to 0.5024. It does not improve the joint pipeline: unadapted joint is 0.4954, versus 0.4971 after adaptation. Domain residual features and spatial/curve decisions therefore make a separate contribution; gradient adaptation does not guarantee improvement in every hybrid.",
+    "headline_result": "TabPFN joint reduces evaluation profile error by 2.87% against XGBoost. The frozen adaptive policy saves 47.6% of CPTs at Wellington Airport, but does not improve on matched maximin early stopping and gives no CPT reduction at New Lock.",
+    "decision_summary": "Each incremental policy has 12 evaluation replays. Adaptive and sequential early stops are 3/12 and 4/12, with zero failed early stops and 9/12 final research-quality passes for each. No-early-stop counts are 9/12 and 8/12. Site-equal CPT reductions are 11.90% and 13.57%, respectively.",
+    "quality_interpretation": "At New Lock, all 64 planned CPTs are completed. Even Bfull means of 0.9090 log-MAE and 1.349 m thickness MAE exceed the frozen 0.6265 and 0.8813 m targets.",
+    "site_interpretation": "Airport stops at 11/21 in all seeds. Hollywood seed 17 stops at 16/20 sequentially but 20/20 adaptively; no adaptive pair uses fewer CPTs. None of the nine event-containing audits per policy passes the separate low-event diagnostic.",
+    "economic_summary": "New Lock completes 64/64 CPTs. Batch release adds 6.92 calendar days, producing mean net loss €55,933 (individual losses €54,600–€58,600), with zero direct saving.",
+    "economic_interpretation": "Productive workdays are ceil(N/5), converted to calendar days by 7/5. Mobilisation and adviser rates use MOS Grondmechanica (2025); other inputs are assumptions. Airport’s transferred Dutch scenario yields +€23,300 and 2.05 days saved; these are scenario values, not a local contract estimate.",
+    "sensitivity_summary": "At α = 0.5 and 0.75, New Lock mean losses remain €28,267 and €42,100. Zero batch waiting leaves €600 loss; unit CPT price cannot change this when completed counts are equal.",
+    "discussion_decision": "Early stopping works at Airport, where the audited curves contain no low events. It does not establish low-layer detection. Adaptive ordering never reduces CPT count below its paired maximin result. At New Lock, all five AI models miss full-plan quality targets; even GP gives log-MAE 0.8365 and thickness MAE 0.9948 m. Adaptive support leave-out error stays above 0.805, against the 0.5837 limit, preventing an unjustified early stop despite falling plan uncertainty.",
+    "discussion_economics": "The economic bottleneck is a field-process effect: small sequential batches incur release waits without reducing New Lock workload. A prospectively validated larger-batch or integrated-review process could change this balance. Airport illustrates positive conditional value from early stopping, while New Lock shows why a prediction improvement alone cannot be converted into a saving claim.",
+    "conclusion": "The implemented workflow connects five AI predictors, group-consistent investigation replay, hidden-label stopping audits and project economics. TabPFN joint improves profile log-MAE by 2.87% over XGBoost, while GP remains strongest for thickness. The frozen graph policy saves 10 of 21 CPTs at Airport, matching maximin early stopping, but provides no additional selection benefit. New Lock remains unresolved at the full budget and has a negative economic scenario. The supported outcome is task-specific prediction progress and a working, auditable decision chain; reliable economic gains remain site dependent."
+  },
+  "tables": {
+    "dataset": {
+      "caption": "Current data hierarchy and evaluation units.",
+      "columns": [
+        "Unit",
+        "Count",
+        "Interpretation"
+      ],
+      "widths": [
+        2.1,
+        0.6,
+        3.4
+      ],
+      "rows": [
+        [
+          "Source profiles",
+          "503",
+          "Before representative-window filtering"
+        ],
+        [
+          "Distinct planned positions",
+          "495",
+          "Repeated measurements grouped"
+        ],
+        [
+          "Usable representatives",
+          "492",
+          "Complete 2–8 m prediction window"
+        ],
+        [
+          "Sites",
+          "31",
+          "Site is the aggregation unit"
+        ],
+        [
+          "Cells per profile",
+          "24",
+          "0.25 m midpoint representation"
+        ],
+        [
+          "Depth-cell records",
+          "11,808",
+          "Repeated observations within CPTs"
+        ]
+      ]
+    },
+    "economics_inputs": {
+      "caption": "Owner-financial scenario inputs in EUR at a 2025 price level.",
+      "columns": [
+        "Input",
+        "Main value",
+        "Evidence status"
+      ],
+      "widths": [
+        2.2,
+        1.65,
+        2.25
+      ],
+      "rows": [
+        [
+          "All-in CPT / planned depth",
+          "€750 / 20 m",
+          "Scenario assumptions"
+        ],
+        [
+          "Production / equipment",
+          "5 CPT/rig/workday; 1 rig",
+          "Scenario assumptions"
+        ],
+        [
+          "Batch waiting",
+          "0.25 calendar day",
+          "Scenario assumption"
+        ],
+        [
+          "Project cost / owner cash flow",
+          "€5,000 / €3,000 per calendar day",
+          "Scenario assumptions"
+        ],
+        [
+          "AI deployment and review",
+          "€600",
+          "4 h scenario at MOS €150/h"
+        ],
+        [
+          "Extra mobilisation / repair wait",
+          "€560 / 2 days",
+          "MOS price analogue / assumption"
+        ]
+      ]
+    },
+    "models": {
+      "caption": "Evaluation metrics with equal site weighting. Errors and FPR are minimised; precision, recall and F1 are maximised.",
+      "columns": [
+        "Model",
+        "log MAE",
+        "H MAE m",
+        "Precision %",
+        "Recall %",
+        "F1 %",
+        "FPR %"
+      ],
+      "widths": [
+        1.55,
+        0.75,
+        0.75,
+        0.83,
+        0.75,
+        0.72,
+        0.75
+      ],
+      "rows": [
+        [
+          "GP",
+          "0.5093",
+          "0.4003",
+          "51.8",
+          "14.0",
+          "11.5",
+          "1.9"
+        ],
+        [
+          "XGBoost residual",
+          "0.5118",
+          "0.4851",
+          "35.1",
+          "31.2",
+          "29.7",
+          "6.9"
+        ],
+        [
+          "CNP",
+          "0.6566",
+          "0.4305",
+          "n/a",
+          "0.0",
+          "0.0",
+          "0.0"
+        ],
+        [
+          "TabPFN joint",
+          "0.4971",
+          "0.4914",
+          "33.2",
+          "33.3",
+          "29.7",
+          "7.8"
+        ],
+        [
+          "TabPFN graph",
+          "0.5025",
+          "0.5947",
+          "34.3",
+          "36.3",
+          "31.4",
+          "9.6"
+        ]
+      ]
+    }
+  },
+  "figures": {
+    "workflow": {
+      "path": "results/adaptive_v1/figures/fig01_workflow.png",
+      "caption": "Revealed CPTs inform prediction, selection and online stopping; a separate hidden audit evaluates the resulting decision before economic interpretation."
+    },
+    "map": {
+      "path": "results/adaptive_v1/figures/fig02_selection_map.png",
+      "caption": "New Lock seed 17 at the common eight-CPT snapshot. Initial, candidate and hidden audit positions are fixed; both final plans complete 64 CPTs."
+    },
+    "models": {
+      "path": "results/adaptive_v1/figures/fig03_five_models.png",
+      "caption": "Five AI predictors compared on matched support sets. Site-level points show between-site variation; recall applies only to sites with low events."
+    },
+    "quality": {
+      "path": "results/adaptive_v1/figures/fig04_quality_trajectories.png",
+      "caption": "New Lock seed 17 reaches the full 64-CPT plan. Neither policy attains the absolute profile and thickness targets."
+    },
+    "savings": {
+      "path": "results/adaptive_v1/figures/fig05_site_outcomes.png",
+      "caption": "All four evaluation sites remain visible. The right panel measures additional adaptive saving over sequential stopping, paired by seed."
+    },
+    "economics": {
+      "path": "results/adaptive_v1/figures/fig06_economics.png",
+      "caption": "New Lock owner-financial scenario in EUR 2025. Bars and curves show three-seed means; ranges are descriptive, not confidence intervals."
+    }
+  },
+  "evidence": [
+    "results/adaptive_v1/data_diagnostics.json",
+    "results/adaptive_v1/representation_summary.csv",
+    "results/adaptive_v1/model_diagnostics_training.json",
+    "docs/ECONOMIC_CASE_SOURCES.md",
+    "results/adaptive_v1/model_comparison.csv",
+    "results/adaptive_v1/ablation.csv",
+    "results/adaptive_v1/frozen_config.json",
+    "results/adaptive_v1/decisions.csv",
+    "results/adaptive_v1/quality_audit.csv",
+    "results/adaptive_v1/economic_results.csv",
+    "results/adaptive_v1/economic_inputs.csv",
+    "results/adaptive_v1/sensitivity.csv",
+    "results/adaptive_v1/signal_diagnostics.csv",
+    "results/adaptive_v1/full_plan_model_sensitivity.csv",
+    "results/adaptive_v1/correctness_summary.json"
+  ],
+  "statistics": {
+    "evaluation_models": {
+      "cnp": {
+        "log_mae": 0.6565949567,
+        "thickness_mae_m": 0.43046875,
+        "precision": null,
+        "recall": 0.0,
+        "f1": 0.0,
+        "fpr": 0.0,
+        "log_error_p90": 1.4826933111
+      },
+      "gp": {
+        "log_mae": 0.5092778118,
+        "thickness_mae_m": 0.400318287,
+        "precision": 0.5176486414,
+        "recall": 0.140255218,
+        "f1": 0.1147541398,
+        "fpr": 0.0188378918,
+        "log_error_p90": 1.132412769
+      },
+      "tabpfn_graph": {
+        "log_mae": 0.5025261683,
+        "thickness_mae_m": 0.5947265625,
+        "precision": 0.3432915207,
+        "recall": 0.3628116739,
+        "f1": 0.3144673057,
+        "fpr": 0.0964687104,
+        "log_error_p90": 1.1116943355
+      },
+      "tabpfn_joint": {
+        "log_mae": 0.4971412839,
+        "thickness_mae_m": 0.4914496528,
+        "precision": 0.3315448068,
+        "recall": 0.3329847108,
+        "f1": 0.2966780091,
+        "fpr": 0.0779841217,
+        "log_error_p90": 1.1242230247
+      },
+      "xgb": {
+        "log_mae": 0.5118053173,
+        "thickness_mae_m": 0.4850694444,
+        "precision": 0.3510990018,
+        "recall": 0.3123037456,
+        "f1": 0.2972508345,
+        "fpr": 0.0689345307,
+        "log_error_p90": 1.1502308057
+      }
+    },
+    "evaluation_ablations": {
+      "tabpfn_joint_unfinetuned": {
+        "log_mae": 0.4954070449,
+        "thickness_mae_m": 0.4795572917,
+        "precision": 0.3517385017,
+        "recall": 0.3491963798,
+        "f1": 0.3174421791,
+        "fpr": 0.0745853287,
+        "log_error_p90": 1.1197661535
+      },
+      "tabpfn_residual_guarded": {
+        "log_mae": 0.5029121557,
+        "thickness_mae_m": 0.4973307292,
+        "precision": 0.3439602918,
+        "recall": 0.320697204,
+        "f1": 0.2997181241,
+        "fpr": 0.0729708631,
+        "log_error_p90": 1.1272752384
+      },
+      "tabpfn_residual_raw": {
+        "log_mae": 0.5023508061,
+        "thickness_mae_m": 0.5090277778,
+        "precision": 0.3538013,
+        "recall": 0.2238558766,
+        "f1": 0.2172689021,
+        "fpr": 0.0599984631,
+        "log_error_p90": 1.1305014365
+      },
+      "tabpfn_residual_unfinetuned": {
+        "log_mae": 0.5064837681,
+        "thickness_mae_m": 0.4943359375,
+        "precision": 0.3360318316,
+        "recall": 0.2339618201,
+        "f1": 0.2313337547,
+        "fpr": 0.0586367328,
+        "log_error_p90": 1.1314479114
+      }
+    }
+  }
+}

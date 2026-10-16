@@ -1,8 +1,10 @@
-# 方案选择依据
+# 模型选择依据
 
-当前比较包括4个基线（1弱3强）、2个TabPFN组合、3个主方案和4个讨论方案，共13个入口，名单见[`configs/catalog.json`](../configs/catalog.json)。
+自适应阶段的五AI名单由`configs/adaptive_v1.yaml`指定；按开发场地等权的注册状态平均log-MAE选择主模型。当前开发比较选出TabPFN＋graph（0.578210），XGBoost为0.597023；joint厚度误差更低（0.482639m）。停止阈值与选点权重另由完整开发轨迹确定，评价阶段冻结。方法和数据边界见[ADAPTIVE_PROTOCOL.md](ADAPTIVE_PROTOCOL.md)。
 
-## 选择规则
+v0.9.1历史比较包括4个基线（1弱3强）、2个TabPFN组合、3个主方案和4个讨论方案，共13个入口，名单见[`configs/catalog.json`](../configs/catalog.json)。
+
+## v0.9.1历史选择规则
 
 候选集合是同一评价协议下记录过的全部固定配置：截至v0.8共203个（Git标签`v0.8-engineering`中的`results/v8-engineering-20261014/comparison/all_model_ranking.csv`；v0.3–v0.7各表与它在共有行上逐值相同）。协议为60个冻结状态、4个验证场地、预算5–13的AUBC，定义见[当前方案对比](../CA6001_CPT_当前方案对比.md#指标总表)。
 

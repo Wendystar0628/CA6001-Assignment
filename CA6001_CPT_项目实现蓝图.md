@@ -1,18 +1,10 @@
-> **背景文档（2026-10-13蓝图1.1版）。** 当前工程为v0.9.1，共13个模型入口（4个基线、2个TabPFN组合、3个主方案、4个讨论方案）。本文正文保持原设计，不再逐处修改；实际模型名单、结果、运行方式和完成边界以[当前实现状态](docs/IMPLEMENTATION_STATUS.md)、[当前方案对比](CA6001_CPT_当前方案对比.md)及[运行说明](docs/RUN_GUIDE.md)为准。历史训练与探索代码见Git标签`v0.8-engineering`。
+> **当前实现导航（2026-10-17）。** 正文保留2026-10-13的早期设计，当前执行范围以[CPT自适应补勘执行方案](CPT_AI自适应补勘与经济效益_执行方案.md)、[实现状态](docs/IMPLEMENTATION_STATUS.md)和[自适应实验协议](docs/ADAPTIVE_PROTOCOL.md)为准。
 >
-> **与当前实现不一致之处：**
+> 新阶段以GP、XGBoost、CNP、TabPFN joint、TabPFN＋graph五种AI方法为主比较，增加完整计划、顺序早停和自适应补勘三种决策方案，按完整近邻组回放，并将独立事后质量审核接入经济评价。
 >
-> 1. **系统输出与模型（第1、6节）**：当前不输出下一批补勘位置，选址函数只作为库函数保留，CLI未暴露。主模型不是微调TabPFN：3个主方案的点预测不含TabPFN，TabPFN只出现在2个TabPFN组合及共享风险头中。对照中也没有未微调TabPFN。当前13个入口见`configs/catalog.json`。
-> 2. **外层测试（第1.2、3、5.1节）**：当前没有外层测试。v0.1的外层测试结果已被取代，其中4个测试场地后来成为反复使用的验证场地。
-> 3. **场地与演示（第1.2、2.2、7.1、10.3、10.11节）**：原计划8个正式回放场地，当前只评价其中4个（Lower Hutt、Tauranga、Chch Metro Sports、Marshland）。New Lock不参与当前评价，因此“New Lock逐帧补勘视频”和“G1 New Lock全景”都不是当前交付；v0.1的本地演示使用的是v0.1模型。
-> 4. **项目结构与配置（第3、11.1节）**：`presentation.yaml`、`pilot.yaml`、`data_processed/`、`episodes.py`、`source_metadata.py`、`tabpfn_train.py`、`xgb.py`、`plot_style.py`、`figures.py`、`pipeline.py`、`run.json`、`figures/report`、`demo/`都不存在。当前配置为`configs/main.yaml`、`sites.yaml`、`catalog.json`，准备数据在`data_processed_v2/`，结构见实现状态文档。`configs/main.yaml`的实际内容也与第11.1节的起始内容不同，其中多数回放与质量键当前未使用，见该文件注释。
-> 5. **种子与实验矩阵（第7.1、8节）**：原计划种子[17, 29, 43, 71, 101]、“先在场地内平均五个种子”，以及“模型线＋3×3策略矩阵、8场地×5种子”。冻结状态只用种子17、29和maximin，没有策略矩阵：每个入口12条曲线（3个fold×2个场地×2个种子），按4个不同场地聚合。60个状态只含39个不同已知集和8个不同评价集。
-> 6. **计算预算（第8.3节）**：24 GPU小时总预算、每折约2小时训练上限是历史计划。训练已在v0.4–v0.8完成，当前只做推理。
-> 7. **指标（第9节）**：当前发布的是log-MAE、厚度MAE、点召回/点误报和校准风险召回/误报/Brier（阈值0.2），没有precision/F1作为主指标。区间只有GP一个入口，实测90%覆盖率79.76%。第9.2–9.4节的同质量目标（GP＋maximin@13）、达标预算与条件成本都不在当前结果中。
-> 8. **图表（第10节）**：G1–G6及其组合方式由`notebooks/`中的最终报告底稿取代（本地，尚未提交）。
-> 9. **命令行（第11.2节）**：`pilot`、`fit`、`replay`、`summarize`、`export`、`run --resume`都不存在。当前命令为`models`、`status`、`restore-inputs`、`prepare`、`split`、`predict`、`verify`、`evaluate`、`port-check`、`benchmark`。
-> 10. **进度与Git节点（第12.2、12.5节）**：阶段A–H的10/13–10/28日程与G0–G5节点、`v1.0-submission`标签都已不适用。实际标签为v0.1–v0.8及`v0.9-curated`，v0.9.1尚未提交。
-> 11. **幻灯片叙事（第13.1节）**：其中关于微调收益、90%覆盖和达标预算的结论都不是当前结果。
+> v0.9.1的13入口结果及已揭盲档案保存在`results/current/`与`results/final_test/`。新阶段的8场地、3种子结果属于有限数据重评估；具体结论以`results/adaptive_v1/`为准。早期正文的模型、命令、状态数量和未实现事项不代表当前状态。
+>
+> 正式提交报告采用课程模板，正文连参考文献最多10页、封面另计；Word与PDF见`reports/`，Notebook用于实验、分析与绘图，交互展示见`CA6001_项目状态.html`。
 
 # CA6001 CPT 项目实现蓝图
 

@@ -1,32 +1,51 @@
-# CA6001 · CPT重建与预算研究
+# CA6001 · AI自适应CPT补勘与经济效益评价
 
-本项目研究有限勘探预算下的CPT曲线重建、低阻力层厚度预测与低阻力识别。当前版本v0.9.1提供 **4个基线（1弱3强）＋2个TabPFN组合＋3个主方案＋4个讨论方案**，共13个模型入口，名单唯一来源为[configs/catalog.json](configs/catalog.json)。
+本项目研究有限已测CPT条件下的2–8 m锥阻剖面重建、累计低锥阻厚度预测、自适应补勘与停止决策，并将实际回放工作量接入经济情景。当前阶段为`adaptive_v1`，在v0.9.1工程上扩展。
 
-- [当前实现状态](docs/IMPLEMENTATION_STATUS.md)
-- [13方案性能与取舍](CA6001_CPT_当前方案对比.md)
-- [运行说明](docs/RUN_GUIDE.md)
-- [方案选择依据](docs/MODEL_SELECTION.md)
-- [结果证据](results/current/README.md) · [v0.9.1变更](results/current/CHANGES_v0.9.1.md)
+- [交互展示](CA6001_项目状态.html) · [当前实现状态](docs/IMPLEMENTATION_STATUS.md)
+- [正式报告PDF](reports/CA6001_Adaptive_CPT_Report.pdf) · [可编辑Word](reports/CA6001_Adaptive_CPT_Report.docx)
+- [实验与绘图Notebook](notebooks/CA6001_report_figures.ipynb)
+- [自适应实验协议](docs/ADAPTIVE_PROTOCOL.md) · [运行说明](docs/RUN_GUIDE.md)
+- [结果与复现文件](results/adaptive_v1/README.md) · [经济参数来源](docs/ECONOMIC_CASE_SOURCES.md)
+
+主比较为 **GP、XGBoost残差、CNP、TabPFN joint、TabPFN＋graph**。开发场地按预定log-MAE规则选出graph；完整计划`B_full`、同模型maximin顺序早停`B_seq`和自适应早停`P_adapt`使用同一初始集和隐藏审计集。初始至少5根，每批目标2根，近邻组始终完整揭示，实际根数按组记录。
+
+## 预测比较
+
+下表为4个评价场地、3种子、63个登记的完整组状态（62个不同已知集）的场地等权均值。观察节点覆盖5–13根附近及每个完整计划端点；它与旧版5–13 AUBC口径不同。
+
+| 方法 | log-MAE ↓ | 厚度MAE / m ↓ | 点召回 ↑ | 点误报率 ↓ |
+|---|---:|---:|---:|---:|
+| GP | 0.509278 | 0.400318 | 14.03% | 1.88% |
+| XGBoost残差 | 0.511805 | 0.485069 | 31.23% | 6.89% |
+| CNP | 0.656595 | 0.430469 | 0.00% | 0.00% |
+| TabPFN joint | 0.497141 | 0.491450 | 33.30% | 7.80% |
+| TabPFN＋graph（冻结主模型） | 0.502526 | 0.594727 | 36.28% | 9.65% |
+
+joint的剖面误差较XGBoost低约2.87%，graph低约1.81%；GP厚度误差更低。消融保留同代未微调权重及训练残差路径，微调收益因组合方式而异。
+
+## 选点与经济结果
+
+Airport三个种子均从21根降至11根，约省47.62%；B_seq和P_adapt停止数量相同。四场地等权省点率为顺序早停13.57%、自适应早停11.90%，自适应本轮未增加额外节约。两策略均无错误早停；New Lock仍需64根，完整计划下也未达到研究质量目标。
+
+主α=1、EUR2025情景中，Airport净收益为€23,300；New Lock约为−€55,933（三种子均值）。数值来自真实停止根数与明确的成本/工期假设，不能视为实际合同收益。完整正负结果、来源与敏感性见正式报告及结果目录。
+
+## 运行
+
+在Project根目录使用现有`.venv`。全新环境按`requirements-lock.txt`和`pyproject.toml`安装；报告与Notebook依赖可用`.[report]`，模型依赖见`.[tabpfn]`。
 
 ```powershell
-.venv/Scripts/python.exe -m cpt_budget models
 .venv/Scripts/python.exe -m cpt_budget status
-.venv/Scripts/python.exe -m cpt_budget predict --model balanced --point-only
-.venv/Scripts/python.exe -m cpt_budget verify       # 13×60状态与参考预测对照，780/780
-.venv/Scripts/python.exe -m cpt_budget evaluate     # 从参考预测重算results/current的4个指标文件
-.venv/Scripts/python.exe -m cpt_budget port-check   # 与v0.8归档逐状态指标对照，26/26
-.venv/Scripts/python.exe -m cpt_budget benchmark --cpu-core 2
+.venv/Scripts/python.exe -m cpt_budget adaptive --stage pilot
+.venv/Scripts/python.exe -m cpt_budget adaptive --stage publish
+.venv/Scripts/python.exe -m cpt_budget.adaptive_display --notebook
+.venv/Scripts/python.exe reports/build_adaptive_report.py
 ```
 
-沿用已有`.venv`即可；新环境按`requirements-lock.txt`及`pyproject.toml`安装（TabPFN组合、主方案风险头与CNP还需可选依赖`.[tabpfn]`，即tabpfn==9.2.0与torch）。大权重与参考预测位于本地`artifacts/`，不提交Git；缺失时`status`明确报错。数据获取见[Data/README.md](Data/README.md)。
+完整重跑应使用新的配置输出目录；已有评价结果不会被重新用于选择阈值。大权重、原始数据和逐单元预测保存在本地，获取方式见[Data说明](Data/README.md)。新实验的配置、位置划分、权重指纹、轨迹、事后审核和经济输入均可追溯。
 
-主要结果（4个验证场地、预算5–13的AUBC，与IDW强基线比较；IDW为log-MAE 0.638586、厚度MAE 0.630371 m、点召回37.38%、点误报7.28%）：
+## 证据范围与历史
 
-- 均衡方案`balanced`：log-MAE 0.592435（−7.23%），厚度MAE 0.536947 m（−14.82%）。
-- 厚度方案`thickness`：厚度MAE 0.472493 m（−25.05%），是同一协议下记录过的最低厚度误差；但点误报10.05%，超出v0.7晋级规则的点误报护栏（≤IDW+2pp＝9.28%）。护栏内的最优厚度配置保留为讨论方案`thickness_guarded`（0.487630 m，点误报8.99%）。
-- 识别方案`recognition`：点召回48.77%（+11.39pp），代价是点误报9.14%（+1.86pp）。
-- 讨论方案`count_shrink`的log-MAE最低（0.591791），但厚度MAE较均衡方案差，完整链路耗时约为均衡方案的1.89倍。
+492个可用代表位置来自31个场地，每孔24个深度单元；深度行和种子不是独立工地。8个回放场地已有开发或揭盲历史，本轮使用对应外层折权重进行有限数据重评估。`qc < 1 MPa`是研究指标，停止审核对应剖面与累计厚度研究目标，低值识别另行检查。经济金额是有来源或明确假设的反事实情景，主情景α=1。
 
-上述成绩来自用于模型选择的4个验证场地（60个冻结状态只含39个不同已知集和8个不同评价集），应视为乐观估计。最终测试（4个从未参与选择的场地：Chch Stadium、Wellington Airport、New Lock、Hollywood；盲测预测、哈希冻结、只揭盲一次）中，log-MAE前三与验证相同：count_shrink 0.5049、balanced 0.5052、tabpfn_joint 0.5061（验证→测试Spearman ρ＝0.912）；厚度最优为thickness 0.4383 m（较IDW −0.065 m，3胜1平0负），厚度排名ρ＝0.510。仅4个测试场地，结论为描述性；Wellington Airport的评价集没有低阻力单元。协议见[docs/FINAL_TEST_PROTOCOL.md](docs/FINAL_TEST_PROTOCOL.md)，结果见[results/final_test/README.md](results/final_test/README.md)。不能证明能节省补勘根数。
-
-项目背景见[高分设计](CA6001_CPT_高分项目设计.md)与[实现蓝图](CA6001_CPT_项目实现蓝图.md)。两份均为2026-10-13的早期设计，与当前实现不一致之处列在各自文首。课程最终报告以Jupyter Notebook提交，当前底稿为`notebooks/CA6001_report_figures.ipynb`（本地，尚未提交Git）。
+v0.9.1的13入口及旧成绩保存在[历史方案对比](CA6001_CPT_当前方案对比.md)、`results/current/`与`results/final_test/`；旧Notebook和HTML位于`notebooks/archive/`。项目背景见[原始设计](CA6001_CPT_高分项目设计.md)与[实现蓝图](CA6001_CPT_项目实现蓝图.md)。正式报告按课程模板输出Word/PDF，Notebook作为实验分析与绘图材料。
