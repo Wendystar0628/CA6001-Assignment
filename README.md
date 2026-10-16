@@ -2,7 +2,7 @@
 
 本项目研究有限已测CPT条件下的2–8 m锥阻剖面重建、累计低锥阻厚度预测、自适应补勘与停止决策，并将实际回放工作量接入经济情景。当前阶段为`adaptive_v1`，在v0.9.1工程上扩展。
 
-- [交互展示](CA6001_项目状态.html) · [当前实现状态](docs/IMPLEMENTATION_STATUS.md)
+- [阶段前后对比](CA6001_项目阶段对比.html) · [自适应交互展示](CA6001_项目状态.html) · [当前实现状态](docs/IMPLEMENTATION_STATUS.md)
 - [实验与绘图Notebook](notebooks/CA6001_report_figures.ipynb)
 - [自适应实验协议](docs/ADAPTIVE_PROTOCOL.md) · [运行说明](docs/RUN_GUIDE.md)
 - [结果与复现文件](results/adaptive_v1/README.md) · [经济参数来源](docs/ECONOMIC_CASE_SOURCES.md)
