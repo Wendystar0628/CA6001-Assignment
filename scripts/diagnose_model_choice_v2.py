@@ -243,14 +243,90 @@ def consolidate(quality):
     })
 
 
+def gp_kernel_jump():
+    """Exactly two recorded MLE fits; neither context receives hidden values."""
+    from threadpoolctl import threadpool_limits
+    dataset = load_dataset(load_config())
+    split_data = json.loads((V1 / "splits.json").read_text(encoding="utf-8"))
+    split_data = split_data["splits"] if isinstance(split_data, dict) else split_data
+    split = next(s for s in split_data if s["site_id"] == "newlock" and s["seed"] == 29)
+    trace = pd.read_csv(ROOT / "runs/adaptive_v2_acquisition/newlock__s29__gp__maximin/quality.csv")
+    contexts = [trace.loc[trace.n_observed.eq(n)].iloc[0] for n in (63, 64)]
+    assert set(json.loads(contexts[0].known_ids)) < set(json.loads(contexts[1].known_ids))
+    query = dataset.query(split["audit_ids"])
+    records, predictions = [], []
+    with threadpool_limits(limits=1):
+        for row in contexts:
+            known = json.loads(row.known_ids)
+            assert not set(known) & set(split["audit_ids"])
+            observed = dataset.observed(known).sort_values(["location_id", "depth_index"], kind="stable").reset_index(drop=True)
+            model = make_model("gp", 1)
+            model.condition(observed)
+            core, regressor = model.predictor, model.predictor.regressor
+            kernel = regressor.kernel_
+            train_prediction = model.predict(observed.drop(columns=["qc_mpa", "log_qc"], errors="ignore")).frame
+            train_residual = observed.log_qc.to_numpy(float) - train_prediction.pred_log_qc.to_numpy(float)
+            prediction = model.predict(query).frame
+            predictions.append(prediction)
+            # Offline audit scoring starts only after both fit and prediction.
+            score = _score(prediction, dataset.truth(split["audit_ids"]))
+            lengths = np.asarray(kernel.k1.k2.length_scale, float)
+            added_ids = sorted(set(known) - set(json.loads(contexts[0].known_ids)))
+            added_files = dataset.locations("newlock").set_index("location_id").loc[added_ids, "source_file"].tolist()
+            records.append({"site_id": "newlock", "seed": 29, "fold_id": 1,
+                            "n_observed": len(known), "source": "canonical revealed-only GP, unchanged v1 factory",
+                            "signal_variance": float(kernel.k1.k1.constant_value),
+                            "length_x_m": lengths[0], "length_y_m": lengths[1], "length_z_m": lengths[2],
+                            "noise_variance": float(kernel.k2.noise_level),
+                            "noise_sd": float(np.sqrt(kernel.k2.noise_level)),
+                            "log_marginal_likelihood": float(regressor.log_marginal_likelihood_value_),
+                            "kernel_repr": str(kernel), "kernel_theta": json.dumps(kernel.theta.tolist()),
+                            "train_fit_residual_mae_log": float(abs(train_residual).mean()),
+                            "train_fit_residual_rmse_log": float(np.sqrt(np.mean(train_residual ** 2))),
+                            "train_fit_residual_sd_log": float(train_residual.std()),
+                            "source_trend_residual_sd_log": float((observed.log_qc.to_numpy(float) - core._trend_at(observed)).std()),
+                            "added_location_ids": json.dumps(added_ids), "added_source_files": json.dumps(added_files),
+                            **score})
+            print(f"kernel evidence n={len(known)} kernel={kernel} audit_Q={score['log_mae']:.6f}", flush=True)
+    pd.DataFrame(records).to_csv(OUTPUT / "model_choice_gp_kernel_jump.csv", index=False)
+    changed = query[["location_id", "depth_index", "z_center_m"]].copy()
+    changed["pred_n63"] = predictions[0].pred_log_qc.to_numpy(float)
+    changed["pred_n64"] = predictions[1].pred_log_qc.to_numpy(float)
+    changed["signed_change_log"] = changed.pred_n64 - changed.pred_n63
+    changed["abs_change_log"] = abs(changed.signed_change_log)
+    changed["low_label_flipped"] = (changed.pred_n63 < 0) != (changed.pred_n64 < 0)
+    by_hole = changed.groupby("location_id").agg(mean_abs_change_log=("abs_change_log", "mean"),
+        max_abs_change_log=("abs_change_log", "max"), mean_signed_change_log=("signed_change_log", "mean"),
+        low_label_flips=("low_label_flipped", "sum")).reset_index()
+    by_hole = by_hole.merge(dataset.locations("newlock")[["location_id", "source_file"]], on="location_id")
+    by_depth = changed.groupby("z_center_m").agg(mean_abs_change_log=("abs_change_log", "mean"),
+        mean_signed_change_log=("signed_change_log", "mean"), low_label_flips=("low_label_flipped", "sum")).reset_index()
+    json_write(OUTPUT / "model_choice_gp_kernel_jump.json", {
+        "scope": SCOPE, "states": [63, 64], "model_id": "gp", "seed": 29, "fold_id": 1,
+        "recorded_mle_fits": 2, "hyperparameter_search_expanded": False,
+        "source_factory_changed": False, "full_kernel_backfilled_into_n63": False,
+        "observation_boundary": "Each MLE fit uses its own revealed set only. Audit labels used only for post-prediction scoring.",
+        "models": records,
+        "audit_prediction_change": {"cells": len(changed), "mean_abs_log": float(changed.abs_change_log.mean()),
+            "p90_abs_log": float(changed.abs_change_log.quantile(.9)), "max_abs_log": float(changed.abs_change_log.max()),
+            "low_label_flips": int(changed.low_label_flipped.sum()),
+            "by_hole": by_hole.to_dict("records"), "by_depth": by_depth.to_dict("records")},
+        "interpretation_limit": "Two fitted states identify parameter and prediction changes; they do not isolate a causal fixed-kernel counterfactual.",
+    })
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--summary-only", action="store_true")
     parser.add_argument("--consolidate-only", action="store_true")
+    parser.add_argument("--gp-jump-only", action="store_true")
     parser.add_argument("--families", choices=("all", "cpu", "ai"), default="all")
     parser.add_argument("--device", choices=("cpu", "cuda"), default="cuda")
     args = parser.parse_args()
     OUTPUT.mkdir(parents=True, exist_ok=True)
+    if args.gp_jump_only:
+        gp_kernel_jump()
+        return
     quality = frozen_summary()
     if not args.summary_only and not args.consolidate_only:
         import torch

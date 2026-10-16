@@ -1,0 +1,3 @@
+site_id,seed,model_id,policy,run_id,n_full,minimum_log_mae,full_log_mae,full_thickness_mae_m,full_recall,full_fpr,full_reconstruction_pass,full_complete_task_pass,n_online_stop,online_saved_fraction,opportunity_is_offline_oracle,oracle_min_n_reconstruction,oracle_max_saved_fraction_reconstruction,oracle_min_n_complete_task,oracle_max_saved_fraction_complete_task
+newlock,29,gp,maximin,newlock__s29__gp__maximin,64,0.7155761069602968,0.7155761069602968,0.6875,0.2166666666666666,0.015432098765432,False,False,64,0.0,True,,0.0,,0.0
+newlock,29,gp,target_ivr,newlock__s29__gp__target_ivr,64,0.690035746597115,0.7155761069602968,0.6875,0.2166666666666666,0.015432098765432,False,False,64,0.0,True,,0.0,,0.0

@@ -1,0 +1,118 @@
+{
+  "kind": "post_unblind_exploratory_diagnostic",
+  "states": "three original NewLock seeds, initial/nominal maximin13/25/41/full with atomic-group overshoot; augmented CV full only",
+  "original_finite_tree_predictions": 120,
+  "median_mechanism_predictions": 30,
+  "augmented_selector_predictions": 3,
+  "quality_thresholds": {
+    "log_mae_max": 0.626458169250689,
+    "thickness_mae_max_m": 0.88125,
+    "relative_log_tolerance": 0.05,
+    "relative_thickness_tolerance_m": 0.25,
+    "low_recall_min": 0.5,
+    "low_fpr_max": 0.1
+  },
+  "audit_labels_used_for_selection": false,
+  "source_weights_used": false,
+  "mechanism": "Median depth-trend residual trees; added MAE leaf and cross-tree median, optionally known-profile low-count adjustment",
+  "families": {
+    "target_trees": {
+      "rows": 120,
+      "reconstruction_passes": 0,
+      "combined_passes": 0,
+      "full_seed_means": [
+        {
+          "model_id": "target_et_raw",
+          "log_mae": 0.8542032354698953,
+          "thickness_mae_m": 1.1458333333333333,
+          "recall": 0.1982443482443482,
+          "fpr": 0.07269674669240353
+        },
+        {
+          "model_id": "target_et_residual",
+          "log_mae": 0.7809796934077199,
+          "thickness_mae_m": 1.015625,
+          "recall": 0.15034872534872534,
+          "fpr": 0.040797555817461695
+        },
+        {
+          "model_id": "target_rf_raw",
+          "log_mae": 0.9696506027269943,
+          "thickness_mae_m": 1.2083333333333333,
+          "recall": 0.2656806156806157,
+          "fpr": 0.10734053884614865
+        },
+        {
+          "model_id": "target_rf_residual",
+          "log_mae": 0.9834687613354904,
+          "thickness_mae_m": 1.2395833333333333,
+          "recall": 0.2251924001924002,
+          "fpr": 0.10225824463066584
+        },
+        {
+          "model_id": "target_tree_cv",
+          "log_mae": 0.7809796934077199,
+          "thickness_mae_m": 1.015625,
+          "recall": 0.15034872534872534,
+          "fpr": 0.040797555817461695
+        },
+        {
+          "model_id": "target_tree_log_cv",
+          "log_mae": 0.7809796934077199,
+          "thickness_mae_m": 1.015625,
+          "recall": 0.15034872534872534,
+          "fpr": 0.040797555817461695
+        },
+        {
+          "model_id": "target_xgb_raw",
+          "log_mae": 0.9488950918983238,
+          "thickness_mae_m": 1.2708333333333333,
+          "recall": 0.1993145743145743,
+          "fpr": 0.1014017650825468
+        },
+        {
+          "model_id": "target_xgb_residual",
+          "log_mae": 0.9561043197475257,
+          "thickness_mae_m": 1.2239583333333333,
+          "recall": 0.15607263107263103,
+          "fpr": 0.0981427605115625
+        }
+      ]
+    },
+    "target_trees_median": {
+      "rows": 30,
+      "reconstruction_passes": 0,
+      "combined_passes": 0,
+      "full_seed_means": [
+        {
+          "model_id": "target_et_median_count_cv",
+          "log_mae": 0.8426317540210023,
+          "thickness_mae_m": 1.1041666666666667,
+          "recall": 0.22757335257335257,
+          "fpr": 0.0974071805595511
+        },
+        {
+          "model_id": "target_et_median_native",
+          "log_mae": 0.8426317540210023,
+          "thickness_mae_m": 1.1041666666666667,
+          "recall": 0.22757335257335257,
+          "fpr": 0.0974071805595511
+        }
+      ]
+    },
+    "target_trees_augmented": {
+      "rows": 3,
+      "reconstruction_passes": 0,
+      "combined_passes": 0,
+      "full_seed_means": [
+        {
+          "model_id": "target_tree_augmented_cv",
+          "log_mae": 0.8329966848755562,
+          "thickness_mae_m": 1.0729166666666667,
+          "recall": 0.19053631553631553,
+          "fpr": 0.07817641132878189
+        }
+      ]
+    }
+  }
+}

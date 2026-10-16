@@ -1,0 +1,10 @@
+{
+  "protocol": "protocol_905a0602970f.json",
+  "trajectories": 2,
+  "completed_sweeps": 9,
+  "audit_quality_passing_states": 0,
+  "complete_task_passing_states": 0,
+  "online_early_stop_used": false,
+  "online_savings_claimed": false,
+  "interpretation": "Oracle opportunity metrics do not constitute deployable savings."
+}

@@ -1,0 +1,126 @@
+{
+  "checked_on": "2026-10-17",
+  "site_id": "newlock",
+  "purpose": "Bounded feasibility check of external, label-independent geoscience covariates; post-unblind exploratory diagnosis only.",
+  "decision": "do_not_integrate_in_current_replay",
+  "external_point_samples_requested": 0,
+  "prepared_inputs_changed": false,
+  "model_or_policy_changed": false,
+  "quality_thresholds_changed": false,
+  "local_evidence": {
+    "locations_workbook": "Data/downloads/Global_CPT1196.zip::CPT_3_1196/@Newlock/locations.xlsx",
+    "standalone_workbook": "Data/downloads/Terneuzen_CPT98_excel.zip::locations.xlsx",
+    "location_rows": 98,
+    "columns": ["NO", "X(m)", "Y(m)"],
+    "example_geometry_only": {"source_id": "DKMP1", "x_m": 45550.2, "y_m": 372391.8},
+    "explicit_crs": null,
+    "ground_or_cpt_start_elevation": null,
+    "cpt_measurement_date": null,
+    "workbook_created": "2017-11-16T08:14:31",
+    "workbook_modified": "2017-12-06T11:40:25",
+    "workbook_dates_are_measurement_dates": false,
+    "qc_workbook_headers": ["Depth (m)", "qc  (Mpa)", "fs  (Kpa)", "u2  (Kpa)"],
+    "archive_readme_declares_crs_or_measurement_dates": false,
+    "project_data_readme": "Data/README.md"
+  },
+  "primary_source_groups": [
+    {
+      "authority": "ISSMGE TC304; original site map supplied by Fugro",
+      "urls": [
+        "https://tc304.org/cpt_databases.html",
+        "https://tc304.org/attachments/database/cpt/terneuzen_nl/Site_Map.pdf"
+      ],
+      "verified": {
+        "database_name": "NL-CPTU/98/2km2",
+        "site_identity": "New Lock Terneuzen, the Netherlands",
+        "database_owner": "Arjan Grashuis, Rijkswaterstaat",
+        "published_depth_range_m": [3, 70],
+        "site_map_visual_inspection": true,
+        "site_map_title": "GRONDONDERZOEK T.B.V. NIEUWE SLUIS TERNEUZEN",
+        "map_title_block_date": "2015-09-30",
+        "map_status": "DEFINITIEF",
+        "map_drawing_project_number": "1315-0035-200",
+        "map_pdf_creation_date": "2017-10-11T10:40:26+02:00",
+        "map_legend_survey_project_numbers": {
+          "DKMP1_to_DKMP10_and_B1_to_B5": "7013-0226-000",
+          "DKMP11_to_DKMP21A_and_DKMP26A_to_DKMP29A": "7013-0226-001",
+          "black_triangle_survey_symbols": "1315-0035-000"
+        },
+        "explicit_crs_or_nap_start_height_found_on_map": false,
+        "individual_cpt_measurement_dates_found_on_map": false
+      },
+      "interpretation": "The map confirms project identity and multiple survey campaigns. Drawing/container dates are not CPT acquisition dates; project numbers are not evidence of vertical offsets or a coordinate reference system."
+    },
+    {
+      "authority": "AHN official data service",
+      "urls": [
+        "https://www.ahn.nl/dataroom",
+        "https://www.ahn.nl/kwaliteitsbeschrijving"
+      ],
+      "verified": {
+        "products": ["terrain DTM", "surface DSM", "classified point clouds"],
+        "raster_resolution_m": 0.5,
+        "official_horizontal_vertical_reference": "Amersfoort / RD New + NAP height, EPSG:7415; NAP vertical EPSG:5709",
+        "ahn2_acquisition_year_range": [2007, 2012],
+        "ahn3_acquisition_year_range": [2014, 2019],
+        "historical_dtm_endpoint_linked_from_official_page": "https://api.ellipsis-drive.com/v3/ogc/wcs/e96b10b9-e964-414c-958c-57a9dbe24e62?request=getCapabilities&version=1.0.0&requestedEpsg=28992",
+        "capabilities_live_http_status": 200,
+        "capabilities_content_type": "text/xml; charset=utf-8",
+        "capabilities_byte_count": 2093,
+        "capabilities_coverage_name": "f380e0a0-4446-4d79-b2d1-3d4df40cbc93",
+        "capabilities_coverage_label": "AHN2 DTM 0.5m",
+        "coordinate_specific_height_samples_requested": false,
+        "acquisition_metadata_links": [
+          "https://basisdata.nl/hwh-ahn/AUX/vlieglijnen/AHN2.gpkg",
+          "https://basisdata.nl/hwh-ahn/AUX/vlieglijnen/AHN3_clip.gpkg"
+        ],
+        "ahn2_flightline_metadata_caveat": "Official page labels the AHN2 flight-line file as incomplete and without date."
+      },
+      "interpretation": "Historical terrain data are technically accessible. The missing source CPT CRS and CPT-start elevation/date prevent a verified join; no height was sampled by assuming the raw x/y are RD. DSM must not substitute for ground elevation. Waterborne CPTs or altered ground also require original start-level metadata."
+    },
+    {
+      "authority": "TNO Geological Survey of the Netherlands / DINOloket",
+      "urls": [
+        "https://www.dinoloket.nl/detaillering-van-de-bovenste-lagen-met-geotop",
+        "https://www.dinoloket.nl/nieuws/geotop-v15-nieuwe-versie-van-zeeland-en-goeree-overflakkee"
+      ],
+      "verified": {
+        "coverage_includes_zeeland": true,
+        "voxel_size_xyz_m": [100, 100, 0.5],
+        "attributes": ["lithostratigraphic unit", "lithological class", "model uncertainty"],
+        "uses_borehole_logs": true,
+        "uses_cpt_soundings_and_geological_maps": true,
+        "zeeland_model_updated_in_v1_5_announced": "2023-03-16",
+        "current_model_at_source": "GeoTOP v1.6.1 (2025)",
+        "older_versions": "Available on request via the official contact form.",
+        "this_dataset_98_cpts_exclusion_verified": false
+      },
+      "interpretation": "A regional geological framework is promising, but current source-data provenance does not establish exclusion of the target CPTs or future investigations. Neither external-label independence nor a chronology-compatible version is established, and the raw CPT depth still lacks a verified NAP conversion."
+    },
+    {
+      "authority": "Rijkswaterstaat, project owner source",
+      "urls": [
+        "https://www.rijkswaterstaat.nl/nieuws/archief/2024/03/nieuwe-sluis-terneuzen-iedereen-draagt-bij-aan-het-pronkstuk-van-de-regio"
+      ],
+      "verified": {
+        "dredging_started": "2023-09",
+        "described_dredged_volume_m3": 4000000,
+        "described_duration_months": 5,
+        "two_large_land_spits_removed": true
+      },
+      "interpretation": "The site underwent major terrain changes. A recent DEM cannot be assumed to represent the ground or CPT start level at historical testing. This is evidence for a time-match requirement, not evidence of each CPT's date or location-specific ground change."
+    }
+  ],
+  "broken_links": [
+    "Original x/y coordinates -> explicitly verified source CRS",
+    "Recorded CPT depth -> original test start elevation and vertical datum",
+    "CPT acquisition date and surface type -> compatible historical AHN terrain observation",
+    "GeoTOP model version and source IDs -> exclusion of audit/future CPT labels and future information"
+  ],
+  "minimum_evidence_to_reopen": [
+    "Original GEF/BRO CPT header or survey export giving CRS, measurement date, vertical datum and test start elevation for each source CPT ID.",
+    "For AHN: verify land/water start conditions and date-specific surface stability; then use historical DTM with acquisition provenance, without deriving start levels from QC curves.",
+    "For GeoTOP: obtain a dated version with documented input provenance that excludes the held-out/future target measurements, or treat the exercise as a different information-availability scenario."
+  ],
+  "online_information_rule": "Never infer missing heights or choose a CRS/model version from audit QC, future candidate QC, or whichever audit score improves. No external feature is enabled by this diagnostic."
+}

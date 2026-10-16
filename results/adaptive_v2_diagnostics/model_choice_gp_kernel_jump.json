@@ -1,0 +1,405 @@
+{
+  "scope": "post-unblind exploratory diagnostics; original frozen splits and thresholds",
+  "states": [
+    63,
+    64
+  ],
+  "model_id": "gp",
+  "seed": 29,
+  "fold_id": 1,
+  "recorded_mle_fits": 2,
+  "hyperparameter_search_expanded": false,
+  "source_factory_changed": false,
+  "full_kernel_backfilled_into_n63": false,
+  "observation_boundary": "Each MLE fit uses its own revealed set only. Audit labels used only for post-prediction scoring.",
+  "models": [
+    {
+      "site_id": "newlock",
+      "seed": 29,
+      "fold_id": 1,
+      "n_observed": 63,
+      "source": "canonical revealed-only GP, unchanged v1 factory",
+      "signal_variance": 1.7488343855075026,
+      "length_x_m": 154.64893830894349,
+      "length_y_m": 5.708703459178802,
+      "length_z_m": 1.2720689257740008,
+      "noise_variance": 0.1306950346992317,
+      "noise_sd": 0.36151768241571763,
+      "log_marginal_likelihood": -1417.7546429268828,
+      "kernel_repr": "1.32**2 * Matern(length_scale=[155, 5.71, 1.27], nu=1.5) + WhiteKernel(noise_level=0.131)",
+      "kernel_theta": "[0.558949500591016, 5.0411576339859065, 1.7419919329423554, 0.24064465037911767, -2.0348886491330376]",
+      "train_fit_residual_mae_log": 0.20551423641505634,
+      "train_fit_residual_rmse_log": 0.28023684820384004,
+      "train_fit_residual_sd_log": 0.2801860786305641,
+      "source_trend_residual_sd_log": 1.1581262828562837,
+      "added_location_ids": "[]",
+      "added_source_files": "[]",
+      "log_mae": 0.9833279243736859,
+      "log_rmse": 1.1441649355911707,
+      "qc_mae_mpa": 4.177079263187917,
+      "n_eval_locations": 16,
+      "n_eval_cells": 384,
+      "n_true_positive": 60,
+      "n_true_negative": 324,
+      "n_predicted_positive": 0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 60,
+      "tn": 324,
+      "has_positive_labels": true,
+      "tau_mpa": 1.0,
+      "precision": null,
+      "recall": 0.0,
+      "f1": 0.0,
+      "h_expected_mae_m": 1.027301068051945,
+      "ap_score_kind": "low_qc_probability",
+      "average_precision": 0.17642112995826464,
+      "coverage_50": 0.546875,
+      "width_50_log": 1.7767309636215793,
+      "coverage_80": 0.8229166666666667,
+      "width_80_log": 3.3758442545922454,
+      "coverage_90": 0.8880208333333333,
+      "width_90_log": 4.332849192712487,
+      "missing_reasons": "{\"precision\": \"no_predicted_positive_labels\"}",
+      "thickness_mae_m": 0.9375,
+      "fpr": 0.0,
+      "log_error_p90": 2.1025164061670005
+    },
+    {
+      "site_id": "newlock",
+      "seed": 29,
+      "fold_id": 1,
+      "n_observed": 64,
+      "source": "canonical revealed-only GP, unchanged v1 factory",
+      "signal_variance": 1.7373166054505205,
+      "length_x_m": 26.451102176973162,
+      "length_y_m": 67.0357935165089,
+      "length_z_m": 1.284611855392224,
+      "noise_variance": 0.13492903546337565,
+      "noise_sd": 0.3673268782207145,
+      "log_marginal_likelihood": -1426.103576220728,
+      "kernel_repr": "1.32**2 * Matern(length_scale=[26.5, 67, 1.28], nu=1.5) + WhiteKernel(noise_level=0.135)",
+      "kernel_theta": "[0.552341742066086, 3.275297827643054, 4.205226708329759, 0.2504566146579324, -2.0030063019873166]",
+      "train_fit_residual_mae_log": 0.21269396677808242,
+      "train_fit_residual_rmse_log": 0.28775561431303043,
+      "train_fit_residual_sd_log": 0.2877238749566174,
+      "source_trend_residual_sd_log": 1.1663353337686484,
+      "added_location_ids": "[\"location_f710d3e64dcac92c\"]",
+      "added_source_files": "[\"CPT_3_1196/@Newlock/DKMP12C_003.xls\"]",
+      "log_mae": 0.7155761069602968,
+      "log_rmse": 0.8690290731304893,
+      "qc_mae_mpa": 3.266753784405614,
+      "n_eval_locations": 16,
+      "n_eval_cells": 384,
+      "n_true_positive": 60,
+      "n_true_negative": 324,
+      "n_predicted_positive": 18,
+      "tp": 13,
+      "fp": 5,
+      "fn": 47,
+      "tn": 319,
+      "has_positive_labels": true,
+      "tau_mpa": 1.0,
+      "precision": 0.7222222222222222,
+      "recall": 0.21666666666666667,
+      "f1": 0.3333333333333333,
+      "h_expected_mae_m": 0.909673225174567,
+      "ap_score_kind": "low_qc_probability",
+      "average_precision": 0.5998912386264056,
+      "coverage_50": 0.6328125,
+      "width_50_log": 1.676548104856869,
+      "coverage_80": 0.9140625,
+      "width_80_log": 3.1854936978145867,
+      "coverage_90": 0.9713541666666666,
+      "width_90_log": 4.08853689804886,
+      "missing_reasons": "{}",
+      "thickness_mae_m": 0.6875,
+      "fpr": 0.015432098765432098,
+      "log_error_p90": 1.527067659167218
+    }
+  ],
+  "audit_prediction_change": {
+    "cells": 384,
+    "mean_abs_log": 0.5369308798940003,
+    "p90_abs_log": 1.468069680297996,
+    "max_abs_log": 2.1603264580418235,
+    "low_label_flips": 18,
+    "by_hole": [
+      {
+        "location_id": "location_093f12cd388c92df",
+        "mean_abs_change_log": 0.020486687437492712,
+        "max_abs_change_log": 0.03241083559622582,
+        "mean_signed_change_log": 0.020486687437492712,
+        "low_label_flips": 0,
+        "source_file": "CPT_3_1196/@Newlock/S71.xls"
+      },
+      {
+        "location_id": "location_183911ea8ccfb1c0",
+        "mean_abs_change_log": 0.4156596876069069,
+        "max_abs_change_log": 0.655719810308875,
+        "mean_signed_change_log": 0.41309179271814656,
+        "low_label_flips": 0,
+        "source_file": "CPT_3_1196/@Newlock/S78.xls"
+      },
+      {
+        "location_id": "location_28f8bc2ce2a7f439",
+        "mean_abs_change_log": 0.05589808733621716,
+        "max_abs_change_log": 0.09276067429605361,
+        "mean_signed_change_log": 0.05415995681177352,
+        "low_label_flips": 0,
+        "source_file": "CPT_3_1196/@Newlock/S77.xls"
+      },
+      {
+        "location_id": "location_406ab5962c0ccbd2",
+        "mean_abs_change_log": 0.8612821146085515,
+        "max_abs_change_log": 1.7834917188849335,
+        "mean_signed_change_log": 0.7662221736406579,
+        "low_label_flips": 0,
+        "source_file": "CPT_3_1196/@Newlock/S50.xls"
+      },
+      {
+        "location_id": "location_5898f8b50a02e383",
+        "mean_abs_change_log": 1.4061958067563507,
+        "max_abs_change_log": 2.1603264580418235,
+        "mean_signed_change_log": -1.4061958067563507,
+        "low_label_flips": 13,
+        "source_file": "CPT_3_1196/@Newlock/DKMP18C_000.xls"
+      },
+      {
+        "location_id": "location_5e9ea8cec446d984",
+        "mean_abs_change_log": 0.044518848359578166,
+        "max_abs_change_log": 0.08517912850060205,
+        "mean_signed_change_log": -0.044518848359578166,
+        "low_label_flips": 0,
+        "source_file": "CPT_3_1196/@Newlock/DKMP20B_000.xls"
+      },
+      {
+        "location_id": "location_63976b0c61487f74",
+        "mean_abs_change_log": 1.246692082715707,
+        "max_abs_change_log": 1.5270477216012033,
+        "mean_signed_change_log": -1.246692082715707,
+        "low_label_flips": 0,
+        "source_file": "CPT_3_1196/@Newlock/DKMP11C_000.xls"
+      },
+      {
+        "location_id": "location_662be975e3493853",
+        "mean_abs_change_log": 0.23150456899418856,
+        "max_abs_change_log": 0.34454746842048833,
+        "mean_signed_change_log": 0.2269184791994636,
+        "low_label_flips": 0,
+        "source_file": "CPT_3_1196/@Newlock/S76.xls"
+      },
+      {
+        "location_id": "location_9211f1cde72b82cb",
+        "mean_abs_change_log": 0.6840939872736561,
+        "max_abs_change_log": 1.0458683690777986,
+        "mean_signed_change_log": -0.28694063708215195,
+        "low_label_flips": 0,
+        "source_file": "CPT_3_1196/@Newlock/S32.xls"
+      },
+      {
+        "location_id": "location_99e22dbe787048e1",
+        "mean_abs_change_log": 1.0953878143442457,
+        "max_abs_change_log": 1.920214867183923,
+        "mean_signed_change_log": -1.0953878143442457,
+        "low_label_flips": 5,
+        "source_file": "CPT_3_1196/@Newlock/S42.xls"
+      },
+      {
+        "location_id": "location_9d4edd8f2f817f7f",
+        "mean_abs_change_log": 0.911959182544798,
+        "max_abs_change_log": 1.139376887662911,
+        "mean_signed_change_log": -0.911959182544798,
+        "low_label_flips": 0,
+        "source_file": "CPT_3_1196/@Newlock/S90.xls"
+      },
+      {
+        "location_id": "location_a20bad0d7a3a0eba",
+        "mean_abs_change_log": 0.002599710774664458,
+        "max_abs_change_log": 0.0033597422821367573,
+        "mean_signed_change_log": -0.002599710774664458,
+        "low_label_flips": 0,
+        "source_file": "CPT_3_1196/@Newlock/S73.xls"
+      },
+      {
+        "location_id": "location_ae4f0b920fa47f8f",
+        "mean_abs_change_log": 0.14770338376279335,
+        "max_abs_change_log": 0.22201754149567043,
+        "mean_signed_change_log": 0.14770338376279335,
+        "low_label_flips": 0,
+        "source_file": "CPT_3_1196/@Newlock/S69A.xls"
+      },
+      {
+        "location_id": "location_afdc1ec71e92ab38",
+        "mean_abs_change_log": 0.9553692275595109,
+        "max_abs_change_log": 1.8893053869884397,
+        "mean_signed_change_log": -0.6562962384552103,
+        "low_label_flips": 0,
+        "source_file": "CPT_3_1196/@Newlock/DKMP6_000.xls"
+      },
+      {
+        "location_id": "location_b0e4efcf0f2d648d",
+        "mean_abs_change_log": 0.0009383782917182689,
+        "max_abs_change_log": 0.0012160815209112386,
+        "mean_signed_change_log": -0.0009383782917182689,
+        "low_label_flips": 0,
+        "source_file": "CPT_3_1196/@Newlock/S74.xls"
+      },
+      {
+        "location_id": "location_f41c09efb378564c",
+        "mean_abs_change_log": 0.510604509937627,
+        "max_abs_change_log": 0.7420853464282187,
+        "mean_signed_change_log": -0.510604509937627,
+        "low_label_flips": 0,
+        "source_file": "CPT_3_1196/@Newlock/S41.xls"
+      }
+    ],
+    "by_depth": [
+      {
+        "z_center_m": 2.125,
+        "mean_abs_change_log": 0.3486050332678287,
+        "mean_signed_change_log": -0.16415700224337193,
+        "low_label_flips": 0
+      },
+      {
+        "z_center_m": 2.375,
+        "mean_abs_change_log": 0.37256007881183795,
+        "mean_signed_change_log": -0.19647178816986963,
+        "low_label_flips": 0
+      },
+      {
+        "z_center_m": 2.625,
+        "mean_abs_change_log": 0.3878948732367852,
+        "mean_signed_change_log": -0.23203316800878346,
+        "low_label_flips": 0
+      },
+      {
+        "z_center_m": 2.875,
+        "mean_abs_change_log": 0.39876981975205256,
+        "mean_signed_change_log": -0.2705543726547144,
+        "low_label_flips": 0
+      },
+      {
+        "z_center_m": 3.125,
+        "mean_abs_change_log": 0.43494630962681596,
+        "mean_signed_change_log": -0.30953263593091707,
+        "low_label_flips": 1
+      },
+      {
+        "z_center_m": 3.375,
+        "mean_abs_change_log": 0.5014084725454998,
+        "mean_signed_change_log": -0.34509778793918905,
+        "low_label_flips": 1
+      },
+      {
+        "z_center_m": 3.625,
+        "mean_abs_change_log": 0.5684785867437054,
+        "mean_signed_change_log": -0.37371661779192566,
+        "low_label_flips": 1
+      },
+      {
+        "z_center_m": 3.875,
+        "mean_abs_change_log": 0.6181955216814197,
+        "mean_signed_change_log": -0.39418933399649836,
+        "low_label_flips": 1
+      },
+      {
+        "z_center_m": 4.125,
+        "mean_abs_change_log": 0.6403347415472801,
+        "mean_signed_change_log": -0.40689850811819417,
+        "low_label_flips": 1
+      },
+      {
+        "z_center_m": 4.375,
+        "mean_abs_change_log": 0.6285793834937943,
+        "mean_signed_change_log": -0.4153476518650554,
+        "low_label_flips": 1
+      },
+      {
+        "z_center_m": 4.625,
+        "mean_abs_change_log": 0.594389301560932,
+        "mean_signed_change_log": -0.42115946787541925,
+        "low_label_flips": 1
+      },
+      {
+        "z_center_m": 4.875,
+        "mean_abs_change_log": 0.5614434312880441,
+        "mean_signed_change_log": -0.4225746889884527,
+        "low_label_flips": 2
+      },
+      {
+        "z_center_m": 5.125,
+        "mean_abs_change_log": 0.5523771148061536,
+        "mean_signed_change_log": -0.41515074197032065,
+        "low_label_flips": 2
+      },
+      {
+        "z_center_m": 5.375,
+        "mean_abs_change_log": 0.5562275520148015,
+        "mean_signed_change_log": -0.3948701383531902,
+        "low_label_flips": 2
+      },
+      {
+        "z_center_m": 5.625,
+        "mean_abs_change_log": 0.5766514233748511,
+        "mean_signed_change_log": -0.3613643802342167,
+        "low_label_flips": 2
+      },
+      {
+        "z_center_m": 5.875,
+        "mean_abs_change_log": 0.5940347121176317,
+        "mean_signed_change_log": -0.3197424098232235,
+        "low_label_flips": 2
+      },
+      {
+        "z_center_m": 6.125,
+        "mean_abs_change_log": 0.6227787467456091,
+        "mean_signed_change_log": -0.2777333151957416,
+        "low_label_flips": 1
+      },
+      {
+        "z_center_m": 6.375,
+        "mean_abs_change_log": 0.6243266468293798,
+        "mean_signed_change_log": -0.23679183588733746,
+        "low_label_flips": 0
+      },
+      {
+        "z_center_m": 6.625,
+        "mean_abs_change_log": 0.6037937027461799,
+        "mean_signed_change_log": -0.19452750177113037,
+        "low_label_flips": 0
+      },
+      {
+        "z_center_m": 6.875,
+        "mean_abs_change_log": 0.5731413006229522,
+        "mean_signed_change_log": -0.15417189556233524,
+        "low_label_flips": 0
+      },
+      {
+        "z_center_m": 7.125,
+        "mean_abs_change_log": 0.5462104096838345,
+        "mean_signed_change_log": -0.12599760389513526,
+        "low_label_flips": 0
+      },
+      {
+        "z_center_m": 7.375,
+        "mean_abs_change_log": 0.5312054466327669,
+        "mean_signed_change_log": -0.11615298657911838,
+        "low_label_flips": 0
+      },
+      {
+        "z_center_m": 7.625,
+        "mean_abs_change_log": 0.5272240260287588,
+        "mean_signed_change_log": -0.12086263644299754,
+        "low_label_flips": 0
+      },
+      {
+        "z_center_m": 7.875,
+        "mean_abs_change_log": 0.5227644822970949,
+        "mean_signed_change_log": -0.13122763424044812,
+        "low_label_flips": 0
+      }
+    ]
+  },
+  "interpretation_limit": "Two fitted states identify parameter and prediction changes; they do not isolate a causal fixed-kernel counterfactual."
+}
