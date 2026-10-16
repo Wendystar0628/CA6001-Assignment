@@ -1,0 +1,420 @@
+{
+  "folds": [
+    {
+      "fold_id": 0,
+      "train_sites": [
+        "avondale",
+        "avonside",
+        "baytown",
+        "bexley",
+        "christchurch_central_city",
+        "christchurch_cnr_armagh_durham_st",
+        "hastings_hospital",
+        "hollywood",
+        "linwood_rudds_road",
+        "marshland",
+        "newlock",
+        "parkland_bower_ave_two",
+        "redcliffs_main_road",
+        "wainoni",
+        "wainoni_pak_n_save",
+        "wellington_college",
+        "whangarei_high_school"
+      ],
+      "validation_sites": [
+        "kaiapoi_near_river",
+        "lower_hutt_town_hall",
+        "tauranga_farmers_building"
+      ],
+      "test_sites": [
+        "aranui",
+        "cashmere_high_school",
+        "christchurch_metro_sports_facility",
+        "christchurch_stadium",
+        "marshland_road",
+        "new_brighton_willryan_ave",
+        "parkland_bower_ave_one",
+        "port_nelson",
+        "richmond",
+        "south_new_brighton",
+        "wellington_airport"
+      ],
+      "models": {
+        "gp": {
+          "training_sites": [
+            "avondale",
+            "avonside",
+            "baytown",
+            "bexley",
+            "christchurch_central_city",
+            "christchurch_cnr_armagh_durham_st",
+            "hastings_hospital",
+            "hollywood",
+            "linwood_rudds_road",
+            "marshland",
+            "newlock",
+            "parkland_bower_ave_two",
+            "redcliffs_main_road",
+            "wainoni",
+            "wainoni_pak_n_save",
+            "wellington_college",
+            "whangarei_high_school"
+          ],
+          "selection_sites": [],
+          "artifact": "E:\\Study\\Msc_AAI\\CA6001-AI ALGORITHMS FUNDAMENTALS & APPLICATION\\Project\\artifacts\\models\\fold_0\\gp_trend.json"
+        },
+        "xgb": {
+          "training_sites": [
+            "avondale",
+            "avonside",
+            "bexley",
+            "christchurch_central_city",
+            "hollywood",
+            "linwood_rudds_road",
+            "marshland",
+            "newlock",
+            "parkland_bower_ave_two",
+            "redcliffs_main_road",
+            "wainoni",
+            "wainoni_pak_n_save",
+            "wellington_college",
+            "whangarei_high_school"
+          ],
+          "selection_sites": [
+            "kaiapoi_near_river",
+            "lower_hutt_town_hall",
+            "tauranga_farmers_building"
+          ],
+          "artifact": "E:\\Study\\Msc_AAI\\CA6001-AI ALGORITHMS FUNDAMENTALS & APPLICATION\\Project\\artifacts\\models\\fold_0\\xgb.json"
+        },
+        "cnp": {
+          "training_sites": [
+            "avondale",
+            "avonside",
+            "bexley",
+            "christchurch_central_city",
+            "hollywood",
+            "linwood_rudds_road",
+            "marshland",
+            "newlock",
+            "parkland_bower_ave_two",
+            "redcliffs_main_road",
+            "wainoni",
+            "wainoni_pak_n_save",
+            "wellington_college",
+            "whangarei_high_school"
+          ],
+          "selection_sites": [
+            "kaiapoi_near_river",
+            "lower_hutt_town_hall",
+            "tauranga_farmers_building"
+          ],
+          "artifact": "E:\\Study\\Msc_AAI\\CA6001-AI ALGORITHMS FUNDAMENTALS & APPLICATION\\Project\\artifacts\\models\\fold_0\\cnp_training.json"
+        },
+        "tabpfn": {
+          "training_sites": [
+            "avondale",
+            "avonside",
+            "bexley",
+            "christchurch_central_city",
+            "hollywood",
+            "linwood_rudds_road",
+            "marshland",
+            "newlock",
+            "parkland_bower_ave_two",
+            "redcliffs_main_road",
+            "wainoni",
+            "wainoni_pak_n_save",
+            "wellington_college",
+            "whangarei_high_school"
+          ],
+          "selection_sites": [
+            "kaiapoi_near_river",
+            "lower_hutt_town_hall",
+            "tauranga_farmers_building"
+          ],
+          "artifact": "E:\\Study\\Msc_AAI\\CA6001-AI ALGORITHMS FUNDAMENTALS & APPLICATION\\Project\\artifacts\\models\\fold_0\\tabpfn_training.json"
+        }
+      }
+    },
+    {
+      "fold_id": 1,
+      "train_sites": [
+        "aranui",
+        "avonside",
+        "baytown",
+        "bexley",
+        "cashmere_high_school",
+        "christchurch_central_city",
+        "christchurch_cnr_armagh_durham_st",
+        "christchurch_metro_sports_facility",
+        "christchurch_stadium",
+        "hollywood",
+        "marshland_road",
+        "new_brighton_willryan_ave",
+        "parkland_bower_ave_one",
+        "redcliffs_main_road",
+        "richmond",
+        "south_new_brighton",
+        "wellington_airport",
+        "wellington_college",
+        "whangarei_high_school"
+      ],
+      "validation_sites": [
+        "lower_hutt_town_hall",
+        "port_nelson",
+        "tauranga_farmers_building"
+      ],
+      "test_sites": [
+        "avondale",
+        "hastings_hospital",
+        "kaiapoi_near_river",
+        "linwood_rudds_road",
+        "marshland",
+        "newlock",
+        "parkland_bower_ave_two",
+        "wainoni",
+        "wainoni_pak_n_save"
+      ],
+      "models": {
+        "gp": {
+          "training_sites": [
+            "aranui",
+            "avonside",
+            "baytown",
+            "bexley",
+            "cashmere_high_school",
+            "christchurch_central_city",
+            "christchurch_cnr_armagh_durham_st",
+            "christchurch_metro_sports_facility",
+            "christchurch_stadium",
+            "hollywood",
+            "marshland_road",
+            "new_brighton_willryan_ave",
+            "parkland_bower_ave_one",
+            "redcliffs_main_road",
+            "richmond",
+            "south_new_brighton",
+            "wellington_airport",
+            "wellington_college",
+            "whangarei_high_school"
+          ],
+          "selection_sites": [],
+          "artifact": "E:\\Study\\Msc_AAI\\CA6001-AI ALGORITHMS FUNDAMENTALS & APPLICATION\\Project\\artifacts\\models\\fold_1\\gp_trend.json"
+        },
+        "xgb": {
+          "training_sites": [
+            "avonside",
+            "bexley",
+            "cashmere_high_school",
+            "christchurch_central_city",
+            "christchurch_metro_sports_facility",
+            "christchurch_stadium",
+            "hollywood",
+            "new_brighton_willryan_ave",
+            "parkland_bower_ave_one",
+            "redcliffs_main_road",
+            "richmond",
+            "south_new_brighton",
+            "wellington_airport",
+            "wellington_college",
+            "whangarei_high_school"
+          ],
+          "selection_sites": [
+            "lower_hutt_town_hall",
+            "port_nelson",
+            "tauranga_farmers_building"
+          ],
+          "artifact": "E:\\Study\\Msc_AAI\\CA6001-AI ALGORITHMS FUNDAMENTALS & APPLICATION\\Project\\artifacts\\models\\fold_1\\xgb.json"
+        },
+        "cnp": {
+          "training_sites": [
+            "avonside",
+            "bexley",
+            "cashmere_high_school",
+            "christchurch_central_city",
+            "christchurch_metro_sports_facility",
+            "christchurch_stadium",
+            "hollywood",
+            "new_brighton_willryan_ave",
+            "parkland_bower_ave_one",
+            "redcliffs_main_road",
+            "richmond",
+            "south_new_brighton",
+            "wellington_airport",
+            "wellington_college",
+            "whangarei_high_school"
+          ],
+          "selection_sites": [
+            "lower_hutt_town_hall",
+            "port_nelson",
+            "tauranga_farmers_building"
+          ],
+          "artifact": "E:\\Study\\Msc_AAI\\CA6001-AI ALGORITHMS FUNDAMENTALS & APPLICATION\\Project\\artifacts\\models\\fold_1\\cnp_training.json"
+        },
+        "tabpfn": {
+          "training_sites": [
+            "avonside",
+            "bexley",
+            "cashmere_high_school",
+            "christchurch_central_city",
+            "christchurch_metro_sports_facility",
+            "christchurch_stadium",
+            "hollywood",
+            "new_brighton_willryan_ave",
+            "parkland_bower_ave_one",
+            "redcliffs_main_road",
+            "richmond",
+            "south_new_brighton",
+            "wellington_airport",
+            "wellington_college",
+            "whangarei_high_school"
+          ],
+          "selection_sites": [
+            "lower_hutt_town_hall",
+            "port_nelson",
+            "tauranga_farmers_building"
+          ],
+          "artifact": "E:\\Study\\Msc_AAI\\CA6001-AI ALGORITHMS FUNDAMENTALS & APPLICATION\\Project\\artifacts\\models\\fold_1\\tabpfn_training.json"
+        }
+      }
+    },
+    {
+      "fold_id": 2,
+      "train_sites": [
+        "avondale",
+        "cashmere_high_school",
+        "christchurch_stadium",
+        "hastings_hospital",
+        "kaiapoi_near_river",
+        "linwood_rudds_road",
+        "new_brighton_willryan_ave",
+        "newlock",
+        "parkland_bower_ave_one",
+        "parkland_bower_ave_two",
+        "port_nelson",
+        "richmond",
+        "south_new_brighton",
+        "wainoni",
+        "wainoni_pak_n_save",
+        "wellington_airport"
+      ],
+      "validation_sites": [
+        "aranui",
+        "christchurch_metro_sports_facility",
+        "marshland",
+        "marshland_road"
+      ],
+      "test_sites": [
+        "avonside",
+        "baytown",
+        "bexley",
+        "christchurch_central_city",
+        "christchurch_cnr_armagh_durham_st",
+        "hollywood",
+        "lower_hutt_town_hall",
+        "redcliffs_main_road",
+        "tauranga_farmers_building",
+        "wellington_college",
+        "whangarei_high_school"
+      ],
+      "models": {
+        "gp": {
+          "training_sites": [
+            "avondale",
+            "cashmere_high_school",
+            "christchurch_stadium",
+            "hastings_hospital",
+            "kaiapoi_near_river",
+            "linwood_rudds_road",
+            "new_brighton_willryan_ave",
+            "newlock",
+            "parkland_bower_ave_one",
+            "parkland_bower_ave_two",
+            "port_nelson",
+            "richmond",
+            "south_new_brighton",
+            "wainoni",
+            "wainoni_pak_n_save",
+            "wellington_airport"
+          ],
+          "selection_sites": [],
+          "artifact": "E:\\Study\\Msc_AAI\\CA6001-AI ALGORITHMS FUNDAMENTALS & APPLICATION\\Project\\artifacts\\models\\fold_2\\gp_trend.json"
+        },
+        "xgb": {
+          "training_sites": [
+            "avondale",
+            "cashmere_high_school",
+            "christchurch_stadium",
+            "kaiapoi_near_river",
+            "linwood_rudds_road",
+            "new_brighton_willryan_ave",
+            "newlock",
+            "parkland_bower_ave_one",
+            "parkland_bower_ave_two",
+            "port_nelson",
+            "richmond",
+            "south_new_brighton",
+            "wainoni",
+            "wainoni_pak_n_save",
+            "wellington_airport"
+          ],
+          "selection_sites": [
+            "christchurch_metro_sports_facility",
+            "marshland"
+          ],
+          "artifact": "E:\\Study\\Msc_AAI\\CA6001-AI ALGORITHMS FUNDAMENTALS & APPLICATION\\Project\\artifacts\\models\\fold_2\\xgb.json"
+        },
+        "cnp": {
+          "training_sites": [
+            "avondale",
+            "cashmere_high_school",
+            "christchurch_stadium",
+            "kaiapoi_near_river",
+            "linwood_rudds_road",
+            "new_brighton_willryan_ave",
+            "newlock",
+            "parkland_bower_ave_one",
+            "parkland_bower_ave_two",
+            "port_nelson",
+            "richmond",
+            "south_new_brighton",
+            "wainoni",
+            "wainoni_pak_n_save",
+            "wellington_airport"
+          ],
+          "selection_sites": [
+            "christchurch_metro_sports_facility",
+            "marshland"
+          ],
+          "artifact": "E:\\Study\\Msc_AAI\\CA6001-AI ALGORITHMS FUNDAMENTALS & APPLICATION\\Project\\artifacts\\models\\fold_2\\cnp_training.json"
+        },
+        "tabpfn": {
+          "training_sites": [
+            "avondale",
+            "cashmere_high_school",
+            "christchurch_stadium",
+            "kaiapoi_near_river",
+            "linwood_rudds_road",
+            "new_brighton_willryan_ave",
+            "newlock",
+            "parkland_bower_ave_one",
+            "parkland_bower_ave_two",
+            "port_nelson",
+            "richmond",
+            "south_new_brighton",
+            "wainoni",
+            "wainoni_pak_n_save",
+            "wellington_airport"
+          ],
+          "selection_sites": [
+            "christchurch_metro_sports_facility",
+            "marshland"
+          ],
+          "artifact": "E:\\Study\\Msc_AAI\\CA6001-AI ALGORITHMS FUNDAMENTALS & APPLICATION\\Project\\artifacts\\models\\fold_2\\tabpfn_training.json"
+        }
+      }
+    }
+  ],
+  "evaluation_target_note": "Every target must use the fold in which it is test; development may use checkpoint-validation sites. Historical researcher exposure is not erased by this source audit."
+}

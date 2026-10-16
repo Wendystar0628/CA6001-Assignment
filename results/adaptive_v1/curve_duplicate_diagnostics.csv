@@ -1,0 +1,2 @@
+site_id,site_b,location_a,location_b,near_group_a,near_group_b,max_abs_log_difference,exact_grid_duplicate,same_near_group,cross_site,adaptive_replay_site
+kaiapoi_near_river,kaiapoi_near_river,location_19498a25133138c5,location_e9c4850505ae45e7,near_8ddaba4a5f5c47e0,near_7131d278134d6a58,0.0,True,False,False,False

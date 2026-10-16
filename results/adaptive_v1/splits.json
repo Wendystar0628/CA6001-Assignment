@@ -1,0 +1,4983 @@
+[
+  {
+    "split_id": "adaptive_21f4d2d052a56bdc",
+    "site_id": "christchurch_metro_sports_facility",
+    "seed": 17,
+    "fold_id": 2,
+    "role": "development",
+    "initial_ids": [
+      "location_877d23d2bef0c971",
+      "location_4c974f9813ad251d",
+      "location_f98137eb83e11f83",
+      "location_aabc563129dbec8f",
+      "location_2a6a413d67e58434"
+    ],
+    "candidate_ids": [
+      "location_02083dddacb8e313",
+      "location_021e40993a0ab7d4",
+      "location_02706d6269c4aa78",
+      "location_09950e2e653d2d87",
+      "location_0d9dff4d85d5db82",
+      "location_1250e1e0a4903218",
+      "location_146ca8dadead7ecb",
+      "location_1f84ce8db0fb9472",
+      "location_2e91acd97c4ad7f0",
+      "location_4009324adcc773f8",
+      "location_4226b002443d8ab7",
+      "location_48b5f7d0d3188c11",
+      "location_5fa91c96e63232a8",
+      "location_62c6deca814c9586",
+      "location_8932b01583d49cd2",
+      "location_8f0796dede138593",
+      "location_8f25796c2b97e58f",
+      "location_9c7d49be21040701",
+      "location_b7e53b56e9e1e7cb",
+      "location_c8ec78262b02ed91",
+      "location_e1bdacc9072d2f3c",
+      "location_ed1f6962e1b996c5",
+      "location_ef3f07ff3dd9b2c6",
+      "location_f00bdd950a7cbe71",
+      "location_f4467250dcc7321c",
+      "location_fc4dbb3312dc5225"
+    ],
+    "audit_ids": [
+      "location_03b22373e53ef7b7",
+      "location_48d573c6b467fb0e",
+      "location_61129327f165930f",
+      "location_86b9c7065ac08efa",
+      "location_9637333496a4293f",
+      "location_9a9ae9afbcd4b2e7",
+      "location_ef6514e11a73c1bc",
+      "location_f8abdb8ab6c58399"
+    ],
+    "full_ids": [
+      "location_02083dddacb8e313",
+      "location_021e40993a0ab7d4",
+      "location_02706d6269c4aa78",
+      "location_09950e2e653d2d87",
+      "location_0d9dff4d85d5db82",
+      "location_1250e1e0a4903218",
+      "location_146ca8dadead7ecb",
+      "location_1f84ce8db0fb9472",
+      "location_2a6a413d67e58434",
+      "location_2e91acd97c4ad7f0",
+      "location_4009324adcc773f8",
+      "location_4226b002443d8ab7",
+      "location_48b5f7d0d3188c11",
+      "location_4c974f9813ad251d",
+      "location_5fa91c96e63232a8",
+      "location_62c6deca814c9586",
+      "location_877d23d2bef0c971",
+      "location_8932b01583d49cd2",
+      "location_8f0796dede138593",
+      "location_8f25796c2b97e58f",
+      "location_9c7d49be21040701",
+      "location_aabc563129dbec8f",
+      "location_b7e53b56e9e1e7cb",
+      "location_c8ec78262b02ed91",
+      "location_e1bdacc9072d2f3c",
+      "location_ed1f6962e1b996c5",
+      "location_ef3f07ff3dd9b2c6",
+      "location_f00bdd950a7cbe71",
+      "location_f4467250dcc7321c",
+      "location_f98137eb83e11f83",
+      "location_fc4dbb3312dc5225"
+    ],
+    "near_groups": {
+      "near_0725c6fad85394aa": [
+        "location_ef6514e11a73c1bc"
+      ],
+      "near_0bda4acb67041d54": [
+        "location_877d23d2bef0c971"
+      ],
+      "near_0cb9e5e093a8f091": [
+        "location_4009324adcc773f8"
+      ],
+      "near_11ee503e410ffcd2": [
+        "location_4c974f9813ad251d"
+      ],
+      "near_16119dcd49482564": [
+        "location_021e40993a0ab7d4"
+      ],
+      "near_1805082968ffb26a": [
+        "location_8932b01583d49cd2"
+      ],
+      "near_27e9df6b1e30493a": [
+        "location_fc4dbb3312dc5225"
+      ],
+      "near_34f3a5a7f2ee2b43": [
+        "location_ef3f07ff3dd9b2c6"
+      ],
+      "near_36ffc122133d6fac": [
+        "location_62c6deca814c9586"
+      ],
+      "near_37f5e37f1bcd87e6": [
+        "location_1f84ce8db0fb9472"
+      ],
+      "near_3bf3d90e717e0210": [
+        "location_02706d6269c4aa78",
+        "location_1250e1e0a4903218",
+        "location_8f0796dede138593"
+      ],
+      "near_3e68f386e999edbb": [
+        "location_f8abdb8ab6c58399"
+      ],
+      "near_408d94c94d56a6d4": [
+        "location_f00bdd950a7cbe71"
+      ],
+      "near_40cdc438824b8cda": [
+        "location_9c7d49be21040701"
+      ],
+      "near_4131aa1d885b043c": [
+        "location_61129327f165930f"
+      ],
+      "near_4966922913cd768d": [
+        "location_02083dddacb8e313"
+      ],
+      "near_4cf9d0cf3c8fba82": [
+        "location_03b22373e53ef7b7"
+      ],
+      "near_5ca29409d9bf4baa": [
+        "location_2e91acd97c4ad7f0"
+      ],
+      "near_6cb8ddadcebb6439": [
+        "location_9637333496a4293f"
+      ],
+      "near_6d1ddd9aa9e729b1": [
+        "location_4226b002443d8ab7"
+      ],
+      "near_78d323464973896b": [
+        "location_b7e53b56e9e1e7cb"
+      ],
+      "near_795b4653f7dc4574": [
+        "location_48b5f7d0d3188c11"
+      ],
+      "near_7a8103ec731c885f": [
+        "location_146ca8dadead7ecb",
+        "location_5fa91c96e63232a8"
+      ],
+      "near_88c210efa6b39cae": [
+        "location_f4467250dcc7321c"
+      ],
+      "near_8fb16329d2de946a": [
+        "location_f98137eb83e11f83"
+      ],
+      "near_9d4578d8374fb993": [
+        "location_aabc563129dbec8f"
+      ],
+      "near_a1b4f1b388f09b58": [
+        "location_48d573c6b467fb0e"
+      ],
+      "near_b048b5c32035229b": [
+        "location_2a6a413d67e58434"
+      ],
+      "near_c5ced05273b2ea81": [
+        "location_86b9c7065ac08efa"
+      ],
+      "near_d1052efb389fa03c": [
+        "location_c8ec78262b02ed91"
+      ],
+      "near_dfdab122a10b155d": [
+        "location_9a9ae9afbcd4b2e7"
+      ],
+      "near_f498350a0921e285": [
+        "location_ed1f6962e1b996c5"
+      ],
+      "near_f6185230479f450b": [
+        "location_09950e2e653d2d87",
+        "location_0d9dff4d85d5db82"
+      ],
+      "near_fec31ac76eb8166d": [
+        "location_8f25796c2b97e58f"
+      ],
+      "near_fee6dd1ace836aa8": [
+        "location_e1bdacc9072d2f3c"
+      ]
+    },
+    "audit_near_groups": [
+      "near_0725c6fad85394aa",
+      "near_3e68f386e999edbb",
+      "near_4131aa1d885b043c",
+      "near_4cf9d0cf3c8fba82",
+      "near_6cb8ddadcebb6439",
+      "near_a1b4f1b388f09b58",
+      "near_c5ced05273b2ea81",
+      "near_dfdab122a10b155d"
+    ],
+    "n_full": 31,
+    "n_initial": 5,
+    "n_candidates": 26,
+    "n_audit": 8,
+    "n_site_positions": 39,
+    "budgets": [
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21,
+      23,
+      25,
+      27,
+      29,
+      31
+    ],
+    "audit_fraction_requested": 0.2,
+    "audit_fraction_actual": 0.20512820512820512,
+    "initial_locations_requested": 5,
+    "batch_locations_requested": 2,
+    "geometry_scale_m": 4.125869605405163,
+    "plan_definition": "all representative usable positions except fixed hidden audit groups",
+    "evaluation_scope": "limited-data re-evaluation after historical test inspection"
+  },
+  {
+    "split_id": "adaptive_872790dca04f4ca0",
+    "site_id": "christchurch_metro_sports_facility",
+    "seed": 29,
+    "fold_id": 2,
+    "role": "development",
+    "initial_ids": [
+      "location_8f25796c2b97e58f",
+      "location_86b9c7065ac08efa",
+      "location_02706d6269c4aa78",
+      "location_1250e1e0a4903218",
+      "location_8f0796dede138593"
+    ],
+    "candidate_ids": [
+      "location_021e40993a0ab7d4",
+      "location_03b22373e53ef7b7",
+      "location_09950e2e653d2d87",
+      "location_0d9dff4d85d5db82",
+      "location_146ca8dadead7ecb",
+      "location_2a6a413d67e58434",
+      "location_4009324adcc773f8",
+      "location_48b5f7d0d3188c11",
+      "location_48d573c6b467fb0e",
+      "location_5fa91c96e63232a8",
+      "location_61129327f165930f",
+      "location_62c6deca814c9586",
+      "location_877d23d2bef0c971",
+      "location_8932b01583d49cd2",
+      "location_9637333496a4293f",
+      "location_9c7d49be21040701",
+      "location_aabc563129dbec8f",
+      "location_b7e53b56e9e1e7cb",
+      "location_c8ec78262b02ed91",
+      "location_e1bdacc9072d2f3c",
+      "location_ed1f6962e1b996c5",
+      "location_ef3f07ff3dd9b2c6",
+      "location_f00bdd950a7cbe71",
+      "location_f4467250dcc7321c",
+      "location_f98137eb83e11f83",
+      "location_fc4dbb3312dc5225"
+    ],
+    "audit_ids": [
+      "location_02083dddacb8e313",
+      "location_1f84ce8db0fb9472",
+      "location_2e91acd97c4ad7f0",
+      "location_4226b002443d8ab7",
+      "location_4c974f9813ad251d",
+      "location_9a9ae9afbcd4b2e7",
+      "location_ef6514e11a73c1bc",
+      "location_f8abdb8ab6c58399"
+    ],
+    "full_ids": [
+      "location_021e40993a0ab7d4",
+      "location_02706d6269c4aa78",
+      "location_03b22373e53ef7b7",
+      "location_09950e2e653d2d87",
+      "location_0d9dff4d85d5db82",
+      "location_1250e1e0a4903218",
+      "location_146ca8dadead7ecb",
+      "location_2a6a413d67e58434",
+      "location_4009324adcc773f8",
+      "location_48b5f7d0d3188c11",
+      "location_48d573c6b467fb0e",
+      "location_5fa91c96e63232a8",
+      "location_61129327f165930f",
+      "location_62c6deca814c9586",
+      "location_86b9c7065ac08efa",
+      "location_877d23d2bef0c971",
+      "location_8932b01583d49cd2",
+      "location_8f0796dede138593",
+      "location_8f25796c2b97e58f",
+      "location_9637333496a4293f",
+      "location_9c7d49be21040701",
+      "location_aabc563129dbec8f",
+      "location_b7e53b56e9e1e7cb",
+      "location_c8ec78262b02ed91",
+      "location_e1bdacc9072d2f3c",
+      "location_ed1f6962e1b996c5",
+      "location_ef3f07ff3dd9b2c6",
+      "location_f00bdd950a7cbe71",
+      "location_f4467250dcc7321c",
+      "location_f98137eb83e11f83",
+      "location_fc4dbb3312dc5225"
+    ],
+    "near_groups": {
+      "near_0725c6fad85394aa": [
+        "location_ef6514e11a73c1bc"
+      ],
+      "near_0bda4acb67041d54": [
+        "location_877d23d2bef0c971"
+      ],
+      "near_0cb9e5e093a8f091": [
+        "location_4009324adcc773f8"
+      ],
+      "near_11ee503e410ffcd2": [
+        "location_4c974f9813ad251d"
+      ],
+      "near_16119dcd49482564": [
+        "location_021e40993a0ab7d4"
+      ],
+      "near_1805082968ffb26a": [
+        "location_8932b01583d49cd2"
+      ],
+      "near_27e9df6b1e30493a": [
+        "location_fc4dbb3312dc5225"
+      ],
+      "near_34f3a5a7f2ee2b43": [
+        "location_ef3f07ff3dd9b2c6"
+      ],
+      "near_36ffc122133d6fac": [
+        "location_62c6deca814c9586"
+      ],
+      "near_37f5e37f1bcd87e6": [
+        "location_1f84ce8db0fb9472"
+      ],
+      "near_3bf3d90e717e0210": [
+        "location_02706d6269c4aa78",
+        "location_1250e1e0a4903218",
+        "location_8f0796dede138593"
+      ],
+      "near_3e68f386e999edbb": [
+        "location_f8abdb8ab6c58399"
+      ],
+      "near_408d94c94d56a6d4": [
+        "location_f00bdd950a7cbe71"
+      ],
+      "near_40cdc438824b8cda": [
+        "location_9c7d49be21040701"
+      ],
+      "near_4131aa1d885b043c": [
+        "location_61129327f165930f"
+      ],
+      "near_4966922913cd768d": [
+        "location_02083dddacb8e313"
+      ],
+      "near_4cf9d0cf3c8fba82": [
+        "location_03b22373e53ef7b7"
+      ],
+      "near_5ca29409d9bf4baa": [
+        "location_2e91acd97c4ad7f0"
+      ],
+      "near_6cb8ddadcebb6439": [
+        "location_9637333496a4293f"
+      ],
+      "near_6d1ddd9aa9e729b1": [
+        "location_4226b002443d8ab7"
+      ],
+      "near_78d323464973896b": [
+        "location_b7e53b56e9e1e7cb"
+      ],
+      "near_795b4653f7dc4574": [
+        "location_48b5f7d0d3188c11"
+      ],
+      "near_7a8103ec731c885f": [
+        "location_146ca8dadead7ecb",
+        "location_5fa91c96e63232a8"
+      ],
+      "near_88c210efa6b39cae": [
+        "location_f4467250dcc7321c"
+      ],
+      "near_8fb16329d2de946a": [
+        "location_f98137eb83e11f83"
+      ],
+      "near_9d4578d8374fb993": [
+        "location_aabc563129dbec8f"
+      ],
+      "near_a1b4f1b388f09b58": [
+        "location_48d573c6b467fb0e"
+      ],
+      "near_b048b5c32035229b": [
+        "location_2a6a413d67e58434"
+      ],
+      "near_c5ced05273b2ea81": [
+        "location_86b9c7065ac08efa"
+      ],
+      "near_d1052efb389fa03c": [
+        "location_c8ec78262b02ed91"
+      ],
+      "near_dfdab122a10b155d": [
+        "location_9a9ae9afbcd4b2e7"
+      ],
+      "near_f498350a0921e285": [
+        "location_ed1f6962e1b996c5"
+      ],
+      "near_f6185230479f450b": [
+        "location_09950e2e653d2d87",
+        "location_0d9dff4d85d5db82"
+      ],
+      "near_fec31ac76eb8166d": [
+        "location_8f25796c2b97e58f"
+      ],
+      "near_fee6dd1ace836aa8": [
+        "location_e1bdacc9072d2f3c"
+      ]
+    },
+    "audit_near_groups": [
+      "near_0725c6fad85394aa",
+      "near_11ee503e410ffcd2",
+      "near_37f5e37f1bcd87e6",
+      "near_3e68f386e999edbb",
+      "near_4966922913cd768d",
+      "near_5ca29409d9bf4baa",
+      "near_6d1ddd9aa9e729b1",
+      "near_dfdab122a10b155d"
+    ],
+    "n_full": 31,
+    "n_initial": 5,
+    "n_candidates": 26,
+    "n_audit": 8,
+    "n_site_positions": 39,
+    "budgets": [
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21,
+      23,
+      25,
+      27,
+      29,
+      31
+    ],
+    "audit_fraction_requested": 0.2,
+    "audit_fraction_actual": 0.20512820512820512,
+    "initial_locations_requested": 5,
+    "batch_locations_requested": 2,
+    "geometry_scale_m": 4.125869605405163,
+    "plan_definition": "all representative usable positions except fixed hidden audit groups",
+    "evaluation_scope": "limited-data re-evaluation after historical test inspection"
+  },
+  {
+    "split_id": "adaptive_ec3c932066b8a59a",
+    "site_id": "christchurch_metro_sports_facility",
+    "seed": 43,
+    "fold_id": 2,
+    "role": "development",
+    "initial_ids": [
+      "location_09950e2e653d2d87",
+      "location_0d9dff4d85d5db82",
+      "location_4c974f9813ad251d",
+      "location_146ca8dadead7ecb",
+      "location_5fa91c96e63232a8"
+    ],
+    "candidate_ids": [
+      "location_02083dddacb8e313",
+      "location_021e40993a0ab7d4",
+      "location_02706d6269c4aa78",
+      "location_03b22373e53ef7b7",
+      "location_1250e1e0a4903218",
+      "location_1f84ce8db0fb9472",
+      "location_2a6a413d67e58434",
+      "location_2e91acd97c4ad7f0",
+      "location_4009324adcc773f8",
+      "location_4226b002443d8ab7",
+      "location_48d573c6b467fb0e",
+      "location_61129327f165930f",
+      "location_86b9c7065ac08efa",
+      "location_877d23d2bef0c971",
+      "location_8f0796dede138593",
+      "location_9637333496a4293f",
+      "location_9a9ae9afbcd4b2e7",
+      "location_aabc563129dbec8f",
+      "location_b7e53b56e9e1e7cb",
+      "location_e1bdacc9072d2f3c",
+      "location_ed1f6962e1b996c5",
+      "location_ef3f07ff3dd9b2c6",
+      "location_ef6514e11a73c1bc",
+      "location_f00bdd950a7cbe71",
+      "location_f98137eb83e11f83",
+      "location_fc4dbb3312dc5225"
+    ],
+    "audit_ids": [
+      "location_48b5f7d0d3188c11",
+      "location_62c6deca814c9586",
+      "location_8932b01583d49cd2",
+      "location_8f25796c2b97e58f",
+      "location_9c7d49be21040701",
+      "location_c8ec78262b02ed91",
+      "location_f4467250dcc7321c",
+      "location_f8abdb8ab6c58399"
+    ],
+    "full_ids": [
+      "location_02083dddacb8e313",
+      "location_021e40993a0ab7d4",
+      "location_02706d6269c4aa78",
+      "location_03b22373e53ef7b7",
+      "location_09950e2e653d2d87",
+      "location_0d9dff4d85d5db82",
+      "location_1250e1e0a4903218",
+      "location_146ca8dadead7ecb",
+      "location_1f84ce8db0fb9472",
+      "location_2a6a413d67e58434",
+      "location_2e91acd97c4ad7f0",
+      "location_4009324adcc773f8",
+      "location_4226b002443d8ab7",
+      "location_48d573c6b467fb0e",
+      "location_4c974f9813ad251d",
+      "location_5fa91c96e63232a8",
+      "location_61129327f165930f",
+      "location_86b9c7065ac08efa",
+      "location_877d23d2bef0c971",
+      "location_8f0796dede138593",
+      "location_9637333496a4293f",
+      "location_9a9ae9afbcd4b2e7",
+      "location_aabc563129dbec8f",
+      "location_b7e53b56e9e1e7cb",
+      "location_e1bdacc9072d2f3c",
+      "location_ed1f6962e1b996c5",
+      "location_ef3f07ff3dd9b2c6",
+      "location_ef6514e11a73c1bc",
+      "location_f00bdd950a7cbe71",
+      "location_f98137eb83e11f83",
+      "location_fc4dbb3312dc5225"
+    ],
+    "near_groups": {
+      "near_0725c6fad85394aa": [
+        "location_ef6514e11a73c1bc"
+      ],
+      "near_0bda4acb67041d54": [
+        "location_877d23d2bef0c971"
+      ],
+      "near_0cb9e5e093a8f091": [
+        "location_4009324adcc773f8"
+      ],
+      "near_11ee503e410ffcd2": [
+        "location_4c974f9813ad251d"
+      ],
+      "near_16119dcd49482564": [
+        "location_021e40993a0ab7d4"
+      ],
+      "near_1805082968ffb26a": [
+        "location_8932b01583d49cd2"
+      ],
+      "near_27e9df6b1e30493a": [
+        "location_fc4dbb3312dc5225"
+      ],
+      "near_34f3a5a7f2ee2b43": [
+        "location_ef3f07ff3dd9b2c6"
+      ],
+      "near_36ffc122133d6fac": [
+        "location_62c6deca814c9586"
+      ],
+      "near_37f5e37f1bcd87e6": [
+        "location_1f84ce8db0fb9472"
+      ],
+      "near_3bf3d90e717e0210": [
+        "location_02706d6269c4aa78",
+        "location_1250e1e0a4903218",
+        "location_8f0796dede138593"
+      ],
+      "near_3e68f386e999edbb": [
+        "location_f8abdb8ab6c58399"
+      ],
+      "near_408d94c94d56a6d4": [
+        "location_f00bdd950a7cbe71"
+      ],
+      "near_40cdc438824b8cda": [
+        "location_9c7d49be21040701"
+      ],
+      "near_4131aa1d885b043c": [
+        "location_61129327f165930f"
+      ],
+      "near_4966922913cd768d": [
+        "location_02083dddacb8e313"
+      ],
+      "near_4cf9d0cf3c8fba82": [
+        "location_03b22373e53ef7b7"
+      ],
+      "near_5ca29409d9bf4baa": [
+        "location_2e91acd97c4ad7f0"
+      ],
+      "near_6cb8ddadcebb6439": [
+        "location_9637333496a4293f"
+      ],
+      "near_6d1ddd9aa9e729b1": [
+        "location_4226b002443d8ab7"
+      ],
+      "near_78d323464973896b": [
+        "location_b7e53b56e9e1e7cb"
+      ],
+      "near_795b4653f7dc4574": [
+        "location_48b5f7d0d3188c11"
+      ],
+      "near_7a8103ec731c885f": [
+        "location_146ca8dadead7ecb",
+        "location_5fa91c96e63232a8"
+      ],
+      "near_88c210efa6b39cae": [
+        "location_f4467250dcc7321c"
+      ],
+      "near_8fb16329d2de946a": [
+        "location_f98137eb83e11f83"
+      ],
+      "near_9d4578d8374fb993": [
+        "location_aabc563129dbec8f"
+      ],
+      "near_a1b4f1b388f09b58": [
+        "location_48d573c6b467fb0e"
+      ],
+      "near_b048b5c32035229b": [
+        "location_2a6a413d67e58434"
+      ],
+      "near_c5ced05273b2ea81": [
+        "location_86b9c7065ac08efa"
+      ],
+      "near_d1052efb389fa03c": [
+        "location_c8ec78262b02ed91"
+      ],
+      "near_dfdab122a10b155d": [
+        "location_9a9ae9afbcd4b2e7"
+      ],
+      "near_f498350a0921e285": [
+        "location_ed1f6962e1b996c5"
+      ],
+      "near_f6185230479f450b": [
+        "location_09950e2e653d2d87",
+        "location_0d9dff4d85d5db82"
+      ],
+      "near_fec31ac76eb8166d": [
+        "location_8f25796c2b97e58f"
+      ],
+      "near_fee6dd1ace836aa8": [
+        "location_e1bdacc9072d2f3c"
+      ]
+    },
+    "audit_near_groups": [
+      "near_1805082968ffb26a",
+      "near_36ffc122133d6fac",
+      "near_3e68f386e999edbb",
+      "near_40cdc438824b8cda",
+      "near_795b4653f7dc4574",
+      "near_88c210efa6b39cae",
+      "near_d1052efb389fa03c",
+      "near_fec31ac76eb8166d"
+    ],
+    "n_full": 31,
+    "n_initial": 5,
+    "n_candidates": 26,
+    "n_audit": 8,
+    "n_site_positions": 39,
+    "budgets": [
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21,
+      23,
+      25,
+      27,
+      29,
+      31
+    ],
+    "audit_fraction_requested": 0.2,
+    "audit_fraction_actual": 0.20512820512820512,
+    "initial_locations_requested": 5,
+    "batch_locations_requested": 2,
+    "geometry_scale_m": 4.125869605405163,
+    "plan_definition": "all representative usable positions except fixed hidden audit groups",
+    "evaluation_scope": "limited-data re-evaluation after historical test inspection"
+  },
+  {
+    "split_id": "adaptive_7ea7f405980de3e8",
+    "site_id": "christchurch_stadium",
+    "seed": 17,
+    "fold_id": 0,
+    "role": "evaluation",
+    "initial_ids": [
+      "location_ce7a468c0a736ea6",
+      "location_c966780f0f7488cc",
+      "location_4e552d3e841f59c8",
+      "location_4b24bc36f1ba4b26",
+      "location_76909b2f7b7b1d4b"
+    ],
+    "candidate_ids": [
+      "location_23bbcdb19f8113ff",
+      "location_29c0c22c2b2fcdaa",
+      "location_57248cd3a264a909",
+      "location_5a7d71bce197d242",
+      "location_6057c931311fa5b6",
+      "location_94900881cb98aabd",
+      "location_977ea65a8b1bf1e8",
+      "location_9bc256a530dc75fd",
+      "location_a0511da92efa95f3",
+      "location_a8c85f6586f9505b",
+      "location_b014364926050153",
+      "location_b2cbfb9fc165f1ae",
+      "location_b3fe6f2ceb067bc3"
+    ],
+    "audit_ids": [
+      "location_074590c33f0c5dd1",
+      "location_441d780107d2f181",
+      "location_863ad0b2f5c680c0",
+      "location_8cfaf1e13c41533a",
+      "location_e9133abd9fd2b08b"
+    ],
+    "full_ids": [
+      "location_23bbcdb19f8113ff",
+      "location_29c0c22c2b2fcdaa",
+      "location_4b24bc36f1ba4b26",
+      "location_4e552d3e841f59c8",
+      "location_57248cd3a264a909",
+      "location_5a7d71bce197d242",
+      "location_6057c931311fa5b6",
+      "location_76909b2f7b7b1d4b",
+      "location_94900881cb98aabd",
+      "location_977ea65a8b1bf1e8",
+      "location_9bc256a530dc75fd",
+      "location_a0511da92efa95f3",
+      "location_a8c85f6586f9505b",
+      "location_b014364926050153",
+      "location_b2cbfb9fc165f1ae",
+      "location_b3fe6f2ceb067bc3",
+      "location_c966780f0f7488cc",
+      "location_ce7a468c0a736ea6"
+    ],
+    "near_groups": {
+      "near_2bca5ac1fafa6a5b": [
+        "location_4b24bc36f1ba4b26"
+      ],
+      "near_360aab58afbe7679": [
+        "location_863ad0b2f5c680c0"
+      ],
+      "near_3a1f086565c93843": [
+        "location_b3fe6f2ceb067bc3"
+      ],
+      "near_568c7dfa728938d9": [
+        "location_57248cd3a264a909",
+        "location_a8c85f6586f9505b"
+      ],
+      "near_5a5ca926ee52943a": [
+        "location_6057c931311fa5b6"
+      ],
+      "near_6ae84d90e59c58c9": [
+        "location_94900881cb98aabd"
+      ],
+      "near_6dd37e820932ab5c": [
+        "location_c966780f0f7488cc"
+      ],
+      "near_71f1d8a0dfd5856f": [
+        "location_ce7a468c0a736ea6"
+      ],
+      "near_923c109d6ff7d2ec": [
+        "location_76909b2f7b7b1d4b"
+      ],
+      "near_9417027d60b768a2": [
+        "location_29c0c22c2b2fcdaa"
+      ],
+      "near_abaf0872b765f156": [
+        "location_b014364926050153",
+        "location_b2cbfb9fc165f1ae"
+      ],
+      "near_b1219fd7d9ec315f": [
+        "location_4e552d3e841f59c8"
+      ],
+      "near_bb63f3674bae5835": [
+        "location_074590c33f0c5dd1",
+        "location_8cfaf1e13c41533a"
+      ],
+      "near_d2bf0e618cf9b707": [
+        "location_a0511da92efa95f3"
+      ],
+      "near_d87c9fee2a65604f": [
+        "location_e9133abd9fd2b08b"
+      ],
+      "near_ddddff259a20fad1": [
+        "location_5a7d71bce197d242"
+      ],
+      "near_df75ea83c78f0521": [
+        "location_23bbcdb19f8113ff"
+      ],
+      "near_e5d78796690a1bc7": [
+        "location_9bc256a530dc75fd"
+      ],
+      "near_f6bef30918aee2af": [
+        "location_441d780107d2f181"
+      ],
+      "near_fc21d2580278f414": [
+        "location_977ea65a8b1bf1e8"
+      ]
+    },
+    "audit_near_groups": [
+      "near_360aab58afbe7679",
+      "near_bb63f3674bae5835",
+      "near_d87c9fee2a65604f",
+      "near_f6bef30918aee2af"
+    ],
+    "n_full": 18,
+    "n_initial": 5,
+    "n_candidates": 13,
+    "n_audit": 5,
+    "n_site_positions": 23,
+    "budgets": [
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      18
+    ],
+    "audit_fraction_requested": 0.2,
+    "audit_fraction_actual": 0.21739130434782608,
+    "initial_locations_requested": 5,
+    "batch_locations_requested": 2,
+    "geometry_scale_m": 4.214747916509786,
+    "plan_definition": "all representative usable positions except fixed hidden audit groups",
+    "evaluation_scope": "limited-data re-evaluation after historical test inspection"
+  },
+  {
+    "split_id": "adaptive_f253264d2e5029c2",
+    "site_id": "christchurch_stadium",
+    "seed": 29,
+    "fold_id": 0,
+    "role": "evaluation",
+    "initial_ids": [
+      "location_57248cd3a264a909",
+      "location_a8c85f6586f9505b",
+      "location_94900881cb98aabd",
+      "location_c966780f0f7488cc",
+      "location_a0511da92efa95f3"
+    ],
+    "candidate_ids": [
+      "location_074590c33f0c5dd1",
+      "location_29c0c22c2b2fcdaa",
+      "location_4b24bc36f1ba4b26",
+      "location_4e552d3e841f59c8",
+      "location_6057c931311fa5b6",
+      "location_8cfaf1e13c41533a",
+      "location_977ea65a8b1bf1e8",
+      "location_9bc256a530dc75fd",
+      "location_b014364926050153",
+      "location_b2cbfb9fc165f1ae",
+      "location_b3fe6f2ceb067bc3",
+      "location_ce7a468c0a736ea6",
+      "location_e9133abd9fd2b08b"
+    ],
+    "audit_ids": [
+      "location_23bbcdb19f8113ff",
+      "location_441d780107d2f181",
+      "location_5a7d71bce197d242",
+      "location_76909b2f7b7b1d4b",
+      "location_863ad0b2f5c680c0"
+    ],
+    "full_ids": [
+      "location_074590c33f0c5dd1",
+      "location_29c0c22c2b2fcdaa",
+      "location_4b24bc36f1ba4b26",
+      "location_4e552d3e841f59c8",
+      "location_57248cd3a264a909",
+      "location_6057c931311fa5b6",
+      "location_8cfaf1e13c41533a",
+      "location_94900881cb98aabd",
+      "location_977ea65a8b1bf1e8",
+      "location_9bc256a530dc75fd",
+      "location_a0511da92efa95f3",
+      "location_a8c85f6586f9505b",
+      "location_b014364926050153",
+      "location_b2cbfb9fc165f1ae",
+      "location_b3fe6f2ceb067bc3",
+      "location_c966780f0f7488cc",
+      "location_ce7a468c0a736ea6",
+      "location_e9133abd9fd2b08b"
+    ],
+    "near_groups": {
+      "near_2bca5ac1fafa6a5b": [
+        "location_4b24bc36f1ba4b26"
+      ],
+      "near_360aab58afbe7679": [
+        "location_863ad0b2f5c680c0"
+      ],
+      "near_3a1f086565c93843": [
+        "location_b3fe6f2ceb067bc3"
+      ],
+      "near_568c7dfa728938d9": [
+        "location_57248cd3a264a909",
+        "location_a8c85f6586f9505b"
+      ],
+      "near_5a5ca926ee52943a": [
+        "location_6057c931311fa5b6"
+      ],
+      "near_6ae84d90e59c58c9": [
+        "location_94900881cb98aabd"
+      ],
+      "near_6dd37e820932ab5c": [
+        "location_c966780f0f7488cc"
+      ],
+      "near_71f1d8a0dfd5856f": [
+        "location_ce7a468c0a736ea6"
+      ],
+      "near_923c109d6ff7d2ec": [
+        "location_76909b2f7b7b1d4b"
+      ],
+      "near_9417027d60b768a2": [
+        "location_29c0c22c2b2fcdaa"
+      ],
+      "near_abaf0872b765f156": [
+        "location_b014364926050153",
+        "location_b2cbfb9fc165f1ae"
+      ],
+      "near_b1219fd7d9ec315f": [
+        "location_4e552d3e841f59c8"
+      ],
+      "near_bb63f3674bae5835": [
+        "location_074590c33f0c5dd1",
+        "location_8cfaf1e13c41533a"
+      ],
+      "near_d2bf0e618cf9b707": [
+        "location_a0511da92efa95f3"
+      ],
+      "near_d87c9fee2a65604f": [
+        "location_e9133abd9fd2b08b"
+      ],
+      "near_ddddff259a20fad1": [
+        "location_5a7d71bce197d242"
+      ],
+      "near_df75ea83c78f0521": [
+        "location_23bbcdb19f8113ff"
+      ],
+      "near_e5d78796690a1bc7": [
+        "location_9bc256a530dc75fd"
+      ],
+      "near_f6bef30918aee2af": [
+        "location_441d780107d2f181"
+      ],
+      "near_fc21d2580278f414": [
+        "location_977ea65a8b1bf1e8"
+      ]
+    },
+    "audit_near_groups": [
+      "near_360aab58afbe7679",
+      "near_923c109d6ff7d2ec",
+      "near_ddddff259a20fad1",
+      "near_df75ea83c78f0521",
+      "near_f6bef30918aee2af"
+    ],
+    "n_full": 18,
+    "n_initial": 5,
+    "n_candidates": 13,
+    "n_audit": 5,
+    "n_site_positions": 23,
+    "budgets": [
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      18
+    ],
+    "audit_fraction_requested": 0.2,
+    "audit_fraction_actual": 0.21739130434782608,
+    "initial_locations_requested": 5,
+    "batch_locations_requested": 2,
+    "geometry_scale_m": 4.214747916509786,
+    "plan_definition": "all representative usable positions except fixed hidden audit groups",
+    "evaluation_scope": "limited-data re-evaluation after historical test inspection"
+  },
+  {
+    "split_id": "adaptive_46e490a3418e2c4e",
+    "site_id": "christchurch_stadium",
+    "seed": 43,
+    "fold_id": 0,
+    "role": "evaluation",
+    "initial_ids": [
+      "location_29c0c22c2b2fcdaa",
+      "location_c966780f0f7488cc",
+      "location_4e552d3e841f59c8",
+      "location_a0511da92efa95f3",
+      "location_074590c33f0c5dd1",
+      "location_8cfaf1e13c41533a"
+    ],
+    "candidate_ids": [
+      "location_23bbcdb19f8113ff",
+      "location_57248cd3a264a909",
+      "location_6057c931311fa5b6",
+      "location_76909b2f7b7b1d4b",
+      "location_863ad0b2f5c680c0",
+      "location_94900881cb98aabd",
+      "location_9bc256a530dc75fd",
+      "location_a8c85f6586f9505b",
+      "location_b014364926050153",
+      "location_b2cbfb9fc165f1ae",
+      "location_b3fe6f2ceb067bc3",
+      "location_ce7a468c0a736ea6"
+    ],
+    "audit_ids": [
+      "location_441d780107d2f181",
+      "location_4b24bc36f1ba4b26",
+      "location_5a7d71bce197d242",
+      "location_977ea65a8b1bf1e8",
+      "location_e9133abd9fd2b08b"
+    ],
+    "full_ids": [
+      "location_074590c33f0c5dd1",
+      "location_23bbcdb19f8113ff",
+      "location_29c0c22c2b2fcdaa",
+      "location_4e552d3e841f59c8",
+      "location_57248cd3a264a909",
+      "location_6057c931311fa5b6",
+      "location_76909b2f7b7b1d4b",
+      "location_863ad0b2f5c680c0",
+      "location_8cfaf1e13c41533a",
+      "location_94900881cb98aabd",
+      "location_9bc256a530dc75fd",
+      "location_a0511da92efa95f3",
+      "location_a8c85f6586f9505b",
+      "location_b014364926050153",
+      "location_b2cbfb9fc165f1ae",
+      "location_b3fe6f2ceb067bc3",
+      "location_c966780f0f7488cc",
+      "location_ce7a468c0a736ea6"
+    ],
+    "near_groups": {
+      "near_2bca5ac1fafa6a5b": [
+        "location_4b24bc36f1ba4b26"
+      ],
+      "near_360aab58afbe7679": [
+        "location_863ad0b2f5c680c0"
+      ],
+      "near_3a1f086565c93843": [
+        "location_b3fe6f2ceb067bc3"
+      ],
+      "near_568c7dfa728938d9": [
+        "location_57248cd3a264a909",
+        "location_a8c85f6586f9505b"
+      ],
+      "near_5a5ca926ee52943a": [
+        "location_6057c931311fa5b6"
+      ],
+      "near_6ae84d90e59c58c9": [
+        "location_94900881cb98aabd"
+      ],
+      "near_6dd37e820932ab5c": [
+        "location_c966780f0f7488cc"
+      ],
+      "near_71f1d8a0dfd5856f": [
+        "location_ce7a468c0a736ea6"
+      ],
+      "near_923c109d6ff7d2ec": [
+        "location_76909b2f7b7b1d4b"
+      ],
+      "near_9417027d60b768a2": [
+        "location_29c0c22c2b2fcdaa"
+      ],
+      "near_abaf0872b765f156": [
+        "location_b014364926050153",
+        "location_b2cbfb9fc165f1ae"
+      ],
+      "near_b1219fd7d9ec315f": [
+        "location_4e552d3e841f59c8"
+      ],
+      "near_bb63f3674bae5835": [
+        "location_074590c33f0c5dd1",
+        "location_8cfaf1e13c41533a"
+      ],
+      "near_d2bf0e618cf9b707": [
+        "location_a0511da92efa95f3"
+      ],
+      "near_d87c9fee2a65604f": [
+        "location_e9133abd9fd2b08b"
+      ],
+      "near_ddddff259a20fad1": [
+        "location_5a7d71bce197d242"
+      ],
+      "near_df75ea83c78f0521": [
+        "location_23bbcdb19f8113ff"
+      ],
+      "near_e5d78796690a1bc7": [
+        "location_9bc256a530dc75fd"
+      ],
+      "near_f6bef30918aee2af": [
+        "location_441d780107d2f181"
+      ],
+      "near_fc21d2580278f414": [
+        "location_977ea65a8b1bf1e8"
+      ]
+    },
+    "audit_near_groups": [
+      "near_2bca5ac1fafa6a5b",
+      "near_d87c9fee2a65604f",
+      "near_ddddff259a20fad1",
+      "near_f6bef30918aee2af",
+      "near_fc21d2580278f414"
+    ],
+    "n_full": 18,
+    "n_initial": 6,
+    "n_candidates": 12,
+    "n_audit": 5,
+    "n_site_positions": 23,
+    "budgets": [
+      6,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18
+    ],
+    "audit_fraction_requested": 0.2,
+    "audit_fraction_actual": 0.21739130434782608,
+    "initial_locations_requested": 5,
+    "batch_locations_requested": 2,
+    "geometry_scale_m": 4.214747916509786,
+    "plan_definition": "all representative usable positions except fixed hidden audit groups",
+    "evaluation_scope": "limited-data re-evaluation after historical test inspection"
+  },
+  {
+    "split_id": "adaptive_ffa09d78301dbd2c",
+    "site_id": "hollywood",
+    "seed": 17,
+    "fold_id": 2,
+    "role": "evaluation",
+    "initial_ids": [
+      "location_eff8aa888ad96e45",
+      "location_17ea8c416d6c605b",
+      "location_531fc2cf8c9a0447",
+      "location_d832a7f78b753a8b",
+      "location_da4074bdf4b862df",
+      "location_de1de6d23498237a"
+    ],
+    "candidate_ids": [
+      "location_0ef080c87fa795e0",
+      "location_3ef90e231dd9e42a",
+      "location_5a1f248e429057bf",
+      "location_68731fbac3236131",
+      "location_7797fcb1c84b3a10",
+      "location_7a065c18c5e2e78e",
+      "location_9efc0512355966df",
+      "location_a29fed9fc9a49bf9",
+      "location_a92ec34712167f1a",
+      "location_a9638ec30a076a55",
+      "location_d5457eaf046de609",
+      "location_df1bf9b180eb53b3",
+      "location_ecbcdc1d612e1d3a",
+      "location_fdbbf62793c15f5b"
+    ],
+    "audit_ids": [
+      "location_021aeb7ca99ec807",
+      "location_46438aa839df5591",
+      "location_4ccf39dd762a321c",
+      "location_88ef837c02557610",
+      "location_b3ba9ce49b8a4c61"
+    ],
+    "full_ids": [
+      "location_0ef080c87fa795e0",
+      "location_17ea8c416d6c605b",
+      "location_3ef90e231dd9e42a",
+      "location_531fc2cf8c9a0447",
+      "location_5a1f248e429057bf",
+      "location_68731fbac3236131",
+      "location_7797fcb1c84b3a10",
+      "location_7a065c18c5e2e78e",
+      "location_9efc0512355966df",
+      "location_a29fed9fc9a49bf9",
+      "location_a92ec34712167f1a",
+      "location_a9638ec30a076a55",
+      "location_d5457eaf046de609",
+      "location_d832a7f78b753a8b",
+      "location_da4074bdf4b862df",
+      "location_de1de6d23498237a",
+      "location_df1bf9b180eb53b3",
+      "location_ecbcdc1d612e1d3a",
+      "location_eff8aa888ad96e45",
+      "location_fdbbf62793c15f5b"
+    ],
+    "near_groups": {
+      "near_04a4062d44646b35": [
+        "location_ecbcdc1d612e1d3a"
+      ],
+      "near_2ccc30f0c9ef0521": [
+        "location_68731fbac3236131",
+        "location_7797fcb1c84b3a10",
+        "location_a92ec34712167f1a",
+        "location_a9638ec30a076a55",
+        "location_fdbbf62793c15f5b"
+      ],
+      "near_2d3920fcdbd1abde": [
+        "location_3ef90e231dd9e42a"
+      ],
+      "near_44d23a013a518bf0": [
+        "location_021aeb7ca99ec807",
+        "location_46438aa839df5591",
+        "location_4ccf39dd762a321c",
+        "location_88ef837c02557610",
+        "location_b3ba9ce49b8a4c61"
+      ],
+      "near_6164d15c0916085b": [
+        "location_eff8aa888ad96e45"
+      ],
+      "near_627ccd6734df302b": [
+        "location_df1bf9b180eb53b3"
+      ],
+      "near_966ecc4c8d25e459": [
+        "location_0ef080c87fa795e0"
+      ],
+      "near_9abc74f0ce057a12": [
+        "location_17ea8c416d6c605b",
+        "location_531fc2cf8c9a0447",
+        "location_d832a7f78b753a8b",
+        "location_da4074bdf4b862df",
+        "location_de1de6d23498237a"
+      ],
+      "near_9f44a3e7d22fe9f1": [
+        "location_d5457eaf046de609"
+      ],
+      "near_c311bfde7a931170": [
+        "location_a29fed9fc9a49bf9"
+      ],
+      "near_d6b571d89ee7f443": [
+        "location_7a065c18c5e2e78e"
+      ],
+      "near_dca5be323ead0181": [
+        "location_5a1f248e429057bf"
+      ],
+      "near_f48b9b6f89ac4a7c": [
+        "location_9efc0512355966df"
+      ]
+    },
+    "audit_near_groups": [
+      "near_44d23a013a518bf0"
+    ],
+    "n_full": 20,
+    "n_initial": 6,
+    "n_candidates": 14,
+    "n_audit": 5,
+    "n_site_positions": 25,
+    "budgets": [
+      6,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20
+    ],
+    "audit_fraction_requested": 0.2,
+    "audit_fraction_actual": 0.2,
+    "initial_locations_requested": 5,
+    "batch_locations_requested": 2,
+    "geometry_scale_m": 1.2932984960943852,
+    "plan_definition": "all representative usable positions except fixed hidden audit groups",
+    "evaluation_scope": "limited-data re-evaluation after historical test inspection"
+  },
+  {
+    "split_id": "adaptive_4c321f3c23782ac3",
+    "site_id": "hollywood",
+    "seed": 29,
+    "fold_id": 2,
+    "role": "evaluation",
+    "initial_ids": [
+      "location_5a1f248e429057bf",
+      "location_0ef080c87fa795e0",
+      "location_17ea8c416d6c605b",
+      "location_531fc2cf8c9a0447",
+      "location_d832a7f78b753a8b",
+      "location_da4074bdf4b862df",
+      "location_de1de6d23498237a"
+    ],
+    "candidate_ids": [
+      "location_3ef90e231dd9e42a",
+      "location_68731fbac3236131",
+      "location_7797fcb1c84b3a10",
+      "location_7a065c18c5e2e78e",
+      "location_9efc0512355966df",
+      "location_a29fed9fc9a49bf9",
+      "location_a92ec34712167f1a",
+      "location_a9638ec30a076a55",
+      "location_d5457eaf046de609",
+      "location_df1bf9b180eb53b3",
+      "location_ecbcdc1d612e1d3a",
+      "location_eff8aa888ad96e45",
+      "location_fdbbf62793c15f5b"
+    ],
+    "audit_ids": [
+      "location_021aeb7ca99ec807",
+      "location_46438aa839df5591",
+      "location_4ccf39dd762a321c",
+      "location_88ef837c02557610",
+      "location_b3ba9ce49b8a4c61"
+    ],
+    "full_ids": [
+      "location_0ef080c87fa795e0",
+      "location_17ea8c416d6c605b",
+      "location_3ef90e231dd9e42a",
+      "location_531fc2cf8c9a0447",
+      "location_5a1f248e429057bf",
+      "location_68731fbac3236131",
+      "location_7797fcb1c84b3a10",
+      "location_7a065c18c5e2e78e",
+      "location_9efc0512355966df",
+      "location_a29fed9fc9a49bf9",
+      "location_a92ec34712167f1a",
+      "location_a9638ec30a076a55",
+      "location_d5457eaf046de609",
+      "location_d832a7f78b753a8b",
+      "location_da4074bdf4b862df",
+      "location_de1de6d23498237a",
+      "location_df1bf9b180eb53b3",
+      "location_ecbcdc1d612e1d3a",
+      "location_eff8aa888ad96e45",
+      "location_fdbbf62793c15f5b"
+    ],
+    "near_groups": {
+      "near_04a4062d44646b35": [
+        "location_ecbcdc1d612e1d3a"
+      ],
+      "near_2ccc30f0c9ef0521": [
+        "location_68731fbac3236131",
+        "location_7797fcb1c84b3a10",
+        "location_a92ec34712167f1a",
+        "location_a9638ec30a076a55",
+        "location_fdbbf62793c15f5b"
+      ],
+      "near_2d3920fcdbd1abde": [
+        "location_3ef90e231dd9e42a"
+      ],
+      "near_44d23a013a518bf0": [
+        "location_021aeb7ca99ec807",
+        "location_46438aa839df5591",
+        "location_4ccf39dd762a321c",
+        "location_88ef837c02557610",
+        "location_b3ba9ce49b8a4c61"
+      ],
+      "near_6164d15c0916085b": [
+        "location_eff8aa888ad96e45"
+      ],
+      "near_627ccd6734df302b": [
+        "location_df1bf9b180eb53b3"
+      ],
+      "near_966ecc4c8d25e459": [
+        "location_0ef080c87fa795e0"
+      ],
+      "near_9abc74f0ce057a12": [
+        "location_17ea8c416d6c605b",
+        "location_531fc2cf8c9a0447",
+        "location_d832a7f78b753a8b",
+        "location_da4074bdf4b862df",
+        "location_de1de6d23498237a"
+      ],
+      "near_9f44a3e7d22fe9f1": [
+        "location_d5457eaf046de609"
+      ],
+      "near_c311bfde7a931170": [
+        "location_a29fed9fc9a49bf9"
+      ],
+      "near_d6b571d89ee7f443": [
+        "location_7a065c18c5e2e78e"
+      ],
+      "near_dca5be323ead0181": [
+        "location_5a1f248e429057bf"
+      ],
+      "near_f48b9b6f89ac4a7c": [
+        "location_9efc0512355966df"
+      ]
+    },
+    "audit_near_groups": [
+      "near_44d23a013a518bf0"
+    ],
+    "n_full": 20,
+    "n_initial": 7,
+    "n_candidates": 13,
+    "n_audit": 5,
+    "n_site_positions": 25,
+    "budgets": [
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      20
+    ],
+    "audit_fraction_requested": 0.2,
+    "audit_fraction_actual": 0.2,
+    "initial_locations_requested": 5,
+    "batch_locations_requested": 2,
+    "geometry_scale_m": 1.2932984960943852,
+    "plan_definition": "all representative usable positions except fixed hidden audit groups",
+    "evaluation_scope": "limited-data re-evaluation after historical test inspection"
+  },
+  {
+    "split_id": "adaptive_d7d070e3c8e7eff0",
+    "site_id": "hollywood",
+    "seed": 43,
+    "fold_id": 2,
+    "role": "evaluation",
+    "initial_ids": [
+      "location_ecbcdc1d612e1d3a",
+      "location_17ea8c416d6c605b",
+      "location_531fc2cf8c9a0447",
+      "location_d832a7f78b753a8b",
+      "location_da4074bdf4b862df",
+      "location_de1de6d23498237a"
+    ],
+    "candidate_ids": [
+      "location_021aeb7ca99ec807",
+      "location_0ef080c87fa795e0",
+      "location_3ef90e231dd9e42a",
+      "location_46438aa839df5591",
+      "location_4ccf39dd762a321c",
+      "location_5a1f248e429057bf",
+      "location_7a065c18c5e2e78e",
+      "location_88ef837c02557610",
+      "location_9efc0512355966df",
+      "location_a29fed9fc9a49bf9",
+      "location_b3ba9ce49b8a4c61",
+      "location_d5457eaf046de609",
+      "location_df1bf9b180eb53b3",
+      "location_eff8aa888ad96e45"
+    ],
+    "audit_ids": [
+      "location_68731fbac3236131",
+      "location_7797fcb1c84b3a10",
+      "location_a92ec34712167f1a",
+      "location_a9638ec30a076a55",
+      "location_fdbbf62793c15f5b"
+    ],
+    "full_ids": [
+      "location_021aeb7ca99ec807",
+      "location_0ef080c87fa795e0",
+      "location_17ea8c416d6c605b",
+      "location_3ef90e231dd9e42a",
+      "location_46438aa839df5591",
+      "location_4ccf39dd762a321c",
+      "location_531fc2cf8c9a0447",
+      "location_5a1f248e429057bf",
+      "location_7a065c18c5e2e78e",
+      "location_88ef837c02557610",
+      "location_9efc0512355966df",
+      "location_a29fed9fc9a49bf9",
+      "location_b3ba9ce49b8a4c61",
+      "location_d5457eaf046de609",
+      "location_d832a7f78b753a8b",
+      "location_da4074bdf4b862df",
+      "location_de1de6d23498237a",
+      "location_df1bf9b180eb53b3",
+      "location_ecbcdc1d612e1d3a",
+      "location_eff8aa888ad96e45"
+    ],
+    "near_groups": {
+      "near_04a4062d44646b35": [
+        "location_ecbcdc1d612e1d3a"
+      ],
+      "near_2ccc30f0c9ef0521": [
+        "location_68731fbac3236131",
+        "location_7797fcb1c84b3a10",
+        "location_a92ec34712167f1a",
+        "location_a9638ec30a076a55",
+        "location_fdbbf62793c15f5b"
+      ],
+      "near_2d3920fcdbd1abde": [
+        "location_3ef90e231dd9e42a"
+      ],
+      "near_44d23a013a518bf0": [
+        "location_021aeb7ca99ec807",
+        "location_46438aa839df5591",
+        "location_4ccf39dd762a321c",
+        "location_88ef837c02557610",
+        "location_b3ba9ce49b8a4c61"
+      ],
+      "near_6164d15c0916085b": [
+        "location_eff8aa888ad96e45"
+      ],
+      "near_627ccd6734df302b": [
+        "location_df1bf9b180eb53b3"
+      ],
+      "near_966ecc4c8d25e459": [
+        "location_0ef080c87fa795e0"
+      ],
+      "near_9abc74f0ce057a12": [
+        "location_17ea8c416d6c605b",
+        "location_531fc2cf8c9a0447",
+        "location_d832a7f78b753a8b",
+        "location_da4074bdf4b862df",
+        "location_de1de6d23498237a"
+      ],
+      "near_9f44a3e7d22fe9f1": [
+        "location_d5457eaf046de609"
+      ],
+      "near_c311bfde7a931170": [
+        "location_a29fed9fc9a49bf9"
+      ],
+      "near_d6b571d89ee7f443": [
+        "location_7a065c18c5e2e78e"
+      ],
+      "near_dca5be323ead0181": [
+        "location_5a1f248e429057bf"
+      ],
+      "near_f48b9b6f89ac4a7c": [
+        "location_9efc0512355966df"
+      ]
+    },
+    "audit_near_groups": [
+      "near_2ccc30f0c9ef0521"
+    ],
+    "n_full": 20,
+    "n_initial": 6,
+    "n_candidates": 14,
+    "n_audit": 5,
+    "n_site_positions": 25,
+    "budgets": [
+      6,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20
+    ],
+    "audit_fraction_requested": 0.2,
+    "audit_fraction_actual": 0.2,
+    "initial_locations_requested": 5,
+    "batch_locations_requested": 2,
+    "geometry_scale_m": 1.2932984960943852,
+    "plan_definition": "all representative usable positions except fixed hidden audit groups",
+    "evaluation_scope": "limited-data re-evaluation after historical test inspection"
+  },
+  {
+    "split_id": "adaptive_9c9606cd6b517762",
+    "site_id": "lower_hutt_town_hall",
+    "seed": 17,
+    "fold_id": 0,
+    "role": "development",
+    "initial_ids": [
+      "location_f1dd1f2f699fd729",
+      "location_3259651e9bb0c96d",
+      "location_dd13fffe42f35974",
+      "location_8cfd25d11c65f2ae",
+      "location_3e4be02ee4ef4a53"
+    ],
+    "candidate_ids": [
+      "location_4db59bd0890e2d33",
+      "location_53fddaab6479ef75",
+      "location_58fba283674348aa",
+      "location_5e40bc942b458f7c",
+      "location_66ef9c6ce8e346d2",
+      "location_788ce8cb3a80a103",
+      "location_7db6b331ce1eb850",
+      "location_8d15714962dae96d",
+      "location_956c983ed9f60d81",
+      "location_9dfff1c4f5297ce4",
+      "location_a370a3a917a072e4",
+      "location_ab985ae54dcd592b",
+      "location_bc3c07bdf8233485",
+      "location_bddbbcff6ed73346",
+      "location_cc4415d62c9a161f",
+      "location_ea7ea59898166674",
+      "location_fb415c8dfd55a60b",
+      "location_fe038e888b556c49"
+    ],
+    "audit_ids": [
+      "location_10b49d5e3f2649a4",
+      "location_2a3047e0a8d303e8",
+      "location_52ab838cf5e97638",
+      "location_7dece380a7c48eeb",
+      "location_afcdc9f1cad09396",
+      "location_e4e8d2f67aaf62e1"
+    ],
+    "full_ids": [
+      "location_3259651e9bb0c96d",
+      "location_3e4be02ee4ef4a53",
+      "location_4db59bd0890e2d33",
+      "location_53fddaab6479ef75",
+      "location_58fba283674348aa",
+      "location_5e40bc942b458f7c",
+      "location_66ef9c6ce8e346d2",
+      "location_788ce8cb3a80a103",
+      "location_7db6b331ce1eb850",
+      "location_8cfd25d11c65f2ae",
+      "location_8d15714962dae96d",
+      "location_956c983ed9f60d81",
+      "location_9dfff1c4f5297ce4",
+      "location_a370a3a917a072e4",
+      "location_ab985ae54dcd592b",
+      "location_bc3c07bdf8233485",
+      "location_bddbbcff6ed73346",
+      "location_cc4415d62c9a161f",
+      "location_dd13fffe42f35974",
+      "location_ea7ea59898166674",
+      "location_f1dd1f2f699fd729",
+      "location_fb415c8dfd55a60b",
+      "location_fe038e888b556c49"
+    ],
+    "near_groups": {
+      "near_10f2f4489f7bb2de": [
+        "location_52ab838cf5e97638"
+      ],
+      "near_1325d39fe2629f94": [
+        "location_2a3047e0a8d303e8"
+      ],
+      "near_1a5daef58b83c214": [
+        "location_bc3c07bdf8233485"
+      ],
+      "near_281393819c688b75": [
+        "location_fb415c8dfd55a60b"
+      ],
+      "near_2b75389751909eb5": [
+        "location_58fba283674348aa"
+      ],
+      "near_34ee18a2c0f1fd13": [
+        "location_ea7ea59898166674"
+      ],
+      "near_40110218ddd64ea5": [
+        "location_f1dd1f2f699fd729"
+      ],
+      "near_419c5fcf4a3334cc": [
+        "location_a370a3a917a072e4"
+      ],
+      "near_47d629a2cf555b6e": [
+        "location_5e40bc942b458f7c"
+      ],
+      "near_514dfcabd31d9ed9": [
+        "location_53fddaab6479ef75"
+      ],
+      "near_65d68c49461c654d": [
+        "location_788ce8cb3a80a103"
+      ],
+      "near_8448eb63199a56a7": [
+        "location_bddbbcff6ed73346"
+      ],
+      "near_84cdaba5a9f0134b": [
+        "location_10b49d5e3f2649a4"
+      ],
+      "near_990bc92bddfb11bb": [
+        "location_8d15714962dae96d"
+      ],
+      "near_a94cd00df166944e": [
+        "location_956c983ed9f60d81"
+      ],
+      "near_af2913c5e07c32c7": [
+        "location_fe038e888b556c49"
+      ],
+      "near_bcb01d8ef3b0a09e": [
+        "location_ab985ae54dcd592b"
+      ],
+      "near_cca1bafb5e23bbff": [
+        "location_e4e8d2f67aaf62e1"
+      ],
+      "near_cd079ca7f18e6348": [
+        "location_afcdc9f1cad09396"
+      ],
+      "near_cff17590ef2aee47": [
+        "location_7db6b331ce1eb850"
+      ],
+      "near_e8fe3774610b483c": [
+        "location_4db59bd0890e2d33"
+      ],
+      "near_eb94256380746db8": [
+        "location_9dfff1c4f5297ce4"
+      ],
+      "near_eb954fb7695c7d3d": [
+        "location_66ef9c6ce8e346d2"
+      ],
+      "near_eeb43cacb83a9355": [
+        "location_dd13fffe42f35974"
+      ],
+      "near_f14c24c9414cb8db": [
+        "location_3259651e9bb0c96d"
+      ],
+      "near_f75a25cf930d52bc": [
+        "location_cc4415d62c9a161f"
+      ],
+      "near_f8b147aafa86864f": [
+        "location_8cfd25d11c65f2ae"
+      ],
+      "near_f8f5768bc5edb0c9": [
+        "location_7dece380a7c48eeb"
+      ],
+      "near_fd642499707ce19a": [
+        "location_3e4be02ee4ef4a53"
+      ]
+    },
+    "audit_near_groups": [
+      "near_10f2f4489f7bb2de",
+      "near_1325d39fe2629f94",
+      "near_84cdaba5a9f0134b",
+      "near_cca1bafb5e23bbff",
+      "near_cd079ca7f18e6348",
+      "near_f8f5768bc5edb0c9"
+    ],
+    "n_full": 23,
+    "n_initial": 5,
+    "n_candidates": 18,
+    "n_audit": 6,
+    "n_site_positions": 29,
+    "budgets": [
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21,
+      23
+    ],
+    "audit_fraction_requested": 0.2,
+    "audit_fraction_actual": 0.20689655172413793,
+    "initial_locations_requested": 5,
+    "batch_locations_requested": 2,
+    "geometry_scale_m": 9.51004731883051,
+    "plan_definition": "all representative usable positions except fixed hidden audit groups",
+    "evaluation_scope": "limited-data re-evaluation after historical test inspection"
+  },
+  {
+    "split_id": "adaptive_aadd256d56498f1f",
+    "site_id": "lower_hutt_town_hall",
+    "seed": 29,
+    "fold_id": 0,
+    "role": "development",
+    "initial_ids": [
+      "location_5e40bc942b458f7c",
+      "location_f1dd1f2f699fd729",
+      "location_8cfd25d11c65f2ae",
+      "location_8d15714962dae96d",
+      "location_2a3047e0a8d303e8"
+    ],
+    "candidate_ids": [
+      "location_10b49d5e3f2649a4",
+      "location_3e4be02ee4ef4a53",
+      "location_4db59bd0890e2d33",
+      "location_58fba283674348aa",
+      "location_788ce8cb3a80a103",
+      "location_7db6b331ce1eb850",
+      "location_7dece380a7c48eeb",
+      "location_956c983ed9f60d81",
+      "location_9dfff1c4f5297ce4",
+      "location_a370a3a917a072e4",
+      "location_ab985ae54dcd592b",
+      "location_bc3c07bdf8233485",
+      "location_bddbbcff6ed73346",
+      "location_dd13fffe42f35974",
+      "location_e4e8d2f67aaf62e1",
+      "location_ea7ea59898166674",
+      "location_fb415c8dfd55a60b",
+      "location_fe038e888b556c49"
+    ],
+    "audit_ids": [
+      "location_3259651e9bb0c96d",
+      "location_52ab838cf5e97638",
+      "location_53fddaab6479ef75",
+      "location_66ef9c6ce8e346d2",
+      "location_afcdc9f1cad09396",
+      "location_cc4415d62c9a161f"
+    ],
+    "full_ids": [
+      "location_10b49d5e3f2649a4",
+      "location_2a3047e0a8d303e8",
+      "location_3e4be02ee4ef4a53",
+      "location_4db59bd0890e2d33",
+      "location_58fba283674348aa",
+      "location_5e40bc942b458f7c",
+      "location_788ce8cb3a80a103",
+      "location_7db6b331ce1eb850",
+      "location_7dece380a7c48eeb",
+      "location_8cfd25d11c65f2ae",
+      "location_8d15714962dae96d",
+      "location_956c983ed9f60d81",
+      "location_9dfff1c4f5297ce4",
+      "location_a370a3a917a072e4",
+      "location_ab985ae54dcd592b",
+      "location_bc3c07bdf8233485",
+      "location_bddbbcff6ed73346",
+      "location_dd13fffe42f35974",
+      "location_e4e8d2f67aaf62e1",
+      "location_ea7ea59898166674",
+      "location_f1dd1f2f699fd729",
+      "location_fb415c8dfd55a60b",
+      "location_fe038e888b556c49"
+    ],
+    "near_groups": {
+      "near_10f2f4489f7bb2de": [
+        "location_52ab838cf5e97638"
+      ],
+      "near_1325d39fe2629f94": [
+        "location_2a3047e0a8d303e8"
+      ],
+      "near_1a5daef58b83c214": [
+        "location_bc3c07bdf8233485"
+      ],
+      "near_281393819c688b75": [
+        "location_fb415c8dfd55a60b"
+      ],
+      "near_2b75389751909eb5": [
+        "location_58fba283674348aa"
+      ],
+      "near_34ee18a2c0f1fd13": [
+        "location_ea7ea59898166674"
+      ],
+      "near_40110218ddd64ea5": [
+        "location_f1dd1f2f699fd729"
+      ],
+      "near_419c5fcf4a3334cc": [
+        "location_a370a3a917a072e4"
+      ],
+      "near_47d629a2cf555b6e": [
+        "location_5e40bc942b458f7c"
+      ],
+      "near_514dfcabd31d9ed9": [
+        "location_53fddaab6479ef75"
+      ],
+      "near_65d68c49461c654d": [
+        "location_788ce8cb3a80a103"
+      ],
+      "near_8448eb63199a56a7": [
+        "location_bddbbcff6ed73346"
+      ],
+      "near_84cdaba5a9f0134b": [
+        "location_10b49d5e3f2649a4"
+      ],
+      "near_990bc92bddfb11bb": [
+        "location_8d15714962dae96d"
+      ],
+      "near_a94cd00df166944e": [
+        "location_956c983ed9f60d81"
+      ],
+      "near_af2913c5e07c32c7": [
+        "location_fe038e888b556c49"
+      ],
+      "near_bcb01d8ef3b0a09e": [
+        "location_ab985ae54dcd592b"
+      ],
+      "near_cca1bafb5e23bbff": [
+        "location_e4e8d2f67aaf62e1"
+      ],
+      "near_cd079ca7f18e6348": [
+        "location_afcdc9f1cad09396"
+      ],
+      "near_cff17590ef2aee47": [
+        "location_7db6b331ce1eb850"
+      ],
+      "near_e8fe3774610b483c": [
+        "location_4db59bd0890e2d33"
+      ],
+      "near_eb94256380746db8": [
+        "location_9dfff1c4f5297ce4"
+      ],
+      "near_eb954fb7695c7d3d": [
+        "location_66ef9c6ce8e346d2"
+      ],
+      "near_eeb43cacb83a9355": [
+        "location_dd13fffe42f35974"
+      ],
+      "near_f14c24c9414cb8db": [
+        "location_3259651e9bb0c96d"
+      ],
+      "near_f75a25cf930d52bc": [
+        "location_cc4415d62c9a161f"
+      ],
+      "near_f8b147aafa86864f": [
+        "location_8cfd25d11c65f2ae"
+      ],
+      "near_f8f5768bc5edb0c9": [
+        "location_7dece380a7c48eeb"
+      ],
+      "near_fd642499707ce19a": [
+        "location_3e4be02ee4ef4a53"
+      ]
+    },
+    "audit_near_groups": [
+      "near_10f2f4489f7bb2de",
+      "near_514dfcabd31d9ed9",
+      "near_cd079ca7f18e6348",
+      "near_eb954fb7695c7d3d",
+      "near_f14c24c9414cb8db",
+      "near_f75a25cf930d52bc"
+    ],
+    "n_full": 23,
+    "n_initial": 5,
+    "n_candidates": 18,
+    "n_audit": 6,
+    "n_site_positions": 29,
+    "budgets": [
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21,
+      23
+    ],
+    "audit_fraction_requested": 0.2,
+    "audit_fraction_actual": 0.20689655172413793,
+    "initial_locations_requested": 5,
+    "batch_locations_requested": 2,
+    "geometry_scale_m": 9.51004731883051,
+    "plan_definition": "all representative usable positions except fixed hidden audit groups",
+    "evaluation_scope": "limited-data re-evaluation after historical test inspection"
+  },
+  {
+    "split_id": "adaptive_a93fde19e2cbb069",
+    "site_id": "lower_hutt_town_hall",
+    "seed": 43,
+    "fold_id": 0,
+    "role": "development",
+    "initial_ids": [
+      "location_66ef9c6ce8e346d2",
+      "location_2a3047e0a8d303e8",
+      "location_9dfff1c4f5297ce4",
+      "location_4db59bd0890e2d33",
+      "location_7dece380a7c48eeb"
+    ],
+    "candidate_ids": [
+      "location_10b49d5e3f2649a4",
+      "location_3259651e9bb0c96d",
+      "location_3e4be02ee4ef4a53",
+      "location_52ab838cf5e97638",
+      "location_53fddaab6479ef75",
+      "location_58fba283674348aa",
+      "location_5e40bc942b458f7c",
+      "location_788ce8cb3a80a103",
+      "location_7db6b331ce1eb850",
+      "location_8d15714962dae96d",
+      "location_956c983ed9f60d81",
+      "location_a370a3a917a072e4",
+      "location_afcdc9f1cad09396",
+      "location_cc4415d62c9a161f",
+      "location_dd13fffe42f35974",
+      "location_e4e8d2f67aaf62e1",
+      "location_fb415c8dfd55a60b",
+      "location_fe038e888b556c49"
+    ],
+    "audit_ids": [
+      "location_8cfd25d11c65f2ae",
+      "location_ab985ae54dcd592b",
+      "location_bc3c07bdf8233485",
+      "location_bddbbcff6ed73346",
+      "location_ea7ea59898166674",
+      "location_f1dd1f2f699fd729"
+    ],
+    "full_ids": [
+      "location_10b49d5e3f2649a4",
+      "location_2a3047e0a8d303e8",
+      "location_3259651e9bb0c96d",
+      "location_3e4be02ee4ef4a53",
+      "location_4db59bd0890e2d33",
+      "location_52ab838cf5e97638",
+      "location_53fddaab6479ef75",
+      "location_58fba283674348aa",
+      "location_5e40bc942b458f7c",
+      "location_66ef9c6ce8e346d2",
+      "location_788ce8cb3a80a103",
+      "location_7db6b331ce1eb850",
+      "location_7dece380a7c48eeb",
+      "location_8d15714962dae96d",
+      "location_956c983ed9f60d81",
+      "location_9dfff1c4f5297ce4",
+      "location_a370a3a917a072e4",
+      "location_afcdc9f1cad09396",
+      "location_cc4415d62c9a161f",
+      "location_dd13fffe42f35974",
+      "location_e4e8d2f67aaf62e1",
+      "location_fb415c8dfd55a60b",
+      "location_fe038e888b556c49"
+    ],
+    "near_groups": {
+      "near_10f2f4489f7bb2de": [
+        "location_52ab838cf5e97638"
+      ],
+      "near_1325d39fe2629f94": [
+        "location_2a3047e0a8d303e8"
+      ],
+      "near_1a5daef58b83c214": [
+        "location_bc3c07bdf8233485"
+      ],
+      "near_281393819c688b75": [
+        "location_fb415c8dfd55a60b"
+      ],
+      "near_2b75389751909eb5": [
+        "location_58fba283674348aa"
+      ],
+      "near_34ee18a2c0f1fd13": [
+        "location_ea7ea59898166674"
+      ],
+      "near_40110218ddd64ea5": [
+        "location_f1dd1f2f699fd729"
+      ],
+      "near_419c5fcf4a3334cc": [
+        "location_a370a3a917a072e4"
+      ],
+      "near_47d629a2cf555b6e": [
+        "location_5e40bc942b458f7c"
+      ],
+      "near_514dfcabd31d9ed9": [
+        "location_53fddaab6479ef75"
+      ],
+      "near_65d68c49461c654d": [
+        "location_788ce8cb3a80a103"
+      ],
+      "near_8448eb63199a56a7": [
+        "location_bddbbcff6ed73346"
+      ],
+      "near_84cdaba5a9f0134b": [
+        "location_10b49d5e3f2649a4"
+      ],
+      "near_990bc92bddfb11bb": [
+        "location_8d15714962dae96d"
+      ],
+      "near_a94cd00df166944e": [
+        "location_956c983ed9f60d81"
+      ],
+      "near_af2913c5e07c32c7": [
+        "location_fe038e888b556c49"
+      ],
+      "near_bcb01d8ef3b0a09e": [
+        "location_ab985ae54dcd592b"
+      ],
+      "near_cca1bafb5e23bbff": [
+        "location_e4e8d2f67aaf62e1"
+      ],
+      "near_cd079ca7f18e6348": [
+        "location_afcdc9f1cad09396"
+      ],
+      "near_cff17590ef2aee47": [
+        "location_7db6b331ce1eb850"
+      ],
+      "near_e8fe3774610b483c": [
+        "location_4db59bd0890e2d33"
+      ],
+      "near_eb94256380746db8": [
+        "location_9dfff1c4f5297ce4"
+      ],
+      "near_eb954fb7695c7d3d": [
+        "location_66ef9c6ce8e346d2"
+      ],
+      "near_eeb43cacb83a9355": [
+        "location_dd13fffe42f35974"
+      ],
+      "near_f14c24c9414cb8db": [
+        "location_3259651e9bb0c96d"
+      ],
+      "near_f75a25cf930d52bc": [
+        "location_cc4415d62c9a161f"
+      ],
+      "near_f8b147aafa86864f": [
+        "location_8cfd25d11c65f2ae"
+      ],
+      "near_f8f5768bc5edb0c9": [
+        "location_7dece380a7c48eeb"
+      ],
+      "near_fd642499707ce19a": [
+        "location_3e4be02ee4ef4a53"
+      ]
+    },
+    "audit_near_groups": [
+      "near_1a5daef58b83c214",
+      "near_34ee18a2c0f1fd13",
+      "near_40110218ddd64ea5",
+      "near_8448eb63199a56a7",
+      "near_bcb01d8ef3b0a09e",
+      "near_f8b147aafa86864f"
+    ],
+    "n_full": 23,
+    "n_initial": 5,
+    "n_candidates": 18,
+    "n_audit": 6,
+    "n_site_positions": 29,
+    "budgets": [
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21,
+      23
+    ],
+    "audit_fraction_requested": 0.2,
+    "audit_fraction_actual": 0.20689655172413793,
+    "initial_locations_requested": 5,
+    "batch_locations_requested": 2,
+    "geometry_scale_m": 9.51004731883051,
+    "plan_definition": "all representative usable positions except fixed hidden audit groups",
+    "evaluation_scope": "limited-data re-evaluation after historical test inspection"
+  },
+  {
+    "split_id": "adaptive_c35e08c297b88b7c",
+    "site_id": "marshland",
+    "seed": 17,
+    "fold_id": 2,
+    "role": "development",
+    "initial_ids": [
+      "location_2dd5199da960ca4f",
+      "location_e34f08e844c76447",
+      "location_72ae58633f63e224",
+      "location_5162b2ad3ff98719",
+      "location_9ebae0098d8143c1"
+    ],
+    "candidate_ids": [
+      "location_023b4cf8dd085689",
+      "location_34c1a4d0e33941cb",
+      "location_3e6c95558e5f5c05",
+      "location_4ccc6105a1086cb6",
+      "location_4e6da72bf6e514d5",
+      "location_6416778c2eac2e5c",
+      "location_765df992240a7d77",
+      "location_7f40123dd14dfd10",
+      "location_96b88013e3884fcb",
+      "location_d6e2853f5f6b0695",
+      "location_e83ddbd9558116ac"
+    ],
+    "audit_ids": [
+      "location_3dd80d0d68ace4cf",
+      "location_467814ea7f71f197",
+      "location_52b5947bd236673d",
+      "location_e70cee9e4646d147"
+    ],
+    "full_ids": [
+      "location_023b4cf8dd085689",
+      "location_2dd5199da960ca4f",
+      "location_34c1a4d0e33941cb",
+      "location_3e6c95558e5f5c05",
+      "location_4ccc6105a1086cb6",
+      "location_4e6da72bf6e514d5",
+      "location_5162b2ad3ff98719",
+      "location_6416778c2eac2e5c",
+      "location_72ae58633f63e224",
+      "location_765df992240a7d77",
+      "location_7f40123dd14dfd10",
+      "location_96b88013e3884fcb",
+      "location_9ebae0098d8143c1",
+      "location_d6e2853f5f6b0695",
+      "location_e34f08e844c76447",
+      "location_e83ddbd9558116ac"
+    ],
+    "near_groups": {
+      "near_044317750da1fa4b": [
+        "location_4e6da72bf6e514d5"
+      ],
+      "near_0470204d1d791931": [
+        "location_34c1a4d0e33941cb"
+      ],
+      "near_05e998fd7fbe61f2": [
+        "location_2dd5199da960ca4f"
+      ],
+      "near_0d4311a6a35516ad": [
+        "location_023b4cf8dd085689"
+      ],
+      "near_1b3d523eec25fb3a": [
+        "location_52b5947bd236673d"
+      ],
+      "near_1d76780922010288": [
+        "location_4ccc6105a1086cb6"
+      ],
+      "near_225d1cb409c4d526": [
+        "location_5162b2ad3ff98719"
+      ],
+      "near_4184d56b98ee243b": [
+        "location_6416778c2eac2e5c"
+      ],
+      "near_47de3392609e3694": [
+        "location_3dd80d0d68ace4cf"
+      ],
+      "near_644401a947ac579c": [
+        "location_96b88013e3884fcb"
+      ],
+      "near_733b1610a5c8afc8": [
+        "location_467814ea7f71f197"
+      ],
+      "near_75d08ce5ec4de7a5": [
+        "location_e34f08e844c76447"
+      ],
+      "near_a5edaba4e0ada053": [
+        "location_d6e2853f5f6b0695"
+      ],
+      "near_b7f586c30854a1fa": [
+        "location_e83ddbd9558116ac"
+      ],
+      "near_b92442a571314bef": [
+        "location_765df992240a7d77"
+      ],
+      "near_bb75ee1642b31f82": [
+        "location_e70cee9e4646d147"
+      ],
+      "near_e6f4b9a92192f2eb": [
+        "location_3e6c95558e5f5c05"
+      ],
+      "near_e77aa055d0c6fc65": [
+        "location_72ae58633f63e224"
+      ],
+      "near_f92e687cf8055182": [
+        "location_9ebae0098d8143c1"
+      ],
+      "near_fba6c06520d39849": [
+        "location_7f40123dd14dfd10"
+      ]
+    },
+    "audit_near_groups": [
+      "near_1b3d523eec25fb3a",
+      "near_47de3392609e3694",
+      "near_733b1610a5c8afc8",
+      "near_bb75ee1642b31f82"
+    ],
+    "n_full": 16,
+    "n_initial": 5,
+    "n_candidates": 11,
+    "n_audit": 4,
+    "n_site_positions": 20,
+    "budgets": [
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      16
+    ],
+    "audit_fraction_requested": 0.2,
+    "audit_fraction_actual": 0.2,
+    "initial_locations_requested": 5,
+    "batch_locations_requested": 2,
+    "geometry_scale_m": 10.772517719261295,
+    "plan_definition": "all representative usable positions except fixed hidden audit groups",
+    "evaluation_scope": "limited-data re-evaluation after historical test inspection"
+  },
+  {
+    "split_id": "adaptive_b6bb52e349c99b49",
+    "site_id": "marshland",
+    "seed": 29,
+    "fold_id": 2,
+    "role": "development",
+    "initial_ids": [
+      "location_52b5947bd236673d",
+      "location_7f40123dd14dfd10",
+      "location_e70cee9e4646d147",
+      "location_96b88013e3884fcb",
+      "location_e34f08e844c76447"
+    ],
+    "candidate_ids": [
+      "location_023b4cf8dd085689",
+      "location_2dd5199da960ca4f",
+      "location_467814ea7f71f197",
+      "location_4ccc6105a1086cb6",
+      "location_4e6da72bf6e514d5",
+      "location_5162b2ad3ff98719",
+      "location_72ae58633f63e224",
+      "location_765df992240a7d77",
+      "location_9ebae0098d8143c1",
+      "location_d6e2853f5f6b0695",
+      "location_e83ddbd9558116ac"
+    ],
+    "audit_ids": [
+      "location_34c1a4d0e33941cb",
+      "location_3dd80d0d68ace4cf",
+      "location_3e6c95558e5f5c05",
+      "location_6416778c2eac2e5c"
+    ],
+    "full_ids": [
+      "location_023b4cf8dd085689",
+      "location_2dd5199da960ca4f",
+      "location_467814ea7f71f197",
+      "location_4ccc6105a1086cb6",
+      "location_4e6da72bf6e514d5",
+      "location_5162b2ad3ff98719",
+      "location_52b5947bd236673d",
+      "location_72ae58633f63e224",
+      "location_765df992240a7d77",
+      "location_7f40123dd14dfd10",
+      "location_96b88013e3884fcb",
+      "location_9ebae0098d8143c1",
+      "location_d6e2853f5f6b0695",
+      "location_e34f08e844c76447",
+      "location_e70cee9e4646d147",
+      "location_e83ddbd9558116ac"
+    ],
+    "near_groups": {
+      "near_044317750da1fa4b": [
+        "location_4e6da72bf6e514d5"
+      ],
+      "near_0470204d1d791931": [
+        "location_34c1a4d0e33941cb"
+      ],
+      "near_05e998fd7fbe61f2": [
+        "location_2dd5199da960ca4f"
+      ],
+      "near_0d4311a6a35516ad": [
+        "location_023b4cf8dd085689"
+      ],
+      "near_1b3d523eec25fb3a": [
+        "location_52b5947bd236673d"
+      ],
+      "near_1d76780922010288": [
+        "location_4ccc6105a1086cb6"
+      ],
+      "near_225d1cb409c4d526": [
+        "location_5162b2ad3ff98719"
+      ],
+      "near_4184d56b98ee243b": [
+        "location_6416778c2eac2e5c"
+      ],
+      "near_47de3392609e3694": [
+        "location_3dd80d0d68ace4cf"
+      ],
+      "near_644401a947ac579c": [
+        "location_96b88013e3884fcb"
+      ],
+      "near_733b1610a5c8afc8": [
+        "location_467814ea7f71f197"
+      ],
+      "near_75d08ce5ec4de7a5": [
+        "location_e34f08e844c76447"
+      ],
+      "near_a5edaba4e0ada053": [
+        "location_d6e2853f5f6b0695"
+      ],
+      "near_b7f586c30854a1fa": [
+        "location_e83ddbd9558116ac"
+      ],
+      "near_b92442a571314bef": [
+        "location_765df992240a7d77"
+      ],
+      "near_bb75ee1642b31f82": [
+        "location_e70cee9e4646d147"
+      ],
+      "near_e6f4b9a92192f2eb": [
+        "location_3e6c95558e5f5c05"
+      ],
+      "near_e77aa055d0c6fc65": [
+        "location_72ae58633f63e224"
+      ],
+      "near_f92e687cf8055182": [
+        "location_9ebae0098d8143c1"
+      ],
+      "near_fba6c06520d39849": [
+        "location_7f40123dd14dfd10"
+      ]
+    },
+    "audit_near_groups": [
+      "near_0470204d1d791931",
+      "near_4184d56b98ee243b",
+      "near_47de3392609e3694",
+      "near_e6f4b9a92192f2eb"
+    ],
+    "n_full": 16,
+    "n_initial": 5,
+    "n_candidates": 11,
+    "n_audit": 4,
+    "n_site_positions": 20,
+    "budgets": [
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      16
+    ],
+    "audit_fraction_requested": 0.2,
+    "audit_fraction_actual": 0.2,
+    "initial_locations_requested": 5,
+    "batch_locations_requested": 2,
+    "geometry_scale_m": 10.772517719261295,
+    "plan_definition": "all representative usable positions except fixed hidden audit groups",
+    "evaluation_scope": "limited-data re-evaluation after historical test inspection"
+  },
+  {
+    "split_id": "adaptive_a6c706ece0bd45a2",
+    "site_id": "marshland",
+    "seed": 43,
+    "fold_id": 2,
+    "role": "development",
+    "initial_ids": [
+      "location_7f40123dd14dfd10",
+      "location_d6e2853f5f6b0695",
+      "location_e70cee9e4646d147",
+      "location_4ccc6105a1086cb6",
+      "location_96b88013e3884fcb"
+    ],
+    "candidate_ids": [
+      "location_2dd5199da960ca4f",
+      "location_34c1a4d0e33941cb",
+      "location_3dd80d0d68ace4cf",
+      "location_4e6da72bf6e514d5",
+      "location_5162b2ad3ff98719",
+      "location_52b5947bd236673d",
+      "location_6416778c2eac2e5c",
+      "location_765df992240a7d77",
+      "location_9ebae0098d8143c1",
+      "location_e34f08e844c76447",
+      "location_e83ddbd9558116ac"
+    ],
+    "audit_ids": [
+      "location_023b4cf8dd085689",
+      "location_3e6c95558e5f5c05",
+      "location_467814ea7f71f197",
+      "location_72ae58633f63e224"
+    ],
+    "full_ids": [
+      "location_2dd5199da960ca4f",
+      "location_34c1a4d0e33941cb",
+      "location_3dd80d0d68ace4cf",
+      "location_4ccc6105a1086cb6",
+      "location_4e6da72bf6e514d5",
+      "location_5162b2ad3ff98719",
+      "location_52b5947bd236673d",
+      "location_6416778c2eac2e5c",
+      "location_765df992240a7d77",
+      "location_7f40123dd14dfd10",
+      "location_96b88013e3884fcb",
+      "location_9ebae0098d8143c1",
+      "location_d6e2853f5f6b0695",
+      "location_e34f08e844c76447",
+      "location_e70cee9e4646d147",
+      "location_e83ddbd9558116ac"
+    ],
+    "near_groups": {
+      "near_044317750da1fa4b": [
+        "location_4e6da72bf6e514d5"
+      ],
+      "near_0470204d1d791931": [
+        "location_34c1a4d0e33941cb"
+      ],
+      "near_05e998fd7fbe61f2": [
+        "location_2dd5199da960ca4f"
+      ],
+      "near_0d4311a6a35516ad": [
+        "location_023b4cf8dd085689"
+      ],
+      "near_1b3d523eec25fb3a": [
+        "location_52b5947bd236673d"
+      ],
+      "near_1d76780922010288": [
+        "location_4ccc6105a1086cb6"
+      ],
+      "near_225d1cb409c4d526": [
+        "location_5162b2ad3ff98719"
+      ],
+      "near_4184d56b98ee243b": [
+        "location_6416778c2eac2e5c"
+      ],
+      "near_47de3392609e3694": [
+        "location_3dd80d0d68ace4cf"
+      ],
+      "near_644401a947ac579c": [
+        "location_96b88013e3884fcb"
+      ],
+      "near_733b1610a5c8afc8": [
+        "location_467814ea7f71f197"
+      ],
+      "near_75d08ce5ec4de7a5": [
+        "location_e34f08e844c76447"
+      ],
+      "near_a5edaba4e0ada053": [
+        "location_d6e2853f5f6b0695"
+      ],
+      "near_b7f586c30854a1fa": [
+        "location_e83ddbd9558116ac"
+      ],
+      "near_b92442a571314bef": [
+        "location_765df992240a7d77"
+      ],
+      "near_bb75ee1642b31f82": [
+        "location_e70cee9e4646d147"
+      ],
+      "near_e6f4b9a92192f2eb": [
+        "location_3e6c95558e5f5c05"
+      ],
+      "near_e77aa055d0c6fc65": [
+        "location_72ae58633f63e224"
+      ],
+      "near_f92e687cf8055182": [
+        "location_9ebae0098d8143c1"
+      ],
+      "near_fba6c06520d39849": [
+        "location_7f40123dd14dfd10"
+      ]
+    },
+    "audit_near_groups": [
+      "near_0d4311a6a35516ad",
+      "near_733b1610a5c8afc8",
+      "near_e6f4b9a92192f2eb",
+      "near_e77aa055d0c6fc65"
+    ],
+    "n_full": 16,
+    "n_initial": 5,
+    "n_candidates": 11,
+    "n_audit": 4,
+    "n_site_positions": 20,
+    "budgets": [
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      16
+    ],
+    "audit_fraction_requested": 0.2,
+    "audit_fraction_actual": 0.2,
+    "initial_locations_requested": 5,
+    "batch_locations_requested": 2,
+    "geometry_scale_m": 10.772517719261295,
+    "plan_definition": "all representative usable positions except fixed hidden audit groups",
+    "evaluation_scope": "limited-data re-evaluation after historical test inspection"
+  },
+  {
+    "split_id": "adaptive_998372a057dd328d",
+    "site_id": "newlock",
+    "seed": 17,
+    "fold_id": 1,
+    "role": "evaluation",
+    "initial_ids": [
+      "location_c9641afc29ee3609",
+      "location_5e9ea8cec446d984",
+      "location_9ff5e43019c627bb",
+      "location_9809647d30be01b6",
+      "location_699ac1ddff134f0e",
+      "location_c8572a1882b75e90"
+    ],
+    "candidate_ids": [
+      "location_00826c5ac56125db",
+      "location_0244a5d9fb5e7fd3",
+      "location_0d6bd94f9cd20850",
+      "location_18c9a5acfcfaa064",
+      "location_1912c4e4a7052b05",
+      "location_1a7ddb53e717ad76",
+      "location_1e7781ad5635bb1d",
+      "location_20b67c4d1b9d1396",
+      "location_28f8bc2ce2a7f439",
+      "location_2a9ca73ab8637b78",
+      "location_2d179fb0d8d37923",
+      "location_3c14902b11190a3f",
+      "location_3c8a8c95b870f975",
+      "location_4557cf2f1f4895ca",
+      "location_465d1eb0003f4ba1",
+      "location_49d7ae52ec6c7bbb",
+      "location_572ec3809973d33a",
+      "location_579e78f1d1c23fa1",
+      "location_5889f760614b35ac",
+      "location_5898f8b50a02e383",
+      "location_6206790b6440d2be",
+      "location_63976b0c61487f74",
+      "location_662be975e3493853",
+      "location_6b2f76c940c169a8",
+      "location_712bb6a72cdaddcc",
+      "location_76058e5b847641b2",
+      "location_766dfff1ece0bfd1",
+      "location_7af4cbd0aa2b67ea",
+      "location_7bbcd3cfeeaf743b",
+      "location_7da1c78c6a0ffe99",
+      "location_7df82df2fdd4be09",
+      "location_811af0b25076fd82",
+      "location_8a8df3f986466623",
+      "location_8ade1ff7c9176774",
+      "location_8b01b2eb96d00575",
+      "location_905279cee56c2f22",
+      "location_9090396d039e60db",
+      "location_9211f1cde72b82cb",
+      "location_99e22dbe787048e1",
+      "location_9dec5d86a42553b2",
+      "location_a02f9d11842158b8",
+      "location_a06d217aad0fcf79",
+      "location_a20bad0d7a3a0eba",
+      "location_ae4f0b920fa47f8f",
+      "location_afdc1ec71e92ab38",
+      "location_b3dbb889d1386172",
+      "location_b9e36cc076c44684",
+      "location_bd68c7ed470d8818",
+      "location_d297361e2d401395",
+      "location_db4e6dfe2737955c",
+      "location_df00dd6758b75aa0",
+      "location_e14b0510ae5a1467",
+      "location_e365855a9c9ea764",
+      "location_e8fe78aca1b349b5",
+      "location_efc5ea6bdfe79e92",
+      "location_f5b8aa19340abe84",
+      "location_f710d3e64dcac92c",
+      "location_ff57b2773356af93"
+    ],
+    "audit_ids": [
+      "location_093f12cd388c92df",
+      "location_183911ea8ccfb1c0",
+      "location_37b0dd9c851b23d7",
+      "location_406ab5962c0ccbd2",
+      "location_52e89086dd5ef397",
+      "location_74fb2f4ddcc15ac2",
+      "location_761bbb1f4977aacd",
+      "location_8174dc7c66bdcbbc",
+      "location_9d4edd8f2f817f7f",
+      "location_a067dd51414df1b9",
+      "location_b0e4efcf0f2d648d",
+      "location_b2d9af0209710ce6",
+      "location_d195a88582f49119",
+      "location_e59435e22bf67c8b",
+      "location_f129be3a0d89931f",
+      "location_f41c09efb378564c"
+    ],
+    "full_ids": [
+      "location_00826c5ac56125db",
+      "location_0244a5d9fb5e7fd3",
+      "location_0d6bd94f9cd20850",
+      "location_18c9a5acfcfaa064",
+      "location_1912c4e4a7052b05",
+      "location_1a7ddb53e717ad76",
+      "location_1e7781ad5635bb1d",
+      "location_20b67c4d1b9d1396",
+      "location_28f8bc2ce2a7f439",
+      "location_2a9ca73ab8637b78",
+      "location_2d179fb0d8d37923",
+      "location_3c14902b11190a3f",
+      "location_3c8a8c95b870f975",
+      "location_4557cf2f1f4895ca",
+      "location_465d1eb0003f4ba1",
+      "location_49d7ae52ec6c7bbb",
+      "location_572ec3809973d33a",
+      "location_579e78f1d1c23fa1",
+      "location_5889f760614b35ac",
+      "location_5898f8b50a02e383",
+      "location_5e9ea8cec446d984",
+      "location_6206790b6440d2be",
+      "location_63976b0c61487f74",
+      "location_662be975e3493853",
+      "location_699ac1ddff134f0e",
+      "location_6b2f76c940c169a8",
+      "location_712bb6a72cdaddcc",
+      "location_76058e5b847641b2",
+      "location_766dfff1ece0bfd1",
+      "location_7af4cbd0aa2b67ea",
+      "location_7bbcd3cfeeaf743b",
+      "location_7da1c78c6a0ffe99",
+      "location_7df82df2fdd4be09",
+      "location_811af0b25076fd82",
+      "location_8a8df3f986466623",
+      "location_8ade1ff7c9176774",
+      "location_8b01b2eb96d00575",
+      "location_905279cee56c2f22",
+      "location_9090396d039e60db",
+      "location_9211f1cde72b82cb",
+      "location_9809647d30be01b6",
+      "location_99e22dbe787048e1",
+      "location_9dec5d86a42553b2",
+      "location_9ff5e43019c627bb",
+      "location_a02f9d11842158b8",
+      "location_a06d217aad0fcf79",
+      "location_a20bad0d7a3a0eba",
+      "location_ae4f0b920fa47f8f",
+      "location_afdc1ec71e92ab38",
+      "location_b3dbb889d1386172",
+      "location_b9e36cc076c44684",
+      "location_bd68c7ed470d8818",
+      "location_c8572a1882b75e90",
+      "location_c9641afc29ee3609",
+      "location_d297361e2d401395",
+      "location_db4e6dfe2737955c",
+      "location_df00dd6758b75aa0",
+      "location_e14b0510ae5a1467",
+      "location_e365855a9c9ea764",
+      "location_e8fe78aca1b349b5",
+      "location_efc5ea6bdfe79e92",
+      "location_f5b8aa19340abe84",
+      "location_f710d3e64dcac92c",
+      "location_ff57b2773356af93"
+    ],
+    "near_groups": {
+      "near_02768b23ad882cd3": [
+        "location_0244a5d9fb5e7fd3"
+      ],
+      "near_04d18aca2ae621fc": [
+        "location_8ade1ff7c9176774"
+      ],
+      "near_08ad794442641a76": [
+        "location_afdc1ec71e92ab38"
+      ],
+      "near_102cb2b2a9b088a8": [
+        "location_1a7ddb53e717ad76"
+      ],
+      "near_1511a67e6ea2a387": [
+        "location_28f8bc2ce2a7f439"
+      ],
+      "near_1a16f9523d9349dc": [
+        "location_9211f1cde72b82cb"
+      ],
+      "near_1b65dff5d9e21de9": [
+        "location_b0e4efcf0f2d648d"
+      ],
+      "near_1fe471d1a60e7665": [
+        "location_9090396d039e60db"
+      ],
+      "near_220faffbbead3469": [
+        "location_d195a88582f49119"
+      ],
+      "near_2330047fa391d830": [
+        "location_e59435e22bf67c8b",
+        "location_f129be3a0d89931f"
+      ],
+      "near_23a2dbfb6f9af5c3": [
+        "location_6206790b6440d2be"
+      ],
+      "near_2888549869959160": [
+        "location_1912c4e4a7052b05"
+      ],
+      "near_2b5a2128c8b376b8": [
+        "location_9dec5d86a42553b2"
+      ],
+      "near_2dddc542e9be774d": [
+        "location_b9e36cc076c44684"
+      ],
+      "near_33dd16261a1fa4e4": [
+        "location_6b2f76c940c169a8"
+      ],
+      "near_37d1feaa10c31593": [
+        "location_1e7781ad5635bb1d"
+      ],
+      "near_3a04b89e26e1ec49": [
+        "location_18c9a5acfcfaa064"
+      ],
+      "near_3f2f433155dae34d": [
+        "location_183911ea8ccfb1c0"
+      ],
+      "near_4a941d5089a0d7c5": [
+        "location_ff57b2773356af93"
+      ],
+      "near_4eb8205867db4cee": [
+        "location_8174dc7c66bdcbbc"
+      ],
+      "near_50344b2b47d0bfff": [
+        "location_3c14902b11190a3f"
+      ],
+      "near_5089523c3b74939f": [
+        "location_52e89086dd5ef397"
+      ],
+      "near_50a5b67767baaebd": [
+        "location_7df82df2fdd4be09"
+      ],
+      "near_560fe3877c6b2682": [
+        "location_5889f760614b35ac"
+      ],
+      "near_56a84f25f7ed556e": [
+        "location_bd68c7ed470d8818"
+      ],
+      "near_5a5e6963d6f1c20a": [
+        "location_efc5ea6bdfe79e92"
+      ],
+      "near_5a8d0159443d111e": [
+        "location_00826c5ac56125db"
+      ],
+      "near_5a92f3191d9df077": [
+        "location_699ac1ddff134f0e",
+        "location_c8572a1882b75e90"
+      ],
+      "near_605ae2c29276875d": [
+        "location_f5b8aa19340abe84"
+      ],
+      "near_6cc8a0d202967a8d": [
+        "location_9d4edd8f2f817f7f"
+      ],
+      "near_7c56ea6d6fce0071": [
+        "location_7da1c78c6a0ffe99"
+      ],
+      "near_7d60285675df8fbd": [
+        "location_905279cee56c2f22"
+      ],
+      "near_81658b1bd522a61f": [
+        "location_811af0b25076fd82"
+      ],
+      "near_841274d53c5e2e8e": [
+        "location_5e9ea8cec446d984"
+      ],
+      "near_872cff0110c1a1e1": [
+        "location_465d1eb0003f4ba1"
+      ],
+      "near_87caafff93a897dd": [
+        "location_63976b0c61487f74"
+      ],
+      "near_895fdf43a928af81": [
+        "location_8b01b2eb96d00575"
+      ],
+      "near_89df3eb3327a1421": [
+        "location_662be975e3493853"
+      ],
+      "near_9c0fd6be53ce0e50": [
+        "location_f41c09efb378564c"
+      ],
+      "near_9ce691db74c0ab85": [
+        "location_49d7ae52ec6c7bbb"
+      ],
+      "near_9e8443b2cfc39dcc": [
+        "location_37b0dd9c851b23d7"
+      ],
+      "near_a65c91b3fe995ca1": [
+        "location_766dfff1ece0bfd1"
+      ],
+      "near_a72e286049c4f825": [
+        "location_406ab5962c0ccbd2"
+      ],
+      "near_b43c7ca4414d382e": [
+        "location_20b67c4d1b9d1396",
+        "location_3c8a8c95b870f975",
+        "location_572ec3809973d33a",
+        "location_db4e6dfe2737955c"
+      ],
+      "near_b46ba0faa328eaef": [
+        "location_4557cf2f1f4895ca"
+      ],
+      "near_b56d0187144c5145": [
+        "location_ae4f0b920fa47f8f"
+      ],
+      "near_b916361bc6deb26b": [
+        "location_c9641afc29ee3609"
+      ],
+      "near_b9b516a18e0f2d42": [
+        "location_76058e5b847641b2",
+        "location_e14b0510ae5a1467"
+      ],
+      "near_bde9c079502e2f0d": [
+        "location_093f12cd388c92df"
+      ],
+      "near_c05d9ce8d008f38a": [
+        "location_a20bad0d7a3a0eba"
+      ],
+      "near_c51fa5d18210a911": [
+        "location_a02f9d11842158b8"
+      ],
+      "near_c6fd789ddde8a4a8": [
+        "location_e8fe78aca1b349b5"
+      ],
+      "near_c826f6163224fd14": [
+        "location_0d6bd94f9cd20850"
+      ],
+      "near_ca55c45619ff22ce": [
+        "location_5898f8b50a02e383"
+      ],
+      "near_d411e4ed7608e6a7": [
+        "location_99e22dbe787048e1"
+      ],
+      "near_d4e7317e53e19dc7": [
+        "location_2a9ca73ab8637b78"
+      ],
+      "near_d630a00468e33655": [
+        "location_2d179fb0d8d37923"
+      ],
+      "near_dc01904b9001a298": [
+        "location_74fb2f4ddcc15ac2"
+      ],
+      "near_de413eb7b9f6c868": [
+        "location_8a8df3f986466623"
+      ],
+      "near_df32ab603f8b04a1": [
+        "location_df00dd6758b75aa0"
+      ],
+      "near_e13aef039aba9735": [
+        "location_a06d217aad0fcf79"
+      ],
+      "near_e4d9363153f74c9b": [
+        "location_761bbb1f4977aacd"
+      ],
+      "near_e5e49e3f1361e975": [
+        "location_7af4cbd0aa2b67ea"
+      ],
+      "near_ed38c7a7057be1f8": [
+        "location_9809647d30be01b6"
+      ],
+      "near_efffa9bba8bb08af": [
+        "location_b3dbb889d1386172"
+      ],
+      "near_f07b2d9f8ee33305": [
+        "location_b2d9af0209710ce6"
+      ],
+      "near_f0b18b10ae3caea9": [
+        "location_579e78f1d1c23fa1"
+      ],
+      "near_f16bf4f1f54acee8": [
+        "location_a067dd51414df1b9"
+      ],
+      "near_f5102cc644ae5f97": [
+        "location_f710d3e64dcac92c"
+      ],
+      "near_f8574a6d1c904f6c": [
+        "location_d297361e2d401395"
+      ],
+      "near_f890cbc83252f78b": [
+        "location_e365855a9c9ea764"
+      ],
+      "near_f9ccbb72819b44f9": [
+        "location_9ff5e43019c627bb"
+      ],
+      "near_fa8b87ee510517da": [
+        "location_712bb6a72cdaddcc"
+      ],
+      "near_ffcbf8c9ffd824d1": [
+        "location_7bbcd3cfeeaf743b"
+      ]
+    },
+    "audit_near_groups": [
+      "near_1b65dff5d9e21de9",
+      "near_220faffbbead3469",
+      "near_2330047fa391d830",
+      "near_3f2f433155dae34d",
+      "near_4eb8205867db4cee",
+      "near_5089523c3b74939f",
+      "near_6cc8a0d202967a8d",
+      "near_9c0fd6be53ce0e50",
+      "near_9e8443b2cfc39dcc",
+      "near_a72e286049c4f825",
+      "near_bde9c079502e2f0d",
+      "near_dc01904b9001a298",
+      "near_e4d9363153f74c9b",
+      "near_f07b2d9f8ee33305",
+      "near_f16bf4f1f54acee8"
+    ],
+    "n_full": 64,
+    "n_initial": 6,
+    "n_candidates": 58,
+    "n_audit": 16,
+    "n_site_positions": 80,
+    "budgets": [
+      6,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22,
+      24,
+      26,
+      28,
+      30,
+      32,
+      34,
+      36,
+      38,
+      40,
+      42,
+      44,
+      46,
+      48,
+      50,
+      52,
+      54,
+      56,
+      58,
+      60,
+      62,
+      64
+    ],
+    "audit_fraction_requested": 0.2,
+    "audit_fraction_actual": 0.2,
+    "initial_locations_requested": 5,
+    "batch_locations_requested": 2,
+    "geometry_scale_m": 55.80546568212186,
+    "plan_definition": "all representative usable positions except fixed hidden audit groups",
+    "evaluation_scope": "limited-data re-evaluation after historical test inspection"
+  },
+  {
+    "split_id": "adaptive_3aec80b6f050021a",
+    "site_id": "newlock",
+    "seed": 29,
+    "fold_id": 1,
+    "role": "evaluation",
+    "initial_ids": [
+      "location_e59435e22bf67c8b",
+      "location_f129be3a0d89931f",
+      "location_df00dd6758b75aa0",
+      "location_9ff5e43019c627bb",
+      "location_f5b8aa19340abe84"
+    ],
+    "candidate_ids": [
+      "location_00826c5ac56125db",
+      "location_0244a5d9fb5e7fd3",
+      "location_0d6bd94f9cd20850",
+      "location_18c9a5acfcfaa064",
+      "location_1912c4e4a7052b05",
+      "location_1a7ddb53e717ad76",
+      "location_1e7781ad5635bb1d",
+      "location_20b67c4d1b9d1396",
+      "location_2a9ca73ab8637b78",
+      "location_2d179fb0d8d37923",
+      "location_37b0dd9c851b23d7",
+      "location_3c14902b11190a3f",
+      "location_3c8a8c95b870f975",
+      "location_4557cf2f1f4895ca",
+      "location_465d1eb0003f4ba1",
+      "location_49d7ae52ec6c7bbb",
+      "location_52e89086dd5ef397",
+      "location_572ec3809973d33a",
+      "location_579e78f1d1c23fa1",
+      "location_5889f760614b35ac",
+      "location_6206790b6440d2be",
+      "location_699ac1ddff134f0e",
+      "location_6b2f76c940c169a8",
+      "location_712bb6a72cdaddcc",
+      "location_74fb2f4ddcc15ac2",
+      "location_76058e5b847641b2",
+      "location_761bbb1f4977aacd",
+      "location_766dfff1ece0bfd1",
+      "location_7af4cbd0aa2b67ea",
+      "location_7bbcd3cfeeaf743b",
+      "location_7da1c78c6a0ffe99",
+      "location_7df82df2fdd4be09",
+      "location_811af0b25076fd82",
+      "location_8174dc7c66bdcbbc",
+      "location_8a8df3f986466623",
+      "location_8ade1ff7c9176774",
+      "location_8b01b2eb96d00575",
+      "location_905279cee56c2f22",
+      "location_9090396d039e60db",
+      "location_9809647d30be01b6",
+      "location_9dec5d86a42553b2",
+      "location_a02f9d11842158b8",
+      "location_a067dd51414df1b9",
+      "location_a06d217aad0fcf79",
+      "location_b2d9af0209710ce6",
+      "location_b3dbb889d1386172",
+      "location_b9e36cc076c44684",
+      "location_bd68c7ed470d8818",
+      "location_c8572a1882b75e90",
+      "location_c9641afc29ee3609",
+      "location_d195a88582f49119",
+      "location_d297361e2d401395",
+      "location_db4e6dfe2737955c",
+      "location_e14b0510ae5a1467",
+      "location_e365855a9c9ea764",
+      "location_e8fe78aca1b349b5",
+      "location_efc5ea6bdfe79e92",
+      "location_f710d3e64dcac92c",
+      "location_ff57b2773356af93"
+    ],
+    "audit_ids": [
+      "location_093f12cd388c92df",
+      "location_183911ea8ccfb1c0",
+      "location_28f8bc2ce2a7f439",
+      "location_406ab5962c0ccbd2",
+      "location_5898f8b50a02e383",
+      "location_5e9ea8cec446d984",
+      "location_63976b0c61487f74",
+      "location_662be975e3493853",
+      "location_9211f1cde72b82cb",
+      "location_99e22dbe787048e1",
+      "location_9d4edd8f2f817f7f",
+      "location_a20bad0d7a3a0eba",
+      "location_ae4f0b920fa47f8f",
+      "location_afdc1ec71e92ab38",
+      "location_b0e4efcf0f2d648d",
+      "location_f41c09efb378564c"
+    ],
+    "full_ids": [
+      "location_00826c5ac56125db",
+      "location_0244a5d9fb5e7fd3",
+      "location_0d6bd94f9cd20850",
+      "location_18c9a5acfcfaa064",
+      "location_1912c4e4a7052b05",
+      "location_1a7ddb53e717ad76",
+      "location_1e7781ad5635bb1d",
+      "location_20b67c4d1b9d1396",
+      "location_2a9ca73ab8637b78",
+      "location_2d179fb0d8d37923",
+      "location_37b0dd9c851b23d7",
+      "location_3c14902b11190a3f",
+      "location_3c8a8c95b870f975",
+      "location_4557cf2f1f4895ca",
+      "location_465d1eb0003f4ba1",
+      "location_49d7ae52ec6c7bbb",
+      "location_52e89086dd5ef397",
+      "location_572ec3809973d33a",
+      "location_579e78f1d1c23fa1",
+      "location_5889f760614b35ac",
+      "location_6206790b6440d2be",
+      "location_699ac1ddff134f0e",
+      "location_6b2f76c940c169a8",
+      "location_712bb6a72cdaddcc",
+      "location_74fb2f4ddcc15ac2",
+      "location_76058e5b847641b2",
+      "location_761bbb1f4977aacd",
+      "location_766dfff1ece0bfd1",
+      "location_7af4cbd0aa2b67ea",
+      "location_7bbcd3cfeeaf743b",
+      "location_7da1c78c6a0ffe99",
+      "location_7df82df2fdd4be09",
+      "location_811af0b25076fd82",
+      "location_8174dc7c66bdcbbc",
+      "location_8a8df3f986466623",
+      "location_8ade1ff7c9176774",
+      "location_8b01b2eb96d00575",
+      "location_905279cee56c2f22",
+      "location_9090396d039e60db",
+      "location_9809647d30be01b6",
+      "location_9dec5d86a42553b2",
+      "location_9ff5e43019c627bb",
+      "location_a02f9d11842158b8",
+      "location_a067dd51414df1b9",
+      "location_a06d217aad0fcf79",
+      "location_b2d9af0209710ce6",
+      "location_b3dbb889d1386172",
+      "location_b9e36cc076c44684",
+      "location_bd68c7ed470d8818",
+      "location_c8572a1882b75e90",
+      "location_c9641afc29ee3609",
+      "location_d195a88582f49119",
+      "location_d297361e2d401395",
+      "location_db4e6dfe2737955c",
+      "location_df00dd6758b75aa0",
+      "location_e14b0510ae5a1467",
+      "location_e365855a9c9ea764",
+      "location_e59435e22bf67c8b",
+      "location_e8fe78aca1b349b5",
+      "location_efc5ea6bdfe79e92",
+      "location_f129be3a0d89931f",
+      "location_f5b8aa19340abe84",
+      "location_f710d3e64dcac92c",
+      "location_ff57b2773356af93"
+    ],
+    "near_groups": {
+      "near_02768b23ad882cd3": [
+        "location_0244a5d9fb5e7fd3"
+      ],
+      "near_04d18aca2ae621fc": [
+        "location_8ade1ff7c9176774"
+      ],
+      "near_08ad794442641a76": [
+        "location_afdc1ec71e92ab38"
+      ],
+      "near_102cb2b2a9b088a8": [
+        "location_1a7ddb53e717ad76"
+      ],
+      "near_1511a67e6ea2a387": [
+        "location_28f8bc2ce2a7f439"
+      ],
+      "near_1a16f9523d9349dc": [
+        "location_9211f1cde72b82cb"
+      ],
+      "near_1b65dff5d9e21de9": [
+        "location_b0e4efcf0f2d648d"
+      ],
+      "near_1fe471d1a60e7665": [
+        "location_9090396d039e60db"
+      ],
+      "near_220faffbbead3469": [
+        "location_d195a88582f49119"
+      ],
+      "near_2330047fa391d830": [
+        "location_e59435e22bf67c8b",
+        "location_f129be3a0d89931f"
+      ],
+      "near_23a2dbfb6f9af5c3": [
+        "location_6206790b6440d2be"
+      ],
+      "near_2888549869959160": [
+        "location_1912c4e4a7052b05"
+      ],
+      "near_2b5a2128c8b376b8": [
+        "location_9dec5d86a42553b2"
+      ],
+      "near_2dddc542e9be774d": [
+        "location_b9e36cc076c44684"
+      ],
+      "near_33dd16261a1fa4e4": [
+        "location_6b2f76c940c169a8"
+      ],
+      "near_37d1feaa10c31593": [
+        "location_1e7781ad5635bb1d"
+      ],
+      "near_3a04b89e26e1ec49": [
+        "location_18c9a5acfcfaa064"
+      ],
+      "near_3f2f433155dae34d": [
+        "location_183911ea8ccfb1c0"
+      ],
+      "near_4a941d5089a0d7c5": [
+        "location_ff57b2773356af93"
+      ],
+      "near_4eb8205867db4cee": [
+        "location_8174dc7c66bdcbbc"
+      ],
+      "near_50344b2b47d0bfff": [
+        "location_3c14902b11190a3f"
+      ],
+      "near_5089523c3b74939f": [
+        "location_52e89086dd5ef397"
+      ],
+      "near_50a5b67767baaebd": [
+        "location_7df82df2fdd4be09"
+      ],
+      "near_560fe3877c6b2682": [
+        "location_5889f760614b35ac"
+      ],
+      "near_56a84f25f7ed556e": [
+        "location_bd68c7ed470d8818"
+      ],
+      "near_5a5e6963d6f1c20a": [
+        "location_efc5ea6bdfe79e92"
+      ],
+      "near_5a8d0159443d111e": [
+        "location_00826c5ac56125db"
+      ],
+      "near_5a92f3191d9df077": [
+        "location_699ac1ddff134f0e",
+        "location_c8572a1882b75e90"
+      ],
+      "near_605ae2c29276875d": [
+        "location_f5b8aa19340abe84"
+      ],
+      "near_6cc8a0d202967a8d": [
+        "location_9d4edd8f2f817f7f"
+      ],
+      "near_7c56ea6d6fce0071": [
+        "location_7da1c78c6a0ffe99"
+      ],
+      "near_7d60285675df8fbd": [
+        "location_905279cee56c2f22"
+      ],
+      "near_81658b1bd522a61f": [
+        "location_811af0b25076fd82"
+      ],
+      "near_841274d53c5e2e8e": [
+        "location_5e9ea8cec446d984"
+      ],
+      "near_872cff0110c1a1e1": [
+        "location_465d1eb0003f4ba1"
+      ],
+      "near_87caafff93a897dd": [
+        "location_63976b0c61487f74"
+      ],
+      "near_895fdf43a928af81": [
+        "location_8b01b2eb96d00575"
+      ],
+      "near_89df3eb3327a1421": [
+        "location_662be975e3493853"
+      ],
+      "near_9c0fd6be53ce0e50": [
+        "location_f41c09efb378564c"
+      ],
+      "near_9ce691db74c0ab85": [
+        "location_49d7ae52ec6c7bbb"
+      ],
+      "near_9e8443b2cfc39dcc": [
+        "location_37b0dd9c851b23d7"
+      ],
+      "near_a65c91b3fe995ca1": [
+        "location_766dfff1ece0bfd1"
+      ],
+      "near_a72e286049c4f825": [
+        "location_406ab5962c0ccbd2"
+      ],
+      "near_b43c7ca4414d382e": [
+        "location_20b67c4d1b9d1396",
+        "location_3c8a8c95b870f975",
+        "location_572ec3809973d33a",
+        "location_db4e6dfe2737955c"
+      ],
+      "near_b46ba0faa328eaef": [
+        "location_4557cf2f1f4895ca"
+      ],
+      "near_b56d0187144c5145": [
+        "location_ae4f0b920fa47f8f"
+      ],
+      "near_b916361bc6deb26b": [
+        "location_c9641afc29ee3609"
+      ],
+      "near_b9b516a18e0f2d42": [
+        "location_76058e5b847641b2",
+        "location_e14b0510ae5a1467"
+      ],
+      "near_bde9c079502e2f0d": [
+        "location_093f12cd388c92df"
+      ],
+      "near_c05d9ce8d008f38a": [
+        "location_a20bad0d7a3a0eba"
+      ],
+      "near_c51fa5d18210a911": [
+        "location_a02f9d11842158b8"
+      ],
+      "near_c6fd789ddde8a4a8": [
+        "location_e8fe78aca1b349b5"
+      ],
+      "near_c826f6163224fd14": [
+        "location_0d6bd94f9cd20850"
+      ],
+      "near_ca55c45619ff22ce": [
+        "location_5898f8b50a02e383"
+      ],
+      "near_d411e4ed7608e6a7": [
+        "location_99e22dbe787048e1"
+      ],
+      "near_d4e7317e53e19dc7": [
+        "location_2a9ca73ab8637b78"
+      ],
+      "near_d630a00468e33655": [
+        "location_2d179fb0d8d37923"
+      ],
+      "near_dc01904b9001a298": [
+        "location_74fb2f4ddcc15ac2"
+      ],
+      "near_de413eb7b9f6c868": [
+        "location_8a8df3f986466623"
+      ],
+      "near_df32ab603f8b04a1": [
+        "location_df00dd6758b75aa0"
+      ],
+      "near_e13aef039aba9735": [
+        "location_a06d217aad0fcf79"
+      ],
+      "near_e4d9363153f74c9b": [
+        "location_761bbb1f4977aacd"
+      ],
+      "near_e5e49e3f1361e975": [
+        "location_7af4cbd0aa2b67ea"
+      ],
+      "near_ed38c7a7057be1f8": [
+        "location_9809647d30be01b6"
+      ],
+      "near_efffa9bba8bb08af": [
+        "location_b3dbb889d1386172"
+      ],
+      "near_f07b2d9f8ee33305": [
+        "location_b2d9af0209710ce6"
+      ],
+      "near_f0b18b10ae3caea9": [
+        "location_579e78f1d1c23fa1"
+      ],
+      "near_f16bf4f1f54acee8": [
+        "location_a067dd51414df1b9"
+      ],
+      "near_f5102cc644ae5f97": [
+        "location_f710d3e64dcac92c"
+      ],
+      "near_f8574a6d1c904f6c": [
+        "location_d297361e2d401395"
+      ],
+      "near_f890cbc83252f78b": [
+        "location_e365855a9c9ea764"
+      ],
+      "near_f9ccbb72819b44f9": [
+        "location_9ff5e43019c627bb"
+      ],
+      "near_fa8b87ee510517da": [
+        "location_712bb6a72cdaddcc"
+      ],
+      "near_ffcbf8c9ffd824d1": [
+        "location_7bbcd3cfeeaf743b"
+      ]
+    },
+    "audit_near_groups": [
+      "near_08ad794442641a76",
+      "near_1511a67e6ea2a387",
+      "near_1a16f9523d9349dc",
+      "near_1b65dff5d9e21de9",
+      "near_3f2f433155dae34d",
+      "near_6cc8a0d202967a8d",
+      "near_841274d53c5e2e8e",
+      "near_87caafff93a897dd",
+      "near_89df3eb3327a1421",
+      "near_9c0fd6be53ce0e50",
+      "near_a72e286049c4f825",
+      "near_b56d0187144c5145",
+      "near_bde9c079502e2f0d",
+      "near_c05d9ce8d008f38a",
+      "near_ca55c45619ff22ce",
+      "near_d411e4ed7608e6a7"
+    ],
+    "n_full": 64,
+    "n_initial": 5,
+    "n_candidates": 59,
+    "n_audit": 16,
+    "n_site_positions": 80,
+    "budgets": [
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21,
+      23,
+      25,
+      27,
+      29,
+      31,
+      33,
+      35,
+      37,
+      39,
+      41,
+      43,
+      45,
+      47,
+      49,
+      51,
+      53,
+      55,
+      57,
+      59,
+      61,
+      63,
+      64
+    ],
+    "audit_fraction_requested": 0.2,
+    "audit_fraction_actual": 0.2,
+    "initial_locations_requested": 5,
+    "batch_locations_requested": 2,
+    "geometry_scale_m": 55.80546568212186,
+    "plan_definition": "all representative usable positions except fixed hidden audit groups",
+    "evaluation_scope": "limited-data re-evaluation after historical test inspection"
+  },
+  {
+    "split_id": "adaptive_a8888b1dc78748ed",
+    "site_id": "newlock",
+    "seed": 43,
+    "fold_id": 1,
+    "role": "evaluation",
+    "initial_ids": [
+      "location_2a9ca73ab8637b78",
+      "location_9ff5e43019c627bb",
+      "location_df00dd6758b75aa0",
+      "location_905279cee56c2f22",
+      "location_699ac1ddff134f0e",
+      "location_c8572a1882b75e90"
+    ],
+    "candidate_ids": [
+      "location_00826c5ac56125db",
+      "location_0244a5d9fb5e7fd3",
+      "location_093f12cd388c92df",
+      "location_0d6bd94f9cd20850",
+      "location_183911ea8ccfb1c0",
+      "location_18c9a5acfcfaa064",
+      "location_20b67c4d1b9d1396",
+      "location_28f8bc2ce2a7f439",
+      "location_2d179fb0d8d37923",
+      "location_37b0dd9c851b23d7",
+      "location_3c14902b11190a3f",
+      "location_3c8a8c95b870f975",
+      "location_4557cf2f1f4895ca",
+      "location_465d1eb0003f4ba1",
+      "location_572ec3809973d33a",
+      "location_579e78f1d1c23fa1",
+      "location_5889f760614b35ac",
+      "location_5898f8b50a02e383",
+      "location_6206790b6440d2be",
+      "location_662be975e3493853",
+      "location_6b2f76c940c169a8",
+      "location_712bb6a72cdaddcc",
+      "location_74fb2f4ddcc15ac2",
+      "location_76058e5b847641b2",
+      "location_761bbb1f4977aacd",
+      "location_766dfff1ece0bfd1",
+      "location_7af4cbd0aa2b67ea",
+      "location_7bbcd3cfeeaf743b",
+      "location_7da1c78c6a0ffe99",
+      "location_7df82df2fdd4be09",
+      "location_811af0b25076fd82",
+      "location_8a8df3f986466623",
+      "location_8ade1ff7c9176774",
+      "location_8b01b2eb96d00575",
+      "location_9211f1cde72b82cb",
+      "location_9809647d30be01b6",
+      "location_99e22dbe787048e1",
+      "location_9d4edd8f2f817f7f",
+      "location_9dec5d86a42553b2",
+      "location_a067dd51414df1b9",
+      "location_a06d217aad0fcf79",
+      "location_a20bad0d7a3a0eba",
+      "location_afdc1ec71e92ab38",
+      "location_b2d9af0209710ce6",
+      "location_b3dbb889d1386172",
+      "location_b9e36cc076c44684",
+      "location_d195a88582f49119",
+      "location_db4e6dfe2737955c",
+      "location_e14b0510ae5a1467",
+      "location_e365855a9c9ea764",
+      "location_e59435e22bf67c8b",
+      "location_e8fe78aca1b349b5",
+      "location_efc5ea6bdfe79e92",
+      "location_f129be3a0d89931f",
+      "location_f41c09efb378564c",
+      "location_f5b8aa19340abe84",
+      "location_f710d3e64dcac92c",
+      "location_ff57b2773356af93"
+    ],
+    "audit_ids": [
+      "location_1912c4e4a7052b05",
+      "location_1a7ddb53e717ad76",
+      "location_1e7781ad5635bb1d",
+      "location_406ab5962c0ccbd2",
+      "location_49d7ae52ec6c7bbb",
+      "location_52e89086dd5ef397",
+      "location_5e9ea8cec446d984",
+      "location_63976b0c61487f74",
+      "location_8174dc7c66bdcbbc",
+      "location_9090396d039e60db",
+      "location_a02f9d11842158b8",
+      "location_ae4f0b920fa47f8f",
+      "location_b0e4efcf0f2d648d",
+      "location_bd68c7ed470d8818",
+      "location_c9641afc29ee3609",
+      "location_d297361e2d401395"
+    ],
+    "full_ids": [
+      "location_00826c5ac56125db",
+      "location_0244a5d9fb5e7fd3",
+      "location_093f12cd388c92df",
+      "location_0d6bd94f9cd20850",
+      "location_183911ea8ccfb1c0",
+      "location_18c9a5acfcfaa064",
+      "location_20b67c4d1b9d1396",
+      "location_28f8bc2ce2a7f439",
+      "location_2a9ca73ab8637b78",
+      "location_2d179fb0d8d37923",
+      "location_37b0dd9c851b23d7",
+      "location_3c14902b11190a3f",
+      "location_3c8a8c95b870f975",
+      "location_4557cf2f1f4895ca",
+      "location_465d1eb0003f4ba1",
+      "location_572ec3809973d33a",
+      "location_579e78f1d1c23fa1",
+      "location_5889f760614b35ac",
+      "location_5898f8b50a02e383",
+      "location_6206790b6440d2be",
+      "location_662be975e3493853",
+      "location_699ac1ddff134f0e",
+      "location_6b2f76c940c169a8",
+      "location_712bb6a72cdaddcc",
+      "location_74fb2f4ddcc15ac2",
+      "location_76058e5b847641b2",
+      "location_761bbb1f4977aacd",
+      "location_766dfff1ece0bfd1",
+      "location_7af4cbd0aa2b67ea",
+      "location_7bbcd3cfeeaf743b",
+      "location_7da1c78c6a0ffe99",
+      "location_7df82df2fdd4be09",
+      "location_811af0b25076fd82",
+      "location_8a8df3f986466623",
+      "location_8ade1ff7c9176774",
+      "location_8b01b2eb96d00575",
+      "location_905279cee56c2f22",
+      "location_9211f1cde72b82cb",
+      "location_9809647d30be01b6",
+      "location_99e22dbe787048e1",
+      "location_9d4edd8f2f817f7f",
+      "location_9dec5d86a42553b2",
+      "location_9ff5e43019c627bb",
+      "location_a067dd51414df1b9",
+      "location_a06d217aad0fcf79",
+      "location_a20bad0d7a3a0eba",
+      "location_afdc1ec71e92ab38",
+      "location_b2d9af0209710ce6",
+      "location_b3dbb889d1386172",
+      "location_b9e36cc076c44684",
+      "location_c8572a1882b75e90",
+      "location_d195a88582f49119",
+      "location_db4e6dfe2737955c",
+      "location_df00dd6758b75aa0",
+      "location_e14b0510ae5a1467",
+      "location_e365855a9c9ea764",
+      "location_e59435e22bf67c8b",
+      "location_e8fe78aca1b349b5",
+      "location_efc5ea6bdfe79e92",
+      "location_f129be3a0d89931f",
+      "location_f41c09efb378564c",
+      "location_f5b8aa19340abe84",
+      "location_f710d3e64dcac92c",
+      "location_ff57b2773356af93"
+    ],
+    "near_groups": {
+      "near_02768b23ad882cd3": [
+        "location_0244a5d9fb5e7fd3"
+      ],
+      "near_04d18aca2ae621fc": [
+        "location_8ade1ff7c9176774"
+      ],
+      "near_08ad794442641a76": [
+        "location_afdc1ec71e92ab38"
+      ],
+      "near_102cb2b2a9b088a8": [
+        "location_1a7ddb53e717ad76"
+      ],
+      "near_1511a67e6ea2a387": [
+        "location_28f8bc2ce2a7f439"
+      ],
+      "near_1a16f9523d9349dc": [
+        "location_9211f1cde72b82cb"
+      ],
+      "near_1b65dff5d9e21de9": [
+        "location_b0e4efcf0f2d648d"
+      ],
+      "near_1fe471d1a60e7665": [
+        "location_9090396d039e60db"
+      ],
+      "near_220faffbbead3469": [
+        "location_d195a88582f49119"
+      ],
+      "near_2330047fa391d830": [
+        "location_e59435e22bf67c8b",
+        "location_f129be3a0d89931f"
+      ],
+      "near_23a2dbfb6f9af5c3": [
+        "location_6206790b6440d2be"
+      ],
+      "near_2888549869959160": [
+        "location_1912c4e4a7052b05"
+      ],
+      "near_2b5a2128c8b376b8": [
+        "location_9dec5d86a42553b2"
+      ],
+      "near_2dddc542e9be774d": [
+        "location_b9e36cc076c44684"
+      ],
+      "near_33dd16261a1fa4e4": [
+        "location_6b2f76c940c169a8"
+      ],
+      "near_37d1feaa10c31593": [
+        "location_1e7781ad5635bb1d"
+      ],
+      "near_3a04b89e26e1ec49": [
+        "location_18c9a5acfcfaa064"
+      ],
+      "near_3f2f433155dae34d": [
+        "location_183911ea8ccfb1c0"
+      ],
+      "near_4a941d5089a0d7c5": [
+        "location_ff57b2773356af93"
+      ],
+      "near_4eb8205867db4cee": [
+        "location_8174dc7c66bdcbbc"
+      ],
+      "near_50344b2b47d0bfff": [
+        "location_3c14902b11190a3f"
+      ],
+      "near_5089523c3b74939f": [
+        "location_52e89086dd5ef397"
+      ],
+      "near_50a5b67767baaebd": [
+        "location_7df82df2fdd4be09"
+      ],
+      "near_560fe3877c6b2682": [
+        "location_5889f760614b35ac"
+      ],
+      "near_56a84f25f7ed556e": [
+        "location_bd68c7ed470d8818"
+      ],
+      "near_5a5e6963d6f1c20a": [
+        "location_efc5ea6bdfe79e92"
+      ],
+      "near_5a8d0159443d111e": [
+        "location_00826c5ac56125db"
+      ],
+      "near_5a92f3191d9df077": [
+        "location_699ac1ddff134f0e",
+        "location_c8572a1882b75e90"
+      ],
+      "near_605ae2c29276875d": [
+        "location_f5b8aa19340abe84"
+      ],
+      "near_6cc8a0d202967a8d": [
+        "location_9d4edd8f2f817f7f"
+      ],
+      "near_7c56ea6d6fce0071": [
+        "location_7da1c78c6a0ffe99"
+      ],
+      "near_7d60285675df8fbd": [
+        "location_905279cee56c2f22"
+      ],
+      "near_81658b1bd522a61f": [
+        "location_811af0b25076fd82"
+      ],
+      "near_841274d53c5e2e8e": [
+        "location_5e9ea8cec446d984"
+      ],
+      "near_872cff0110c1a1e1": [
+        "location_465d1eb0003f4ba1"
+      ],
+      "near_87caafff93a897dd": [
+        "location_63976b0c61487f74"
+      ],
+      "near_895fdf43a928af81": [
+        "location_8b01b2eb96d00575"
+      ],
+      "near_89df3eb3327a1421": [
+        "location_662be975e3493853"
+      ],
+      "near_9c0fd6be53ce0e50": [
+        "location_f41c09efb378564c"
+      ],
+      "near_9ce691db74c0ab85": [
+        "location_49d7ae52ec6c7bbb"
+      ],
+      "near_9e8443b2cfc39dcc": [
+        "location_37b0dd9c851b23d7"
+      ],
+      "near_a65c91b3fe995ca1": [
+        "location_766dfff1ece0bfd1"
+      ],
+      "near_a72e286049c4f825": [
+        "location_406ab5962c0ccbd2"
+      ],
+      "near_b43c7ca4414d382e": [
+        "location_20b67c4d1b9d1396",
+        "location_3c8a8c95b870f975",
+        "location_572ec3809973d33a",
+        "location_db4e6dfe2737955c"
+      ],
+      "near_b46ba0faa328eaef": [
+        "location_4557cf2f1f4895ca"
+      ],
+      "near_b56d0187144c5145": [
+        "location_ae4f0b920fa47f8f"
+      ],
+      "near_b916361bc6deb26b": [
+        "location_c9641afc29ee3609"
+      ],
+      "near_b9b516a18e0f2d42": [
+        "location_76058e5b847641b2",
+        "location_e14b0510ae5a1467"
+      ],
+      "near_bde9c079502e2f0d": [
+        "location_093f12cd388c92df"
+      ],
+      "near_c05d9ce8d008f38a": [
+        "location_a20bad0d7a3a0eba"
+      ],
+      "near_c51fa5d18210a911": [
+        "location_a02f9d11842158b8"
+      ],
+      "near_c6fd789ddde8a4a8": [
+        "location_e8fe78aca1b349b5"
+      ],
+      "near_c826f6163224fd14": [
+        "location_0d6bd94f9cd20850"
+      ],
+      "near_ca55c45619ff22ce": [
+        "location_5898f8b50a02e383"
+      ],
+      "near_d411e4ed7608e6a7": [
+        "location_99e22dbe787048e1"
+      ],
+      "near_d4e7317e53e19dc7": [
+        "location_2a9ca73ab8637b78"
+      ],
+      "near_d630a00468e33655": [
+        "location_2d179fb0d8d37923"
+      ],
+      "near_dc01904b9001a298": [
+        "location_74fb2f4ddcc15ac2"
+      ],
+      "near_de413eb7b9f6c868": [
+        "location_8a8df3f986466623"
+      ],
+      "near_df32ab603f8b04a1": [
+        "location_df00dd6758b75aa0"
+      ],
+      "near_e13aef039aba9735": [
+        "location_a06d217aad0fcf79"
+      ],
+      "near_e4d9363153f74c9b": [
+        "location_761bbb1f4977aacd"
+      ],
+      "near_e5e49e3f1361e975": [
+        "location_7af4cbd0aa2b67ea"
+      ],
+      "near_ed38c7a7057be1f8": [
+        "location_9809647d30be01b6"
+      ],
+      "near_efffa9bba8bb08af": [
+        "location_b3dbb889d1386172"
+      ],
+      "near_f07b2d9f8ee33305": [
+        "location_b2d9af0209710ce6"
+      ],
+      "near_f0b18b10ae3caea9": [
+        "location_579e78f1d1c23fa1"
+      ],
+      "near_f16bf4f1f54acee8": [
+        "location_a067dd51414df1b9"
+      ],
+      "near_f5102cc644ae5f97": [
+        "location_f710d3e64dcac92c"
+      ],
+      "near_f8574a6d1c904f6c": [
+        "location_d297361e2d401395"
+      ],
+      "near_f890cbc83252f78b": [
+        "location_e365855a9c9ea764"
+      ],
+      "near_f9ccbb72819b44f9": [
+        "location_9ff5e43019c627bb"
+      ],
+      "near_fa8b87ee510517da": [
+        "location_712bb6a72cdaddcc"
+      ],
+      "near_ffcbf8c9ffd824d1": [
+        "location_7bbcd3cfeeaf743b"
+      ]
+    },
+    "audit_near_groups": [
+      "near_102cb2b2a9b088a8",
+      "near_1b65dff5d9e21de9",
+      "near_1fe471d1a60e7665",
+      "near_2888549869959160",
+      "near_37d1feaa10c31593",
+      "near_4eb8205867db4cee",
+      "near_5089523c3b74939f",
+      "near_56a84f25f7ed556e",
+      "near_841274d53c5e2e8e",
+      "near_87caafff93a897dd",
+      "near_9ce691db74c0ab85",
+      "near_a72e286049c4f825",
+      "near_b56d0187144c5145",
+      "near_b916361bc6deb26b",
+      "near_c51fa5d18210a911",
+      "near_f8574a6d1c904f6c"
+    ],
+    "n_full": 64,
+    "n_initial": 6,
+    "n_candidates": 58,
+    "n_audit": 16,
+    "n_site_positions": 80,
+    "budgets": [
+      6,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22,
+      24,
+      26,
+      28,
+      30,
+      32,
+      34,
+      36,
+      38,
+      40,
+      42,
+      44,
+      46,
+      48,
+      50,
+      52,
+      54,
+      56,
+      58,
+      60,
+      62,
+      64
+    ],
+    "audit_fraction_requested": 0.2,
+    "audit_fraction_actual": 0.2,
+    "initial_locations_requested": 5,
+    "batch_locations_requested": 2,
+    "geometry_scale_m": 55.80546568212186,
+    "plan_definition": "all representative usable positions except fixed hidden audit groups",
+    "evaluation_scope": "limited-data re-evaluation after historical test inspection"
+  },
+  {
+    "split_id": "adaptive_e4a7807fba3aada1",
+    "site_id": "tauranga_farmers_building",
+    "seed": 17,
+    "fold_id": 0,
+    "role": "development",
+    "initial_ids": [
+      "location_4bc7a71d44e8f381",
+      "location_c011edd02b13052a",
+      "location_b07bf282028bf75f",
+      "location_fa134ff7a2f0b3c1",
+      "location_147d4ea4032e6c20"
+    ],
+    "candidate_ids": [
+      "location_05595312a4ee67a0",
+      "location_10b796731b5c4914",
+      "location_167dcb8c0ac84239",
+      "location_1b5e6eced4b36e5e",
+      "location_1d17a260c1ae0a1f",
+      "location_5cd223592b8ea4f8",
+      "location_664dbe86f7609eb5",
+      "location_72d7f06b49ad7fa4",
+      "location_815ddf63afa820d3",
+      "location_8b0d80b31006dba2",
+      "location_8bfee89ce1be3bb1",
+      "location_b2f78bf09b6f119c",
+      "location_c4d7b768f24ac42c",
+      "location_c58e7b85035324e7",
+      "location_e65e167d1db34638",
+      "location_f002049cde7f3ed8",
+      "location_f0867c6d202b8441"
+    ],
+    "audit_ids": [
+      "location_06a64a56c069a5ea",
+      "location_2c47398f622ef7da",
+      "location_44beaa4e91d7c37b",
+      "location_81260ca7690c7238",
+      "location_d2180c298a46ac9a",
+      "location_ea1bcd3e6538841e"
+    ],
+    "full_ids": [
+      "location_05595312a4ee67a0",
+      "location_10b796731b5c4914",
+      "location_147d4ea4032e6c20",
+      "location_167dcb8c0ac84239",
+      "location_1b5e6eced4b36e5e",
+      "location_1d17a260c1ae0a1f",
+      "location_4bc7a71d44e8f381",
+      "location_5cd223592b8ea4f8",
+      "location_664dbe86f7609eb5",
+      "location_72d7f06b49ad7fa4",
+      "location_815ddf63afa820d3",
+      "location_8b0d80b31006dba2",
+      "location_8bfee89ce1be3bb1",
+      "location_b07bf282028bf75f",
+      "location_b2f78bf09b6f119c",
+      "location_c011edd02b13052a",
+      "location_c4d7b768f24ac42c",
+      "location_c58e7b85035324e7",
+      "location_e65e167d1db34638",
+      "location_f002049cde7f3ed8",
+      "location_f0867c6d202b8441",
+      "location_fa134ff7a2f0b3c1"
+    ],
+    "near_groups": {
+      "near_08077a15025160ef": [
+        "location_c011edd02b13052a"
+      ],
+      "near_0d500e04374e27c3": [
+        "location_b2f78bf09b6f119c"
+      ],
+      "near_25784319928bd9d1": [
+        "location_81260ca7690c7238"
+      ],
+      "near_261acb018e4758af": [
+        "location_10b796731b5c4914"
+      ],
+      "near_28984a83fa7113a9": [
+        "location_b07bf282028bf75f"
+      ],
+      "near_2ae18661f414d0e2": [
+        "location_8bfee89ce1be3bb1"
+      ],
+      "near_318dc07adc936f00": [
+        "location_06a64a56c069a5ea"
+      ],
+      "near_346de4727e051b47": [
+        "location_147d4ea4032e6c20"
+      ],
+      "near_40424bb2e5dd4e6b": [
+        "location_167dcb8c0ac84239"
+      ],
+      "near_5ccb0879aed187cb": [
+        "location_f0867c6d202b8441"
+      ],
+      "near_677e306095ab5a2d": [
+        "location_4bc7a71d44e8f381"
+      ],
+      "near_6dbe3a39e956823c": [
+        "location_1b5e6eced4b36e5e"
+      ],
+      "near_73b50a8039433539": [
+        "location_05595312a4ee67a0"
+      ],
+      "near_7d78c811b5d5d529": [
+        "location_ea1bcd3e6538841e"
+      ],
+      "near_8afe11372ee3f25d": [
+        "location_8b0d80b31006dba2"
+      ],
+      "near_974d82426c4efbd7": [
+        "location_815ddf63afa820d3"
+      ],
+      "near_a0ef8f1e1cc7535a": [
+        "location_fa134ff7a2f0b3c1"
+      ],
+      "near_aecdb1b380eb32e5": [
+        "location_c58e7b85035324e7"
+      ],
+      "near_b9831d09991abee3": [
+        "location_664dbe86f7609eb5"
+      ],
+      "near_ba7433087eb81766": [
+        "location_5cd223592b8ea4f8"
+      ],
+      "near_c9511711dd9332f1": [
+        "location_e65e167d1db34638"
+      ],
+      "near_cba98035090450ca": [
+        "location_f002049cde7f3ed8"
+      ],
+      "near_d42ee838f1cefc37": [
+        "location_72d7f06b49ad7fa4"
+      ],
+      "near_d43933c425eaab1d": [
+        "location_44beaa4e91d7c37b"
+      ],
+      "near_d8896af3fdfe4007": [
+        "location_1d17a260c1ae0a1f"
+      ],
+      "near_d8f6b997111f6320": [
+        "location_2c47398f622ef7da"
+      ],
+      "near_e1f8ec5453c04113": [
+        "location_d2180c298a46ac9a"
+      ],
+      "near_eeb793bf0e89c5a2": [
+        "location_c4d7b768f24ac42c"
+      ]
+    },
+    "audit_near_groups": [
+      "near_25784319928bd9d1",
+      "near_318dc07adc936f00",
+      "near_7d78c811b5d5d529",
+      "near_d43933c425eaab1d",
+      "near_d8f6b997111f6320",
+      "near_e1f8ec5453c04113"
+    ],
+    "n_full": 22,
+    "n_initial": 5,
+    "n_candidates": 17,
+    "n_audit": 6,
+    "n_site_positions": 28,
+    "budgets": [
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21,
+      22
+    ],
+    "audit_fraction_requested": 0.2,
+    "audit_fraction_actual": 0.21428571428571427,
+    "initial_locations_requested": 5,
+    "batch_locations_requested": 2,
+    "geometry_scale_m": 12.761167658367647,
+    "plan_definition": "all representative usable positions except fixed hidden audit groups",
+    "evaluation_scope": "limited-data re-evaluation after historical test inspection"
+  },
+  {
+    "split_id": "adaptive_cff0503ecabf35e2",
+    "site_id": "tauranga_farmers_building",
+    "seed": 29,
+    "fold_id": 0,
+    "role": "development",
+    "initial_ids": [
+      "location_1b5e6eced4b36e5e",
+      "location_b07bf282028bf75f",
+      "location_c011edd02b13052a",
+      "location_fa134ff7a2f0b3c1",
+      "location_81260ca7690c7238"
+    ],
+    "candidate_ids": [
+      "location_05595312a4ee67a0",
+      "location_167dcb8c0ac84239",
+      "location_1d17a260c1ae0a1f",
+      "location_2c47398f622ef7da",
+      "location_44beaa4e91d7c37b",
+      "location_4bc7a71d44e8f381",
+      "location_5cd223592b8ea4f8",
+      "location_664dbe86f7609eb5",
+      "location_72d7f06b49ad7fa4",
+      "location_815ddf63afa820d3",
+      "location_8b0d80b31006dba2",
+      "location_8bfee89ce1be3bb1",
+      "location_b2f78bf09b6f119c",
+      "location_e65e167d1db34638",
+      "location_ea1bcd3e6538841e",
+      "location_f002049cde7f3ed8",
+      "location_f0867c6d202b8441"
+    ],
+    "audit_ids": [
+      "location_06a64a56c069a5ea",
+      "location_10b796731b5c4914",
+      "location_147d4ea4032e6c20",
+      "location_c4d7b768f24ac42c",
+      "location_c58e7b85035324e7",
+      "location_d2180c298a46ac9a"
+    ],
+    "full_ids": [
+      "location_05595312a4ee67a0",
+      "location_167dcb8c0ac84239",
+      "location_1b5e6eced4b36e5e",
+      "location_1d17a260c1ae0a1f",
+      "location_2c47398f622ef7da",
+      "location_44beaa4e91d7c37b",
+      "location_4bc7a71d44e8f381",
+      "location_5cd223592b8ea4f8",
+      "location_664dbe86f7609eb5",
+      "location_72d7f06b49ad7fa4",
+      "location_81260ca7690c7238",
+      "location_815ddf63afa820d3",
+      "location_8b0d80b31006dba2",
+      "location_8bfee89ce1be3bb1",
+      "location_b07bf282028bf75f",
+      "location_b2f78bf09b6f119c",
+      "location_c011edd02b13052a",
+      "location_e65e167d1db34638",
+      "location_ea1bcd3e6538841e",
+      "location_f002049cde7f3ed8",
+      "location_f0867c6d202b8441",
+      "location_fa134ff7a2f0b3c1"
+    ],
+    "near_groups": {
+      "near_08077a15025160ef": [
+        "location_c011edd02b13052a"
+      ],
+      "near_0d500e04374e27c3": [
+        "location_b2f78bf09b6f119c"
+      ],
+      "near_25784319928bd9d1": [
+        "location_81260ca7690c7238"
+      ],
+      "near_261acb018e4758af": [
+        "location_10b796731b5c4914"
+      ],
+      "near_28984a83fa7113a9": [
+        "location_b07bf282028bf75f"
+      ],
+      "near_2ae18661f414d0e2": [
+        "location_8bfee89ce1be3bb1"
+      ],
+      "near_318dc07adc936f00": [
+        "location_06a64a56c069a5ea"
+      ],
+      "near_346de4727e051b47": [
+        "location_147d4ea4032e6c20"
+      ],
+      "near_40424bb2e5dd4e6b": [
+        "location_167dcb8c0ac84239"
+      ],
+      "near_5ccb0879aed187cb": [
+        "location_f0867c6d202b8441"
+      ],
+      "near_677e306095ab5a2d": [
+        "location_4bc7a71d44e8f381"
+      ],
+      "near_6dbe3a39e956823c": [
+        "location_1b5e6eced4b36e5e"
+      ],
+      "near_73b50a8039433539": [
+        "location_05595312a4ee67a0"
+      ],
+      "near_7d78c811b5d5d529": [
+        "location_ea1bcd3e6538841e"
+      ],
+      "near_8afe11372ee3f25d": [
+        "location_8b0d80b31006dba2"
+      ],
+      "near_974d82426c4efbd7": [
+        "location_815ddf63afa820d3"
+      ],
+      "near_a0ef8f1e1cc7535a": [
+        "location_fa134ff7a2f0b3c1"
+      ],
+      "near_aecdb1b380eb32e5": [
+        "location_c58e7b85035324e7"
+      ],
+      "near_b9831d09991abee3": [
+        "location_664dbe86f7609eb5"
+      ],
+      "near_ba7433087eb81766": [
+        "location_5cd223592b8ea4f8"
+      ],
+      "near_c9511711dd9332f1": [
+        "location_e65e167d1db34638"
+      ],
+      "near_cba98035090450ca": [
+        "location_f002049cde7f3ed8"
+      ],
+      "near_d42ee838f1cefc37": [
+        "location_72d7f06b49ad7fa4"
+      ],
+      "near_d43933c425eaab1d": [
+        "location_44beaa4e91d7c37b"
+      ],
+      "near_d8896af3fdfe4007": [
+        "location_1d17a260c1ae0a1f"
+      ],
+      "near_d8f6b997111f6320": [
+        "location_2c47398f622ef7da"
+      ],
+      "near_e1f8ec5453c04113": [
+        "location_d2180c298a46ac9a"
+      ],
+      "near_eeb793bf0e89c5a2": [
+        "location_c4d7b768f24ac42c"
+      ]
+    },
+    "audit_near_groups": [
+      "near_261acb018e4758af",
+      "near_318dc07adc936f00",
+      "near_346de4727e051b47",
+      "near_aecdb1b380eb32e5",
+      "near_e1f8ec5453c04113",
+      "near_eeb793bf0e89c5a2"
+    ],
+    "n_full": 22,
+    "n_initial": 5,
+    "n_candidates": 17,
+    "n_audit": 6,
+    "n_site_positions": 28,
+    "budgets": [
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21,
+      22
+    ],
+    "audit_fraction_requested": 0.2,
+    "audit_fraction_actual": 0.21428571428571427,
+    "initial_locations_requested": 5,
+    "batch_locations_requested": 2,
+    "geometry_scale_m": 12.761167658367647,
+    "plan_definition": "all representative usable positions except fixed hidden audit groups",
+    "evaluation_scope": "limited-data re-evaluation after historical test inspection"
+  },
+  {
+    "split_id": "adaptive_8ed3444ca3aa7c8a",
+    "site_id": "tauranga_farmers_building",
+    "seed": 43,
+    "fold_id": 0,
+    "role": "development",
+    "initial_ids": [
+      "location_1d17a260c1ae0a1f",
+      "location_b07bf282028bf75f",
+      "location_fa134ff7a2f0b3c1",
+      "location_c011edd02b13052a",
+      "location_d2180c298a46ac9a"
+    ],
+    "candidate_ids": [
+      "location_05595312a4ee67a0",
+      "location_06a64a56c069a5ea",
+      "location_10b796731b5c4914",
+      "location_147d4ea4032e6c20",
+      "location_1b5e6eced4b36e5e",
+      "location_2c47398f622ef7da",
+      "location_44beaa4e91d7c37b",
+      "location_4bc7a71d44e8f381",
+      "location_81260ca7690c7238",
+      "location_815ddf63afa820d3",
+      "location_8b0d80b31006dba2",
+      "location_8bfee89ce1be3bb1",
+      "location_b2f78bf09b6f119c",
+      "location_c4d7b768f24ac42c",
+      "location_e65e167d1db34638",
+      "location_ea1bcd3e6538841e",
+      "location_f0867c6d202b8441"
+    ],
+    "audit_ids": [
+      "location_167dcb8c0ac84239",
+      "location_5cd223592b8ea4f8",
+      "location_664dbe86f7609eb5",
+      "location_72d7f06b49ad7fa4",
+      "location_c58e7b85035324e7",
+      "location_f002049cde7f3ed8"
+    ],
+    "full_ids": [
+      "location_05595312a4ee67a0",
+      "location_06a64a56c069a5ea",
+      "location_10b796731b5c4914",
+      "location_147d4ea4032e6c20",
+      "location_1b5e6eced4b36e5e",
+      "location_1d17a260c1ae0a1f",
+      "location_2c47398f622ef7da",
+      "location_44beaa4e91d7c37b",
+      "location_4bc7a71d44e8f381",
+      "location_81260ca7690c7238",
+      "location_815ddf63afa820d3",
+      "location_8b0d80b31006dba2",
+      "location_8bfee89ce1be3bb1",
+      "location_b07bf282028bf75f",
+      "location_b2f78bf09b6f119c",
+      "location_c011edd02b13052a",
+      "location_c4d7b768f24ac42c",
+      "location_d2180c298a46ac9a",
+      "location_e65e167d1db34638",
+      "location_ea1bcd3e6538841e",
+      "location_f0867c6d202b8441",
+      "location_fa134ff7a2f0b3c1"
+    ],
+    "near_groups": {
+      "near_08077a15025160ef": [
+        "location_c011edd02b13052a"
+      ],
+      "near_0d500e04374e27c3": [
+        "location_b2f78bf09b6f119c"
+      ],
+      "near_25784319928bd9d1": [
+        "location_81260ca7690c7238"
+      ],
+      "near_261acb018e4758af": [
+        "location_10b796731b5c4914"
+      ],
+      "near_28984a83fa7113a9": [
+        "location_b07bf282028bf75f"
+      ],
+      "near_2ae18661f414d0e2": [
+        "location_8bfee89ce1be3bb1"
+      ],
+      "near_318dc07adc936f00": [
+        "location_06a64a56c069a5ea"
+      ],
+      "near_346de4727e051b47": [
+        "location_147d4ea4032e6c20"
+      ],
+      "near_40424bb2e5dd4e6b": [
+        "location_167dcb8c0ac84239"
+      ],
+      "near_5ccb0879aed187cb": [
+        "location_f0867c6d202b8441"
+      ],
+      "near_677e306095ab5a2d": [
+        "location_4bc7a71d44e8f381"
+      ],
+      "near_6dbe3a39e956823c": [
+        "location_1b5e6eced4b36e5e"
+      ],
+      "near_73b50a8039433539": [
+        "location_05595312a4ee67a0"
+      ],
+      "near_7d78c811b5d5d529": [
+        "location_ea1bcd3e6538841e"
+      ],
+      "near_8afe11372ee3f25d": [
+        "location_8b0d80b31006dba2"
+      ],
+      "near_974d82426c4efbd7": [
+        "location_815ddf63afa820d3"
+      ],
+      "near_a0ef8f1e1cc7535a": [
+        "location_fa134ff7a2f0b3c1"
+      ],
+      "near_aecdb1b380eb32e5": [
+        "location_c58e7b85035324e7"
+      ],
+      "near_b9831d09991abee3": [
+        "location_664dbe86f7609eb5"
+      ],
+      "near_ba7433087eb81766": [
+        "location_5cd223592b8ea4f8"
+      ],
+      "near_c9511711dd9332f1": [
+        "location_e65e167d1db34638"
+      ],
+      "near_cba98035090450ca": [
+        "location_f002049cde7f3ed8"
+      ],
+      "near_d42ee838f1cefc37": [
+        "location_72d7f06b49ad7fa4"
+      ],
+      "near_d43933c425eaab1d": [
+        "location_44beaa4e91d7c37b"
+      ],
+      "near_d8896af3fdfe4007": [
+        "location_1d17a260c1ae0a1f"
+      ],
+      "near_d8f6b997111f6320": [
+        "location_2c47398f622ef7da"
+      ],
+      "near_e1f8ec5453c04113": [
+        "location_d2180c298a46ac9a"
+      ],
+      "near_eeb793bf0e89c5a2": [
+        "location_c4d7b768f24ac42c"
+      ]
+    },
+    "audit_near_groups": [
+      "near_40424bb2e5dd4e6b",
+      "near_aecdb1b380eb32e5",
+      "near_b9831d09991abee3",
+      "near_ba7433087eb81766",
+      "near_cba98035090450ca",
+      "near_d42ee838f1cefc37"
+    ],
+    "n_full": 22,
+    "n_initial": 5,
+    "n_candidates": 17,
+    "n_audit": 6,
+    "n_site_positions": 28,
+    "budgets": [
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21,
+      22
+    ],
+    "audit_fraction_requested": 0.2,
+    "audit_fraction_actual": 0.21428571428571427,
+    "initial_locations_requested": 5,
+    "batch_locations_requested": 2,
+    "geometry_scale_m": 12.761167658367647,
+    "plan_definition": "all representative usable positions except fixed hidden audit groups",
+    "evaluation_scope": "limited-data re-evaluation after historical test inspection"
+  },
+  {
+    "split_id": "adaptive_a48bfe82cbb8824d",
+    "site_id": "wellington_airport",
+    "seed": 17,
+    "fold_id": 0,
+    "role": "evaluation",
+    "initial_ids": [
+      "location_24c37b528cc84949",
+      "location_d3fde2c751777a97",
+      "location_0fb3b97981f76305",
+      "location_c714d599f2cfa06b",
+      "location_59e98f9eb27b8600"
+    ],
+    "candidate_ids": [
+      "location_01088ca2a5a16d99",
+      "location_0897dfc520d98849",
+      "location_0cfa5902604f7eaa",
+      "location_6c07dac4a86017b1",
+      "location_6d69d603e6af8cf3",
+      "location_714fce816f2fc2f1",
+      "location_7c7da0cf26b6edb1",
+      "location_7e8d413ef6e6c8b1",
+      "location_9db8e1a88af5110a",
+      "location_a749ad17afa417b4",
+      "location_a823c0623478e16c",
+      "location_d862b258332f5a70",
+      "location_d9a6063fbda1ecc2",
+      "location_e49ecd555713a911",
+      "location_f9832671e83882c8",
+      "location_fd8b114156976782"
+    ],
+    "audit_ids": [
+      "location_13be81de5845c20d",
+      "location_5818e0736de72863",
+      "location_6c9e7fa3bfbefad7",
+      "location_8e64c781d13fa013",
+      "location_8f9c8c04f0f6684c",
+      "location_d38f32d2fede97e4"
+    ],
+    "full_ids": [
+      "location_01088ca2a5a16d99",
+      "location_0897dfc520d98849",
+      "location_0cfa5902604f7eaa",
+      "location_0fb3b97981f76305",
+      "location_24c37b528cc84949",
+      "location_59e98f9eb27b8600",
+      "location_6c07dac4a86017b1",
+      "location_6d69d603e6af8cf3",
+      "location_714fce816f2fc2f1",
+      "location_7c7da0cf26b6edb1",
+      "location_7e8d413ef6e6c8b1",
+      "location_9db8e1a88af5110a",
+      "location_a749ad17afa417b4",
+      "location_a823c0623478e16c",
+      "location_c714d599f2cfa06b",
+      "location_d3fde2c751777a97",
+      "location_d862b258332f5a70",
+      "location_d9a6063fbda1ecc2",
+      "location_e49ecd555713a911",
+      "location_f9832671e83882c8",
+      "location_fd8b114156976782"
+    ],
+    "near_groups": {
+      "near_036fd1a520a129d1": [
+        "location_6c07dac4a86017b1"
+      ],
+      "near_0b0e9a2922fd1ff8": [
+        "location_5818e0736de72863"
+      ],
+      "near_10835d347c3fe083": [
+        "location_714fce816f2fc2f1"
+      ],
+      "near_2a3a31ee731e68b3": [
+        "location_c714d599f2cfa06b"
+      ],
+      "near_3ab28c3bce7c9bb8": [
+        "location_13be81de5845c20d"
+      ],
+      "near_3ad7c8af77485317": [
+        "location_f9832671e83882c8"
+      ],
+      "near_453106acf08df9b3": [
+        "location_d3fde2c751777a97"
+      ],
+      "near_4905eb2c9f6bd626": [
+        "location_fd8b114156976782"
+      ],
+      "near_540ed2a617a18cad": [
+        "location_7e8d413ef6e6c8b1"
+      ],
+      "near_56a4be7bc4ad1278": [
+        "location_9db8e1a88af5110a"
+      ],
+      "near_6846be6da57b9c67": [
+        "location_d38f32d2fede97e4"
+      ],
+      "near_6b4a7c99d3001440": [
+        "location_a749ad17afa417b4"
+      ],
+      "near_79f0b4ec67158146": [
+        "location_6c9e7fa3bfbefad7"
+      ],
+      "near_8020ca91868775f6": [
+        "location_d9a6063fbda1ecc2"
+      ],
+      "near_983a0f7541eded64": [
+        "location_8f9c8c04f0f6684c"
+      ],
+      "near_a0c6e83847118b8c": [
+        "location_8e64c781d13fa013"
+      ],
+      "near_ad33e31b4c221052": [
+        "location_a823c0623478e16c"
+      ],
+      "near_b1d47f62890abe54": [
+        "location_0cfa5902604f7eaa"
+      ],
+      "near_b829468da7b77c08": [
+        "location_0fb3b97981f76305"
+      ],
+      "near_be30ad88d002fa72": [
+        "location_7c7da0cf26b6edb1"
+      ],
+      "near_bff67426eefaa798": [
+        "location_d862b258332f5a70"
+      ],
+      "near_d2933c3053d6b573": [
+        "location_59e98f9eb27b8600"
+      ],
+      "near_d50f3963417b4fd7": [
+        "location_24c37b528cc84949"
+      ],
+      "near_d9593966df549c23": [
+        "location_6d69d603e6af8cf3"
+      ],
+      "near_e10f6383c6064288": [
+        "location_0897dfc520d98849"
+      ],
+      "near_eb60a5a463b72352": [
+        "location_01088ca2a5a16d99"
+      ],
+      "near_f8a8ba83d30ebba6": [
+        "location_e49ecd555713a911"
+      ]
+    },
+    "audit_near_groups": [
+      "near_0b0e9a2922fd1ff8",
+      "near_3ab28c3bce7c9bb8",
+      "near_6846be6da57b9c67",
+      "near_79f0b4ec67158146",
+      "near_983a0f7541eded64",
+      "near_a0c6e83847118b8c"
+    ],
+    "n_full": 21,
+    "n_initial": 5,
+    "n_candidates": 16,
+    "n_audit": 6,
+    "n_site_positions": 27,
+    "budgets": [
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21
+    ],
+    "audit_fraction_requested": 0.2,
+    "audit_fraction_actual": 0.2222222222222222,
+    "initial_locations_requested": 5,
+    "batch_locations_requested": 2,
+    "geometry_scale_m": 9.653123846667073,
+    "plan_definition": "all representative usable positions except fixed hidden audit groups",
+    "evaluation_scope": "limited-data re-evaluation after historical test inspection"
+  },
+  {
+    "split_id": "adaptive_eef88494f290e1ba",
+    "site_id": "wellington_airport",
+    "seed": 29,
+    "fold_id": 0,
+    "role": "evaluation",
+    "initial_ids": [
+      "location_a823c0623478e16c",
+      "location_0fb3b97981f76305",
+      "location_d3fde2c751777a97",
+      "location_0cfa5902604f7eaa",
+      "location_7e8d413ef6e6c8b1"
+    ],
+    "candidate_ids": [
+      "location_01088ca2a5a16d99",
+      "location_0897dfc520d98849",
+      "location_13be81de5845c20d",
+      "location_24c37b528cc84949",
+      "location_5818e0736de72863",
+      "location_59e98f9eb27b8600",
+      "location_6c07dac4a86017b1",
+      "location_6d69d603e6af8cf3",
+      "location_714fce816f2fc2f1",
+      "location_8e64c781d13fa013",
+      "location_a749ad17afa417b4",
+      "location_c714d599f2cfa06b",
+      "location_d862b258332f5a70",
+      "location_d9a6063fbda1ecc2",
+      "location_e49ecd555713a911",
+      "location_f9832671e83882c8"
+    ],
+    "audit_ids": [
+      "location_6c9e7fa3bfbefad7",
+      "location_7c7da0cf26b6edb1",
+      "location_8f9c8c04f0f6684c",
+      "location_9db8e1a88af5110a",
+      "location_d38f32d2fede97e4",
+      "location_fd8b114156976782"
+    ],
+    "full_ids": [
+      "location_01088ca2a5a16d99",
+      "location_0897dfc520d98849",
+      "location_0cfa5902604f7eaa",
+      "location_0fb3b97981f76305",
+      "location_13be81de5845c20d",
+      "location_24c37b528cc84949",
+      "location_5818e0736de72863",
+      "location_59e98f9eb27b8600",
+      "location_6c07dac4a86017b1",
+      "location_6d69d603e6af8cf3",
+      "location_714fce816f2fc2f1",
+      "location_7e8d413ef6e6c8b1",
+      "location_8e64c781d13fa013",
+      "location_a749ad17afa417b4",
+      "location_a823c0623478e16c",
+      "location_c714d599f2cfa06b",
+      "location_d3fde2c751777a97",
+      "location_d862b258332f5a70",
+      "location_d9a6063fbda1ecc2",
+      "location_e49ecd555713a911",
+      "location_f9832671e83882c8"
+    ],
+    "near_groups": {
+      "near_036fd1a520a129d1": [
+        "location_6c07dac4a86017b1"
+      ],
+      "near_0b0e9a2922fd1ff8": [
+        "location_5818e0736de72863"
+      ],
+      "near_10835d347c3fe083": [
+        "location_714fce816f2fc2f1"
+      ],
+      "near_2a3a31ee731e68b3": [
+        "location_c714d599f2cfa06b"
+      ],
+      "near_3ab28c3bce7c9bb8": [
+        "location_13be81de5845c20d"
+      ],
+      "near_3ad7c8af77485317": [
+        "location_f9832671e83882c8"
+      ],
+      "near_453106acf08df9b3": [
+        "location_d3fde2c751777a97"
+      ],
+      "near_4905eb2c9f6bd626": [
+        "location_fd8b114156976782"
+      ],
+      "near_540ed2a617a18cad": [
+        "location_7e8d413ef6e6c8b1"
+      ],
+      "near_56a4be7bc4ad1278": [
+        "location_9db8e1a88af5110a"
+      ],
+      "near_6846be6da57b9c67": [
+        "location_d38f32d2fede97e4"
+      ],
+      "near_6b4a7c99d3001440": [
+        "location_a749ad17afa417b4"
+      ],
+      "near_79f0b4ec67158146": [
+        "location_6c9e7fa3bfbefad7"
+      ],
+      "near_8020ca91868775f6": [
+        "location_d9a6063fbda1ecc2"
+      ],
+      "near_983a0f7541eded64": [
+        "location_8f9c8c04f0f6684c"
+      ],
+      "near_a0c6e83847118b8c": [
+        "location_8e64c781d13fa013"
+      ],
+      "near_ad33e31b4c221052": [
+        "location_a823c0623478e16c"
+      ],
+      "near_b1d47f62890abe54": [
+        "location_0cfa5902604f7eaa"
+      ],
+      "near_b829468da7b77c08": [
+        "location_0fb3b97981f76305"
+      ],
+      "near_be30ad88d002fa72": [
+        "location_7c7da0cf26b6edb1"
+      ],
+      "near_bff67426eefaa798": [
+        "location_d862b258332f5a70"
+      ],
+      "near_d2933c3053d6b573": [
+        "location_59e98f9eb27b8600"
+      ],
+      "near_d50f3963417b4fd7": [
+        "location_24c37b528cc84949"
+      ],
+      "near_d9593966df549c23": [
+        "location_6d69d603e6af8cf3"
+      ],
+      "near_e10f6383c6064288": [
+        "location_0897dfc520d98849"
+      ],
+      "near_eb60a5a463b72352": [
+        "location_01088ca2a5a16d99"
+      ],
+      "near_f8a8ba83d30ebba6": [
+        "location_e49ecd555713a911"
+      ]
+    },
+    "audit_near_groups": [
+      "near_4905eb2c9f6bd626",
+      "near_56a4be7bc4ad1278",
+      "near_6846be6da57b9c67",
+      "near_79f0b4ec67158146",
+      "near_983a0f7541eded64",
+      "near_be30ad88d002fa72"
+    ],
+    "n_full": 21,
+    "n_initial": 5,
+    "n_candidates": 16,
+    "n_audit": 6,
+    "n_site_positions": 27,
+    "budgets": [
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21
+    ],
+    "audit_fraction_requested": 0.2,
+    "audit_fraction_actual": 0.2222222222222222,
+    "initial_locations_requested": 5,
+    "batch_locations_requested": 2,
+    "geometry_scale_m": 9.653123846667073,
+    "plan_definition": "all representative usable positions except fixed hidden audit groups",
+    "evaluation_scope": "limited-data re-evaluation after historical test inspection"
+  },
+  {
+    "split_id": "adaptive_9355a2ab49943856",
+    "site_id": "wellington_airport",
+    "seed": 43,
+    "fold_id": 0,
+    "role": "evaluation",
+    "initial_ids": [
+      "location_e49ecd555713a911",
+      "location_7e8d413ef6e6c8b1",
+      "location_5818e0736de72863",
+      "location_a749ad17afa417b4",
+      "location_714fce816f2fc2f1"
+    ],
+    "candidate_ids": [
+      "location_01088ca2a5a16d99",
+      "location_0897dfc520d98849",
+      "location_0cfa5902604f7eaa",
+      "location_0fb3b97981f76305",
+      "location_13be81de5845c20d",
+      "location_24c37b528cc84949",
+      "location_59e98f9eb27b8600",
+      "location_6c07dac4a86017b1",
+      "location_6c9e7fa3bfbefad7",
+      "location_6d69d603e6af8cf3",
+      "location_8e64c781d13fa013",
+      "location_d38f32d2fede97e4",
+      "location_d3fde2c751777a97",
+      "location_d862b258332f5a70",
+      "location_d9a6063fbda1ecc2",
+      "location_fd8b114156976782"
+    ],
+    "audit_ids": [
+      "location_7c7da0cf26b6edb1",
+      "location_8f9c8c04f0f6684c",
+      "location_9db8e1a88af5110a",
+      "location_a823c0623478e16c",
+      "location_c714d599f2cfa06b",
+      "location_f9832671e83882c8"
+    ],
+    "full_ids": [
+      "location_01088ca2a5a16d99",
+      "location_0897dfc520d98849",
+      "location_0cfa5902604f7eaa",
+      "location_0fb3b97981f76305",
+      "location_13be81de5845c20d",
+      "location_24c37b528cc84949",
+      "location_5818e0736de72863",
+      "location_59e98f9eb27b8600",
+      "location_6c07dac4a86017b1",
+      "location_6c9e7fa3bfbefad7",
+      "location_6d69d603e6af8cf3",
+      "location_714fce816f2fc2f1",
+      "location_7e8d413ef6e6c8b1",
+      "location_8e64c781d13fa013",
+      "location_a749ad17afa417b4",
+      "location_d38f32d2fede97e4",
+      "location_d3fde2c751777a97",
+      "location_d862b258332f5a70",
+      "location_d9a6063fbda1ecc2",
+      "location_e49ecd555713a911",
+      "location_fd8b114156976782"
+    ],
+    "near_groups": {
+      "near_036fd1a520a129d1": [
+        "location_6c07dac4a86017b1"
+      ],
+      "near_0b0e9a2922fd1ff8": [
+        "location_5818e0736de72863"
+      ],
+      "near_10835d347c3fe083": [
+        "location_714fce816f2fc2f1"
+      ],
+      "near_2a3a31ee731e68b3": [
+        "location_c714d599f2cfa06b"
+      ],
+      "near_3ab28c3bce7c9bb8": [
+        "location_13be81de5845c20d"
+      ],
+      "near_3ad7c8af77485317": [
+        "location_f9832671e83882c8"
+      ],
+      "near_453106acf08df9b3": [
+        "location_d3fde2c751777a97"
+      ],
+      "near_4905eb2c9f6bd626": [
+        "location_fd8b114156976782"
+      ],
+      "near_540ed2a617a18cad": [
+        "location_7e8d413ef6e6c8b1"
+      ],
+      "near_56a4be7bc4ad1278": [
+        "location_9db8e1a88af5110a"
+      ],
+      "near_6846be6da57b9c67": [
+        "location_d38f32d2fede97e4"
+      ],
+      "near_6b4a7c99d3001440": [
+        "location_a749ad17afa417b4"
+      ],
+      "near_79f0b4ec67158146": [
+        "location_6c9e7fa3bfbefad7"
+      ],
+      "near_8020ca91868775f6": [
+        "location_d9a6063fbda1ecc2"
+      ],
+      "near_983a0f7541eded64": [
+        "location_8f9c8c04f0f6684c"
+      ],
+      "near_a0c6e83847118b8c": [
+        "location_8e64c781d13fa013"
+      ],
+      "near_ad33e31b4c221052": [
+        "location_a823c0623478e16c"
+      ],
+      "near_b1d47f62890abe54": [
+        "location_0cfa5902604f7eaa"
+      ],
+      "near_b829468da7b77c08": [
+        "location_0fb3b97981f76305"
+      ],
+      "near_be30ad88d002fa72": [
+        "location_7c7da0cf26b6edb1"
+      ],
+      "near_bff67426eefaa798": [
+        "location_d862b258332f5a70"
+      ],
+      "near_d2933c3053d6b573": [
+        "location_59e98f9eb27b8600"
+      ],
+      "near_d50f3963417b4fd7": [
+        "location_24c37b528cc84949"
+      ],
+      "near_d9593966df549c23": [
+        "location_6d69d603e6af8cf3"
+      ],
+      "near_e10f6383c6064288": [
+        "location_0897dfc520d98849"
+      ],
+      "near_eb60a5a463b72352": [
+        "location_01088ca2a5a16d99"
+      ],
+      "near_f8a8ba83d30ebba6": [
+        "location_e49ecd555713a911"
+      ]
+    },
+    "audit_near_groups": [
+      "near_2a3a31ee731e68b3",
+      "near_3ad7c8af77485317",
+      "near_56a4be7bc4ad1278",
+      "near_983a0f7541eded64",
+      "near_ad33e31b4c221052",
+      "near_be30ad88d002fa72"
+    ],
+    "n_full": 21,
+    "n_initial": 5,
+    "n_candidates": 16,
+    "n_audit": 6,
+    "n_site_positions": 27,
+    "budgets": [
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21
+    ],
+    "audit_fraction_requested": 0.2,
+    "audit_fraction_actual": 0.2222222222222222,
+    "initial_locations_requested": 5,
+    "batch_locations_requested": 2,
+    "geometry_scale_m": 9.653123846667073,
+    "plan_definition": "all representative usable positions except fixed hidden audit groups",
+    "evaluation_scope": "limited-data re-evaluation after historical test inspection"
+  }
+]

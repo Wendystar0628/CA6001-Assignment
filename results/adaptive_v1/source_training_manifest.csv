@@ -1,0 +1,466 @@
+fold_id,component,site_id,source_training,source_checkpoint_selection,source_role,artifact_metadata,evidence
+0,tabpfn,aranui,False,False,excluded,artifacts/models/fold_0/tabpfn_training.json,retained component metadata
+0,tabpfn,avondale,True,False,train,artifacts/models/fold_0/tabpfn_training.json,retained component metadata
+0,tabpfn,avonside,True,False,train,artifacts/models/fold_0/tabpfn_training.json,retained component metadata
+0,tabpfn,baytown,False,False,excluded,artifacts/models/fold_0/tabpfn_training.json,retained component metadata
+0,tabpfn,bexley,True,False,train,artifacts/models/fold_0/tabpfn_training.json,retained component metadata
+0,tabpfn,cashmere_high_school,False,False,excluded,artifacts/models/fold_0/tabpfn_training.json,retained component metadata
+0,tabpfn,christchurch_central_city,True,False,train,artifacts/models/fold_0/tabpfn_training.json,retained component metadata
+0,tabpfn,christchurch_cnr_armagh_durham_st,False,False,excluded,artifacts/models/fold_0/tabpfn_training.json,retained component metadata
+0,tabpfn,christchurch_metro_sports_facility,False,False,excluded,artifacts/models/fold_0/tabpfn_training.json,retained component metadata
+0,tabpfn,christchurch_stadium,False,False,excluded,artifacts/models/fold_0/tabpfn_training.json,retained component metadata
+0,tabpfn,hastings_hospital,False,False,excluded,artifacts/models/fold_0/tabpfn_training.json,retained component metadata
+0,tabpfn,hollywood,True,False,train,artifacts/models/fold_0/tabpfn_training.json,retained component metadata
+0,tabpfn,kaiapoi_near_river,False,True,validation,artifacts/models/fold_0/tabpfn_training.json,retained component metadata
+0,tabpfn,linwood_rudds_road,True,False,train,artifacts/models/fold_0/tabpfn_training.json,retained component metadata
+0,tabpfn,lower_hutt_town_hall,False,True,validation,artifacts/models/fold_0/tabpfn_training.json,retained component metadata
+0,tabpfn,marshland,True,False,train,artifacts/models/fold_0/tabpfn_training.json,retained component metadata
+0,tabpfn,marshland_road,False,False,excluded,artifacts/models/fold_0/tabpfn_training.json,retained component metadata
+0,tabpfn,new_brighton_willryan_ave,False,False,excluded,artifacts/models/fold_0/tabpfn_training.json,retained component metadata
+0,tabpfn,newlock,True,False,train,artifacts/models/fold_0/tabpfn_training.json,retained component metadata
+0,tabpfn,parkland_bower_ave_one,False,False,excluded,artifacts/models/fold_0/tabpfn_training.json,retained component metadata
+0,tabpfn,parkland_bower_ave_two,True,False,train,artifacts/models/fold_0/tabpfn_training.json,retained component metadata
+0,tabpfn,port_nelson,False,False,excluded,artifacts/models/fold_0/tabpfn_training.json,retained component metadata
+0,tabpfn,redcliffs_main_road,True,False,train,artifacts/models/fold_0/tabpfn_training.json,retained component metadata
+0,tabpfn,richmond,False,False,excluded,artifacts/models/fold_0/tabpfn_training.json,retained component metadata
+0,tabpfn,south_new_brighton,False,False,excluded,artifacts/models/fold_0/tabpfn_training.json,retained component metadata
+0,tabpfn,tauranga_farmers_building,False,True,validation,artifacts/models/fold_0/tabpfn_training.json,retained component metadata
+0,tabpfn,wainoni,True,False,train,artifacts/models/fold_0/tabpfn_training.json,retained component metadata
+0,tabpfn,wainoni_pak_n_save,True,False,train,artifacts/models/fold_0/tabpfn_training.json,retained component metadata
+0,tabpfn,wellington_airport,False,False,excluded,artifacts/models/fold_0/tabpfn_training.json,retained component metadata
+0,tabpfn,wellington_college,True,False,train,artifacts/models/fold_0/tabpfn_training.json,retained component metadata
+0,tabpfn,whangarei_high_school,True,False,train,artifacts/models/fold_0/tabpfn_training.json,retained component metadata
+0,xgb,aranui,False,False,excluded,artifacts/models/fold_0/xgb.json,retained component metadata
+0,xgb,avondale,True,False,train,artifacts/models/fold_0/xgb.json,retained component metadata
+0,xgb,avonside,True,False,train,artifacts/models/fold_0/xgb.json,retained component metadata
+0,xgb,baytown,False,False,excluded,artifacts/models/fold_0/xgb.json,retained component metadata
+0,xgb,bexley,True,False,train,artifacts/models/fold_0/xgb.json,retained component metadata
+0,xgb,cashmere_high_school,False,False,excluded,artifacts/models/fold_0/xgb.json,retained component metadata
+0,xgb,christchurch_central_city,True,False,train,artifacts/models/fold_0/xgb.json,retained component metadata
+0,xgb,christchurch_cnr_armagh_durham_st,False,False,excluded,artifacts/models/fold_0/xgb.json,retained component metadata
+0,xgb,christchurch_metro_sports_facility,False,False,excluded,artifacts/models/fold_0/xgb.json,retained component metadata
+0,xgb,christchurch_stadium,False,False,excluded,artifacts/models/fold_0/xgb.json,retained component metadata
+0,xgb,hastings_hospital,False,False,excluded,artifacts/models/fold_0/xgb.json,retained component metadata
+0,xgb,hollywood,True,False,train,artifacts/models/fold_0/xgb.json,retained component metadata
+0,xgb,kaiapoi_near_river,False,True,validation,artifacts/models/fold_0/xgb.json,retained component metadata
+0,xgb,linwood_rudds_road,True,False,train,artifacts/models/fold_0/xgb.json,retained component metadata
+0,xgb,lower_hutt_town_hall,False,True,validation,artifacts/models/fold_0/xgb.json,retained component metadata
+0,xgb,marshland,True,False,train,artifacts/models/fold_0/xgb.json,retained component metadata
+0,xgb,marshland_road,False,False,excluded,artifacts/models/fold_0/xgb.json,retained component metadata
+0,xgb,new_brighton_willryan_ave,False,False,excluded,artifacts/models/fold_0/xgb.json,retained component metadata
+0,xgb,newlock,True,False,train,artifacts/models/fold_0/xgb.json,retained component metadata
+0,xgb,parkland_bower_ave_one,False,False,excluded,artifacts/models/fold_0/xgb.json,retained component metadata
+0,xgb,parkland_bower_ave_two,True,False,train,artifacts/models/fold_0/xgb.json,retained component metadata
+0,xgb,port_nelson,False,False,excluded,artifacts/models/fold_0/xgb.json,retained component metadata
+0,xgb,redcliffs_main_road,True,False,train,artifacts/models/fold_0/xgb.json,retained component metadata
+0,xgb,richmond,False,False,excluded,artifacts/models/fold_0/xgb.json,retained component metadata
+0,xgb,south_new_brighton,False,False,excluded,artifacts/models/fold_0/xgb.json,retained component metadata
+0,xgb,tauranga_farmers_building,False,True,validation,artifacts/models/fold_0/xgb.json,retained component metadata
+0,xgb,wainoni,True,False,train,artifacts/models/fold_0/xgb.json,retained component metadata
+0,xgb,wainoni_pak_n_save,True,False,train,artifacts/models/fold_0/xgb.json,retained component metadata
+0,xgb,wellington_airport,False,False,excluded,artifacts/models/fold_0/xgb.json,retained component metadata
+0,xgb,wellington_college,True,False,train,artifacts/models/fold_0/xgb.json,retained component metadata
+0,xgb,whangarei_high_school,True,False,train,artifacts/models/fold_0/xgb.json,retained component metadata
+0,cnp,aranui,False,False,excluded,artifacts/models/fold_0/cnp_training.json,retained component metadata
+0,cnp,avondale,True,False,train,artifacts/models/fold_0/cnp_training.json,retained component metadata
+0,cnp,avonside,True,False,train,artifacts/models/fold_0/cnp_training.json,retained component metadata
+0,cnp,baytown,False,False,excluded,artifacts/models/fold_0/cnp_training.json,retained component metadata
+0,cnp,bexley,True,False,train,artifacts/models/fold_0/cnp_training.json,retained component metadata
+0,cnp,cashmere_high_school,False,False,excluded,artifacts/models/fold_0/cnp_training.json,retained component metadata
+0,cnp,christchurch_central_city,True,False,train,artifacts/models/fold_0/cnp_training.json,retained component metadata
+0,cnp,christchurch_cnr_armagh_durham_st,False,False,excluded,artifacts/models/fold_0/cnp_training.json,retained component metadata
+0,cnp,christchurch_metro_sports_facility,False,False,excluded,artifacts/models/fold_0/cnp_training.json,retained component metadata
+0,cnp,christchurch_stadium,False,False,excluded,artifacts/models/fold_0/cnp_training.json,retained component metadata
+0,cnp,hastings_hospital,False,False,excluded,artifacts/models/fold_0/cnp_training.json,retained component metadata
+0,cnp,hollywood,True,False,train,artifacts/models/fold_0/cnp_training.json,retained component metadata
+0,cnp,kaiapoi_near_river,False,True,validation,artifacts/models/fold_0/cnp_training.json,retained component metadata
+0,cnp,linwood_rudds_road,True,False,train,artifacts/models/fold_0/cnp_training.json,retained component metadata
+0,cnp,lower_hutt_town_hall,False,True,validation,artifacts/models/fold_0/cnp_training.json,retained component metadata
+0,cnp,marshland,True,False,train,artifacts/models/fold_0/cnp_training.json,retained component metadata
+0,cnp,marshland_road,False,False,excluded,artifacts/models/fold_0/cnp_training.json,retained component metadata
+0,cnp,new_brighton_willryan_ave,False,False,excluded,artifacts/models/fold_0/cnp_training.json,retained component metadata
+0,cnp,newlock,True,False,train,artifacts/models/fold_0/cnp_training.json,retained component metadata
+0,cnp,parkland_bower_ave_one,False,False,excluded,artifacts/models/fold_0/cnp_training.json,retained component metadata
+0,cnp,parkland_bower_ave_two,True,False,train,artifacts/models/fold_0/cnp_training.json,retained component metadata
+0,cnp,port_nelson,False,False,excluded,artifacts/models/fold_0/cnp_training.json,retained component metadata
+0,cnp,redcliffs_main_road,True,False,train,artifacts/models/fold_0/cnp_training.json,retained component metadata
+0,cnp,richmond,False,False,excluded,artifacts/models/fold_0/cnp_training.json,retained component metadata
+0,cnp,south_new_brighton,False,False,excluded,artifacts/models/fold_0/cnp_training.json,retained component metadata
+0,cnp,tauranga_farmers_building,False,True,validation,artifacts/models/fold_0/cnp_training.json,retained component metadata
+0,cnp,wainoni,True,False,train,artifacts/models/fold_0/cnp_training.json,retained component metadata
+0,cnp,wainoni_pak_n_save,True,False,train,artifacts/models/fold_0/cnp_training.json,retained component metadata
+0,cnp,wellington_airport,False,False,excluded,artifacts/models/fold_0/cnp_training.json,retained component metadata
+0,cnp,wellington_college,True,False,train,artifacts/models/fold_0/cnp_training.json,retained component metadata
+0,cnp,whangarei_high_school,True,False,train,artifacts/models/fold_0/cnp_training.json,retained component metadata
+0,fpca_basis,aranui,False,False,excluded,artifacts/models/fold_0/basis_manifest.json,retained component metadata
+0,fpca_basis,avondale,True,False,train,artifacts/models/fold_0/basis_manifest.json,retained component metadata
+0,fpca_basis,avonside,True,False,train,artifacts/models/fold_0/basis_manifest.json,retained component metadata
+0,fpca_basis,baytown,True,False,train,artifacts/models/fold_0/basis_manifest.json,retained component metadata
+0,fpca_basis,bexley,True,False,train,artifacts/models/fold_0/basis_manifest.json,retained component metadata
+0,fpca_basis,cashmere_high_school,False,False,excluded,artifacts/models/fold_0/basis_manifest.json,retained component metadata
+0,fpca_basis,christchurch_central_city,True,False,train,artifacts/models/fold_0/basis_manifest.json,retained component metadata
+0,fpca_basis,christchurch_cnr_armagh_durham_st,True,False,train,artifacts/models/fold_0/basis_manifest.json,retained component metadata
+0,fpca_basis,christchurch_metro_sports_facility,False,False,excluded,artifacts/models/fold_0/basis_manifest.json,retained component metadata
+0,fpca_basis,christchurch_stadium,False,False,excluded,artifacts/models/fold_0/basis_manifest.json,retained component metadata
+0,fpca_basis,hastings_hospital,True,False,train,artifacts/models/fold_0/basis_manifest.json,retained component metadata
+0,fpca_basis,hollywood,True,False,train,artifacts/models/fold_0/basis_manifest.json,retained component metadata
+0,fpca_basis,kaiapoi_near_river,False,False,excluded,artifacts/models/fold_0/basis_manifest.json,retained component metadata
+0,fpca_basis,linwood_rudds_road,True,False,train,artifacts/models/fold_0/basis_manifest.json,retained component metadata
+0,fpca_basis,lower_hutt_town_hall,False,False,excluded,artifacts/models/fold_0/basis_manifest.json,retained component metadata
+0,fpca_basis,marshland,True,False,train,artifacts/models/fold_0/basis_manifest.json,retained component metadata
+0,fpca_basis,marshland_road,False,False,excluded,artifacts/models/fold_0/basis_manifest.json,retained component metadata
+0,fpca_basis,new_brighton_willryan_ave,False,False,excluded,artifacts/models/fold_0/basis_manifest.json,retained component metadata
+0,fpca_basis,newlock,True,False,train,artifacts/models/fold_0/basis_manifest.json,retained component metadata
+0,fpca_basis,parkland_bower_ave_one,False,False,excluded,artifacts/models/fold_0/basis_manifest.json,retained component metadata
+0,fpca_basis,parkland_bower_ave_two,True,False,train,artifacts/models/fold_0/basis_manifest.json,retained component metadata
+0,fpca_basis,port_nelson,False,False,excluded,artifacts/models/fold_0/basis_manifest.json,retained component metadata
+0,fpca_basis,redcliffs_main_road,True,False,train,artifacts/models/fold_0/basis_manifest.json,retained component metadata
+0,fpca_basis,richmond,False,False,excluded,artifacts/models/fold_0/basis_manifest.json,retained component metadata
+0,fpca_basis,south_new_brighton,False,False,excluded,artifacts/models/fold_0/basis_manifest.json,retained component metadata
+0,fpca_basis,tauranga_farmers_building,False,False,excluded,artifacts/models/fold_0/basis_manifest.json,retained component metadata
+0,fpca_basis,wainoni,True,False,train,artifacts/models/fold_0/basis_manifest.json,retained component metadata
+0,fpca_basis,wainoni_pak_n_save,True,False,train,artifacts/models/fold_0/basis_manifest.json,retained component metadata
+0,fpca_basis,wellington_airport,False,False,excluded,artifacts/models/fold_0/basis_manifest.json,retained component metadata
+0,fpca_basis,wellington_college,True,False,train,artifacts/models/fold_0/basis_manifest.json,retained component metadata
+0,fpca_basis,whangarei_high_school,True,False,train,artifacts/models/fold_0/basis_manifest.json,retained component metadata
+0,gp_trend,aranui,False,False,excluded,artifacts/models/fold_0/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+0,gp_trend,avondale,True,False,train,artifacts/models/fold_0/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+0,gp_trend,avonside,True,False,train,artifacts/models/fold_0/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+0,gp_trend,baytown,True,False,train,artifacts/models/fold_0/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+0,gp_trend,bexley,True,False,train,artifacts/models/fold_0/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+0,gp_trend,cashmere_high_school,False,False,excluded,artifacts/models/fold_0/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+0,gp_trend,christchurch_central_city,True,False,train,artifacts/models/fold_0/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+0,gp_trend,christchurch_cnr_armagh_durham_st,True,False,train,artifacts/models/fold_0/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+0,gp_trend,christchurch_metro_sports_facility,False,False,excluded,artifacts/models/fold_0/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+0,gp_trend,christchurch_stadium,False,False,excluded,artifacts/models/fold_0/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+0,gp_trend,hastings_hospital,True,False,train,artifacts/models/fold_0/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+0,gp_trend,hollywood,True,False,train,artifacts/models/fold_0/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+0,gp_trend,kaiapoi_near_river,False,False,excluded,artifacts/models/fold_0/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+0,gp_trend,linwood_rudds_road,True,False,train,artifacts/models/fold_0/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+0,gp_trend,lower_hutt_town_hall,False,False,excluded,artifacts/models/fold_0/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+0,gp_trend,marshland,True,False,train,artifacts/models/fold_0/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+0,gp_trend,marshland_road,False,False,excluded,artifacts/models/fold_0/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+0,gp_trend,new_brighton_willryan_ave,False,False,excluded,artifacts/models/fold_0/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+0,gp_trend,newlock,True,False,train,artifacts/models/fold_0/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+0,gp_trend,parkland_bower_ave_one,False,False,excluded,artifacts/models/fold_0/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+0,gp_trend,parkland_bower_ave_two,True,False,train,artifacts/models/fold_0/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+0,gp_trend,port_nelson,False,False,excluded,artifacts/models/fold_0/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+0,gp_trend,redcliffs_main_road,True,False,train,artifacts/models/fold_0/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+0,gp_trend,richmond,False,False,excluded,artifacts/models/fold_0/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+0,gp_trend,south_new_brighton,False,False,excluded,artifacts/models/fold_0/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+0,gp_trend,tauranga_farmers_building,False,False,excluded,artifacts/models/fold_0/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+0,gp_trend,wainoni,True,False,train,artifacts/models/fold_0/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+0,gp_trend,wainoni_pak_n_save,True,False,train,artifacts/models/fold_0/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+0,gp_trend,wellington_airport,False,False,excluded,artifacts/models/fold_0/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+0,gp_trend,wellington_college,True,False,train,artifacts/models/fold_0/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+0,gp_trend,whangarei_high_school,True,False,train,artifacts/models/fold_0/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+1,tabpfn,aranui,False,False,excluded,artifacts/models/fold_1/tabpfn_training.json,retained component metadata
+1,tabpfn,avondale,False,False,excluded,artifacts/models/fold_1/tabpfn_training.json,retained component metadata
+1,tabpfn,avonside,True,False,train,artifacts/models/fold_1/tabpfn_training.json,retained component metadata
+1,tabpfn,baytown,False,False,excluded,artifacts/models/fold_1/tabpfn_training.json,retained component metadata
+1,tabpfn,bexley,True,False,train,artifacts/models/fold_1/tabpfn_training.json,retained component metadata
+1,tabpfn,cashmere_high_school,True,False,train,artifacts/models/fold_1/tabpfn_training.json,retained component metadata
+1,tabpfn,christchurch_central_city,True,False,train,artifacts/models/fold_1/tabpfn_training.json,retained component metadata
+1,tabpfn,christchurch_cnr_armagh_durham_st,False,False,excluded,artifacts/models/fold_1/tabpfn_training.json,retained component metadata
+1,tabpfn,christchurch_metro_sports_facility,True,False,train,artifacts/models/fold_1/tabpfn_training.json,retained component metadata
+1,tabpfn,christchurch_stadium,True,False,train,artifacts/models/fold_1/tabpfn_training.json,retained component metadata
+1,tabpfn,hastings_hospital,False,False,excluded,artifacts/models/fold_1/tabpfn_training.json,retained component metadata
+1,tabpfn,hollywood,True,False,train,artifacts/models/fold_1/tabpfn_training.json,retained component metadata
+1,tabpfn,kaiapoi_near_river,False,False,excluded,artifacts/models/fold_1/tabpfn_training.json,retained component metadata
+1,tabpfn,linwood_rudds_road,False,False,excluded,artifacts/models/fold_1/tabpfn_training.json,retained component metadata
+1,tabpfn,lower_hutt_town_hall,False,True,validation,artifacts/models/fold_1/tabpfn_training.json,retained component metadata
+1,tabpfn,marshland,False,False,excluded,artifacts/models/fold_1/tabpfn_training.json,retained component metadata
+1,tabpfn,marshland_road,False,False,excluded,artifacts/models/fold_1/tabpfn_training.json,retained component metadata
+1,tabpfn,new_brighton_willryan_ave,True,False,train,artifacts/models/fold_1/tabpfn_training.json,retained component metadata
+1,tabpfn,newlock,False,False,excluded,artifacts/models/fold_1/tabpfn_training.json,retained component metadata
+1,tabpfn,parkland_bower_ave_one,True,False,train,artifacts/models/fold_1/tabpfn_training.json,retained component metadata
+1,tabpfn,parkland_bower_ave_two,False,False,excluded,artifacts/models/fold_1/tabpfn_training.json,retained component metadata
+1,tabpfn,port_nelson,False,True,validation,artifacts/models/fold_1/tabpfn_training.json,retained component metadata
+1,tabpfn,redcliffs_main_road,True,False,train,artifacts/models/fold_1/tabpfn_training.json,retained component metadata
+1,tabpfn,richmond,True,False,train,artifacts/models/fold_1/tabpfn_training.json,retained component metadata
+1,tabpfn,south_new_brighton,True,False,train,artifacts/models/fold_1/tabpfn_training.json,retained component metadata
+1,tabpfn,tauranga_farmers_building,False,True,validation,artifacts/models/fold_1/tabpfn_training.json,retained component metadata
+1,tabpfn,wainoni,False,False,excluded,artifacts/models/fold_1/tabpfn_training.json,retained component metadata
+1,tabpfn,wainoni_pak_n_save,False,False,excluded,artifacts/models/fold_1/tabpfn_training.json,retained component metadata
+1,tabpfn,wellington_airport,True,False,train,artifacts/models/fold_1/tabpfn_training.json,retained component metadata
+1,tabpfn,wellington_college,True,False,train,artifacts/models/fold_1/tabpfn_training.json,retained component metadata
+1,tabpfn,whangarei_high_school,True,False,train,artifacts/models/fold_1/tabpfn_training.json,retained component metadata
+1,xgb,aranui,False,False,excluded,artifacts/models/fold_1/xgb.json,retained component metadata
+1,xgb,avondale,False,False,excluded,artifacts/models/fold_1/xgb.json,retained component metadata
+1,xgb,avonside,True,False,train,artifacts/models/fold_1/xgb.json,retained component metadata
+1,xgb,baytown,False,False,excluded,artifacts/models/fold_1/xgb.json,retained component metadata
+1,xgb,bexley,True,False,train,artifacts/models/fold_1/xgb.json,retained component metadata
+1,xgb,cashmere_high_school,True,False,train,artifacts/models/fold_1/xgb.json,retained component metadata
+1,xgb,christchurch_central_city,True,False,train,artifacts/models/fold_1/xgb.json,retained component metadata
+1,xgb,christchurch_cnr_armagh_durham_st,False,False,excluded,artifacts/models/fold_1/xgb.json,retained component metadata
+1,xgb,christchurch_metro_sports_facility,True,False,train,artifacts/models/fold_1/xgb.json,retained component metadata
+1,xgb,christchurch_stadium,True,False,train,artifacts/models/fold_1/xgb.json,retained component metadata
+1,xgb,hastings_hospital,False,False,excluded,artifacts/models/fold_1/xgb.json,retained component metadata
+1,xgb,hollywood,True,False,train,artifacts/models/fold_1/xgb.json,retained component metadata
+1,xgb,kaiapoi_near_river,False,False,excluded,artifacts/models/fold_1/xgb.json,retained component metadata
+1,xgb,linwood_rudds_road,False,False,excluded,artifacts/models/fold_1/xgb.json,retained component metadata
+1,xgb,lower_hutt_town_hall,False,True,validation,artifacts/models/fold_1/xgb.json,retained component metadata
+1,xgb,marshland,False,False,excluded,artifacts/models/fold_1/xgb.json,retained component metadata
+1,xgb,marshland_road,False,False,excluded,artifacts/models/fold_1/xgb.json,retained component metadata
+1,xgb,new_brighton_willryan_ave,True,False,train,artifacts/models/fold_1/xgb.json,retained component metadata
+1,xgb,newlock,False,False,excluded,artifacts/models/fold_1/xgb.json,retained component metadata
+1,xgb,parkland_bower_ave_one,True,False,train,artifacts/models/fold_1/xgb.json,retained component metadata
+1,xgb,parkland_bower_ave_two,False,False,excluded,artifacts/models/fold_1/xgb.json,retained component metadata
+1,xgb,port_nelson,False,True,validation,artifacts/models/fold_1/xgb.json,retained component metadata
+1,xgb,redcliffs_main_road,True,False,train,artifacts/models/fold_1/xgb.json,retained component metadata
+1,xgb,richmond,True,False,train,artifacts/models/fold_1/xgb.json,retained component metadata
+1,xgb,south_new_brighton,True,False,train,artifacts/models/fold_1/xgb.json,retained component metadata
+1,xgb,tauranga_farmers_building,False,True,validation,artifacts/models/fold_1/xgb.json,retained component metadata
+1,xgb,wainoni,False,False,excluded,artifacts/models/fold_1/xgb.json,retained component metadata
+1,xgb,wainoni_pak_n_save,False,False,excluded,artifacts/models/fold_1/xgb.json,retained component metadata
+1,xgb,wellington_airport,True,False,train,artifacts/models/fold_1/xgb.json,retained component metadata
+1,xgb,wellington_college,True,False,train,artifacts/models/fold_1/xgb.json,retained component metadata
+1,xgb,whangarei_high_school,True,False,train,artifacts/models/fold_1/xgb.json,retained component metadata
+1,cnp,aranui,False,False,excluded,artifacts/models/fold_1/cnp_training.json,retained component metadata
+1,cnp,avondale,False,False,excluded,artifacts/models/fold_1/cnp_training.json,retained component metadata
+1,cnp,avonside,True,False,train,artifacts/models/fold_1/cnp_training.json,retained component metadata
+1,cnp,baytown,False,False,excluded,artifacts/models/fold_1/cnp_training.json,retained component metadata
+1,cnp,bexley,True,False,train,artifacts/models/fold_1/cnp_training.json,retained component metadata
+1,cnp,cashmere_high_school,True,False,train,artifacts/models/fold_1/cnp_training.json,retained component metadata
+1,cnp,christchurch_central_city,True,False,train,artifacts/models/fold_1/cnp_training.json,retained component metadata
+1,cnp,christchurch_cnr_armagh_durham_st,False,False,excluded,artifacts/models/fold_1/cnp_training.json,retained component metadata
+1,cnp,christchurch_metro_sports_facility,True,False,train,artifacts/models/fold_1/cnp_training.json,retained component metadata
+1,cnp,christchurch_stadium,True,False,train,artifacts/models/fold_1/cnp_training.json,retained component metadata
+1,cnp,hastings_hospital,False,False,excluded,artifacts/models/fold_1/cnp_training.json,retained component metadata
+1,cnp,hollywood,True,False,train,artifacts/models/fold_1/cnp_training.json,retained component metadata
+1,cnp,kaiapoi_near_river,False,False,excluded,artifacts/models/fold_1/cnp_training.json,retained component metadata
+1,cnp,linwood_rudds_road,False,False,excluded,artifacts/models/fold_1/cnp_training.json,retained component metadata
+1,cnp,lower_hutt_town_hall,False,True,validation,artifacts/models/fold_1/cnp_training.json,retained component metadata
+1,cnp,marshland,False,False,excluded,artifacts/models/fold_1/cnp_training.json,retained component metadata
+1,cnp,marshland_road,False,False,excluded,artifacts/models/fold_1/cnp_training.json,retained component metadata
+1,cnp,new_brighton_willryan_ave,True,False,train,artifacts/models/fold_1/cnp_training.json,retained component metadata
+1,cnp,newlock,False,False,excluded,artifacts/models/fold_1/cnp_training.json,retained component metadata
+1,cnp,parkland_bower_ave_one,True,False,train,artifacts/models/fold_1/cnp_training.json,retained component metadata
+1,cnp,parkland_bower_ave_two,False,False,excluded,artifacts/models/fold_1/cnp_training.json,retained component metadata
+1,cnp,port_nelson,False,True,validation,artifacts/models/fold_1/cnp_training.json,retained component metadata
+1,cnp,redcliffs_main_road,True,False,train,artifacts/models/fold_1/cnp_training.json,retained component metadata
+1,cnp,richmond,True,False,train,artifacts/models/fold_1/cnp_training.json,retained component metadata
+1,cnp,south_new_brighton,True,False,train,artifacts/models/fold_1/cnp_training.json,retained component metadata
+1,cnp,tauranga_farmers_building,False,True,validation,artifacts/models/fold_1/cnp_training.json,retained component metadata
+1,cnp,wainoni,False,False,excluded,artifacts/models/fold_1/cnp_training.json,retained component metadata
+1,cnp,wainoni_pak_n_save,False,False,excluded,artifacts/models/fold_1/cnp_training.json,retained component metadata
+1,cnp,wellington_airport,True,False,train,artifacts/models/fold_1/cnp_training.json,retained component metadata
+1,cnp,wellington_college,True,False,train,artifacts/models/fold_1/cnp_training.json,retained component metadata
+1,cnp,whangarei_high_school,True,False,train,artifacts/models/fold_1/cnp_training.json,retained component metadata
+1,fpca_basis,aranui,True,False,train,artifacts/models/fold_1/basis_manifest.json,retained component metadata
+1,fpca_basis,avondale,False,False,excluded,artifacts/models/fold_1/basis_manifest.json,retained component metadata
+1,fpca_basis,avonside,True,False,train,artifacts/models/fold_1/basis_manifest.json,retained component metadata
+1,fpca_basis,baytown,True,False,train,artifacts/models/fold_1/basis_manifest.json,retained component metadata
+1,fpca_basis,bexley,True,False,train,artifacts/models/fold_1/basis_manifest.json,retained component metadata
+1,fpca_basis,cashmere_high_school,True,False,train,artifacts/models/fold_1/basis_manifest.json,retained component metadata
+1,fpca_basis,christchurch_central_city,True,False,train,artifacts/models/fold_1/basis_manifest.json,retained component metadata
+1,fpca_basis,christchurch_cnr_armagh_durham_st,True,False,train,artifacts/models/fold_1/basis_manifest.json,retained component metadata
+1,fpca_basis,christchurch_metro_sports_facility,True,False,train,artifacts/models/fold_1/basis_manifest.json,retained component metadata
+1,fpca_basis,christchurch_stadium,True,False,train,artifacts/models/fold_1/basis_manifest.json,retained component metadata
+1,fpca_basis,hastings_hospital,False,False,excluded,artifacts/models/fold_1/basis_manifest.json,retained component metadata
+1,fpca_basis,hollywood,True,False,train,artifacts/models/fold_1/basis_manifest.json,retained component metadata
+1,fpca_basis,kaiapoi_near_river,False,False,excluded,artifacts/models/fold_1/basis_manifest.json,retained component metadata
+1,fpca_basis,linwood_rudds_road,False,False,excluded,artifacts/models/fold_1/basis_manifest.json,retained component metadata
+1,fpca_basis,lower_hutt_town_hall,False,False,excluded,artifacts/models/fold_1/basis_manifest.json,retained component metadata
+1,fpca_basis,marshland,False,False,excluded,artifacts/models/fold_1/basis_manifest.json,retained component metadata
+1,fpca_basis,marshland_road,True,False,train,artifacts/models/fold_1/basis_manifest.json,retained component metadata
+1,fpca_basis,new_brighton_willryan_ave,True,False,train,artifacts/models/fold_1/basis_manifest.json,retained component metadata
+1,fpca_basis,newlock,False,False,excluded,artifacts/models/fold_1/basis_manifest.json,retained component metadata
+1,fpca_basis,parkland_bower_ave_one,True,False,train,artifacts/models/fold_1/basis_manifest.json,retained component metadata
+1,fpca_basis,parkland_bower_ave_two,False,False,excluded,artifacts/models/fold_1/basis_manifest.json,retained component metadata
+1,fpca_basis,port_nelson,False,False,excluded,artifacts/models/fold_1/basis_manifest.json,retained component metadata
+1,fpca_basis,redcliffs_main_road,True,False,train,artifacts/models/fold_1/basis_manifest.json,retained component metadata
+1,fpca_basis,richmond,True,False,train,artifacts/models/fold_1/basis_manifest.json,retained component metadata
+1,fpca_basis,south_new_brighton,True,False,train,artifacts/models/fold_1/basis_manifest.json,retained component metadata
+1,fpca_basis,tauranga_farmers_building,False,False,excluded,artifacts/models/fold_1/basis_manifest.json,retained component metadata
+1,fpca_basis,wainoni,False,False,excluded,artifacts/models/fold_1/basis_manifest.json,retained component metadata
+1,fpca_basis,wainoni_pak_n_save,False,False,excluded,artifacts/models/fold_1/basis_manifest.json,retained component metadata
+1,fpca_basis,wellington_airport,True,False,train,artifacts/models/fold_1/basis_manifest.json,retained component metadata
+1,fpca_basis,wellington_college,True,False,train,artifacts/models/fold_1/basis_manifest.json,retained component metadata
+1,fpca_basis,whangarei_high_school,True,False,train,artifacts/models/fold_1/basis_manifest.json,retained component metadata
+1,gp_trend,aranui,True,False,train,artifacts/models/fold_1/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+1,gp_trend,avondale,False,False,excluded,artifacts/models/fold_1/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+1,gp_trend,avonside,True,False,train,artifacts/models/fold_1/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+1,gp_trend,baytown,True,False,train,artifacts/models/fold_1/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+1,gp_trend,bexley,True,False,train,artifacts/models/fold_1/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+1,gp_trend,cashmere_high_school,True,False,train,artifacts/models/fold_1/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+1,gp_trend,christchurch_central_city,True,False,train,artifacts/models/fold_1/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+1,gp_trend,christchurch_cnr_armagh_durham_st,True,False,train,artifacts/models/fold_1/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+1,gp_trend,christchurch_metro_sports_facility,True,False,train,artifacts/models/fold_1/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+1,gp_trend,christchurch_stadium,True,False,train,artifacts/models/fold_1/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+1,gp_trend,hastings_hospital,False,False,excluded,artifacts/models/fold_1/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+1,gp_trend,hollywood,True,False,train,artifacts/models/fold_1/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+1,gp_trend,kaiapoi_near_river,False,False,excluded,artifacts/models/fold_1/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+1,gp_trend,linwood_rudds_road,False,False,excluded,artifacts/models/fold_1/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+1,gp_trend,lower_hutt_town_hall,False,False,excluded,artifacts/models/fold_1/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+1,gp_trend,marshland,False,False,excluded,artifacts/models/fold_1/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+1,gp_trend,marshland_road,True,False,train,artifacts/models/fold_1/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+1,gp_trend,new_brighton_willryan_ave,True,False,train,artifacts/models/fold_1/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+1,gp_trend,newlock,False,False,excluded,artifacts/models/fold_1/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+1,gp_trend,parkland_bower_ave_one,True,False,train,artifacts/models/fold_1/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+1,gp_trend,parkland_bower_ave_two,False,False,excluded,artifacts/models/fold_1/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+1,gp_trend,port_nelson,False,False,excluded,artifacts/models/fold_1/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+1,gp_trend,redcliffs_main_road,True,False,train,artifacts/models/fold_1/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+1,gp_trend,richmond,True,False,train,artifacts/models/fold_1/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+1,gp_trend,south_new_brighton,True,False,train,artifacts/models/fold_1/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+1,gp_trend,tauranga_farmers_building,False,False,excluded,artifacts/models/fold_1/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+1,gp_trend,wainoni,False,False,excluded,artifacts/models/fold_1/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+1,gp_trend,wainoni_pak_n_save,False,False,excluded,artifacts/models/fold_1/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+1,gp_trend,wellington_airport,True,False,train,artifacts/models/fold_1/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+1,gp_trend,wellington_college,True,False,train,artifacts/models/fold_1/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+1,gp_trend,whangarei_high_school,True,False,train,artifacts/models/fold_1/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+2,tabpfn,aranui,False,False,excluded,artifacts/models/fold_2/tabpfn_training.json,retained component metadata
+2,tabpfn,avondale,True,False,train,artifacts/models/fold_2/tabpfn_training.json,retained component metadata
+2,tabpfn,avonside,False,False,excluded,artifacts/models/fold_2/tabpfn_training.json,retained component metadata
+2,tabpfn,baytown,False,False,excluded,artifacts/models/fold_2/tabpfn_training.json,retained component metadata
+2,tabpfn,bexley,False,False,excluded,artifacts/models/fold_2/tabpfn_training.json,retained component metadata
+2,tabpfn,cashmere_high_school,True,False,train,artifacts/models/fold_2/tabpfn_training.json,retained component metadata
+2,tabpfn,christchurch_central_city,False,False,excluded,artifacts/models/fold_2/tabpfn_training.json,retained component metadata
+2,tabpfn,christchurch_cnr_armagh_durham_st,False,False,excluded,artifacts/models/fold_2/tabpfn_training.json,retained component metadata
+2,tabpfn,christchurch_metro_sports_facility,False,True,validation,artifacts/models/fold_2/tabpfn_training.json,retained component metadata
+2,tabpfn,christchurch_stadium,True,False,train,artifacts/models/fold_2/tabpfn_training.json,retained component metadata
+2,tabpfn,hastings_hospital,False,False,excluded,artifacts/models/fold_2/tabpfn_training.json,retained component metadata
+2,tabpfn,hollywood,False,False,excluded,artifacts/models/fold_2/tabpfn_training.json,retained component metadata
+2,tabpfn,kaiapoi_near_river,True,False,train,artifacts/models/fold_2/tabpfn_training.json,retained component metadata
+2,tabpfn,linwood_rudds_road,True,False,train,artifacts/models/fold_2/tabpfn_training.json,retained component metadata
+2,tabpfn,lower_hutt_town_hall,False,False,excluded,artifacts/models/fold_2/tabpfn_training.json,retained component metadata
+2,tabpfn,marshland,False,True,validation,artifacts/models/fold_2/tabpfn_training.json,retained component metadata
+2,tabpfn,marshland_road,False,False,excluded,artifacts/models/fold_2/tabpfn_training.json,retained component metadata
+2,tabpfn,new_brighton_willryan_ave,True,False,train,artifacts/models/fold_2/tabpfn_training.json,retained component metadata
+2,tabpfn,newlock,True,False,train,artifacts/models/fold_2/tabpfn_training.json,retained component metadata
+2,tabpfn,parkland_bower_ave_one,True,False,train,artifacts/models/fold_2/tabpfn_training.json,retained component metadata
+2,tabpfn,parkland_bower_ave_two,True,False,train,artifacts/models/fold_2/tabpfn_training.json,retained component metadata
+2,tabpfn,port_nelson,True,False,train,artifacts/models/fold_2/tabpfn_training.json,retained component metadata
+2,tabpfn,redcliffs_main_road,False,False,excluded,artifacts/models/fold_2/tabpfn_training.json,retained component metadata
+2,tabpfn,richmond,True,False,train,artifacts/models/fold_2/tabpfn_training.json,retained component metadata
+2,tabpfn,south_new_brighton,True,False,train,artifacts/models/fold_2/tabpfn_training.json,retained component metadata
+2,tabpfn,tauranga_farmers_building,False,False,excluded,artifacts/models/fold_2/tabpfn_training.json,retained component metadata
+2,tabpfn,wainoni,True,False,train,artifacts/models/fold_2/tabpfn_training.json,retained component metadata
+2,tabpfn,wainoni_pak_n_save,True,False,train,artifacts/models/fold_2/tabpfn_training.json,retained component metadata
+2,tabpfn,wellington_airport,True,False,train,artifacts/models/fold_2/tabpfn_training.json,retained component metadata
+2,tabpfn,wellington_college,False,False,excluded,artifacts/models/fold_2/tabpfn_training.json,retained component metadata
+2,tabpfn,whangarei_high_school,False,False,excluded,artifacts/models/fold_2/tabpfn_training.json,retained component metadata
+2,xgb,aranui,False,False,excluded,artifacts/models/fold_2/xgb.json,retained component metadata
+2,xgb,avondale,True,False,train,artifacts/models/fold_2/xgb.json,retained component metadata
+2,xgb,avonside,False,False,excluded,artifacts/models/fold_2/xgb.json,retained component metadata
+2,xgb,baytown,False,False,excluded,artifacts/models/fold_2/xgb.json,retained component metadata
+2,xgb,bexley,False,False,excluded,artifacts/models/fold_2/xgb.json,retained component metadata
+2,xgb,cashmere_high_school,True,False,train,artifacts/models/fold_2/xgb.json,retained component metadata
+2,xgb,christchurch_central_city,False,False,excluded,artifacts/models/fold_2/xgb.json,retained component metadata
+2,xgb,christchurch_cnr_armagh_durham_st,False,False,excluded,artifacts/models/fold_2/xgb.json,retained component metadata
+2,xgb,christchurch_metro_sports_facility,False,True,validation,artifacts/models/fold_2/xgb.json,retained component metadata
+2,xgb,christchurch_stadium,True,False,train,artifacts/models/fold_2/xgb.json,retained component metadata
+2,xgb,hastings_hospital,False,False,excluded,artifacts/models/fold_2/xgb.json,retained component metadata
+2,xgb,hollywood,False,False,excluded,artifacts/models/fold_2/xgb.json,retained component metadata
+2,xgb,kaiapoi_near_river,True,False,train,artifacts/models/fold_2/xgb.json,retained component metadata
+2,xgb,linwood_rudds_road,True,False,train,artifacts/models/fold_2/xgb.json,retained component metadata
+2,xgb,lower_hutt_town_hall,False,False,excluded,artifacts/models/fold_2/xgb.json,retained component metadata
+2,xgb,marshland,False,True,validation,artifacts/models/fold_2/xgb.json,retained component metadata
+2,xgb,marshland_road,False,False,excluded,artifacts/models/fold_2/xgb.json,retained component metadata
+2,xgb,new_brighton_willryan_ave,True,False,train,artifacts/models/fold_2/xgb.json,retained component metadata
+2,xgb,newlock,True,False,train,artifacts/models/fold_2/xgb.json,retained component metadata
+2,xgb,parkland_bower_ave_one,True,False,train,artifacts/models/fold_2/xgb.json,retained component metadata
+2,xgb,parkland_bower_ave_two,True,False,train,artifacts/models/fold_2/xgb.json,retained component metadata
+2,xgb,port_nelson,True,False,train,artifacts/models/fold_2/xgb.json,retained component metadata
+2,xgb,redcliffs_main_road,False,False,excluded,artifacts/models/fold_2/xgb.json,retained component metadata
+2,xgb,richmond,True,False,train,artifacts/models/fold_2/xgb.json,retained component metadata
+2,xgb,south_new_brighton,True,False,train,artifacts/models/fold_2/xgb.json,retained component metadata
+2,xgb,tauranga_farmers_building,False,False,excluded,artifacts/models/fold_2/xgb.json,retained component metadata
+2,xgb,wainoni,True,False,train,artifacts/models/fold_2/xgb.json,retained component metadata
+2,xgb,wainoni_pak_n_save,True,False,train,artifacts/models/fold_2/xgb.json,retained component metadata
+2,xgb,wellington_airport,True,False,train,artifacts/models/fold_2/xgb.json,retained component metadata
+2,xgb,wellington_college,False,False,excluded,artifacts/models/fold_2/xgb.json,retained component metadata
+2,xgb,whangarei_high_school,False,False,excluded,artifacts/models/fold_2/xgb.json,retained component metadata
+2,cnp,aranui,False,False,excluded,artifacts/models/fold_2/cnp_training.json,retained component metadata
+2,cnp,avondale,True,False,train,artifacts/models/fold_2/cnp_training.json,retained component metadata
+2,cnp,avonside,False,False,excluded,artifacts/models/fold_2/cnp_training.json,retained component metadata
+2,cnp,baytown,False,False,excluded,artifacts/models/fold_2/cnp_training.json,retained component metadata
+2,cnp,bexley,False,False,excluded,artifacts/models/fold_2/cnp_training.json,retained component metadata
+2,cnp,cashmere_high_school,True,False,train,artifacts/models/fold_2/cnp_training.json,retained component metadata
+2,cnp,christchurch_central_city,False,False,excluded,artifacts/models/fold_2/cnp_training.json,retained component metadata
+2,cnp,christchurch_cnr_armagh_durham_st,False,False,excluded,artifacts/models/fold_2/cnp_training.json,retained component metadata
+2,cnp,christchurch_metro_sports_facility,False,True,validation,artifacts/models/fold_2/cnp_training.json,retained component metadata
+2,cnp,christchurch_stadium,True,False,train,artifacts/models/fold_2/cnp_training.json,retained component metadata
+2,cnp,hastings_hospital,False,False,excluded,artifacts/models/fold_2/cnp_training.json,retained component metadata
+2,cnp,hollywood,False,False,excluded,artifacts/models/fold_2/cnp_training.json,retained component metadata
+2,cnp,kaiapoi_near_river,True,False,train,artifacts/models/fold_2/cnp_training.json,retained component metadata
+2,cnp,linwood_rudds_road,True,False,train,artifacts/models/fold_2/cnp_training.json,retained component metadata
+2,cnp,lower_hutt_town_hall,False,False,excluded,artifacts/models/fold_2/cnp_training.json,retained component metadata
+2,cnp,marshland,False,True,validation,artifacts/models/fold_2/cnp_training.json,retained component metadata
+2,cnp,marshland_road,False,False,excluded,artifacts/models/fold_2/cnp_training.json,retained component metadata
+2,cnp,new_brighton_willryan_ave,True,False,train,artifacts/models/fold_2/cnp_training.json,retained component metadata
+2,cnp,newlock,True,False,train,artifacts/models/fold_2/cnp_training.json,retained component metadata
+2,cnp,parkland_bower_ave_one,True,False,train,artifacts/models/fold_2/cnp_training.json,retained component metadata
+2,cnp,parkland_bower_ave_two,True,False,train,artifacts/models/fold_2/cnp_training.json,retained component metadata
+2,cnp,port_nelson,True,False,train,artifacts/models/fold_2/cnp_training.json,retained component metadata
+2,cnp,redcliffs_main_road,False,False,excluded,artifacts/models/fold_2/cnp_training.json,retained component metadata
+2,cnp,richmond,True,False,train,artifacts/models/fold_2/cnp_training.json,retained component metadata
+2,cnp,south_new_brighton,True,False,train,artifacts/models/fold_2/cnp_training.json,retained component metadata
+2,cnp,tauranga_farmers_building,False,False,excluded,artifacts/models/fold_2/cnp_training.json,retained component metadata
+2,cnp,wainoni,True,False,train,artifacts/models/fold_2/cnp_training.json,retained component metadata
+2,cnp,wainoni_pak_n_save,True,False,train,artifacts/models/fold_2/cnp_training.json,retained component metadata
+2,cnp,wellington_airport,True,False,train,artifacts/models/fold_2/cnp_training.json,retained component metadata
+2,cnp,wellington_college,False,False,excluded,artifacts/models/fold_2/cnp_training.json,retained component metadata
+2,cnp,whangarei_high_school,False,False,excluded,artifacts/models/fold_2/cnp_training.json,retained component metadata
+2,fpca_basis,aranui,False,False,excluded,artifacts/models/fold_2/basis_manifest.json,retained component metadata
+2,fpca_basis,avondale,True,False,train,artifacts/models/fold_2/basis_manifest.json,retained component metadata
+2,fpca_basis,avonside,False,False,excluded,artifacts/models/fold_2/basis_manifest.json,retained component metadata
+2,fpca_basis,baytown,False,False,excluded,artifacts/models/fold_2/basis_manifest.json,retained component metadata
+2,fpca_basis,bexley,False,False,excluded,artifacts/models/fold_2/basis_manifest.json,retained component metadata
+2,fpca_basis,cashmere_high_school,True,False,train,artifacts/models/fold_2/basis_manifest.json,retained component metadata
+2,fpca_basis,christchurch_central_city,False,False,excluded,artifacts/models/fold_2/basis_manifest.json,retained component metadata
+2,fpca_basis,christchurch_cnr_armagh_durham_st,False,False,excluded,artifacts/models/fold_2/basis_manifest.json,retained component metadata
+2,fpca_basis,christchurch_metro_sports_facility,False,False,excluded,artifacts/models/fold_2/basis_manifest.json,retained component metadata
+2,fpca_basis,christchurch_stadium,True,False,train,artifacts/models/fold_2/basis_manifest.json,retained component metadata
+2,fpca_basis,hastings_hospital,True,False,train,artifacts/models/fold_2/basis_manifest.json,retained component metadata
+2,fpca_basis,hollywood,False,False,excluded,artifacts/models/fold_2/basis_manifest.json,retained component metadata
+2,fpca_basis,kaiapoi_near_river,True,False,train,artifacts/models/fold_2/basis_manifest.json,retained component metadata
+2,fpca_basis,linwood_rudds_road,True,False,train,artifacts/models/fold_2/basis_manifest.json,retained component metadata
+2,fpca_basis,lower_hutt_town_hall,False,False,excluded,artifacts/models/fold_2/basis_manifest.json,retained component metadata
+2,fpca_basis,marshland,False,False,excluded,artifacts/models/fold_2/basis_manifest.json,retained component metadata
+2,fpca_basis,marshland_road,False,False,excluded,artifacts/models/fold_2/basis_manifest.json,retained component metadata
+2,fpca_basis,new_brighton_willryan_ave,True,False,train,artifacts/models/fold_2/basis_manifest.json,retained component metadata
+2,fpca_basis,newlock,True,False,train,artifacts/models/fold_2/basis_manifest.json,retained component metadata
+2,fpca_basis,parkland_bower_ave_one,True,False,train,artifacts/models/fold_2/basis_manifest.json,retained component metadata
+2,fpca_basis,parkland_bower_ave_two,True,False,train,artifacts/models/fold_2/basis_manifest.json,retained component metadata
+2,fpca_basis,port_nelson,True,False,train,artifacts/models/fold_2/basis_manifest.json,retained component metadata
+2,fpca_basis,redcliffs_main_road,False,False,excluded,artifacts/models/fold_2/basis_manifest.json,retained component metadata
+2,fpca_basis,richmond,True,False,train,artifacts/models/fold_2/basis_manifest.json,retained component metadata
+2,fpca_basis,south_new_brighton,True,False,train,artifacts/models/fold_2/basis_manifest.json,retained component metadata
+2,fpca_basis,tauranga_farmers_building,False,False,excluded,artifacts/models/fold_2/basis_manifest.json,retained component metadata
+2,fpca_basis,wainoni,True,False,train,artifacts/models/fold_2/basis_manifest.json,retained component metadata
+2,fpca_basis,wainoni_pak_n_save,True,False,train,artifacts/models/fold_2/basis_manifest.json,retained component metadata
+2,fpca_basis,wellington_airport,True,False,train,artifacts/models/fold_2/basis_manifest.json,retained component metadata
+2,fpca_basis,wellington_college,False,False,excluded,artifacts/models/fold_2/basis_manifest.json,retained component metadata
+2,fpca_basis,whangarei_high_school,False,False,excluded,artifacts/models/fold_2/basis_manifest.json,retained component metadata
+2,gp_trend,aranui,False,False,excluded,artifacts/models/fold_2/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+2,gp_trend,avondale,True,False,train,artifacts/models/fold_2/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+2,gp_trend,avonside,False,False,excluded,artifacts/models/fold_2/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+2,gp_trend,baytown,False,False,excluded,artifacts/models/fold_2/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+2,gp_trend,bexley,False,False,excluded,artifacts/models/fold_2/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+2,gp_trend,cashmere_high_school,True,False,train,artifacts/models/fold_2/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+2,gp_trend,christchurch_central_city,False,False,excluded,artifacts/models/fold_2/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+2,gp_trend,christchurch_cnr_armagh_durham_st,False,False,excluded,artifacts/models/fold_2/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+2,gp_trend,christchurch_metro_sports_facility,False,False,excluded,artifacts/models/fold_2/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+2,gp_trend,christchurch_stadium,True,False,train,artifacts/models/fold_2/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+2,gp_trend,hastings_hospital,True,False,train,artifacts/models/fold_2/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+2,gp_trend,hollywood,False,False,excluded,artifacts/models/fold_2/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+2,gp_trend,kaiapoi_near_river,True,False,train,artifacts/models/fold_2/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+2,gp_trend,linwood_rudds_road,True,False,train,artifacts/models/fold_2/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+2,gp_trend,lower_hutt_town_hall,False,False,excluded,artifacts/models/fold_2/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+2,gp_trend,marshland,False,False,excluded,artifacts/models/fold_2/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+2,gp_trend,marshland_road,False,False,excluded,artifacts/models/fold_2/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+2,gp_trend,new_brighton_willryan_ave,True,False,train,artifacts/models/fold_2/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+2,gp_trend,newlock,True,False,train,artifacts/models/fold_2/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+2,gp_trend,parkland_bower_ave_one,True,False,train,artifacts/models/fold_2/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+2,gp_trend,parkland_bower_ave_two,True,False,train,artifacts/models/fold_2/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+2,gp_trend,port_nelson,True,False,train,artifacts/models/fold_2/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+2,gp_trend,redcliffs_main_road,False,False,excluded,artifacts/models/fold_2/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+2,gp_trend,richmond,True,False,train,artifacts/models/fold_2/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+2,gp_trend,south_new_brighton,True,False,train,artifacts/models/fold_2/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+2,gp_trend,tauranga_farmers_building,False,False,excluded,artifacts/models/fold_2/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+2,gp_trend,wainoni,True,False,train,artifacts/models/fold_2/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+2,gp_trend,wainoni_pak_n_save,True,False,train,artifacts/models/fold_2/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+2,gp_trend,wellington_airport,True,False,train,artifacts/models/fold_2/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+2,gp_trend,wellington_college,False,False,excluded,artifacts/models/fold_2/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend
+2,gp_trend,whangarei_high_school,False,False,excluded,artifacts/models/fold_2/gp_trend.json,fold_train_sites; prior leakage_audit numerically checked GP trend

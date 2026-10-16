@@ -1,0 +1,156 @@
+{
+  "base_checkpoint": "C:\\Users\\Administrator\\AppData\\Roaming\\tabpfn\\tabpfn-v2-regressor.ckpt",
+  "base_checkpoint_sha256": "2ab5a07d5c41dfe6db9aa7ae106fc6de898326c2765be66505a07e2868c10736",
+  "folds": [
+    {
+      "fold_id": 0,
+      "cnp": {
+        "actual_steps": 600,
+        "best_step": 200,
+        "initial_validation_log_mae": 1.2275855126580033,
+        "best_validation_log_mae": 0.9211999165970376,
+        "n_parameters": 26817,
+        "n_train_episodes": 408,
+        "n_validation_episodes": 24,
+        "elapsed_seconds": 2.204498000000058,
+        "execution_device": "cpu",
+        "target_mean": 1.7436483934015488,
+        "target_scale": 1.0085261917666646,
+        "loss": "equal_site_episode_mean_absolute_log_error",
+        "all_checkpoint_tensors_finite": true,
+        "checkpoint_best_step": 200,
+        "changed_tensors_vs_seeded_initialization": 14,
+        "max_parameter_change_vs_seeded_initialization": 0.07466083019971848,
+        "best_exposed_episodes": 194,
+        "total_exposed_episodes": 408
+      },
+      "tabpfn": {
+        "successful_optimizer_updates": 600,
+        "actual_steps": 600,
+        "best_step": 500,
+        "elapsed_seconds": 602.5502497000052,
+        "loss": "official_crps_plus_mse",
+        "selection_metric": "mean_site(mean_episode(log_mae + 0.5 * native_event_brier))",
+        "development_run": false,
+        "model_generation": "v2",
+        "package_version": "9.2.0",
+        "matched_state_tensors": 129,
+        "changed_state_tensors_vs_v2_base": 129,
+        "max_parameter_change_vs_v2_base": 0.0015463940799236298,
+        "checkpoint_sha256": "ad9aab2ad4b11b5e13cf5d69da0be6b526603fde842ff2e8f6b3091933a7702c",
+        "comparison_note": "Base v2 state converted through the installed tabpfn 9.2.0 loader to the same architecture/key layout as the fine-tuned checkpoints",
+        "all_checkpoint_tensors_finite": false,
+        "nonfinite_state_entries": {
+          "criterion.losses_per_bucket": {
+            "shape": [
+              5000
+            ],
+            "nonfinite_count": 5000
+          }
+        },
+        "all_learned_parameter_tensors_finite": true,
+        "buffer_note": "criterion.losses_per_bucket is a loss-accounting buffer, not a learned prediction parameter; its unused NaNs are not inference NaNs. All measured predictions in the probe are finite."
+      }
+    },
+    {
+      "fold_id": 1,
+      "cnp": {
+        "actual_steps": 500,
+        "best_step": 100,
+        "initial_validation_log_mae": 1.4397948610625688,
+        "best_validation_log_mae": 0.8702492375065246,
+        "n_parameters": 26817,
+        "n_train_episodes": 472,
+        "n_validation_episodes": 24,
+        "elapsed_seconds": 1.5995980999998665,
+        "execution_device": "cpu",
+        "target_mean": 1.8618051637212178,
+        "target_scale": 1.0781936057812302,
+        "loss": "equal_site_episode_mean_absolute_log_error",
+        "all_checkpoint_tensors_finite": true,
+        "checkpoint_best_step": 100,
+        "changed_tensors_vs_seeded_initialization": 14,
+        "max_parameter_change_vs_seeded_initialization": 0.06052015721797943,
+        "best_exposed_episodes": 100,
+        "total_exposed_episodes": 427
+      },
+      "tabpfn": {
+        "successful_optimizer_updates": 600,
+        "actual_steps": 600,
+        "best_step": 300,
+        "elapsed_seconds": 617.857122100002,
+        "loss": "official_crps_plus_mse",
+        "selection_metric": "mean_site(mean_episode(log_mae + 0.5 * native_event_brier))",
+        "development_run": false,
+        "model_generation": "v2",
+        "package_version": "9.2.0",
+        "matched_state_tensors": 129,
+        "changed_state_tensors_vs_v2_base": 129,
+        "max_parameter_change_vs_v2_base": 0.0010991394519805908,
+        "checkpoint_sha256": "70ef307e979013ab5d4b73fdf9033575465a91af69ea5475c31b9550a070df34",
+        "comparison_note": "Base v2 state converted through the installed tabpfn 9.2.0 loader to the same architecture/key layout as the fine-tuned checkpoints",
+        "all_checkpoint_tensors_finite": false,
+        "nonfinite_state_entries": {
+          "criterion.losses_per_bucket": {
+            "shape": [
+              5000
+            ],
+            "nonfinite_count": 5000
+          }
+        },
+        "all_learned_parameter_tensors_finite": true,
+        "buffer_note": "criterion.losses_per_bucket is a loss-accounting buffer, not a learned prediction parameter; its unused NaNs are not inference NaNs. All measured predictions in the probe are finite."
+      }
+    },
+    {
+      "fold_id": 2,
+      "cnp": {
+        "actual_steps": 1200,
+        "best_step": 800,
+        "initial_validation_log_mae": 1.2265459529324243,
+        "best_validation_log_mae": 0.9417213792436494,
+        "n_parameters": 26817,
+        "n_train_episodes": 400,
+        "n_validation_episodes": 20,
+        "elapsed_seconds": 4.10567170000013,
+        "execution_device": "cpu",
+        "target_mean": 1.8790831141096347,
+        "target_scale": 1.1338103099145194,
+        "loss": "equal_site_episode_mean_absolute_log_error",
+        "all_checkpoint_tensors_finite": true,
+        "checkpoint_best_step": 800,
+        "changed_tensors_vs_seeded_initialization": 14,
+        "max_parameter_change_vs_seeded_initialization": 0.20337887108325958,
+        "best_exposed_episodes": 400,
+        "total_exposed_episodes": 400
+      },
+      "tabpfn": {
+        "successful_optimizer_updates": 500,
+        "actual_steps": 500,
+        "best_step": 200,
+        "elapsed_seconds": 494.29628740000044,
+        "loss": "official_crps_plus_mse",
+        "selection_metric": "mean_site(mean_episode(log_mae + 0.5 * native_event_brier))",
+        "development_run": false,
+        "model_generation": "v2",
+        "package_version": "9.2.0",
+        "matched_state_tensors": 129,
+        "changed_state_tensors_vs_v2_base": 129,
+        "max_parameter_change_vs_v2_base": 0.0009177178144454956,
+        "checkpoint_sha256": "9d22d6140e801f7f09ccbe98f04eee71dab44ca13a21e47804e484f4e446ccb4",
+        "comparison_note": "Base v2 state converted through the installed tabpfn 9.2.0 loader to the same architecture/key layout as the fine-tuned checkpoints",
+        "all_checkpoint_tensors_finite": false,
+        "nonfinite_state_entries": {
+          "criterion.losses_per_bucket": {
+            "shape": [
+              5000
+            ],
+            "nonfinite_count": 5000
+          }
+        },
+        "all_learned_parameter_tensors_finite": true,
+        "buffer_note": "criterion.losses_per_bucket is a loss-accounting buffer, not a learned prediction parameter; its unused NaNs are not inference NaNs. All measured predictions in the probe are finite."
+      }
+    }
+  ]
+}

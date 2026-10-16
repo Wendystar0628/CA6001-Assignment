@@ -1,0 +1,40 @@
+experiment:
+  version: adaptive_v1
+  description: Limited-data site-held-out re-evaluation; historical test sites have already been inspected.
+  seeds: [17, 29, 43]
+  initial_locations: 5
+  batch_size: 2
+  audit_fraction: 0.2
+  output: results/adaptive_v1
+  work: runs/adaptive_v1
+  device: cuda
+  cpu_threads: 1
+models:
+  main: [gp, xgb, cnp, tabpfn_joint, tabpfn_graph]
+  ablations: [tabpfn_residual_raw, tabpfn_residual_guarded, tabpfn_residual_unfinetuned, tabpfn_joint_unfinetuned]
+  observation_checkpoints: [5, 7, 9, 11, 13]
+  selection: development_site_equal_mean_log_mae_at_registered_states
+acquisition:
+  candidates:
+    UDS: [0.5, 0.3, 0.2]
+    US: [0.7, 0.0, 0.3]
+  min_spacing: atomic_near_group
+stopping:
+  min_observed: 9
+  consecutive_rounds: 2
+  support_max_initial_groups: 5
+  candidate_quantiles: [0.5, 0.75, 0.9]
+  selection: maximise_development_site_equal_verified_saved_fraction_minus_false_stop_rate
+quality:
+  scope: profile_and_cumulative_thickness_research_targets
+  absolute_target_source: development_full_plan_75th_percentile_plus_predeclared_margin
+  absolute_log_margin: 0.05
+  absolute_thickness_margin_m: 0.10
+  relative_log_tolerance: 0.05
+  relative_thickness_tolerance_m: 0.25
+  low_qc_recall_target: 0.5
+  low_qc_fpr_target: 0.1
+  low_qc_target_role: separate_diagnostic_not_an_engineering_safety_claim
+economics:
+  config: configs/economics_case.yaml
+  primary_alpha: 1.0

@@ -1,0 +1,127 @@
+case:
+  case_id: newlock_shallow_task_counterfactual_v1
+  name: New Lock Terneuzen supplementary shallow-task scenario
+  perspective: owner_financial
+  currency: EUR
+  price_year: 2025
+  region: Netherlands
+  pricing_mode: all_in_per_cpt
+  tax_basis: consistent_exclusive_tax_scenario_no_recoverability_claim
+  primary_alpha: 1.0
+  alpha_values: [0.5, 0.75, 1.0]
+  scope: conditional_replaceable_supplementary_CPT_only
+  scope_note: These additional planned CPTs are assumed to serve the validated 2–8 m task only; deep-design and statutory CPTs remain common to both plans. This is not a reconstruction of the original contract.
+parameters:
+  cost_per_cpt:
+    value: 750.0
+    unit: EUR/CPT
+    source_type: explicit_scenario_assumption
+    source: No Terneuzen contract unit price was obtained; a scenario all-inclusive per-CPT price is used, excluding common and additional mobilization.
+    lower: 350.0
+    upper: 1500.0
+    overlaps: Includes rig, crew, positioning, penetration and routine per-CPT processing; do not add those again.
+  plan_depth_m:
+    value: 20.0
+    unit: m/CPT
+    source_type: explicit_scenario_assumption
+    source: Full planned penetration depth for this hypothetical supplementary task; not the 6 m modelled interval and not a recovered historical plan.
+    lower: 10.0
+    upper: 30.0
+    overlaps: Included in the all-inclusive CPT unit price, not multiplied into the invoice again.
+  mobilization_cost:
+    value: 560.0
+    unit: EUR/visit
+    source_type: local_quote_transfer_assumption
+    source: MOS Grondmechanica quote A2501409, 2025-05-01, page 3; an extra fieldwork phase including KLIC, surveyor and CPT-rig mobilization costs EUR 560 at Bussum. Transfer to this scenario is an assumption.
+    source_url: https://www.spieghelhoek.nl/wp-content/uploads/2025/08/offerte-Mos-Realisatie-appartementencomplex-De-Spiegelhoek-010525-003.pdf
+    lower: 300.0
+    upper: 1500.0
+    overlaps: One common visit in both plans cancels. Count a new visit only when explicitly required, including failed-stop repair.
+  cpt_per_rig_workday:
+    value: 5.0
+    unit: CPT/rig/workday
+    source_type: explicit_scenario_assumption
+    source: Assumed accessible land-based supplementary campaign; not measured Terneuzen productivity.
+    lower: 3.0
+    upper: 8.0
+    overlaps: Controls duration only; rig and crew charges are already in cost_per_cpt.
+  parallel_rigs:
+    value: 1
+    unit: rigs
+    source_type: explicit_scenario_assumption
+    source: One continuous campaign; additional decision batches do not automatically imply remobilization.
+    lower: 1
+    upper: 1
+  batch_wait_calendar_days:
+    value: 0.25
+    unit: calendar_day/interbatch_transition
+    source_type: explicit_scenario_assumption
+    source: Additional elapsed decision/release delay between sequential batches; excluded from field workdays.
+    lower: 0.0
+    upper: 1.0
+  review_workdays_per_batch:
+    value: 0.0
+    unit: workday/batch
+    source_type: explicit_scenario_assumption
+    source: Review is included in the interbatch release delay in the main scenario. Set separately only when it consumes additional non-overlapping time.
+    lower: 0.0
+    upper: 0.25
+  project_cost_per_calendar_day:
+    value: 5000.0
+    unit: EUR/calendar_day
+    source_type: explicit_scenario_assumption
+    source: Avoidable project-side site management/rental/temporary-facility expense, excluding CPT crew, AI review and financing. Not inferred from total lock investment.
+    lower: 0.0
+    upper: 15000.0
+    overlaps: Excludes CPT unit price, AI increment and net operating benefit.
+  opening_net_per_calendar_day:
+    value: 3000.0
+    unit: EUR/calendar_day
+    source_type: explicit_scenario_assumption
+    source: Hypothetical operator incremental NET cash flow with a common evaluation cutoff and available demand. No published New Lock operator cash flow was obtained. Zero is included in sensitivity.
+    lower: 0.0
+    upper: 10000.0
+    overlaps: Owner-only net cash flow; excludes user waiting-time savings and all project-side daily costs.
+  ai_incremental_cost:
+    value: 600.0
+    unit: EUR/trajectory
+    source_type: explicit_scenario_assumption
+    source: Assumed four adviser-hours at EUR 150/h, anchored to MOS A2501409 page 3, inclusive of deployment, compute, review and verification for one campaign; not an observed invoice.
+    source_url: https://www.spieghelhoek.nl/wp-content/uploads/2025/08/offerte-Mos-Realisatie-appartementencomplex-De-Spiegelhoek-010525-003.pdf
+    lower: 300.0
+    upper: 2000.0
+    overlaps: Single incremental total. No second AI/review/compute charge is added elsewhere.
+  repair_wait_calendar_days:
+    value: 2.0
+    unit: calendar_day/failed_stop
+    source_type: explicit_scenario_assumption
+    source: Discovery and return-to-site elapsed delay before completing all unmeasured planned CPTs; additional to field days and review delay.
+    lower: 0.0
+    upper: 5.0
+  social_affected_vessels_per_day:
+    value: 20.0
+    unit: vessel/calendar_day
+    source_type: explicit_scenario_assumption
+    source: Illustrative marginal vessels benefiting during earlier service, not the total port traffic or measured New Lock usage.
+    lower: 0.0
+    upper: 50.0
+  social_hours_saved_per_vessel:
+    value: 0.5
+    unit: hour/vessel
+    source_type: explicit_scenario_assumption
+    source: Illustrative reduction during earlier operation; no causal before/after waiting-time estimate is claimed.
+    lower: 0.0
+    upper: 1.0
+  social_vessel_hour_cost:
+    value: 200.0
+    unit: EUR/vessel_hour
+    source_type: explicit_scenario_assumption
+    source: Scenario value only. KiM publishes segment-specific loading/unloading/waiting costs; no representative fleet mix was recovered, so no single reported fleet-average tariff is claimed.
+    source_url: https://www.kimnet.nl/documenten/2023/03/30/kostenkengetallen-voor-het-goederenvervoer
+    lower: 100.0
+    upper: 500.0
+schedule:
+  calendar_conversion: seven_over_five
+  workdays_per_week: 5
+  field_day_rounding: pooled_with_separate_repair
+  note: Convert productive and additional review workdays by 7/5; interbatch/repair waits are already calendar days. This is an average calendar mapping, not a dated historic schedule.

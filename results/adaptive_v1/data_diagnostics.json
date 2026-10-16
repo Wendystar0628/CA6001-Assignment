@@ -1,0 +1,108 @@
+{
+  "version": "adaptive_v1",
+  "seeds": [
+    17,
+    29,
+    43
+  ],
+  "n_splits": 24,
+  "n_source_profiles": 503,
+  "n_planned_positions": 495,
+  "n_usable_positions": 492,
+  "n_grid_rows": 11808,
+  "n_sites": 31,
+  "source_profile_exclusion_counts": {
+    "retained_representative": 492,
+    "same_coordinate_nonrepresentative": 8,
+    "incomplete_midpoint_grid_or_interpolation_gap": 3
+  },
+  "n_position_near_groups": 456,
+  "near_group_size_counts": {
+    "1": 435,
+    "2": 14,
+    "3": 2,
+    "4": 2,
+    "5": 3
+  },
+  "development_sites": {
+    "lower_hutt_town_hall": 0,
+    "tauranga_farmers_building": 0,
+    "christchurch_metro_sports_facility": 2,
+    "marshland": 2
+  },
+  "evaluation_sites": {
+    "christchurch_stadium": 0,
+    "wellington_airport": 0,
+    "newlock": 1,
+    "hollywood": 2
+  },
+  "evaluation_scope": "limited-data re-evaluation; no new independent blind-test claim",
+  "historical_unblind_events": [
+    {
+      "event": "unblind_started",
+      "run_index": 1,
+      "rerun": false,
+      "time": "2026-10-14T22:50:43+08:00",
+      "user": "Administrator",
+      "frozen_at": "2026-10-14T22:50:34+08:00",
+      "protocol_sha256": "6f88d02f46a049a2d4b97ebd788ff458029451170877a9224d9fcaad11abb452",
+      "blind_predictions_sha256": "f87c1f7b3aac2f93e15017b2c87a9db1815041138f82651dbc130c523fbf30a4"
+    },
+    {
+      "event": "unblind_finished",
+      "run_index": 1,
+      "rerun": false,
+      "time": "2026-10-14T22:51:17+08:00",
+      "output": "results/final_test/unblind",
+      "outputs_sha256": {
+        "budget_metrics.csv": "c2180b8783dcc210211c4f7ffd4087730170ad013fcaf0fc74a15d908958ee8e",
+        "curves.csv": "8d326e43642db88681254aa53568f2b5c8a882db59f45ca8b6ec0f42b4f263fe",
+        "decisions.json": "dc8c00e3513b76597a3f627085f646fe03b7d3a14b12b084af4e62dbaf0585b3",
+        "metrics.csv": "bc5a996e18adbd48ab3607ae957779cf4e74d5b15d21db11632a45a98f49ad41",
+        "paired_comparisons.csv": "db96e259caf0e072a020998eb45df4815ee5ebd2e2536745e55b81ddf3ae5209",
+        "site_budget_metrics.csv": "595e0fb7a7a9c018ca343b62530e618992584d2d30819c964915bf369774d1eb",
+        "site_metrics.csv": "6da46bef5b1e94253eaeed4fead00b54b4d0245afb056a24481b0ec2fd3f84da",
+        "test_ranking.csv": "29e102882bbbac49b8f6ca54f4c66e1db3cb7fee6f7a65b278d6d04ef576c1dc",
+        "test_ranking_verified_sites.csv": "15d1bcb0fac392ec9c2e4b1b482a010a9013b10a1993fbd6ed47082527b8f0ce"
+      }
+    }
+  ],
+  "no_replay_cross_group_curve_duplicates": true,
+  "near_duplicate_grid_pairs": 1,
+  "cross_site_near_duplicate_grid_pairs": 0,
+  "duplicate_curve_rule": "offline maximum absolute log-qc difference <= 0.001 over all 24 cells; exact-grid screening, not full-curve identity proof",
+  "whole_group_rule": "all near-group members stay together in S0, C, A and later batches",
+  "source_exclusion_check_passed": true,
+  "newlock_source_mapping": {
+    "archive_profiles": 98,
+    "coordinate_matched": 98,
+    "screened_profiles": 80,
+    "excluded_profiles": 18,
+    "exclusion_reasons": {
+      "raw_curve_starts_below_2m_window_top": 15,
+      "raw_curve_ends_before_8m_window_bottom": 3
+    }
+  },
+  "representation_reference": "piecewise-linear raw positive qc, exact threshold crossings, no gaps > 0.5 m, 2-8 m",
+  "representation_complete_only_summary": true,
+  "runtime_depth_step_m": 0.25,
+  "grid_010_status": "diagnostic only; no model retraining or claim of a shared 0.1 m evaluation",
+  "representation_overall": {
+    "site_id": "ALL",
+    "n_profiles": 492,
+    "n_complete_raw_windows": 492,
+    "grid_025_mae_m": 0.09249349823094744,
+    "grid_025_p90_abs_error_m": 0.25646552767193614,
+    "grid_025_max_abs_error_m": 0.7328831993451317,
+    "grid_025_mean_signed_error_m": -0.005966090151135452,
+    "grid_010_diagnostic_mae_m": 0.033494453399068494,
+    "raw_thin_intervals_lt_025": 805,
+    "thin_intervals_without_025_midpoint": 498,
+    "thin_thickness_without_025_midpoint_m": 33.52030280642285
+  },
+  "frozen_inputs_sha256": {
+    "artifacts/evaluation/folds.json": "70489254f7d80e27c21adee510adc8c4ea75770ec86478e7203ab2b01e5dd782",
+    "data_processed_v2/profiles.parquet": "ffec7a19af0b736bb6c144ddd54a33094c69036c852baf56db1f16b1e5760750",
+    "data_processed_v2/grid.parquet": "730071caa869ca82163bc54ceffc53d3806d93c70531a3f3d8574c83ab66fdb1"
+  }
+}
