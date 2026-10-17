@@ -1,11 +1,9 @@
 \section{Conclusion}
 
-\textbf{What was built.} We built and audited an end-to-end, AI-guided CPT investigation loop. It combines
-five AI predictors, an uncertainty--disagreement--distance acquisition score, a multi-signal stop rule and
-an owner's economic model.
-
-\textbf{Findings.} (i)~the TabPFN hybrids gave the lowest profile error (0.497 log-MAE) and the highest low-cell recall (36\%), within about 3\% of XGBoost and GP; (ii)~with rules frozen on development sites, no early stop failed the audit; (iii)~CPTs were saved only at the most uniform site: 47.6\%, at the minimum the rule allows, worth $+$\eur{23,300} in the main scenario; (iv)~adaptive location choice did not beat simple maximin ordering; (v)~New Lock could not reach the quality targets with any number of CPTs.
-
-\textbf{Lessons.} An AI algorithm should be judged by the decision it supports, using an independent audit
-and reporting negative results. In investigation planning, site predictability and decision latency
-mattered more here than the marginal accuracy of the predictor.
+We built and audited an end-to-end AI-guided CPT investigation loop combining five predictors, an
+uncertainty--disagreement--distance acquisition score, a multi-signal stop rule and an economic model. The
+TabPFN hybrids predicted best, but only by about 3\%. The frozen stop rule never stopped wrongly, yet it
+saved CPTs only at the most uniform site (47.6\%, $+$\eur{23,300} in the main scenario), and adaptive
+selection did not beat maximin. The main lesson is that an AI algorithm should be judged by the decision it
+supports, with an independent audit and honest negative results. Here, site predictability and decision
+latency mattered more than predictor accuracy.

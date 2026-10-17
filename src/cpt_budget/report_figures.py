@@ -265,52 +265,50 @@ def _revealed(site, seed, policy, max_n):
 
 
 def fig_maps():
+    """One row of four maps at print size: Airport (stop) and New Lock (first CPTs), both policies."""
     seed = 17
     rows = [("wellington_airport", 11, True), ("newlock", 13, False)]
-    fig = plt.figure(figsize=(TEXT_W, 6.4))
-    gs = fig.add_gridspec(2, 2, height_ratios=[1, 1.45], hspace=0.4, wspace=0.08)
-    for r, (site, max_n, is_final) in enumerate(rows):
+    fig = plt.figure(figsize=(TEXT_W, 3.15))
+    gs = fig.add_gridspec(1, 4, wspace=0.28, width_ratios=[1, 1, 1, 1])
+    short = {"wellington_airport": "Airport", "newlock": "New Lock"}
+    k = 0
+    for site, max_n, is_final in rows:
         loc = locations[(locations.site_id == site) & (locations.seed == seed)].drop_duplicates("location_id")
         n_full = int(loc.n_full.iloc[0])
         x0, y0 = loc.x_m.min(), loc.y_m.min()
-        for c, policy in enumerate(["B_seq", "P_adapt"]):
-            ax = fig.add_subplot(gs[r, c])
+        for policy in ["B_seq", "P_adapt"]:
+            ax = fig.add_subplot(gs[0, k])
             sel, n_obs = _revealed(site, seed, policy, max_n)
             new = sel[sel["round"] > 0].merge(loc[["location_id", "x_m", "y_m"]], on="location_id")
             cand = loc[loc.partition == "C"]
-            ax.scatter(cand.x_m - x0, cand.y_m - y0, s=15, facecolor="white", edgecolor=MUTED, lw=0.7, zorder=2)
+            ax.scatter(cand.x_m - x0, cand.y_m - y0, s=10, facecolor="white", edgecolor=MUTED, lw=0.6, zorder=2)
             aud = loc[loc.partition == "A"]
-            ax.scatter(aud.x_m - x0, aud.y_m - y0, s=20, marker="D", facecolor="#fbeaea", edgecolor=BAD,
-                       lw=0.8, zorder=3)
+            ax.scatter(aud.x_m - x0, aud.y_m - y0, s=13, marker="D", facecolor="#fbeaea", edgecolor=BAD,
+                       lw=0.7, zorder=3)
             ini = loc[loc.partition == "S0"]
-            ax.scatter(ini.x_m - x0, ini.y_m - y0, s=24, marker="s", color=INK, zorder=4)
+            ax.scatter(ini.x_m - x0, ini.y_m - y0, s=16, marker="s", color=INK, zorder=4)
             col = POLICY_COLOR[policy]
-            ax.scatter(new.x_m - x0, new.y_m - y0, s=30, color=col, edgecolor="white", lw=0.8, zorder=5)
+            ax.scatter(new.x_m - x0, new.y_m - y0, s=20, color=col, edgecolor="white", lw=0.6, zorder=5)
             for _, p in new.drop_duplicates("location_id").iterrows():
-                ax.annotate(str(int(p["round"])), (p.x_m - x0, p.y_m - y0), xytext=(-3, 3),
-                            textcoords="offset points", fontsize=6.2, color=col, fontweight="bold",
+                ax.annotate(str(int(p["round"])), (p.x_m - x0, p.y_m - y0), xytext=(-2.5, 2.5),
+                            textcoords="offset points", fontsize=6.4, color=col, fontweight="bold",
                             ha="right", zorder=6)
             ax.set_aspect("equal", adjustable="box")
-            ax.tick_params(labelsize=6.5)
-            if c == 0:
-                ax.set_ylabel("Northing offset (m)")
-            else:
-                ax.tick_params(labelleft=False)
-            ax.set_xlabel("Easting offset (m)")
-            final = decisions[(decisions.site_id == site) & (decisions.seed == seed)
-                              & (decisions.policy_id == policy)].n_stop.iloc[0]
-            name = "Sequential (maximin)" if policy == "B_seq" else "Adaptive (UDS score)"
-            note = (f"online stop at {n_obs} of {n_full} CPTs" if is_final
-                    else f"first {n_obs} of {n_full} CPTs shown; final {final}/{n_full}")
-            ax.set_title(f"{'abcd'[2 * r + c]}   {SITE_NAME[site].replace(' Terneuzen', '')}: {name}",
-                         loc="left", pad=13)
-            ax.text(0.0, 1.015, note, transform=ax.transAxes, ha="left", va="bottom", fontsize=6.3, color=INK2)
-    handles = [Line2D([], [], marker="s", ls="", color=INK, ms=5, label="Initial S0"),
-               Line2D([], [], marker="o", ls="", mfc="white", mec=MUTED, ms=5, label="Candidate (unrevealed)"),
-               Line2D([], [], marker="o", ls="", color=SEQ, ms=5, label="Revealed, sequential"),
-               Line2D([], [], marker="o", ls="", color=ADAPT, ms=5, label="Revealed, adaptive"),
-               Line2D([], [], marker="D", ls="", mfc="#fbeaea", mec=BAD, ms=5, label="Hidden audit A")]
-    fig.legend(handles=handles, loc="lower center", ncol=5, bbox_to_anchor=(0.5, 0.0), fontsize=6.5,
+            ax.tick_params(labelsize=6.2)
+            ax.set_xlabel("Easting (m)", fontsize=6.8)
+            if k in (0, 2):
+                ax.set_ylabel("Northing (m)", fontsize=6.8)
+            name = "Sequential" if policy == "B_seq" else "Adaptive"
+            note = f"stop at {n_obs}/{n_full}" if is_final else f"first {n_obs} of {n_full}"
+            ax.set_title(f"{'abcd'[k]}  {short[site]}, {name}", loc="left", fontsize=7.6, pad=11)
+            ax.text(0.0, 1.02, note, transform=ax.transAxes, ha="left", va="bottom", fontsize=6.6, color=INK2)
+            k += 1
+    handles = [Line2D([], [], marker="s", ls="", color=INK, ms=4.5, label="Initial $S_0$"),
+               Line2D([], [], marker="o", ls="", mfc="white", mec=MUTED, ms=4.5, label="Candidate"),
+               Line2D([], [], marker="o", ls="", color=SEQ, ms=4.5, label="Revealed, sequential"),
+               Line2D([], [], marker="o", ls="", color=ADAPT, ms=4.5, label="Revealed, adaptive"),
+               Line2D([], [], marker="D", ls="", mfc="#fbeaea", mec=BAD, ms=4.5, label="Hidden audit $A$")]
+    fig.legend(handles=handles, loc="lower center", ncol=5, bbox_to_anchor=(0.5, -0.02), fontsize=6.8,
                handletextpad=0.3, columnspacing=1.0)
     save(fig, "fig03_selection_maps")
 
@@ -494,8 +492,8 @@ def fig_economics():
              ("project_time_saving", "Project-time cost", "#1baf7a"),
              ("early_opening_benefit", "Earlier-opening benefit", "#eda100"),
              ("ai", "AI deployment + review", "#e87ba4")]
-    fig = plt.figure(figsize=(TEXT_W, 3.5))
-    gs = fig.add_gridspec(2, 2, width_ratios=[1.15, 1], wspace=0.32, hspace=0.62)
+    fig = plt.figure(figsize=(5.4, 3.0))  # drawn at its printed width (0.86 of the text width)
+    gs = fig.add_gridspec(2, 2, width_ratios=[1.1, 1], wspace=0.38, hspace=0.68)
     ax = fig.add_subplot(gs[:, 0])
     for i, s in enumerate(EVAL_SITES):
         pos, neg = 0.0, 0.0
@@ -511,7 +509,9 @@ def fig_economics():
     ax.axhline(0, color=INK2, lw=0.8)
     short = {"wellington_airport": "Airport", "christchurch_stadium": "Chch Stadium", "hollywood": "Hollywood",
              "newlock": "New Lock"}
-    ticks = [f"{short[s]}\n{m.loc[s, 'n_stop']:.0f}/{m.loc[s, 'n_full']:.0f} CPTs" for s in EVAL_SITES]
+    tick_name = {"wellington_airport": "Airport", "christchurch_stadium": "Chch St.", "hollywood": "Hollyw.",
+                 "newlock": "New Lock"}
+    ticks = [f"{tick_name[s]}\n{m.loc[s, 'n_stop']:.0f}/{m.loc[s, 'n_full']:.0f}" for s in EVAL_SITES]
     ax.set_xticks(range(len(EVAL_SITES)), ticks, fontsize=6.4)
     ax.set_ylim(-66, 32)
     ax.set_xlim(-0.55, 3.55)
@@ -530,18 +530,18 @@ def fig_economics():
         for a in [0.5, 0.75, 1.0]:
             t = g[(g.site_id == s) & (g.alpha == a)].groupby("opening_net_per_calendar_day").net_benefit.mean()
             ax.plot(t.index / 1000, t.values / 1000, color=colr, ls=styles[a], lw=1.4, marker="o", ms=3)
-        ax.text(10.4, t.values[-1] / 1000, SITE_NAME[s].replace(" Terneuzen", "").replace("Wellington ", ""),
-                color=colr, fontsize=6.4, fontweight="bold", va="center")
+        ax.text(5.6 if s == "wellington_airport" else 7.6, 40 if s == "wellington_airport" else -112,
+                "Airport" if s == "wellington_airport" else "New Lock",
+                color=colr, fontsize=6.6, fontweight="bold", va="center", ha="center")
+    for a, yv in [(0.5, -52.3), (0.75, -78.3), (1.0, -104.3)]:
+        ax.text(10.5, yv, rf"$\alpha$={a:g}", fontsize=6.0, color=INK2, va="center")
     ax.axhline(0, color=INK2, lw=0.8)
     ax.set_ylim(-135, 50)
     ax.axvline(3, color=AXIS, lw=0.9)
-    ax.text(3.2, ax.get_ylim()[1] * 0.98, "base case", fontsize=5.8, color=INK2, va="top")
+    ax.text(3.2, -128, "base case", fontsize=5.8, color=INK2, va="bottom")
     ax.set_xlim(-0.4, 13.8)
     ax.set_xlabel("Earlier-opening benefit (k€/day)")
     ax.set_ylabel("Net (k€)")
-    ax.legend(handles=[Line2D([], [], color=INK2, ls=styles[a], lw=1.3, label=rf"$\alpha$ = {a:g}")
-                       for a in [1.0, 0.75, 0.5]], loc="lower left", fontsize=6.0, ncol=3,
-              columnspacing=0.8, handlelength=1.6)
     panel(ax, "b", r"$\alpha$ and daily benefit")
 
     ax = fig.add_subplot(gs[1, 1])
