@@ -20,7 +20,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 from matplotlib.lines import Line2D
-from matplotlib.patches import FancyArrowPatch, FancyBboxPatch, Patch
+from matplotlib.patches import Circle, FancyArrowPatch, FancyBboxPatch, Patch
 
 # ---------------------------------------------------------------- style
 INK, INK2, MUTED, GRID, AXIS = "#0b0b0b", "#52514e", "#898781", "#e1e0d9", "#c3c2b7"
@@ -126,53 +126,85 @@ def _load(root: Path) -> None:
 
 # ================================================================ Fig 1 workflow
 def fig_workflow():
-    fig = plt.figure(figsize=(TEXT_W, 2.55))
+    """Method overview: site split -> online loop -> offline audit and economics."""
+    fig = plt.figure(figsize=(TEXT_W, 2.6))
     ax = fig.add_axes([0, 0, 1, 1])
     ax.set_xlim(0, 100)
-    ax.set_ylim(0, 46)
+    ax.set_ylim(0, 41)
     ax.axis("off")
+    line = "#3d3c39"
+    blue_fill, red_fill, region = "#eef4fc", "#fdf1f1", "#f3f2ee"
 
-    def box(x, y, w, h, title, body, edge, face):
-        ax.add_patch(FancyBboxPatch((x, y), w, h, boxstyle="round,pad=0.25,rounding_size=1.2",
-                                    lw=1.0, ec=edge, fc=face))
-        ax.text(x + w / 2, y + h - 2.2, title, ha="center", va="top", fontsize=7.6, fontweight="bold")
-        ax.text(x + w / 2, y + h - 6.6, body, ha="center", va="top", fontsize=6.4, color=INK2,
-                linespacing=1.3)
+    def box(x, y, w, h, num, title, body, edge=line, face="white", num_color=line):
+        ax.add_patch(FancyBboxPatch((x, y), w, h, boxstyle="round,pad=0,rounding_size=1.1",
+                                    lw=0.9, ec=edge, fc=face, zorder=2))
+        ax.add_patch(Circle((x + 2.4, y + h - 2.3), 1.35, color=num_color, zorder=3))
+        ax.text(x + 2.4, y + h - 2.35, num, ha="center", va="center", fontsize=6.2, color="white",
+                fontweight="bold", zorder=4)
+        ax.text(x + 4.6, y + h - 2.3, title, ha="left", va="center", fontsize=7.2, fontweight="bold",
+                color=INK, zorder=4)
+        ax.text(x + w / 2, y + h - 5.0, body, ha="center", va="top", fontsize=6.2, color=INK2,
+                linespacing=1.35, zorder=4)
 
-    def arrow(p, q, color=INK2, ls="-", conn="arc3"):
-        ax.add_patch(FancyArrowPatch(p, q, arrowstyle="-|>", mutation_scale=8, lw=0.9, color=color,
-                                     ls=ls, connectionstyle=conn, shrinkA=0, shrinkB=0))
+    def arrow(p, q, color=line, ls="-", lw=0.9, conn="arc3"):
+        ax.add_patch(FancyArrowPatch(p, q, arrowstyle="-|>", mutation_scale=7, lw=lw, color=color, ls=ls,
+                                     connectionstyle=conn, shrinkA=0, shrinkB=0, zorder=1))
 
-    blue_f, org_f, gray_f = "#eaf2fc", "#fdeee7", "#f3f2ee"
-    w, h, y = 17.6, 15.5, 28.5
-    xs = [1.2, 21.0, 40.8, 60.6, 80.4]
-    box(xs[0], y, w, h, "1  Initial CPTs", "$S_0$: $\\geq$5 spatially\ndispersed positions\n(same for all policies)", INK2, gray_f)
-    box(xs[1], y, w, h, "2  AI prediction", "TabPFN + graph\nln $q_c$ on 24 cells, 2–8 m\nlow-cell thickness $H(x)$", SEQ, blue_f)
-    box(xs[2], y, w, h, "3  Choose next batch", "$a = 0.5U + 0.3D + 0.2d$\n$U$ GP std, $D$ disagreement,\n$d$ distance; 2 groups", ADAPT, org_f)
-    box(xs[3], y, w, h, "4  Stop rule met?", "stability, support error,\nGP uncertainty, coverage;\n$\\geq$9 CPTs, 2 rounds", ADAPT, org_f)
-    box(xs[4], y, w, h, "5  Economics", "CPTs, field + wait days,\n$\\alpha = 1$ time transfer,\nnet owner benefit", INK2, gray_f)
-    for a, b in zip(xs[:-1], xs[1:]):
-        arrow((a + w + 0.4, y + h / 2), (b - 0.4, y + h / 2))
-    ax.text(xs[3] + w + 1.0, y + h / 2 + 1.6, "yes", fontsize=6.0, color=INK2, ha="center", va="bottom")
-    arrow((xs[3] + w / 2 - 3, y - 0.4), (xs[1] + w / 2 + 3, y - 0.4), color=ADAPT, conn="arc3,rad=-0.22")
-    ax.text((xs[1] + xs[3] + w) / 2, 21.6, "no: reveal the batch, update the site context, predict again",
-            ha="center", va="center", fontsize=6.4, color=ADAPT)
+    # ---- 1 site split: a schematic plan using the same symbols as the selection maps
+    ax.add_patch(FancyBboxPatch((1.0, 12.5), 18.5, 22.0, boxstyle="round,pad=0,rounding_size=1.1",
+                                lw=0.9, ec=line, fc="white", zorder=2))
+    ax.add_patch(Circle((3.4, 32.2), 1.35, color=line, zorder=3))
+    ax.text(3.4, 32.15, "1", ha="center", va="center", fontsize=6.2, color="white", fontweight="bold", zorder=4)
+    ax.text(5.6, 32.2, "Split the site", ha="left", va="center", fontsize=7.2, fontweight="bold", zorder=4)
+    pts_s0 = [(4.5, 27.5), (15.5, 28.5), (6.0, 16.5), (16.0, 17.0)]
+    pts_c = [(8.5, 29.0), (12.0, 26.5), (4.0, 22.5), (9.5, 22.0), (14.0, 22.5), (11.5, 18.0), (8.0, 15.5)]
+    pts_a = [(17.0, 30.0), (6.5, 19.5), (13.5, 15.0)]
+    ax.scatter(*zip(*pts_c), s=13, facecolor="white", edgecolor=MUTED, lw=0.8, zorder=3)
+    ax.scatter(*zip(*pts_s0), s=15, marker="s", color=INK, zorder=3)
+    ax.scatter(*zip(*pts_a), s=17, marker="D", facecolor="#fbeaea", edgecolor=BAD, lw=0.8, zorder=3)
+    legend = [("s", INK, INK, r"$S_0$  initial ($\geq$5)"), ("o", "white", MUTED, r"$C$  candidate pool"),
+              ("D", "#fbeaea", BAD, r"$A$  hidden audit (~20%)")]
+    for k, (mk, fc, ec, label) in enumerate(legend):
+        yy = 10.0 - 2.9 * k
+        ax.scatter([2.4], [yy], s=13, marker=mk, facecolor=fc, edgecolor=ec, lw=0.8)
+        ax.text(4.0, yy, label, fontsize=6.0, va="center", color=BAD if mk == "D" else INK2)
+    ax.text(1.0, 0.6, r"Full plan $N_{full} = |S_0 \cup C|$", fontsize=5.9, color=INK2, va="bottom")
 
-    ax.plot([1, 99], [15.6, 15.6], color=BAD, lw=0.9, ls=(0, (4, 3)))
-    ax.text(1.2, 13.6, "Information boundary: hidden audit CPTs ($A$) never enter prediction, selection or stopping",
-            fontsize=6.4, color=BAD, va="top")
-    parts = [("$S_0$  initial", 7.0, INK), ("$C$  candidate pool", 13.0, MUTED), ("$A$  hidden audit (~20%)", 14.5, BAD)]
-    x0 = 1.2
-    for label, width, col in parts:
-        ax.add_patch(FancyBboxPatch((x0, 3.4), width * 1.4, 5.0, boxstyle="round,pad=0.1,rounding_size=0.6",
-                                    lw=0.8, ec=col, fc="white"))
-        ax.text(x0 + width * 0.7, 5.9, label, ha="center", va="center", fontsize=6.2, color=col)
-        x0 += width * 1.4 + 0.8
-    ax.text(1.2, 0.6, "$N_{full} = |S_0 \\cup C|$ (audit excluded); near-duplicate groups always move together",
-            fontsize=5.9, color=INK2, va="bottom")
-    box(66.0, 1.0, 33.0, 10.6, "Independent audit after the stop",
-        "pass  /  false early stop  /  no early stop\ncompared with the full plan on the same $A$", BAD, "#fbeaea")
-    arrow((xs[3] + w - 2.0, y - 0.4), (xs[3] + w - 2.0, 12.0), color=BAD, ls=(0, (3, 2)))
+    # ---- online loop region
+    ax.add_patch(FancyBboxPatch((23.0, 5.0), 50.0, 31.0, boxstyle="round,pad=0,rounding_size=1.6",
+                                lw=0, fc=region, zorder=0))
+    ax.text(48.0, 6.4, "Online loop: sees coordinates and revealed CPTs only", ha="center", va="center",
+            fontsize=6.0, style="italic", color=INK2)
+    bw, bh = 21.0, 11.5
+    xl, xr, yt, yb = 25.0, 50.0, 22.5, 9.0
+    box(xl, yt, bw, bh, "2", "Predict", "TabPFN + graph\n" + r"$\ln q_c$ and $H(x)$ everywhere",
+        edge=SEQ, face=blue_fill, num_color=SEQ)
+    box(xr, yt, bw, bh, "3", "Stop rule met?", "4 stability and error signals\n" + r"$\geq$9 CPTs, 2 rounds in a row")
+    box(xr, yb, bw, bh, "4", "Select batch", r"Adaptive: $0.5U + 0.3D + 0.2d$" + "\nSequential: maximin",
+        edge=SEQ, face=blue_fill, num_color=SEQ)
+    box(xl, yb, bw, bh, "5", "Reveal 2 CPTs", "add the measured curves\nto the site context")
+    arrow((xl + bw, yt + bh / 2), (xr, yt + bh / 2))
+    arrow((xr + bw / 2, yt), (xr + bw / 2, yb + bh))
+    ax.text(xr + bw / 2 + 0.8, (yt + yb + bh) / 2, "no", fontsize=6.0, color=INK2, va="center")
+    arrow((xr, yb + bh / 2), (xl + bw, yb + bh / 2))
+    arrow((xl + bw / 2, yb + bh), (xl + bw / 2, yt))
+    arrow((19.5, yt + bh / 2), (xl, yt + bh / 2))
+
+    # ---- offline outputs
+    box(77.5, yt, 21.5, bh, "6", "Audit on A", "pass / false early stop /\nno early stop, vs full plan",
+        edge=BAD, face=red_fill, num_color=BAD)
+    box(77.5, yb, 21.5, bh, "7", "Economics", "CPTs, field + wait days\n" + r"$\alpha = 1$, net owner benefit")
+    arrow((xr + bw, yt + bh / 2), (77.5, yt + bh / 2))
+    ax.text((xr + bw + 77.5) / 2, yt + bh / 2 + 1.0, "yes", fontsize=6.0, color=INK2, ha="center", va="bottom")
+    arrow((88.25, yt), (88.25, yb + bh))
+
+    # ---- information boundary: hidden labels travel around the loop, straight to the evaluator
+    path_x = [17.0, 17.0, 88.25, 88.25]
+    path_y = [31.3, 39.0, 39.0, 34.6]
+    ax.plot(path_x[:3], path_y[:3], color=BAD, lw=0.9, ls=(0, (3, 2)), zorder=2.5)
+    arrow((88.25, 39.0), (88.25, yt + bh), color=BAD, ls=(0, (3, 2)))
+    ax.text(48.0, 39.7, "hidden labels of A go to the evaluator only; they never enter the loop",
+            ha="center", va="bottom", fontsize=6.0, color=BAD)
     save(fig, "fig01_workflow")
 
 
