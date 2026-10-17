@@ -20,7 +20,7 @@
 
 结果位于`results/adaptive_v1/`，逐单元预测位于忽略的`runs/adaptive_v1/`。正式配置包括种子17/29/43；`--sites`、`--seeds`可用于pilot或`evaluate-partition`；后者仅运行固定配置中的独立场地/种子分区，不发布不完整总表。全部分区结束后用`evaluate`复用已完成轨迹并汇总，或用`publish`仅汇总。经济配置为`configs/economics_case.yaml`，默认α=1，保留错误早停补满/返场和负收益。
 
-展示生成器从CSV读取真实结果，输出六张PNG/SVG/PDF图、离线交互HTML与可执行Notebook。当前仅维护实验结果、图表、Notebook和交互展示。
+展示生成器从CSV读取真实结果，经`cpt_budget.report_figures`输出七张PNG/SVG/PDF图（也可单独运行`python -m cpt_budget.report_figures`），并生成离线交互HTML与可执行Notebook。当前仅维护实验结果、图表、Notebook和交互展示。
 
 ## v0.9.1历史命令
 

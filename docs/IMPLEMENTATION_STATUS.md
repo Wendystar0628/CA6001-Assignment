@@ -34,7 +34,7 @@ New Lock全部64→64，冻结模型在完整计划下的隐藏审计仍未达�
 
 ## 交付与复现
 
-- [离线交互展示](../CA6001_项目状态.html)：场地、种子、策略和轮次联动；六张核心图由真实CSV生成。
+- [离线交互展示](../CA6001_项目状态.html)：场地、种子、策略和轮次联动；七张核心图由`cpt_budget.report_figures`从真实CSV生成。
 - [英式英语实验Notebook](../notebooks/CA6001_report_figures.ipynb)、[运行说明](RUN_GUIDE.md)、[经济来源](ECONOMIC_CASE_SOURCES.md)。
 - [冻结配置](../results/adaptive_v1/frozen_config.json)、[轨迹](../results/adaptive_v1/trajectories.csv)、[事后审核](../results/adaptive_v1/quality_audit.csv)、[经济与敏感性](../results/adaptive_v1/README.md)。
 
