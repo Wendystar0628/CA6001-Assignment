@@ -1,0 +1,109 @@
+\section{Methodology}
+
+\subsection{Evaluation design}
+The loop in \cref{fig:workflow} is replayed on historical data in a three-level, site-held-out design.
+\begin{enumerate}
+\item \emph{Source training.} In each of three folds the models are trained on source sites. Checkpoints
+  and early stopping are chosen on that fold's validation sites.
+\item \emph{Development.} Four replay sites select the primary model, the acquisition weights and the stop
+  thresholds: Lower Hutt Town Hall, Tauranga Farmers, Christchurch Metro Sports and Marshland.
+\item \emph{Evaluation.} Four replay sites test the frozen configuration: Wellington Airport, Christchurch
+  Stadium, Hollywood and New Lock. Each is predicted with the fold weights that excluded it from both
+  training and checkpoint selection.
+\end{enumerate}
+
+For every site and seed (17, 29, 43), whole groups are assigned to the audit set $A$ ($\approx$20\%), a
+spatially dispersed $S_0$ ($\geq$5 positions) and the candidate pool $C$. Three policies share each split:
+\begin{itemize}
+\item \textbf{Full plan} (\Bfull) completes every position in $S_0\cup C$; this is the engineering reference.
+\item \textbf{Sequential} (\Bseq) adds the two candidates that maximise the minimum distance to any
+  revealed CPT. This \emph{maximin} rule is a space-filling baseline. It applies the stop rule.
+\item \textbf{Adaptive} (\Padapt) adds the two candidates with the highest acquisition score and applies the
+  same stop rule.
+\end{itemize}
+Full versus Adaptive measures the total benefit. Sequential versus Adaptive isolates what intelligent
+location choice adds beyond simply stopping early. The evaluation therefore comprises 4~sites $\times$
+3~seeds $\times$ 2~stopping policies $=24$ trajectories, plus 12 full-plan runs.
+
+\textbf{Metrics.} All metrics are computed on $A$. (i)~\emph{log-MAE} is the mean $|\hat y-y|$ over audit cells; (ii)~\emph{thickness MAE} is the mean $|\hat H-H|$ over audit positions; and (iii)~the \emph{low-cell
+metrics} are precision, recall, F1 and FPR.
+Values are averaged within seed, then within site, and then equally across sites (the \emph{equal-site
+mean}).
+
+\subsection{Acquisition score}
+For each candidate group the policy computes three signals: (i)~$U$, the mean GP predictive standard deviation of $\ln\qc$; (ii)~$D$, the share of cells where the primary model and XGBoost disagree on $\qc<1$\,MPa; (iii)~$d$, the distance to the nearest revealed CPT.
+Each signal is converted to a 0--1 rank within the pool, and the score is
+\begin{equation}
+a(x)=0.5\,\mathrm{rank}(U)+0.3\,\mathrm{rank}(D)+0.2\,\mathrm{rank}(d).
+\end{equation}
+The weights are an engineering heuristic: uncertainty first, model disagreement second and spacing as a
+tie-breaker. The only alternative tried omitted disagreement (0.7,~0,~0.3). Within a batch only $d$ is
+updated after each pick, so the second choice is pushed away from the first without seeing its curve.
+
+\subsection{Online stopping and independent audit}
+Each round, the controller computes four signals on a fixed grid of all planned positions $\times$ 24
+depths:
+\begin{itemize}
+\item the 90th percentile over grid cells of the round-to-round change in predicted $\ln\qc$ ($\Delta Q_{90}$);
+\item the 90th percentile over positions of the change in predicted thickness ($\Delta H_{90}$);
+\item a leave-group-out log-MAE on up to five initial groups;
+\item the 90th percentile of the GP standard deviation.
+\end{itemize}
+The controller stops when all four pass for two consecutive rounds, provided at least nine CPTs are revealed
+and every populated quadrant of the site is covered. Because batches add two CPTs, the earliest possible
+stop is at 11~CPTs. Thresholds were set as quantiles (0.50/0.75/0.90) of the signals at acceptable
+development states. The 0.50 quantile was selected because it maximised verified saving minus false-stop
+rate; the 0.75 and 0.90 quantiles gave development false-stop rates of 17\% and 58\%.
+
+The audit has two parts: (i)~\emph{absolute targets} of log-MAE $\le0.626$ and thickness MAE $\le0.881$\,m,
+the development full-plan 75th percentiles plus fixed margins; and (ii)~a \emph{relative tolerance} of no
+more than 0.05 log-MAE or 0.25\,m worse than the full plan.
+Low-cell recall $\ge0.5$ with FPR $\le0.1$ is audited separately as a diagnostic.
+
+\subsection{Hyperparameters}
+\Cref{tab:hyper} lists every setting. Model settings were fixed during source training on validation sites.
+Decision settings were fixed on development sites. No setting was tuned on evaluation sites.
+
+\begin{table}[!htb]
+\centering\small
+\caption{Hyperparameters and how they were chosen.}
+\label{tab:hyper}
+\begin{tabularx}{\linewidth}{@{}lX@{}}
+\toprule
+Component & Setting (selection)\\
+\midrule
+GP & Mat\'ern $\nu=3/2$, anisotropic length scales initialised at (20, 20, 1)\,m, white-noise term; refitted
+  by marginal likelihood each round\\
+XGBoost residual & 3-NN IDW base (power 2) + $w\times$trees; 24 features; depth 6, learning rate 0.3,
+  early stopping (36--37 trees); $w\in\{0, 0.25, 0.5, 1\}$ chosen per fold (0.25, 0.25, 0.5)\\
+CNP & 64 hidden units, mean + max pooling, L1 loss on $\ln\qc$; 26,817 parameters; 500--1,200 steps,
+  checkpoint by validation log-MAE\\
+TabPFN & v2 weights (package 9.2.0), 1 estimator; fine-tuned with CRPS (continuous ranked probability score)
+  + MSE, 500--600 updates; joint blend 0.5/0.5\\
+Graph branch & 4 nearest neighbours, vertical weight 0.15, pseudo-Huber $\delta=0.35$\\
+Acquisition & weights (0.5, 0.3, 0.2); batch of 2 groups; alternative (0.7, 0, 0.3) rejected on development\\
+Stop rule & $\geq$9 CPTs, 2 rounds; $\Delta Q_{90}\le0.082$, $\Delta H_{90}\le0$\,m, support log-MAE
+  $\le0.584$, GP-std P90 $\le0.461$ (0.50 quantile of development signals)\\
+Experiment & seeds 17, 29, 43; audit share $\approx$20\%; $|S_0|\ge5$\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Economic model}
+The owner's net benefit of a policy relative to the full plan is
+\begin{equation}
+B_{\text{net}}=(C_{\text{full}}-C_{\text{policy}})+\alpha\,\Delta T_{\text{inv}}\,(c_{\text{day}}+b_{\text{day}})-C_{\text{AI}},
+\end{equation}
+where the terms are: (i)~$C$ is investigation cost (\eur{750} per CPT, all-in); (ii)~$\Delta T_{\text{inv}}$ is the calendar days saved: 5 CPTs per rig-day with one rig, converted at 7/5, plus a 0.25-day decision delay at every batch transition; (iii)~$c_{\text{day}}=\eur{5,000}$ is the avoidable project cost per day; (iv)~$b_{\text{day}}=\eur{3,000}$ is the owner's benefit per day of earlier opening; (v)~$C_{\text{AI}}=\eur{600}$ is deployment and review per run.
+In the main scenario $\alpha=1$, meaning every investigation day saved shortens the project. $\alpha=0.5$ and
+0.75 are sensitivity cases, alongside one-at-a-time parameter ranges. A failed early stop would be repaired
+to the full plan, with remobilisation (\eur{560}) and two days' delay.
+
+Only the remobilisation cost and the consultant rate behind $C_{\text{AI}}$ come from a 2025 Dutch quotation
+\parencite{mos2025quote}. All other values are explicit assumptions, following cost- and
+schedule-estimating guidance \parencite{gao2015schedule,gao2020cost}. The same Dutch-based values are
+applied to every site; for non-Dutch sites this is a standardised transfer, not local evidence.
+
+\subsection{Tools and libraries}
+The implementation uses Python 3.11, NumPy 2.4, pandas 3.0 and SciPy 1.17, scikit-learn 1.9 for the GP \parencite{pedregosa2011sklearn}, XGBoost 3.2, PyTorch 2.11 for the CNP, TabPFN 9.2.0 \parencite{priorlabs_tabpfn} and matplotlib.
+Models ran on an NVIDIA RTX 4080 (16\,GB).

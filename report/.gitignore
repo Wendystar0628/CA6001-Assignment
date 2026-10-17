@@ -1,0 +1,12 @@
+build/
+main.pdf
+*.aux
+*.log
+*.fls
+*.fdb_latexmk
+*.bbl
+*.bcf
+*.blg
+*.run.xml
+*.out
+*.synctex.gz

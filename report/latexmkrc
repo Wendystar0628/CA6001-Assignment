@@ -1,0 +1,6 @@
+# latexmk settings: run 'latexmk' in this folder.
+@default_files = ('main.tex');
+$pdf_mode = 1;
+$jobname = 'CA6001_Adaptive_CPT_Report';
+$aux_dir = 'build';
+$out_dir = '.';

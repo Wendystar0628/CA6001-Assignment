@@ -1,0 +1,29 @@
+\section{Implementation}
+
+\textbf{Structure.} The code is a Python package, \texttt{cpt\_budget}. Its module boundaries mirror the
+information boundary: (i)~\texttt{adaptive\_data} builds the splits and manifests; (ii)~\texttt{adaptive\_models} gives all five models one interface, \texttt{condition(revealed)} and \texttt{predict(query)}, and strips every query of measured columns; (iii)~\texttt{adaptive\_policy} holds the acquisition score and the stop rule; (iv)~\texttt{adaptive\_replay} runs the loop; (v)~a separate evaluator reads $A$; (vi)~\texttt{adaptive\_economics} prices the outcomes.
+One command runs each stage: prepare, calibrate, freeze, evaluate, publish and economics. The frozen
+configuration stores SHA-256 fingerprints of the data, weights and settings.
+
+\textbf{Main algorithm.} The core of batch selection is shown below:
+\begin{lstlisting}
+group["rank_U"] = rank01(group.uncertainty)        # GP std, fixed within the batch
+group["rank_D"] = rank01(group.disagreement)       # low-cell disagreement
+while remaining and chosen_count < batch_size:
+    dist  = [min_distance(g, observed_xy) for g in remaining]
+    score = 0.5*group.rank_U + 0.3*group.rank_D + 0.2*rank01(dist)
+    gid   = argmax(score)                          # ties: group id, then location id
+    chosen += members(gid)                         # the whole near-duplicate group
+    observed_xy = vstack([observed_xy, xy(gid)])   # coordinates only, never curves
+\end{lstlisting}
+Each round is logged as one trajectory row. The adaptive run at Wellington Airport (seed~17) stops in round~3,
+the second consecutive passing round:
+\begin{lstlisting}
+round n_obs dQ90   dH90 support_logMAE gp_std_P90 coverage streak stop
+  3    11   0.067  0.00     0.132        0.169      ok       2   online_stability
+\end{lstlisting}
+
+\textbf{Key decisions.} (i)~TabPFN weights are frozen during replay and only the site context changes, so a round takes seconds rather than a retraining run; (ii)~grouping is enforced in selection, counting and auditing; (iii)~the fine-tuned checkpoints differ from initialisation (all 14 CNP and 129 TabPFN weight tensors changed), so weak CNP results are not an untrained-model artefact.
+
+\textbf{Correctness checks.} Automated checks confirm four things: (i)~hidden labels cannot influence predictions (24 paired initial contexts, maximum prediction difference~0); (ii)~group counts and audit exclusion are exact; (iii)~frozen inputs are unchanged; (iv)~every economic component recomputes from its parts.
+The project's 95 unit tests pass.

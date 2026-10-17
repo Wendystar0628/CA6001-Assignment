@@ -25,7 +25,8 @@ from matplotlib.patches import FancyArrowPatch, FancyBboxPatch, Patch
 # ---------------------------------------------------------------- style
 INK, INK2, MUTED, GRID, AXIS = "#0b0b0b", "#52514e", "#898781", "#e1e0d9", "#c3c2b7"
 FULL, SEQ, ADAPT = "#52514e", "#2a78d6", "#eb6834"
-GOOD, BAD = "#0ca30c", "#d03b3b"
+GOOD, BAD, AMBER = "#0ca30c", "#d03b3b", "#c98500"
+EVAL_C, DEV_C, PROFILE_C = "#3d3c39", "#b5b3ab", "#5b7a99"
 MODEL_ORDER = ["gp", "xgb", "cnp", "tabpfn_joint", "tabpfn_graph"]
 MODEL_NAME = {"gp": "GP", "xgb": "XGBoost residual", "cnp": "CNP",
               "tabpfn_joint": "TabPFN joint", "tabpfn_graph": "TabPFN + graph"}
@@ -54,14 +55,15 @@ CAPTIONS = [
     "Selection maps, seed 17. Wellington Airport (a, b) at the online stop; New Lock (c, d) after the first "
     "12-13 CPTs. Numbers give the round in which a position was revealed.",
     "Five AI methods on identical observation states at the four evaluation sites. Open marks are site means; "
-    "bars and filled marks are the equal-site mean. Recall is undefined at Wellington Airport (no low-qc cells).",
+    "bars and filled circles are the equal-site mean. Recall is undefined at Wellington Airport (no low-qc cells).",
     "Hidden-audit quality as CPTs are added (three seeds per policy). Stars mark online early stops; squares "
-    "the full-plan endpoint; the red line the frozen target; the green line the oracle earliest passing count "
+    "the full-plan endpoint; the red line the frozen target; the dotted line the oracle earliest passing count "
     "(uses hidden labels, diagnostic only).",
     "Decision outcomes for all 48 sequential and adaptive trajectories. (a) CPTs used at the stop and the "
     "full-plan audit verdict per site; (b) CPTs saved by adaptive relative to sequential, paired by seed.",
-    "Owner-financial scenario, EUR 2025. (a) Benefit components of the adaptive policy relative to the full "
-    "plan at alpha = 1 (mean of three seeds). (b) Net benefit as alpha and the daily earlier-opening benefit vary.",
+    "Owner-financial scenario, EUR 2025, adaptive policy (mean of three seeds). (a) Benefit components relative "
+    "to the full plan at alpha = 1. (b) Net benefit as alpha and the daily earlier-opening benefit vary (vertical "
+    "line: base case). (c) Net benefit against the decision delay per batch.",
 ]
 
 plt.rcParams.update({
@@ -144,32 +146,32 @@ def fig_workflow():
     blue_f, org_f, gray_f = "#eaf2fc", "#fdeee7", "#f3f2ee"
     w, h, y = 17.6, 15.5, 28.5
     xs = [1.2, 21.0, 40.8, 60.6, 80.4]
-    box(xs[0], y, w, h, "1  Initial CPTs", "S0: >= 5 spatially\ndispersed positions\n(same for all policies)", INK2, gray_f)
-    box(xs[1], y, w, h, "2  AI prediction", "TabPFN + graph\nln qc on 24 cells, 2-8 m\nlow-qc thickness H(x)", SEQ, blue_f)
-    box(xs[2], y, w, h, "3  Choose next batch", "a = 0.5 U + 0.3 D + 0.2 S\nU GP std, D disagreement,\nS distance; 2 groups", ADAPT, org_f)
-    box(xs[3], y, w, h, "4  Stop rule met?", "stability, support error,\nGP uncertainty, coverage;\n>= 9 CPTs, 2 rounds running", ADAPT, org_f)
-    box(xs[4], y, w, h, "5  Economics", "CPTs, field + wait days,\nalpha = 1 time transfer,\nnet owner benefit", INK2, gray_f)
+    box(xs[0], y, w, h, "1  Initial CPTs", "$S_0$: $\\geq$5 spatially\ndispersed positions\n(same for all policies)", INK2, gray_f)
+    box(xs[1], y, w, h, "2  AI prediction", "TabPFN + graph\nln $q_c$ on 24 cells, 2–8 m\nlow-cell thickness $H(x)$", SEQ, blue_f)
+    box(xs[2], y, w, h, "3  Choose next batch", "$a = 0.5U + 0.3D + 0.2d$\n$U$ GP std, $D$ disagreement,\n$d$ distance; 2 groups", ADAPT, org_f)
+    box(xs[3], y, w, h, "4  Stop rule met?", "stability, support error,\nGP uncertainty, coverage;\n$\\geq$9 CPTs, 2 rounds", ADAPT, org_f)
+    box(xs[4], y, w, h, "5  Economics", "CPTs, field + wait days,\n$\\alpha = 1$ time transfer,\nnet owner benefit", INK2, gray_f)
     for a, b in zip(xs[:-1], xs[1:]):
         arrow((a + w + 0.4, y + h / 2), (b - 0.4, y + h / 2))
-    ax.text(xs[4] - 1.0, y + h + 0.7, "yes", fontsize=6.2, color=INK2, ha="center", va="bottom")
+    ax.text(xs[3] + w + 1.0, y + h / 2 + 1.6, "yes", fontsize=6.0, color=INK2, ha="center", va="bottom")
     arrow((xs[3] + w / 2 - 3, y - 0.4), (xs[1] + w / 2 + 3, y - 0.4), color=ADAPT, conn="arc3,rad=-0.22")
     ax.text((xs[1] + xs[3] + w) / 2, 21.6, "no: reveal the batch, update the site context, predict again",
             ha="center", va="center", fontsize=6.4, color=ADAPT)
 
     ax.plot([1, 99], [15.6, 15.6], color=BAD, lw=0.9, ls=(0, (4, 3)))
-    ax.text(1.2, 13.6, "Information boundary: hidden audit CPTs (A) never enter prediction, selection or stopping",
+    ax.text(1.2, 13.6, "Information boundary: hidden audit CPTs ($A$) never enter prediction, selection or stopping",
             fontsize=6.4, color=BAD, va="top")
-    parts = [("S0  initial", 7.0, INK2), ("C  candidate pool", 13.0, SEQ), ("A  hidden audit (~20%)", 14.5, BAD)]
+    parts = [("$S_0$  initial", 7.0, INK), ("$C$  candidate pool", 13.0, MUTED), ("$A$  hidden audit (~20%)", 14.5, BAD)]
     x0 = 1.2
     for label, width, col in parts:
         ax.add_patch(FancyBboxPatch((x0, 3.4), width * 1.4, 5.0, boxstyle="round,pad=0.1,rounding_size=0.6",
                                     lw=0.8, ec=col, fc="white"))
         ax.text(x0 + width * 0.7, 5.9, label, ha="center", va="center", fontsize=6.2, color=col)
         x0 += width * 1.4 + 0.8
-    ax.text(1.2, 0.6, "N_full = |S0 + C| (audit excluded); near-duplicate groups always move together",
+    ax.text(1.2, 0.6, "$N_{full} = |S_0 \\cup C|$ (audit excluded); near-duplicate groups always move together",
             fontsize=5.9, color=INK2, va="bottom")
     box(66.0, 1.0, 33.0, 10.6, "Independent audit after the stop",
-        "pass  /  false early stop  /  no early stop\ncompared with B_full on the same A", BAD, "#fbeaea")
+        "pass  /  false early stop  /  no early stop\ncompared with the full plan on the same $A$", BAD, "#fbeaea")
     arrow((xs[3] + w - 2.0, y - 0.4), (xs[3] + w - 2.0, 12.0), color=BAD, ls=(0, (3, 2)))
     save(fig, "fig01_workflow")
 
@@ -185,36 +187,38 @@ def fig_dataset():
     replay["order"] = replay.adaptive_role.map({"evaluation": 0, "development": 1})
     replay = replay.sort_values(["order", "n_locations"], ascending=[False, True])
     ys = np.arange(len(replay))
-    colors = [ADAPT if r == "evaluation" else SEQ for r in replay.adaptive_role]
+    colors = [EVAL_C if r == "evaluation" else DEV_C for r in replay.adaptive_role]
     ax.barh(ys, replay.n_locations, color=colors, height=0.62)
     for yy, (_, r) in zip(ys, replay.iterrows()):
         ax.text(r.n_locations + 1.2, yy, f"{r.n_locations}  ({100 * r.low_frac:.0f}% low)",
-                va="center", fontsize=6.2, color=INK2)
+                va="center", fontsize=6.6, color=INK2)
     ax.set_yticks(ys, [SITE_NAME[s] for s in replay.site_id])
     ax.set_xlim(0, 118)
-    ax.set_xlabel("Usable CPT positions  (% low: cells with qc < 1 MPa)", fontsize=7)
+    ax.set_xlabel("Usable CPT positions  (% low: cells with $q_c$ < 1 MPa)", fontsize=7)
     ax.grid(axis="y", visible=False)
-    for yy, label, colr in [(5.5, "Evaluation sites", ADAPT), (1.5, "Development sites", SEQ)]:
-        ax.text(117, yy, label, ha="right", va="center", fontsize=6.6, fontweight="bold", color=colr)
+    for yy, label, colr in [(5.5, "Evaluation sites", EVAL_C), (1.5, "Development sites", INK2)]:
+        ax.text(117, yy, label, ha="right", va="center", fontsize=7, fontweight="bold", color=colr)
     panel(ax, "a", "Replay sites")
 
-    for k, (sid, col) in enumerate([("wellington_airport", SEQ), ("newlock", ADAPT)]):
+    for k, sid in enumerate(["wellington_airport", "newlock"]):
         a = fig.add_subplot(gs[k + 1])
         g = grid[grid.site_id == sid]
         for _, p in g.groupby("profile_id"):
-            a.plot(p.qc_mpa, p.z_center_m, color=col, alpha=0.2, lw=0.6)
-        med = g.groupby("z_center_m").qc_mpa.median()
-        a.plot(med.values, med.index, color=INK, lw=1.6, label="Site median")
+            a.plot(p.qc_mpa, p.z_center_m, color=PROFILE_C, alpha=0.12, lw=0.5)
+        q = g.groupby("z_center_m").qc_mpa.quantile([0.1, 0.5, 0.9]).unstack()
+        a.fill_betweenx(q.index, q[0.1], q[0.9], color=PROFILE_C, alpha=0.3, lw=0, label="10–90% range")
+        a.plot(q[0.5].values, q.index, color=INK, lw=1.6, label="Site median")
         a.axvline(1.0, color=BAD, lw=0.9, ls=(0, (4, 3)))
-        a.text(0.92, 2.1, "1 MPa", color=BAD, fontsize=6.2, va="top", ha="right")
+        a.text(0.93, 7.9, "1 MPa", color=BAD, fontsize=6.4, va="bottom", ha="right")
         a.set_xscale("log")
         a.set_xlim(0.1, 60)
         a.set_ylim(8, 2)
-        a.set_xlabel("qc (MPa)")
+        a.set_xlabel("$q_c$ (MPa, log scale)")
         if k == 0:
             a.set_ylabel("Depth (m)")
-            a.legend(loc="lower left", fontsize=6.2, bbox_to_anchor=(0.0, 0.08))
-        a.text(0.03, 0.02, f"{g.profile_id.nunique()} CPTs", transform=a.transAxes, fontsize=6.2, color=INK2)
+            a.legend(loc="center left", fontsize=6.2)
+        a.text(0.97, 0.98, f"{g.profile_id.nunique()} CPTs", transform=a.transAxes, fontsize=6.4, color=INK2,
+               ha="right", va="top")
         panel(a, "bc"[k], SITE_NAME[sid].replace(" Terneuzen", ""))
     save(fig, "fig02_dataset")
 
@@ -286,8 +290,8 @@ def fig_models():
     fig = plt.figure(figsize=(TEXT_W, 2.7))
     gs = fig.add_gridspec(1, 3, width_ratios=[1, 1, 1.05], wspace=0.14)
     ys = {m: len(MODEL_ORDER) - 1 - i for i, m in enumerate(MODEL_ORDER)}
-    for k, (col, xl, title) in enumerate([("log_mae", "log-MAE of ln qc", "Profile error"),
-                                          ("thickness_mae_m", "Thickness MAE (m)", "Low-qc thickness error")]):
+    for k, (col, xl, title) in enumerate([("log_mae", "log-MAE of ln $q_c$", "Profile error"),
+                                          ("thickness_mae_m", "Thickness MAE (m)", "Low-cell thickness error")]):
         ax = fig.add_subplot(gs[k])
         for m in MODEL_ORDER:
             for s in EVAL_SITES:
@@ -304,11 +308,12 @@ def fig_models():
     ax = fig.add_subplot(gs[2])
     for m in MODEL_ORDER:
         sub = per_site.xs(m, level="model_id").dropna(subset=["recall"])
-        ax.scatter(100 * sub.fpr, 100 * sub.recall, s=10, marker=MODEL_MARK[m], facecolor="white",
-                   edgecolor=MODEL_COLOR[m], lw=0.7, alpha=0.8, zorder=2)
-        ax.scatter(100 * mean.loc[m, "fpr"], 100 * mean.loc[m, "recall"], s=46, marker=MODEL_MARK[m],
+        for site, row in sub.iterrows():
+            ax.scatter(100 * row.fpr, 100 * row.recall, s=12, marker=SITE_MARK[site], facecolor="white",
+                       edgecolor=MODEL_COLOR[m], lw=0.7, alpha=0.85, zorder=2)
+        ax.scatter(100 * mean.loc[m, "fpr"], 100 * mean.loc[m, "recall"], s=50, marker="o",
                    color=MODEL_COLOR[m], edgecolor="white", lw=0.8, zorder=4)
-    offs = {"gp": (6, -2), "xgb": (7, -7), "cnp": (6, 2), "tabpfn_joint": (7, -1), "tabpfn_graph": (7, 5)}
+    offs = {"gp": (6, -2), "xgb": (7, -7), "cnp": (6, 3), "tabpfn_joint": (7, -1), "tabpfn_graph": (-7, 6)}
     for m in MODEL_ORDER:
         ax.annotate(MODEL_NAME[m].replace(" residual", ""), (100 * mean.loc[m, "fpr"], 100 * mean.loc[m, "recall"]),
                     xytext=offs[m], textcoords="offset points", fontsize=6.2, va="center",
@@ -317,11 +322,11 @@ def fig_models():
     ax.set_ylabel("Recall (%)", labelpad=1)
     ax.set_xlim(-1.5, 38)
     ax.set_ylim(-3, 55)
-    panel(ax, "c", "Low-qc detection")
+    panel(ax, "c", "Low-cell detection")
     site_h = [Line2D([], [], marker=SITE_MARK[s], ls="", mfc="white", mec=INK2, ms=4.5, label=SITE_NAME[s])
               for s in EVAL_SITES]
     fig.legend(handles=site_h + [Line2D([], [], marker="|", ls="", color=INK2, ms=9, mew=2,
-                                        label="Site-equal mean (filled in c)")],
+                                        label="Equal-site mean (filled circle in c)")],
                loc="lower center", ncol=5, bbox_to_anchor=(0.5, -0.14), fontsize=6.4, handletextpad=0.2)
     save(fig, "fig04_five_models")
 
@@ -344,14 +349,15 @@ def fig_quality():
                                   & (decisions.policy_id == policy)].iloc[0]
                     if d.is_early_stop:
                         last = t[t.n_observed == d.n_stop].iloc[-1]
-                        ax.scatter(last.n_observed, last[col], marker="*", s=70, color=POLICY_COLOR[policy],
-                                   edgecolor="white", lw=0.5, zorder=6)
+                        ax.scatter(last.n_observed, last[col], marker="*", s=95 if policy == "B_seq" else 45,
+                                   color=POLICY_COLOR[policy], edgecolor="white", lw=0.5,
+                                   zorder=6 if policy == "B_seq" else 7)
             full = q[q.policy_id == "B_full"]
             ax.scatter(full.n_observed, full[col], marker="s", s=12, color=FULL, zorder=5)
             ax.axhline(tgt, color=BAD, lw=0.9, ls=(0, (4, 3)))
             ob = orc[orc.site_id == site].oracle_earliest_passing_budget.dropna()
             if len(ob):
-                ax.axvline(ob.min(), color=GOOD, lw=0.9, ls=(0, (1, 2)))
+                ax.axvline(ob.min(), color=INK2, lw=0.9, ls=(0, (1, 2)))
             ax.tick_params(labelsize=6.3)
             if r == 0:
                 panel(ax, "abcd"[c], SITE_NAME[site].replace(" Terneuzen", "").replace("Christchurch", "Chch"))
@@ -359,13 +365,14 @@ def fig_quality():
                 ax.set_ylabel(yl, fontsize=7)
             if r == 1:
                 ax.set_xlabel("Observed CPTs", fontsize=7)
-            ax.set_ylim(0, max(q[col].max(), tgt) * 1.12)
+            top = max(q[col].max(), tgt) * 1.12
+            ax.set_ylim(-0.04 * top, top)
     handles = [Line2D([], [], color=SEQ, lw=1.2, label="Sequential + stop"),
                Line2D([], [], color=ADAPT, lw=1.2, ls=(0, (3, 1.5)), label="Adaptive + stop"),
                Line2D([], [], marker="*", ls="", color=INK2, ms=7, label="Online early stop"),
                Line2D([], [], marker="s", ls="", color=FULL, ms=4, label="Full-plan endpoint"),
                Line2D([], [], color=BAD, lw=0.9, ls=(0, (4, 3)), label="Frozen quality target"),
-               Line2D([], [], color=GOOD, lw=0.9, ls=(0, (1, 2)), label="Oracle earliest pass")]
+               Line2D([], [], color=INK2, lw=0.9, ls=(0, (1, 2)), label="Oracle earliest pass")]
     fig.legend(handles=handles, loc="lower center", ncol=6, bbox_to_anchor=(0.5, -0.045), fontsize=6.2,
                handletextpad=0.3, columnspacing=0.9)
     save(fig, "fig05_quality_vs_cpts")
@@ -383,7 +390,7 @@ def fig_outcomes():
         y += 1.0 if s != DEV_SITES[0] else 1.7
     offs = {"B_seq": 0.18, "P_adapt": -0.18}
     jit = {17: -0.07, 29: 0.0, 43: 0.07}
-    labels = [f"{SITE_NAME[s]}  (N_full {int(d[d.site_id == s].n_full.iloc[0])})" for s in order]
+    labels = [f"{SITE_NAME[s]}  ($N_{{full}}$ = {int(d[d.site_id == s].n_full.iloc[0])})" for s in order]
     sep = ypos[DEV_SITES[0]] + 0.85
 
     ax = fig.add_subplot(gs[0])
@@ -400,8 +407,8 @@ def fig_outcomes():
     ax.set_ylim(-0.7, y - 0.3)
     ax.set_xlabel("CPTs used at stop (% of full plan)")
     ax.axhline(sep, color=AXIS, lw=0.8)
-    ax.text(46, sep + 0.08, "Evaluation sites (frozen rule)", fontsize=6.2, color=INK2, va="bottom")
-    ax.text(46, sep - 0.08, "Development sites (rule tuned here)", fontsize=6.2, color=INK2, va="top")
+    ax.text(46, sep + 0.08, "Evaluation sites (frozen rule)", fontsize=6.6, color=INK, va="bottom")
+    ax.text(46, sep - 0.08, "Development sites (rule tuned here)", fontsize=6.6, color=INK, va="top")
     ax.grid(axis="y", visible=False)
     panel(ax, "a", "Stopping point of all 48 trajectories")
 
@@ -411,12 +418,12 @@ def fig_outcomes():
         n_ok = int(full.sum())
         ax.text(0.5, ypos[s], f"{'pass' if n_ok == 3 else 'FAIL' if n_ok == 0 else 'mixed'} {n_ok}/3",
                 ha="center", va="center", fontsize=6.3, fontweight="bold",
-                color=GOOD if n_ok == 3 else BAD)
+                color=GOOD if n_ok == 3 else (BAD if n_ok == 0 else AMBER))
     ax.set_xlim(0, 1)
     ax.set_ylim(-0.7, y - 0.3)
     ax.axis("off")
     ax.axhline(sep, color=AXIS, lw=0.8)
-    ax.set_title("Full plan\naudit", fontsize=7, pad=2)
+    ax.set_title("Full plan\npasses audit", fontsize=7, pad=2)
 
     ax = fig.add_subplot(gs[2])
     piv = d.pivot_table(index=["site_id", "seed"], columns="policy_id", values="n_stop").reset_index()
@@ -435,10 +442,12 @@ def fig_outcomes():
     panel(ax, "b", "Adaptive vs sequential")
     handles = [Line2D([], [], marker="o", ls="", mfc=SEQ, mec=SEQ, ms=5, label="Sequential, early stop, audit pass"),
                Line2D([], [], marker="o", ls="", mfc=ADAPT, mec=ADAPT, ms=5, label="Adaptive, early stop, audit pass"),
-               Line2D([], [], marker="o", ls="", mfc="white", mec=INK2, ms=5, label="No early stop"),
-               Line2D([], [], marker="X", ls="", color=BAD, ms=5, label="False early stop (none)")]
-    fig.legend(handles=handles, loc="lower center", ncol=4, bbox_to_anchor=(0.5, -0.07), fontsize=6.2,
-               handletextpad=0.3, columnspacing=0.9)
+               Line2D([], [], marker="o", ls="", mfc="white", mec=INK2, ms=5, label="No early stop (full plan)"),
+               Line2D([], [], marker="o", ls="", color=GOOD, ms=4.5, label="b: adaptive fewer"),
+               Line2D([], [], marker="o", ls="", color=BAD, ms=4.5, label="b: adaptive more"),
+               Line2D([], [], marker="o", ls="", color=MUTED, ms=4.5, label="b: equal")]
+    fig.legend(handles=handles, loc="lower center", ncol=3, bbox_to_anchor=(0.5, -0.11), fontsize=6.2,
+               handletextpad=0.3, columnspacing=1.2)
     save(fig, "fig06_site_outcomes")
 
 
@@ -453,9 +462,9 @@ def fig_economics():
              ("project_time_saving", "Project-time cost", "#1baf7a"),
              ("early_opening_benefit", "Earlier-opening benefit", "#eda100"),
              ("ai", "AI deployment + review", "#e87ba4")]
-    fig = plt.figure(figsize=(TEXT_W, 2.8))
-    gs = fig.add_gridspec(1, 2, width_ratios=[1.25, 1], wspace=0.3)
-    ax = fig.add_subplot(gs[0])
+    fig = plt.figure(figsize=(TEXT_W, 3.5))
+    gs = fig.add_gridspec(2, 2, width_ratios=[1.15, 1], wspace=0.32, hspace=0.62)
+    ax = fig.add_subplot(gs[:, 0])
     for i, s in enumerate(EVAL_SITES):
         pos, neg = 0.0, 0.0
         for key, _, colr in parts:
@@ -464,23 +473,24 @@ def fig_economics():
             pos, neg = (pos + v, neg) if v >= 0 else (pos, neg + v)
         net = m.loc[s, "net_benefit"] / 1000
         ax.scatter(i, net, marker="D", s=28, color=INK, zorder=5)
-        ax.text(i + 0.34, net, f"{net:+.1f}k", va="center", fontsize=6.4, fontweight="bold")
+        label = f"{net:+.1f}k".replace("-", "\u2212")
+        ax.text(i, net + (2.5 if net > 0 else -2.5), label, ha="center", va="bottom" if net > 0 else "top",
+                fontsize=6.6, fontweight="bold")
     ax.axhline(0, color=INK2, lw=0.8)
     short = {"wellington_airport": "Airport", "christchurch_stadium": "Chch Stadium", "hollywood": "Hollywood",
              "newlock": "New Lock"}
-    ticks = [f"{short[s]}\n{m.loc[s, 'n_stop']:.0f}/{m.loc[s, 'n_full']:.0f} CPTs\n"
-             f"{m.loc[s, 'project_days_saved']:+.1f} days" for s in EVAL_SITES]
-    ax.set_xticks(range(len(EVAL_SITES)), ticks, fontsize=6.0)
-    ax.set_ylim(-62, 30)
-    ax.set_xlim(-0.5, 3.8)
-    ax.set_ylabel("vs full plan (EUR thousand, 2025)")
+    ticks = [f"{short[s]}\n{m.loc[s, 'n_stop']:.0f}/{m.loc[s, 'n_full']:.0f} CPTs" for s in EVAL_SITES]
+    ax.set_xticks(range(len(EVAL_SITES)), ticks, fontsize=6.4)
+    ax.set_ylim(-66, 32)
+    ax.set_xlim(-0.55, 3.55)
+    ax.set_ylabel("vs full plan (EUR thousand)")
     ax.grid(axis="x", visible=False)
-    panel(ax, "a", "Adaptive policy, alpha = 1, mean of 3 seeds")
+    panel(ax, "a", r"Adaptive policy, $\alpha = 1$")
     ax.legend(handles=[Patch(color=c, label=l) for _, l, c in parts]
               + [Line2D([], [], marker="D", ls="", color=INK, ms=4.5, label="Net benefit")],
-              loc="lower left", fontsize=5.9, borderaxespad=0.2)
+              loc="lower left", fontsize=6.2, borderaxespad=0.3)
 
-    ax = fig.add_subplot(gs[1])
+    ax = fig.add_subplot(gs[0, 1])
     g = sens[(sens.sensitivity_kind == "alpha_opening_grid") & (sens.role == "evaluation")
              & (sens.policy_id == "P_adapt")]
     styles = {0.5: (0, (1, 1.5)), 0.75: (0, (4, 2)), 1.0: "-"}
@@ -491,12 +501,38 @@ def fig_economics():
         ax.text(10.4, t.values[-1] / 1000, SITE_NAME[s].replace(" Terneuzen", "").replace("Wellington ", ""),
                 color=colr, fontsize=6.4, fontweight="bold", va="center")
     ax.axhline(0, color=INK2, lw=0.8)
-    ax.set_xlim(-0.4, 13.2)
-    ax.set_xlabel("Owner benefit of earlier opening (EUR thousand/day)")
-    ax.set_ylabel("Net benefit (EUR thousand)")
-    ax.legend(handles=[Line2D([], [], color=INK2, ls=styles[a], lw=1.3, label=f"alpha = {a:g}")
-                       for a in [1.0, 0.75, 0.5]], loc="lower left", fontsize=6.2)
-    panel(ax, "b", "Sensitivity")
+    ax.set_ylim(-135, 50)
+    ax.axvline(3, color=AXIS, lw=0.9)
+    ax.text(3.2, ax.get_ylim()[1] * 0.98, "base case", fontsize=5.8, color=INK2, va="top")
+    ax.set_xlim(-0.4, 13.8)
+    ax.set_xlabel("Earlier-opening benefit (k€/day)")
+    ax.set_ylabel("Net (k€)")
+    ax.legend(handles=[Line2D([], [], color=INK2, ls=styles[a], lw=1.3, label=rf"$\alpha$ = {a:g}")
+                       for a in [1.0, 0.75, 0.5]], loc="lower left", fontsize=6.0, ncol=3,
+              columnspacing=0.8, handlelength=1.6)
+    panel(ax, "b", r"$\alpha$ and daily benefit")
+
+    ax = fig.add_subplot(gs[1, 1])
+    o = sens[(sens.sensitivity_kind == "one_at_a_time") & (sens.role == "evaluation")
+             & (sens.policy_id == "P_adapt") & (sens.varied_parameter == "batch_wait_calendar_days")]
+    lat = o.groupby(["site_id", "parameter_value"]).net_benefit.mean().unstack()
+    lat[0.25] = m.net_benefit
+    lat = lat[sorted(lat.columns)]
+    site_c = {"wellington_airport": SEQ, "christchurch_stadium": "#1baf7a", "hollywood": "#eda100",
+              "newlock": ADAPT}
+    label_y = {"wellington_airport": 12, "christchurch_stadium": -32, "hollywood": -62, "newlock": -222}
+    label_text = {"christchurch_stadium": "Chch Stadium", "hollywood": "Hollywood"}
+    for site in EVAL_SITES:
+        ax.plot(lat.columns, lat.loc[site] / 1000, color=site_c[site], marker="o", ms=3, lw=1.4)
+        ax.text(1.05, label_y[site], label_text.get(site, short[site]), color=site_c[site], fontsize=6.0,
+                va="center", fontweight="bold")
+    ax.axvline(0.25, color=AXIS, lw=0.9)
+    ax.axhline(0, color=INK2, lw=0.8)
+    ax.set_xlim(-0.05, 1.5)
+    ax.set_xticks([0, 0.25, 0.5, 0.75, 1.0], ["0", "0.25", "0.5", "0.75", "1"])
+    ax.set_xlabel("Decision delay per batch (days)")
+    ax.set_ylabel("Net (k€)")
+    panel(ax, "c", "Batch decision latency")
     save(fig, "fig07_economics")
 
 

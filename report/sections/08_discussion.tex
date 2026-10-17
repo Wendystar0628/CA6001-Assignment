@@ -1,0 +1,47 @@
+\section{Discussion and Insights}
+
+\textbf{What worked.} The pipeline is auditable. Hidden labels never reach the controller, every stop is
+audited, and all trajectories are reported, including failures. No leakage was found by the automated
+checks. The stop rule vetoed every stop at the one site where stopping would have failed. The TabPFN
+hybrids were competitive, giving the best profile error and low-cell recall. The GP remained the most
+conservative low-cell detector and the source of the uncertainty signal.
+
+\textbf{What the results reveal.} Four lessons emerge.
+\begin{enumerate}
+\item \emph{Site predictability, more than the algorithm, decided whether CPTs could be saved.} Savings
+  appeared only where five CPTs already describe the ground, and vanished at New Lock, where even 64 CPTs
+  leave log-MAE near 0.9.
+\item \emph{Location choice added nothing measurable here.} The benefit came from staged investigation
+  combined with a stopping rule.
+\item \emph{Model choice matters less than the decision it serves.} The five predictors lie within about
+  3\% of each other on profile error. Their low-cell behaviour, however, differs sharply: GP is
+  conservative, the graph hybrid sensitive and CNP blind. This difference changes what a stop rule can
+  safely conclude.
+\item \emph{Time, not CPT price, dominates the economics.} Per-batch decision delay can turn a neutral
+  outcome strongly negative. A deployed system must return decisions within the working day, and should
+  recommend the full plan early when a site is clearly unpredictable.
+\end{enumerate}
+
+\textbf{Threats to validity.}
+\begin{itemize}
+\item \emph{Optimistic development data.} The four development sites served as checkpoint-selection
+  (validation) sites during source training. This likely explains why the learned models beat the GP by
+  12\% on development sites but by only 1\% on evaluation sites. It also means the model ranking (0.578 vs
+  0.597) is within noise.
+\item \emph{Prior exposure.} The evaluation sites had been inspected in an earlier project stage, so this
+  is a site-held-out re-evaluation, not a blind test.
+\item \emph{Small samples.} With four evaluation sites, 5--16 audit positions per site and seeds that share
+  the same ground, all conclusions are descriptive. The 7 observed early stops give a 95\% upper bound of
+  roughly 40\% on the false-stop rate.
+\item \emph{Confounding at New Lock.} New Lock is the only non-New-Zealand site, the largest site, and has
+  no close source analogue. Domain shift, size and heterogeneity cannot be separated there.
+\item \emph{Economic assumptions.} The economics rest on assumed unit values and on $\alpha=1$, which places
+  investigation on the critical path.
+\item \emph{Representation and labels.} The 0.25\,m grid misses thin layers, and the 1\,MPa threshold is a
+  research indicator.
+\end{itemize}
+
+\textbf{Future improvements.} (i)~learn quality-predictive stop signals, rather than fixed quantile thresholds, so that the clear opportunities at Christchurch Stadium and Hollywood are taken; (ii)~add a site-predictability check after the initial CPTs that recommends the full plan at once for New Lock-like sites; (iii)~use larger batches or same-day decisions to cut latency; (iv)~use an event-weighted loss and a 0.1\,m grid for low-cell detection; (v)~evaluate on genuinely new sites with real contract and programme data.
+A post-evaluation exploration (not used for any claim above) tried variance-reduction acquisition at New
+Lock. It lowered the GP's budget-averaged profile error by about 11\% relative to maximin but worsened
+thickness error, and none of 432 explored states met the targets.

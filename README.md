@@ -3,7 +3,7 @@
 本项目研究有限已测CPT条件下的2–8 m锥阻剖面重建、累计低锥阻厚度预测、自适应补勘与停止决策，并将实际回放工作量接入经济情景。当前阶段为`adaptive_v1`，在v0.9.1工程上扩展。
 
 - [阶段前后对比](CA6001_项目阶段对比.html) · [自适应交互展示](CA6001_项目状态.html) · [当前实现状态](docs/IMPLEMENTATION_STATUS.md)
-- [课程技术报告（Word）](report/CA6001_Adaptive_CPT_Report.docx) · [PDF预览](report/CA6001_Adaptive_CPT_Report.pdf) · [实验与绘图Notebook](notebooks/CA6001_report_figures.ipynb)
+- [课程技术报告（PDF）](report/CA6001_Adaptive_CPT_Report.pdf) · [LaTeX源文件与编译说明](report/README.md) · [实验与绘图Notebook](notebooks/CA6001_report_figures.ipynb)
 - [自适应实验协议](docs/ADAPTIVE_PROTOCOL.md) · [运行说明](docs/RUN_GUIDE.md)
 - [结果与复现文件](results/adaptive_v1/README.md) · [经济参数来源](docs/ECONOMIC_CASE_SOURCES.md)
 
@@ -46,4 +46,4 @@ Airport三个种子均从21根降至11根，约省47.62%；B_seq和P_adapt停止
 
 492个可用代表位置来自31个场地，每孔24个深度单元；深度行和种子不是独立工地。8个回放场地已有开发或揭盲历史，本轮使用对应外层折权重进行有限数据重评估。`qc < 1 MPa`是研究指标，停止审核对应剖面与累计厚度研究目标，低值识别另行检查。经济金额是有来源或明确假设的反事实情景，主情景α=1。
 
-v0.9.1的13入口及旧成绩保存在[历史方案对比](CA6001_CPT_当前方案对比.md)、`results/current/`与`results/final_test/`；旧Notebook和HTML位于`notebooks/archive/`。项目背景见[原始设计](CA6001_CPT_高分项目设计.md)与[实现蓝图](CA6001_CPT_项目实现蓝图.md)。当前交付为实验数据、七张报告图（`python -m cpt_budget.report_figures`）、课程技术报告（`python report/build_report.py`，按课程模板、封面外9页）、Notebook和交互展示。
+v0.9.1的13入口及旧成绩保存在[历史方案对比](CA6001_CPT_当前方案对比.md)、`results/current/`与`results/final_test/`；旧Notebook和HTML位于`notebooks/archive/`。项目背景见[原始设计](CA6001_CPT_高分项目设计.md)与[实现蓝图](CA6001_CPT_项目实现蓝图.md)。当前交付为实验数据、七张报告图（`python -m cpt_budget.report_figures`）、课程技术报告（LaTeX，`report/`下运行`latexmk`；表格由`report/make_tables.py`生成；封面外10页）、Notebook和交互展示。

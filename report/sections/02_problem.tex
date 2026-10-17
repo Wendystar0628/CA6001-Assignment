@@ -1,0 +1,31 @@
+\section{Problem Definition}
+
+At a site with planned CPT positions $x$ and 24 depth cells $z_k = 2.125, 2.375, \dots, 7.875$\,m (each
+0.25\,m thick), the regression target is $y(x,z_k)=\ln(\qc/1\,\text{MPa})$. A cell is a \emph{low cell} when
+$\qc<1$\,MPa, i.e.\ $y<0$, and the cumulative low-cell thickness at a position is
+\begin{equation}
+H(x) = 0.25\sum_{k=1}^{24}\mathbb{1}\left[y(x,z_k)<0\right]\quad\text{(m)}.
+\end{equation}
+Given the revealed CPTs, a model predicts $\hat y(x,z)$ and $\hat H(x)$ at every unrevealed position.
+Each site is split into an initial set $S_0$, a candidate pool $C$ and a hidden audit set $A$. Starting from
+the revealed set $R=S_0$, a policy repeatedly picks a batch from $C\setminus R$, reveals it, and decides whether
+to stop. It seeks the smallest stopping count \Nstop{} for which quality on $A$ meets frozen targets,
+compared with completing the full plan of $\Nfull=|S_0\cup C|$ CPTs:
+\begin{equation}
+\min\ \Nstop\quad\text{s.t.}\quad \text{log-MAE}_A\le\tau_{\log},\ \ \text{thickness-MAE}_A\le\tau_H,\ \
+\text{loss relative to the full plan}\le\varepsilon .
+\end{equation}
+
+The task therefore combines several problem types: (i)~\emph{spatial regression}: predicting the profile; (ii)~\emph{rare-event classification}: detecting low cells, evaluated with precision, recall, F1 and false-positive rate (FPR, the share of truly non-low cells predicted low); (iii)~\emph{active learning}: choosing informative locations; (iv)~\emph{optimal stopping}: deciding when to stop.
+
+Constraints:
+\begin{itemize}
+\item \textbf{Information:} only coordinates, planned depths and already revealed curves may enter
+  prediction, selection or stopping. Hidden labels are read by a separate evaluator after the stop.
+\item \textbf{Grouping:} near-duplicate or repeated soundings form indivisible groups. A nominal batch of
+  two can therefore be larger, and all counts are actual positions.
+\item \textbf{Small data:} sites, not depth cells or random seeds, are the replicate unit. With four
+  evaluation sites the results are descriptive, and no significance tests are claimed.
+\item \textbf{No hindsight:} all thresholds are fixed on development sites before evaluation. An online stop
+  that fails the audit remains a failure.
+\end{itemize}

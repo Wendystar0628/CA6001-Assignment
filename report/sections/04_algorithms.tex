@@ -1,0 +1,40 @@
+\section{Algorithm Selection and Rationale}\label{sec:algorithms}
+
+The five predictors span the main families for small-data spatial prediction. All of them receive the same
+revealed CPTs at every state. Thickness and low-cell labels are always derived from each method's single
+predicted curve.
+
+\textbf{Gaussian process (GP).} A GP places a prior over functions whose covariance is set by a kernel. After
+conditioning on the revealed data, the predictive mean is a kernel-weighted combination of the observations,
+and the predictive variance grows with distance from them \parencite{rasmussen2006gp}. We use an anisotropic
+Mat\'ern-3/2 kernel on $(x,y,z)$ plus white noise. It models residuals from a source-site depth trend and is
+refitted each round. \emph{Strength:} a native uncertainty for acquisition. \emph{Limitation:}
+stationarity, which smooths thin low layers.
+
+\textbf{XGBoost residual.} Gradient boosting adds shallow regression trees one at a time, each fitted to the
+current residuals \parencite{chen2016xgboost}. Here the trees correct a 3-nearest-neighbour inverse-distance
+(IDW) estimate using 24 neighbour features. \emph{Strength:} non-linear local corrections.
+\emph{Limitation:} the trees are fixed after source training.
+
+\textbf{Conditional neural process (CNP).} A CNP encodes each revealed profile together with its position
+relative to the query. It pools the encodings with a permutation-invariant mean and max, and decodes a full
+profile at the query \parencite{garnelo2018cnp}. It learns site-to-site transfer from many training
+``episodes''. \emph{Limitation:} its L1 loss targets the conditional median, so rare low cells are
+smoothed away.
+
+\textbf{TabPFN.} TabPFN is a Transformer pre-trained on millions of synthetic tabular tasks. It predicts by
+\emph{in-context learning}: the current site's revealed rows are passed as context, and no gradient step is
+needed per round \parencite{hollmann2025tabpfn}. We fine-tuned the v2 weights on source sites, then froze
+them. Two hybrids are tested: (i)~\emph{TabPFN joint} averages a sign-guarded TabPFN residual with a triangulation estimate, then sets the low-cell count by a whole-profile decision; (ii)~\emph{TabPFN + graph} averages the residual with a graph-based robust interpolation and labels a cell low if either branch does, which favours recall at the cost of false positives.
+
+\textbf{Compare and contrast.} The four families trade off differently: (i)~GP needs no source data and gives uncertainty, but assumes smooth, stationary ground; (ii)~XGBoost and TabPFN exploit cross-site regularities and non-linearity, at the cost of source training; (iii)~TabPFN adapts to a new site without retraining; (iv)~CNP is the most data-hungry and the most sensitive to its loss function.
+
+\emph{Alternatives considered.} Ordinary kriging is close to the GP. Entropy-based Bayesian compressive
+sampling \parencite{guan2022adaptive} targets liquefaction, not \qc{} profiles. Reinforcement learning or
+full Bayesian optimisation was rejected because four evaluation sites cannot support a learned policy
+without overfitting.
+
+\textbf{Division of labour.} The primary predictor was chosen by a rule fixed before evaluation: the lowest
+development log-MAE. This selected TabPFN + graph (0.578), ahead of XGBoost (0.597) and TabPFN joint
+(0.598). It drives prediction and stopping. The GP supplies the uncertainty signal, and XGBoost is the
+disagreement partner. This is a division of labour, not a stacked ensemble.

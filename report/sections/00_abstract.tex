@@ -1,0 +1,18 @@
+\begin{center}
+\begin{minipage}{0.92\linewidth}
+\small
+\textbf{Summary.}
+Cone penetration tests (CPTs) measure ground resistance along single vertical lines, so the ground between
+tests must be inferred. We ask whether AI models can predict unmeasured CPT profiles from a few measured
+ones, choose where to test next and decide when to stop, and what that is worth. Five predictors -- a
+Gaussian process (GP), XGBoost, a conditional neural process (CNP) and two TabPFN hybrids -- are replayed
+on eight sites. Stopping thresholds were frozen on four development sites, and every stop was audited
+against hidden CPTs. The TabPFN hybrids gave the lowest profile error, but within about 3\% of XGBoost and
+GP. On the four evaluation sites no early stop failed the audit (7 early stops in 24 runs). However, CPTs
+were saved only at the most uniform site (21\,$\rightarrow$\,11, the minimum the rule allows). Adaptive
+location choice showed no detectable advantage over a space-filling baseline. In the economic scenario,
+time effects outweighed CPT prices: the net owner benefit was $+$\eur{23,300} at that site and negative
+elsewhere.
+\end{minipage}
+\end{center}
+\vspace{2pt}
