@@ -21,7 +21,7 @@ while remaining and chosen_count < batch_size:
     observed_xy = vstack([observed_xy, xy(gid)])  # coordinates only, never curves
 \end{lstlisting}
 Each round is logged; for example, the adaptive run at Wellington Airport (seed 17) stops in round 3:
-\begin{lstlisting}
+\begin{lstlisting}[style=output]
 round n_obs dQ90  dH90 support_logMAE gp_std_P90 streak stop
   3    11   0.067 0.00     0.132        0.169      2    online_stability
 \end{lstlisting}

@@ -10,16 +10,20 @@
 \usepackage{newtxtext,newtxmath}
 \usepackage[a4paper,margin=2.54cm,footskip=1.0cm]{geometry}% as the course Word template
 \usepackage{microtype}
-\usepackage[skip=3pt plus1pt]{parskip}
+\setlength{\parindent}{1.2em}
+\setlength{\parskip}{0pt plus 1pt}
 \linespread{1.0}
 
 % ---------------------------------------------------------------- floats, tables, figures
 \usepackage{graphicx}
 \graphicspath{{../results/adaptive_v1/figures/}}
 \usepackage{booktabs,tabularx,array,multirow}
-\usepackage[font=small,labelfont=bf,skip=4pt]{caption}
+\usepackage[font=small,labelfont=bf,labelsep=period,skip=4pt]{caption}
 \usepackage{float}
-\usepackage[section]{placeins}
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.8}
+\renewcommand{\textfraction}{0.07}
+\renewcommand{\floatpagefraction}{0.8}
 \setlength{\textfloatsep}{8pt plus 2pt minus 2pt}
 \setlength{\floatsep}{6pt plus 2pt minus 2pt}
 \setlength{\intextsep}{6pt plus 2pt minus 2pt}
@@ -30,10 +34,10 @@
 \definecolor{head}{HTML}{1C3D5A}
 \definecolor{muted}{HTML}{52514E}
 \definecolor{codebg}{HTML}{F3F2EE}
-\titleformat{\section}{\large\bfseries\color{head}}{\thesection.}{0.5em}{}
-\titleformat{\subsection}{\normalsize\bfseries\color{head}}{\thesubsection}{0.5em}{}
-\titlespacing*{\section}{0pt}{8pt plus 2pt}{2pt}
-\titlespacing*{\subsection}{0pt}{5pt plus 2pt}{1pt}
+\titleformat{\section}{\large\bfseries}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{0.6em}{}
+\titlespacing*{\section}{0pt}{9pt plus 2pt}{3pt}
+\titlespacing*{\subsection}{0pt}{6pt plus 2pt}{2pt}
 \usepackage{enumitem}
 \setlist{nosep,leftmargin=1.2em,topsep=1pt}
 
@@ -42,6 +46,7 @@
 \lstset{basicstyle=\ttfamily\footnotesize,backgroundcolor=\color{codebg},frame=none,
   columns=fullflexible,keepspaces=true,xleftmargin=0.6em,aboveskip=3pt,belowskip=3pt,
   commentstyle=\color{muted},language=Python,showstringspaces=false}
+\lstdefinestyle{output}{language={},keywordstyle={}}
 
 % ---------------------------------------------------------------- symbols and units
 \usepackage{eurosym}
@@ -61,7 +66,9 @@
 \setlength{\bibitemsep}{0pt}
 
 \usepackage[hidelinks]{hyperref}
-\usepackage[capitalise,nameinlink]{cleveref}
+\usepackage[capitalise,nameinlink,noabbrev]{cleveref}
+\crefname{figure}{Figure}{Figures}
+\Crefname{figure}{Figure}{Figures}
 
 \begin{document}
 

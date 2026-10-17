@@ -4,17 +4,17 @@ At planned positions $x$ and 24 depth cells $z_k$ (2--8\,m, 0.25\,m each), the r
 $y(x,z_k)=\ln(\qc/1\,\text{MPa})$. A \emph{low cell} has $\qc<1$\,MPa ($y<0$), and the cumulative low-cell
 thickness is
 \begin{equation}
-H(x) = 0.25\sum_{k=1}^{24}\mathbb{1}\left[y(x,z_k)<0\right]\quad\text{(m)}.
+H(x) = 0.25\sum_{k=1}^{24}\mathbf{1}\left[y(x,z_k)<0\right]\quad\text{(m)}.
 \end{equation}
 Each site is split into an initial set $S_0$, a candidate pool $C$ and a hidden audit set $A$. Starting from
 $S_0$, a policy repeatedly reveals a batch from $C$ and decides whether to stop. It seeks the smallest
 stopping count \Nstop{} that still meets frozen quality targets on $A$, compared with the full plan of
 $\Nfull=|S_0\cup C|$ CPTs:
 \begin{equation}
-\min\ \Nstop\quad\text{s.t.}\quad \text{log-MAE}_A\le\tau_{\log},\ \ \text{thickness-MAE}_A\le\tau_H,\ \
-\text{loss relative to the full plan}\le\varepsilon .
+\min\ \Nstop\quad\text{s.t.}\quad \text{log-MAE}_A\le\tau_{\log},\quad \text{thickness-MAE}_A\le\tau_H,\quad
+\Delta_{\text{full}}\le\varepsilon,
 \end{equation}
-The task thus combines \emph{spatial regression} (profiles), \emph{rare-event classification} (low cells),
+where $\Delta_{\text{full}}$ is the quality loss relative to the full plan. The task thus combines \emph{spatial regression} (profiles), \emph{rare-event classification} (low cells),
 \emph{active learning} (locations) and \emph{optimal stopping}.
 
 \textbf{Constraints.}
